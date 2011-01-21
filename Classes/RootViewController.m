@@ -1,6 +1,6 @@
 #import "RootViewController.h"
 #import "BroadcastDate.h"
-
+#import "Episode.h"
 
 @implementation RootViewController
 
@@ -13,9 +13,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // self.dates = [NSArray arrayWithObjects:[NSArray arrayWithObjects:@"Fringe", nil], [NSArray arrayWithObjects:@"Doctor Who", nil], nil];
-    BroadcastDate *date1 = [[BroadcastDate alloc] initWithDate:[NSDate distantPast] episodes:[NSArray arrayWithObjects:@"Doctor Who", nil]];
-    BroadcastDate *date2 = [[BroadcastDate alloc] initWithDate:[NSDate distantFuture] episodes:[NSArray arrayWithObjects:@"Fringe", nil]];
+    Episode *ep1 = [[Episode alloc] initWithTitle:@"Doctor Who" season:4 number:2 banner:[UIImage imageNamed:@"banner"]];
+    Episode *ep2 = [[Episode alloc] initWithTitle:@"Fringe" season:2 number:6 banner:[UIImage imageNamed:@"banner"]];
+
+    BroadcastDate *date1 = [[BroadcastDate alloc] initWithDate:[NSDate distantPast] episodes:[NSArray arrayWithObjects:ep1, nil]];
+    BroadcastDate *date2 = [[BroadcastDate alloc] initWithDate:[NSDate distantFuture] episodes:[NSArray arrayWithObjects:ep2, nil]];
 
     self.broadcastDates = [NSArray arrayWithObjects: date1, date2, nil];
 
@@ -65,9 +67,9 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    BroadcastDate *date = [broadcastDates objectAtIndex:section];
+    BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:section];
 
-    return [date.episodes count];
+    return [broadcastDate.episodes count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -91,8 +93,9 @@
 
   // Configure the cell.
 
-    BroadcastDate *date = [broadcastDates objectAtIndex:indexPath.section];
-    cell.textLabel.text = [date.episodes objectAtIndex:indexPath.row];
+    BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
+    Episode *episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
+    cell.textLabel.text = episode.title;
 
     return cell;
 }

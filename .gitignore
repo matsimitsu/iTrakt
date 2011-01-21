@@ -1,5 +1,6 @@
 *.swp
 .DS_Store
+build
 design/requirements.html
 iTrakt.xcodeproj/*.mode1v3
 iTrakt.xcodeproj/*.pbxuser

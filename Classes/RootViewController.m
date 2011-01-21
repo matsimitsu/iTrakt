@@ -3,6 +3,11 @@
 #import "EpisodeTableViewCell.h"
 #import "Episode.h"
 
+// Banners are 758x140, hence for every ASPECT_RATIO pixels in width there is 1 pixel in height
+#define ASPECT_RATIO 5.414285714285714
+
+#define MARGIN_AROUND_TITLE 2
+
 @implementation RootViewController
 
 @synthesize broadcastDates;
@@ -10,9 +15,11 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    CGFloat screenWidth = [UIScreen mainScreen].applicationFrame.size.width;
+    self.tableView.rowHeight = floor(screenWidth / ASPECT_RATIO) + [UIFont smallSystemFontSize] + (MARGIN_AROUND_TITLE * 2);
 
     Episode *ep1 = [[Episode alloc] initWithTitle:@"Doctor Who" season:4 number:2 banner:[UIImage imageNamed:@"banner"]];
     Episode *ep2 = [[Episode alloc] initWithTitle:@"Fringe" season:2 number:6 banner:[UIImage imageNamed:@"banner"]];
@@ -37,6 +44,7 @@
     [super viewDidAppear:animated];
 }
 */
+
 /*
 - (void)viewWillDisappear:(BOOL)animated {
   [super viewWillDisappear:animated];
@@ -88,6 +96,8 @@
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
   if (cell == nil) {
     cell = [[[EpisodeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+    cell.frame = CGRectMake(0.0, 0.0, [UIScreen mainScreen].applicationFrame.size.width, self.tableView.rowHeight);
+    NSLog(@"Cell frame is: %@", NSStringFromCGRect(cell.frame));
   }
 
   BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];

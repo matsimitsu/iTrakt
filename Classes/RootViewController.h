@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UITableViewController {
+  NSArray *episodes;
 }
+
+@property (retain) NSArray *episodes;
 
 @end

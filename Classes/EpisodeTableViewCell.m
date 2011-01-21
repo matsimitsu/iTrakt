@@ -1,29 +1,28 @@
 #import "EpisodeTableViewCell.h"
 
-
 @implementation EpisodeTableViewCell
 
+@synthesize episodeView;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code.
-    }
-    return self;
+  if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+    self.episodeView = [[EpisodeTableViewCellView alloc] initWithFrame:self.contentView.frame];
+    [self.contentView addSubview:episodeView];
+  }
+  return self;
 }
 
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    
-    [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state.
+-(void)setEpisode:(Episode *)episode {
+  episodeView.episode = episode;
 }
 
+- (void)redisplay {
+  [episodeView setNeedsDisplay];
+}
 
 - (void)dealloc {
-    [super dealloc];
+  [super dealloc];
+  [episodeView dealloc];
 }
-
 
 @end

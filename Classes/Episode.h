@@ -7,10 +7,10 @@
   NSUInteger number;
 }
 
-@property (retain) UIImage *banner;
-@property (retain) NSString *title;
-@property (assign) NSUInteger season;
-@property (assign) NSUInteger number;
+@property (nonatomic, retain) UIImage *banner;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, assign) NSUInteger season;
+@property (nonatomic, assign) NSUInteger number;
 
 - (id)initWithTitle:(NSString *)title season:(NSUInteger)season number:(NSUInteger)number banner:(UIImage *)banner;
 

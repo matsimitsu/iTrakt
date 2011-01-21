@@ -13,9 +13,8 @@
     self.season = season;
     self.number = number;
     self.banner = banner;
-    return self;
   }
-  return nil;
+  return self;
 }
 
 @end

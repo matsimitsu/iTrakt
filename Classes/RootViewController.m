@@ -1,5 +1,6 @@
 #import "RootViewController.h"
 #import "BroadcastDate.h"
+#import "EpisodeTableViewCell.h"
 #import "Episode.h"
 
 @implementation RootViewController
@@ -83,21 +84,19 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  static NSString *cellIdentifier = @"episodeCell";
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+  if (cell == nil) {
+    cell = [[[EpisodeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+  }
 
-    static NSString *CellIdentifier = @"Cell";
+  BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
+  Episode *episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
+  
+  //cell.textLabel.text = episode.title;
+  [cell setEpisode:episode];
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
-
-  // Configure the cell.
-
-    BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
-    Episode *episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
-    cell.textLabel.text = episode.title;
-
-    return cell;
+  return cell;
 }
 
 

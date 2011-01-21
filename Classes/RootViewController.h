@@ -4,6 +4,6 @@
   NSArray *broadcastDates;
 }
 
-@property (retain) NSArray *broadcastDates;
+@property (nonatomic, retain) NSArray *broadcastDates;
 
 @end

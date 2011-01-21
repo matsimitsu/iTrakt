@@ -14,14 +14,12 @@
 @synthesize date;
 @synthesize episodes;
 
-- (id)initWithDate:(NSDate *)date episodes:(NSArray *)episodes
-{
+- (id)initWithDate:(NSDate *)date episodes:(NSArray *)episodes {
   if (self = [super init]) {
     self.date = date;
     self.episodes = episodes;
-    return self;
   }
-  return nil;
+  return self;
 }
 
 @end

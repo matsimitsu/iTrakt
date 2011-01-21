@@ -1,11 +1,3 @@
-//
-//  RootViewController.m
-//  iTrakt
-//
-//  Created by Robert Beekman on 21-01-11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
 #import "RootViewController.h"
 #import "BroadcastDate.h"
 
@@ -79,7 +71,6 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-  NSLog(@"hiero");
   BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:section];
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 

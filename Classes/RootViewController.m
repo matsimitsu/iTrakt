@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "BroadcastDate.h"
+#import "BroadcastCalendar.h"
 
 
 @implementation RootViewController
@@ -21,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    NSArray *calendar = [BroadcastCalendar getCalendar];
+    NSLog([calendar description]);
     // self.dates = [NSArray arrayWithObjects:[NSArray arrayWithObjects:@"Fringe", nil], [NSArray arrayWithObjects:@"Doctor Who", nil], nil];
     BroadcastDate *date1 = [[BroadcastDate alloc] initWithDate:[NSDate distantPast] episodes:[NSArray arrayWithObjects:@"Doctor Who", nil]];
     BroadcastDate *date2 = [[BroadcastDate alloc] initWithDate:[NSDate distantFuture] episodes:[NSArray arrayWithObjects:@"Fringe", nil]];

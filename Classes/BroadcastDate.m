@@ -7,7 +7,7 @@
 //
 
 #import "BroadcastDate.h"
-
+#include <HTTPRiot/HTTPRiot.h>
 
 @implementation BroadcastDate
 
@@ -19,6 +19,7 @@
   if (self = [super init]) {
     self.date = date;
     self.episodes = episodes;
+
     return self;
   }
   return nil;

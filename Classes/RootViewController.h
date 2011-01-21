@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UITableViewController {
-  NSArray *episodes;
+  NSArray *broadcastDates;
 }
 
-@property (retain) NSArray *episodes;
+@property (retain) NSArray *broadcastDates;
 
 @end

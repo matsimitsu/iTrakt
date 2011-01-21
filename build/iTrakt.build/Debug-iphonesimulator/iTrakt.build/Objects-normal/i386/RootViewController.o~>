@@ -1,0 +1,2 @@
+/Users/robertbeekman/Sites/apps/iTrakt/Classes/RootViewController.m: In function '-[RootViewController viewDidLoad]':
+/Users/robertbeekman/Sites/apps/iTrakt/Classes/RootViewController.m:22: error: request for member 'episodes' in something not a structure or union

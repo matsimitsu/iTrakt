@@ -1,0 +1,262 @@
+TiTrakt
+v7
+r0
+t317318842.365801
+cCheck dependencies
+cProcessInfoPlistFile /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/Info.plist iTrakt-Info.plist
+cCompileXIB /Users/robertbeekman/Sites/apps/iTrakt/MainWindow.xib
+cCompileXIB /Users/robertbeekman/Sites/apps/iTrakt/RootViewController.xib
+cProcessPCH /var/folders/2d/2d4dV4mCFCqTdyELJ5DLoE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/iTrakt_Prefix-cdbmynsfvbipqabwnsyinuecyjem/iTrakt_Prefix.pch.gch iTrakt_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/main.o /Users/robertbeekman/Sites/apps/iTrakt/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/iTraktAppDelegate.o /Users/robertbeekman/Sites/apps/iTrakt/Classes/iTraktAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/RootViewController.o /Users/robertbeekman/Sites/apps/iTrakt/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/iTrakt normal i386
+cGenerateDSYMFile /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app.dSYM /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/iTrakt
+cTouch /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk
+c000000004CC128950000000000000110
+t1287727253
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004CC12246000000000029B310
+t1287725638
+s2732816
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004CC1226D000000000029D5D0
+t1287725677
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004CC1225F0000000000001466
+t1287725663
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004CC1281F0000000000000AA1
+t1287727135
+s2721
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004CC12883000000000074D7B0
+t1287727235
+s7657392
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/Availability.h
+c000000004CB3FA080000000000001ADD
+t1286863368
+s6877
+
+N/Users/robertbeekman/Sites/apps/iTrakt/Classes/RootViewController.h
+c000000004D39A81200000000000000ED
+t1295624210
+s237
+i<UIKit/UIKit.h>
+
+N/Users/robertbeekman/Sites/apps/iTrakt/Classes/RootViewController.m
+c000000004D39A81200000000000010C5
+t1295624210
+s4293
+i"RootViewController.h"
+
+N/Users/robertbeekman/Sites/apps/iTrakt/Classes/iTraktAppDelegate.h
+c000000004D39A81200000000000001D3
+t1295624210
+s467
+i<UIKit/UIKit.h>
+
+N/Users/robertbeekman/Sites/apps/iTrakt/Classes/iTraktAppDelegate.m
+c000000004D39A8120000000000000AA6
+t1295624210
+s2726
+i"iTraktAppDelegate.h"
+i"RootViewController.h"
+
+N/Users/robertbeekman/Sites/apps/iTrakt/MainWindow.xib
+c000000004D39A8120000000000005FF0
+t1295624210
+s24560
+
+N/Users/robertbeekman/Sites/apps/iTrakt/RootViewController.xib
+c000000004D39A8120000000000004451
+t1295624210
+s17489
+
+N/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app
+t1295626042
+s238
+
+N/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app.dSYM
+t1295626042
+s102
+
+N/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/Info.plist
+t1295626040
+s587
+
+N/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/MainWindow.nib
+t1295626041
+s1508
+
+N/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/PkgInfo
+t1295626040
+s8
+
+N/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/RootViewController.nib
+t1295626041
+s979
+
+N/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/iTrakt
+t1295626042
+s17948
+
+N/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/RootViewController.o
+t1295626042
+s41160
+
+N/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/iTrakt.LinkFileList
+c000000004D39AF380000000000000183
+t1295626040
+s387
+
+N/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/iTraktAppDelegate.o
+t1295626042
+s52552
+
+N/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/main.o
+t1295626042
+s6304
+
+N/Users/robertbeekman/Sites/apps/iTrakt/iTrakt_Prefix.pch
+c000000004D39A812000000000000013E
+t1295624210
+s318
+i<Availability.h>
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/robertbeekman/Sites/apps/iTrakt/main.m
+c000000004D39A812000000000000016B
+t1295624210
+s363
+i<UIKit/UIKit.h>
+
+N/var/folders/2d/2d4dV4mCFCqTdyELJ5DLoE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/iTrakt_Prefix-cdbmynsfvbipqabwnsyinuecyjem/iTrakt_Prefix.pch.gch
+t1295626042
+s15453392
+
+NiTrakt-Info.plist
+c000000004D39A812000000000000038D
+t1295624210
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies317318840#317318840#0(0"0(0#1#0"3343187568374212096#0"0#
+
+CCompileC build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/RootViewController.o /Users/robertbeekman/Sites/apps/iTrakt/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s317318842.200509
+e317318842.284754
+r1
+xCompileC
+xbuild/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/RootViewController.o
+x/Users/robertbeekman/Sites/apps/iTrakt/Classes/RootViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Users/robertbeekman/Sites/apps/iTrakt/Classes/RootViewController.m317318842#317318842#0(0"0(0#0#67"/Users/robertbeekman/Sites/apps/iTrakt/Classes/RootViewController.m8604139712#1992"    cd /Users/robertbeekman/Sites/apps/iTrakt    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-generated-files.hmap -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-own-target-headers.hmap -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-all-target-headers.hmap -iquote /Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-project-headers.hmap -F/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator -I/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/include -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/DerivedSources/i386 -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/DerivedSources -include /var/folders/2d/2d4dV4mCFCqTdyELJ5DLoE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/iTrakt_Prefix-cdbmynsfvbipqabwnsyinuecyjem/iTrakt_Prefix.pch -c /Users/robertbeekman/Sites/apps/iTrakt/Classes/RootViewController.m -o /Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/RootViewController.o0#
+
+CCompileC build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/iTraktAppDelegate.o /Users/robertbeekman/Sites/apps/iTrakt/Classes/iTraktAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s317318842.126011
+e317318842.229318
+r1
+xCompileC
+xbuild/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/iTraktAppDelegate.o
+x/Users/robertbeekman/Sites/apps/iTrakt/Classes/iTraktAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@74"Compile /Users/robertbeekman/Sites/apps/iTrakt/Classes/iTraktAppDelegate.m317318842#317318842#0(0"0(0#0#66"/Users/robertbeekman/Sites/apps/iTrakt/Classes/iTraktAppDelegate.m8604290336#1990"    cd /Users/robertbeekman/Sites/apps/iTrakt    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-generated-files.hmap -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-own-target-headers.hmap -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-all-target-headers.hmap -iquote /Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-project-headers.hmap -F/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator -I/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/include -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/DerivedSources/i386 -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/DerivedSources -include /var/folders/2d/2d4dV4mCFCqTdyELJ5DLoE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/iTrakt_Prefix-cdbmynsfvbipqabwnsyinuecyjem/iTrakt_Prefix.pch -c /Users/robertbeekman/Sites/apps/iTrakt/Classes/iTraktAppDelegate.m -o /Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/iTraktAppDelegate.o0#
+
+CCompileC build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/main.o /Users/robertbeekman/Sites/apps/iTrakt/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s317318842.124936
+e317318842.200406
+r1
+xCompileC
+xbuild/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/main.o
+x/Users/robertbeekman/Sites/apps/iTrakt/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@53"Compile /Users/robertbeekman/Sites/apps/iTrakt/main.m317318842#317318842#0(0"0(0#0#45"/Users/robertbeekman/Sites/apps/iTrakt/main.m8604445056#1956"    cd /Users/robertbeekman/Sites/apps/iTrakt    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-generated-files.hmap -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-own-target-headers.hmap -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-all-target-headers.hmap -iquote /Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-project-headers.hmap -F/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator -I/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/include -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/DerivedSources/i386 -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/DerivedSources -include /var/folders/2d/2d4dV4mCFCqTdyELJ5DLoE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/iTrakt_Prefix-cdbmynsfvbipqabwnsyinuecyjem/iTrakt_Prefix.pch -c /Users/robertbeekman/Sites/apps/iTrakt/main.m -o /Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/robertbeekman/Sites/apps/iTrakt/MainWindow.xib
+s317318840.622596
+e317318841.092991
+r1
+xCompileXIB
+x/Users/robertbeekman/Sites/apps/iTrakt/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib317318840#317318841#0(0"0(0#0#53"/Users/robertbeekman/Sites/apps/iTrakt/MainWindow.xib8604326656#631"    cd /Users/robertbeekman/Sites/apps/iTrakt    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/MainWindow.nib /Users/robertbeekman/Sites/apps/iTrakt/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/robertbeekman/Sites/apps/iTrakt/RootViewController.xib
+s317318840.624227
+e317318841.195060
+r1
+xCompileXIB
+x/Users/robertbeekman/Sites/apps/iTrakt/RootViewController.xib
+lSLF07#2@33"CompileXIB RootViewController.xib317318840#317318841#0(0"0(0#0#61"/Users/robertbeekman/Sites/apps/iTrakt/RootViewController.xib8604132160#647"    cd /Users/robertbeekman/Sites/apps/iTrakt    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/RootViewController.nib /Users/robertbeekman/Sites/apps/iTrakt/RootViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CGenerateDSYMFile /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app.dSYM /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/iTrakt
+s317318842.334631
+e317318842.360775
+r1
+xGenerateDSYMFile
+x/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app.dSYM
+x/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/iTrakt
+lSLF07#2@106"GenerateDSYMFile build/Debug-iphonesimulator/iTrakt.app.dSYM build/Debug-iphonesimulator/iTrakt.app/iTrakt317318842#317318842#0(0"0(0#0#84"/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/iTrakt8602353728#442"    cd /Users/robertbeekman/Sites/apps/iTrakt    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/usr/bin/dsymutil /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/iTrakt -o /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app.dSYM0#
+
+CLd /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/iTrakt normal i386
+s317318842.284848
+e317318842.334533
+r1
+xLd
+x/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/iTrakt
+xnormal
+xi386
+lSLF07#2@89"Link /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/iTrakt317318842#317318842#0(0"0(0#0#0"8601212576#957"    cd /Users/robertbeekman/Sites/apps/iTrakt    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -L/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator -F/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator -filelist /Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/Objects-normal/i386/iTrakt.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/iTrakt0#
+
+CProcessInfoPlistFile /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/Info.plist iTrakt-Info.plist
+s317318840.609230
+e317318840.622494
+r1
+xProcessInfoPlistFile
+x/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/Info.plist
+xiTrakt-Info.plist
+lSLF07#2@25"Process iTrakt-Info.plist317318840#317318840#0(0"0(0#0#56"/Users/robertbeekman/Sites/apps/iTrakt/iTrakt-Info.plist31244169098821736#538"    cd /Users/robertbeekman/Sites/apps/iTrakt    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-infoPlistUtility iTrakt-Info.plist -genpkginfo /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app/Info.plist0#
+
+CProcessPCH /var/folders/2d/2d4dV4mCFCqTdyELJ5DLoE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/iTrakt_Prefix-cdbmynsfvbipqabwnsyinuecyjem/iTrakt_Prefix.pch.gch iTrakt_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s317318841.195268
+e317318842.124735
+r1
+xProcessPCH
+x/var/folders/2d/2d4dV4mCFCqTdyELJ5DLoE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/iTrakt_Prefix-cdbmynsfvbipqabwnsyinuecyjem/iTrakt_Prefix.pch.gch
+xiTrakt_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@28"Precompile iTrakt_Prefix.pch317318841#317318842#0(0"0(0#0#56"/Users/robertbeekman/Sites/apps/iTrakt/iTrakt_Prefix.pch8602337952#1849"    cd /Users/robertbeekman/Sites/apps/iTrakt    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-generated-files.hmap -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-own-target-headers.hmap -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-all-target-headers.hmap -iquote /Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/iTrakt-project-headers.hmap -F/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator -I/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/include -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/DerivedSources/i386 -I/Users/robertbeekman/Sites/apps/iTrakt/build/iTrakt.build/Debug-iphonesimulator/iTrakt.build/DerivedSources -c /Users/robertbeekman/Sites/apps/iTrakt/iTrakt_Prefix.pch -o /var/folders/2d/2d4dV4mCFCqTdyELJ5DLoE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/iTrakt_Prefix-cdbmynsfvbipqabwnsyinuecyjem/iTrakt_Prefix.pch.gch0#
+
+CTouch /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app
+s317318842.360878
+e317318842.365693
+r1
+xTouch
+x/Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app
+lSLF07#2@83"Touch /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app317318842#317318842#0(0"0(0#0#0"8601942944#339"    cd /Users/robertbeekman/Sites/apps/iTrakt    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /usr/bin/touch -c /Users/robertbeekman/Sites/apps/iTrakt/build/Debug-iphonesimulator/iTrakt.app0#
+

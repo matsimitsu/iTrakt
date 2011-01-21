@@ -7,11 +7,12 @@
 //
 
 #import "RootViewController.h"
+#import "BroadcastDate.h"
 
 
 @implementation RootViewController
 
-@synthesize episodes;
+@synthesize broadcastDates;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -20,7 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.episodes = [NSArray arrayWithObjects:@"Fringe", @"Doctor Who", nil];
+    // self.dates = [NSArray arrayWithObjects:[NSArray arrayWithObjects:@"Fringe", nil], [NSArray arrayWithObjects:@"Doctor Who", nil], nil];
+    BroadcastDate *date1 = [[BroadcastDate alloc] initWithDate:[NSDate distantPast] episodes:[NSArray arrayWithObjects:@"Doctor Who", nil]];
+    BroadcastDate *date2 = [[BroadcastDate alloc] initWithDate:[NSDate distantFuture] episodes:[NSArray arrayWithObjects:@"Fringe", nil]];
+
+    self.broadcastDates = [NSArray arrayWithObjects: date1, date2, nil];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -62,15 +67,26 @@
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [broadcastDates count];
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [episodes count];
+    BroadcastDate *date = [broadcastDates objectAtIndex:section];
+
+    return [date.episodes count];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  NSLog(@"hiero");
+  BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:section];
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+
+  [dateFormatter setDateFormat:@"EEEE MMMM d"];
+
+  return [dateFormatter stringFromDate:broadcastDate.date];
+}
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -84,9 +100,8 @@
 
   // Configure the cell.
 
-    //NSLog([indexPath description]);
-    NSUInteger index = [indexPath indexAtPosition:1];
-    cell.textLabel.text = [episodes objectAtIndex:index];
+    BroadcastDate *date = [broadcastDates objectAtIndex:indexPath.section];
+    cell.textLabel.text = [date.episodes objectAtIndex:indexPath.row];
 
     return cell;
 }

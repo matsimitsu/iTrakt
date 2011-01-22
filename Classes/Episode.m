@@ -9,7 +9,7 @@
 
 - (id)initWithDictionary:(NSDictionary *)dict {
   if (self = [super init]) {
-    self.title = [dict valueForKeyPath:@"show.title"];
+    self.title = [dict valueForKeyPath:@"episode.title"];
     self.season = (int) [dict valueForKeyPath:@"episode.season"];
     self.number = (int) [dict valueForKeyPath:@"episode.number"];
     NSLog([dict valueForKeyPath:@"show.banner"]);

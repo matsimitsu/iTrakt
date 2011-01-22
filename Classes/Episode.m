@@ -17,4 +17,8 @@
   return self;
 }
 
+- (NSString *)numberText {
+  return [NSString stringWithFormat:@"%dx%02d", season, number, nil];
+}
+
 @end

@@ -14,4 +14,6 @@
 
 - (id)initWithTitle:(NSString *)title season:(NSUInteger)season number:(NSUInteger)number banner:(UIImage *)banner;
 
+- (NSString *)numberText;
+
 @end

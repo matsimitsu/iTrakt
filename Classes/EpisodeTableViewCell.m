@@ -9,6 +9,7 @@
 
 @synthesize episode;
 @synthesize imageView;
+@synthesize numberLabel;
 @synthesize titleLabel;
 
 + (CGFloat)imageViewHeightForWidth:(CGFloat)width {
@@ -24,7 +25,14 @@
     self.imageView = [UIImageView new];
     self.imageView.opaque = YES;
     [self.contentView addSubview:self.imageView];
-    
+
+    self.numberLabel = [UILabel new];
+    self.numberLabel.backgroundColor = [UIColor whiteColor];
+    self.numberLabel.opaque = YES;
+    self.numberLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
+    self.numberLabel.textAlignment = UITextAlignmentLeft;
+    [self.contentView addSubview:numberLabel];
+
     self.titleLabel = [UILabel new];
     self.titleLabel.backgroundColor = [UIColor whiteColor];
     self.titleLabel.opaque = YES;
@@ -38,18 +46,27 @@
 - (void)layoutSubviews {
   [super layoutSubviews];
 
+  // TODO: this probably has to be dynamic
+  CGFloat numberLabelWidth = 30.0;
+
   CGFloat width = self.contentView.bounds.size.width;
   CGFloat imageViewHeight = [EpisodeTableViewCell imageViewHeightForWidth:width];
 
   self.imageView.image = episode.banner;
   self.imageView.frame = CGRectMake(0.0, 0.0, width, imageViewHeight);
 
+  self.numberLabel.text = [episode numberText];
+  self.numberLabel.frame = CGRectMake(0.0, imageViewHeight, numberLabelWidth, [UIFont smallSystemFontSize] + MARGIN_AROUND_TITLE);
+
   self.titleLabel.text = episode.title;
-  self.titleLabel.frame = CGRectMake(0.0, imageViewHeight, width, [UIFont smallSystemFontSize] + (MARGIN_AROUND_TITLE * 2));
+  self.titleLabel.frame = CGRectMake(numberLabelWidth, imageViewHeight, width - numberLabelWidth, [UIFont smallSystemFontSize] + MARGIN_AROUND_TITLE);
 }
 
-//- (void)dealloc {
-  //[super dealloc];
-//}
+- (void)dealloc {
+  [super dealloc];
+  [imageView dealloc];
+  [numberLabel dealloc];
+  [titleLabel dealloc];
+}
 
 @end

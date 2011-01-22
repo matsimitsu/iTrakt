@@ -160,6 +160,20 @@
    */
 }
 
+// TODO this is where we should deliver our own section headers
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+  //return 50.0;
+//}
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+  //UIToolbar *bar = [UIToolbar new];
+  //bar.barStyle = UIBarStyleBlack;
+  //UIBarButtonItem *label = [UIBarButtonItem new];
+  //label.style = UIBarButtonItemStylePlain;
+  //label.enabled = NO;
+  //label.title = @"FOO";
+  //bar.items = [NSArray arrayWithObject:label];
+  //return bar;
+//}
 
 #pragma mark -
 #pragma mark Memory management

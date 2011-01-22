@@ -27,14 +27,16 @@
     [self.contentView addSubview:self.imageView];
 
     self.numberLabel = [UILabel new];
-    self.numberLabel.backgroundColor = [UIColor whiteColor];
+    self.numberLabel.textColor = [UIColor whiteColor];
+    self.numberLabel.backgroundColor = [UIColor clearColor];
     self.numberLabel.opaque = YES;
     self.numberLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
     self.numberLabel.textAlignment = UITextAlignmentLeft;
     [self.contentView addSubview:numberLabel];
 
     self.titleLabel = [UILabel new];
-    self.titleLabel.backgroundColor = [UIColor whiteColor];
+    self.titleLabel.textColor = [UIColor whiteColor];
+    self.titleLabel.backgroundColor = [UIColor clearColor];
     self.titleLabel.opaque = YES;
     self.titleLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
     self.titleLabel.textAlignment = UITextAlignmentRight;

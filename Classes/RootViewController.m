@@ -16,6 +16,10 @@
     CGFloat tableViewWidth = self.tableView.bounds.size.width;
     self.tableView.rowHeight = [EpisodeTableViewCell heightForWidth:tableViewWidth];
 
+    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.separatorColor = [UIColor darkGrayColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+
     Episode *ep1 = [[Episode alloc] initWithTitle:@"Doctor Who" season:4 number:2 banner:[UIImage imageNamed:@"banner.jpg"]];
     Episode *ep2 = [[Episode alloc] initWithTitle:@"Fringe" season:2 number:6 banner:[UIImage imageNamed:@"banner.jpg"]];
 

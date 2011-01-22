@@ -9,7 +9,7 @@
 
 + (void)initialize {
   [self setDelegate:self];
-  [self setBaseURL:[NSURL URLWithString:@"http://localhost:3000"]];
+  [self setBaseURL:[NSURL URLWithString:@"http://itrakt.matsimitsu.com"]];
 }
 
 - (id)initWithDictionary:(NSDictionary *)dict {

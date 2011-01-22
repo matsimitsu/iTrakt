@@ -325,7 +325,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>24D0AFB512EB2DDC00BF2C8E</string>
+										<string>24D0AFD412EB383A00BF2C8E</string>
 										<key>history</key>
 										<array>
 											<string>24D0AF7312EB2A5500BF2C8E</string>
@@ -528,9 +528,9 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/robertbeekman/Sites/apps/iTrakt/iTrakt.xcodeproj</string>
 		<string>2448DC9E12E9DFA900AC422E</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/robertbeekman/Sites/apps/iTrakt/iTrakt.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>458 249 1261 854 0 0 1920 1178 </string>
@@ -554,7 +554,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BroadcastDate.m</string>
+								<string>Episode.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

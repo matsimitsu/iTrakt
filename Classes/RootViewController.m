@@ -18,11 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    CGFloat screenWidth = [UIScreen mainScreen].applicationFrame.size.width;
-    self.tableView.rowHeight = floor(screenWidth / ASPECT_RATIO) + [UIFont smallSystemFontSize] + (MARGIN_AROUND_TITLE * 2);
+    CGFloat tableViewWidth = self.tableView.bounds.size.width;
+    self.tableView.rowHeight = floor(tableViewWidth / ASPECT_RATIO) + [UIFont smallSystemFontSize] + (MARGIN_AROUND_TITLE * 2);
 
-    Episode *ep1 = [[Episode alloc] initWithTitle:@"Doctor Who" season:4 number:2 banner:[UIImage imageNamed:@"banner"]];
-    Episode *ep2 = [[Episode alloc] initWithTitle:@"Fringe" season:2 number:6 banner:[UIImage imageNamed:@"banner"]];
+    Episode *ep1 = [[Episode alloc] initWithTitle:@"Doctor Who" season:4 number:2 banner:[UIImage imageNamed:@"banner.jpg"]];
+    Episode *ep2 = [[Episode alloc] initWithTitle:@"Fringe" season:2 number:6 banner:[UIImage imageNamed:@"banner.jpg"]];
 
     BroadcastDate *date1 = [[BroadcastDate alloc] initWithDate:[NSDate distantPast] episodes:[NSArray arrayWithObjects:ep1, nil]];
     BroadcastDate *date2 = [[BroadcastDate alloc] initWithDate:[NSDate distantFuture] episodes:[NSArray arrayWithObjects:ep2, nil]];
@@ -96,7 +96,7 @@
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
   if (cell == nil) {
     cell = [[[EpisodeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
-    cell.frame = CGRectMake(0.0, 0.0, [UIScreen mainScreen].applicationFrame.size.width, self.tableView.rowHeight);
+    cell.frame = CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, self.tableView.rowHeight);
     NSLog(@"Cell frame is: %@", NSStringFromCGRect(cell.frame));
   }
 

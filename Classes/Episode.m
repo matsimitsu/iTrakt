@@ -13,6 +13,7 @@
     self.season = season;
     self.number = number;
     self.banner = banner;
+    NSLog(@"Init with banner %@", [banner description]);
   }
   return self;
 }

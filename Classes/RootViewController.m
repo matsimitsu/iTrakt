@@ -3,11 +3,6 @@
 #import "EpisodeTableViewCell.h"
 #import "Episode.h"
 
-// Banners are 758x140, hence for every ASPECT_RATIO pixels in width there is 1 pixel in height
-#define ASPECT_RATIO 5.414285714285714
-
-#define MARGIN_AROUND_TITLE 2
-
 @implementation RootViewController
 
 @synthesize broadcastDates;
@@ -19,7 +14,7 @@
     [super viewDidLoad];
 
     CGFloat tableViewWidth = self.tableView.bounds.size.width;
-    self.tableView.rowHeight = floor(tableViewWidth / ASPECT_RATIO) + [UIFont smallSystemFontSize] + (MARGIN_AROUND_TITLE * 2);
+    self.tableView.rowHeight = [EpisodeTableViewCell heightForWidth:tableViewWidth];
 
     Episode *ep1 = [[Episode alloc] initWithTitle:@"Doctor Who" season:4 number:2 banner:[UIImage imageNamed:@"banner.jpg"]];
     Episode *ep2 = [[Episode alloc] initWithTitle:@"Fringe" season:2 number:6 banner:[UIImage imageNamed:@"banner.jpg"]];
@@ -93,18 +88,16 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *cellIdentifier = @"episodeCell";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+  EpisodeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
   if (cell == nil) {
-    cell = [[[EpisodeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
-    cell.frame = CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, self.tableView.rowHeight);
+    CGRect frame = CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, self.tableView.rowHeight);
+    cell = [[[EpisodeTableViewCell alloc] initWithFrame:frame reuseIdentifier:cellIdentifier] autorelease];
     NSLog(@"Cell frame is: %@", NSStringFromCGRect(cell.frame));
   }
 
   BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
   Episode *episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
-  
-  //cell.textLabel.text = episode.title;
-  [cell setEpisode:episode];
+  cell.episode = episode;
 
   return cell;
 }

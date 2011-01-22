@@ -1,13 +1,15 @@
 #import <UIKit/UIKit.h>
-#import "EpisodeTableViewCellView.h"
 #import "Episode.h"
 
 @interface EpisodeTableViewCell : UITableViewCell {
-  EpisodeTableViewCellView *episodeView;
+  Episode *episode;
+  UIImageView *imageView;
 }
 
-@property (nonatomic, retain) EpisodeTableViewCellView *episodeView;
+@property (nonatomic, retain) Episode *episode;
+@property (nonatomic, retain) UIImageView *imageView;
 
--(void)setEpisode:(Episode *)episode;
++ (CGFloat)imageViewHeightForWidth:(CGFloat)width;
++ (CGFloat)heightForWidth:(CGFloat)width;
 
 @end

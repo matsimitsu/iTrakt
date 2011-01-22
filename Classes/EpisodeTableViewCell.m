@@ -1,28 +1,42 @@
 #import "EpisodeTableViewCell.h"
 
+// Banners are 758x140, hence for every ASPECT_RATIO pixels in width there is 1 pixel in height
+#define ASPECT_RATIO 5.414285714285714
+
+#define MARGIN_AROUND_TITLE 2
+
 @implementation EpisodeTableViewCell
 
-@synthesize episodeView;
+@synthesize episode;
+@synthesize imageView;
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-  if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-    self.episodeView = [[EpisodeTableViewCellView alloc] initWithFrame:self.contentView.frame];
-    [self.contentView addSubview:episodeView];
++ (CGFloat)imageViewHeightForWidth:(CGFloat)width {
+  return (CGFloat)floor(width / ASPECT_RATIO);
+}
+
++ (CGFloat)heightForWidth:(CGFloat)width {
+   return [EpisodeTableViewCell imageViewHeightForWidth:width] + [UIFont smallSystemFontSize] + (MARGIN_AROUND_TITLE * 2);
+}
+
+- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
+  if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
+    NSLog(@"Cell init with frame %@", NSStringFromCGRect(frame));
+    self.imageView = [UIImageView new];
+    [self.contentView addSubview:self.imageView];
   }
   return self;
 }
 
--(void)setEpisode:(Episode *)episode {
-  episodeView.episode = episode;
+- (void)layoutSubviews {
+  [super layoutSubviews];
+  NSLog(@"Layout content view with frame %@", NSStringFromCGRect(self.contentView.bounds));
+
+  self.imageView.image = episode.banner;
+  self.imageView.frame = CGRectMake(0.0, 0.0, self.contentView.bounds.size.width, [EpisodeTableViewCell imageViewHeightForWidth:self.contentView.bounds.size.width]);
 }
 
-- (void)redisplay {
-  [episodeView setNeedsDisplay];
-}
-
-- (void)dealloc {
-  [super dealloc];
-  [episodeView dealloc];
-}
+//- (void)dealloc {
+  //[super dealloc];
+//}
 
 @end

@@ -1,2 +1,6 @@
 * Check if all banners are guaranteed to be of the same size.
 * Need proper high-res design for the tableview
+
+* Settings screen to enter username
+* Way to check if username exists
+* Add load screen

@@ -8,7 +8,6 @@
 
 #import "RootViewController.h"
 #import "BroadcastDate.h"
-#import "BroadcastCalendar.h"
 
 
 @implementation RootViewController
@@ -18,17 +17,15 @@
 #pragma mark -
 #pragma mark View lifecycle
 
+- (void)datesLoaded:(id *)dates {
+  self.broadcastDates = dates;
+  [self.tableView reloadData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSArray *calendar = [BroadcastCalendar getCalendar];
-    NSLog([calendar description]);
-    // self.dates = [NSArray arrayWithObjects:[NSArray arrayWithObjects:@"Fringe", nil], [NSArray arrayWithObjects:@"Doctor Who", nil], nil];
-    BroadcastDate *date1 = [[BroadcastDate alloc] initWithDate:[NSDate distantPast] episodes:[NSArray arrayWithObjects:@"Doctor Who", nil]];
-    BroadcastDate *date2 = [[BroadcastDate alloc] initWithDate:[NSDate distantFuture] episodes:[NSArray arrayWithObjects:@"Fringe", nil]];
-
-    self.broadcastDates = [NSArray arrayWithObjects: date1, date2, nil];
+    [BroadcastDate getDates:self];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -82,7 +79,6 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-  NSLog(@"hiero");
   BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:section];
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 
@@ -104,7 +100,8 @@
   // Configure the cell.
 
     BroadcastDate *date = [broadcastDates objectAtIndex:indexPath.section];
-    cell.textLabel.text = [date.episodes objectAtIndex:indexPath.row];
+    NSDictionary *episode = [date.episodes objectAtIndex:indexPath.row];
+    cell.textLabel.text = [episode valueForKeyPath:@"show.title"];
 
     return cell;
 }

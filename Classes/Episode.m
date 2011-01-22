@@ -7,12 +7,15 @@
 @synthesize season;
 @synthesize number;
 
-- (id)initWithTitle:(NSString *)title season:(NSUInteger)season number:(NSUInteger)number banner:(UIImage *)banner {
+- (id)initWithDictionary:(NSDictionary *)dict {
   if (self = [super init]) {
-    self.title = title;
-    self.season = season;
-    self.number = number;
-    self.banner = banner;
+    self.title = [dict valueForKeyPath:@"show.title"];
+    self.season = (int) [dict valueForKeyPath:@"episode.season"];
+    self.number = (int) [dict valueForKeyPath:@"episode.number"];
+    NSLog([dict valueForKeyPath:@"show.banner"]);
+
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[dict valueForKeyPath:@"show.banner"]]];
+    self.banner = [UIImage imageWithData:imageData];
   }
   return self;
 }

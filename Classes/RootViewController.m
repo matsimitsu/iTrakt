@@ -10,8 +10,15 @@
 #pragma mark -
 #pragma mark View lifecycle
 
+
+- (void)datesLoaded:(id *)dates {
+  self.broadcastDates = dates;
+  [self.tableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [BroadcastDate getDates:self];
 
     CGFloat tableViewWidth = self.tableView.bounds.size.width;
     self.tableView.rowHeight = [EpisodeTableViewCell heightForWidth:tableViewWidth];
@@ -19,14 +26,6 @@
     self.tableView.backgroundColor = [UIColor blackColor];
     self.tableView.separatorColor = [UIColor darkGrayColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
-
-    Episode *ep1 = [[Episode alloc] initWithTitle:@"Doctor Who" season:4 number:2 banner:[UIImage imageNamed:@"banner.jpg"]];
-    Episode *ep2 = [[Episode alloc] initWithTitle:@"Fringe" season:2 number:6 banner:[UIImage imageNamed:@"banner.jpg"]];
-
-    BroadcastDate *date1 = [[BroadcastDate alloc] initWithDate:[NSDate distantPast] episodes:[NSArray arrayWithObjects:ep1, nil]];
-    BroadcastDate *date2 = [[BroadcastDate alloc] initWithDate:[NSDate distantFuture] episodes:[NSArray arrayWithObjects:ep2, nil]];
-
-    self.broadcastDates = [NSArray arrayWithObjects: date1, date2, nil];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -91,6 +90,7 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
   static NSString *cellIdentifier = @"episodeCell";
   EpisodeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
   if (cell == nil) {
@@ -98,9 +98,15 @@
     cell = [[[EpisodeTableViewCell alloc] initWithFrame:frame reuseIdentifier:cellIdentifier] autorelease];
   }
 
+
   BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
   Episode *episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
   cell.episode = episode;
+  /*
+    BroadcastDate *date = [broadcastDates objectAtIndex:indexPath.section];
+    NSDictionary *episode = [date.episodes objectAtIndex:indexPath.row];
+    cell.textLabel.text = [episode valueForKeyPath:@"show.title"];
+  */
 
   return cell;
 }

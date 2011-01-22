@@ -12,7 +12,7 @@
 @property (nonatomic, assign) NSUInteger season;
 @property (nonatomic, assign) NSUInteger number;
 
-- (id)initWithTitle:(NSString *)title season:(NSUInteger)season number:(NSUInteger)number banner:(UIImage *)banner;
+- (id)initWithDictionary:(NSDictionary *)dict;
 
 - (NSString *)numberText;
 

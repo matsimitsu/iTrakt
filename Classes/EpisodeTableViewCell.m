@@ -9,6 +9,7 @@
 
 @synthesize episode;
 @synthesize imageView;
+@synthesize titleLabel;
 
 + (CGFloat)imageViewHeightForWidth:(CGFloat)width {
   return (CGFloat)floor(width / ASPECT_RATIO);
@@ -20,19 +21,31 @@
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
   if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
-    NSLog(@"Cell init with frame %@", NSStringFromCGRect(frame));
     self.imageView = [UIImageView new];
+    self.imageView.opaque = YES;
     [self.contentView addSubview:self.imageView];
+    
+    self.titleLabel = [UILabel new];
+    self.titleLabel.backgroundColor = [UIColor whiteColor];
+    self.titleLabel.opaque = YES;
+    self.titleLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
+    self.titleLabel.textAlignment = UITextAlignmentRight;
+    [self.contentView addSubview:titleLabel];
   }
   return self;
 }
 
 - (void)layoutSubviews {
   [super layoutSubviews];
-  NSLog(@"Layout content view with frame %@", NSStringFromCGRect(self.contentView.bounds));
+
+  CGFloat width = self.contentView.bounds.size.width;
+  CGFloat imageViewHeight = [EpisodeTableViewCell imageViewHeightForWidth:width];
 
   self.imageView.image = episode.banner;
-  self.imageView.frame = CGRectMake(0.0, 0.0, self.contentView.bounds.size.width, [EpisodeTableViewCell imageViewHeightForWidth:self.contentView.bounds.size.width]);
+  self.imageView.frame = CGRectMake(0.0, 0.0, width, imageViewHeight);
+
+  self.titleLabel.text = episode.title;
+  self.titleLabel.frame = CGRectMake(0.0, imageViewHeight, width, [UIFont smallSystemFontSize] + (MARGIN_AROUND_TITLE * 2));
 }
 
 //- (void)dealloc {

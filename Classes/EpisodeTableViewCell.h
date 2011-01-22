@@ -4,10 +4,12 @@
 @interface EpisodeTableViewCell : UITableViewCell {
   Episode *episode;
   UIImageView *imageView;
+  UILabel *titleLabel;
 }
 
 @property (nonatomic, retain) Episode *episode;
 @property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 + (CGFloat)imageViewHeightForWidth:(CGFloat)width;
 + (CGFloat)heightForWidth:(CGFloat)width;

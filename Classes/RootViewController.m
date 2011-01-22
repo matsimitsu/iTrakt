@@ -92,7 +92,6 @@
   if (cell == nil) {
     CGRect frame = CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, self.tableView.rowHeight);
     cell = [[[EpisodeTableViewCell alloc] initWithFrame:frame reuseIdentifier:cellIdentifier] autorelease];
-    NSLog(@"Cell frame is: %@", NSStringFromCGRect(cell.frame));
   }
 
   BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];

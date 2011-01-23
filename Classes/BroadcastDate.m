@@ -12,7 +12,7 @@
   [self setBaseURL:[NSURL URLWithString:@"http://itrakt.matsimitsu.com"]];
 }
 
-- (id)initWithDictionary:(NSDictionary *)dict {
+- (id)initWithDictionary:(NSDictionary *)dict delegate:(id)delegate {
     if(self = [super init]) {
       NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
       dateFormatter.dateFormat = @"yyyy-mm-dd";
@@ -21,7 +21,7 @@
       NSMutableArray *objectifiedEpisodes = [[[NSMutableArray alloc] init] autorelease];
 
       for(id episode in [dict valueForKeyPath:@"episodes"]) {
-        [objectifiedEpisodes addObject:[[Episode alloc] initWithDictionary:episode]];
+        [objectifiedEpisodes addObject:[[Episode alloc] initWithDictionary:episode broadcastDate:self delegate:delegate]];
       }
 
       self.episodes = objectifiedEpisodes;
@@ -35,14 +35,16 @@
     NSMutableArray *dates = [[[NSMutableArray alloc] init] autorelease];
 
     for(id item in resource) {
-      [dates addObject:[[BroadcastDate alloc] initWithDictionary:item]];
+      [dates addObject:[[BroadcastDate alloc] initWithDictionary:item delegate:object]];
     }
 
+    NSLog(@"[!] Finished download of calendar data");
     // Let the tableview know we have new dates
     [object performSelector:@selector(datesLoaded:) withObject:dates];
 }
 
 + (id)getDates:(id)object {
+  NSLog(@"[!] Start download of calendar data");
   return [self getPath:@"/users/calendar.json?name=matsimitsu" withOptions:nil object:object];
 }
 

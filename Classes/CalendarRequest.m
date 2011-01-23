@@ -25,8 +25,8 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
   NSMutableArray *dates = [[[NSMutableArray alloc] init] autorelease];
-  NSArray *arrayFromData = [self.calendarData yajl_JSON];
-  [self.calendarData release];
+  NSArray *arrayFromData = [calendarData yajl_JSON];
+  [calendarData release];
 
   for(id item in arrayFromData) {
     [dates addObject:[[BroadcastDate alloc] initWithDictionary:item delegate:delegate]];

@@ -49,7 +49,7 @@
   [super layoutSubviews];
 
   // TODO: this probably has to be dynamic
-  CGFloat numberLabelWidth = 30.0;
+  CGFloat numberLabelWidth = 40.0;
 
   CGFloat width = self.contentView.bounds.size.width;
   CGFloat imageViewHeight = [EpisodeTableViewCell imageViewHeightForWidth:width];

@@ -19,8 +19,8 @@
     self.delegate = delegate;
 
     self.title = [dict valueForKeyPath:@"episode.title"];
-    self.season = (int) [dict valueForKeyPath:@"episode.season"];
-    self.number = (int) [dict valueForKeyPath:@"episode.number"];
+    self.season = (NSUInteger)[[dict valueForKeyPath:@"episode.season"] integerValue];
+    self.number = (NSUInteger)[[dict valueForKeyPath:@"episode.number"] integerValue];
 
     self.bannerURL = [dict valueForKeyPath:@"show.banner"];
 

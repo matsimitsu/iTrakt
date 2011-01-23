@@ -19,6 +19,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection connectionWithRequest:request delegate:self];
   }
+  NSLog(@"[!] Start download of calendar data");
   return self;
 }
 
@@ -38,17 +39,11 @@
   NSLog(@"[!] Finished download of calendar data");
   // Let the tableview know we have new dates
   [delegate performSelector:@selector(datesLoaded:) withObject:dates];
-
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
   NSLog(@"Calendar download failed: %@", [error localizedDescription]);
   [calendarData release];
-}
-
-+ (id)getDates:(id)object {
-  NSLog(@"[!] Start download of calendar data");
-  [[CalendarRequest alloc] initWithDelegate:object];
 }
 
 @end

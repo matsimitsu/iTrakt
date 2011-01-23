@@ -2,6 +2,7 @@
 #import "BroadcastDate.h"
 #import "EpisodeTableViewCell.h"
 #import "Episode.h"
+#import "CalendarRequest.h"
 
 @implementation RootViewController
 
@@ -18,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [BroadcastDate getDates:self];
+    [CalendarRequest getDates:self];
 
     CGFloat tableViewWidth = self.tableView.bounds.size.width;
     self.tableView.rowHeight = [EpisodeTableViewCell heightForWidth:tableViewWidth];

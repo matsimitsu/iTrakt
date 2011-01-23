@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface BroadcastDate : HRRestModel {
+@interface BroadcastDate : NSObject {
   NSDate *date;
   NSArray *episodes;
   NSDictionary *dict;

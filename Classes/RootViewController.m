@@ -63,6 +63,19 @@
  */
 
 
+- (void)episodeDidLoadBanner:(Episode *)episode {
+  NSUInteger *indexes[2];
+  BroadcastDate *broadcastDate = episode.broadcastDate;
+  indexes[0] = [broadcastDates indexOfObject:broadcastDate];
+  indexes[1] = [broadcastDate.episodes indexOfObject:episode];
+  NSIndexPath *indexPath = [NSIndexPath indexPathWithIndexes:indexes length:2];
+  EpisodeTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+  if (cell && [[self.tableView visibleCells] indexOfObject:cell] != NSNotFound) {
+    [cell setNeedsLayout];
+  }
+}
+
+
 #pragma mark -
 #pragma mark Table view data source
 

@@ -14,12 +14,13 @@ As a user I want to mark an episode as seen so I don't see it in the overview of
 As a user I want to receive push notifications about tv series I follow and are about to be aired so I can view it as soon as possible - #5 i2
 As a user I want to indicate whether or not I liked an episode so others will see an average rating indication - #6 i3
 As a user I want to see average ratings for an episode so I know if I should watch it - #7 i3
+As a user I want to see what my friend are watching so I can watch it as well - #11 i4
 
 Trakt API
 
 As a developer I want to retrieve episode stats so I can inform the user about the episode - #8 i3
 As a developer I want to post episode stats so the user can voice her opinion about the episode - #9 i3
-
+As a developer I want to retrieve friends and their shows so the user can see what his friends are watching - #12 i3
 Intermediate API
 
 As a developer I want to send push notifications to the Apple notification server so a user is informed about the broadcast of a tv serie she watches - #10 i2

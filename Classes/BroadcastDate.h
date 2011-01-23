@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#include <HTTPRiot/HTTPRiot.h>
 
 
 @interface BroadcastDate : HRRestModel {

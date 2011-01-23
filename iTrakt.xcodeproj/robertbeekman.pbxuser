@@ -115,9 +115,9 @@
 	};
 	2479A23812EC853F00E2AD4E /* CalendarRequest.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {992, 676}}";
-			sepNavSelRange = "{1480, 0}";
-			sepNavVisRange = "{0, 1169}";
+			sepNavIntBoundsRect = "{{0, 0}, {992, 637}}";
+			sepNavSelRange = "{1462, 0}";
+			sepNavVisRange = "{0, 1197}";
 			sepNavWindowFrame = "{{38, 270}, {1479, 882}}";
 		};
 	};
@@ -812,6 +812,26 @@
 		vrLen = 1169;
 		vrLoc = 0;
 	};
+	2479A2F212EC93C500E2AD4E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2479A23812EC853F00E2AD4E /* CalendarRequest.m */;
+		name = "CalendarRequest.m: 49";
+		rLen = 0;
+		rLoc = 1460;
+		rType = 0;
+		vrLen = 1195;
+		vrLoc = 0;
+	};
+	2479A2FD12EC946800E2AD4E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2479A23812EC853F00E2AD4E /* CalendarRequest.m */;
+		name = "CalendarRequest.m: 49";
+		rLen = 0;
+		rLoc = 1462;
+		rType = 0;
+		vrLen = 1197;
+		vrLoc = 0;
+	};
 	2484C6AC12E9F568000D3871 /* BroadcastDate.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {992, 522}}";
@@ -1047,6 +1067,8 @@
 			2479A2E912EC92B800E2AD4E /* PBXTextBookmark */ = 2479A2E912EC92B800E2AD4E /* PBXTextBookmark */;
 			2479A2EC12EC92CC00E2AD4E /* PBXTextBookmark */ = 2479A2EC12EC92CC00E2AD4E /* PBXTextBookmark */;
 			2479A2EF12EC932500E2AD4E /* PBXTextBookmark */ = 2479A2EF12EC932500E2AD4E /* PBXTextBookmark */;
+			2479A2F212EC93C500E2AD4E /* PBXTextBookmark */ = 2479A2F212EC93C500E2AD4E /* PBXTextBookmark */;
+			2479A2FD12EC946800E2AD4E /* PBXTextBookmark */ = 2479A2FD12EC946800E2AD4E /* PBXTextBookmark */;
 			24D0AF7312EB2A5500BF2C8E = 24D0AF7312EB2A5500BF2C8E /* PBXTextBookmark */;
 			24D0AFF312EB3D8C00BF2C8E = 24D0AFF312EB3D8C00BF2C8E /* PBXTextBookmark */;
 		};

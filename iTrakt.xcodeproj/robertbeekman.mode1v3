@@ -329,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2479A2EF12EC932500E2AD4E</string>
+										<string>2479A2FD12EC946800E2AD4E</string>
 										<key>history</key>
 										<array>
 											<string>2458FBA812EB6955001B7590</string>
@@ -537,8 +537,8 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>2448DC9E12E9DFA900AC422E</string>
 		<string>/Users/robertbeekman/Sites/apps/iTrakt/iTrakt.xcodeproj</string>
+		<string>2448DC9E12E9DFA900AC422E</string>
 		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>

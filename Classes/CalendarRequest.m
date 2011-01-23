@@ -6,7 +6,6 @@
 @implementation CalendarRequest
 
 @synthesize delegate;
-@synthesize object;
 
 @synthesize calendarData;
 
@@ -33,7 +32,7 @@
   [self.calendarData release];
 
   for(id item in arrayFromData) {
-    [dates addObject:[[BroadcastDate alloc] initWithDictionary:item delegate:object]];
+    [dates addObject:[[BroadcastDate alloc] initWithDictionary:item delegate:delegate]];
    }
 
   NSLog(@"[!] Finished download of calendar data");

@@ -11,7 +11,7 @@
 @synthesize calendarData;
 
 
-- (id)initWithDelegate:(id)delegate{
+- (id)initAndGetDatesWithDelegate:(id)delegate{
   if (self = [super init]) {
     self.delegate = delegate;
     self.calendarData = [NSMutableData data];

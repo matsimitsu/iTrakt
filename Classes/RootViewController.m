@@ -21,7 +21,7 @@
     [super viewDidLoad];
 
     // Request the calendar data from the API
-    [[CalendarRequest alloc] initWithDelegate:self];
+    [[CalendarRequest alloc] initAndGetDatesWithDelegate:self];
 
     CGFloat tableViewWidth = self.tableView.bounds.size.width;
     self.tableView.rowHeight = [EpisodeTableViewCell heightForWidth:tableViewWidth];

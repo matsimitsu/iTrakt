@@ -12,6 +12,6 @@
 
 @property (nonatomic, retain) NSData *calendarData;
 
-- (id)initWithDelegate:(id *)delegate object:(id *)object;
+- (id)initAndGetDatesWithDelegate:(id *)delegate object:(id *)object;
 
 @end

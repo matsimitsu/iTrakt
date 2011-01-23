@@ -2,13 +2,10 @@
 #import "BroadcastDate.h"
 #import <YAJL/YAJL.h>
 
-
 @implementation CalendarRequest
 
 @synthesize delegate;
-
 @synthesize calendarData;
-
 
 - (id)initAndGetDatesWithDelegate:(id)delegate{
   if (self = [super init]) {

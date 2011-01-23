@@ -1,4 +1,5 @@
 #import "Episode.h"
+#import "EGOCache.h"
 
 @implementation Episode
 
@@ -6,6 +7,7 @@
 @synthesize broadcastDate;
 
 @synthesize banner;
+@synthesize bannerURL;
 @synthesize bannerData;
 @synthesize title;
 @synthesize season;
@@ -20,12 +22,18 @@
     self.season = (int) [dict valueForKeyPath:@"episode.season"];
     self.number = (int) [dict valueForKeyPath:@"episode.number"];
 
-    self.bannerData = [NSMutableData data];
+    self.bannerURL = [dict valueForKeyPath:@"show.banner"];
 
-    //NSLog(@"Start image download: %@", [dict valueForKeyPath:@"show.banner"]);
-    NSURL *url = [NSURL URLWithString:[dict valueForKeyPath:@"show.banner"]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [NSURLConnection connectionWithRequest:request delegate:self];
+    if ([[EGOCache currentCache] hasCacheForKey:[self.bannerURL lastPathComponent]]) {
+      //NSLog(@"Banner was cached!");
+      self.banner = [UIImage imageWithData:[[EGOCache currentCache] dataForKey:[self.bannerURL lastPathComponent]]];
+    } else {
+      //NSLog(@"Start image download: %@", self.bannerURL);
+      self.bannerData = [NSMutableData data];
+      NSURL *url = [NSURL URLWithString:self.bannerURL];
+      NSURLRequest *request = [NSURLRequest requestWithURL:url];
+      [NSURLConnection connectionWithRequest:request delegate:self];
+    }
   }
   return self;
 }
@@ -42,6 +50,7 @@
   //NSLog(@"Connection finished!");
   self.banner = [UIImage imageWithData:bannerData];
   [bannerData release];
+  [[EGOCache currentCache] setImage:self.banner forKey:[self.bannerURL lastPathComponent]];
   [self.delegate performSelector:@selector(episodeDidLoadBanner:) withObject:self];
 }
 

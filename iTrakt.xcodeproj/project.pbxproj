@@ -17,6 +17,7 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		5134FEBD12EBBF39007ED54E /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134FEBC12EBBF39007ED54E /* EGOCache.m */; };
 		51FBCC9712EA375500073C68 /* EpisodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */; };
 		51FBCC9A12EA391B00073C68 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9912EA391B00073C68 /* Episode.m */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,8 @@
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5134FEBB12EBBF39007ED54E /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGOCache.h; path = vendor/EGOCache/EGOCache.h; sourceTree = "<group>"; };
+		5134FEBC12EBBF39007ED54E /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EGOCache.m; path = vendor/EGOCache/EGOCache.m; sourceTree = "<group>"; };
 		51FBCC9512EA375500073C68 /* EpisodeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodeTableViewCell.h; sourceTree = "<group>"; };
 		51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodeTableViewCell.m; sourceTree = "<group>"; };
 		51FBCC9812EA391B00073C68 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Episode.h; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				5134FEBB12EBBF39007ED54E /* EGOCache.h */,
+				5134FEBC12EBBF39007ED54E /* EGOCache.m */,
 				28A0AAE50D9B0CCF005BE974 /* iTrakt_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -194,6 +199,7 @@
 				51FBCC9712EA375500073C68 /* EpisodeTableViewCell.m in Sources */,
 				51FBCC9A12EA391B00073C68 /* Episode.m in Sources */,
 				24EF210712EA3A2A00B54F6F /* main.m in Sources */,
+				5134FEBD12EBBF39007ED54E /* EGOCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,4 +1,4 @@
-* Cache banners on disk
+* Expire banner cache?
 * Maybe we should drop HTTPRiot in favor of the simpler but async more powerful https://github.com/pokeb/asi-http-request, because for the api we only need a simple JSON deserialization lib.
 * Settings screen to enter username
 * Way to check if username exists

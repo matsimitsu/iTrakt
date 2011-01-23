@@ -5,6 +5,7 @@
   id delegate;
   BroadcastDate *broadcastDate;
   UIImage *banner;
+  NSString *bannerURL;
   NSData *bannerData;
   NSString *title;
   NSUInteger season;
@@ -14,6 +15,7 @@
 @property (nonatomic, assign) id delegate;
 @property (nonatomic, assign) BroadcastDate *broadcastDate;
 @property (nonatomic, retain) UIImage *banner;
+@property (nonatomic, retain) NSString *bannerURL;
 @property (nonatomic, retain) NSData *bannerData;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, assign) NSUInteger season;

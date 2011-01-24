@@ -1,24 +1,20 @@
 #import "EpisodeTableViewCell.h"
 
-// Banners are 758x140, hence for every ASPECT_RATIO pixels in width there is 1 pixel in height
-#define ASPECT_RATIO 5.414285714285714
+// Posters are 138x203, hence for every ASPECT_RATIO pixels in width there is 1 pixel in height
+#define POSTER_ASPECT_RATIO 0.679802955665025
 
-#define MARGIN_AROUND_TITLE 2
+#define MARGIN 8.0
+
+#define MARGIN_UNDERNEATH_LABEL 2.0
 
 @implementation EpisodeTableViewCell
 
 @synthesize episode;
 @synthesize imageView;
-@synthesize numberLabel;
+
 @synthesize titleLabel;
-
-+ (CGFloat)imageViewHeightForWidth:(CGFloat)width {
-  return (CGFloat)floor(width / ASPECT_RATIO);
-}
-
-+ (CGFloat)heightForWidth:(CGFloat)width {
-   return [EpisodeTableViewCell imageViewHeightForWidth:width] + [UIFont smallSystemFontSize] + (MARGIN_AROUND_TITLE * 2);
-}
+@synthesize airTimeAndChannelLabel;
+@synthesize serieTitleAndEpisodeNumberLabel;
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
   if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
@@ -26,21 +22,22 @@
     self.imageView.opaque = YES;
     [self.contentView addSubview:self.imageView];
 
-    self.numberLabel = [UILabel new];
-    self.numberLabel.textColor = [UIColor whiteColor];
-    self.numberLabel.backgroundColor = [UIColor clearColor];
-    self.numberLabel.opaque = YES;
-    self.numberLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
-    self.numberLabel.textAlignment = UITextAlignmentLeft;
-    [self.contentView addSubview:numberLabel];
-
     self.titleLabel = [UILabel new];
-    self.titleLabel.textColor = [UIColor whiteColor];
-    self.titleLabel.backgroundColor = [UIColor clearColor];
     self.titleLabel.opaque = YES;
-    self.titleLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
-    self.titleLabel.textAlignment = UITextAlignmentRight;
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
     [self.contentView addSubview:titleLabel];
+
+    self.serieTitleAndEpisodeNumberLabel = [UILabel new];
+    self.serieTitleAndEpisodeNumberLabel.textColor = [UIColor grayColor];
+    self.serieTitleAndEpisodeNumberLabel.opaque = YES;
+    self.serieTitleAndEpisodeNumberLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
+    [self.contentView addSubview:serieTitleAndEpisodeNumberLabel];
+
+    self.airTimeAndChannelLabel = [UILabel new];
+    self.airTimeAndChannelLabel.textColor = [UIColor grayColor];
+    self.airTimeAndChannelLabel.opaque = YES;
+    self.airTimeAndChannelLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
+    [self.contentView addSubview:airTimeAndChannelLabel];
   }
   return self;
 }
@@ -48,27 +45,39 @@
 - (void)layoutSubviews {
   [super layoutSubviews];
 
-  // TODO: this probably has to be dynamic
-  CGFloat numberLabelWidth = 40.0;
+  CGSize size = self.bounds.size;
 
-  CGFloat width = self.contentView.bounds.size.width;
-  CGFloat imageViewHeight = [EpisodeTableViewCell imageViewHeightForWidth:width];
+  CGFloat x = 0.0;
+  CGFloat y = 0.0;
+  CGFloat imageWidth, labelWidth, labelHeight;
 
-  //self.imageView.image = episode.banner;
-  //self.imageView.frame = CGRectMake(0.0, 0.0, width, imageViewHeight);
+  imageWidth = size.height * POSTER_ASPECT_RATIO;
+  self.imageView.image = episode.poster;
+  self.imageView.frame = CGRectMake(x, y, imageWidth, size.height);
 
-  self.numberLabel.text = [episode numberText];
-  self.numberLabel.frame = CGRectMake(0.0, imageViewHeight, numberLabelWidth, [UIFont smallSystemFontSize] + MARGIN_AROUND_TITLE);
-
+  x += imageWidth + MARGIN;
+  y += MARGIN;
+  labelWidth = size.width - x;
+  labelHeight = [UIFont systemFontSize] + MARGIN_UNDERNEATH_LABEL;
   self.titleLabel.text = episode.title;
-  self.titleLabel.frame = CGRectMake(numberLabelWidth, imageViewHeight, width - numberLabelWidth, [UIFont smallSystemFontSize] + MARGIN_AROUND_TITLE);
+  self.titleLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
+
+  y += labelHeight + MARGIN_UNDERNEATH_LABEL;
+  labelHeight = [UIFont smallSystemFontSize] + MARGIN_UNDERNEATH_LABEL;
+  self.serieTitleAndEpisodeNumberLabel.text = [episode serieTitleAndEpisodeNumber];
+  self.serieTitleAndEpisodeNumberLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
+
+  y += labelHeight + MARGIN_UNDERNEATH_LABEL;
+  self.airTimeAndChannelLabel.text = [episode airTimeAndChannel];
+  self.airTimeAndChannelLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
 }
 
 - (void)dealloc {
   [super dealloc];
-  [imageView dealloc];
-  [numberLabel dealloc];
-  [titleLabel dealloc];
+  [imageView release];
+  [titleLabel release];
+  [airTimeAndChannelLabel release];
+  [serieTitleAndEpisodeNumberLabel release];
 }
 
 @end

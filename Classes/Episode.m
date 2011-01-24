@@ -35,8 +35,12 @@
   [episodeDict release];
 }
 
-- (NSString *)numberText {
-  return [NSString stringWithFormat:@"%dx%02d", season, number, nil];
+- (NSString *)serieTitleAndEpisodeNumber {
+  return [NSString stringWithFormat:@"%@ %dx%02d", [episodeDict valueForKey:@"title"], season, number, nil];
+}
+
+- (NSString *)airTimeAndChannel {
+  return @"8:00pm on FOX";
 }
 
 - (NSString *)posterPNGFilename {
@@ -49,7 +53,7 @@
   if ([[EGOCache currentCache] hasCacheForKey:tvdbID]) {
     NSLog(@"Load episode data from cache for tvdb ID `%@'", tvdbID);
     downloadData = [[EGOCache currentCache] dataForKey:tvdbID];
-    episodeDict = [downloadData yajl_JSON];
+    episodeDict = [[downloadData yajl_JSON] retain];
     [self loadPoster];
   } else {
     downloadData = [[NSMutableData data] retain];
@@ -85,7 +89,7 @@
     [[EGOCache currentCache] setImage:poster forKey:[self posterPNGFilename]];
   } else {
     NSLog(@"Episode data download finished!");
-    episodeDict = [downloadData yajl_JSON];
+    episodeDict = [[downloadData yajl_JSON] retain];
     [[EGOCache currentCache] setData:downloadData forKey:tvdbID];
   }
   [downloadData release];

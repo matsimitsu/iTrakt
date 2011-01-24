@@ -4,16 +4,17 @@
 @interface EpisodeTableViewCell : UITableViewCell {
   Episode *episode;
   UIImageView *imageView;
-  UILabel *numberLabel;
+
   UILabel *titleLabel;
+  UILabel *airTimeAndChannelLabel;
+  UILabel *serieTitleAndEpisodeNumberLabel;
 }
 
 @property (nonatomic, retain) Episode *episode;
 @property (nonatomic, retain) UIImageView *imageView;
-@property (nonatomic, retain) UILabel *numberLabel;
-@property (nonatomic, retain) UILabel *titleLabel;
 
-+ (CGFloat)imageViewHeightForWidth:(CGFloat)width;
-+ (CGFloat)heightForWidth:(CGFloat)width;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) UILabel *airTimeAndChannelLabel;
+@property (nonatomic, retain) UILabel *serieTitleAndEpisodeNumberLabel;
 
 @end

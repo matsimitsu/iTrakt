@@ -4,6 +4,8 @@
 #import "Episode.h"
 #import "CalendarRequest.h"
 
+#define ROW_HEIGHT 66.0
+
 @implementation RootViewController
 
 @synthesize broadcastDates;
@@ -24,11 +26,7 @@
     [[CalendarRequest alloc] initAndGetDatesWithDelegate:self];
 
     CGFloat tableViewWidth = self.tableView.bounds.size.width;
-    self.tableView.rowHeight = [EpisodeTableViewCell heightForWidth:tableViewWidth];
-
-    self.tableView.backgroundColor = [UIColor blackColor];
-    self.tableView.separatorColor = [UIColor darkGrayColor];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+    self.tableView.rowHeight = ROW_HEIGHT;
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;

@@ -27,6 +27,6 @@
 
 - (id)initWithDictionary:(NSDictionary *)dict;
 
-- (NSString *)numberText;
+- (NSString *)serieTitleAndEpisodeNumber;
 
 @end

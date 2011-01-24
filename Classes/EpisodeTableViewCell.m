@@ -32,13 +32,11 @@
     [self.contentView addSubview:titleLabel];
 
     self.serieTitleAndEpisodeNumberLabel = [UILabel new];
-    self.serieTitleAndEpisodeNumberLabel.textColor = [UIColor grayColor];
     self.serieTitleAndEpisodeNumberLabel.opaque = YES;
     self.serieTitleAndEpisodeNumberLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
     [self.contentView addSubview:serieTitleAndEpisodeNumberLabel];
 
     self.airTimeAndChannelLabel = [UILabel new];
-    self.airTimeAndChannelLabel.textColor = [UIColor grayColor];
     self.airTimeAndChannelLabel.opaque = YES;
     self.airTimeAndChannelLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
     [self.contentView addSubview:airTimeAndChannelLabel];
@@ -48,6 +46,16 @@
 
 - (void)layoutSubviews {
   [super layoutSubviews];
+
+  if (self.selected) {
+    self.titleLabel.textColor = [UIColor whiteColor];
+    self.airTimeAndChannelLabel.textColor = [UIColor whiteColor];
+    self.serieTitleAndEpisodeNumberLabel.textColor = [UIColor whiteColor];
+  } else {
+    self.titleLabel.textColor = [UIColor blackColor];
+    self.airTimeAndChannelLabel.textColor = [UIColor grayColor];
+    self.serieTitleAndEpisodeNumberLabel.textColor = [UIColor grayColor];
+  }
 
   CGSize size = self.bounds.size;
 

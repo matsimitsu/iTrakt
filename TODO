@@ -1,7 +1,8 @@
+* Calendar API:
+  * We need the poster image url that's available in the show summary data
+  * We need the channel on which the episode will air
 * There appears to be a timezone bug, as on monday morning I still see listings for sunday the 23rd, although the listings *might* still be correct, the date at the very least has to be localized. I've included a screenshot of the listing on monday 24th of january at 10:30AM.
-
-* Expire banner cache?
-* Maybe we should drop HTTPRiot in favor of the simpler but async more powerful https://github.com/pokeb/asi-http-request, because for the api we only need a simple JSON deserialization lib.
+* Expire poster cache?
 * Settings screen to enter username
 * Way to check if username exists
 * Add load screen

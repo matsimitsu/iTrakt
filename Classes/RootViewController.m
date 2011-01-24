@@ -13,18 +13,11 @@
 #pragma mark View lifecycle
 
 
-- (void)datesLoaded:(id *)dates {
-  self.broadcastDates = dates;
-  [self.tableView reloadData];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Request the calendar data from the API
-    [[CalendarRequest alloc] initAndGetDatesWithDelegate:self];
+    [[CalendarRequest alloc] initWithDelegate:self];
 
-    CGFloat tableViewWidth = self.tableView.bounds.size.width;
     self.tableView.rowHeight = ROW_HEIGHT;
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -63,8 +56,14 @@
  */
 
 
+- (void)datesLoaded:(NSArray *)dates {
+  self.broadcastDates = dates;
+  [self.tableView reloadData];
+}
+
+
 - (void)episodeDidLoadPoster:(Episode *)episode {
-  NSUInteger *indexes[2];
+  NSUInteger indexes[2];
   BroadcastDate *broadcastDate = episode.broadcastDate;
   indexes[0] = [broadcastDates indexOfObject:broadcastDate];
   indexes[1] = [broadcastDate.episodes indexOfObject:episode];
@@ -105,10 +104,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
   static NSString *cellIdentifier = @"episodeCell";
-  EpisodeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+  EpisodeTableViewCell *cell = (EpisodeTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
   if (cell == nil) {
-    CGRect frame = CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, self.tableView.rowHeight);
-    cell = [[[EpisodeTableViewCell alloc] initWithFrame:frame reuseIdentifier:cellIdentifier] autorelease];
+    cell = [[[EpisodeTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+    cell.frame = CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, self.tableView.rowHeight);
   }
 
 

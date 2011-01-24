@@ -1,5 +1,6 @@
 #import "Episode.h"
 #import "EGOCache.h"
+#import <YAJL/YAJL.h>
 
 @implementation Episode
 
@@ -13,18 +14,18 @@
 @synthesize season;
 @synthesize number;
 
-- (id)initWithDictionary:(NSDictionary *)dict broadcastDate:(BroadcastDate *)broadcastDate delegate:(id)delegate {
+- (id)initWithDictionary:(NSDictionary *)episodeInfo broadcastDate:(BroadcastDate *)theBroadcastDate delegate:(id)theDelegate {
   if (self = [super init]) {
     showInfo = nil;
 
-    self.broadcastDate = broadcastDate;
-    self.delegate = delegate;
+    self.broadcastDate = theBroadcastDate;
+    self.delegate = theDelegate;
 
-    self.tvdbID    = [dict valueForKeyPath:@"show.tvdb_id"];
-    self.showTitle = [dict valueForKeyPath:@"show.title"];
-    self.title     = [dict valueForKeyPath:@"episode.title"];
-    self.season    = [[dict valueForKeyPath:@"episode.season"] integerValue];
-    self.number    = [[dict valueForKeyPath:@"episode.number"] integerValue];
+    self.tvdbID    = [episodeInfo valueForKeyPath:@"show.tvdb_id"];
+    self.showTitle = [episodeInfo valueForKeyPath:@"show.title"];
+    self.title     = [episodeInfo valueForKeyPath:@"episode.title"];
+    self.season    = [[episodeInfo valueForKeyPath:@"episode.season"] integerValue];
+    self.number    = [[episodeInfo valueForKeyPath:@"episode.number"] integerValue];
 
     [self loadEpisodeData];
   }
@@ -58,8 +59,8 @@
 
   if ([[EGOCache currentCache] hasCacheForKey:tvdbID]) {
     NSLog(@"Load episode data from cache for tvdb ID `%@'", tvdbID);
-    downloadData = [[EGOCache currentCache] dataForKey:tvdbID];
-    showInfo = [[downloadData yajl_JSON] retain];
+    NSData *episodeData = [[EGOCache currentCache] dataForKey:tvdbID];
+    showInfo = [[episodeData yajl_JSON] retain];
     [self loadPoster];
   } else {
     downloadData = [[NSMutableData data] retain];

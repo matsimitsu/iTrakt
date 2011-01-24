@@ -17,4 +17,6 @@
 @property (nonatomic, retain) UILabel *airTimeAndChannelLabel;
 @property (nonatomic, retain) UILabel *serieTitleAndEpisodeNumberLabel;
 
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
+
 @end

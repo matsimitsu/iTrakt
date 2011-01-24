@@ -16,8 +16,12 @@
 @synthesize airTimeAndChannelLabel;
 @synthesize serieTitleAndEpisodeNumberLabel;
 
-- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
-  if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
+  return [self initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+}
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+  if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
     self.imageView = [UIImageView new];
     self.imageView.opaque = YES;
     [self.contentView addSubview:self.imageView];

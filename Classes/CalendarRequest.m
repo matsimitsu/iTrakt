@@ -7,9 +7,9 @@
 @synthesize delegate;
 @synthesize calendarData;
 
-- (id)initAndGetDatesWithDelegate:(id)delegate{
+- (id)initWithDelegate:(id)theDelegate {
   if (self = [super init]) {
-    self.delegate = delegate;
+    self.delegate = theDelegate;
     self.calendarData = [NSMutableData data];
     NSURL *url = [NSURL URLWithString:@"http://itrakt.matsimitsu.com/users/calendar.json?name=matsimitsu"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

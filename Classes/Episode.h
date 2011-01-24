@@ -5,7 +5,7 @@
   id delegate;
   BroadcastDate *broadcastDate;
 
-  NSData *downloadData;
+  NSMutableData *downloadData;
 
   NSDictionary *showInfo;
 
@@ -27,8 +27,13 @@
 @property (nonatomic, assign) NSUInteger season;
 @property (nonatomic, assign) NSUInteger number;
 
-- (id)initWithDictionary:(NSDictionary *)dict;
+- (id)initWithDictionary:(NSDictionary *)episodeInfo broadcastDate:(BroadcastDate *)theBroadcastDate delegate:(id)theDelegate;
 
 - (NSString *)serieTitleAndEpisodeNumber;
+- (NSString *)airTimeAndChannel;
+- (NSString *)posterPNGFilename;
+
+- (void)loadEpisodeData;
+- (void)loadPoster;
 
 @end

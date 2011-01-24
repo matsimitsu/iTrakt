@@ -9,12 +9,7 @@
 
   NSDictionary *episodeDict;
 
-  UIImage *banner;
-  NSString *bannerURL;
-  NSData *bannerData;
-
   UIImage *poster;
-
   NSString *tvdbID;
   NSString *title;
   NSUInteger season;
@@ -24,12 +19,7 @@
 @property (nonatomic, assign) id delegate;
 @property (nonatomic, assign) BroadcastDate *broadcastDate;
 
-@property (nonatomic, retain) UIImage *banner;
-@property (nonatomic, retain) NSString *bannerURL;
-@property (nonatomic, retain) NSData *bannerData;
-
 @property (nonatomic, retain) UIImage *poster;
-
 @property (nonatomic, retain) NSString *tvdbID;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, assign) NSUInteger season;

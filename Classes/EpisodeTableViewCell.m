@@ -54,8 +54,8 @@
   CGFloat width = self.contentView.bounds.size.width;
   CGFloat imageViewHeight = [EpisodeTableViewCell imageViewHeightForWidth:width];
 
-  self.imageView.image = episode.banner;
-  self.imageView.frame = CGRectMake(0.0, 0.0, width, imageViewHeight);
+  //self.imageView.image = episode.banner;
+  //self.imageView.frame = CGRectMake(0.0, 0.0, width, imageViewHeight);
 
   self.numberLabel.text = [episode numberText];
   self.numberLabel.frame = CGRectMake(0.0, imageViewHeight, numberLabelWidth, [UIFont smallSystemFontSize] + MARGIN_AROUND_TITLE);

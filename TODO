@@ -1,3 +1,5 @@
+* There appears to be a timezone bug, as on monday morning I still see listings for sunday the 23rd, although the listings *might* still be correct, the date at the very least has to be localized. I've included a screenshot of the listing on monday 24th of january at 10:30AM.
+
 * Expire banner cache?
 * Maybe we should drop HTTPRiot in favor of the simpler but async more powerful https://github.com/pokeb/asi-http-request, because for the api we only need a simple JSON deserialization lib.
 * Settings screen to enter username

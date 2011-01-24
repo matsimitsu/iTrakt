@@ -5,7 +5,8 @@
   id delegate;
   BroadcastDate *broadcastDate;
 
-  NSData *episodeData;
+  NSData *downloadData;
+
   NSDictionary *episodeDict;
 
   UIImage *banner;
@@ -13,7 +14,6 @@
   NSData *bannerData;
 
   UIImage *poster;
-  NSData *posterData;
 
   NSString *tvdbID;
   NSString *title;
@@ -29,7 +29,6 @@
 @property (nonatomic, retain) NSData *bannerData;
 
 @property (nonatomic, retain) UIImage *poster;
-@property (nonatomic, retain) NSData *posterData;
 
 @property (nonatomic, retain) NSString *tvdbID;
 @property (nonatomic, retain) NSString *title;

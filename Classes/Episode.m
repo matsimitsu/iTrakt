@@ -11,7 +11,6 @@
 @synthesize bannerData;
 
 @synthesize poster;
-@synthesize posterData;
 
 @synthesize tvdbID;
 @synthesize title;
@@ -20,6 +19,8 @@
 
 - (id)initWithDictionary:(NSDictionary *)dict broadcastDate:(BroadcastDate *)broadcastDate delegate:(id)delegate {
   if (self = [super init]) {
+    episodeDict = nil;
+
     self.broadcastDate = broadcastDate;
     self.delegate = delegate;
 
@@ -36,11 +37,11 @@
 
     if ([[EGOCache currentCache] hasCacheForKey:tvdbID]) {
       NSLog(@"Load episode data from cache for tvdb ID `%@'", tvdbID);
-      episodeData = [[EGOCache currentCache] dataForKey:tvdbID];
-      episodeDict = [[episodeData yajl_JSON] retain];
-      [episodeData release];
+      downloadData = [[EGOCache currentCache] dataForKey:tvdbID];
+      episodeDict = [downloadData yajl_JSON];
+      [self loadPoster];
     } else {
-      episodeData = [[NSMutableData data] retain];
+      downloadData = [[NSMutableData data] retain];
       NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.trakt.tv/show/summary.json/%@/%@", apiKey, tvdbID, nil]];
       NSLog(@"Download episode data from for tvdb ID `%@'", tvdbID);
       NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -71,23 +72,44 @@
   return [NSString stringWithFormat:@"%dx%02d", season, number, nil];
 }
 
+- (NSString *)posterPNGFilename {
+  return [NSString stringWithFormat:@"%@.png", tvdbID, nil];
+}
+
+- (void)loadPoster {
+  if ([[EGOCache currentCache] hasCacheForKey:[self posterPNGFilename]]) {
+    NSLog(@"Loading poster from cache with tvdb ID `%@'", tvdbID);
+    self.poster = [UIImage imageWithData:[[EGOCache currentCache] dataForKey:[self posterPNGFilename]]];
+  } else {
+    NSString *posterURL = [episodeDict valueForKey:@"poster"];
+    NSLog(@"Start poster download for tvdb ID `%@' from: %@", tvdbID, posterURL);
+    downloadData = [[NSMutableData data] retain];
+    NSURL *url = [NSURL URLWithString:posterURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [NSURLConnection connectionWithRequest:request delegate:self];
+  }
+}
+
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-  [episodeData appendData:data];
+  [downloadData appendData:data];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-  NSLog(@"Episode data download finished!");
-  episodeDict = [[episodeData yajl_JSON] retain];
-  [[EGOCache currentCache] setData:episodeData forKey:tvdbID];
-  [episodeData release];
-  //episodeDict = [[arrayFromData objectAtIndex:0] retain];
-  //NSLog(@"%@", episodeDict);
-  //[[EGOCache currentCache] setPlist:episodeDict forKey:[NSString stringWithFormat:@"%@.plist", tvdbID, nil]];
+  if (episodeDict) {
+    NSLog(@"Poster data download finished!");
+    self.poster = [UIImage imageWithData:downloadData];
+    [[EGOCache currentCache] setImage:poster forKey:[self posterPNGFilename]];
+  } else {
+    NSLog(@"Episode data download finished!");
+    episodeDict = [downloadData yajl_JSON];
+    [[EGOCache currentCache] setData:downloadData forKey:tvdbID];
+  }
+  [downloadData release];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-  NSLog(@"Episode data download failed: %@", [error localizedDescription]);
-  [episodeData release];
+  NSLog(@"Data download failed: %@", [error localizedDescription]);
+  [downloadData release];
 }
 
 //- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {

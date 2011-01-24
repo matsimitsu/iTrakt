@@ -33,6 +33,10 @@
 
 - (void)dealloc {
   [super dealloc];
+  [poster release];
+  [tvdbID release];
+  [title release];
+  [showTitle release];
   [showInfo release];
 }
 
@@ -40,6 +44,7 @@
   return [NSString stringWithFormat:@"%@ %dx%02d", showTitle, season, number, nil];
 }
 
+// TODO this has to be added to the calendar API
 - (NSString *)airTimeAndChannel {
   return @"8:00pm on FOX";
 }

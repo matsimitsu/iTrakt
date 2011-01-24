@@ -7,9 +7,10 @@
 
   NSData *downloadData;
 
-  NSDictionary *episodeDict;
+  NSDictionary *showInfo;
 
   UIImage *poster;
+  NSString *showTitle;
   NSString *tvdbID;
   NSString *title;
   NSUInteger season;
@@ -21,6 +22,7 @@
 
 @property (nonatomic, retain) UIImage *poster;
 @property (nonatomic, retain) NSString *tvdbID;
+@property (nonatomic, retain) NSString *showTitle;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, assign) NSUInteger season;
 @property (nonatomic, assign) NSUInteger number;

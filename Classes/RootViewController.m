@@ -1,7 +1,6 @@
 #import "RootViewController.h"
 #import "BroadcastDate.h"
 #import "EpisodeTableViewCell.h"
-#import "Episode.h"
 #import "CalendarRequest.h"
 
 #define ROW_HEIGHT 66.0
@@ -64,13 +63,13 @@
  */
 
 
-- (void)episodeDidLoadBanner:(Episode *)episode {
+- (void)episodeDidLoadPoster:(Episode *)episode {
   NSUInteger *indexes[2];
   BroadcastDate *broadcastDate = episode.broadcastDate;
   indexes[0] = [broadcastDates indexOfObject:broadcastDate];
   indexes[1] = [broadcastDate.episodes indexOfObject:episode];
   NSIndexPath *indexPath = [NSIndexPath indexPathWithIndexes:indexes length:2];
-  EpisodeTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+  UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
   if (cell && [[self.tableView visibleCells] indexOfObject:cell] != NSNotFound) {
     [cell setNeedsLayout];
   }

@@ -7,23 +7,24 @@
 @synthesize broadcastDate;
 
 @synthesize poster;
-
 @synthesize tvdbID;
+@synthesize showTitle;
 @synthesize title;
 @synthesize season;
 @synthesize number;
 
 - (id)initWithDictionary:(NSDictionary *)dict broadcastDate:(BroadcastDate *)broadcastDate delegate:(id)delegate {
   if (self = [super init]) {
-    episodeDict = nil;
+    showInfo = nil;
 
     self.broadcastDate = broadcastDate;
     self.delegate = delegate;
 
-    self.tvdbID = [dict valueForKeyPath:@"show.tvdb_id"];
-    self.title  = [dict valueForKeyPath:@"episode.title"];
-    self.season = [[dict valueForKeyPath:@"episode.season"] integerValue];
-    self.number = [[dict valueForKeyPath:@"episode.number"] integerValue];
+    self.tvdbID    = [dict valueForKeyPath:@"show.tvdb_id"];
+    self.showTitle = [dict valueForKeyPath:@"show.title"];
+    self.title     = [dict valueForKeyPath:@"episode.title"];
+    self.season    = [[dict valueForKeyPath:@"episode.season"] integerValue];
+    self.number    = [[dict valueForKeyPath:@"episode.number"] integerValue];
 
     [self loadEpisodeData];
   }
@@ -32,11 +33,11 @@
 
 - (void)dealloc {
   [super dealloc];
-  [episodeDict release];
+  [showInfo release];
 }
 
 - (NSString *)serieTitleAndEpisodeNumber {
-  return [NSString stringWithFormat:@"%@ %dx%02d", [episodeDict valueForKey:@"title"], season, number, nil];
+  return [NSString stringWithFormat:@"%@ %dx%02d", showTitle, season, number, nil];
 }
 
 - (NSString *)airTimeAndChannel {
@@ -53,12 +54,12 @@
   if ([[EGOCache currentCache] hasCacheForKey:tvdbID]) {
     NSLog(@"Load episode data from cache for tvdb ID `%@'", tvdbID);
     downloadData = [[EGOCache currentCache] dataForKey:tvdbID];
-    episodeDict = [[downloadData yajl_JSON] retain];
+    showInfo = [[downloadData yajl_JSON] retain];
     [self loadPoster];
   } else {
     downloadData = [[NSMutableData data] retain];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.trakt.tv/show/summary.json/%@/%@", apiKey, tvdbID, nil]];
-    NSLog(@"Download episode data from for tvdb ID `%@'", tvdbID);
+    NSLog(@"Download episode data for tvdb ID `%@'", tvdbID);
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection connectionWithRequest:request delegate:self];
   }
@@ -69,7 +70,7 @@
     NSLog(@"Loading poster from cache with tvdb ID `%@'", tvdbID);
     self.poster = [UIImage imageWithData:[[EGOCache currentCache] dataForKey:[self posterPNGFilename]]];
   } else {
-    NSString *posterURL = [episodeDict valueForKey:@"poster"];
+    NSString *posterURL = [showInfo valueForKey:@"poster"];
     NSLog(@"Start poster download for tvdb ID `%@' from: %@", tvdbID, posterURL);
     downloadData = [[NSMutableData data] retain];
     NSURL *url = [NSURL URLWithString:posterURL];
@@ -83,16 +84,19 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-  if (episodeDict) {
+  if (showInfo) {
     NSLog(@"Poster data download finished!");
     self.poster = [UIImage imageWithData:downloadData];
     [[EGOCache currentCache] setImage:poster forKey:[self posterPNGFilename]];
+    [downloadData release];
+    [delegate performSelector:@selector(episodeDidLoadPoster:) withObject:self];
   } else {
-    NSLog(@"Episode data download finished!");
-    episodeDict = [[downloadData yajl_JSON] retain];
+    NSLog(@"Show data download finished!");
+    showInfo = [[downloadData yajl_JSON] retain];
     [[EGOCache currentCache] setData:downloadData forKey:tvdbID];
+    [downloadData release];
+    [self loadPoster];
   }
-  [downloadData release];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {

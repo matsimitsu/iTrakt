@@ -73,7 +73,7 @@
   if (indexPath.section == 0) {
     // TODO: duplication of code in ImageCell
     CGFloat indentationWidth = 10.0;
-    CGFloat width = self.tableView.bounds.size.width - ((2 * indentationWidth) + 0.75);
+    CGFloat width = self.tableView.bounds.size.width - (2 * indentationWidth);
     return floor(width / EPISODE_IMAGE_ASPECT_RATIO);
   } else {
     return self.tableView.rowHeight;

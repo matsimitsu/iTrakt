@@ -1,4 +1,7 @@
 #import "EpisodeDetailsViewController.h"
+#import "ImageCell.h"
+
+#define EPISODE_IMAGE_ASPECT_RATIO 1.78
 
 @implementation EpisodeDetailsViewController
 
@@ -46,5 +49,49 @@
   [episode release];
 }
 
+
+#pragma mark Table view data source
+
+// Customize the number of sections in the table view.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return 1;
+}
+
+
+// Customize the number of rows in the table view.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return 1;
+}
+
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  return self.episode.title;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.section == 0) {
+    // TODO: duplication of code in ImageCell
+    CGFloat indentationWidth = 10.0;
+    CGFloat width = self.tableView.bounds.size.width - ((2 * indentationWidth) + 0.75);
+    return floor(width / EPISODE_IMAGE_ASPECT_RATIO);
+  } else {
+    return self.tableView.rowHeight;
+  }
+}
+
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  static NSString *cellIdentifier = @"episodeImageCell";
+  ImageCell *cell = (ImageCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+  if (cell == nil) {
+    cell = [[[ImageCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+  }
+
+  cell.image = [UIImage imageNamed:@"episode.jpg"];
+
+  return cell;
+}
 
 @end

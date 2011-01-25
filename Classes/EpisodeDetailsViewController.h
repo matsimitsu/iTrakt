@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "Episode.h"
 
-@interface EpisodeDetailsViewController : UIViewController {
+@interface EpisodeDetailsViewController : UITableViewController {
   Episode *episode;
 }
 

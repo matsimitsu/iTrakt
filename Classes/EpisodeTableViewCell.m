@@ -1,4 +1,5 @@
 #import "EpisodeTableViewCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 // Posters are 138x203, hence for every ASPECT_RATIO pixels in width there is 1 pixel in height
 #define POSTER_ASPECT_RATIO 0.679802955665025
@@ -22,8 +23,11 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
   if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
     self.imageView = [UIImageView new];
     self.imageView.opaque = YES;
+    //self.imageView.layer.minificationFilter = kCAFilterTrilinear;
     [self.contentView addSubview:self.imageView];
 
     self.titleLabel = [UILabel new];

@@ -32,6 +32,7 @@
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
 		5134008612EF4D72007ED54E /* EpisodeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */; };
 		5134008712EF4D72007ED54E /* EpisodeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */; };
+		513400A712EF5299007ED54E /* episode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 513400A612EF5299007ED54E /* episode.jpg */; };
 		5134FEBD12EBBF39007ED54E /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134FEBC12EBBF39007ED54E /* EGOCache.m */; };
 		51FBCC9712EA375500073C68 /* EpisodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */; };
 		51FBCC9A12EA391B00073C68 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9912EA391B00073C68 /* Episode.m */; };
@@ -70,6 +71,7 @@
 		5134008312EF4D72007ED54E /* EpisodeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodeDetailsViewController.h; sourceTree = "<group>"; };
 		5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodeDetailsViewController.m; sourceTree = "<group>"; };
 		5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EpisodeDetailsViewController.xib; path = Classes/EpisodeDetailsViewController.xib; sourceTree = "<group>"; };
+		513400A612EF5299007ED54E /* episode.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = episode.jpg; path = design/episode.jpg; sourceTree = "<group>"; };
 		5134FEBB12EBBF39007ED54E /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGOCache.h; path = vendor/EGOCache/EGOCache.h; sourceTree = "<group>"; };
 		5134FEBC12EBBF39007ED54E /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EGOCache.m; path = vendor/EGOCache/EGOCache.m; sourceTree = "<group>"; };
 		51FBCC9512EA375500073C68 /* EpisodeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodeTableViewCell.h; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				513400A612EF5299007ED54E /* episode.jpg */,
 				2458FBDB12EB69D9001B7590 /* Images */,
 				2448DCED12E9EDD600AC422E /* banner.jpg */,
 				5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */,
@@ -253,6 +256,7 @@
 				2458FBC712EB6978001B7590 /* Default-Portrait.png in Resources */,
 				2458FBC812EB6978001B7590 /* Default-Landscape.png in Resources */,
 				5134008712EF4D72007ED54E /* EpisodeDetailsViewController.xib in Resources */,
+				513400A712EF5299007ED54E /* episode.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

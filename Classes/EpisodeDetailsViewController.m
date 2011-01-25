@@ -7,6 +7,7 @@
 - (id)initWithEpisode:(Episode *)theEpisode {
   if (self = [super initWithNibName:@"EpisodeDetailsViewController" bundle:nil]) {
     self.episode = theEpisode;
+    self.navigationItem.title = episode.showTitle;
   }
   return self;
 }

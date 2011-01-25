@@ -15,14 +15,16 @@
 
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+  [super viewDidLoad];
 
-    [[CalendarRequest alloc] initWithDelegate:self];
+  self.navigationItem.title = @"Calendar";
 
-    self.tableView.rowHeight = ROW_HEIGHT;
+  [[CalendarRequest alloc] initWithDelegate:self];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  self.tableView.rowHeight = ROW_HEIGHT;
+
+  // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+  // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 

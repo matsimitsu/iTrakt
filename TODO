@@ -1,5 +1,7 @@
 * Calendar API:
   * We need the poster image url that's available in the show summary data
+  * We need the url of the episode specific image that's show on an episode's overview on the site.
+    E.g.: http://assets.trakt.tv/images/episodes/87-3-11.jpg from http://trakt.tv/show/fringe/season/3/episode/11
   * We need the channel on which the episode will air
 * There appears to be a timezone bug, as on monday morning I still see listings for sunday the 23rd, although the listings *might* still be correct, the date at the very least has to be localized. I've included a screenshot of the listing on monday 24th of january at 10:30AM.
 * Expire poster cache?

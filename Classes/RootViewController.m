@@ -1,6 +1,7 @@
 #import "RootViewController.h"
 #import "BroadcastDate.h"
 #import "EpisodeTableViewCell.h"
+#import "EpisodeDetailsViewController.h"
 #import "CalendarRequest.h"
 
 #define ROW_HEIGHT 66.0
@@ -168,15 +169,14 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
+  Episode *episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
 
-  /*
-   <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-   [self.navigationController pushViewController:detailViewController animated:YES];
-   [detailViewController release];
-   */
+  EpisodeDetailsViewController *controller = [[EpisodeDetailsViewController alloc] initWithEpisode:episode];
+  [self.navigationController pushViewController:controller animated:YES];
+  [controller release];
 }
+
 
 // TODO this is where we should deliver our own section headers
 //- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

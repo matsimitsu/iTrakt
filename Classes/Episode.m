@@ -41,8 +41,12 @@
   [showInfo release];
 }
 
+- (NSString *)episodeNumber {
+  return [NSString stringWithFormat:@"%dx%02d", season, number, nil];
+}
+
 - (NSString *)serieTitleAndEpisodeNumber {
-  return [NSString stringWithFormat:@"%@ %dx%02d", showTitle, season, number, nil];
+  return [NSString stringWithFormat:@"%@ %@", showTitle, [self episodeNumber], nil];
 }
 
 // TODO this has to be added to the calendar API
@@ -52,6 +56,14 @@
 
 - (NSString *)posterPNGFilename {
   return [NSString stringWithFormat:@"%@.png", tvdbID, nil];
+}
+
+- (UIImage *)image {
+  return [UIImage imageNamed:@"episode.jpg"];
+}
+
+- (NSString *)description {
+  return @"When the Fringe Team visits Massive Dynamic’s assembly of the doomsday device, Walter becomes greatly concerned for Peter’s well-being, so he turns to Nina for added brain power to understand the relationship between Peter and the superweapon. Meanwhile, the discovery of a dead body triggers an intense investigation.";
 }
 
 - (void)loadEpisodeData {

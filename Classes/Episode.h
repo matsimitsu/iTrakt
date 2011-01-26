@@ -29,9 +29,15 @@
 
 - (id)initWithDictionary:(NSDictionary *)episodeInfo broadcastDate:(BroadcastDate *)theBroadcastDate delegate:(id)theDelegate;
 
+- (NSString *)episodeNumber;
 - (NSString *)serieTitleAndEpisodeNumber;
+
 - (NSString *)airTimeAndChannel;
 - (NSString *)posterPNGFilename;
+
+// TODO for now just stubs
+- (UIImage *)image;
+- (NSString *)description;
 
 - (void)loadEpisodeData;
 - (void)loadPoster;

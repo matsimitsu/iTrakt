@@ -54,44 +54,77 @@
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 1;
+  return 2;
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 1;
+  return section == 0 ? 1 : 3;
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-  return self.episode.title;
+  return section == 0 ? self.episode.title : nil;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.section == 0) {
+    // Calculate height for image cell
     // TODO: duplication of code in ImageCell
     CGFloat indentationWidth = 10.0;
     CGFloat width = self.tableView.bounds.size.width - (2 * indentationWidth);
     return floor(width / EPISODE_IMAGE_ASPECT_RATIO);
   } else {
-    return self.tableView.rowHeight;
+    if (indexPath.row == 0) {
+      // Calculate height for episode description
+      CGSize size = [[episode description] sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]
+                                      constrainedToSize:CGSizeMake(300.0, 20000.0)
+                                          lineBreakMode:UILineBreakModeWordWrap];
+      return size.height + 16.0;
+    } else {
+      // Other text cells have the default height
+      return self.tableView.rowHeight;
+    }
   }
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  static NSString *cellIdentifier = @"episodeImageCell";
-  ImageCell *cell = (ImageCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-  if (cell == nil) {
-    cell = [[[ImageCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+  if (indexPath.section == 0) {
+    static NSString *cellIdentifier = @"episodeImageCell";
+    ImageCell *cell = (ImageCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+      cell = [[[ImageCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+    }
+    cell.image = [episode image];
+    return cell;
+  } else {
+    static NSString *cellIdentifier = @"textCell";
+    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+      cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+      cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+      cell.textLabel.numberOfLines = 0;
+      cell.textLabel.minimumFontSize = [UIFont systemFontSize];
+      cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    }
+    UILabel *label = cell.textLabel;
+    switch (indexPath.row) {
+      case 0:
+        label.text = [episode description];
+        break;
+      case 1:
+        label.text = [NSString stringWithFormat:@"Episode %@", [episode episodeNumber], nil];
+        break;
+      case 2:
+        label.text = @"Seen";
+        break;
+    }
+    return cell;
   }
-
-  cell.image = [UIImage imageNamed:@"episode.jpg"];
-
-  return cell;
 }
 
 @end

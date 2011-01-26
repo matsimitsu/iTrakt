@@ -111,6 +111,8 @@
       cell.textLabel.minimumFontSize = [UIFont systemFontSize];
       cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     UILabel *label = cell.textLabel;
     switch (indexPath.row) {
       case 0:
@@ -120,10 +122,24 @@
         label.text = [NSString stringWithFormat:@"Episode %@", [episode episodeNumber], nil];
         break;
       case 2:
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         label.text = @"Seen";
         break;
     }
     return cell;
+  }
+}
+
+
+#pragma mark Table view delegate
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  // this is the 'seen' row, the other section only has one row (the image)
+  if (indexPath.row == 2) {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = cell.accessoryType == UITableViewCellAccessoryNone ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    [cell setSelected:NO animated:YES];
   }
 }
 

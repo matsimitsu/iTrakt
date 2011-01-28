@@ -48,7 +48,6 @@
   CGRect frame = self.bounds;
   frame.size.width -= (2 * self.indentationWidth);
   frame.size.height -= 2.0;
-  NSLog(@"frame: %@", NSStringFromCGRect(frame));
 
   self.imageView.image = self.image;
   self.imageView.frame = frame;

@@ -57,11 +57,12 @@
       (else
         ; DONE!
         ($BaconSummary print)
-        (try
-          ((NSApplication sharedApplication) terminate:self)
-          (catch (e))
-          ; running on iOS most probably
-        )
+        (exit)
+        ;(try
+          ;((NSApplication sharedApplication) terminate:self)
+          ;(catch (e))
+          ;; running on iOS most probably
+        ;)
       )
     )
   )

@@ -55,6 +55,9 @@
 		510C6AE012F36516000500A1 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 513400C512EF71A4007ED54E /* ImageCell.m */; };
 		510C6AE412F36538000500A1 /* EGOCache.h in Sources */ = {isa = PBXBuildFile; fileRef = 5134FEBB12EBBF39007ED54E /* EGOCache.h */; };
 		510C6AE512F36538000500A1 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134FEBC12EBBF39007ED54E /* EGOCache.m */; };
+		510C6AF212F36993000500A1 /* TraktSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6AEE12F368A2000500A1 /* TraktSpec.nu */; };
+		510C6AFA12F369C2000500A1 /* Trakt.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6AF912F369C2000500A1 /* Trakt.m */; };
+		510C6AFB12F369C2000500A1 /* Trakt.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6AF912F369C2000500A1 /* Trakt.m */; };
 		5134008612EF4D72007ED54E /* EpisodeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */; };
 		5134008712EF4D72007ED54E /* EpisodeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */; };
 		513400A712EF5299007ED54E /* episode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 513400A612EF5299007ED54E /* episode.jpg */; };
@@ -125,6 +128,9 @@
 		510C6ABA12F3644B000500A1 /* bacon_specification.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bacon_specification.nu; path = vendor/NuBacon/bacon_specification.nu; sourceTree = "<group>"; };
 		510C6ABB12F3644B000500A1 /* bacon_summary.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bacon_summary.nu; path = vendor/NuBacon/bacon_summary.nu; sourceTree = "<group>"; };
 		510C6ABC12F3644B000500A1 /* bacon.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bacon.nu; path = vendor/NuBacon/bacon.nu; sourceTree = "<group>"; };
+		510C6AEE12F368A2000500A1 /* TraktSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TraktSpec.nu; path = Spec/TraktSpec.nu; sourceTree = "<group>"; };
+		510C6AF812F369C2000500A1 /* Trakt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trakt.h; sourceTree = "<group>"; };
+		510C6AF912F369C2000500A1 /* Trakt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trakt.m; sourceTree = "<group>"; };
 		5134008312EF4D72007ED54E /* EpisodeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodeDetailsViewController.h; sourceTree = "<group>"; };
 		5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodeDetailsViewController.m; sourceTree = "<group>"; };
 		5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EpisodeDetailsViewController.xib; path = Classes/EpisodeDetailsViewController.xib; sourceTree = "<group>"; };
@@ -185,6 +191,8 @@
 				5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */,
 				513400C412EF71A4007ED54E /* ImageCell.h */,
 				513400C512EF71A4007ED54E /* ImageCell.m */,
+				510C6AF812F369C2000500A1 /* Trakt.h */,
+				510C6AF912F369C2000500A1 /* Trakt.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -219,6 +227,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				510C6AED12F3682C000500A1 /* Spec */,
 				510C6AAF12F363D9000500A1 /* SpecRunner */,
 				513401A712F36217007ED54E /* NuBacon-iOSRunner.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -279,6 +288,14 @@
 				513401BA12F36248007ED54E /* Specs-Info.plist */,
 			);
 			name = SpecRunner;
+			sourceTree = "<group>";
+		};
+		510C6AED12F3682C000500A1 /* Spec */ = {
+			isa = PBXGroup;
+			children = (
+				510C6AEE12F368A2000500A1 /* TraktSpec.nu */,
+			);
+			name = Spec;
 			sourceTree = "<group>";
 		};
 		513401A812F36217007ED54E /* Products */ = {
@@ -405,6 +422,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510C6AF212F36993000500A1 /* TraktSpec.nu in Resources */,
 				510C6ABD12F3644B000500A1 /* bacon_context.nu in Resources */,
 				510C6ABE12F3644B000500A1 /* bacon_macros.nu in Resources */,
 				510C6ABF12F3644B000500A1 /* bacon_should.nu in Resources */,
@@ -431,6 +449,7 @@
 				2479A23A12EC853F00E2AD4E /* CalendarRequest.m in Sources */,
 				5134008612EF4D72007ED54E /* EpisodeDetailsViewController.m in Sources */,
 				513400C612EF71A4007ED54E /* ImageCell.m in Sources */,
+				510C6AFB12F369C2000500A1 /* Trakt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +475,7 @@
 				510C6ADE12F36516000500A1 /* EpisodeDetailsViewController.m in Sources */,
 				510C6ADF12F36516000500A1 /* ImageCell.h in Sources */,
 				510C6AE012F36516000500A1 /* ImageCell.m in Sources */,
+				510C6AFA12F369C2000500A1 /* Trakt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

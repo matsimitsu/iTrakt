@@ -42,13 +42,12 @@ CONFIG[:product] ||= CONFIG[:target]
 CONFIG[:family]  ||= 'iphone'
 CONFIG[:sdk]     ||= Dir.glob("/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/*.sdk").map { |sdk| File.basename(sdk).match(/\d+\.\d+/)[0] }.sort.last
 CONFIG[:sdk_dir]   = "/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator#{CONFIG[:sdk]}.sdk"
-#CONFIG[:iphonesim] = File.expand_path("../../iphonesim-funkaster/iphonesim", __FILE__)
-CONFIG[:iphonesim] = "/Users/eloy/code/Fingertips/iphone/iphonesim/build/Debug/iphonesim"
+CONFIG[:ios_sim] = `which ios-sim`.strip
 
-require 'tmpdir'
-
-#specs = ARGV
-#p specs
+if CONFIG[:ios_sim].empty?
+  puts "Could not locate the ios-sim binary. Install it with: $ brew install ios-sim"
+  exit 1
+end
 
 def sh(cmd)
   puts(cmd) if CONFIG[:verbose]
@@ -58,30 +57,7 @@ def sh(cmd)
 end
 
 if sh("cd #{CONFIG[:project_dir]} && xcodebuild -project #{CONFIG[:project]} -target #{CONFIG[:target]} -configuration Debug -sdk #{CONFIG[:sdk_dir]}")
-  pipe = File.join(Dir.tmpdir, Time.now.to_i.to_s)
-  sh "mkfifo '#{pipe}'"
-  puts pipe
-
-  begin
-    file = File.open(pipe, 'r+')
-
-    Thread.abort_on_exception = true
-    thread = Thread.new do
-      while line = file.readline
-        puts line
-      end
-    end
-
-    sh "#{CONFIG[:iphonesim]} launch #{File.join(CONFIG[:project_dir], "build/Debug-iphonesimulator/#{CONFIG[:product]}.app")} -sdk #{CONFIG[:sdk]} -family #{CONFIG[:family]} -stdout '#{pipe}'"
-
-  ensure
-    thread.kill
-    file.close
-    #sh "rm '#{pipe}'"
-  end
-
-  #puts "#{CONFIG[:iphonesim]} launch #{File.join(CONFIG[:project_dir], "build/Debug-iphonesimulator/#{CONFIG[:product]}.app")} -sdk #{CONFIG[:sdk]} -family #{CONFIG[:family]}"
-  #exec "#{CONFIG[:iphonesim]} launch #{File.join(CONFIG[:project_dir], "build/Debug-iphonesimulator/#{CONFIG[:product]}.app")} -sdk #{CONFIG[:sdk]} -family #{CONFIG[:family]}"
+  exec "#{CONFIG[:ios_sim]} launch #{File.join(CONFIG[:project_dir], "build/Debug-iphonesimulator/#{CONFIG[:product]}.app")} --sdk #{CONFIG[:sdk]} --family #{CONFIG[:family]}#{ ' --verbose' if CONFIG[:verbose] }"
 else
   puts "[!] Failed to build the spec runner app."
 end

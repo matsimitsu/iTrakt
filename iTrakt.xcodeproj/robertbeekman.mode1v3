@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -277,7 +275,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
+									<integer>4</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -326,10 +324,6 @@
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
 										<string>Episode.m</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>2441C20412F429C200329D69</string>
 										<key>history</key>
 										<array>
 											<string>2458FC0512EB6C28001B7590</string>
@@ -337,8 +331,6 @@
 											<string>2458FC0712EB6C28001B7590</string>
 											<string>2479A24012EC875100E2AD4E</string>
 											<string>2479A26E12EC8B0300E2AD4E</string>
-											<string>243179D312ECB8670086EF67</string>
-											<string>24A7B50812F3552500E19915</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -350,16 +342,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1053, 403}}</string>
+								<string>{{0, 0}, {1053, 396}}</string>
 								<key>RubberWindowFrame</key>
 								<string>139 518 1261 660 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>403pt</string>
+							<string>396pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -370,14 +364,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 408}, {1053, 211}}</string>
+								<string>{{0, 401}, {1053, 218}}</string>
 								<key>RubberWindowFrame</key>
 								<string>139 518 1261 660 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>211pt</string>
+							<string>218pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -396,9 +390,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>2441C20512F429C200329D69</string>
+				<string>2441C22712F449A600329D69</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>2441C20612F429C200329D69</string>
+				<string>2441C22812F449A600329D69</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -536,8 +530,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>2448DC9E12E9DFA900AC422E</string>
 		<string>/Users/robertbeekman/Sites/apps/iTrakt/iTrakt.xcodeproj</string>
 	</array>
@@ -619,7 +611,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>2448DC9E12E9DFA900AC422E</string>
-				<string>2441C20712F429C200329D69</string>
+				<string>2441C22912F449A600329D69</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

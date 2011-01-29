@@ -30,7 +30,7 @@ module FixtureServe
   end
 
   def call(env)
-    _, block = @mappings.find { |path, _| path === env['REQUEST_PATH'] }
+    _, block = @mappings.find { |path, _| path === env['PATH_INFO'] }
     block ? block.call : ohnoes_404!
   end
 

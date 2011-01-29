@@ -14,6 +14,9 @@
   NSString *tvdbID;
   NSString *title;
   NSString *description;
+  NSString *network;
+  NSString *airtime;
+  NSString *posterUrl;
   NSUInteger season;
   NSUInteger number;
 }
@@ -26,6 +29,9 @@
 @property (nonatomic, retain) NSString *showTitle;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *description;
+@property (nonatomic, retain) NSString *network;
+@property (nonatomic, retain) NSString *airtime;
+@property (nonatomic, retain) NSString *posterUrl;
 @property (nonatomic, assign) NSUInteger season;
 @property (nonatomic, assign) NSUInteger number;
 
@@ -40,7 +46,6 @@
 // TODO for now just stubs
 - (UIImage *)image;
 
-- (void)loadEpisodeData;
 - (void)loadPoster;
 
 @end

@@ -299,7 +299,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>139 518 1261 660 0 0 1920 1178 </string>
+						<string>205 264 1261 660 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -310,14 +310,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Trakt.m</string>
+								<string>Episode.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Trakt.m</string>
+										<string>Episode.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>240BCCE312F469140098553C</string>
+										<string>240BCD3712F485030098553C</string>
 										<key>history</key>
 										<array>
 											<string>2458FC0512EB6C28001B7590</string>
@@ -340,7 +338,9 @@
 											<string>2441C25812F4622F00329D69</string>
 											<string>2441C25912F4622F00329D69</string>
 											<string>2441C25A12F4622F00329D69</string>
-											<string>2441C2C012F467FB00329D69</string>
+											<string>240BCCFF12F474E10098553C</string>
+											<string>240BCD0012F474E10098553C</string>
+											<string>240BCD0112F474E10098553C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -354,7 +354,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1053, 381}}</string>
 								<key>RubberWindowFrame</key>
-								<string>139 518 1261 660 0 0 1920 1178 </string>
+								<string>205 264 1261 660 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -362,6 +362,8 @@
 							<string>381pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -374,7 +376,7 @@
 								<key>Frame</key>
 								<string>{{0, 386}, {1053, 233}}</string>
 								<key>RubberWindowFrame</key>
-								<string>139 518 1261 660 0 0 1920 1178 </string>
+								<string>205 264 1261 660 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -538,13 +540,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>2448DC9E12E9DFA900AC422E</string>
 		<string>/Users/robertbeekman/Sites/apps/iTrakt/iTrakt.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>2448DC9E12E9DFA900AC422E</string>
 	</array>
 	<key>WindowString</key>
-	<string>139 518 1261 660 0 0 1920 1178 </string>
+	<string>205 264 1261 660 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -565,7 +567,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>Episode.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -582,6 +584,8 @@
 							<string>476pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -634,7 +638,7 @@
 			<key>WindowToolGUID</key>
 			<string>2448DC9E12E9DFA900AC422E</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -876,6 +880,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -921,7 +927,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

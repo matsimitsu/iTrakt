@@ -10,6 +10,9 @@
 		1D3623260D0F684500981E51 /* iTraktAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iTraktAppDelegate.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2441C23712F457CC00329D69 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23112F457CC00329D69 /* UIImage+Resize.m */; };
+		2441C23812F457CC00329D69 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23212F457CC00329D69 /* UIImage+Alpha.m */; };
+		2441C23912F457CC00329D69 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23312F457CC00329D69 /* UIImage+RoundedCorner.m */; };
 		2448DCEE12E9EDD600AC422E /* banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2448DCED12E9EDD600AC422E /* banner.jpg */; };
 		2458FBBE12EB6978001B7590 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 2458FBB312EB6978001B7590 /* iTunesArtwork */; };
 		2458FBBF12EB6978001B7590 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 2458FBB412EB6978001B7590 /* Icon-Small.png */; };
@@ -98,6 +101,12 @@
 		1D3623250D0F684500981E51 /* iTraktAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTraktAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* iTrakt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTrakt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2441C23112F457CC00329D69 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Resize.m"; path = "vendor/UIImage/UIImage+Resize.m"; sourceTree = "<group>"; };
+		2441C23212F457CC00329D69 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Alpha.m"; path = "vendor/UIImage/UIImage+Alpha.m"; sourceTree = "<group>"; };
+		2441C23312F457CC00329D69 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RoundedCorner.m"; path = "vendor/UIImage/UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		2441C23412F457CC00329D69 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+RoundedCorner.h"; path = "vendor/UIImage/UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		2441C23512F457CC00329D69 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Resize.h"; path = "vendor/UIImage/UIImage+Resize.h"; sourceTree = "<group>"; };
+		2441C23612F457CC00329D69 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Alpha.h"; path = "vendor/UIImage/UIImage+Alpha.h"; sourceTree = "<group>"; };
 		2448DCED12E9EDD600AC422E /* banner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = banner.jpg; path = design/banner.jpg; sourceTree = "<group>"; };
 		2458FBB312EB6978001B7590 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Images/iTunesArtwork; sourceTree = "<group>"; };
 		2458FBB412EB6978001B7590 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Images/Icon-Small.png"; sourceTree = "<group>"; };
@@ -245,6 +254,12 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2441C23112F457CC00329D69 /* UIImage+Resize.m */,
+				2441C23212F457CC00329D69 /* UIImage+Alpha.m */,
+				2441C23312F457CC00329D69 /* UIImage+RoundedCorner.m */,
+				2441C23412F457CC00329D69 /* UIImage+RoundedCorner.h */,
+				2441C23512F457CC00329D69 /* UIImage+Resize.h */,
+				2441C23612F457CC00329D69 /* UIImage+Alpha.h */,
 				5134FEBB12EBBF39007ED54E /* EGOCache.h */,
 				5134FEBC12EBBF39007ED54E /* EGOCache.m */,
 				28A0AAE50D9B0CCF005BE974 /* iTrakt_Prefix.pch */,
@@ -313,7 +328,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */ = {
+		1D6058900D05DD3D006BFB54 /* iTrakt */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iTrakt" */;
 			buildPhases = (
@@ -374,7 +389,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */,
+				1D6058900D05DD3D006BFB54 /* iTrakt */,
 				513401B712F36248007ED54E /* Specs */,
 			);
 		};
@@ -453,6 +468,9 @@
 				5134008612EF4D72007ED54E /* EpisodeDetailsViewController.m in Sources */,
 				513400C612EF71A4007ED54E /* ImageCell.m in Sources */,
 				510C6AFB12F369C2000500A1 /* Trakt.m in Sources */,
+				2441C23712F457CC00329D69 /* UIImage+Resize.m in Sources */,
+				2441C23812F457CC00329D69 /* UIImage+Alpha.m in Sources */,
+				2441C23912F457CC00329D69 /* UIImage+RoundedCorner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

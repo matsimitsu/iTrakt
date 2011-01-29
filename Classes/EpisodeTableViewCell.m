@@ -1,5 +1,6 @@
 #import "EpisodeTableViewCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIImage+Resize.h"
 
 // Posters are 138x203, hence for every ASPECT_RATIO pixels in width there is 1 pixel in height
 #define POSTER_ASPECT_RATIO 0.679802955665025
@@ -50,9 +51,9 @@
 
 
 //- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    
+
     //[super setSelected:selected animated:animated];
-    
+
     //// Configure the view for the selected state.
 //}
 
@@ -77,8 +78,10 @@
   CGFloat imageWidth, labelWidth, labelHeight;
 
   imageWidth = size.height * POSTER_ASPECT_RATIO;
-  self.imageView.image = episode.poster;
-  self.imageView.frame = CGRectMake(x, y, imageWidth, size.height);
+  CGSize imageSize = CGSizeMake(imageWidth, size.height);
+
+  self.imageView.image = [[episode.poster normalize] resizedImage:imageSize interpolationQuality:kCGInterpolationHigh];
+  self.imageView.frame = CGRectMake(x, y, imageSize.width, imageSize.height);
 
   x += imageWidth + MARGIN;
   y += MARGIN;

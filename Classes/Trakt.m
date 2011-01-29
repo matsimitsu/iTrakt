@@ -26,15 +26,34 @@ static id sharedTrakt = nil;
 
 @implementation HTTPDownload
 
-@synthesize delegate;
-@synthesize URL;
-
-- (id)initWithURL:(NSURL *)theURL delegate:(id)theDelegate {
+- (id)initWithURL:(NSURL *)theURL block:(void (^)(NSData *response))theBlock {
   if (self = [super init]) {
-    self.URL = theURL;
-    delegate = theDelegate;
+    downloadData = nil;
+    block = Block_copy(theBlock);
+    [NSURLConnection connectionWithRequest:[NSURLRequest requestWithURL:theURL] delegate:self];
   }
   return self;
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+  downloadData = [[NSMutableData data] retain];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+  [downloadData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+  NSData *result = [downloadData copy];
+  [downloadData release];
+  block(result);
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+  NSLog(@"Data download failed: %@", [error localizedDescription]);
+  if (downloadData) {
+    [downloadData release];
+  }
 }
 
 @end

@@ -17,13 +17,10 @@
 @end
 
 @interface HTTPDownload : NSObject {
-  id delegate;
-  NSURL *URL;
+  NSMutableData *downloadData;
+  void (^block)(NSData *response);
 }
 
-@property (readonly) id delegate;
-@property (nonatomic, retain) NSURL *URL;
-
-- (id)initWithURL:(NSURL *)theURL delegate:(id)theDelegate;
+- (id)initWithURL:(NSURL *)theURL block:(void (^)(NSData *response))theBlock;
 
 @end

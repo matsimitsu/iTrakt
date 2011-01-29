@@ -65,32 +65,32 @@
   ))
 ))
 
-;(describe "Trakt" `(
-  ;(it "returns a shared instance" (do ()
-    ;(~ (Trakt sharedInstance) should be kindOfClass:Trakt)
-  ;))
+(describe "Trakt" `(
+  (it "returns a shared instance" (do ()
+    (~ (Trakt sharedInstance) should be kindOfClass:Trakt)
+  ))
 
-  ;(describe "shared instance" `(
-    ;(before (do ()
-      ;(set @trakt (Trakt sharedInstance))
-      ;(@trakt setApiUser:"bob")
+  (describe "shared instance" `(
+    (before (do ()
+      (set @trakt (Trakt sharedInstance))
+      (@trakt setApiUser:"bob")
       ;(@trakt setApiKey:"secret")
-    ;))
+    ))
 
-    ;(it "returns the base URL" (do ()
-      ;(~ (@trakt baseURL) should be:"http://api.trakt.tv")
-    ;))
+    (it "returns the base URL" (do ()
+      (~ (@trakt baseURL) should be:"http://itrakt.matsimitsu.com")
+    ))
 
     ;(it "takes a remote API key" (do ()
       ;(~ (@trakt apiKey) should be:"secret")
     ;))
 
-    ;(it "returns the user's name" (do ()
-      ;(~ (@trakt apiUser) should be:"bob")
-    ;))
+    (it "returns the user's name" (do ()
+      (~ (@trakt apiUser) should be:"bob")
+    ))
 
-    ;(it "returns the user's calendar URL" (do ()
-      ;(~ (@trakt calendarURL) should be:"http://api.trakt.tv/user/calendar/shows.json/secret/bob")
-    ;))
-  ;))
-;))
+    (it "returns the user's calendar URL" (do ()
+      (~ (@trakt calendarURL) should be:"http://itrakt.matsimitsu.com/users/calendar.json?name=bob")
+    ))
+  ))
+))

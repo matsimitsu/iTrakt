@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-#define BASE_URL @"http://api.trakt.tv"
+#define BASE_URL @"http://itrakt.matsimitsu.com"
 
 @interface Trakt : NSObject {
   NSString *apiKey;

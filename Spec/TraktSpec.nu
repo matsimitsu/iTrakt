@@ -62,7 +62,7 @@
       (~ response should be:(equalToImage image))
     ))
     (wait 0.1 (do ()
-      ; Nothing... We just wait with further spec execution until the JSONDownload is (probably) finished.
+      ; Nothing... We just wait with further spec execution until the ImageDownload is (probably) finished.
     ))
   ))
 ))

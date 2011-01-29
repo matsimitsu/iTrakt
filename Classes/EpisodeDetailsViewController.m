@@ -116,7 +116,7 @@
     UILabel *label = cell.textLabel;
     switch (indexPath.row) {
       case 0:
-        label.text = [episode description];
+        label.text = episode.description;
         break;
       case 1:
         label.text = [NSString stringWithFormat:@"Episode %@", [episode episodeNumber], nil];

@@ -8,6 +8,14 @@ mappings = lambda do
     serve_text_fixture('hello-world')
   end
 
+  map('/json/simple-array') do
+    serve_json_fixture('simple-array')
+  end
+
+  map('/json/simple-dictionary') do
+    serve_json_fixture('simple-dictionary')
+  end
+
   map('/user/calendar/shows.json/secret/bob') do
     serve_json_fixture('user-calendar-shows')
   end

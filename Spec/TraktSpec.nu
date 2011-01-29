@@ -1,19 +1,48 @@
 (global NSUTF8StringEncoding 4)
 
+; TODO We really need a way to resume directly when finished instead of only time based. For example:
+;
+;   (self resume)
+;
+; Should resume the halted spec execution.
+
 (describe "HTTPDownload" `(
   (it "yields the downloaded data" (do ()
     ((HTTPDownload alloc) initWithURL:(NSURL URLWithString:"http://localhost:9292/hello") nuBlock:(do (response)
       (set string (((NSString alloc) initWithData:response encoding:NSUTF8StringEncoding) chomp))
+      ;(puts string)
       (~ string should equal:"Hello world!")
     ))
     (wait 0.1 (do ()
       ; Nothing... We just wait with further spec execution until the HTTPDownload is (probably) finished.
-      ;
-      ; TODO We really need a way to resume directly when finished instead of only time based. For example:
-      ;
-      ;   (self resume)
-      ;
-      ; Should resume the halted spec execution.
+    ))
+  ))
+))
+
+(describe "JSONDownload" `(
+  (describe "with a serialized array" `(
+      (it "yields the downloaded JSON as a deserialized array" (do ()
+      ((JSONDownload alloc) initWithURL:(NSURL URLWithString:"http://localhost:9292/json/simple-array") nuBlock:(do (response)
+        ;(puts response)
+        (~ response should equal:(`("Muchos" "Bananas") array))
+      ))
+      (wait 0.1 (do ()
+        ; Nothing... We just wait with further spec execution until the JSONDownload is (probably) finished.
+      ))
+    ))
+  ))
+
+  (describe "with a serialized dictionary" `(
+      (it "yields the downloaded JSON as a deserialized array" (do ()
+      ((JSONDownload alloc) initWithURL:(NSURL URLWithString:"http://localhost:9292/json/simple-dictionary") nuBlock:(do (response)
+        ;(puts response)
+        (set dictionary (NSMutableDictionary dictionary))
+        (dictionary setValue:"Bananas" forKey:"Muchos")
+        (~ response should equal:dictionary)
+      ))
+      (wait 0.1 (do ()
+        ; Nothing... We just wait with further spec execution until the JSONDownload is (probably) finished.
+      ))
     ))
   ))
 ))

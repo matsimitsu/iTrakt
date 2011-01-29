@@ -1,4 +1,5 @@
 #import "Trakt.h"
+#import <YAJL/YAJL.h>
 
 @implementation Trakt
 
@@ -44,9 +45,8 @@ static id sharedTrakt = nil;
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-  NSData *result = [downloadData copy];
+  [self yieldDownloadedData];
   [downloadData release];
-  block(result);
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -54,6 +54,18 @@ static id sharedTrakt = nil;
   if (downloadData) {
     [downloadData release];
   }
+}
+
+- (void)yieldDownloadedData {
+  block([downloadData copy]);
+}
+
+@end
+
+@implementation JSONDownload
+
+- (void)yieldDownloadedData {
+  block([downloadData yajl_JSON]);
 }
 
 @end

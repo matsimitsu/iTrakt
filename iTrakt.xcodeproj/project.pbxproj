@@ -64,6 +64,7 @@
 		513400C612EF71A4007ED54E /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 513400C512EF71A4007ED54E /* ImageCell.m */; };
 		5134FEBD12EBBF39007ED54E /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134FEBC12EBBF39007ED54E /* EGOCache.m */; };
 		516CE8D612F42D53003450CF /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 516CE8D512F42D53003450CF /* SpecHelper.m */; };
+		516CE94C12F44DE5003450CF /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2479A22B12EC83DB00E2AD4E /* YAJL.framework */; };
 		51FBCC9712EA375500073C68 /* EpisodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */; };
 		51FBCC9A12EA391B00073C68 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9912EA391B00073C68 /* Episode.m */; };
 /* End PBXBuildFile section */
@@ -144,6 +145,14 @@
 		5134FEBB12EBBF39007ED54E /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGOCache.h; path = vendor/EGOCache/EGOCache.h; sourceTree = "<group>"; };
 		5134FEBC12EBBF39007ED54E /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EGOCache.m; path = vendor/EGOCache/EGOCache.m; sourceTree = "<group>"; };
 		516CE8D512F42D53003450CF /* SpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecHelper.m; path = Spec/SpecHelper.m; sourceTree = "<group>"; };
+		516CE97F12F450A7003450CF /* NSBundle+YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSBundle+YAJL.h"; path = "vendor/YAJL.framework/Versions/A/Headers/NSBundle+YAJL.h"; sourceTree = "<group>"; };
+		516CE98012F450A7003450CF /* yajl_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yajl_common.h; path = vendor/YAJL.framework/Versions/A/Headers/yajl_common.h; sourceTree = "<group>"; };
+		516CE98112F450A7003450CF /* yajl_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yajl_gen.h; path = vendor/YAJL.framework/Versions/A/Headers/yajl_gen.h; sourceTree = "<group>"; };
+		516CE98212F450A7003450CF /* yajl_parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yajl_parse.h; path = vendor/YAJL.framework/Versions/A/Headers/yajl_parse.h; sourceTree = "<group>"; };
+		516CE98312F450A7003450CF /* yajl_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yajl_version.h; path = vendor/YAJL.framework/Versions/A/Headers/yajl_version.h; sourceTree = "<group>"; };
+		516CE98412F450A7003450CF /* YAJLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAJLDocument.h; path = vendor/YAJL.framework/Versions/A/Headers/YAJLDocument.h; sourceTree = "<group>"; };
+		516CE98512F450A7003450CF /* YAJLGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAJLGen.h; path = vendor/YAJL.framework/Versions/A/Headers/YAJLGen.h; sourceTree = "<group>"; };
+		516CE98612F450A7003450CF /* YAJLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAJLParser.h; path = vendor/YAJL.framework/Versions/A/Headers/YAJLParser.h; sourceTree = "<group>"; };
 		51FBCC9512EA375500073C68 /* EpisodeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodeTableViewCell.h; sourceTree = "<group>"; };
 		51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodeTableViewCell.m; sourceTree = "<group>"; };
 		51FBCC9812EA391B00073C68 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Episode.h; sourceTree = "<group>"; };
@@ -167,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				516CE94C12F44DE5003450CF /* YAJL.framework in Frameworks */,
 				510C6AB212F363EB000500A1 /* libNuBaconLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +239,14 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				516CE97F12F450A7003450CF /* NSBundle+YAJL.h */,
+				516CE98012F450A7003450CF /* yajl_common.h */,
+				516CE98112F450A7003450CF /* yajl_gen.h */,
+				516CE98212F450A7003450CF /* yajl_parse.h */,
+				516CE98312F450A7003450CF /* yajl_version.h */,
+				516CE98412F450A7003450CF /* YAJLDocument.h */,
+				516CE98512F450A7003450CF /* YAJLGen.h */,
+				516CE98612F450A7003450CF /* YAJLParser.h */,
 				510C6AED12F3682C000500A1 /* Spec */,
 				510C6AAF12F363D9000500A1 /* SpecRunner */,
 				513401A712F36217007ED54E /* NuBacon-iOSRunner.xcodeproj */,
@@ -313,7 +331,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */ = {
+		1D6058900D05DD3D006BFB54 /* iTrakt */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iTrakt" */;
 			buildPhases = (
@@ -374,7 +392,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */,
+				1D6058900D05DD3D006BFB54 /* iTrakt */,
 				513401B712F36248007ED54E /* Specs */,
 			);
 		};
@@ -535,6 +553,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/vendor\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -551,6 +573,7 @@
 					"-framework",
 					UIKit,
 					"-ObjC",
+					"-all_load",
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = Specs;
@@ -565,6 +588,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/vendor\"",
+				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";

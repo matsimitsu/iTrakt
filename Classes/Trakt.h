@@ -23,4 +23,9 @@
 
 - (id)initWithURL:(NSURL *)theURL block:(void (^)(NSData *response))theBlock;
 
+- (void)yieldDownloadedData;
+
+@end
+
+@interface JSONDownload : HTTPDownload
 @end

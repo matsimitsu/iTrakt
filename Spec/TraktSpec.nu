@@ -1,5 +1,3 @@
-(global NSUTF8StringEncoding 4)
-
 ; TODO We really need a way to resume directly when finished instead of only time based. For example:
 ;
 ;   (self resume)

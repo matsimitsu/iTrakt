@@ -31,7 +31,7 @@
   ))
 
   (describe "with a serialized dictionary" `(
-    (it "yields the downloaded JSON as a deserialized array" (do ()
+    (it "yields the downloaded JSON as a deserialized dictionary" (do ()
       ((JSONDownload alloc) initWithURL:(NSURL URLWithString:"http://localhost:9292/json/simple-dictionary") nuBlock:(do (response)
         ;(puts response)
         (set dictionary (NSMutableDictionary dictionary))

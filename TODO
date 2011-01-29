@@ -1,3 +1,6 @@
+* Create a simple webrick server that's used for testing API and HTTPDownload classes
+
+
 * Calendar API:
   * We need the poster image url that's available in the show summary data
   * We need the url of the episode specific image that's show on an episode's overview on the site.

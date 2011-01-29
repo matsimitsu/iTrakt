@@ -69,3 +69,11 @@ static id sharedTrakt = nil;
 }
 
 @end
+
+@implementation ImageDownload
+
+- (void)yieldDownloadedData {
+  block([UIImage imageWithData:downloadData]);
+}
+
+@end

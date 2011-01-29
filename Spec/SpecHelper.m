@@ -1,5 +1,20 @@
 #import "Trakt.h"
 
+@interface SpecHelper : NSObject {
+}
+
++ (BOOL)image:(UIImage *)image1 equalToImage:(UIImage *)image2;
+
+@end
+
+@implementation SpecHelper
+
++ (BOOL)image:(UIImage *)image1 equalToImage:(UIImage *)image2 {
+  return [UIImagePNGRepresentation(image1) isEqualToData:UIImagePNGRepresentation(image2)];
+}
+
+@end
+
 @interface HTTPDownload (SpecHelper)
 
 - (id)initWithURL:(NSURL *)theURL nuBlock:(id)nuBlock;

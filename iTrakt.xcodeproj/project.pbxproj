@@ -65,6 +65,8 @@
 		5134FEBD12EBBF39007ED54E /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134FEBC12EBBF39007ED54E /* EGOCache.m */; };
 		516CE8D612F42D53003450CF /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 516CE8D512F42D53003450CF /* SpecHelper.m */; };
 		516CE94C12F44DE5003450CF /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2479A22B12EC83DB00E2AD4E /* YAJL.framework */; };
+		516CE9B812F4565A003450CF /* poster.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 516CE9B712F4565A003450CF /* poster.jpg */; };
+		516CE9BB12F4574C003450CF /* banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2448DCED12E9EDD600AC422E /* banner.jpg */; };
 		51FBCC9712EA375500073C68 /* EpisodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */; };
 		51FBCC9A12EA391B00073C68 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9912EA391B00073C68 /* Episode.m */; };
 /* End PBXBuildFile section */
@@ -153,6 +155,7 @@
 		516CE98412F450A7003450CF /* YAJLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAJLDocument.h; path = vendor/YAJL.framework/Versions/A/Headers/YAJLDocument.h; sourceTree = "<group>"; };
 		516CE98512F450A7003450CF /* YAJLGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAJLGen.h; path = vendor/YAJL.framework/Versions/A/Headers/YAJLGen.h; sourceTree = "<group>"; };
 		516CE98612F450A7003450CF /* YAJLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAJLParser.h; path = vendor/YAJL.framework/Versions/A/Headers/YAJLParser.h; sourceTree = "<group>"; };
+		516CE9B712F4565A003450CF /* poster.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = poster.jpg; path = Spec/fixtures/poster.jpg; sourceTree = "<group>"; };
 		51FBCC9512EA375500073C68 /* EpisodeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodeTableViewCell.h; sourceTree = "<group>"; };
 		51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodeTableViewCell.m; sourceTree = "<group>"; };
 		51FBCC9812EA391B00073C68 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Episode.h; sourceTree = "<group>"; };
@@ -239,6 +242,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				516CE9B712F4565A003450CF /* poster.jpg */,
 				516CE97F12F450A7003450CF /* NSBundle+YAJL.h */,
 				516CE98012F450A7003450CF /* yajl_common.h */,
 				516CE98112F450A7003450CF /* yajl_gen.h */,
@@ -443,6 +447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				516CE9BB12F4574C003450CF /* banner.jpg in Resources */,
 				510C6AF212F36993000500A1 /* TraktSpec.nu in Resources */,
 				510C6ABD12F3644B000500A1 /* bacon_context.nu in Resources */,
 				510C6ABE12F3644B000500A1 /* bacon_macros.nu in Resources */,
@@ -450,6 +455,7 @@
 				510C6AC012F3644B000500A1 /* bacon_specification.nu in Resources */,
 				510C6AC112F3644B000500A1 /* bacon_summary.nu in Resources */,
 				510C6AC212F3644B000500A1 /* bacon.nu in Resources */,
+				516CE9B812F4565A003450CF /* poster.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

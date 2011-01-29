@@ -29,3 +29,6 @@
 
 @interface JSONDownload : HTTPDownload
 @end
+
+@interface ImageDownload : HTTPDownload
+@end

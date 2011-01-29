@@ -21,7 +21,7 @@
 
 (describe "JSONDownload" `(
   (describe "with a serialized array" `(
-      (it "yields the downloaded JSON as a deserialized array" (do ()
+    (it "yields the downloaded JSON as a deserialized array" (do ()
       ((JSONDownload alloc) initWithURL:(NSURL URLWithString:"http://localhost:9292/json/simple-array") nuBlock:(do (response)
         ;(puts response)
         (~ response should equal:(`("Muchos" "Bananas") array))
@@ -33,7 +33,7 @@
   ))
 
   (describe "with a serialized dictionary" `(
-      (it "yields the downloaded JSON as a deserialized array" (do ()
+    (it "yields the downloaded JSON as a deserialized array" (do ()
       ((JSONDownload alloc) initWithURL:(NSURL URLWithString:"http://localhost:9292/json/simple-dictionary") nuBlock:(do (response)
         ;(puts response)
         (set dictionary (NSMutableDictionary dictionary))
@@ -43,6 +43,26 @@
       (wait 0.1 (do ()
         ; Nothing... We just wait with further spec execution until the JSONDownload is (probably) finished.
       ))
+    ))
+  ))
+))
+
+; returns a block that's used by BaconShould to compare image data.
+(function equalToImage (expectedImage)
+  (do (actualImage)
+    (eq 1 (SpecHelper image:actualImage equalToImage:expectedImage))
+  )
+)
+
+(describe "ImageDownload" `(
+  (it "yields the downloaded image data as a UIImage" (do ()
+    ((ImageDownload alloc) initWithURL:(NSURL URLWithString:"http://localhost:9292/poster.jpg") nuBlock:(do (response)
+      ;(puts response)
+      (set image (UIImage imageNamed:"poster.jpg"))
+      (~ response should be:(equalToImage image))
+    ))
+    (wait 0.1 (do ()
+      ; Nothing... We just wait with further spec execution until the JSONDownload is (probably) finished.
     ))
   ))
 ))

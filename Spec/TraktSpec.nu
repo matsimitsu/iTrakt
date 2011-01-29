@@ -9,7 +9,7 @@
 (describe "HTTPDownload" `(
   (it "yields the downloaded data" (do ()
     ((HTTPDownload alloc) initWithURL:(NSURL URLWithString:"http://localhost:9292/hello") nuBlock:(do (response)
-      (set string (((NSString alloc) initWithData:response encoding:NSUTF8StringEncoding) chomp))
+      (set string (Helper stringFromUTF8Data:response))
       ;(puts string)
       (~ string should equal:"Hello world!")
     ))
@@ -50,7 +50,7 @@
 ; returns a block that's used by BaconShould to compare image data.
 (function equalToImage (expectedImage)
   (do (actualImage)
-    (eq 1 (SpecHelper image:actualImage equalToImage:expectedImage))
+    (eq 1 (Helper image:actualImage equalToImage:expectedImage))
   )
 )
 

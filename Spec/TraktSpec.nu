@@ -6,7 +6,7 @@
 
 (describe "HTTPDownload" `(
   (it "yields the downloaded data" (do ()
-    ((HTTPDownload alloc) initWithURL:(NSURL URLWithString:"http://localhost:9292/hello") nuBlock:(do (response)
+    (HTTPDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/hello") nuBlock:(do (response)
       (set string (Helper stringFromUTF8Data:response))
       ;(puts string)
       (~ string should equal:"Hello world!")
@@ -20,7 +20,7 @@
 (describe "JSONDownload" `(
   (describe "with a serialized array" `(
     (it "yields the downloaded JSON as a deserialized array" (do ()
-      ((JSONDownload alloc) initWithURL:(NSURL URLWithString:"http://localhost:9292/json/simple-array") nuBlock:(do (response)
+      (JSONDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/json/simple-array") nuBlock:(do (response)
         ;(puts response)
         (~ response should equal:(`("Muchos" "Bananas") array))
       ))
@@ -32,7 +32,7 @@
 
   (describe "with a serialized dictionary" `(
     (it "yields the downloaded JSON as a deserialized dictionary" (do ()
-      ((JSONDownload alloc) initWithURL:(NSURL URLWithString:"http://localhost:9292/json/simple-dictionary") nuBlock:(do (response)
+      (JSONDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/json/simple-dictionary") nuBlock:(do (response)
         ;(puts response)
         (set dictionary (NSMutableDictionary dictionary))
         (dictionary setValue:"Bananas" forKey:"Muchos")
@@ -54,7 +54,7 @@
 
 (describe "ImageDownload" `(
   (it "yields the downloaded image data as a UIImage" (do ()
-    ((ImageDownload alloc) initWithURL:(NSURL URLWithString:"http://localhost:9292/poster.jpg") nuBlock:(do (response)
+    (ImageDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/poster.jpg") nuBlock:(do (response)
       ;(puts response)
       (set image (UIImage imageNamed:"poster.jpg"))
       (~ response should be:(equalToImage image))

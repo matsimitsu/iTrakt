@@ -8,6 +8,18 @@ mappings = lambda do
     serve_text_fixture('hello-world')
   end
 
+  map('/json/simple-array') do
+    serve_json_fixture('simple-array')
+  end
+
+  map('/json/simple-dictionary') do
+    serve_json_fixture('simple-dictionary')
+  end
+
+  map('/poster.jpg') do
+    serve_jpeg_fixture('poster')
+  end
+
   map('/user/calendar/shows.json/secret/bob') do
     serve_json_fixture('user-calendar-shows')
   end
@@ -50,6 +62,10 @@ module FixtureServe
 
   def serve_json_fixture(name)
     [200, { 'Content-Type' => 'application/json' }, fixture_io("#{name}.json")]
+  end
+
+  def serve_jpeg_fixture(name)
+    [200, { 'Content-Type' => 'image/jpeg' }, fixture_io("#{name}.jpg")]
   end
 
   def ohnoes_404!

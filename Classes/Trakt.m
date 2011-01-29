@@ -20,7 +20,7 @@ static id sharedTrakt = nil;
 }
 
 - (NSString *)calendarURL {
-  return [NSString stringWithFormat:@"%@/user/calendar/shows.json/%@/%@", BASE_URL, self.apiKey, self.apiUser, nil];
+  return [NSString stringWithFormat:@"%@/users/calendar.json?name=%@", BASE_URL, self.apiUser, nil];
 }
 
 @end

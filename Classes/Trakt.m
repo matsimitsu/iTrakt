@@ -27,6 +27,10 @@ static id sharedTrakt = nil;
 
 @implementation HTTPDownload
 
++ (id)downloadFromURL:(NSURL *)theURL block:(void (^)(NSData *response))theBlock {
+  return [[[self alloc] initWithURL:theURL block:theBlock] autorelease];
+}
+
 - (id)initWithURL:(NSURL *)theURL block:(void (^)(NSData *response))theBlock {
   if (self = [super init]) {
     downloadData = nil;
@@ -34,6 +38,11 @@ static id sharedTrakt = nil;
     [NSURLConnection connectionWithRequest:[NSURLRequest requestWithURL:theURL] delegate:self];
   }
   return self;
+}
+
+- (void)dealloc {
+  [super dealloc];
+  Block_release(block);
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {

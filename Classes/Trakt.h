@@ -21,6 +21,8 @@
   void (^block)(NSData *response);
 }
 
++ (id)downloadFromURL:(NSURL *)theURL block:(void (^)(NSData *response))theBlock;
+
 - (id)initWithURL:(NSURL *)theURL block:(void (^)(NSData *response))theBlock;
 
 - (void)yieldDownloadedData;

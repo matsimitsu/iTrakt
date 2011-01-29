@@ -1,4 +1,5 @@
-* Create a simple webrick server that's used for testing API and HTTPDownload classes
+* Research which OSS license the app should have and that we adhere to the licenses of APIs.
+  TVDB: http://forums.thetvdb.com/viewtopic.php?f=8&t=2507
 
 
 * Calendar API:

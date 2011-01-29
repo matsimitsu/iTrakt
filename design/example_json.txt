@@ -1,20 +1,26 @@
 [{
-    "rating": false,
-    "episode": {
-        "number": 15,
-        "title": "Kai e'e",
-        "overview": "Five-0 struggles to stay a step ahead of a major tsunami that has the island evacuating its shores as they investigate the disappearance of the head of the Tsunami Warning Center.",
-        "url": "http://trakt.tv/show/hawaii-five0-2010/season/1/episode/15",
-        "first_aired": 1295769600,
-        "season": 1
-    },
-    "show": {
-        "title": "Hawaii Five-0 (2010)",
-        "banner": "http://itrakt.matsimitsu.com/uploads/show/banner/4d3b01093f41c07957000007/164541-g3.jpg",
-        "overview": "Detective Steve McGarrett, a decorated Naval officer turned cop, returns to Oahu to investigate his father's murder and stays after Hawaii's governor persuades him to head up the new team: his rules, her backing, no red tape and full blanket immunity to hunt down the biggest \"game\" in town. Joining McGarrett is Detective Danny \"Danno\" Williams, a newly relocated ex-New Jersey cop who prefers skyscrapers to the coastline but is committed to keeping the Islands safe for his 8-year-old daughter; and Chin Ho Kelly, an ex-Honolulu Police Detective wrongly accused of corruption and relegated to a federal security patrol, who is also a former prot\u00e9g\u00e9 of McGarrett's father. Chin's cousin, Kono, is a beautiful and fearless native, fresh out of the academy and eager to establish herself among the department's elite. McGarrett vows to bring closure to his father's case while the state's brash new FIVE-0 unit, who may spar and jest among themselves, is determined to eliminate the seedy elements from the 50th state.",
-        "url": "http://trakt.tv/show/hawaii-five0-2010",
-        "imdb_id": "tt1600194",
-        "tvdb_id": "164541"
-    },
-    "watched": false
+    "episodes": [{
+        "rating": false,
+        "episode": {
+            "number": 11,
+            "title": "Reciprocity",
+            "overview": "When the Fringe Team visits Massive Dynamic\u2019s assembly of the doomsday device, Walter becomes greatly concerned for Peter\u2019s well-being, so he turns to Nina for added brain power to understand the relationship between Peter and the superweapon. Meanwhile, the discovery of a dead body triggers an intense investigation.",
+            "url": "http://trakt.tv/show/fringe/season/3/episode/11",
+            "first_aired": 1296201600,
+            "thumb": "http://itrakt.matsimitsu.com/uploads/episode/thumb/4d43fee73f41c06a36000002/3458521.jpg",
+            "season": 3
+        },
+        "show": {
+            "title": "Fringe",
+            "banner": "http://itrakt.matsimitsu.com/uploads/show/banner/4d43fee33f41c06a36000001/82066-g20.jpg",
+            "overview": "Fringe follows FBI Agent Olivia Dunham, Consultant Peter Bishop and science explorer extraordinaire Doctor Walter Bishop as they search for clues to the series of bizarre and horrific crimes inflicted on the world. The world that we  know. ",
+            "url": "http://trakt.tv/show/fringe",
+            "poster": "http://itrakt.matsimitsu.com/uploads/show/poster/4d43fee33f41c06a36000001/82066-25.jpg",
+            "network": "FOX",
+            "imdb_id": "tt1119644",
+            "tvdb_id": "82066"
+        },
+        "watched": false
+    }],
+    "date": "2011-01-28"
 }]

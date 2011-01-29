@@ -33,7 +33,7 @@
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
+
     // Release any cached data, images, etc. that aren't in use.
 }
 
@@ -79,7 +79,7 @@
   } else {
     if (indexPath.row == 0) {
       // Calculate height for episode description
-      CGSize size = [[episode description] sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]
+      CGSize size = [episode.description sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]
                                       constrainedToSize:CGSizeMake(300.0, 20000.0)
                                           lineBreakMode:UILineBreakModeWordWrap];
       return size.height + 16.0;
@@ -112,7 +112,7 @@
       cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+
     UILabel *label = cell.textLabel;
     switch (indexPath.row) {
       case 0:

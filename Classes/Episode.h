@@ -13,6 +13,7 @@
   NSString *showTitle;
   NSString *tvdbID;
   NSString *title;
+  NSString *description;
   NSUInteger season;
   NSUInteger number;
 }
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) NSString *tvdbID;
 @property (nonatomic, retain) NSString *showTitle;
 @property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *description;
 @property (nonatomic, assign) NSUInteger season;
 @property (nonatomic, assign) NSUInteger number;
 
@@ -37,7 +39,6 @@
 
 // TODO for now just stubs
 - (UIImage *)image;
-- (NSString *)description;
 
 - (void)loadEpisodeData;
 - (void)loadPoster;

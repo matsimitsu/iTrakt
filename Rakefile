@@ -6,7 +6,7 @@ end
 desc "Start the fixture server needed for the specs"
 task :serve_fixtures do
   puts "[!] Starting web server on localhost:9292"
-  exec "rackup ./Spec/fixtures/config.ru"
+  exec "rackup -s webrick ./Spec/fixtures/config.ru"
 end
 
 desc "Run the specs"

@@ -39,6 +39,13 @@ static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
   }];
 }
 
+- (void)ensureThumbIsLoadedWithNuBlock:(id)nuBlock {
+  [self ensureThumbIsLoaded:^{
+    callNuBlockWithArguments(nuBlock, [NSArray array]);
+  }];
+}
+
+
 @end
 
 
@@ -53,6 +60,12 @@ static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
 - (void)showPosterForTVDBId:(NSString *)tvdbID nuBlock:(id)nuBlock {
   [self showPosterForTVDBId:tvdbID block:^(UIImage *poster, BOOL cached) {
     callNuBlockWithArguments(nuBlock, [NSArray arrayWithObjects:poster, [NSNumber numberWithBool:cached], nil]);
+  }];
+}
+
+- (void)showThumbForTVDBId:(NSString *)tvdbID season:(NSInteger)season episode:(NSInteger)episode nuBlock:(id)nuBlock {
+  [self showThumbForTVDBId:tvdbID season:season episode:episode block:^(UIImage *thumb, BOOL cached) {
+    callNuBlockWithArguments(nuBlock, [NSArray arrayWithObjects:thumb, [NSNumber numberWithBool:cached], nil]);
   }];
 }
 

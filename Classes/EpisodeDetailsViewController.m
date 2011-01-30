@@ -104,7 +104,6 @@
       // this callback is only run if the image has to be downloaded first
       NSLog(@"Episode thumb was downloaded for cell at: %@", indexPath);
       [[self.tableView cellForRowAtIndexPath:indexPath] setNeedsLayout];
-
     }];
 
     cell.image = episode.thumb;

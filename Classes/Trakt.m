@@ -50,7 +50,7 @@ static Trakt *sharedTrakt = nil;
   return [NSURL URLWithString:[NSString stringWithFormat:@"%@/uploads/episode/thumb/%@-%d-%d.jpg", self.baseURL, tvdbID, season, episode, nil]];
 }
 
-- (void)showThumbForTVDBId:(NSString *)tvdbID season:(NSInteger)season episode:(NSInteger)episode block:(void (^)(UIImage *theThumb, BOOL cached))block {
+- (void)showThumbForTVDBId:(NSString *)tvdbID season:(NSInteger)season episode:(NSInteger)episode block:(void (^)(UIImage *thumb, BOOL cached))block {
   [self loadImageFromURL: [self showThumbURLForTVDBId:tvdbID season:season episode:episode] block:block];
 }
 

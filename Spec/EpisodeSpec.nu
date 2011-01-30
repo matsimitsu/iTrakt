@@ -50,4 +50,23 @@
       ))
     ))
   ))
+
+  (describe "concerning its episode thumb" `(
+    ; TODO: (it "retrieves a thumbnail version of the poster image" (do ()
+    (it "retrieves the thumb image" (do ()
+      (set trakt (Trakt sharedInstance))
+      (set url (trakt showThumbURLForTVDBId:(@episode tvdbID) season:(@episode season) episode:(@episode number)))
+      (trakt removeCachedImageForURL:url)
+
+      (set @called nil)
+      (@episode ensureThumbIsLoadedWithNuBlock:(do ()
+        (set @called t)
+        ;(~ (@episode thumb) should be:(equalToImage (UIImage imageNamed:"thumb.jpg")))
+      ))
+      (wait 0.1 (do ()
+        (~ @called should be:t)
+      ))
+    ))
+  ))
+
 ))

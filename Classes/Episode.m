@@ -66,9 +66,9 @@
         //NSLog(@"Downloaded episode thumb with tvdb ID: %@", tvdbID);
         downloadedBlock();
       }
-      else {
+      //else {
         //NSLog(@"Loaded show episode thumb cache with tvdb ID: %@", tvdbID);
-      }
+      //}
     }];
   }
 }

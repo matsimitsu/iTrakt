@@ -27,6 +27,11 @@ mappings = lambda do
   map('/api/uploads/show/poster/82066.jpg') do
     serve_jpeg_fixture('poster')
   end
+
+  map('/api/uploads/episode/thumb/82066-3-1.jpg') do
+    serve_jpeg_fixture('thumb')
+  end
+
 end
 
 

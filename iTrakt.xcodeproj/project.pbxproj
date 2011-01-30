@@ -10,6 +10,7 @@
 		1D3623260D0F684500981E51 /* iTraktAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iTraktAppDelegate.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2402540C12F5F07B00F651D8 /* thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2402540A12F5F05800F651D8 /* thumb.jpg */; };
 		2441C23712F457CC00329D69 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23112F457CC00329D69 /* UIImage+Resize.m */; };
 		2441C23812F457CC00329D69 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23212F457CC00329D69 /* UIImage+Alpha.m */; };
 		2441C23912F457CC00329D69 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23312F457CC00329D69 /* UIImage+RoundedCorner.m */; };
@@ -105,6 +106,7 @@
 		1D3623250D0F684500981E51 /* iTraktAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTraktAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* iTrakt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTrakt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2402540A12F5F05800F651D8 /* thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = thumb.jpg; path = Spec/fixtures/thumb.jpg; sourceTree = "<group>"; };
 		2441C23112F457CC00329D69 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Resize.m"; path = "vendor/UIImage/UIImage+Resize.m"; sourceTree = "<group>"; };
 		2441C23212F457CC00329D69 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Alpha.m"; path = "vendor/UIImage/UIImage+Alpha.m"; sourceTree = "<group>"; };
 		2441C23312F457CC00329D69 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RoundedCorner.m"; path = "vendor/UIImage/UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				2402540A12F5F05800F651D8 /* thumb.jpg */,
 				516CE9B712F4565A003450CF /* poster.jpg */,
 				516CE97F12F450A7003450CF /* NSBundle+YAJL.h */,
 				516CE98012F450A7003450CF /* yajl_common.h */,
@@ -486,6 +489,7 @@
 				510C6AC112F3644B000500A1 /* bacon_summary.nu in Resources */,
 				510C6AC212F3644B000500A1 /* bacon.nu in Resources */,
 				516CE9B812F4565A003450CF /* poster.jpg in Resources */,
+				2402540C12F5F07B00F651D8 /* thumb.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

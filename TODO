@@ -2,6 +2,7 @@
   TVDB: http://forums.thetvdb.com/viewtopic.php?f=8&t=2507
 
 * Resize the show posters on the API side to increase download speeds
+* Add 'default' episode thumbnail per show (in case episode thumbnail is missing)
 * Create show poster thumbnails once and cache it (on the Episode for now)
 * URL encode the username in the API url?
 * We don't need the poster URL in the JSON if we can inflect it by tvDB id.

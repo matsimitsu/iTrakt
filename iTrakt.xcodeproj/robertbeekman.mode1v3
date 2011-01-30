@@ -329,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2402541712F5F4A100F651D8</string>
+										<string>2402542512F5FF3800F651D8</string>
 										<key>history</key>
 										<array>
 											<string>2458FC0512EB6C28001B7590</string>
@@ -542,10 +542,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>/Users/robertbeekman/Sites/apps/iTrakt/iTrakt.xcodeproj</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>2448DC9E12E9DFA900AC422E</string>
+		<string>/Users/robertbeekman/Sites/apps/iTrakt/iTrakt.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>205 264 1261 660 0 0 1920 1178 </string>
@@ -640,7 +640,7 @@
 			<key>WindowToolGUID</key>
 			<string>2448DC9E12E9DFA900AC422E</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -929,7 +929,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

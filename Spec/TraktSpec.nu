@@ -73,12 +73,13 @@
   (describe "shared instance" `(
     (before (do ()
       (set @trakt (Trakt sharedInstance))
+      (@trakt setBaseURL:"http://localhost:9292/api")
       (@trakt setApiUser:"bob")
       ;(@trakt setApiKey:"secret")
     ))
 
     (it "returns the base URL" (do ()
-      (~ (@trakt baseURL) should be:"http://itrakt.matsimitsu.com")
+      (~ (@trakt baseURL) should be:"http://localhost:9292/api")
     ))
 
     ;(it "takes a remote API key" (do ()
@@ -90,7 +91,20 @@
     ))
 
     (it "returns the user's calendar URL" (do ()
-      (~ (@trakt calendarURL) should be:"http://itrakt.matsimitsu.com/users/calendar.json?name=bob")
+      (~ ((@trakt calendarURL) absoluteString) should be:"http://localhost:9292/api/users/calendar.json?name=bob")
+    ))
+
+    (it "yields the user's calendar as an array of BroadcastDate instances" (do ()
+      (@trakt calendarWithNuBlock:(do (calendar)
+        ;(puts calendar)
+        (set date (calendar objectAtIndex:0))
+        (~ date should be kindOfClass:BroadcastDate)
+        (set episode ((date episodes) objectAtIndex:0))
+        (~ (episode title) should be:"Reciprocity")
+      ))
+      (wait 0.1 (do ()
+        ; Nothing... We just wait with further spec execution until the ImageDownload is (probably) finished.
+      ))
     ))
   ))
 ))

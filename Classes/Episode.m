@@ -77,11 +77,14 @@
     NSLog(@"Loading poster from cache with tvdb ID `%@'", tvdbID);
     self.poster = [UIImage imageWithData:[[EGOCache currentCache] dataForKey:[self posterPNGFilename]]];
   } else {
-    NSLog(@"Start poster download for tvdb ID `%@' from: %@", tvdbID, self.posterUrl);
-    downloadData = [[NSMutableData data] retain];
-    NSURL *url = [NSURL URLWithString:self.posterUrl];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [NSURLConnection connectionWithRequest:request delegate:self];
+    // TODO tmp workaround hack
+    if (self.delegate) {
+      NSLog(@"Start poster download for tvdb ID `%@' from: %@", tvdbID, self.posterUrl);
+      downloadData = [[NSMutableData data] retain];
+      NSURL *url = [NSURL URLWithString:self.posterUrl];
+      NSURLRequest *request = [NSURLRequest requestWithURL:url];
+      [NSURLConnection connectionWithRequest:request delegate:self];
+    }
   }
 }
 

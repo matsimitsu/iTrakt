@@ -3,27 +3,32 @@
 #define BASE_URL @"http://itrakt.matsimitsu.com"
 
 @interface Trakt : NSObject {
+  NSString *baseURL;
+
   NSString *apiKey;
   NSString *apiUser;
 }
+
+@property (nonatomic, retain) NSString *baseURL;
 
 @property (nonatomic, retain) NSString *apiKey;
 @property (nonatomic, retain) NSString *apiUser;
 
 + (Trakt *)sharedInstance;
 
-- (NSString *)baseURL;
+- (NSURL *)calendarURL;
+- (void)calendar:(void (^)(NSArray *broadcastDates))block;
 
 @end
 
 @interface HTTPDownload : NSObject {
   NSMutableData *downloadData;
-  void (^block)(NSData *response);
+  void (^block)(id response);
 }
 
-+ (id)downloadFromURL:(NSURL *)theURL block:(void (^)(NSData *response))theBlock;
++ (id)downloadFromURL:(NSURL *)theURL block:(void (^)(id response))theBlock;
 
-- (id)initWithURL:(NSURL *)theURL block:(void (^)(NSData *response))theBlock;
+- (id)initWithURL:(NSURL *)theURL block:(void (^)(id response))theBlock;
 
 - (void)yieldDownloadedData;
 

@@ -1,37 +1,48 @@
-#import "Trakt.h"
 #import <YAJL/YAJL.h>
+
+#import "Trakt.h"
+#import "BroadcastDate.h"
 
 @implementation Trakt
 
-static id sharedTrakt = nil;
+static Trakt *sharedTrakt = nil;
 
 + (Trakt *)sharedInstance{
   if (sharedTrakt == nil) {
     sharedTrakt = [[Trakt alloc] init];
+    sharedTrakt.baseURL = BASE_URL;
   }
   return sharedTrakt;
 }
 
+@synthesize baseURL;
+
 @synthesize apiKey;
 @synthesize apiUser;
 
-- (NSString *)baseURL {
-  return BASE_URL;
+- (NSURL *)calendarURL {
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/calendar.json?name=%@", self.baseURL, self.apiUser, nil]];
 }
 
-- (NSString *)calendarURL {
-  return [NSString stringWithFormat:@"%@/users/calendar.json?name=%@", BASE_URL, self.apiUser, nil];
+- (void)calendar:(void (^)(NSArray *broadcastDates))block {
+  [JSONDownload downloadFromURL:[self calendarURL] block:^(id response) {
+    NSMutableArray *dates = [[NSMutableArray alloc] init];
+    for(NSDictionary *item in (NSArray *)response) {
+      [dates addObject:[[BroadcastDate alloc] initWithDictionary:item delegate:nil]];
+    }
+    block([dates copy]);
+  }];
 }
 
 @end
 
 @implementation HTTPDownload
 
-+ (id)downloadFromURL:(NSURL *)theURL block:(void (^)(NSData *response))theBlock {
++ (id)downloadFromURL:(NSURL *)theURL block:(void (^)(id response))theBlock {
   return [[[self alloc] initWithURL:theURL block:theBlock] autorelease];
 }
 
-- (id)initWithURL:(NSURL *)theURL block:(void (^)(NSData *response))theBlock {
+- (id)initWithURL:(NSURL *)theURL block:(void (^)(id response))theBlock {
   if (self = [super init]) {
     downloadData = nil;
     block = Block_copy(theBlock);

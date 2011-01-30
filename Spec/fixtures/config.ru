@@ -20,7 +20,7 @@ mappings = lambda do
     serve_jpeg_fixture('poster')
   end
 
-  map('/user/calendar/shows.json/secret/bob') do
+  map('/api/users/calendar.json?name=bob') do
     serve_json_fixture('user-calendar-shows')
   end
 end
@@ -38,11 +38,11 @@ module FixtureServe
 
   def map(path, &block)
     @mappings ||= {}
-    @mappings[path] = block
+    @mappings["http://localhost:9292#{path}"] = block
   end
 
   def call(env)
-    _, block = @mappings.find { |path, _| path === env['PATH_INFO'] }
+    _, block = @mappings.find { |path, _| path === env['REQUEST_URI'] }
     block ? block.call : ohnoes_404!
   end
 

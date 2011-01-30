@@ -22,6 +22,26 @@
 
 @end
 
+
+@interface Trakt (SpecHelper)
+
+- (void)calendarWithNuBlock:(id)nuBlock;
+
+@end
+
+@implementation Trakt (SpecHelper)
+
+- (void)calendarWithNuBlock:(id)nuBlock {
+  [self calendar:^(NSArray *broadcastDates) {
+    id args = [[NSArray arrayWithObject:broadcastDates] performSelector:@selector(list)];
+    id context = [nuBlock performSelector:@selector(context)];
+    [nuBlock performSelector:@selector(evalWithArguments:context:) withObject:args withObject:context];
+  }];
+}
+
+@end
+
+
 @interface HTTPDownload (SpecHelper)
 
 + (id)downloadFromURL:(NSURL *)theURL nuBlock:(id)nuBlock;
@@ -31,7 +51,7 @@
 @implementation HTTPDownload (SpecHelper)
 
 + (id)downloadFromURL:(NSURL *)theURL nuBlock:(id)nuBlock {
-  return [self downloadFromURL:theURL block:^(NSData *response) {
+  return [self downloadFromURL:theURL block:^(id response) {
     id args = [[NSArray arrayWithObject:response] performSelector:@selector(list)];
     id context = [nuBlock performSelector:@selector(context)];
     [nuBlock performSelector:@selector(evalWithArguments:context:) withObject:args withObject:context];

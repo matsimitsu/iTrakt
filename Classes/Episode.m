@@ -18,14 +18,14 @@
 
 - (id)initWithDictionary:(NSDictionary *)episodeInfo {
   if (self = [super init]) {
-    showInfo = nil;
-
-    self.tvdbID       = [episodeInfo valueForKeyPath:@"show.tvdb_id"];
-    self.showTitle    = [episodeInfo valueForKeyPath:@"show.title"];
-    self.title        = [episodeInfo valueForKeyPath:@"episode.title"];
-    self.description  = [episodeInfo valueForKeyPath:@"episode.overview"];
-    self.network      = [episodeInfo valueForKeyPath:@"show.network"];
-    self.airtime      = [episodeInfo valueForKeyPath:@"show.air_time"];
+    // TODO Running the specs without making copies here crashes.
+    // Need to check if that's something to do with NuBacon or an actual bug we haven't seen yet.
+    self.tvdbID       = [[episodeInfo valueForKeyPath:@"show.tvdb_id"] copy];
+    self.showTitle    = [[episodeInfo valueForKeyPath:@"show.title"] copy];
+    self.title        = [[episodeInfo valueForKeyPath:@"episode.title"] copy];
+    self.description  = [[episodeInfo valueForKeyPath:@"episode.overview"] copy];
+    self.network      = [[episodeInfo valueForKeyPath:@"show.network"] copy];
+    self.airtime      = [[episodeInfo valueForKeyPath:@"show.air_time"] copy];
     self.season       = [[episodeInfo valueForKeyPath:@"episode.season"] integerValue];
     self.number       = [[episodeInfo valueForKeyPath:@"episode.number"] integerValue];
   }
@@ -41,15 +41,14 @@
   [network release];
   [airtime release];
   [showTitle release];
-  [showInfo release];
 }
 
 - (NSString *)episodeNumber {
-  return [NSString stringWithFormat:@"%dx%02d", season, number, nil];
+  return [NSString stringWithFormat:@"%dx%02d", self.season, self.number, nil];
 }
 
 - (NSString *)serieTitleAndEpisodeNumber {
-  return [NSString stringWithFormat:@"%@ %@", showTitle, [self episodeNumber], nil];
+  return [NSString stringWithFormat:@"%@ %@", self.showTitle, [self episodeNumber], nil];
 }
 
 - (NSString *)airTimeAndChannel {

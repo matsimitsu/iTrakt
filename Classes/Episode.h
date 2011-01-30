@@ -2,8 +2,6 @@
 #import "BroadcastDate.h"
 
 @interface Episode : NSObject {
-  NSDictionary *showInfo;
-
   UIImage *poster;
   NSString *showTitle;
   NSString *tvdbID;

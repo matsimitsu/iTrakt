@@ -83,7 +83,7 @@
         CGSize size = [episode.description sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]
                                         constrainedToSize:CGSizeMake(300.0, 20000.0)
                                             lineBreakMode:UILineBreakModeWordWrap];
-        return size.height + 16.0;
+        return size.height + 48.0;
       }
     }
     // Other text cells have the default height

@@ -26,9 +26,9 @@ static Trakt *sharedTrakt = nil;
 
 - (void)calendar:(void (^)(NSArray *broadcastDates))block {
   [JSONDownload downloadFromURL:[self calendarURL] block:^(id response) {
-    NSMutableArray *dates = [[NSMutableArray alloc] init];
+    NSMutableArray *dates = [NSMutableArray array];
     for(NSDictionary *item in (NSArray *)response) {
-      [dates addObject:[[BroadcastDate alloc] initWithDictionary:item delegate:nil]];
+      [dates addObject:[[[BroadcastDate alloc] initWithDictionary:item delegate:nil] autorelease]];
     }
     block([dates copy]);
   }];

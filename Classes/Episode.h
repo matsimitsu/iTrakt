@@ -3,6 +3,7 @@
 
 @interface Episode : NSObject {
   UIImage *poster;
+  UIImage *thumb;
   NSString *showTitle;
   NSString *tvdbID;
   NSString *title;
@@ -14,6 +15,7 @@
 }
 
 @property (nonatomic, retain) UIImage *poster;
+@property (nonatomic, retain) UIImage *thumb;
 @property (nonatomic, retain) NSString *tvdbID;
 @property (nonatomic, retain) NSString *showTitle;
 @property (nonatomic, retain) NSString *title;
@@ -30,9 +32,7 @@
 
 - (NSString *)airTimeAndChannel;
 
-// TODO for now just stubs
-- (UIImage *)image;
-
 - (void)ensureShowPosterIsLoaded:(void (^)())downloadedBlock;
+- (void)ensureThumbIsLoaded:(void (^)())downloadedBlock;
 
 @end

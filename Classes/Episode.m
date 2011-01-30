@@ -7,6 +7,7 @@
 @implementation Episode
 
 @synthesize poster;
+@synthesize thumb;
 @synthesize tvdbID;
 @synthesize showTitle;
 @synthesize title;
@@ -35,6 +36,7 @@
 - (void)dealloc {
   [super dealloc];
   [poster release];
+  [thumb release];
   [tvdbID release];
   [title release];
   [description release];
@@ -55,8 +57,20 @@
   return [NSString stringWithFormat:@"%@ on %@", self.airtime, self.network, nil];
 }
 
-- (UIImage *)image {
-  return [UIImage imageNamed:@"episode.jpg"];
+- (void)ensureThumbIsLoaded:(void (^)())downloadedBlock {
+  // important to first check if we already have the thumb loaded for performance!
+  if (self.thumb == nil) {
+    [[Trakt sharedInstance] showThumbForTVDBId:tvdbID season:season episode:number block:^(UIImage *theThumb, BOOL cached) {
+      self.thumb = theThumb;
+      if (!cached) {
+        //NSLog(@"Downloaded episode thumb with tvdb ID: %@", tvdbID);
+        downloadedBlock();
+      }
+      else {
+        //NSLog(@"Loaded show episode thumb cache with tvdb ID: %@", tvdbID);
+      }
+    }];
+  }
 }
 
 - (void)ensureShowPosterIsLoaded:(void (^)())downloadedBlock {

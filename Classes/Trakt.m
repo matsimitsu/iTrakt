@@ -1,6 +1,7 @@
 #import <YAJL/YAJL.h>
 
 #import "Trakt.h"
+#import "EGOCache.h"
 #import "BroadcastDate.h"
 
 @implementation Trakt
@@ -35,6 +36,30 @@ static Trakt *sharedTrakt = nil;
     block([dates copy]);
   }];
 }
+
+
+- (UIImage *)cachedImageForURL:(NSURL *)URL {
+  NSString *filename = [URL lastPathComponent];
+  //NSLog(@"Cache key: %@", filename);
+  if ([[EGOCache currentCache] hasCacheForKey:filename]) {
+     return [UIImage imageWithData:[[EGOCache currentCache] dataForKey:filename]];
+  } else {
+    return nil;
+  }
+}
+
+- (void)loadImageFromURL:(NSURL *)URL block:(void (^)(UIImage *image, BOOL cached))block {
+  UIImage *cachedImage = [self cachedImageForURL:URL];
+  if (cachedImage) {
+    block(cachedImage, YES);
+  } else {
+    [ImageDownload downloadFromURL:URL block:^(id image) {
+      [[EGOCache currentCache] setImage:(UIImage *)image forKey:[URL lastPathComponent]];
+      block((UIImage *)image, NO);
+    }];
+  }
+}
+
 
 @end
 

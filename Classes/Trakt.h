@@ -19,6 +19,9 @@
 - (NSURL *)calendarURL;
 - (void)calendar:(void (^)(NSArray *broadcastDates))block;
 
+- (UIImage *)cachedImageForURL:(NSURL *)URL;
+- (void)loadImageFromURL:(NSURL *)URL block:(void (^)(UIImage *image, BOOL cached))block;
+
 @end
 
 @interface HTTPDownload : NSObject {

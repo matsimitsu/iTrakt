@@ -27,6 +27,8 @@
 
 - (void)calendarWithNuBlock:(id)nuBlock;
 
+- (void)loadImageFromURL:(NSURL *)URL nuBlock:(id)nuBlock;
+
 @end
 
 @implementation Trakt (SpecHelper)
@@ -34,6 +36,14 @@
 - (void)calendarWithNuBlock:(id)nuBlock {
   [self calendar:^(NSArray *broadcastDates) {
     id args = [[NSArray arrayWithObject:broadcastDates] performSelector:@selector(list)];
+    id context = [nuBlock performSelector:@selector(context)];
+    [nuBlock performSelector:@selector(evalWithArguments:context:) withObject:args withObject:context];
+  }];
+}
+
+- (void)loadImageFromURL:(NSURL *)URL nuBlock:(id)nuBlock {
+  [self loadImageFromURL:URL block:^(UIImage *image, BOOL cached) {
+    id args = [[NSArray arrayWithObjects:image, [NSNumber numberWithBool:cached], nil] performSelector:@selector(list)];
     id context = [nuBlock performSelector:@selector(context)];
     [nuBlock performSelector:@selector(evalWithArguments:context:) withObject:args withObject:context];
   }];

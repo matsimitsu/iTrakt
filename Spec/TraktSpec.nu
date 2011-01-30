@@ -4,6 +4,9 @@
 ;
 ; Should resume the halted spec execution.
 
+(global true  1)
+(global false 0)
+
 (describe "HTTPDownload" `(
   (it "yields the downloaded data" (do ()
     (HTTPDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/hello") nuBlock:(do (response)
@@ -48,7 +51,7 @@
 ; returns a block that's used by BaconShould to compare image data.
 (function equalToImage (expectedImage)
   (do (actualImage)
-    (eq 1 (Helper image:actualImage equalToImage:expectedImage))
+    (eq true (Helper image:actualImage equalToImage:expectedImage))
   )
 )
 
@@ -56,8 +59,7 @@
   (it "yields the downloaded image data as a UIImage" (do ()
     (ImageDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/poster.jpg") nuBlock:(do (response)
       ;(puts response)
-      (set image (UIImage imageNamed:"poster.jpg"))
-      (~ response should be:(equalToImage image))
+      (~ response should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
     ))
     (wait 0.1 (do ()
       ; Nothing... We just wait with further spec execution until the ImageDownload is (probably) finished.
@@ -104,6 +106,41 @@
       ))
       (wait 0.1 (do ()
         ; Nothing... We just wait with further spec execution until the ImageDownload is (probably) finished.
+      ))
+    ))
+
+    ;(it "returns the show poster URL" (do ()
+      ;(~ (@trakt showPosterURL:) should be:"http://itrakt.matsimitsu.com/uploads/show/poster/4d43fee33f41c06a36000001/82066-25.jpg")
+    ;))
+
+    (describe "concerning image loading" `(
+      (it "downloads, caches, and yields the requested image" (do ()
+        (set url (NSURL URLWithString:"http://localhost:9292/poster.jpg"))
+        (~ (@trakt cachedImageForURL:url) should be:nil)
+        (@trakt loadImageFromURL:url nuBlock:(do (image cached)
+          ;(puts image)
+          ;(puts cached)
+          (~ cached should be:false)
+          (~ image should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
+        ))
+        (wait 0.1 (do ()
+          (~ (@trakt cachedImageForURL:url) should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
+        ))
+      ))
+
+      ; Depends on the previous spec to have run.
+      (it "retrieves the image from the cache, if available" (do ()
+        (set url (NSURL URLWithString:"http://localhost:9292/poster.jpg"))
+        (~ (@trakt cachedImageForURL:url) should not be:nil)
+        (@trakt loadImageFromURL:url nuBlock:(do (image cached)
+          ;(puts image)
+          ;(puts cached)
+          (~ cached should be:true)
+          (~ image should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
+        ))
+        (wait 0.1 (do ()
+          ; Nothing... This is only really necessary if the spec fails which means the image did not come from the cache.
+        ))
       ))
     ))
   ))

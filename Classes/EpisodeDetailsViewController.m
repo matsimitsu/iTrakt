@@ -79,14 +79,15 @@
   } else {
     if (indexPath.row == 0) {
       // Calculate height for episode description
-      CGSize size = [episode.description sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]
-                                      constrainedToSize:CGSizeMake(300.0, 20000.0)
-                                          lineBreakMode:UILineBreakModeWordWrap];
-      return size.height + 16.0;
-    } else {
-      // Other text cells have the default height
-      return self.tableView.rowHeight;
+      if (episode.description) {
+        CGSize size = [episode.description sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]
+                                        constrainedToSize:CGSizeMake(300.0, 20000.0)
+                                            lineBreakMode:UILineBreakModeWordWrap];
+        return size.height + 16.0;
+      }
     }
+    // Other text cells have the default height
+    return self.tableView.rowHeight;
   }
 }
 

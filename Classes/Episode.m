@@ -24,11 +24,15 @@
     self.tvdbID       = [[episodeInfo valueForKeyPath:@"show.tvdb_id"] copy];
     self.showTitle    = [[episodeInfo valueForKeyPath:@"show.title"] copy];
     self.title        = [[episodeInfo valueForKeyPath:@"episode.title"] copy];
-    self.description  = [[episodeInfo valueForKeyPath:@"episode.overview"] copy];
     self.network      = [[episodeInfo valueForKeyPath:@"show.network"] copy];
     self.airtime      = [[episodeInfo valueForKeyPath:@"show.air_time"] copy];
     self.season       = [[episodeInfo valueForKeyPath:@"episode.season"] integerValue];
     self.number       = [[episodeInfo valueForKeyPath:@"episode.number"] integerValue];
+
+    id d = [episodeInfo valueForKeyPath:@"episode.overview"];
+    if ([NSNull null] != d) {
+      self.description = [d copy];
+    }
   }
   return self;
 }

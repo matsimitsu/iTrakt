@@ -9,6 +9,6 @@
 @property (retain) NSArray *episodes;
 
 //- (id)initWithDate:(NSDate *)date episodes:(NSArray *)episodes;
-- (id)initWithDictionary:(NSDictionary *)dict delegate:(id)delegate;
+- (id)initWithDictionary:(NSDictionary *)dict;
 
 @end

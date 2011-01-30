@@ -58,6 +58,7 @@
 		510C6AF212F36993000500A1 /* TraktSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6AEE12F368A2000500A1 /* TraktSpec.nu */; };
 		510C6AFA12F369C2000500A1 /* Trakt.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6AF912F369C2000500A1 /* Trakt.m */; };
 		510C6AFB12F369C2000500A1 /* Trakt.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6AF912F369C2000500A1 /* Trakt.m */; };
+		510C6BA212F5C58F000500A1 /* EpisodeSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6BA112F5C555000500A1 /* EpisodeSpec.nu */; };
 		5134008612EF4D72007ED54E /* EpisodeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */; };
 		5134008712EF4D72007ED54E /* EpisodeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */; };
 		513400A712EF5299007ED54E /* episode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 513400A612EF5299007ED54E /* episode.jpg */; };
@@ -139,6 +140,7 @@
 		510C6AEE12F368A2000500A1 /* TraktSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TraktSpec.nu; path = Spec/TraktSpec.nu; sourceTree = "<group>"; };
 		510C6AF812F369C2000500A1 /* Trakt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trakt.h; sourceTree = "<group>"; };
 		510C6AF912F369C2000500A1 /* Trakt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trakt.m; sourceTree = "<group>"; };
+		510C6BA112F5C555000500A1 /* EpisodeSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = EpisodeSpec.nu; path = Spec/EpisodeSpec.nu; sourceTree = "<group>"; };
 		5134008312EF4D72007ED54E /* EpisodeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodeDetailsViewController.h; sourceTree = "<group>"; };
 		5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodeDetailsViewController.m; sourceTree = "<group>"; };
 		5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EpisodeDetailsViewController.xib; path = Classes/EpisodeDetailsViewController.xib; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 			children = (
 				510C6AEE12F368A2000500A1 /* TraktSpec.nu */,
 				516CE8D512F42D53003450CF /* SpecHelper.m */,
+				510C6BA112F5C555000500A1 /* EpisodeSpec.nu */,
 			);
 			name = Spec;
 			sourceTree = "<group>";
@@ -343,7 +346,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */ = {
+		1D6058900D05DD3D006BFB54 /* iTrakt */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iTrakt" */;
 			buildPhases = (
@@ -404,7 +407,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */,
+				1D6058900D05DD3D006BFB54 /* iTrakt */,
 				513401B712F36248007ED54E /* Specs */,
 			);
 		};
@@ -455,6 +458,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510C6BA212F5C58F000500A1 /* EpisodeSpec.nu in Resources */,
 				516CE9BB12F4574C003450CF /* banner.jpg in Resources */,
 				510C6AF212F36993000500A1 /* TraktSpec.nu in Resources */,
 				510C6ABD12F3644B000500A1 /* bacon_context.nu in Resources */,

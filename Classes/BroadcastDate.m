@@ -6,7 +6,7 @@
 @synthesize date;
 @synthesize episodes;
 
-- (id)initWithDictionary:(NSDictionary *)dict delegate:(id)delegate {
+- (id)initWithDictionary:(NSDictionary *)dict {
     if(self = [super init]) {
       NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
       dateFormatter.dateFormat = @"yyyy-mm-dd";
@@ -15,7 +15,7 @@
       NSMutableArray *objectifiedEpisodes = [[[NSMutableArray alloc] init] autorelease];
 
       for(id episode in [dict valueForKeyPath:@"episodes"]) {
-        [objectifiedEpisodes addObject:[[Episode alloc] initWithDictionary:episode broadcastDate:self delegate:delegate]];
+        [objectifiedEpisodes addObject:[[Episode alloc] initWithDictionary:episode]];
       }
 
       self.episodes = objectifiedEpisodes;

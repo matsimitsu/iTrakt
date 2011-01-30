@@ -6,9 +6,6 @@
 
 @implementation Episode
 
-@synthesize delegate;
-@synthesize broadcastDate;
-
 @synthesize poster;
 @synthesize tvdbID;
 @synthesize showTitle;
@@ -19,12 +16,9 @@
 @synthesize season;
 @synthesize number;
 
-- (id)initWithDictionary:(NSDictionary *)episodeInfo broadcastDate:(BroadcastDate *)theBroadcastDate delegate:(id)theDelegate {
+- (id)initWithDictionary:(NSDictionary *)episodeInfo {
   if (self = [super init]) {
     showInfo = nil;
-
-    self.broadcastDate = theBroadcastDate;
-    self.delegate = theDelegate;
 
     self.tvdbID       = [episodeInfo valueForKeyPath:@"show.tvdb_id"];
     self.showTitle    = [episodeInfo valueForKeyPath:@"show.title"];

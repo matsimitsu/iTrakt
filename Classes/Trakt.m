@@ -31,7 +31,7 @@ static Trakt *sharedTrakt = nil;
     //NSLog(@"[!] Finished download of calendar data");
     NSMutableArray *dates = [NSMutableArray array];
     for(NSDictionary *item in (NSArray *)response) {
-      [dates addObject:[[[BroadcastDate alloc] initWithDictionary:item delegate:nil] autorelease]];
+      [dates addObject:[[[BroadcastDate alloc] initWithDictionary:item] autorelease]];
     }
     block([dates copy]);
   }];

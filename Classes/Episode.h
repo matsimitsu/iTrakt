@@ -2,9 +2,6 @@
 #import "BroadcastDate.h"
 
 @interface Episode : NSObject {
-  id delegate;
-  BroadcastDate *broadcastDate;
-
   NSDictionary *showInfo;
 
   UIImage *poster;
@@ -18,9 +15,6 @@
   NSUInteger number;
 }
 
-@property (nonatomic, assign) id delegate;
-@property (nonatomic, assign) BroadcastDate *broadcastDate;
-
 @property (nonatomic, retain) UIImage *poster;
 @property (nonatomic, retain) NSString *tvdbID;
 @property (nonatomic, retain) NSString *showTitle;
@@ -31,7 +25,7 @@
 @property (nonatomic, assign) NSUInteger season;
 @property (nonatomic, assign) NSUInteger number;
 
-- (id)initWithDictionary:(NSDictionary *)episodeInfo broadcastDate:(BroadcastDate *)theBroadcastDate delegate:(id)theDelegate;
+- (id)initWithDictionary:(NSDictionary *)episodeInfo;
 
 - (NSString *)episodeNumber;
 - (NSString *)serieTitleAndEpisodeNumber;

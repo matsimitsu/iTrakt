@@ -1,11 +1,10 @@
+(load "SpecHelper")
+
 ; TODO We really need a way to resume directly when finished instead of only time based. For example:
 ;
 ;   (self resume)
 ;
 ; Should resume the halted spec execution.
-
-(global true  1)
-(global false 0)
 
 (describe "HTTPDownload" `(
   (it "yields the downloaded data" (do ()
@@ -48,13 +47,6 @@
   ))
 ))
 
-; returns a block that's used by BaconShould to compare image data.
-(function equalToImage (expectedImage)
-  (do (actualImage)
-    (eq true (Helper image:actualImage equalToImage:expectedImage))
-  )
-)
-
 (describe "ImageDownload" `(
   (it "yields the downloaded image data as a UIImage" (do ()
     (ImageDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/poster.jpg") nuBlock:(do (response)
@@ -68,18 +60,15 @@
 ))
 
 (describe "Trakt" `(
+  (before (do ()
+    (set @trakt (Trakt sharedInstance))
+  ))
+
   (it "returns a shared instance" (do ()
-    (~ (Trakt sharedInstance) should be kindOfClass:Trakt)
+    (~ @trakt should be kindOfClass:Trakt)
   ))
 
   (describe "shared instance" `(
-    (before (do ()
-      (set @trakt (Trakt sharedInstance))
-      (@trakt setBaseURL:"http://localhost:9292/api")
-      (@trakt setApiUser:"bob")
-      ;(@trakt setApiKey:"secret")
-    ))
-
     (it "returns the base URL" (do ()
       (~ (@trakt baseURL) should be:"http://localhost:9292/api")
     ))

@@ -24,6 +24,7 @@
 
 
 - (UIImage *)cachedImageForURL:(NSURL *)URL;
+- (void)removeCachedImageForURL:(NSURL *)URL;
 - (void)loadImageFromURL:(NSURL *)URL block:(void (^)(UIImage *image, BOOL cached))block;
 
 @end

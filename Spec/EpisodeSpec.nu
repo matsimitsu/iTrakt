@@ -1,3 +1,5 @@
+(load "SpecHelper")
+
 (describe "Episode" `(
   (before (do ()
     (set calendar (((NSBundle mainBundle) yajl_JSONFromResource:"user-calendar-shows.json") objectAtIndex:0))
@@ -29,5 +31,23 @@
     (~ (@episode number) should be:1)
     (~ (@episode episodeNumber) should be:"3x01")
     (~ (@episode serieTitleAndEpisodeNumber) should be:"Fringe 3x01")
+  ))
+
+  (describe "concerning its show poster" `(
+    ; TODO: (it "retrieves a thumbnail version of the poster image" (do ()
+    (it "retrieves the poster image" (do ()
+      (set trakt (Trakt sharedInstance))
+      (set url (trakt showPosterURLForTVDBId:(@episode tvdbID)))
+      (trakt removeCachedImageForURL:url)
+
+      (set @called nil)
+      (@episode ensureShowPosterIsLoadedWithNuBlock:(do ()
+        (set @called t)
+        (~ (@episode poster) should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
+      ))
+      (wait 0.1 (do ()
+        (~ @called should be:t)
+      ))
+    ))
   ))
 ))

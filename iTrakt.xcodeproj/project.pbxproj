@@ -61,6 +61,7 @@
 		510C6BA212F5C58F000500A1 /* EpisodeSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6BA112F5C555000500A1 /* EpisodeSpec.nu */; };
 		510C6BC612F5C875000500A1 /* user-calendar-shows.json in Resources */ = {isa = PBXBuildFile; fileRef = 510C6BC512F5C875000500A1 /* user-calendar-shows.json */; };
 		510C6BC712F5C87C000500A1 /* user-calendar-shows.json in Resources */ = {isa = PBXBuildFile; fileRef = 510C6BC512F5C875000500A1 /* user-calendar-shows.json */; };
+		510C6C5B12F5DB62000500A1 /* SpecHelper.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6C5A12F5DB5C000500A1 /* SpecHelper.nu */; };
 		5134008612EF4D72007ED54E /* EpisodeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */; };
 		5134008712EF4D72007ED54E /* EpisodeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */; };
 		513400A712EF5299007ED54E /* episode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 513400A612EF5299007ED54E /* episode.jpg */; };
@@ -144,6 +145,7 @@
 		510C6AF912F369C2000500A1 /* Trakt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trakt.m; sourceTree = "<group>"; };
 		510C6BA112F5C555000500A1 /* EpisodeSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = EpisodeSpec.nu; path = Spec/EpisodeSpec.nu; sourceTree = "<group>"; };
 		510C6BC512F5C875000500A1 /* user-calendar-shows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "user-calendar-shows.json"; path = "Spec/fixtures/user-calendar-shows.json"; sourceTree = "<group>"; };
+		510C6C5A12F5DB5C000500A1 /* SpecHelper.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SpecHelper.nu; path = Spec/SpecHelper.nu; sourceTree = "<group>"; };
 		5134008312EF4D72007ED54E /* EpisodeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodeDetailsViewController.h; sourceTree = "<group>"; };
 		5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodeDetailsViewController.m; sourceTree = "<group>"; };
 		5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EpisodeDetailsViewController.xib; path = Classes/EpisodeDetailsViewController.xib; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				510C6AEE12F368A2000500A1 /* TraktSpec.nu */,
 				516CE8D512F42D53003450CF /* SpecHelper.m */,
 				510C6BA112F5C555000500A1 /* EpisodeSpec.nu */,
+				510C6C5A12F5DB5C000500A1 /* SpecHelper.nu */,
 			);
 			name = Spec;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510C6C5B12F5DB62000500A1 /* SpecHelper.nu in Resources */,
 				510C6BC712F5C87C000500A1 /* user-calendar-shows.json in Resources */,
 				510C6BA212F5C58F000500A1 /* EpisodeSpec.nu in Resources */,
 				516CE9BB12F4574C003450CF /* banner.jpg in Resources */,

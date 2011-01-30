@@ -66,7 +66,7 @@
   return [UIImage imageNamed:@"episode.jpg"];
 }
 
-- (void)loadShowPoster:(void (^)())downloadedBlock {
+- (void)ensureShowPosterIsLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the poster loaded for performance!
   if (self.poster == nil) {
     [[Trakt sharedInstance] showPosterForTVDBId:tvdbID block:^(UIImage *thePoster, BOOL cached) {

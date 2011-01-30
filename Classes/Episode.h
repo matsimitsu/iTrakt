@@ -41,6 +41,6 @@
 // TODO for now just stubs
 - (UIImage *)image;
 
-- (void)loadShowPoster:(void (^)())downloadedBlock;
+- (void)ensureShowPosterIsLoaded:(void (^)())downloadedBlock;
 
 @end

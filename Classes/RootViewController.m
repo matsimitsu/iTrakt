@@ -46,6 +46,7 @@
   return [broadcastDate.episodes count];
 }
 
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
   BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:section];
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -55,16 +56,6 @@
   return [dateFormatter stringFromDate:broadcastDate.date];
 }
 
-- (void)ensureShowPosterIsloaded:(Episode *)episode forCellAtIndexPath:(NSIndexPath *)indexPath {
-  [episode loadShowPoster:^{
-    // this callback is only run if the image has to be downloaded first
-    NSLog(@"Show poster was downloaded for cell at: %@", indexPath);
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    if (cell && [[self.tableView visibleCells] indexOfObject:cell] != NSNotFound) {
-      [cell setNeedsLayout];
-    }
-  }];
-}
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -74,10 +65,16 @@
     cell = [[[EpisodeTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
     cell.frame = CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, self.tableView.rowHeight);
   }
-  NSLog(@"Load episode!");
+  
   BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
   Episode *episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
-  [self ensureShowPosterIsloaded:episode forCellAtIndexPath:indexPath];
+  
+  [episode ensureShowPosterIsLoaded:^{
+    // this callback is only run if the image has to be downloaded first
+    NSLog(@"Show poster was downloaded for cell at: %@", indexPath);
+    [[self.tableView cellForRowAtIndexPath:indexPath] setNeedsLayout];
+  }];
+
   cell.episode = episode;
 
   return cell;

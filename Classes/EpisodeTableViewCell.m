@@ -80,7 +80,9 @@
   imageWidth = size.height * POSTER_ASPECT_RATIO;
   CGSize imageSize = CGSizeMake(imageWidth, size.height);
 
+  // TODO This should happen only once and then be cached on the Episode instance!
   self.imageView.image = [[episode.poster normalize] resizedImage:imageSize interpolationQuality:kCGInterpolationHigh];
+  //self.imageView.image = episode.posterThumbnail;
   self.imageView.frame = CGRectMake(x, y, imageSize.width, imageSize.height);
 
   x += imageWidth + MARGIN;

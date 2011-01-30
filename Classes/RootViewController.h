@@ -7,6 +7,6 @@
 
 @property (nonatomic, retain) NSArray *broadcastDates;
 
-- (void)episodeDidLoadPoster:(Episode *)episode;
+- (void)ensureShowPosterIsloaded:(Episode *)episode forCellAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

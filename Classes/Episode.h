@@ -5,8 +5,6 @@
   id delegate;
   BroadcastDate *broadcastDate;
 
-  NSMutableData *downloadData;
-
   NSDictionary *showInfo;
 
   UIImage *poster;
@@ -16,7 +14,6 @@
   NSString *description;
   NSString *network;
   NSString *airtime;
-  NSString *posterUrl;
   NSUInteger season;
   NSUInteger number;
 }
@@ -31,7 +28,6 @@
 @property (nonatomic, retain) NSString *description;
 @property (nonatomic, retain) NSString *network;
 @property (nonatomic, retain) NSString *airtime;
-@property (nonatomic, retain) NSString *posterUrl;
 @property (nonatomic, assign) NSUInteger season;
 @property (nonatomic, assign) NSUInteger number;
 
@@ -41,11 +37,10 @@
 - (NSString *)serieTitleAndEpisodeNumber;
 
 - (NSString *)airTimeAndChannel;
-- (NSString *)posterPNGFilename;
 
 // TODO for now just stubs
 - (UIImage *)image;
 
-- (void)loadPoster;
+- (void)loadShowPoster:(void (^)())downloadedBlock;
 
 @end

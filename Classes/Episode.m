@@ -2,6 +2,8 @@
 #import "EGOCache.h"
 #import <YAJL/YAJL.h>
 
+#import "Trakt.h"
+
 @implementation Episode
 
 @synthesize delegate;
@@ -16,7 +18,6 @@
 @synthesize airtime;
 @synthesize season;
 @synthesize number;
-@synthesize posterUrl;
 
 - (id)initWithDictionary:(NSDictionary *)episodeInfo broadcastDate:(BroadcastDate *)theBroadcastDate delegate:(id)theDelegate {
   if (self = [super init]) {
@@ -33,8 +34,6 @@
     self.airtime      = [episodeInfo valueForKeyPath:@"show.air_time"];
     self.season       = [[episodeInfo valueForKeyPath:@"episode.season"] integerValue];
     self.number       = [[episodeInfo valueForKeyPath:@"episode.number"] integerValue];
-    self.posterUrl    = [episodeInfo valueForKeyPath:@"show.poster"];
-    [self loadPoster];
   }
   return self;
 }
@@ -49,7 +48,6 @@
   [airtime release];
   [showTitle release];
   [showInfo release];
-  [posterUrl release];
 }
 
 - (NSString *)episodeNumber {
@@ -64,45 +62,24 @@
   return [NSString stringWithFormat:@"%@ on %@", self.airtime, self.network, nil];
 }
 
-- (NSString *)posterPNGFilename {
-  return [NSString stringWithFormat:@"%@.png", tvdbID, nil];
-}
-
 - (UIImage *)image {
   return [UIImage imageNamed:@"episode.jpg"];
 }
 
-- (void)loadPoster {
-  if ([[EGOCache currentCache] hasCacheForKey:[self posterPNGFilename]]) {
-    NSLog(@"Loading poster from cache with tvdb ID `%@'", tvdbID);
-    self.poster = [UIImage imageWithData:[[EGOCache currentCache] dataForKey:[self posterPNGFilename]]];
-  } else {
-    // TODO tmp workaround hack
-    if (self.delegate) {
-      NSLog(@"Start poster download for tvdb ID `%@' from: %@", tvdbID, self.posterUrl);
-      downloadData = [[NSMutableData data] retain];
-      NSURL *url = [NSURL URLWithString:self.posterUrl];
-      NSURLRequest *request = [NSURLRequest requestWithURL:url];
-      [NSURLConnection connectionWithRequest:request delegate:self];
-    }
+- (void)loadShowPoster:(void (^)())downloadedBlock {
+  // important to first check if we already have the poster loaded for performance!
+  if (self.poster == nil) {
+    [[Trakt sharedInstance] showPosterForTVDBId:tvdbID block:^(UIImage *thePoster, BOOL cached) {
+      self.poster = thePoster;
+      if (!cached) {
+        //NSLog(@"Downloaded show poster with tvdb ID: %@", tvdbID);
+        downloadedBlock();
+      }
+      //else {
+        //NSLog(@"Loaded show poster from cache with tvdb ID: %@", tvdbID);
+      //}
+    }];
   }
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-  [downloadData appendData:data];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-  NSLog(@"Poster data download finished!");
-  self.poster = [UIImage imageWithData:downloadData];
-  [[EGOCache currentCache] setImage:poster forKey:[self posterPNGFilename]];
-  [downloadData release];
-  [delegate performSelector:@selector(episodeDidLoadPoster:) withObject:self];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-  NSLog(@"Data download failed: %@", [error localizedDescription]);
-  [downloadData release];
 }
 
 @end

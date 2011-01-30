@@ -31,19 +31,6 @@
 }
 
 
-- (void)episodeDidLoadPoster:(Episode *)episode {
-  NSUInteger indexes[2];
-  BroadcastDate *broadcastDate = episode.broadcastDate;
-  indexes[0] = [broadcastDates indexOfObject:broadcastDate];
-  indexes[1] = [broadcastDate.episodes indexOfObject:episode];
-  NSIndexPath *indexPath = [NSIndexPath indexPathWithIndexes:indexes length:2];
-  UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-  if (cell && [[self.tableView visibleCells] indexOfObject:cell] != NSNotFound) {
-    [cell setNeedsLayout];
-  }
-}
-
-
 #pragma mark -
 #pragma mark Table view data source
 
@@ -68,6 +55,17 @@
   return [dateFormatter stringFromDate:broadcastDate.date];
 }
 
+- (void)ensureShowPosterIsloaded:(Episode *)episode forCellAtIndexPath:(NSIndexPath *)indexPath {
+  [episode loadShowPoster:^{
+    // this callback is only run if the image has to be downloaded first
+    NSLog(@"Show poster was downloaded for cell at: %@", indexPath);
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    if (cell && [[self.tableView visibleCells] indexOfObject:cell] != NSNotFound) {
+      [cell setNeedsLayout];
+    }
+  }];
+}
+
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *cellIdentifier = @"episodeCell";
@@ -76,15 +74,11 @@
     cell = [[[EpisodeTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
     cell.frame = CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, self.tableView.rowHeight);
   }
-
+  NSLog(@"Load episode!");
   BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
   Episode *episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
+  [self ensureShowPosterIsloaded:episode forCellAtIndexPath:indexPath];
   cell.episode = episode;
-  /*
-    BroadcastDate *date = [broadcastDates objectAtIndex:indexPath.section];
-    NSDictionary *episode = [date.episodes objectAtIndex:indexPath.row];
-    cell.textLabel.text = [episode valueForKeyPath:@"show.title"];
-  */
 
   return cell;
 }

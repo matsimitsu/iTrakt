@@ -1,7 +1,8 @@
-* URL encode the username in the API url.
-
 * Research which OSS license the app should have and that we adhere to the licenses of APIs.
   TVDB: http://forums.thetvdb.com/viewtopic.php?f=8&t=2507
+
+* URL encode the username in the API url?
+* Handle connection errors in some way which is needed to provide a good UX. I.e. should we retry, take a failure block, etc.
 
 * There appears to be a timezone bug, as on monday morning I still see listings for sunday the 23rd, although the listings *might* still be correct, the date at the very least has to be localized. I've included a screenshot of the listing on monday 24th of january at 10:30AM.
 * Expire poster cache?

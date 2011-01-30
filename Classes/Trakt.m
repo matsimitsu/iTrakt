@@ -25,7 +25,9 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)calendar:(void (^)(NSArray *broadcastDates))block {
+  NSLog(@"[!] Start download of calendar data");
   [JSONDownload downloadFromURL:[self calendarURL] block:^(id response) {
+    NSLog(@"[!] Finished download of calendar data");
     NSMutableArray *dates = [NSMutableArray array];
     for(NSDictionary *item in (NSArray *)response) {
       [dates addObject:[[[BroadcastDate alloc] initWithDictionary:item delegate:nil] autorelease]];

@@ -26,7 +26,6 @@
 		2458FBC712EB6978001B7590 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 2458FBBC12EB6978001B7590 /* Default-Portrait.png */; };
 		2458FBC812EB6978001B7590 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 2458FBBD12EB6978001B7590 /* Default-Landscape.png */; };
 		2479A22C12EC83DB00E2AD4E /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2479A22B12EC83DB00E2AD4E /* YAJL.framework */; };
-		2479A23A12EC853F00E2AD4E /* CalendarRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2479A23812EC853F00E2AD4E /* CalendarRequest.m */; };
 		2484C6AE12E9F568000D3871 /* BroadcastDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2484C6AD12E9F568000D3871 /* BroadcastDate.m */; };
 		24EF210712EA3A2A00B54F6F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
@@ -40,8 +39,6 @@
 		510C6AC012F3644B000500A1 /* bacon_specification.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6ABA12F3644B000500A1 /* bacon_specification.nu */; };
 		510C6AC112F3644B000500A1 /* bacon_summary.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6ABB12F3644B000500A1 /* bacon_summary.nu */; };
 		510C6AC212F3644B000500A1 /* bacon.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6ABC12F3644B000500A1 /* bacon.nu */; };
-		510C6AD112F36516000500A1 /* CalendarRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2479A23812EC853F00E2AD4E /* CalendarRequest.m */; };
-		510C6AD212F36516000500A1 /* CalendarRequest.h in Sources */ = {isa = PBXBuildFile; fileRef = 2479A23912EC853F00E2AD4E /* CalendarRequest.h */; };
 		510C6AD312F36516000500A1 /* RootViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 28C286DF0D94DF7D0034E888 /* RootViewController.h */; };
 		510C6AD412F36516000500A1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		510C6AD512F36516000500A1 /* iTraktAppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623240D0F684500981E51 /* iTraktAppDelegate.h */; };
@@ -123,8 +120,6 @@
 		2458FBBC12EB6978001B7590 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait.png"; path = "Images/Default-Portrait.png"; sourceTree = "<group>"; };
 		2458FBBD12EB6978001B7590 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "Images/Default-Landscape.png"; sourceTree = "<group>"; };
 		2479A22B12EC83DB00E2AD4E /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJL.framework; path = vendor/YAJL.framework; sourceTree = "<group>"; };
-		2479A23812EC853F00E2AD4E /* CalendarRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarRequest.m; sourceTree = "<group>"; };
-		2479A23912EC853F00E2AD4E /* CalendarRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarRequest.h; sourceTree = "<group>"; };
 		2484C6AC12E9F568000D3871 /* BroadcastDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroadcastDate.h; sourceTree = "<group>"; };
 		2484C6AD12E9F568000D3871 /* BroadcastDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BroadcastDate.m; sourceTree = "<group>"; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -199,8 +194,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2479A23812EC853F00E2AD4E /* CalendarRequest.m */,
-				2479A23912EC853F00E2AD4E /* CalendarRequest.h */,
 				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
 				1D3623240D0F684500981E51 /* iTraktAppDelegate.h */,
@@ -488,7 +481,6 @@
 				51FBCC9A12EA391B00073C68 /* Episode.m in Sources */,
 				24EF210712EA3A2A00B54F6F /* main.m in Sources */,
 				5134FEBD12EBBF39007ED54E /* EGOCache.m in Sources */,
-				2479A23A12EC853F00E2AD4E /* CalendarRequest.m in Sources */,
 				5134008612EF4D72007ED54E /* EpisodeDetailsViewController.m in Sources */,
 				513400C612EF71A4007ED54E /* ImageCell.m in Sources */,
 				510C6AFB12F369C2000500A1 /* Trakt.m in Sources */,
@@ -504,8 +496,6 @@
 			files = (
 				510C6AE412F36538000500A1 /* EGOCache.h in Sources */,
 				510C6AE512F36538000500A1 /* EGOCache.m in Sources */,
-				510C6AD112F36516000500A1 /* CalendarRequest.m in Sources */,
-				510C6AD212F36516000500A1 /* CalendarRequest.h in Sources */,
 				510C6AD312F36516000500A1 /* RootViewController.h in Sources */,
 				510C6AD412F36516000500A1 /* RootViewController.m in Sources */,
 				510C6AD512F36516000500A1 /* iTraktAppDelegate.h in Sources */,

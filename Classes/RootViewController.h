@@ -7,7 +7,6 @@
 
 @property (nonatomic, retain) NSArray *broadcastDates;
 
-- (void)datesLoaded:(NSArray *)dates;
 - (void)episodeDidLoadPoster:(Episode *)episode;
 
 @end

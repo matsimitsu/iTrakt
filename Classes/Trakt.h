@@ -29,6 +29,7 @@
 - (UIImage *)cachedImageForURL:(NSURL *)URL;
 - (void)removeCachedImageForURL:(NSURL *)URL;
 - (void)loadImageFromURL:(NSURL *)URL block:(void (^)(UIImage *image, BOOL cached))block;
+- (void)loadImageFromURL:(NSURL *)URL scaledTo:(CGSize)scaledTo block:(void (^)(UIImage *image, BOOL cached))block;
 
 @end
 

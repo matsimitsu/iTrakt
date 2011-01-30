@@ -63,6 +63,15 @@
 		510C6BC612F5C875000500A1 /* user-calendar-shows.json in Resources */ = {isa = PBXBuildFile; fileRef = 510C6BC512F5C875000500A1 /* user-calendar-shows.json */; };
 		510C6BC712F5C87C000500A1 /* user-calendar-shows.json in Resources */ = {isa = PBXBuildFile; fileRef = 510C6BC512F5C875000500A1 /* user-calendar-shows.json */; };
 		510C6C5B12F5DB62000500A1 /* SpecHelper.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6C5A12F5DB5C000500A1 /* SpecHelper.nu */; };
+		510C6C9B12F5E4C7000500A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		510C6CDB12F5E78A000500A1 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23112F457CC00329D69 /* UIImage+Resize.m */; };
+		510C6CDC12F5E78A000500A1 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23212F457CC00329D69 /* UIImage+Alpha.m */; };
+		510C6CDD12F5E78A000500A1 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23312F457CC00329D69 /* UIImage+RoundedCorner.m */; };
+		510C6CDE12F5E78A000500A1 /* UIImage+RoundedCorner.h in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23412F457CC00329D69 /* UIImage+RoundedCorner.h */; };
+		510C6CDF12F5E78A000500A1 /* UIImage+Resize.h in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23512F457CC00329D69 /* UIImage+Resize.h */; };
+		510C6CE012F5E78A000500A1 /* UIImage+Alpha.h in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23612F457CC00329D69 /* UIImage+Alpha.h */; };
+		510C6D0712F5EA8A000500A1 /* poster-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 510C6D0612F5EA8A000500A1 /* poster-thumbnail.jpg */; };
+		510C6D0812F5EAAE000500A1 /* poster-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 510C6D0612F5EA8A000500A1 /* poster-thumbnail.jpg */; };
 		5134008612EF4D72007ED54E /* EpisodeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */; };
 		5134008712EF4D72007ED54E /* EpisodeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */; };
 		513400A712EF5299007ED54E /* episode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 513400A612EF5299007ED54E /* episode.jpg */; };
@@ -148,6 +157,7 @@
 		510C6BA112F5C555000500A1 /* EpisodeSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = EpisodeSpec.nu; path = Spec/EpisodeSpec.nu; sourceTree = "<group>"; };
 		510C6BC512F5C875000500A1 /* user-calendar-shows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "user-calendar-shows.json"; path = "Spec/fixtures/user-calendar-shows.json"; sourceTree = "<group>"; };
 		510C6C5A12F5DB5C000500A1 /* SpecHelper.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SpecHelper.nu; path = Spec/SpecHelper.nu; sourceTree = "<group>"; };
+		510C6D0612F5EA8A000500A1 /* poster-thumbnail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "poster-thumbnail.jpg"; path = "Spec/fixtures/poster-thumbnail.jpg"; sourceTree = "<group>"; };
 		5134008312EF4D72007ED54E /* EpisodeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodeDetailsViewController.h; sourceTree = "<group>"; };
 		5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodeDetailsViewController.m; sourceTree = "<group>"; };
 		5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EpisodeDetailsViewController.xib; path = Classes/EpisodeDetailsViewController.xib; sourceTree = "<group>"; };
@@ -192,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510C6C9B12F5E4C7000500A1 /* CoreGraphics.framework in Frameworks */,
 				516CE94C12F44DE5003450CF /* YAJL.framework in Frameworks */,
 				510C6AB212F363EB000500A1 /* libNuBaconLib.a in Frameworks */,
 			);
@@ -347,6 +358,7 @@
 		510C6BC412F5C867000500A1 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				510C6D0612F5EA8A000500A1 /* poster-thumbnail.jpg */,
 				510C6BC512F5C875000500A1 /* user-calendar-shows.json */,
 			);
 			name = Fixtures;
@@ -470,6 +482,7 @@
 				5134008712EF4D72007ED54E /* EpisodeDetailsViewController.xib in Resources */,
 				513400A712EF5299007ED54E /* episode.jpg in Resources */,
 				510C6BC612F5C875000500A1 /* user-calendar-shows.json in Resources */,
+				510C6D0712F5EA8A000500A1 /* poster-thumbnail.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +490,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510C6D0812F5EAAE000500A1 /* poster-thumbnail.jpg in Resources */,
 				510C6C5B12F5DB62000500A1 /* SpecHelper.nu in Resources */,
 				510C6BC712F5C87C000500A1 /* user-calendar-shows.json in Resources */,
 				510C6BA212F5C58F000500A1 /* EpisodeSpec.nu in Resources */,
@@ -520,6 +534,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510C6CDB12F5E78A000500A1 /* UIImage+Resize.m in Sources */,
+				510C6CDC12F5E78A000500A1 /* UIImage+Alpha.m in Sources */,
+				510C6CDD12F5E78A000500A1 /* UIImage+RoundedCorner.m in Sources */,
+				510C6CDE12F5E78A000500A1 /* UIImage+RoundedCorner.h in Sources */,
+				510C6CDF12F5E78A000500A1 /* UIImage+Resize.h in Sources */,
+				510C6CE012F5E78A000500A1 /* UIImage+Alpha.h in Sources */,
 				510C6AE412F36538000500A1 /* EGOCache.h in Sources */,
 				510C6AE512F36538000500A1 /* EGOCache.m in Sources */,
 				510C6AD312F36516000500A1 /* RootViewController.h in Sources */,

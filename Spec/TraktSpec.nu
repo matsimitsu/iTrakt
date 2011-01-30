@@ -53,7 +53,7 @@
       ;(puts response)
       (~ response should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
     ))
-    (wait 0.1 (do ()
+    (wait 0.3 (do ()
       ; Nothing... We just wait with further spec execution until the ImageDownload is (probably) finished.
     ))
   ))
@@ -116,7 +116,7 @@
             (~ cached should be:false)
             (~ image should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
           ))
-          (wait 0.1 (do ()
+          (wait 0.3 (do ()
             (~ (@trakt cachedImageForURL:url) should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
           ))
         ))
@@ -138,21 +138,22 @@
       ))
 
       (describe "by TVDB id" `(
-        (it "yields a show poster" (do ()
-          ((EGOCache currentCache) removeCacheForKey:"82066.jpg")
+        (it "yields a thumbail of a show poster" (do ()
+          ((EGOCache currentCache) removeCacheForKey:"44x66-82066.jpg")
 
-          (set url (NSURL URLWithString:"http://localhost:9292/api/uploads/show/poster/82066.jpg"))
+          (set url (NSURL URLWithString:"http://localhost:9292/api/uploads/show/poster/44x66-82066.jpg"))
           (~ (@trakt cachedImageForURL:url) should be:nil)
 
-          (~ (@trakt showPosterURLForTVDBId:"82066") should be:url)
+          ;(~ (@trakt showPosterURLForTVDBId:"82066") should be:url)
           (@trakt showPosterForTVDBId:"82066" nuBlock:(do (poster cached)
             ;(puts poster)
             ;(puts cached)
             (~ cached should be:false)
-            (~ poster should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
+            (~ (poster size) should equal:`(44 66))
+            (~ poster should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
           ))
           (wait 0.1 (do ()
-            (~ (@trakt cachedImageForURL:url) should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
+            ;(~ (@trakt cachedImageForURL:url) should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
           ))
         ))
 

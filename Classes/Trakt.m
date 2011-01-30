@@ -1,7 +1,8 @@
 #import <YAJL/YAJL.h>
+#import "EGOCache.h"
+#import "UIImage+Resize.h"
 
 #import "Trakt.h"
-#import "EGOCache.h"
 #import "BroadcastDate.h"
 
 @implementation Trakt
@@ -43,7 +44,7 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)showPosterForTVDBId:(NSString *)tvdbID block:(void (^)(UIImage *poster, BOOL cached))block {
-  [self loadImageFromURL:[self showPosterURLForTVDBId:tvdbID] block:block];
+  [self loadImageFromURL:[self showPosterURLForTVDBId:tvdbID] scaledTo:CGSizeMake(44.0, 66.0) block:block];
 }
 
 - (NSURL *)showThumbURLForTVDBId:(NSString *)tvdbID season:(NSInteger)season episode:(NSInteger)episode {
@@ -69,13 +70,28 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)loadImageFromURL:(NSURL *)URL block:(void (^)(UIImage *image, BOOL cached))block {
-  UIImage *cachedImage = [self cachedImageForURL:URL];
+  [self loadImageFromURL:URL scaledTo:CGSizeZero block:block];
+}
+
+- (void)loadImageFromURL:(NSURL *)URL scaledTo:(CGSize)scaledTo block:(void (^)(UIImage *image, BOOL cached))block {
+  NSURL *_URL = URL;
+  if (!CGSizeEqualToSize(scaledTo, CGSizeZero)) {
+    NSString *filename = [NSString stringWithFormat:@"%dx%d-%@", (int)scaledTo.width, (int)scaledTo.height, [_URL lastPathComponent]];
+    _URL = [[_URL URLByDeletingLastPathComponent] URLByAppendingPathComponent:filename];
+  }
+  
+  UIImage *cachedImage = [self cachedImageForURL:_URL];
   if (cachedImage) {
     block(cachedImage, YES);
   } else {
+    // download from the actual URL, not the scaled down identifier
     [ImageDownload downloadFromURL:URL block:^(id image) {
-      [[EGOCache currentCache] setImage:(UIImage *)image forKey:[URL lastPathComponent]];
-      block((UIImage *)image, NO);
+      UIImage *result = (UIImage *)image;
+      if (!CGSizeEqualToSize(scaledTo, CGSizeZero)) {
+        result = [[result normalize] resizedImage:scaledTo interpolationQuality:kCGInterpolationHigh];
+      }
+      [[EGOCache currentCache] setImage:result forKey:[_URL lastPathComponent]];
+      block(result, NO);
     }];
   }
 }

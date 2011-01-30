@@ -113,33 +113,58 @@
       ;(~ (@trakt showPosterURL:) should be:"http://itrakt.matsimitsu.com/uploads/show/poster/4d43fee33f41c06a36000001/82066-25.jpg")
     ;))
 
-    (describe "concerning image loading" `(
-      (it "downloads, caches, and yields the requested image" (do ()
-        (set url (NSURL URLWithString:"http://localhost:9292/poster.jpg"))
-        (~ (@trakt cachedImageForURL:url) should be:nil)
-        (@trakt loadImageFromURL:url nuBlock:(do (image cached)
-          ;(puts image)
-          ;(puts cached)
-          (~ cached should be:false)
-          (~ image should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
+    (describe "concerning images" `(
+      ; TODO possinly also check with the fixtures server whether or not a request was actually made. I.e. keep a request counter.
+      (describe "and downloading/caching thereof" `(
+        (it "downloads, caches, and yields the requested image" (do ()
+          ((EGOCache currentCache) removeCacheForKey:"poster.jpg")
+          (set url (NSURL URLWithString:"http://localhost:9292/poster.jpg"))
+          (~ (@trakt cachedImageForURL:url) should be:nil)
+
+          (@trakt loadImageFromURL:url nuBlock:(do (image cached)
+            ;(puts image)
+            ;(puts cached)
+            (~ cached should be:false)
+            (~ image should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
+          ))
+          (wait 0.1 (do ()
+            (~ (@trakt cachedImageForURL:url) should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
+          ))
         ))
-        (wait 0.1 (do ()
-          (~ (@trakt cachedImageForURL:url) should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
+
+        ; Depends on the previous spec to have run.
+        (it "retrieves the image from the cache, if available" (do ()
+          (set url (NSURL URLWithString:"http://localhost:9292/poster.jpg"))
+          (~ (@trakt cachedImageForURL:url) should not be:nil)
+          (@trakt loadImageFromURL:url nuBlock:(do (image cached)
+            ;(puts image)
+            ;(puts cached)
+            (~ cached should be:true)
+            (~ image should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
+          ))
+          (wait 0.1 (do ()
+            ; Nothing... This is only really necessary if the spec fails which means the image did not come from the cache.
+          ))
         ))
       ))
 
-      ; Depends on the previous spec to have run.
-      (it "retrieves the image from the cache, if available" (do ()
-        (set url (NSURL URLWithString:"http://localhost:9292/poster.jpg"))
-        (~ (@trakt cachedImageForURL:url) should not be:nil)
-        (@trakt loadImageFromURL:url nuBlock:(do (image cached)
-          ;(puts image)
-          ;(puts cached)
-          (~ cached should be:true)
-          (~ image should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
-        ))
-        (wait 0.1 (do ()
-          ; Nothing... This is only really necessary if the spec fails which means the image did not come from the cache.
+      (describe "by TVDB id" `(
+        (it "yields a show poster" (do ()
+          ((EGOCache currentCache) removeCacheForKey:"82066.jpg")
+
+          (set url (NSURL URLWithString:"http://localhost:9292/api/uploads/show/poster/82066.jpg"))
+          (~ (@trakt cachedImageForURL:url) should be:nil)
+
+          (~ (@trakt showPosterURLForTVDBId:"82066") should be:url)
+          (@trakt showPosterForTVDBId:"82066" nuBlock:(do (poster cached)
+            ;(puts poster)
+            ;(puts cached)
+            (~ cached should be:false)
+            (~ poster should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
+          ))
+          (wait 0.1 (do ()
+            (~ (@trakt cachedImageForURL:url) should be:(equalToImage (UIImage imageNamed:"poster.jpg")))
+          ))
         ))
       ))
     ))

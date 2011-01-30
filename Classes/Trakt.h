@@ -19,6 +19,10 @@
 - (NSURL *)calendarURL;
 - (void)calendar:(void (^)(NSArray *broadcastDates))block;
 
+- (NSURL *)showPosterURLForTVDBId:(NSString *)tvdbID;
+- (void)showPosterForTVDBId:(NSString *)tvdbID block:(void (^)(UIImage *poster, BOOL cached))block;
+
+
 - (UIImage *)cachedImageForURL:(NSURL *)URL;
 - (void)loadImageFromURL:(NSURL *)URL block:(void (^)(UIImage *image, BOOL cached))block;
 

@@ -26,15 +26,24 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)calendar:(void (^)(NSArray *broadcastDates))block {
-  NSLog(@"[!] Start download of calendar data");
+  //NSLog(@"[!] Start download of calendar data");
   [JSONDownload downloadFromURL:[self calendarURL] block:^(id response) {
-    NSLog(@"[!] Finished download of calendar data");
+    //NSLog(@"[!] Finished download of calendar data");
     NSMutableArray *dates = [NSMutableArray array];
     for(NSDictionary *item in (NSArray *)response) {
       [dates addObject:[[[BroadcastDate alloc] initWithDictionary:item delegate:nil] autorelease]];
     }
     block([dates copy]);
   }];
+}
+
+
+- (NSURL *)showPosterURLForTVDBId:(NSString *)tvdbID {
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/uploads/show/poster/%@.jpg", self.baseURL, tvdbID, nil]];
+}
+
+- (void)showPosterForTVDBId:(NSString *)tvdbID block:(void (^)(UIImage *poster, BOOL cached))block {
+  [self loadImageFromURL:[self showPosterURLForTVDBId:tvdbID] block:block];
 }
 
 

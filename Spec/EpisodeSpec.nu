@@ -20,9 +20,8 @@
 
   (it "returns where and when it will air" (do ()
     (~ (@episode network) should be:"FOX")
-    ; TODO there is no airtime in the example json.
-    ;(~ (@episode airtime) should be:"8PM")
-    ;(~ (@episode airTimeAndChannel) should be:"8PM on FOX")
+    (~ (@episode airtime) should be:"9:00 PM")
+    (~ (@episode airTimeAndChannel) should be:"9:00 PM on FOX")
   ))
 
   (it "returns season and episode number info" (do ()

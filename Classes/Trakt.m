@@ -57,6 +57,10 @@ static Trakt *sharedTrakt = nil;
   }
 }
 
+- (void)removeCachedImageForURL:(NSURL *)URL {
+  [[EGOCache currentCache] removeCacheForKey:[URL lastPathComponent]];
+}
+
 - (void)loadImageFromURL:(NSURL *)URL block:(void (^)(UIImage *image, BOOL cached))block {
   UIImage *cachedImage = [self cachedImageForURL:URL];
   if (cachedImage) {

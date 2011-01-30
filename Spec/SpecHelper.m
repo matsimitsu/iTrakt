@@ -1,5 +1,5 @@
 #import "Trakt.h"
-
+#import "Episode.h"
 
 @interface Helper : NSObject {
 }
@@ -24,21 +24,23 @@
 @end
 
 
-@interface Trakt (SpecHelper)
-
-- (void)calendarWithNuBlock:(id)nuBlock;
-
-- (void)showPosterForTVDBId:(NSString *)tvdbID nuBlock:(id)nuBlock;
-
-- (void)loadImageFromURL:(NSURL *)URL nuBlock:(id)nuBlock;
-
-@end
-
 static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
   id args = [arguments performSelector:@selector(list)];
   id context = [nuBlock performSelector:@selector(context)];
   [nuBlock performSelector:@selector(evalWithArguments:context:) withObject:args withObject:context];
 }
+
+
+@implementation Episode (SpecHelper)
+
+- (void)ensureShowPosterIsLoadedWithNuBlock:(id)nuBlock {
+  [self ensureShowPosterIsLoaded:^{
+    callNuBlockWithArguments(nuBlock, [NSArray array]);
+  }];
+}
+
+@end
+
 
 @implementation Trakt (SpecHelper)
 
@@ -63,19 +65,11 @@ static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
 @end
 
 
-@interface HTTPDownload (SpecHelper)
-
-+ (id)downloadFromURL:(NSURL *)theURL nuBlock:(id)nuBlock;
-
-@end
-
 @implementation HTTPDownload (SpecHelper)
 
 + (id)downloadFromURL:(NSURL *)theURL nuBlock:(id)nuBlock {
   return [self downloadFromURL:theURL block:^(id response) {
-    id args = [[NSArray arrayWithObject:response] performSelector:@selector(list)];
-    id context = [nuBlock performSelector:@selector(context)];
-    [nuBlock performSelector:@selector(evalWithArguments:context:) withObject:args withObject:context];
+    callNuBlockWithArguments(nuBlock, [NSArray arrayWithObject:response]);
   }];
 }
 

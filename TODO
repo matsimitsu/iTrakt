@@ -12,3 +12,11 @@
 * Settings screen to enter username
 * Way to check if username exists
 * Add load screen
+
+API extensions needed
+---------------------
+
+* A calendar feed for users that aren't signed in or aren't registered trakt.tv users
+* The show-summary feed should include all seasons/episodes
+* Show feeds for ‘trending’, ‘highest rated’, and ‘most watched’. PS what does ‘trending’ mean?
+* Show search

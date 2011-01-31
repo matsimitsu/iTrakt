@@ -60,7 +60,11 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return section == 0 ? 1 : 3;
+  if (section == 0) {
+    return 1;
+  } else {
+    return episode.overview == nil ? 2 : 3;
+  }
 }
 
 
@@ -123,7 +127,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     UILabel *label = cell.textLabel;
-    switch (indexPath.row) {
+    switch (episode.overview == nil ? (indexPath.row + 1) : indexPath.row) {
       case 0:
         label.text = episode.overview;
         break;

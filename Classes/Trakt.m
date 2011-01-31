@@ -38,21 +38,12 @@ static Trakt *sharedTrakt = nil;
   }];
 }
 
-
-- (NSURL *)showPosterURLForTVDBId:(NSString *)tvdbID {
-  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/uploads/show/poster/%@.jpg", self.baseURL, tvdbID, nil]];
+- (void)showPosterForURL:(NSString *)posterURL block:(void (^)(UIImage *poster, BOOL cached))block {
+  [self loadImageFromURL:[NSURL URLWithString:posterURL] scaledTo:CGSizeMake(44.0, 66.0) block:block];
 }
 
-- (void)showPosterForTVDBId:(NSString *)tvdbID block:(void (^)(UIImage *poster, BOOL cached))block {
-  [self loadImageFromURL:[self showPosterURLForTVDBId:tvdbID] scaledTo:CGSizeMake(44.0, 66.0) block:block];
-}
-
-- (NSURL *)showThumbURLForTVDBId:(NSString *)tvdbID season:(NSInteger)season episode:(NSInteger)episode {
-  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/uploads/episode/thumb/%@-%d-%d.jpg", self.baseURL, tvdbID, season, episode, nil]];
-}
-
-- (void)showThumbForTVDBId:(NSString *)tvdbID season:(NSInteger)season episode:(NSInteger)episode block:(void (^)(UIImage *thumb, BOOL cached))block {
-  [self loadImageFromURL: [self showThumbURLForTVDBId:tvdbID season:season episode:episode] block:block];
+- (void)showThumbForURL:(NSString *)thumbURL block:(void (^)(UIImage *thumb, BOOL cached))block {
+  [self loadImageFromURL:[NSURL URLWithString:thumbURL] block:block];
 }
 
 - (UIImage *)cachedImageForURL:(NSURL *)URL {
@@ -79,7 +70,7 @@ static Trakt *sharedTrakt = nil;
     NSString *filename = [NSString stringWithFormat:@"%dx%d-%@", (int)scaledTo.width, (int)scaledTo.height, [_URL lastPathComponent]];
     _URL = [[_URL URLByDeletingLastPathComponent] URLByAppendingPathComponent:filename];
   }
-  
+
   UIImage *cachedImage = [self cachedImageForURL:_URL];
   if (cachedImage) {
     block(cachedImage, YES);

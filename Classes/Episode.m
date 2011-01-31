@@ -8,6 +8,8 @@
 
 @synthesize poster;
 @synthesize thumb;
+@synthesize posterURL;
+@synthesize thumbURL;
 @synthesize tvdbID;
 @synthesize showTitle;
 @synthesize title;
@@ -21,6 +23,8 @@
   if (self = [super init]) {
     // TODO Running the specs without making copies here crashes.
     // Need to check if that's something to do with NuBacon or an actual bug we haven't seen yet.
+    self.posterURL    = [[episodeInfo valueForKeyPath:@"show.poster"] copy];
+    self.thumbURL     = [[episodeInfo valueForKeyPath:@"episode.thumb"] copy];
     self.tvdbID       = [[episodeInfo valueForKeyPath:@"show.tvdb_id"] copy];
     self.showTitle    = [[episodeInfo valueForKeyPath:@"show.title"] copy];
     self.title        = [[episodeInfo valueForKeyPath:@"episode.title"] copy];
@@ -41,6 +45,8 @@
   [super dealloc];
   [poster release];
   [thumb release];
+  [posterURL release];
+  [thumbURL release];
   [tvdbID release];
   [title release];
   [description release];
@@ -64,7 +70,7 @@
 - (void)ensureThumbIsLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the thumb loaded for performance!
   if (self.thumb == nil) {
-    [[Trakt sharedInstance] showThumbForTVDBId:tvdbID season:season episode:number block:^(UIImage *theThumb, BOOL cached) {
+    [[Trakt sharedInstance] showThumbForURL:thumbURL block:^(UIImage *theThumb, BOOL cached) {
       self.thumb = theThumb;
       if (!cached) {
         //NSLog(@"Downloaded episode thumb with tvdb ID: %@", tvdbID);
@@ -80,7 +86,7 @@
 - (void)ensureShowPosterIsLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the poster loaded for performance!
   if (self.poster == nil) {
-    [[Trakt sharedInstance] showPosterForTVDBId:tvdbID block:^(UIImage *thePoster, BOOL cached) {
+    [[Trakt sharedInstance] showPosterForURL:posterURL block:^(UIImage *thePoster, BOOL cached) {
       self.poster = thePoster;
       if (!cached) {
         //NSLog(@"Downloaded show poster with tvdb ID: %@", tvdbID);

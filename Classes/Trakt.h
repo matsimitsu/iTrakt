@@ -19,12 +19,9 @@
 - (NSURL *)calendarURL;
 - (void)calendar:(void (^)(NSArray *broadcastDates))block;
 
-- (NSURL *)showPosterURLForTVDBId:(NSString *)tvdbID;
-- (void)showPosterForTVDBId:(NSString *)tvdbID block:(void (^)(UIImage *poster, BOOL cached))block;
+- (void)showPosterForURL:(NSString *)posterURL block:(void (^)(UIImage *poster, BOOL cached))block;
 
-- (NSURL *)showThumbURLForTVDBId:(NSString *)tvdbID season:(NSInteger)season episode:(NSInteger)episode;
-- (void)showThumbForTVDBId:(NSString *)tvdbID season:(NSInteger)season episode:(NSInteger)episode block:(void (^)(UIImage *thumb, BOOL cached))block;
-
+- (void)showThumbForURL:(NSString *)thumbURL block:(void (^)(UIImage *thumb, BOOL cached))block;
 
 - (UIImage *)cachedImageForURL:(NSURL *)URL;
 - (void)removeCachedImageForURL:(NSURL *)URL;

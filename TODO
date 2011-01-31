@@ -4,7 +4,7 @@
 * Rename 'description' in Episode to 'overview'
 * Don't display the 'description' row in the episode details if there is no decsription.
 * Resize the show posters on the API side to increase download speeds
-* Add 'default' episode thumbnail per show (in case episode thumbnail is missing)
+* Add 'default' episode thumbnail per show (in case episode thumbnail is missing) (400x228)
 * Create show poster thumbnails once and cache it (on the Episode for now)
 * Set the preferred show poster thumb size from the calendar controller
 * URL encode the username in the API url?

@@ -139,7 +139,7 @@
           (@trakt removeCachedImageForURL:url scaledTo:`(44 66))
           (~ (@trakt cachedImageForURL:url scaledTo:`(44 66)) should be:nil)
 
-          (@trakt showPosterForURL:"http://localhost:9292/api/uploads/82066/poster-82066.jpg" nuBlock:(do (poster cached)
+          (@trakt showPosterForURL:url nuBlock:(do (poster cached)
             (~ cached should be:false)
             (~ poster should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
           ))
@@ -154,7 +154,7 @@
           (set url (NSURL URLWithString:"http://localhost:9292/api/uploads/82066/thumb-82066-3-12.jpg"))
           (~ (@trakt cachedImageForURL:url) should be:nil)
 
-          (@trakt showThumbForURL:"http://localhost:9292/api/uploads/82066/thumb-82066-3-12.jpg" nuBlock:(do (thumb cached)
+          (@trakt showThumbForURL:url nuBlock:(do (thumb cached)
             (~ cached should be:false)
             (~ thumb should be:(equalToImage (UIImage imageNamed:"thumb.jpg")))
           ))

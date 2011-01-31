@@ -57,13 +57,13 @@ static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
   }];
 }
 
-- (void)showPosterForURL:(NSString *)posterURL nuBlock:(id)nuBlock {
+- (void)showPosterForURL:(NSURL *)posterURL nuBlock:(id)nuBlock {
   [self showPosterForURL:posterURL block:^(UIImage *poster, BOOL cached) {
     callNuBlockWithArguments(nuBlock, [NSArray arrayWithObjects:poster, [NSNumber numberWithBool:cached], nil]);
   }];
 }
 
-- (void)showThumbForURL:(NSString *)thumbURL nuBlock:(id)nuBlock {
+- (void)showThumbForURL:(NSURL *)thumbURL nuBlock:(id)nuBlock {
   [self showThumbForURL:thumbURL block:^(UIImage *thumb, BOOL cached) {
     callNuBlockWithArguments(nuBlock, [NSArray arrayWithObjects:thumb, [NSNumber numberWithBool:cached], nil]);
   }];

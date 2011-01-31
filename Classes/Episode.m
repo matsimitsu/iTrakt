@@ -23,8 +23,8 @@
   if (self = [super init]) {
     // TODO Running the specs without making copies here crashes.
     // Need to check if that's something to do with NuBacon or an actual bug we haven't seen yet.
-    self.posterURL    = [[episodeInfo valueForKeyPath:@"show.poster"] copy];
-    self.thumbURL     = [[episodeInfo valueForKeyPath:@"episode.thumb"] copy];
+    self.posterURL    = [NSURL URLWithString:[episodeInfo valueForKeyPath:@"show.poster"]];
+    self.thumbURL     = [NSURL URLWithString:[episodeInfo valueForKeyPath:@"episode.thumb"]];
     self.tvdbID       = [[episodeInfo valueForKeyPath:@"show.tvdb_id"] copy];
     self.showTitle    = [[episodeInfo valueForKeyPath:@"show.title"] copy];
     self.title        = [[episodeInfo valueForKeyPath:@"episode.title"] copy];
@@ -70,7 +70,7 @@
 - (void)ensureThumbIsLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the thumb loaded for performance!
   if (self.thumb == nil) {
-    [[Trakt sharedInstance] showThumbForURL:thumbURL block:^(UIImage *theThumb, BOOL cached) {
+    [[Trakt sharedInstance] showThumbForURL:self.thumbURL block:^(UIImage *theThumb, BOOL cached) {
       self.thumb = theThumb;
       if (!cached) {
         //NSLog(@"Downloaded episode thumb with tvdb ID: %@", tvdbID);
@@ -86,7 +86,7 @@
 - (void)ensureShowPosterIsLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the poster loaded for performance!
   if (self.poster == nil) {
-    [[Trakt sharedInstance] showPosterForURL:posterURL block:^(UIImage *thePoster, BOOL cached) {
+    [[Trakt sharedInstance] showPosterForURL:self.posterURL block:^(UIImage *thePoster, BOOL cached) {
       self.poster = thePoster;
       if (!cached) {
         //NSLog(@"Downloaded show poster with tvdb ID: %@", tvdbID);

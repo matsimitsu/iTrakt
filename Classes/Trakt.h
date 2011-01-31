@@ -19,9 +19,9 @@
 - (NSURL *)calendarURL;
 - (void)calendar:(void (^)(NSArray *broadcastDates))block;
 
-- (void)showPosterForURL:(NSString *)posterURL block:(void (^)(UIImage *poster, BOOL cached))block;
+- (void)showPosterForURL:(NSURL *)posterURL block:(void (^)(UIImage *poster, BOOL cached))block;
 
-- (void)showThumbForURL:(NSString *)thumbURL block:(void (^)(UIImage *thumb, BOOL cached))block;
+- (void)showThumbForURL:(NSURL *)thumbURL block:(void (^)(UIImage *thumb, BOOL cached))block;
 
 - (NSURL *)URLForImageURL:(NSURL *)URL scaledTo:(CGSize)scaledTo;
 

@@ -4,8 +4,8 @@
 @interface Episode : NSObject {
   UIImage *poster;
   UIImage *thumb;
-  NSString *posterURL;
-  NSString *thumbURL;
+  NSURL *posterURL;
+  NSURL *thumbURL;
   NSString *showTitle;
   NSString *tvdbID;
   NSString *title;
@@ -18,8 +18,8 @@
 
 @property (nonatomic, retain) UIImage *poster;
 @property (nonatomic, retain) UIImage *thumb;
-@property (nonatomic, retain) NSString *posterURL;
-@property (nonatomic, retain) NSString *thumbURL;
+@property (nonatomic, retain) NSURL *posterURL;
+@property (nonatomic, retain) NSURL *thumbURL;
 @property (nonatomic, retain) NSString *tvdbID;
 @property (nonatomic, retain) NSString *showTitle;
 @property (nonatomic, retain) NSString *title;

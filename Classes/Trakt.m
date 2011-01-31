@@ -38,12 +38,12 @@ static Trakt *sharedTrakt = nil;
   }];
 }
 
-- (void)showPosterForURL:(NSString *)posterURL block:(void (^)(UIImage *poster, BOOL cached))block {
-  [self loadImageFromURL:[NSURL URLWithString:posterURL] scaledTo:CGSizeMake(44.0, 66.0) block:block];
+- (void)showPosterForURL:(NSURL *)posterURL block:(void (^)(UIImage *poster, BOOL cached))block {
+  [self loadImageFromURL:posterURL scaledTo:CGSizeMake(44.0, 66.0) block:block];
 }
 
-- (void)showThumbForURL:(NSString *)thumbURL block:(void (^)(UIImage *thumb, BOOL cached))block {
-  [self loadImageFromURL:[NSURL URLWithString:thumbURL] block:block];
+- (void)showThumbForURL:(NSURL *)thumbURL block:(void (^)(UIImage *thumb, BOOL cached))block {
+  [self loadImageFromURL:thumbURL block:block];
 }
 
 - (NSURL *)URLForImageURL:(NSURL *)URL scaledTo:(CGSize)scaledTo {

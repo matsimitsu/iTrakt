@@ -34,11 +34,11 @@
   ))
 
   (it "returns the poster url" (do ()
-    (~ (@episode posterURL) should be:"http://localhost:9292/api/uploads/82066/poster-82066.jpg")
+    (~ (@episode posterURL) should be:(NSURL URLWithString:"http://localhost:9292/api/uploads/82066/poster-82066.jpg"))
   ))
 
   (it "returns the thumb url" (do ()
-    (~ (@episode thumbURL) should be:"http://localhost:9292/api/uploads/82066/thumb-82066-3-12.jpg")
+    (~ (@episode thumbURL) should be:(NSURL URLWithString:"http://localhost:9292/api/uploads/82066/thumb-82066-3-12.jpg"))
   ))
 
   (describe "concerning its episode thumb" `(
@@ -60,7 +60,7 @@
   (describe "concerning its show poster" `(
    (it "retrieves the poster image" (do ()
      (set trakt (Trakt sharedInstance))
-     (trakt removeCachedImageForURL:(NSURL URLWithString:(@episode posterURL)) scaledTo:`(44 66))
+     (trakt removeCachedImageForURL:(@episode posterURL) scaledTo:`(44 66))
 
      (set @called nil)
      (@episode ensureShowPosterIsLoadedWithNuBlock:(do ()

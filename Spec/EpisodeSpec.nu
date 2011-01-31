@@ -16,8 +16,8 @@
     (~ (@episode tvdbID) should be:"82066")
   ))
 
-  (it "returns the description" (do ()
-    (~ (@episode description) should match:/^When the Fringe Team visits Massive Dynamic/)
+  (it "returns the overview" (do ()
+    (~ (@episode overview) should match:/^When the Fringe Team visits Massive Dynamic/)
   ))
 
   (it "returns where and when it will air" (do ()

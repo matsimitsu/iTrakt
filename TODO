@@ -1,7 +1,6 @@
 * Research which OSS license the app should have and that we adhere to the licenses of APIs.
   TVDB: http://forums.thetvdb.com/viewtopic.php?f=8&t=2507
 
-* Rename 'description' in Episode to 'overview'
 * Don't display the 'description' row in the episode details if there is no decsription.
 * Resize the show posters on the API side to increase download speeds
 * Add 'default' episode thumbnail per show (in case episode thumbnail is missing) (400x228)

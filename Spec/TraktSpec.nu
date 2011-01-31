@@ -98,10 +98,6 @@
       ))
     ))
 
-    ;(it "returns the show poster URL" (do ()
-      ;(~ (@trakt showPosterURL:) should be:"http://itrakt.matsimitsu.com/uploads/show/poster/4d43fee33f41c06a36000001/82066-25.jpg")
-    ;))
-
     (describe "concerning images" `(
       ; TODO possinly also check with the fixtures server whether or not a request was actually made. I.e. keep a request counter.
       (describe "and downloading/caching thereof" `(
@@ -137,36 +133,30 @@
         ))
       ))
 
-      (describe "by TVDB id" `(
-        (it "yields a thumbail of a show poster" (do ()
-          ((EGOCache currentCache) removeCacheForKey:"44x66-82066.jpg")
+      (describe "by URL" `(
 
-          (set url (NSURL URLWithString:"http://localhost:9292/api/uploads/show/poster/44x66-82066.jpg"))
-          (~ (@trakt cachedImageForURL:url) should be:nil)
-
-          ;(~ (@trakt showPosterURLForTVDBId:"82066") should be:url)
-          (@trakt showPosterForTVDBId:"82066" nuBlock:(do (poster cached)
-            ;(puts poster)
-            ;(puts cached)
-            (~ cached should be:false)
-            (~ (poster size) should equal:`(44 66))
-            (~ poster should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
-          ))
-          (wait 0.1 (do ()
-            ;(~ (@trakt cachedImageForURL:url) should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
-          ))
-        ))
+        ;(it "yields a thumbail of a show poster" (do ()
+        ;  ((EGOCache currentCache) removeCacheForKey:"poster-82066.jpg")
+        ;
+        ;  (set url (NSURL URLWithString:"http://localhost:9292/api/uploads/82066/poster-82066.jpg"))
+        ;  (~ (@trakt cachedImageForURL:url) should be:nil)
+        ;
+        ;  (@trakt showPosterForURL:"http://localhost:9292/api/uploads/82066/poster-82066.jpg" nuBlock:(do (poster cached)
+        ;    ;(~ cached should be:false)
+        ;    ;(~ poster should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
+        ;  ))
+        ;  ;(wait 0.1 (do ()
+        ;  ;  (~ (@trakt cachedImageForURL:url) should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
+        ;  ;))
+        ;))
 
         (it "yields a episode thumb" (do ()
-          ((EGOCache currentCache) removeCacheForKey:"82066-3-1.jpg")
+          ((EGOCache currentCache) removeCacheForKey:"thumb-82066-3-12.jpg")
 
-          (set url (NSURL URLWithString:"http://localhost:9292/api/uploads/episode/thumb/82066-3-1.jpg"))
+          (set url (NSURL URLWithString:"http://localhost:9292/api/uploads/82066/thumb-82066-3-12.jpg"))
           (~ (@trakt cachedImageForURL:url) should be:nil)
 
-          (~ (@trakt showThumbURLForTVDBId:"82066" season:3 episode:1) should be:url)
-          (@trakt showThumbForTVDBId:"82066" season:3 episode:1 nuBlock:(do (thumb cached)
-            ;(puts thumb)
-            ;(puts cached)
+          (@trakt showThumbForURL:"http://localhost:9292/api/uploads/82066/thumb-82066-3-12.jpg" nuBlock:(do (thumb cached)
             (~ cached should be:false)
             (~ thumb should be:(equalToImage (UIImage imageNamed:"thumb.jpg")))
           ))

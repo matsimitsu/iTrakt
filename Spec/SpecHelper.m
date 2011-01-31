@@ -57,14 +57,14 @@ static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
   }];
 }
 
-- (void)showPosterForTVDBId:(NSString *)tvdbID nuBlock:(id)nuBlock {
-  [self showPosterForTVDBId:tvdbID block:^(UIImage *poster, BOOL cached) {
+- (void)showPosterForURL:(NSString *)posterURL nuBlock:(id)nuBlock {
+  [self showPosterForURL:posterURL block:^(UIImage *poster, BOOL cached) {
     callNuBlockWithArguments(nuBlock, [NSArray arrayWithObjects:poster, [NSNumber numberWithBool:cached], nil]);
   }];
 }
 
-- (void)showThumbForTVDBId:(NSString *)tvdbID season:(NSInteger)season episode:(NSInteger)episode nuBlock:(id)nuBlock {
-  [self showThumbForTVDBId:tvdbID season:season episode:episode block:^(UIImage *thumb, BOOL cached) {
+- (void)showThumbForURL:(NSString *)thumbURL nuBlock:(id)nuBlock {
+  [self showThumbForURL:thumbURL block:^(UIImage *thumb, BOOL cached) {
     callNuBlockWithArguments(nuBlock, [NSArray arrayWithObjects:thumb, [NSNumber numberWithBool:cached], nil]);
   }];
 }

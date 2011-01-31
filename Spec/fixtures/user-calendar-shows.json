@@ -7,15 +7,14 @@
             "overview": "When the Fringe Team visits Massive Dynamic\u2019s assembly of the doomsday device, Walter becomes greatly concerned for Peter\u2019s well-being, so he turns to Nina for added brain power to understand the relationship between Peter and the superweapon. Meanwhile, the discovery of a dead body triggers an intense investigation.",
             "url": "http://trakt.tv/show/fringe/season/3/episode/11",
             "first_aired": 1296201600,
-            "thumb": "http://itrakt.matsimitsu.com/uploads/episode/thumb/4d43fee73f41c06a36000002/3458521.jpg",
+            "thumb": "http://localhost:9292/api/uploads/82066/thumb-82066-3-12.jpg",
             "season": 3
         },
         "show": {
             "title": "Fringe",
-            "banner": "http://itrakt.matsimitsu.com/uploads/show/banner/4d43fee33f41c06a36000001/82066-g20.jpg",
             "overview": "Fringe follows FBI Agent Olivia Dunham, Consultant Peter Bishop and science explorer extraordinaire Doctor Walter Bishop as they search for clues to the series of bizarre and horrific crimes inflicted on the world. The world that we  know. ",
             "url": "http://trakt.tv/show/fringe",
-            "poster": "http://itrakt.matsimitsu.com/uploads/show/poster/4d43fee33f41c06a36000001/82066-25.jpg",
+            "poster": "http://localhost:9292/api/uploads/82066/poster-82066.jpg",
             "network": "FOX",
             "imdb_id": "tt1119644",
             "air_time": "9:00 PM",

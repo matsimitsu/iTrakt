@@ -3,11 +3,9 @@
 
 * Don't display the 'description' row in the episode details if there is no decsription.
 * Resize the show posters on the API side to increase download speeds
-* Add 'default' episode thumbnail per show (in case episode thumbnail is missing) (400x228)
 * Create show poster thumbnails once and cache it (on the Episode for now)
 * Set the preferred show poster thumb size from the calendar controller
 * URL encode the username in the API url?
-* We don't need the poster URL in the JSON if we can inflect it by tvDB id.
 * We need a calendar feed for not registered/signed-in users like the site has.
 * Handle connection errors in some way which is needed to provide a good UX. I.e. should we retry, take a failure block, etc.
 * There appears to be a timezone bug, as on monday morning I still see listings for sunday the 23rd, although the listings *might* still be correct, the date at the very least has to be localized. I've included a screenshot of the listing on monday 24th of january at 10:30AM.

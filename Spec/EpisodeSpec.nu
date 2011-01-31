@@ -16,7 +16,7 @@
     (~ (@episode tvdbID) should be:"82066")
   ))
 
-  (it "returns the overview" (do ()
+  (it "returns the description" (do ()
     (~ (@episode overview) should match:/^When the Fringe Team visits Massive Dynamic/)
   ))
 

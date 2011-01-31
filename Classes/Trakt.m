@@ -46,8 +46,22 @@ static Trakt *sharedTrakt = nil;
   [self loadImageFromURL:[NSURL URLWithString:thumbURL] block:block];
 }
 
+- (NSURL *)URLForImageURL:(NSURL *)URL scaledTo:(CGSize)scaledTo {
+  NSURL *_URL = URL;
+  if (!CGSizeEqualToSize(scaledTo, CGSizeZero)) {
+    NSString *filename = [NSString stringWithFormat:@"%dx%d-%@", (int)scaledTo.width, (int)scaledTo.height, [_URL lastPathComponent]];
+    _URL = [[_URL URLByDeletingLastPathComponent] URLByAppendingPathComponent:filename];
+  }
+  return _URL;
+}
+
 - (UIImage *)cachedImageForURL:(NSURL *)URL {
-  NSString *filename = [URL lastPathComponent];
+  return [self cachedImageForURL:URL scaledTo:CGSizeZero];
+}
+
+- (UIImage *)cachedImageForURL:(NSURL *)URL scaledTo:(CGSize)scaledTo {
+  NSURL *_URL = [self URLForImageURL:URL scaledTo:scaledTo];
+  NSString *filename = [_URL lastPathComponent];
   //NSLog(@"Cache key: %@", filename);
   if ([[EGOCache currentCache] hasCacheForKey:filename]) {
      return [UIImage imageWithData:[[EGOCache currentCache] dataForKey:filename]];
@@ -60,16 +74,16 @@ static Trakt *sharedTrakt = nil;
   [[EGOCache currentCache] removeCacheForKey:[URL lastPathComponent]];
 }
 
+- (void)removeCachedImageForURL:(NSURL *)URL scaledTo:(CGSize)scaledTo {
+  [self removeCachedImageForURL:[self URLForImageURL:URL scaledTo:scaledTo]];
+}
+
 - (void)loadImageFromURL:(NSURL *)URL block:(void (^)(UIImage *image, BOOL cached))block {
   [self loadImageFromURL:URL scaledTo:CGSizeZero block:block];
 }
 
 - (void)loadImageFromURL:(NSURL *)URL scaledTo:(CGSize)scaledTo block:(void (^)(UIImage *image, BOOL cached))block {
-  NSURL *_URL = URL;
-  if (!CGSizeEqualToSize(scaledTo, CGSizeZero)) {
-    NSString *filename = [NSString stringWithFormat:@"%dx%d-%@", (int)scaledTo.width, (int)scaledTo.height, [_URL lastPathComponent]];
-    _URL = [[_URL URLByDeletingLastPathComponent] URLByAppendingPathComponent:filename];
-  }
+  NSURL *_URL = [self URLForImageURL:URL scaledTo:scaledTo];
 
   UIImage *cachedImage = [self cachedImageForURL:_URL];
   if (cachedImage) {

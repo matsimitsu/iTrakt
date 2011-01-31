@@ -23,8 +23,14 @@
 
 - (void)showThumbForURL:(NSString *)thumbURL block:(void (^)(UIImage *thumb, BOOL cached))block;
 
+- (NSURL *)URLForImageURL:(NSURL *)URL scaledTo:(CGSize)scaledTo;
+
 - (UIImage *)cachedImageForURL:(NSURL *)URL;
+- (UIImage *)cachedImageForURL:(NSURL *)URL scaledTo:(CGSize)scaledTo;
+
 - (void)removeCachedImageForURL:(NSURL *)URL;
+- (void)removeCachedImageForURL:(NSURL *)URL scaledTo:(CGSize)scaledTo;
+
 - (void)loadImageFromURL:(NSURL *)URL block:(void (^)(UIImage *image, BOOL cached))block;
 - (void)loadImageFromURL:(NSURL *)URL scaledTo:(CGSize)scaledTo block:(void (^)(UIImage *image, BOOL cached))block;
 

@@ -134,21 +134,19 @@
       ))
 
       (describe "by URL" `(
+        (it "yields a thumbail of a show poster" (do ()
+          (set url (NSURL URLWithString:"http://localhost:9292/api/uploads/82066/poster-82066.jpg"))
+          (@trakt removeCachedImageForURL:url scaledTo:`(44 66))
+          (~ (@trakt cachedImageForURL:url scaledTo:`(44 66)) should be:nil)
 
-        ;(it "yields a thumbail of a show poster" (do ()
-        ;  ((EGOCache currentCache) removeCacheForKey:"poster-82066.jpg")
-        ;
-        ;  (set url (NSURL URLWithString:"http://localhost:9292/api/uploads/82066/poster-82066.jpg"))
-        ;  (~ (@trakt cachedImageForURL:url) should be:nil)
-        ;
-        ;  (@trakt showPosterForURL:"http://localhost:9292/api/uploads/82066/poster-82066.jpg" nuBlock:(do (poster cached)
-        ;    ;(~ cached should be:false)
-        ;    ;(~ poster should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
-        ;  ))
-        ;  ;(wait 0.1 (do ()
-        ;  ;  (~ (@trakt cachedImageForURL:url) should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
-        ;  ;))
-        ;))
+          (@trakt showPosterForURL:"http://localhost:9292/api/uploads/82066/poster-82066.jpg" nuBlock:(do (poster cached)
+            (~ cached should be:false)
+            (~ poster should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
+          ))
+          (wait 0.3 (do ()
+            (~ (@trakt cachedImageForURL:url scaledTo:`(44 66)) should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
+          ))
+        ))
 
         (it "yields a episode thumb" (do ()
           ((EGOCache currentCache) removeCacheForKey:"thumb-82066-3-12.jpg")

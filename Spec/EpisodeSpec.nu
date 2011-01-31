@@ -57,20 +57,20 @@
     ))
   ))
 
-  ;(describe "concerning its show poster" `(
-  ;  (it "retrieves the poster image" (do ()
-  ;    (set trakt (Trakt sharedInstance))
-  ;    (trakt removeCachedImageForURL:(@episode posterURL))
-  ;
-  ;    (set @called nil)
-  ;    (@episode ensureShowPosterIsLoadedWithNuBlock:(do ()
-  ;      (set @called t)
-  ;      (~ (@episode thumb) should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
-  ;    ))
-  ;    (wait 0.1 (do ()
-  ;      (~ @called should be:t)
-  ;    ))
-  ;  ))
-  ;))
+  (describe "concerning its show poster" `(
+   (it "retrieves the poster image" (do ()
+     (set trakt (Trakt sharedInstance))
+     (trakt removeCachedImageForURL:(NSURL URLWithString:(@episode posterURL)) scaledTo:`(44 66))
+
+     (set @called nil)
+     (@episode ensureShowPosterIsLoadedWithNuBlock:(do ()
+       (set @called t)
+       (~ (@episode poster) should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
+     ))
+     (wait 0.3 (do ()
+       (~ @called should be:t)
+     ))
+   ))
+  ))
 
 ))

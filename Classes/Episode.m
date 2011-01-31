@@ -13,7 +13,7 @@
 @synthesize tvdbID;
 @synthesize showTitle;
 @synthesize title;
-@synthesize description;
+@synthesize overview;
 @synthesize network;
 @synthesize airtime;
 @synthesize season;
@@ -33,9 +33,9 @@
     self.season       = [[episodeInfo valueForKeyPath:@"episode.season"] integerValue];
     self.number       = [[episodeInfo valueForKeyPath:@"episode.number"] integerValue];
 
-    id d = [episodeInfo valueForKeyPath:@"episode.overview"];
-    if ([NSNull null] != d) {
-      self.description = [d copy];
+    id o = [episodeInfo valueForKeyPath:@"episode.overview"];
+    if ([NSNull null] != o) {
+      self.overview = [o copy];
     }
   }
   return self;
@@ -49,7 +49,7 @@
   [thumbURL release];
   [tvdbID release];
   [title release];
-  [description release];
+  [overview release];
   [network release];
   [airtime release];
   [showTitle release];

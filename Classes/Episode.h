@@ -9,7 +9,7 @@
   NSString *showTitle;
   NSString *tvdbID;
   NSString *title;
-  NSString *description;
+  NSString *overview;
   NSString *network;
   NSString *airtime;
   NSUInteger season;
@@ -23,7 +23,7 @@
 @property (nonatomic, retain) NSString *tvdbID;
 @property (nonatomic, retain) NSString *showTitle;
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *description;
+@property (nonatomic, retain) NSString *overview;
 @property (nonatomic, retain) NSString *network;
 @property (nonatomic, retain) NSString *airtime;
 @property (nonatomic, assign) NSUInteger season;

@@ -78,9 +78,9 @@
     return floor(width / EPISODE_IMAGE_ASPECT_RATIO);
   } else {
     if (indexPath.row == 0) {
-      // Calculate height for episode description
-      if (episode.description) {
-        CGSize size = [episode.description sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]
+      // Calculate height for episode overview
+      if (episode.overview) {
+        CGSize size = [episode.overview sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]
                                         constrainedToSize:CGSizeMake(300.0, 20000.0)
                                             lineBreakMode:UILineBreakModeWordWrap];
         return size.height + 48.0;
@@ -125,7 +125,7 @@
     UILabel *label = cell.textLabel;
     switch (indexPath.row) {
       case 0:
-        label.text = episode.description;
+        label.text = episode.overview;
         break;
       case 1:
         label.text = [NSString stringWithFormat:@"Episode %@", [episode episodeNumber], nil];

@@ -10,7 +10,8 @@ iTrakt
 As a user I want to see an overview of the tv series I watch so I won't miss upcoming episodes. - #1 i1
 As a user I want to see details of an episode so I know what the episode is about - #2 i1
 As a user I want to mark an episode as seen so my trakt.tv history is updated - #3 i1
-As a user I want to mark an episode as seen so I don't see it in the overview of today’s episodes again - #4 i1
+As a user I want to see my library so I can mark episodes as seen. - #4 i1
+As a user I want to see overviews of trending, most watched, highest rated shows so I can discover shows. - #13 i1
 As a user I want to receive push notifications about tv series I follow and are about to be aired so I can view it as soon as possible - #5 i2
 As a user I want to indicate whether or not I liked an episode so others will see an average rating indication - #6 i3
 As a user I want to see average ratings for an episode so I know if I should watch it - #7 i3

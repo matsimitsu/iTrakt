@@ -31,8 +31,8 @@
 		24EF210712EA3A2A00B54F6F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
-		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
-		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		28C286E10D94DF7D0034E888 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* CalendarViewController.m */; };
+		28F335F11007B36200424DE2 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* CalendarViewController.xib */; };
 		510C6AB212F363EB000500A1 /* libNuBaconLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 510C6AB112F363EB000500A1 /* libNuBaconLib.a */; };
 		510C6ABD12F3644B000500A1 /* bacon_context.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6AB712F3644B000500A1 /* bacon_context.nu */; };
 		510C6ABE12F3644B000500A1 /* bacon_macros.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6AB812F3644B000500A1 /* bacon_macros.nu */; };
@@ -40,8 +40,8 @@
 		510C6AC012F3644B000500A1 /* bacon_specification.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6ABA12F3644B000500A1 /* bacon_specification.nu */; };
 		510C6AC112F3644B000500A1 /* bacon_summary.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6ABB12F3644B000500A1 /* bacon_summary.nu */; };
 		510C6AC212F3644B000500A1 /* bacon.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6ABC12F3644B000500A1 /* bacon.nu */; };
-		510C6AD312F36516000500A1 /* RootViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 28C286DF0D94DF7D0034E888 /* RootViewController.h */; };
-		510C6AD412F36516000500A1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
+		510C6AD312F36516000500A1 /* CalendarViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 28C286DF0D94DF7D0034E888 /* CalendarViewController.h */; };
+		510C6AD412F36516000500A1 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* CalendarViewController.m */; };
 		510C6AD512F36516000500A1 /* iTraktAppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623240D0F684500981E51 /* iTraktAppDelegate.h */; };
 		510C6AD612F36516000500A1 /* iTraktAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iTraktAppDelegate.m */; };
 		510C6AD712F36516000500A1 /* BroadcastDate.h in Sources */ = {isa = PBXBuildFile; fileRef = 2484C6AC12E9F568000D3871 /* BroadcastDate.h */; };
@@ -140,9 +140,9 @@
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* iTrakt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTrakt_Prefix.pch; sourceTree = "<group>"; };
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		28C286DF0D94DF7D0034E888 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		28C286E00D94DF7D0034E888 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		28F335F01007B36200424DE2 /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		510C6AB112F363EB000500A1 /* libNuBaconLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNuBaconLib.a; path = "vendor/NuBacon/iOSRunner/build/Debug-iphonesimulator/libNuBaconLib.a"; sourceTree = "<group>"; };
 		510C6AB712F3644B000500A1 /* bacon_context.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bacon_context.nu; path = vendor/NuBacon/bacon_context.nu; sourceTree = "<group>"; };
@@ -214,8 +214,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
-				28C286E00D94DF7D0034E888 /* RootViewController.m */,
+				28C286DF0D94DF7D0034E888 /* CalendarViewController.h */,
+				28C286E00D94DF7D0034E888 /* CalendarViewController.m */,
 				1D3623240D0F684500981E51 /* iTraktAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iTraktAppDelegate.m */,
 				2484C6AC12E9F568000D3871 /* BroadcastDate.h */,
@@ -311,7 +311,7 @@
 				2458FBDB12EB69D9001B7590 /* Images */,
 				2448DCED12E9EDD600AC422E /* banner.jpg */,
 				5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */,
-				28F335F01007B36200424DE2 /* RootViewController.xib */,
+				28F335F01007B36200424DE2 /* CalendarViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* iTrakt-Info.plist */,
 			);
@@ -466,7 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
-				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
+				28F335F11007B36200424DE2 /* CalendarViewController.xib in Resources */,
 				2448DCEE12E9EDD600AC422E /* banner.jpg in Resources */,
 				2458FBBE12EB6978001B7590 /* iTunesArtwork in Resources */,
 				2458FBBF12EB6978001B7590 /* Icon-Small.png in Resources */,
@@ -515,7 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D3623260D0F684500981E51 /* iTraktAppDelegate.m in Sources */,
-				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
+				28C286E10D94DF7D0034E888 /* CalendarViewController.m in Sources */,
 				2484C6AE12E9F568000D3871 /* BroadcastDate.m in Sources */,
 				51FBCC9712EA375500073C68 /* EpisodeTableViewCell.m in Sources */,
 				51FBCC9A12EA391B00073C68 /* Episode.m in Sources */,
@@ -542,8 +542,8 @@
 				510C6CE012F5E78A000500A1 /* UIImage+Alpha.h in Sources */,
 				510C6AE412F36538000500A1 /* EGOCache.h in Sources */,
 				510C6AE512F36538000500A1 /* EGOCache.m in Sources */,
-				510C6AD312F36516000500A1 /* RootViewController.h in Sources */,
-				510C6AD412F36516000500A1 /* RootViewController.m in Sources */,
+				510C6AD312F36516000500A1 /* CalendarViewController.h in Sources */,
+				510C6AD412F36516000500A1 /* CalendarViewController.m in Sources */,
 				510C6AD512F36516000500A1 /* iTraktAppDelegate.h in Sources */,
 				510C6AD612F36516000500A1 /* iTraktAppDelegate.m in Sources */,
 				510C6AD712F36516000500A1 /* BroadcastDate.h in Sources */,

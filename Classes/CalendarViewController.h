@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "Episode.h"
 
-@interface RootViewController : UITableViewController {
+@interface CalendarViewController : UITableViewController {
   NSArray *broadcastDates;
 }
 

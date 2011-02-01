@@ -1,4 +1,4 @@
-#import "RootViewController.h"
+#import "CalendarViewController.h"
 #import "BroadcastDate.h"
 #import "EpisodeTableViewCell.h"
 #import "EpisodeDetailsViewController.h"
@@ -6,7 +6,7 @@
 
 #define ROW_HEIGHT 66.0
 
-@implementation RootViewController
+@implementation CalendarViewController
 
 @synthesize broadcastDates;
 

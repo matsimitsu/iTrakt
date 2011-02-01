@@ -1,20 +1,10 @@
-//
-//  iTraktAppDelegate.m
-//  iTrakt
-//
-//  Created by Robert Beekman on 21-01-11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
 #import "iTraktAppDelegate.h"
 #import "RootViewController.h"
-
 
 @implementation iTraktAppDelegate
 
 @synthesize window;
-@synthesize navigationController;
-
+@synthesize tabBarController;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -24,7 +14,7 @@
     // Override point for customization after application launch.
     
     // Add the navigation controller's view to the window and display.
-    [self.window addSubview:navigationController.view];
+    [self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
 
     return YES;
@@ -80,7 +70,7 @@
 
 
 - (void)dealloc {
-	[navigationController release];
+	[tabBarController release];
 	[window release];
 	[super dealloc];
 }

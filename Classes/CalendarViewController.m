@@ -72,8 +72,10 @@
   
   [episode ensureShowPosterIsLoaded:^{
     // this callback is only run if the image has to be downloaded first
-    NSLog(@"Show poster was downloaded for cell at: %@", indexPath);
-    [[self.tableView cellForRowAtIndexPath:indexPath] setNeedsLayout];
+    //NSLog(@"Show poster was downloaded for cell at: %@", indexPath);
+    EpisodeTableViewCell *cellToReload = (EpisodeTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    cellToReload.episode = episode;
+    [cellToReload setNeedsLayout];
   }];
 
   cell.episode = episode;

@@ -14,4 +14,9 @@
 
 - (id)initWithDictionary:(NSDictionary *)showDict;
 
+// TODO this should come from the JSON and be stored in a property, but for now I'm hardcoding it.
+- (NSURL *)posterURL;
+
+- (void)ensurePosterIsLoaded:(void (^)())downloadedBlock;
+
 @end

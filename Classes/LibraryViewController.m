@@ -53,6 +53,15 @@
   }
 
   Show *show = [self.shows objectAtIndex:indexPath.row];
+
+  [show ensurePosterIsLoaded:^{
+    // this callback is only run if the image has to be downloaded first
+    //NSLog(@"Show poster was downloaded for cell at: %@", indexPath);
+    ShowTableViewCell *cellToReload = (ShowTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    cellToReload.show = show;
+    [cellToReload setNeedsLayout];
+  }];
+
   cell.show = show;
 
   return cell;

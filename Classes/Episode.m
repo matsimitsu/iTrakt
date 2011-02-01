@@ -1,7 +1,4 @@
 #import "Episode.h"
-#import "EGOCache.h"
-#import <YAJL/YAJL.h>
-
 #import "Trakt.h"
 
 @implementation Episode

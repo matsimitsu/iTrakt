@@ -45,7 +45,6 @@ static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
   }];
 }
 
-
 @end
 
 
@@ -54,6 +53,12 @@ static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
 - (void)calendarWithNuBlock:(id)nuBlock {
   [self calendar:^(NSArray *broadcastDates) {
     callNuBlockWithArguments(nuBlock, [NSArray arrayWithObject:broadcastDates]);
+  }];
+}
+
+- (void)libraryWithNuBlock:(id)nuBlock {
+  [self library:^(NSArray *shows) {
+    callNuBlockWithArguments(nuBlock, [NSArray arrayWithObject:shows]);
   }];
 }
 

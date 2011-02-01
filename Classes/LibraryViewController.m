@@ -1,6 +1,10 @@
 #import "LibraryViewController.h"
+#import "ShowTableViewCell.h"
+
 #import "Trakt.h"
 #import "Show.h"
+
+#define ROW_HEIGHT 66.0
 
 @implementation LibraryViewController
 
@@ -14,6 +18,7 @@
   [super viewDidLoad];
 
   self.navigationItem.title = @"Library";
+  self.tableView.rowHeight = ROW_HEIGHT;
 
   // TODO replace this with the actual username
   [Trakt sharedInstance].apiUser = @"matsimitsu";
@@ -39,18 +44,17 @@
 }
 
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *CellIdentifier = @"Cell";
   
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  ShowTableViewCell *cell = (ShowTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
-      cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    cell = [[[ShowTableViewCell alloc] initWithReuseIdentifier:CellIdentifier] autorelease];
   }
-  
+
   Show *show = [self.shows objectAtIndex:indexPath.row];
-  cell.textLabel.text = show.title;
-  
+  cell.show = show;
+
   return cell;
 }
 

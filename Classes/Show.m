@@ -4,6 +4,7 @@
 
 @synthesize tvdbID;
 @synthesize title;
+@synthesize poster;
 @synthesize year;
 
 - (id)initWithDictionary:(NSDictionary *)showDict {

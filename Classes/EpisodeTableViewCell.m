@@ -1,5 +1,4 @@
 #import "EpisodeTableViewCell.h"
-#import <QuartzCore/QuartzCore.h>
 
 // Posters are 138x203, hence for every ASPECT_RATIO pixels in width there is 1 pixel in height
 #define POSTER_ASPECT_RATIO 0.679802955665025
@@ -27,7 +26,6 @@
 
     self.imageView = [UIImageView new];
     self.imageView.opaque = YES;
-    //self.imageView.layer.minificationFilter = kCAFilterTrilinear;
     [self.contentView addSubview:self.imageView];
 
     self.titleLabel = [UILabel new];
@@ -79,23 +77,23 @@
   imageWidth = floor(size.height * POSTER_ASPECT_RATIO);
   CGSize imageSize = CGSizeMake(imageWidth, size.height);
 
-  self.imageView.image = episode.poster;
+  self.imageView.image = self.episode.poster;
   self.imageView.frame = CGRectMake(x, y, imageSize.width, imageSize.height);
 
   x += imageWidth + MARGIN;
   y += MARGIN;
   labelWidth = size.width - x;
   labelHeight = [UIFont systemFontSize] + MARGIN_UNDERNEATH_LABEL;
-  self.titleLabel.text = episode.title;
+  self.titleLabel.text = self.episode.title;
   self.titleLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
 
   y += labelHeight + MARGIN_UNDERNEATH_LABEL;
   labelHeight = [UIFont smallSystemFontSize] + MARGIN_UNDERNEATH_LABEL;
-  self.serieTitleAndEpisodeNumberLabel.text = [episode serieTitleAndEpisodeNumber];
+  self.serieTitleAndEpisodeNumberLabel.text = [self.episode serieTitleAndEpisodeNumber];
   self.serieTitleAndEpisodeNumberLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
 
   y += labelHeight + MARGIN_UNDERNEATH_LABEL;
-  self.airTimeAndChannelLabel.text = [episode airTimeAndChannel];
+  self.airTimeAndChannelLabel.text = [self.episode airTimeAndChannel];
   self.airTimeAndChannelLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
 }
 

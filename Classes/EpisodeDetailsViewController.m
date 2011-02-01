@@ -108,8 +108,9 @@
     [episode ensureThumbIsLoaded:^{
       // this callback is only run if the image has to be downloaded first
       NSLog(@"Episode thumb was downloaded for cell");
-      [[self.tableView cellForRowAtIndexPath:indexPath] setNeedsLayout];
-      cell.image = episode.thumb; // TODO check if this is necessary
+      ImageCell *cellToReload = (ImageCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+      cellToReload.image = episode.thumb;
+      [cellToReload setNeedsLayout];
     }];
 
     cell.image = episode.thumb;

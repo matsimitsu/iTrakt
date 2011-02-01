@@ -72,6 +72,8 @@
 		510C6CE012F5E78A000500A1 /* UIImage+Alpha.h in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23612F457CC00329D69 /* UIImage+Alpha.h */; };
 		510C6D0712F5EA8A000500A1 /* poster-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 510C6D0612F5EA8A000500A1 /* poster-thumbnail.jpg */; };
 		510C6D0812F5EAAE000500A1 /* poster-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 510C6D0612F5EA8A000500A1 /* poster-thumbnail.jpg */; };
+		510C6EC712F8A2EC000500A1 /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6EC512F8A2EC000500A1 /* LibraryViewController.m */; };
+		510C6EC812F8A2EC000500A1 /* LibraryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510C6EC612F8A2EC000500A1 /* LibraryViewController.xib */; };
 		5134008612EF4D72007ED54E /* EpisodeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */; };
 		5134008712EF4D72007ED54E /* EpisodeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */; };
 		513400A712EF5299007ED54E /* episode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 513400A612EF5299007ED54E /* episode.jpg */; };
@@ -158,6 +160,9 @@
 		510C6BC512F5C875000500A1 /* user-calendar-shows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "user-calendar-shows.json"; path = "Spec/fixtures/user-calendar-shows.json"; sourceTree = "<group>"; };
 		510C6C5A12F5DB5C000500A1 /* SpecHelper.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SpecHelper.nu; path = Spec/SpecHelper.nu; sourceTree = "<group>"; };
 		510C6D0612F5EA8A000500A1 /* poster-thumbnail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "poster-thumbnail.jpg"; path = "Spec/fixtures/poster-thumbnail.jpg"; sourceTree = "<group>"; };
+		510C6EC412F8A2EC000500A1 /* LibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryViewController.h; sourceTree = "<group>"; };
+		510C6EC512F8A2EC000500A1 /* LibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryViewController.m; sourceTree = "<group>"; };
+		510C6EC612F8A2EC000500A1 /* LibraryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LibraryViewController.xib; path = Views/LibraryViewController.xib; sourceTree = "<group>"; };
 		5134008312EF4D72007ED54E /* EpisodeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodeDetailsViewController.h; sourceTree = "<group>"; };
 		5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodeDetailsViewController.m; sourceTree = "<group>"; };
 		5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EpisodeDetailsViewController.xib; path = Views/EpisodeDetailsViewController.xib; sourceTree = "<group>"; };
@@ -222,6 +227,8 @@
 				513400C512EF71A4007ED54E /* ImageCell.m */,
 				510C6AF812F369C2000500A1 /* Trakt.h */,
 				510C6AF912F369C2000500A1 /* Trakt.m */,
+				510C6EC412F8A2EC000500A1 /* LibraryViewController.h */,
+				510C6EC512F8A2EC000500A1 /* LibraryViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -352,6 +359,7 @@
 				5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */,
 				28F335F01007B36200424DE2 /* CalendarViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				510C6EC612F8A2EC000500A1 /* LibraryViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -475,6 +483,7 @@
 				513400A712EF5299007ED54E /* episode.jpg in Resources */,
 				510C6BC612F5C875000500A1 /* user-calendar-shows.json in Resources */,
 				510C6D0712F5EA8A000500A1 /* poster-thumbnail.jpg in Resources */,
+				510C6EC812F8A2EC000500A1 /* LibraryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +528,7 @@
 				2441C23712F457CC00329D69 /* UIImage+Resize.m in Sources */,
 				2441C23812F457CC00329D69 /* UIImage+Alpha.m in Sources */,
 				2441C23912F457CC00329D69 /* UIImage+RoundedCorner.m in Sources */,
+				510C6EC712F8A2EC000500A1 /* LibraryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,6 +5,9 @@
 #import "Trakt.h"
 #import "BroadcastDate.h"
 
+#import "Show.h"
+#import "Episode.h"
+
 @implementation Trakt
 
 static Trakt *sharedTrakt = nil;
@@ -31,12 +34,30 @@ static Trakt *sharedTrakt = nil;
   [JSONDownload downloadFromURL:[self calendarURL] block:^(id response) {
     //NSLog(@"[!] Finished download of calendar data");
     NSMutableArray *dates = [NSMutableArray array];
-    for(NSDictionary *item in (NSArray *)response) {
-      [dates addObject:[[[BroadcastDate alloc] initWithDictionary:item] autorelease]];
+    for(NSDictionary *episodeDict in (NSArray *)response) {
+      [dates addObject:[[[BroadcastDate alloc] initWithDictionary:episodeDict] autorelease]];
     }
     block([dates copy]);
   }];
 }
+
+
+- (NSURL *)libraryURL {
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/library.json?name=%@", self.baseURL, self.apiUser, nil]];
+}
+
+- (void)library:(void (^)(NSArray *shows))block {
+  //NSLog(@"[!] Start download of calendar data");
+  [JSONDownload downloadFromURL:[self libraryURL] block:^(id response) {
+    //NSLog(@"[!] Finished download of calendar data");
+    NSMutableArray *shows = [NSMutableArray array];
+    for(NSDictionary *showDict in (NSArray *)response) {
+      [shows addObject:[[[Show alloc] initWithDictionary:showDict] autorelease]];
+    }
+    block([shows copy]);
+  }];
+}
+
 
 - (void)showPosterForURL:(NSURL *)posterURL block:(void (^)(UIImage *poster, BOOL cached))block {
   [self loadImageFromURL:posterURL scaledTo:CGSizeMake(44.0, 66.0) block:block];
@@ -45,6 +66,9 @@ static Trakt *sharedTrakt = nil;
 - (void)showThumbForURL:(NSURL *)thumbURL block:(void (^)(UIImage *thumb, BOOL cached))block {
   [self loadImageFromURL:thumbURL block:block];
 }
+
+
+# pragma The abstracted methods that deal with the API
 
 - (NSURL *)URLForImageURL:(NSURL *)URL scaledTo:(CGSize)scaledTo {
   NSURL *_URL = URL;

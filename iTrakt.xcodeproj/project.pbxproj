@@ -74,6 +74,9 @@
 		510C6D0812F5EAAE000500A1 /* poster-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 510C6D0612F5EA8A000500A1 /* poster-thumbnail.jpg */; };
 		510C6EC712F8A2EC000500A1 /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6EC512F8A2EC000500A1 /* LibraryViewController.m */; };
 		510C6EC812F8A2EC000500A1 /* LibraryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510C6EC612F8A2EC000500A1 /* LibraryViewController.xib */; };
+		510C6EDF12F8A83D000500A1 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6EDE12F8A83D000500A1 /* Show.m */; };
+		510C6EE012F8AB8B000500A1 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6EDE12F8A83D000500A1 /* Show.m */; };
+		510C6EE212F8ABA7000500A1 /* ShowSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6EE112F8ABA7000500A1 /* ShowSpec.nu */; };
 		5134008612EF4D72007ED54E /* EpisodeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */; };
 		5134008712EF4D72007ED54E /* EpisodeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */; };
 		513400A712EF5299007ED54E /* episode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 513400A612EF5299007ED54E /* episode.jpg */; };
@@ -163,6 +166,9 @@
 		510C6EC412F8A2EC000500A1 /* LibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryViewController.h; sourceTree = "<group>"; };
 		510C6EC512F8A2EC000500A1 /* LibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryViewController.m; sourceTree = "<group>"; };
 		510C6EC612F8A2EC000500A1 /* LibraryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LibraryViewController.xib; path = Views/LibraryViewController.xib; sourceTree = "<group>"; };
+		510C6EDD12F8A83D000500A1 /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Show.h; sourceTree = "<group>"; };
+		510C6EDE12F8A83D000500A1 /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Show.m; sourceTree = "<group>"; };
+		510C6EE112F8ABA7000500A1 /* ShowSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ShowSpec.nu; path = Spec/ShowSpec.nu; sourceTree = "<group>"; };
 		5134008312EF4D72007ED54E /* EpisodeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodeDetailsViewController.h; sourceTree = "<group>"; };
 		5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodeDetailsViewController.m; sourceTree = "<group>"; };
 		5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EpisodeDetailsViewController.xib; path = Views/EpisodeDetailsViewController.xib; sourceTree = "<group>"; };
@@ -229,6 +235,8 @@
 				510C6AF912F369C2000500A1 /* Trakt.m */,
 				510C6EC412F8A2EC000500A1 /* LibraryViewController.h */,
 				510C6EC512F8A2EC000500A1 /* LibraryViewController.m */,
+				510C6EDD12F8A83D000500A1 /* Show.h */,
+				510C6EDE12F8A83D000500A1 /* Show.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -333,6 +341,7 @@
 		510C6AED12F3682C000500A1 /* Spec */ = {
 			isa = PBXGroup;
 			children = (
+				510C6EE112F8ABA7000500A1 /* ShowSpec.nu */,
 				510C6BC412F5C867000500A1 /* Fixtures */,
 				510C6AEE12F368A2000500A1 /* TraktSpec.nu */,
 				516CE8D512F42D53003450CF /* SpecHelper.m */,
@@ -491,6 +500,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510C6EE212F8ABA7000500A1 /* ShowSpec.nu in Resources */,
 				510C6D0812F5EAAE000500A1 /* poster-thumbnail.jpg in Resources */,
 				510C6C5B12F5DB62000500A1 /* SpecHelper.nu in Resources */,
 				510C6BC712F5C87C000500A1 /* user-calendar-shows.json in Resources */,
@@ -529,6 +539,7 @@
 				2441C23812F457CC00329D69 /* UIImage+Alpha.m in Sources */,
 				2441C23912F457CC00329D69 /* UIImage+RoundedCorner.m in Sources */,
 				510C6EC712F8A2EC000500A1 /* LibraryViewController.m in Sources */,
+				510C6EDF12F8A83D000500A1 /* Show.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510C6EE012F8AB8B000500A1 /* Show.m in Sources */,
 				510C6CDB12F5E78A000500A1 /* UIImage+Resize.m in Sources */,
 				510C6CDC12F5E78A000500A1 /* UIImage+Alpha.m in Sources */,
 				510C6CDD12F5E78A000500A1 /* UIImage+RoundedCorner.m in Sources */,

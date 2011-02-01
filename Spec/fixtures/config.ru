@@ -24,6 +24,10 @@ mappings = lambda do
     serve_json_fixture('user-calendar-shows')
   end
 
+  map('/api/users/library.json?name=bob') do
+    serve_json_fixture('user-show-library')
+  end
+
   map('/api/uploads/82066/poster-82066.jpg') do
     serve_jpeg_fixture('poster')
   end

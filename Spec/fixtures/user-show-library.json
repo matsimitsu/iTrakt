@@ -1,0 +1,521 @@
+[
+   {
+      "title":"30 Rock",
+      "year":2006,
+      "url":"http://trakt.tv/show/30-rock",
+      "imdb_id":"tt0496424",
+      "tvdb_id":"79488"
+   },
+   {
+      "title":"American Dad!",
+      "year":2005,
+      "url":"http://trakt.tv/show/american-dad",
+      "imdb_id":"tt0397306",
+      "tvdb_id":"73141"
+   },
+   {
+      "title":"Band Of Brothers",
+      "year":2001,
+      "url":"http://trakt.tv/show/band-of-brothers",
+      "imdb_id":"tt0185906",
+      "tvdb_id":"74205"
+   },
+   {
+      "title":"Battlestar Galactica (2003)",
+      "year":2003,
+      "url":"http://trakt.tv/show/battlestar-galactica-2003",
+      "imdb_id":"tt0407362",
+      "tvdb_id":"73545"
+   },
+   {
+      "title":"Better Off Ted",
+      "year":2009,
+      "url":"http://trakt.tv/show/better-off-ted",
+      "imdb_id":"tt1235547",
+      "tvdb_id":"84021"
+   },
+   {
+      "title":"Better With You",
+      "year":2010,
+      "url":"http://trakt.tv/show/better-with-you",
+      "imdb_id":"tt1598876",
+      "tvdb_id":"166361"
+   },
+   {
+      "title":"The Big Bang Theory",
+      "year":2007,
+      "url":"http://trakt.tv/show/the-big-bang-theory",
+      "imdb_id":"tt0898266",
+      "tvdb_id":"80379"
+   },
+   {
+      "title":"Bones",
+      "year":2005,
+      "url":"http://trakt.tv/show/bones",
+      "imdb_id":"tt0460627",
+      "tvdb_id":"75682"
+   },
+   {
+      "title":"Bored to Death",
+      "year":2009,
+      "url":"http://trakt.tv/show/bored-to-death",
+      "imdb_id":"tt1255913",
+      "tvdb_id":"104641"
+   },
+   {
+      "title":"Burn Notice",
+      "year":2007,
+      "url":"http://trakt.tv/show/burn-notice",
+      "imdb_id":"tt0810788",
+      "tvdb_id":"80270"
+   },
+   {
+      "title":"The Cape (2011)",
+      "year":2011,
+      "url":"http://trakt.tv/show/the-cape-2011",
+      "imdb_id":"tt1593823",
+      "tvdb_id":"160671"
+   },
+   {
+      "title":"Castle (2009)",
+      "year":2009,
+      "url":"http://trakt.tv/show/castle-2009",
+      "imdb_id":"tt1219024",
+      "tvdb_id":"83462"
+   },
+   {
+      "title":"Chase (2010)",
+      "year":2010,
+      "url":"http://trakt.tv/show/chase-2010",
+      "imdb_id":"tt1582458",
+      "tvdb_id":"163541"
+   },
+   {
+      "title":"Chuck",
+      "year":2007,
+      "url":"http://trakt.tv/show/chuck",
+      "imdb_id":"tt0934814",
+      "tvdb_id":"80348"
+   },
+   {
+      "title":"The Colbert Report",
+      "year":2005,
+      "url":"http://trakt.tv/show/the-colbert-report",
+      "imdb_id":"tt0458254",
+      "tvdb_id":"79274"
+   },
+   {
+      "title":"Come Fly With Me (2010)",
+      "year":2010,
+      "url":"http://trakt.tv/show/come-fly-with-me-2010",
+      "imdb_id":"tt1749004",
+      "tvdb_id":"212571"
+   },
+   {
+      "title":"Community",
+      "year":2009,
+      "url":"http://trakt.tv/show/community",
+      "imdb_id":"tt1439629",
+      "tvdb_id":"94571"
+   },
+   {
+      "title":"Cops",
+      "year":1989,
+      "url":"http://trakt.tv/show/cops",
+      "imdb_id":"tt0096563",
+      "tvdb_id":"74709"
+   },
+   {
+      "title":"Cougar Town",
+      "year":2009,
+      "url":"http://trakt.tv/show/cougar-town",
+      "imdb_id":"tt1441109",
+      "tvdb_id":"94991"
+   },
+   {
+      "title":"Dark Blue",
+      "year":2009,
+      "url":"http://trakt.tv/show/dark-blue",
+      "imdb_id":"tt1319636",
+      "tvdb_id":"95781"
+   },
+   {
+      "title":"Dead Like Me",
+      "year":2003,
+      "url":"http://trakt.tv/show/dead-like-me",
+      "imdb_id":"tt0348913",
+      "tvdb_id":"72129"
+   },
+   {
+      "title":"Detroit 1-8-7",
+      "year":2010,
+      "url":"http://trakt.tv/show/detroit-187",
+      "imdb_id":"tt1578258",
+      "tvdb_id":"164221"
+   },
+   {
+      "title":"Dexter",
+      "year":2006,
+      "url":"http://trakt.tv/show/dexter",
+      "imdb_id":"tt0773262",
+      "tvdb_id":"79349"
+   },
+   {
+      "title":"Entourage",
+      "year":2004,
+      "url":"http://trakt.tv/show/entourage",
+      "imdb_id":"tt0387199",
+      "tvdb_id":"74543"
+   },
+   {
+      "title":"Episodes",
+      "year":2011,
+      "url":"http://trakt.tv/show/episodes",
+      "imdb_id":"tt1582350",
+      "tvdb_id":"123581"
+   },
+   {
+      "title":"Family Guy",
+      "year":1999,
+      "url":"http://trakt.tv/show/family-guy",
+      "imdb_id":"tt0182576",
+      "tvdb_id":"75978"
+   },
+   {
+      "title":"Firefly",
+      "year":2002,
+      "url":"http://trakt.tv/show/firefly",
+      "imdb_id":"tt0303461",
+      "tvdb_id":"78874"
+   },
+   {
+      "title":"Flashpoint",
+      "year":2008,
+      "url":"http://trakt.tv/show/flashpoint",
+      "imdb_id":"tt1059475",
+      "tvdb_id":"82438"
+   },
+   {
+      "title":"Fringe",
+      "year":2008,
+      "url":"http://trakt.tv/show/fringe",
+      "imdb_id":"tt1119644",
+      "tvdb_id":"82066"
+   },
+   {
+      "title":"Gary Unmarried",
+      "year":2009,
+      "url":"http://trakt.tv/show/gary-unmarried",
+      "imdb_id":null,
+      "tvdb_id":"82916"
+   },
+   {
+      "title":"Generation Kill",
+      "year":2008,
+      "url":"http://trakt.tv/show/generation-kill",
+      "imdb_id":"tt0995832",
+      "tvdb_id":"82109"
+   },
+   {
+      "title":"The Good Guys (2010)",
+      "year":2010,
+      "url":"http://trakt.tv/show/the-good-guys-2010",
+      "imdb_id":"tt1567254",
+      "tvdb_id":"140101"
+   },
+   {
+      "title":"The Guild",
+      "year":2007,
+      "url":"http://trakt.tv/show/the-guild",
+      "imdb_id":"tt1138475",
+      "tvdb_id":"83949"
+   },
+   {
+      "title":"Hawaii Five-0 (2010)",
+      "year":2010,
+      "url":"http://trakt.tv/show/hawaii-five0-2010",
+      "imdb_id":"tt1600194",
+      "tvdb_id":"164541"
+   },
+   {
+      "title":"House",
+      "year":2004,
+      "url":"http://trakt.tv/show/house",
+      "imdb_id":"tt0412142",
+      "tvdb_id":"73255"
+   },
+   {
+      "title":"How I Met Your Mother",
+      "year":2005,
+      "url":"http://trakt.tv/show/how-i-met-your-mother",
+      "imdb_id":"tt0460649",
+      "tvdb_id":"75760"
+   },
+   {
+      "title":"Human Target (2010)",
+      "year":2010,
+      "url":"http://trakt.tv/show/human-target-2010",
+      "imdb_id":"tt1439741",
+      "tvdb_id":"94801"
+   },
+   {
+      "title":"The IT Crowd",
+      "year":2006,
+      "url":"http://trakt.tv/show/the-it-crowd",
+      "imdb_id":"tt0487831",
+      "tvdb_id":"79216"
+   },
+   {
+      "title":"It's Always Sunny in Philadelphia",
+      "year":2005,
+      "url":"http://trakt.tv/show/its-always-sunny-in-philadelphia",
+      "imdb_id":"tt0472954",
+      "tvdb_id":"75805"
+   },
+   {
+      "title":"The League",
+      "year":2009,
+      "url":"http://trakt.tv/show/the-league",
+      "imdb_id":"tt1480684",
+      "tvdb_id":"114701"
+   },
+   {
+      "title":"Leverage",
+      "year":2008,
+      "url":"http://trakt.tv/show/leverage",
+      "imdb_id":"tt1103987",
+      "tvdb_id":"82339"
+   },
+   {
+      "title":"Lie to Me",
+      "year":2009,
+      "url":"http://trakt.tv/show/lie-to-me",
+      "imdb_id":"tt1235099",
+      "tvdb_id":"83602"
+   },
+   {
+      "title":"Life",
+      "year":2007,
+      "url":"http://trakt.tv/show/life",
+      "imdb_id":"tt0874936",
+      "tvdb_id":"80352"
+   },
+   {
+      "title":"The Mentalist",
+      "year":2008,
+      "url":"http://trakt.tv/show/the-mentalist",
+      "imdb_id":"tt1196946",
+      "tvdb_id":"82459"
+   },
+   {
+      "title":"The Middle",
+      "year":2009,
+      "url":"http://trakt.tv/show/the-middle",
+      "imdb_id":"tt1442464",
+      "tvdb_id":"95021"
+   },
+   {
+      "title":"Mike & Molly",
+      "year":2010,
+      "url":"http://trakt.tv/show/mike-and-molly",
+      "imdb_id":"tt1608180",
+      "tvdb_id":"164501"
+   },
+   {
+      "title":"Modern Family",
+      "year":2009,
+      "url":"http://trakt.tv/show/modern-family",
+      "imdb_id":"tt1442437",
+      "tvdb_id":"95011"
+   },
+   {
+      "title":"My Name Is Earl",
+      "year":2005,
+      "url":"http://trakt.tv/show/my-name-is-earl",
+      "imdb_id":"tt0460091",
+      "tvdb_id":"75397"
+   },
+   {
+      "title":"Never Mind the Buzzcocks",
+      "year":1996,
+      "url":"http://trakt.tv/show/never-mind-the-buzzcocks",
+      "imdb_id":"tt0115286",
+      "tvdb_id":"78051"
+   },
+   {
+      "title":"Nikita",
+      "year":2010,
+      "url":"http://trakt.tv/show/nikita",
+      "imdb_id":"tt1592154",
+      "tvdb_id":"164301"
+   },
+   {
+      "title":"Outsourced",
+      "year":2010,
+      "url":"http://trakt.tv/show/outsourced",
+      "imdb_id":"tt1593756",
+      "tvdb_id":"163561"
+   },
+   {
+      "title":"The Pacific",
+      "year":2010,
+      "url":"http://trakt.tv/show/the-pacific",
+      "imdb_id":"tt0374463",
+      "tvdb_id":"85539"
+   },
+   {
+      "title":"Parks and Recreation",
+      "year":2009,
+      "url":"http://trakt.tv/show/parks-and-recreation",
+      "imdb_id":"tt1266020",
+      "tvdb_id":"84912"
+   },
+   {
+      "title":"Party Down",
+      "year":2009,
+      "url":"http://trakt.tv/show/party-down",
+      "imdb_id":"tt1073507",
+      "tvdb_id":"83616"
+   },
+   {
+      "title":"Perfect Couples",
+      "year":2010,
+      "url":"http://trakt.tv/show/perfect-couples",
+      "imdb_id":"tt1595856",
+      "tvdb_id":"171251"
+   },
+   {
+      "title":"Raising Hope",
+      "year":2010,
+      "url":"http://trakt.tv/show/raising-hope",
+      "imdb_id":"tt1615919",
+      "tvdb_id":"164021"
+   },
+   {
+      "title":"Reno 911!",
+      "year":2003,
+      "url":"http://trakt.tv/show/reno-911",
+      "imdb_id":"tt0370194",
+      "tvdb_id":"72336"
+   },
+   {
+      "title":"Rules of Engagement",
+      "year":2007,
+      "url":"http://trakt.tv/show/rules-of-engagement",
+      "imdb_id":"tt0790772",
+      "tvdb_id":"79842"
+   },
+   {
+      "title":"Running Wilde",
+      "year":2010,
+      "url":"http://trakt.tv/show/running-wilde",
+      "imdb_id":null,
+      "tvdb_id":"164031"
+   },
+   {
+      "title":"Sanctuary",
+      "year":2007,
+      "url":"http://trakt.tv/show/sanctuary",
+      "imdb_id":"tt0965394",
+      "tvdb_id":"80159"
+   },
+   {
+      "title":"The Simpsons",
+      "year":1989,
+      "url":"http://trakt.tv/show/the-simpsons",
+      "imdb_id":"tt0096697",
+      "tvdb_id":"71663"
+   },
+   {
+      "title":"South Park",
+      "year":1997,
+      "url":"http://trakt.tv/show/south-park",
+      "imdb_id":"tt0121955",
+      "tvdb_id":"75897"
+   },
+   {
+      "title":"Southland",
+      "year":2009,
+      "url":"http://trakt.tv/show/southland",
+      "imdb_id":"tt1299368",
+      "tvdb_id":"84645"
+   },
+   {
+      "title":"Terminator: The Sarah Connor Chronicles",
+      "year":2008,
+      "url":"http://trakt.tv/show/terminator-the-sarah-connor-chronicles",
+      "imdb_id":"tt0851851",
+      "tvdb_id":"80344"
+   },
+   {
+      "title":"Terriers",
+      "year":2010,
+      "url":"http://trakt.tv/show/terriers",
+      "imdb_id":"tt1493239",
+      "tvdb_id":"180791"
+   },
+   {
+      "title":"Top Gear",
+      "year":2002,
+      "url":"http://trakt.tv/show/top-gear",
+      "imdb_id":"tt1628033",
+      "tvdb_id":"74608"
+   },
+   {
+      "title":"Trauma",
+      "year":2009,
+      "url":"http://trakt.tv/show/trauma",
+      "imdb_id":"tt1445201",
+      "tvdb_id":"94541"
+   },
+   {
+      "title":"Two and a Half Men",
+      "year":2003,
+      "url":"http://trakt.tv/show/two-and-a-half-men",
+      "imdb_id":"tt0369179",
+      "tvdb_id":"72227"
+   },
+   {
+      "title":"Undercovers",
+      "year":2010,
+      "url":"http://trakt.tv/show/undercovers",
+      "imdb_id":"tt1568769",
+      "tvdb_id":"160851"
+   },
+   {
+      "title":"The Walking Dead",
+      "year":2010,
+      "url":"http://trakt.tv/show/the-walking-dead",
+      "imdb_id":"tt1520211",
+      "tvdb_id":"153021"
+   },
+   {
+      "title":"Warehouse 13",
+      "year":2009,
+      "url":"http://trakt.tv/show/warehouse-13",
+      "imdb_id":"tt1132290",
+      "tvdb_id":"84676"
+   },
+   {
+      "title":"Weeds",
+      "year":2005,
+      "url":"http://trakt.tv/show/weeds",
+      "imdb_id":"tt0439100",
+      "tvdb_id":"74845"
+   },
+   {
+      "title":"White Collar",
+      "year":2009,
+      "url":"http://trakt.tv/show/white-collar",
+      "imdb_id":"tt1358522",
+      "tvdb_id":"108611"
+   },
+   {
+      "title":"The Wire",
+      "year":2002,
+      "url":"http://trakt.tv/show/the-wire",
+      "imdb_id":"tt0306414",
+      "tvdb_id":"79126"
+   }
+]
+

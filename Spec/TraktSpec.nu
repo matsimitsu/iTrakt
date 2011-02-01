@@ -98,6 +98,17 @@
       ))
     ))
 
+    (it "returns the user's library URL" (do ()
+      (~ ((@trakt libraryURL) absoluteString) should be:"http://localhost:9292/api/users/library.json?name=bob")
+    ))
+
+    ;(it "yields the user's library as an array of Show instances" (do ()
+      ;(@trakt libraryWithNuBlock:(do (library)
+        ;(puts library)
+        ;()
+      ;))
+    ;))
+
     (describe "concerning images" `(
       ; TODO possinly also check with the fixtures server whether or not a request was actually made. I.e. keep a request counter.
       (describe "and downloading/caching thereof" `(
@@ -162,7 +173,7 @@
             (~ (@trakt cachedImageForURL:url) should be:(equalToImage (UIImage imageNamed:"thumb.jpg")))
           ))
         ))
-      ))
-    ))
-  ))
+      )) ; by URL
+    )) ; concerning images
+  )) ; shared instance
 ))

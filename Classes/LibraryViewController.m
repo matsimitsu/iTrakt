@@ -1,5 +1,5 @@
 #import "LibraryViewController.h"
-
+#import "Trakt.h"
 
 @implementation LibraryViewController
 
@@ -7,14 +7,22 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
-- (void)viewDidLoad {
-    [super viewDidLoad];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+- (void)viewDidLoad {
+  [super viewDidLoad];
+
+  self.navigationItem.title = @"Library";
+
+  // TODO replace this with the actual username
+  [Trakt sharedInstance].apiUser = @"matsimitsu";
+
+  // TODO this probably has to move to viewDidAppear so that it gets run whenever this view is shown, not just the first time!
+  [[Trakt sharedInstance] library:^(NSArray *_shows) {
+    self.shows = _shows;
+    [self.tableView reloadData];
+  }];
 }
-*/
+
 
 /*
 - (void)viewWillAppear:(BOOL)animated {

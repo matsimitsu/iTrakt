@@ -8,9 +8,9 @@
 
 - (id)initWithDictionary:(NSDictionary *)dict {
     if(self = [super init]) {
-      NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-      dateFormatter.dateFormat = @"yyyy-mm-dd";
-      self.date = [dateFormatter dateFromString:[dict valueForKeyPath:@"date"]];
+
+      int epoch_seconds = [[dict valueForKeyPath:@"date_epoch"] intValue];
+      self.date = [NSDate dateWithTimeIntervalSince1970:epoch_seconds];
 
       NSMutableArray *objectifiedEpisodes = [[[NSMutableArray alloc] init] autorelease];
 

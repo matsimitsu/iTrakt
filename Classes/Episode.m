@@ -78,12 +78,10 @@
   [dateReader release];
   [dateWriter release];
   return dateString;
-
 }
 
 - (NSString *)airTimeAndChannel {
-  return[self localizedAirTime];
-  //return [NSString stringWithFormat:@"%@ on %@", self.airtime, self.network, nil];
+  return [NSString stringWithFormat:@"%@ on %@", [self localizedAirTime], self.network, nil];
 }
 
 - (void)ensureThumbIsLoaded:(void (^)())downloadedBlock {

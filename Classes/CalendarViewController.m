@@ -51,7 +51,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
   BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:section];
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-
+  [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
   [dateFormatter setDateFormat:@"EEEE MMMM d"];
 
   return [dateFormatter stringFromDate:broadcastDate.date];
@@ -66,10 +66,10 @@
     cell = [[[EpisodeTableViewCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
     cell.frame = CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, self.tableView.rowHeight);
   }
-  
+
   BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
   Episode *episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
-  
+
   [episode ensureShowPosterIsLoaded:^{
     // this callback is only run if the image has to be downloaded first
     //NSLog(@"Show poster was downloaded for cell at: %@", indexPath);

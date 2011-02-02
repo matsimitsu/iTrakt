@@ -60,8 +60,30 @@
   return [NSString stringWithFormat:@"%@ %@", self.showTitle, [self episodeNumber], nil];
 }
 
+- (NSString *)localizedAirTime {
+  NSDateFormatter *dateReader = [[NSDateFormatter alloc] init];
+  [dateReader setDateFormat:@"HH:mm:ss"];
+  [dateReader setTimeZone:[NSTimeZone timeZoneWithAbbreviation: @"EST"]];
+
+  NSDate *date = [dateReader dateFromString:self.airtime];
+
+  NSDateFormatter *dateWriter = [[NSDateFormatter alloc] init];
+  //[dateWriter setDateFormat:@"hh:mma"];
+  [dateWriter setTimeStyle:NSDateFormatterShortStyle];
+  [dateWriter setDateStyle:NSDateFormatterNoStyle];
+  [dateWriter setTimeZone:[NSTimeZone systemTimeZone]];
+
+  NSString *dateString = [dateWriter stringFromDate:date];
+
+  [dateReader release];
+  [dateWriter release];
+  return dateString;
+
+}
+
 - (NSString *)airTimeAndChannel {
-  return [NSString stringWithFormat:@"%@ on %@", self.airtime, self.network, nil];
+  return[self localizedAirTime];
+  //return [NSString stringWithFormat:@"%@ on %@", self.airtime, self.network, nil];
 }
 
 - (void)ensureThumbIsLoaded:(void (^)())downloadedBlock {

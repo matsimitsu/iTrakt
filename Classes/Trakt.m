@@ -41,10 +41,9 @@ static Trakt *sharedTrakt = nil;
   }];
 }
 
-
 - (NSURL *)libraryURL {
-  //return [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/library.json?name=%@", self.baseURL, self.apiUser, nil]];
-  return [NSURL URLWithString:@"http://api.trakt.tv/user/library/shows.json/6ce9688a2fd3316355204b1d25d44f00/matsimitsu"];
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/library.json?name=%@", self.baseURL, self.apiUser, nil]];
+  //return [NSURL URLWithString:@"http://api.trakt.tv/user/library/shows.json/6ce9688a2fd3316355204b1d25d44f00/matsimitsu"];
 }
 
 - (void)library:(void (^)(NSArray *shows))block {

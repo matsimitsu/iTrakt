@@ -98,23 +98,21 @@
       ))
     ))
 
-    ; TODO Can't run these specs as long as we hardcode the URL to call trakt.tv directly!
-    ;
-    ;(it "returns the user's library URL" (do ()
-      ;(~ ((@trakt libraryURL) absoluteString) should be:"http://localhost:9292/api/users/library.json?name=bob")
-    ;))
+    (it "returns the user's library URL" (do ()
+      (~ ((@trakt libraryURL) absoluteString) should be:"http://localhost:9292/api/users/library.json?name=bob")
+    ))
 
-    ;(it "yields the user's library as an array of Show instances" (do ()
-      ;(@trakt libraryWithNuBlock:(do (library)
-        ;;(puts library)
-        ;(set show (library objectAtIndex:0))
-        ;(~ show should be kindOfClass:Show)
-        ;(~ (show title) should be:"30 Rock")
-      ;))
-      ;(wait 0.1 (do ()
-        ;; Nothing... We just wait with further spec execution until the ImageDownload is (probably) finished.
-      ;))
-    ;))
+    (it "yields the user's library as an array of Show instances" (do ()
+      (@trakt libraryWithNuBlock:(do (library)
+        ;(puts library)
+        (set show (library objectAtIndex:0))
+        (~ show should be kindOfClass:Show)
+        (~ (show title) should be:"30 Rock")
+      ))
+      (wait 0.1 (do ()
+        ; Nothing... We just wait with further spec execution until the ImageDownload is (probably) finished.
+      ))
+    ))
 
     (describe "concerning images" `(
       ; TODO possinly also check with the fixtures server whether or not a request was actually made. I.e. keep a request counter.

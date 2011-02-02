@@ -26,6 +26,12 @@
     (~ (@show posterURL) should be:(NSURL URLWithString:"http://localhost:9292/api/uploads/82066/poster-82066.jpg"))
   ))
 
+  ;(describe "concerning episode data" `(
+    ;(it "retrieves the list of episodes" (do ()
+      
+    ;))
+  ;))
+
   (describe "concerning its poster" `(
     (it "retrieves the poster image" (do ()
       (set trakt (Trakt sharedInstance))

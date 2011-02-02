@@ -20,4 +20,22 @@
   (it "returns the show's TVDB ID" (do ()
     (~ (@show tvdbID) should be:"79488")
   ))
+
+  ; TODO Can't run any specs yet concerning this as long as we don't have the poster urls in the JSON yet
+  ;(describe "concerning its poster" `(
+    ;(it "retrieves the poster image" (do ()
+      ;(set trakt (Trakt sharedInstance))
+      ;(trakt removeCachedImageForURL:(@episode posterURL) scaledTo:`(44 66))
+
+      ;(set @called nil)
+      ;(@episode ensureShowPosterIsLoadedWithNuBlock:(do ()
+        ;(set @called t)
+        ;(~ (@episode poster) should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
+      ;))
+      ;(wait 0.3 (do ()
+        ;(~ @called should be:t)
+      ;))
+    ;))
+  ;))
+
 ))

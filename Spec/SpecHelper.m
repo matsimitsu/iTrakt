@@ -1,4 +1,5 @@
 #import "Trakt.h"
+#import "Show.h"
 #import "Episode.h"
 
 @interface Helper : NSObject {
@@ -29,6 +30,17 @@ static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
   id context = [nuBlock performSelector:@selector(context)];
   [nuBlock performSelector:@selector(evalWithArguments:context:) withObject:args withObject:context];
 }
+
+
+@implementation Show (SpecHelper)
+
+- (void)ensurePosterIsLoadedWithNuBlock:(id)nuBlock {
+  [self ensurePosterIsLoaded:^{
+    callNuBlockWithArguments(nuBlock, [NSArray array]);
+  }];
+}
+
+@end
 
 
 @implementation Episode (SpecHelper)

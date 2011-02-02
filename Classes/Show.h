@@ -4,11 +4,13 @@
   NSString *tvdbID;
   NSString *title;
   NSUInteger year;
+  NSURL *posterURL;
   UIImage *poster;
 }
 
 @property (nonatomic, retain) NSString *tvdbID;
 @property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSURL *posterURL;
 @property (nonatomic, retain) UIImage *poster;
 @property (assign) NSUInteger year;
 

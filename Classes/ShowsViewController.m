@@ -1,21 +1,22 @@
-#import "LibraryViewController.h"
-<<<<<<< HEAD
+#import "ShowsViewController.h"
 #import "ShowTableViewCell.h"
-#import "ShowDetailsViewController.h"
 
 #import "Trakt.h"
 #import "Show.h"
 
 #define ROW_HEIGHT 66.0
-=======
->>>>>>> 509f0f628a8616892ed716e15f4aad2cd72266ac
 
-@implementation LibraryViewController
+@implementation ShowsViewController
+
+@synthesize shows;
+
+#pragma mark -
+#pragma mark View lifecycle
+
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.navigationItem.title = @"Library";
-<<<<<<< HEAD
+
   self.tableView.rowHeight = ROW_HEIGHT;
 
   // TODO replace this with the actual username
@@ -44,7 +45,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *CellIdentifier = @"Cell";
-
+  
   ShowTableViewCell *cell = (ShowTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
     cell = [[[ShowTableViewCell alloc] initWithReuseIdentifier:CellIdentifier] autorelease];
@@ -78,14 +79,14 @@
 /*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source.
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }
+    }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
+    }   
 }
 */
 
@@ -118,11 +119,6 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     */
-    Show *show = [self.shows objectAtIndex:indexPath.row];
-
-    ShowDetailsViewController *controller = [[ShowDetailsViewController alloc] initWithShow:show];
-    [self.navigationController pushViewController:controller animated:YES];
-    [controller release];
 }
 
 
@@ -132,11 +128,21 @@
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-
+    
     // Relinquish ownership any cached data, images, etc. that aren't in use.
-=======
->>>>>>> 509f0f628a8616892ed716e15f4aad2cd72266ac
 }
 
+- (void)viewDidUnload {
+    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
+    // For example: self.myOutlet = nil;
+}
+
+
+- (void)dealloc {
+    [super dealloc];
+}
+
+
 @end
+
 

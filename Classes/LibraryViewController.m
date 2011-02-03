@@ -1,5 +1,4 @@
 #import "LibraryViewController.h"
-<<<<<<< HEAD
 #import "ShowTableViewCell.h"
 #import "ShowDetailsViewController.h"
 
@@ -7,15 +6,12 @@
 #import "Show.h"
 
 #define ROW_HEIGHT 66.0
-=======
->>>>>>> 509f0f628a8616892ed716e15f4aad2cd72266ac
 
 @implementation LibraryViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.navigationItem.title = @"Library";
-<<<<<<< HEAD
   self.tableView.rowHeight = ROW_HEIGHT;
 
   // TODO replace this with the actual username
@@ -134,8 +130,6 @@
     [super didReceiveMemoryWarning];
 
     // Relinquish ownership any cached data, images, etc. that aren't in use.
-=======
->>>>>>> 509f0f628a8616892ed716e15f4aad2cd72266ac
 }
 
 @end

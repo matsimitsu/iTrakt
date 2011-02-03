@@ -1,6 +1,6 @@
 // !$*UTF8*$!
 {
-	1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */ = {
+	1D6058900D05DD3D006BFB54 /* iTrakt */ = {
 		activeExec = 0;
 		executables = (
 			24D0AF6D12EB2A3700BF2C8E /* iTrakt */,
@@ -53,7 +53,7 @@
 		fRef = 510C6EC512F8A2EC000500A1 /* LibraryViewController.m */;
 		name = "LibraryViewController.m: 155";
 		rLen = 0;
-		rLoc = 4468;
+		rLoc = 4339;
 		rType = 0;
 		vrLen = 1081;
 		vrLoc = 3175;
@@ -63,7 +63,7 @@
 		fRef = 510C6EC512F8A2EC000500A1 /* LibraryViewController.m */;
 		name = "LibraryViewController.m: 155";
 		rLen = 0;
-		rLoc = 4468;
+		rLoc = 4339;
 		rType = 0;
 		vrLen = 1081;
 		vrLoc = 3175;
@@ -88,7 +88,7 @@
 		fRef = 510C6EC512F8A2EC000500A1 /* LibraryViewController.m */;
 		name = "LibraryViewController.m: 155";
 		rLen = 0;
-		rLoc = 4468;
+		rLoc = 4339;
 		rType = 0;
 		vrLen = 1081;
 		vrLoc = 3175;
@@ -146,7 +146,7 @@
 		fRef = 510C6EC512F8A2EC000500A1 /* LibraryViewController.m */;
 		name = "LibraryViewController.m: 155";
 		rLen = 0;
-		rLoc = 4468;
+		rLoc = 4339;
 		rType = 0;
 		vrLen = 708;
 		vrLoc = 3548;
@@ -193,6 +193,35 @@
 		rLoc = 0;
 		rType = 0;
 		vrLen = 196;
+		vrLoc = 0;
+	};
+	240D0FE312FB5F42002349B5 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Expected identifier or '(' before '<<' token";
+		fRef = 510C6EC512F8A2EC000500A1 /* LibraryViewController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 1;
+		rType = 1;
+	};
+	240D0FE412FB5F42002349B5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 510C6EC512F8A2EC000500A1 /* LibraryViewController.m */;
+		name = "LibraryViewController.m: 2";
+		rLen = 0;
+		rLoc = 34;
+		rType = 0;
+		vrLen = 414;
+		vrLoc = 0;
+	};
+	240D0FEB12FB5F63002349B5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 510C6EC512F8A2EC000500A1 /* LibraryViewController.m */;
+		name = "LibraryViewController.m: 137";
+		rLen = 0;
+		rLoc = 4199;
+		rType = 0;
+		vrLen = 380;
 		vrLoc = 0;
 	};
 	2424043312F880BF00686879 /* PBXBookmark */ = {
@@ -422,9 +451,9 @@
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 24D0AF6D12EB2A3700BF2C8E /* iTrakt */;
 		activeSDKPreference = iphonesimulator4.2;
-		activeTarget = 1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* iTrakt */;
 		addToTargets = (
-			1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */,
+			1D6058900D05DD3D006BFB54 /* iTrakt */,
 		);
 		codeSenseManager = 24D0AF7912EB2A5500BF2C8E /* Code sense */;
 		executables = (
@@ -492,8 +521,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 318463733;
-			PBXWorkspaceStateSaveDate = 318463733;
+			PBXPerProjectTemplateStateSaveDate = 318463796;
+			PBXWorkspaceStateSaveDate = 318463796;
 		};
 		perUserProjectItems = {
 			2402540D12F5F07D00F651D8 = 2402540D12F5F07D00F651D8 /* PBXTextBookmark */;
@@ -515,6 +544,9 @@
 			240D0FB912FB5A93002349B5 = 240D0FB912FB5A93002349B5 /* PBXBookmark */;
 			240D0FBA12FB5A93002349B5 = 240D0FBA12FB5A93002349B5 /* PBXTextBookmark */;
 			240D0FBE12FB5AAB002349B5 = 240D0FBE12FB5AAB002349B5 /* PBXTextBookmark */;
+			240D0FE312FB5F42002349B5 /* XCBuildMessageTextBookmark */ = 240D0FE312FB5F42002349B5 /* XCBuildMessageTextBookmark */;
+			240D0FE412FB5F42002349B5 /* PBXTextBookmark */ = 240D0FE412FB5F42002349B5 /* PBXTextBookmark */;
+			240D0FEB12FB5F63002349B5 /* PBXTextBookmark */ = 240D0FEB12FB5F63002349B5 /* PBXTextBookmark */;
 			2424043312F880BF00686879 = 2424043312F880BF00686879 /* PBXBookmark */;
 			24259BBE12F75C830052BEE6 = 24259BBE12F75C830052BEE6 /* PBXBookmark */;
 			2441C25812F4622F00329D69 = 2441C25812F4622F00329D69 /* PBXTextBookmark */;
@@ -559,10 +591,10 @@
 	};
 	510C6EC512F8A2EC000500A1 /* LibraryViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{3409, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{3460, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{3510, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 4468}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1219, 1963}}";
-			sepNavSelRange = "{4411, 0}";
-			sepNavVisRange = "{3175, 1024}";
+			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{3343, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{3394, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{3444, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 4199}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1003, 1820}}";
+			sepNavSelRange = "{4142, 0}";
+			sepNavVisRange = "{0, 380}";
 		};
 	};
 	5134008312EF4D72007ED54E /* EpisodeDetailsViewController.h */ = {

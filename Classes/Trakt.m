@@ -57,6 +57,22 @@ static Trakt *sharedTrakt = nil;
   }];
 }
 
+- (NSURL *)trendingURL {
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/shows/trending.json", self.baseURL, nil]];
+}
+
+- (void)trending:(void (^)(NSArray *shows))block {
+  //NSLog(@"[!] Start download of calendar data from: %@", [self libraryURL]);
+  [JSONDownload downloadFromURL:[self trendingURL] block:^(id response) {
+    //NSLog(@"[!] Finished download of calendar data");
+    NSMutableArray *shows = [NSMutableArray array];
+    for(NSDictionary *showDict in (NSArray *)response) {
+      [shows addObject:[[[Show alloc] initWithDictionary:showDict] autorelease]];
+    }
+    block([shows copy]);
+  }];
+}
+
 
 - (void)showPosterForURL:(NSURL *)posterURL block:(void (^)(UIImage *poster, BOOL cached))block {
   [self loadImageFromURL:posterURL scaledTo:CGSizeMake(44.0, 66.0) block:block];

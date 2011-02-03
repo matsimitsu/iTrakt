@@ -114,6 +114,22 @@
       ))
     ))
 
+    (it "returns the trending shows URL" (do ()
+      (~ ((@trakt trendingURL) absoluteString) should be:"http://localhost:9292/api/shows/trending.json")
+    ))
+
+    (it "yields the trending shows as an array of Show instances" (do ()
+      (@trakt trendingWithNuBlock:(do (trending)
+        ;(puts trending)
+        (set show (trending objectAtIndex:0))
+        (~ show should be kindOfClass:Show)
+        (~ (show title) should be:"How I Met Your Mother")
+      ))
+      (wait 0.1 (do ()
+        ; Nothing... We just wait with further spec execution until the ImageDownload is (probably) finished.
+      ))
+    ))
+
     (describe "concerning images" `(
       ; TODO possinly also check with the fixtures server whether or not a request was actually made. I.e. keep a request counter.
       (describe "and downloading/caching thereof" `(

@@ -22,6 +22,9 @@
 - (NSURL *)libraryURL;
 - (void)library:(void (^)(NSArray *shows))block;
 
+- (NSURL *)trendingURL;
+- (void)trending:(void (^)(NSArray *shows))block;
+
 - (void)showPosterForURL:(NSURL *)posterURL block:(void (^)(UIImage *poster, BOOL cached))block;
 
 - (void)showThumbForURL:(NSURL *)thumbURL block:(void (^)(UIImage *thumb, BOOL cached))block;

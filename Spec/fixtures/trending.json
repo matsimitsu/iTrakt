@@ -1,0 +1,673 @@
+[
+   {
+      "title":"How I Met Your Mother",
+      "overview":"How I Met Your Mother is a comedy about Ted and how he fell in love. It all started when Ted's best friend, Marshall, dropped the bombshell that he was going to propose to his longtime girlfriend, Lily, a kindergarten teacher. At that moment, Ted realized that he had better get a move on if he, too, hopes to find true love. Helping him in his quest is his friend Barney, a confirmed bachelor with endless, sometimes outrageous opinions, a penchant for suits and a foolproof way to meet women. When Ted meets Robin, he's sure it's love at first sight, but destiny has something else in store.",
+      "watchers":4,
+      "url":"http://trakt.tv/show/how-i-met-your-mother",
+      "poster":"http://localhost:9292/api/uploads/75760/poster-75760.jpg",
+      "imdb_id":"tt0460649",
+      "year":"2005",
+      "tvdb_id":"75760"
+   },
+   {
+      "title":"The Cape (2011)",
+      "overview":"Set in the fictional metropolis of Palm City, The Cape follows an innocent cop who has been framed for a crime he did not commit and then left for dead after he is caught. He is eventually saved by a circus ringleader who prepares him with special abilities to defend himself against his foes. Separated from his wife and son, he tries to clear his name while protecting them from being killed if he was ever reported alive. He takes the law into his own hands by taking the guise of his son's favorite comic book hero, The Cape, after he is given a special suit that has unique capabilities. Vowing to get rid of the corruption that has taken over both the city and the police force, he goes after the person responsible for setting him up and causing his \"demise.\"",
+      "watchers":3,
+      "url":"http://trakt.tv/show/the-cape-2011",
+      "poster":"http://localhost:9292/api/uploads/160671/poster-160671.jpg",
+      "imdb_id":"tt1593823",
+      "year":"2011",
+      "tvdb_id":"160671"
+   },
+   {
+      "title":"Human Target (2010)",
+      "overview":"It takes a brave, selfless man to make himself a \"human target\" in order to save the lives of those in danger. Christopher Chance is a unique private security guard hired to protect. Call him what you like, because for Chance, it's about one thing only: saving his clients' lives. He puts himself directly in the line of fire as he races against time to save his client, while unraveling the truth behind the mission. With every new danger, Chance's dark history will also unravel. Does anyone know who Christopher Chance really is, or what secrets lay buried in his past? What would make a man willingly become a human target?",
+      "watchers":3,
+      "url":"http://trakt.tv/show/human-target-2010",
+      "poster":"http://localhost:9292/api/uploads/94801/poster-94801.jpg",
+      "imdb_id":"tt1439741",
+      "year":"2010",
+      "tvdb_id":"94801"
+   },
+   {
+      "title":"Grey's Anatomy",
+      "overview":"Grey's Anatomy is a hospital drama that focuses on Meredith Grey (Ellen Pompeo), one of several first-year surgical interns, (now third year residents) at a Seattle, Wash., hospital. Along with her colleagues, Meredith struggles to maintain relationships while staying sharp at her new job.",
+      "watchers":2,
+      "url":"http://trakt.tv/show/greys-anatomy",
+      "poster":"http://localhost:9292/api/uploads/73762/poster-73762.jpg",
+      "imdb_id":"tt0413573",
+      "year":"2005",
+      "tvdb_id":"73762"
+   },
+   {
+      "title":"Boardwalk Empire",
+      "overview":"Boardwalk Empire is a period drama focusing on Enoch \"Nucky\" Thompson (based on the historical Enoch L. Johnson), a political figure who rose to prominence and controlled Atlantic City, New Jersey during the Prohibition period of the 1920s and 1930s. Nucky interacts with several historical figures in both his personal and political life, including mobsters, politicians, government agents, and the common folk who look up to him. The federal government also takes an interest in the bootlegging and other illegal activities in the area, sending agents to investigate possible mob connections but also looking at Nucky's expensive and lavish lifestyle for a county political figure.",
+      "watchers":2,
+      "url":"http://trakt.tv/show/boardwalk-empire",
+      "poster":"http://localhost:9292/api/uploads/84947/poster-84947.jpg",
+      "imdb_id":"tt0979432",
+      "year":"2010",
+      "tvdb_id":"84947"
+   },
+   {
+      "title":"Being Human (US)",
+      "overview":"This remake follows three paranormal, 20-something roommates living in Boston as they struggle to hide their dark secrets from the world, while helping each other navigate the complexities of living double lives and trying to be human. ",
+      "watchers":2,
+      "url":"http://trakt.tv/show/being-human-us",
+      "poster":"http://localhost:9292/api/uploads/196921/poster-196921.jpg",
+      "imdb_id":"tt1595680",
+      "year":"2011",
+      "tvdb_id":"196921"
+   },
+   {
+      "title":"The Wire",
+      "overview":"Unlike most television crime dramas, which neatly introduce and then solve a case all in the space of one hour, HBO's THE WIRE follows one single drug and homicide investigation throughout the length of an entire season. Centered on the drug culture of inner-city Baltimore, the series' storyline unfolds from the points of view of both the criminals lording the streets and the police officers determined to bring them down.",
+      "watchers":2,
+      "url":"http://trakt.tv/show/the-wire",
+      "poster":"http://localhost:9292/api/uploads/79126/poster-79126.jpg",
+      "imdb_id":"tt0306414",
+      "year":"2002",
+      "tvdb_id":"79126"
+   },
+   {
+      "title":"V (2009)",
+      "overview":"Today, the world woke up to find spaceships over every major city. The Visitors claim to have come in peace, bringing gifts of medical miracles and technological breakthroughs. They promise to do no harm... They're lying...",
+      "watchers":2,
+      "url":"http://trakt.tv/show/v-2009",
+      "poster":"http://localhost:9292/api/uploads/94971/poster-94971.jpg",
+      "imdb_id":"tt1307824",
+      "year":"2009",
+      "tvdb_id":"94971"
+   },
+   {
+      "title":"Community",
+      "overview":"From Emmy Award-winning directors Joe and Anthony Russo (Arrested Development) comes Community, a smart comedy series about higher education -- and lower expectations. The student body at Greendale Community College is made up of high-school losers, newly divorced housewives, and old people who want to keep their minds active. Within these not-so-hallowed halls, Community focuses on a band of misfits, at the center of which is a fast-talkin' lawyer whose degree has been revoked (Joel McHale), who form a study group and end up learning a lot more about themselves than they do about their course work.",
+      "watchers":2,
+      "url":"http://trakt.tv/show/community",
+      "poster":"http://localhost:9292/api/uploads/94571/poster-94571.jpg",
+      "imdb_id":"tt1439629",
+      "year":"2009",
+      "tvdb_id":"94571"
+   },
+   {
+      "title":"American Dad!",
+      "overview":"American Dad! from Family Guy creator, Seth MacFarlane, is the animated story of Stan Smith, who works for the CIA and is constantly on the alert for terrorist activity. Stan will go to extremes to protect his beloved America from harm \u2013 as evidenced by the terror-alert color code on his fridge, and his frequent knee-jerk reaction of shooting holes in the toaster whenever the toast pops up.",
+      "watchers":2,
+      "url":"http://trakt.tv/show/american-dad",
+      "poster":"http://localhost:9292/api/uploads/73141/poster-73141.jpg",
+      "imdb_id":"tt0397306",
+      "year":"2005",
+      "tvdb_id":"73141"
+   },
+   {
+      "title":"Battlestar Galactica (2003)",
+      "overview":"In a distant part of the universe, a civilization of humans live on planets known as the Twelve Colonies. In the past, the Colonies have been at war with a cybernetic race known as the Cylons. 40 years after the first war the Cylons launch a devastating attack on the Colonies. The only military ship that survived the attack takes up the task of leading a small fugitive fleet of survivors into space in search of a fabled refuge known as Earth.",
+      "watchers":2,
+      "url":"http://trakt.tv/show/battlestar-galactica-2003",
+      "poster":"http://localhost:9292/api/uploads/73545/poster-73545.jpg",
+      "imdb_id":"tt0407362",
+      "year":"2003",
+      "tvdb_id":"73545"
+   },
+   {
+      "title":"Friends",
+      "overview":"Six young people, on their own and struggling to survive in the real world, find the companionship, comfort and support they get from each other to be the perfect antidote to the pressures of life.",
+      "watchers":2,
+      "url":"http://trakt.tv/show/friends",
+      "poster":"http://localhost:9292/api/uploads/79168/poster-79168.jpg",
+      "imdb_id":"tt0108778",
+      "year":"1994",
+      "tvdb_id":"79168"
+   },
+   {
+      "title":"Gilmore Girls",
+      "overview":"Set in a storybook Connecticut town populated with an eclectic mix of everyday folks and lovable lunatics, Gilmore Girls is a humorous multigenerational series about friendship, family and the ties that bind. Thirtysomething Lorelai Gilmore (Lauren Graham) has made her share of mistakes in life, but she has been doing her best to see that her college-bound daughter - and best friend in the world - Rory (Alexis Bledel), doesn't follow in her footsteps. That may be easier said than done, considering that the two share the same interests, the same intellect, the same coffee addiction and the same eyes. Rory is more serious than Lorelai, but there are tendencies, especially in the love department, that clearly indicate she is her mother's daughter. From the beginning, this unique mother-daughter team has been growing up together. Lorelai was just Rory's age when she became pregnant and made the tough decision to raise her baby alone.\n\nGilmore Girls was the first series to make it to air supported by the Family Friendly Forum's script development fund. An initiative between some of the nation's top advertisers and The WB, the program is intended to offer a greater array of compelling family programming on network television. The strong and loving mother-daughter relationship portrayed in Gilmore Girls reflects the growing reality of this new type of American family.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/gilmore-girls",
+      "poster":"http://localhost:9292/api/uploads/76568/poster-76568.jpg",
+      "imdb_id":"tt0238784",
+      "year":"2002",
+      "tvdb_id":"76568"
+   },
+   {
+      "title":"The Vampire Diaries",
+      "overview":"As the school year begins, Elena Gilbert is immediately drawn to a handsome and mysterious new student, Stefan Salvatore. Elena has no way of knowing that Stefan is a vampire struggling to live peacefully among humans, while his brother Damon is the embodiment of vampire violence and brutality.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/the-vampire-diaries",
+      "poster":"http://localhost:9292/api/uploads/95491/poster-95491.jpg",
+      "imdb_id":"tt1405406",
+      "year":"2009",
+      "tvdb_id":"95491"
+   },
+   {
+      "title":"Episodes",
+      "overview":"\"Episodes\" centers on a U.K. show by a British couple that is turned into an Americanized sitcom.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/episodes",
+      "poster":"http://localhost:9292/api/uploads/123581/poster-123581.jpg",
+      "imdb_id":"tt1582350",
+      "year":"2011",
+      "tvdb_id":"123581"
+   },
+   {
+      "title":"Ultimate Force",
+      "overview":"Ultimate Force is co-devised by Rob Heyland and former SAS soldier Chris Ryan. It follows the lives of a group of SAS soldiers known as Red Troop lead by Sergeant Henno Garvie as they put their lives at risk for their country.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/ultimate-force",
+      "poster":"http://localhost:9292/api/uploads/71606/poster-71606.jpg",
+      "imdb_id":"tt0334874",
+      "year":"2002",
+      "tvdb_id":"71606"
+   },
+   {
+      "title":"Bob's Burgers",
+      "overview":"From Loren Bouchard, co-creator of Home Movies, comes this animated comedy series about a burger flipper from a seaside East Coast town.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/bobs-burgers",
+      "poster":"http://localhost:9292/api/uploads/194031/poster-194031.jpg",
+      "imdb_id":"tt1561755",
+      "year":"2011",
+      "tvdb_id":"194031"
+   },
+   {
+      "title":"Jack's Big Music Show",
+      "overview":"Jack and his best friend Mary and his dog Mel retreat to their backyard clubhouse to do what they love best--make music. Sometimes well-known musicians like Yolanda Adams, Guy Davis, and others drop by to jam with Jack.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/jacks-big-music-show",
+      "poster":"http://localhost:9292/api/uploads/81921/poster-81921.jpg",
+      "imdb_id":null,
+      "year":"2005",
+      "tvdb_id":"81921"
+   },
+   {
+      "title":"The Venture Bros.",
+      "overview":"Hank and Dean Venture, with their father Doctor Venture and faithful bodyguard Brock Samson, go on wild adventures facing megalomaniacs, zombies, and suspicious ninjas, all for the glory of adventure. Or something like that.\n\nHank and Dean Venture are relatively identical twins, only born six minutes apart, who live for the thrill of adventure. Their dated vocabulary and high-pitched voices are intentionally annoying, especially to their father, Doctor Venture, a boy genius turned mediocre scientist who hates everything about his life.\n\nIn the midst of this conflict is Brock Samson, a man of swift neck-breaking action. Preferring to resort to his brawn instead of his brain, Brock is simple but effective, and does a better job at taking care of the kids than Doctor Venture, as long as they leave his treasured Dodge Charger alone.\n\nThe Venture Brothers is a take off of Johnny Quest and the Hardy Boys.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/the-venture-bros",
+      "poster":"http://localhost:9292/api/uploads/72306/poster-72306.jpg",
+      "imdb_id":"tt0417373",
+      "year":"2004",
+      "tvdb_id":"72306"
+   },
+   {
+      "title":"Eureka",
+      "overview":"The sleepy Pacific Northwest town of Eureka is hiding a mysterious secret. The government has been relocating the world\u2019s geniuses and their families to this rustic town for years where innovation and chaos have lived hand in hand. U.S. Marshal Jack Carter (Colin Ferguson) stumbles upon this odd town after wrecking his car and becoming stranded there. When the denizens of the town unleash an unknown scientific creation, Carter jumps in to try to restore order and consequently learns of one of the country\u2019s best kept secrets.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/eureka",
+      "poster":"http://localhost:9292/api/uploads/79334/poster-79334.jpg",
+      "imdb_id":"tt0796264",
+      "year":"2006",
+      "tvdb_id":"79334"
+   },
+   {
+      "title":"Southland",
+      "overview":"From Emmy Award winners John Wells, Ann Biderman and Chris Chulack comes a raw and authentic look at a police unit in Los Angeles. From the beaches of Malibu to the streets of East Los Angeles, \"Southland\" is a fast-moving drama that will take viewers inside the lives of cops, criminals, victims and their families.\n\n",
+      "watchers":1,
+      "url":"http://trakt.tv/show/southland",
+      "poster":"http://localhost:9292/api/uploads/84645/poster-84645.jpg",
+      "imdb_id":"tt1299368",
+      "year":"2009",
+      "tvdb_id":"84645"
+   },
+   {
+      "title":"Six Feet Under",
+      "overview":"When death is your business, what is your life? For the Fisher family, the world outside of their family-owned funeral home continues to be at least as challenging as--and far less predictable than--the one inside.  Oscar-winning screenwriter Alan Ball's breakout series that takes a darkly comic look at members of a dysfunctional L.A. family that run a funeral business.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/six-feet-under",
+      "poster":"http://localhost:9292/api/uploads/75450/poster-75450.jpg",
+      "imdb_id":"tt0248654",
+      "year":"2001",
+      "tvdb_id":"75450"
+   },
+   {
+      "title":"The Kids in the Hall",
+      "overview":"Get ready for sketch comedy...Canadian style! The Kids In The Hall are a hilarious sketch comedy troupe.  They got their name from a comedian named Jack Benny, who would often end a joke by saying: \"I got this from the kids in the hall\", referring to the amateur comedians who would hang around outside his office.  KITH was formed in 1984 when McCulloch and McKinney, who had worked together in Calgary as part of a group named the Audience, teamed up with Foley and McDonald's Toronto-based group, KITH. Thompson officially joined in January 1985.  That same year, McCulloch and McKinney were hired as writers for NBC's Saturday Night Live after a talent scout saw KITH in performance. Significantly, SNL had also been created by Michaels, himself an ex-patriate Canadian living and producing in New York. Still in 1985, Foley appeared in the film High Stakes, and Thompson and McDonald toured with Second City. In 1986, KITH were reunited in Toronto and Michaels finally saw them perform",
+      "watchers":1,
+      "url":"http://trakt.tv/show/the-kids-in-the-hall",
+      "poster":"http://localhost:9292/api/uploads/75303/poster-75303.jpg",
+      "imdb_id":null,
+      "year":"1989",
+      "tvdb_id":"75303"
+   },
+   {
+      "title":"NCIS",
+      "overview":"From Donald P. Bellisario, an acclaimed producer, comes \"NCIS,\" a hit spin-off of \"JAG,\" that brings us the inner workings of the government agency that investigates all crimes involving Navy and Marine Corps personnel, regardless of rank or position.  Leading this team that operates outside of the military chain of command is NCIS Special Agent Leroy Jethro Gibbs (Mark Harmon), a skilled investigator and interrogator who is smart, tough and willing to bend the rules to get the job done. Working under Gibbs is Agent Anthony Dinozzo (Michael Weatherly), a former homicide detective who joined NCIS just a few years ago, but who has instincts that can come only from working on the streets. Joining them is Agent Abby Sciuto (Pauley Perrette), a gifted forensic scientist whose dark wit matches her goth-style hair and clothes, and Dr. Donald \"Ducky\" Mallard (David McCallum), a medical examiner. From murder and espionage to terrorism and stolen submarines, these special agents traverse the globe to investigate all crimes with Navy or Marine Corps ties.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/ncis",
+      "poster":"http://localhost:9292/api/uploads/72108/poster-72108.jpg",
+      "imdb_id":"tt0364845",
+      "year":"2003",
+      "tvdb_id":"72108"
+   },
+   {
+      "title":"Dexter",
+      "overview":"Based on Jeff Lindsay's novels Darkly Dreaming Dexter and Dearly Devoted Dexter this crime thriller follows Dexter Morgan. Dexter is a forensic blood spatter expert for the Miami Metro Police Department. Thanks to a code instilled in him by his foster father, Harry, he hunts down people who have escaped justice and makes sure they don't get away with a crime again.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/dexter",
+      "poster":"http://localhost:9292/api/uploads/79349/poster-79349.jpg",
+      "imdb_id":"tt0773262",
+      "year":"2006",
+      "tvdb_id":"79349"
+   },
+   {
+      "title":"Stargate Universe",
+      "overview":"The previously unknown purpose of the \"ninth chevron\" is revealed, and ends up taking a team to an Ancient ship \"Destiny\", a ship built millions of years ago by the Ancients & used to seed distant galaxies with Stargates. This team, led by Dr. Nicholas Rush and Colonel Everet Young, are trapped on the ship, unable to change its programmed mission, and encounter new races, new technology and new enemies, as the runaway ship takes them to the far ends of the Universe.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/stargate-universe",
+      "poster":"http://localhost:9292/api/uploads/83237/poster-83237.jpg",
+      "imdb_id":"tt1286039",
+      "year":"2009",
+      "tvdb_id":"83237"
+   },
+   {
+      "title":"Two and a Half Men",
+      "overview":"Charlie is a well-to-do bachelor with a house at the beach, a Jaguar in the front, and an easy way with women. His casual Malibu lifestyle is interrupted when his tightly wound brother Alan, who's facing a divorce, and his son Jake, come to live with him. Together, these two and a half men confront the challenges of growing up; finally. Complicating matters are the brothers' self-obsessed, controlling mother, Evelyn, Alan's estranged wife, Judith and Charlie's crazy neighbor Rose, who wants to be a part of his life and is willing to do anything to be around.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/two-and-a-half-men",
+      "poster":"http://localhost:9292/api/uploads/72227/poster-72227.jpg",
+      "imdb_id":"tt0369179",
+      "year":"2003",
+      "tvdb_id":"72227"
+   },
+   {
+      "title":"Nova ScienceNOW",
+      "overview":"\"NOVA scienceNOW\" is a magazine-style offshoot of the popular NOVA series. Airing five times a year, NOVA scienceNOW covers the latest news in the most controversial and headline-making fields of science such as the origins of life, artificial life, hurricane tracking, hydrogen fuel cells, and stem cell research.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/nova-sciencenow",
+      "poster":"http://localhost:9292/api/uploads/81526/poster-81526.jpg",
+      "imdb_id":"tt0449461",
+      "year":"2005",
+      "tvdb_id":"81526"
+   },
+   {
+      "title":"Republic of Doyle",
+      "overview":"Republic of Doyle, created and starring Newfoundland native Allan Hawco as Jake Doyle, the roguish and irreverent private investigator at the center of a colourful cast of characters who live and work together as an extended family as they try and run a \u201cgumshoe\u201d racket in contemporary St. John\u2019s, Newfoundland. The series combines the retro crime vibe of classic detective TV shows with a fresh dramatic/comedic edge that produces a blend of intriguing episodic mysteries and ever-churning relationship turmoil.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/republic-of-doyle",
+      "poster":"http://localhost:9292/api/uploads/133251/poster-133251.jpg",
+      "imdb_id":"tt1297754",
+      "year":"2010",
+      "tvdb_id":"133251"
+   },
+   {
+      "title":"Lost Girl",
+      "overview":"Lost Girl focuses on the gorgeous and charismatic Bo, a supernatural being called a succubus who feeds on the energy of humans, sometimes with fatal results. Refusing to embrace her supernatural clan and its rigid hierarchy, Bo is a renegade who takes up the fight for the underdog while searching for the truth about her own mysterious origins.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/lost-girl",
+      "poster":"http://localhost:9292/api/uploads/182061/poster-182061.jpg",
+      "imdb_id":"tt1429449",
+      "year":"2010",
+      "tvdb_id":"182061"
+   },
+   {
+      "title":"Baby Einstein",
+      "overview":"The Baby Einstein Company was started in 1997 by a mom when she discovered that there were no age-appropriate products available to help her share her love of art, classical music, language and poetry with her newborn daughter. To fill this void, she created the very first Baby Einstein video.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/baby-einstein",
+      "poster":"http://localhost:9292/api/uploads/112061/poster-112061.jpg",
+      "imdb_id":"",
+      "year":"1997",
+      "tvdb_id":"112061"
+   },
+   {
+      "title":"Dollhouse",
+      "overview":"The show revolves around a corporation running numerous underground establishments across the globe which program individuals referred to as Actives with temporary personalities and skills. Wealthy clients hire Actives at great expense for various purposes. The series follows the Active known as Echo, on her journey towards self-awareness.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/dollhouse",
+      "poster":"http://localhost:9292/api/uploads/82046/poster-82046.jpg",
+      "imdb_id":"tt1135300",
+      "year":"2009",
+      "tvdb_id":"82046"
+   },
+   {
+      "title":"Psych",
+      "overview":"Psych follows Shawn Spencer who has developed a keen eye for detail after being instructed by his police officer father to note even the most minute details of his surroundings. After Shawn calls in a tip on a crime to the police, he is actually accused of committing the crime. To try to clear his name, Shawn convinces the police that he is a psychic and he begins solving cases for the police force.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/psych",
+      "poster":"http://localhost:9292/api/uploads/79335/poster-79335.jpg",
+      "imdb_id":"tt0491738",
+      "year":"2006",
+      "tvdb_id":"79335"
+   },
+   {
+      "title":"I Love Lucy",
+      "overview":"I Love Lucy (1951 - 1960) is an American sitcom that centers on an unforgettable showbiz-wannabe redhead, her Cuban bandleader husband, and their landlords, who also happen to be their best friends and co-conspirators. Technically, I Love Lucy ended May 6, 1957 with the sixth-season episode \"The Ricardos Dedicate a Statue.\" This set, however, collects the 13 episodes of what can be considered the successor to I Love Lucy, known as The Lucy-Desi Comedy Hour. First airing on November 6, 1957, the show was more an offering of hour-long specials rather than a regular series -- it was often months between shows. Picking up where I Love Lucy left off, Lucy (Lucille Ball), husband Ricky (Desi Arnaz), and best friends Ethel (Vivian Vance), and Fred (William Frawley) continue their popular comedy formula honed during the original series.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/i-love-lucy",
+      "poster":"http://localhost:9292/api/uploads/70584/poster-70584.jpg",
+      "imdb_id":"",
+      "year":"1951",
+      "tvdb_id":"70584"
+   },
+   {
+      "title":"Blue Bloods",
+      "overview":"The Reagans are a multi-generational family dedicated to the New York City Police Department. Although being a tight-knit family, the Reagans have very different ideas of how to gain justice. They have one thing in common - they'll stop at nothing to see justice served because their occupation is more than just a job, it's the family business.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/blue-bloods",
+      "poster":"http://localhost:9292/api/uploads/164981/poster-164981.jpg",
+      "imdb_id":"tt1595859",
+      "year":"2010",
+      "tvdb_id":"164981"
+   },
+   {
+      "title":"Poker After Dark",
+      "overview":"Professional poker players such as Phil Hellmuth, Mike Matusow and Annie Duke compete against others in a game of No Limit Texas hold 'em on a nightly basis in this heated show until only one player is left with all the chips and the winner take all prize of $120,000.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/poker-after-dark",
+      "poster":"http://localhost:9292/api/uploads/79715/poster-79715.jpg",
+      "imdb_id":null,
+      "year":"2007",
+      "tvdb_id":"79715"
+   },
+   {
+      "title":"Aguila Roja (Red Eagle)",
+      "overview":"Red Eagle is a series of adventure and intrigue on the courage, nobility, friendship and love. The protagonist, played by David Janer, is an unsung hero of justice of the seventeenth century, known by the nickname of Red Eagle, who helps the weak and who is determined to uncover the conspiracy behind the murder of his young wife.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/aguila-roja-red-eagle",
+      "poster":"http://localhost:9292/api/uploads/85263/poster-85263.jpg",
+      "imdb_id":"tt1381020",
+      "year":"2009",
+      "tvdb_id":"85263"
+   },
+   {
+      "title":"Hung",
+      "overview":"\"It's hard to make an indecent living.\" Thomas Jane heads up the cast in this comedy as Ray Drecker, a middle-aged basketball coach and high school History teacher who figures out how to put his exceptional physical endowments to use and change his fortunes. Forced to find an alternative\u2026 More source of income after a series of unfavorable events, Ray takes on a whole new profession aided by his pimp and business partner, Tanya Skagle. Joining Jane and Adams are Men in Trees ' Anne Heche who plays Ray's ex-wife, Jessica and Eddie Jemison as Jessica's new husband, Dr. Ronnie Haxon. Rounding up the series cast are Charlie Saxton and Sianoa Smit-McPhee who play Jessica and Ray's twin children, Damon and Darby. Created by Colette Burson and Dmitry Lipkin , the series is filmed both in areas of Detroit, Michigan and Los Angeles, California.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/hung",
+      "poster":"http://localhost:9292/api/uploads/82091/poster-82091.jpg",
+      "imdb_id":"tt1229413",
+      "year":"2009",
+      "tvdb_id":"82091"
+   },
+   {
+      "title":"Surface",
+      "overview":"Ever wonder what life would be like if a new form of sea life began to appear in locales all over the earth? Surface is an expansive drama and undersea adventure that centers on the appearance of mysterious sea creatures in the deep ocean -- and tracks the lives of four characters. They are: Daughtery Carstarphen (Lake Bell, Boston Legal), the young oceanographer who discovers the secret; Dr. Aleksander Cirko (Rade Sherbedgia, Snatch), the government scientist who tries to keep things under wraps; Richard Owen (Jay R. Ferguson, Judging Amy), the Louisiana fisherman who loses his brother in a suspicious diving accident; and Miles (Carter Jenkins, CSI: New York), the young boy who brings the creatures ashore. The mystery ensnares a spectrum of people, including naval officers in the South Antarctic Sea, a family in San Diego, scientists from the Oceanographic Institute in Monterey, and fishermen in the Gulf of Mexico.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/surface",
+      "poster":"http://localhost:9292/api/uploads/78906/poster-78906.jpg",
+      "imdb_id":"tt0452718",
+      "year":"2005",
+      "tvdb_id":"78906"
+   },
+   {
+      "title":"Criminal Minds",
+      "overview":"CRIMINAL MINDS revolves around an elite team of FBI profilers who analyze the country's most twisted criminal minds, anticipating their next moves b\u00adefore they strike again. The Behavioral Analysis Unit's most prominent agent is David Rossi (Joe Mantegna), a founding member of the BAU, who returns to help the team solve new cases, while pursuing some unfinished business of his own. The team is led by Special Agent Aaron Hotchner (Thomas Gibson), a family man who is able to gain people's trust and unlock their secrets. Also on the team are Emily Prentiss (Paget Brewster), the daughter of high-powered diplomats who recently joined the team and must prove her worth to Hotchner; Special Agent Derek Morgan (Shemar Moore), an expert on obsessional crimes; Special Agent Dr. Spencer Reid (Matthew Gray Gubler), a classically misunderstood genius whose social IQ is as low as his intellectual IQ is high; Jennifer \"JJ\" Jareau (A.J. Cook), a confident young agent who acts as the unit liaison for the team, and Penelope Garcia (Kirsten Vangsness), a computer wizard who helps research the cases. Each member brings his or her own area of expertise to the table as they pinpoint predators' motivations and identify their emotional triggers in the attempt to stop them. ",
+      "watchers":1,
+      "url":"http://trakt.tv/show/criminal-minds",
+      "poster":"http://localhost:9292/api/uploads/75710/poster-75710.jpg",
+      "imdb_id":"tt0452046",
+      "year":"2005",
+      "tvdb_id":"75710"
+   },
+   {
+      "title":"Seinfeld",
+      "overview":"Jerry Seinfeld is a very successful stand-up comedian, mainly because the people around him offer an endless supply of great material. His best friend is George Costanza, a bald, whiny loser who craves the kind of success Jerry has but is never willing to do what it takes to get it. Jerry's neighbor Kramer often barges into his apartment and imposes onto his life. In the second episode Jerry's former girlfriend Elaine Benes comes back into his life, and the four of them are able to form a friendship together. The episodes were rarely very plot-heavy, focusing more on mundane conversations and situations that could be found during everyday life in New York.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/seinfeld",
+      "poster":"http://localhost:9292/api/uploads/79169/poster-79169.jpg",
+      "imdb_id":"tt0098904",
+      "year":"1989",
+      "tvdb_id":"79169"
+   },
+   {
+      "title":"The Good Wife",
+      "overview":"The Good Wife is a drama starring Emmy Award winner Julianna Margulies as a wife and mother who boldly assumes full responsibility for her family and re-enters the workforce after her husband\u2019s very public sex and political corruption scandal lands him in jail.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/the-good-wife",
+      "poster":"http://localhost:9292/api/uploads/95451/poster-95451.jpg",
+      "imdb_id":"tt1442462",
+      "year":"2009",
+      "tvdb_id":"95451"
+   },
+   {
+      "title":"Nikita",
+      "overview":"When she was a deeply troubled teenager, Nikita was rescued from death row by a secret U.S. agency known only as Division, who faked her execution and told her she was being given a second chance to start a new life and serve her country. What they didn't tell her was that she was being trained as a spy and assassin. Ultimately, Nikita was betrayed and her dreams shattered by the only people she thought she could trust. Now, after three years in hiding, Nikita is seeking retribution and making it clear to her former bosses that she will stop at nothing to expose and destroy their covert operation. For the time being, however, Division continues to recruit and train other young people and turning them into cold and efficient killers. One of these new recruits, Alex, is just beginning to understand what lies ahead for her and why the legendary Nikita made the desperate decision to run.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/nikita",
+      "poster":"http://localhost:9292/api/uploads/164301/poster-164301.jpg",
+      "imdb_id":"tt1592154",
+      "year":"2010",
+      "tvdb_id":"164301"
+   },
+   {
+      "title":"Greek",
+      "overview":"Greek is a dramedy set at fictitious Cyprus-Rhodes University, which focuses on the social minefield that is the Greek system. Viewers will see this unique cast of characters navigate their way through this treacherous terrain as they try to find their place at Cyprus-Rhodes University.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/greek",
+      "poster":"http://localhost:9292/api/uploads/80301/poster-80301.jpg",
+      "imdb_id":"tt0976014",
+      "year":"2007",
+      "tvdb_id":"80301"
+   },
+   {
+      "title":"White Collar",
+      "overview":"White Collar is about the unlikely partnership of a con artist and an FBI agent who have been playing cat and mouse for years. Neal Caffrey, a charming criminal mastermind, is finally caught by his nemesis, FBI Agent Peter Burke. When Neal escapes from a maximum-security prison to find his lost love, Peter nabs him once again. Rather than returning to jail, Neal suggests an alternative plan: He'll provide his criminal expertise to assist the Feds in catching other elusive criminals. Initially wary, Peter quickly finds that Neal provides insight and intuition that can't be found on the right side of the law.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/white-collar",
+      "poster":"http://localhost:9292/api/uploads/108611/poster-108611.jpg",
+      "imdb_id":"tt1358522",
+      "year":"2009",
+      "tvdb_id":"108611"
+   },
+   {
+      "title":"Royal Pains",
+      "overview":"ROYAL PAINS centers on a young E.R. doctor who, after being wrongly blamed for a patient's death, moves to the Hamptons and becomes the reluctant \"doctor for hire\" to the rich and famous. When the attractive administrator of the local hospital asks him to treat the town's less fortunate, he finds himself walking the line between doing well for himself and doing good for others.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/royal-pains",
+      "poster":"http://localhost:9292/api/uploads/92411/poster-92411.jpg",
+      "imdb_id":"tt1319735",
+      "year":"2009",
+      "tvdb_id":"92411"
+   },
+   {
+      "title":"The Simpsons",
+      "overview":"Originally created by cartoonist Matt Groening, \"Our Favorite Family,\" has graced the small screen in one form or another for over 20 years. The Simpson family first appeared on television as the subjects of interstitial \"shorts\" on The Tracey Ullman Show in April of 1987. The Simpsons remained a staple on The Tracey Ullman Show for three seasons until they premiered in their own half-hour series, on December 17, 1989. With the help of Jim Brooks and Sam Simon, Matt Groening's cartoon family turned into an instant success.\n\nSet in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.\n\nCurrently in its 21st season, The Simpsons has piled up over 440 episodes, over 20 Emmy Awards, a handful of music albums, countless endorsements and merchandise, and even made the jump to the silver screen in the summer of 2007 with The Simpsons Movie. And according to Matt Groening, \"There is no end in sight.\"",
+      "watchers":1,
+      "url":"http://trakt.tv/show/the-simpsons",
+      "poster":"http://localhost:9292/api/uploads/71663/poster-71663.jpg",
+      "imdb_id":"tt0096697",
+      "year":"1989",
+      "tvdb_id":"71663"
+   },
+   {
+      "title":"Metalocalypse",
+      "overview":"Metalocalypse is an eleven-minute flash animated comedy airing on Cartoon Network's Adult Swim, created by Brendon Small and Tommy Blacha. The series follows the exploits of a fictitious half American/half Scandinavian death metal band known as Dethklok. The band and its members are huge the world over, but incredibly stupid - a death metal version of Spinal Tap. Watch as they leave a trail of destruction and mayhem in their wake with their ear-melting onslaught of metal!",
+      "watchers":1,
+      "url":"http://trakt.tv/show/metalocalypse",
+      "poster":"http://localhost:9292/api/uploads/79563/poster-79563.jpg",
+      "imdb_id":"tt0839188",
+      "year":"2006",
+      "tvdb_id":"79563"
+   },
+   {
+      "title":"Doctor Who (2005)",
+      "overview":"The Doctor looks and seems human. He's handsome, witty, and could be mistaken for just another man in the street. But the Doctor is a Time Lord: a 900 year old alien with 2 hearts, part of a gifted civilization who mastered time travel. \n\nThe Doctor saves planets for a living - more of a hobby actually, and he's very, very good at it.  He's saved us from alien menaces and evil from before time began - but just who is he?",
+      "watchers":1,
+      "url":"http://trakt.tv/show/doctor-who-2005",
+      "poster":"http://localhost:9292/api/uploads/78804/poster-78804.jpg",
+      "imdb_id":"tt0436992",
+      "year":"2005",
+      "tvdb_id":"78804"
+   },
+   {
+      "title":"The King of Queens",
+      "overview":"Three's definitely a crowd for parcel post deliveryman Doug Heffernan (Kevin James), whose newly widowed father-in-law, Arthur (Jerry Stiller), has moved in with him and his wife, Carrie (Leah Remini). Doug's no longer the king of his domain -- the renovated basement that houses his beloved supersized TV set -- let alone the king of Queens, where he lives. Can they all just get along?",
+      "watchers":1,
+      "url":"http://trakt.tv/show/the-king-of-queens",
+      "poster":"http://localhost:9292/api/uploads/73641/poster-73641.jpg",
+      "imdb_id":"tt0165581",
+      "year":"1998",
+      "tvdb_id":"73641"
+   },
+   {
+      "title":"It's Always Sunny in Philadelphia",
+      "overview":"It's Always Sunny in Philadelphia revolves around four friends who own a bar in the City of Brotherly Love and have to overcome their relentless self-involvement to make their friendship and business work. ",
+      "watchers":1,
+      "url":"http://trakt.tv/show/its-always-sunny-in-philadelphia",
+      "poster":"http://localhost:9292/api/uploads/75805/poster-75805.jpg",
+      "imdb_id":"tt0472954",
+      "year":"2005",
+      "tvdb_id":"75805"
+   },
+   {
+      "title":"The IT Crowd",
+      "overview":"At the UK company Reynholm Industries, their corporate high-rise towers are full of beautiful happy people with one success story after another.  Well, except for the employees that work in the basement - the IT department. While their colleagues work in fantastic surroundings, Jen, Roy and Moss must work below ground in the dark and horrible basement, struggling to make it into normal society.\n\nThe IT Crowd is a playful and somewhat surreal look at what it's really like to be the underclass of every company - the IT Department.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/the-it-crowd",
+      "poster":"http://localhost:9292/api/uploads/79216/poster-79216.jpg",
+      "imdb_id":"tt0487831",
+      "year":"2006",
+      "tvdb_id":"79216"
+   },
+   {
+      "title":"30 Rock",
+      "overview":"Liz Lemon, played by Saturday Night Live's Tina Fey, is the head writer of the fictional TV show, 'The Girlie Show.' When her old boss dies and a new boss comes in, Liz must try to run a successful TV show without losing her mind.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/30-rock",
+      "poster":"http://localhost:9292/api/uploads/79488/poster-79488.jpg",
+      "imdb_id":"tt0496424",
+      "year":"2006",
+      "tvdb_id":"79488"
+   },
+   {
+      "title":"No Ordinary Family",
+      "overview":"ABC Studios brings to life the story of the Powells. They're an every day, typical American family who undergo a remarkable transformation after the charter plane they hired crashes in the Amazon River. ",
+      "watchers":1,
+      "url":"http://trakt.tv/show/no-ordinary-family",
+      "poster":"http://localhost:9292/api/uploads/163851/poster-163851.jpg",
+      "imdb_id":"tt1591493",
+      "year":"2010",
+      "tvdb_id":"163851"
+   },
+   {
+      "title":"NCIS: Los Angeles",
+      "overview":"NCIS: LOS ANGELES is a drama about the high stakes world of undercover surveillance at the Office of Special Projects (OSP), a division of NCIS that is charged with apprehending dangerous and elusive criminals that pose a threat to the nation's security. Special Agent \"G\" Callen (Chris O'Donnell) partner is Special Agent Sam Hanna (LL COOL J), a former U.S. Navy SEAL who has seen action in both Afghanistan and Iraq, and a surveillance expert who uses state of the art monitoring equipment to look out for those in the field and feed them crucial information. Both Callen and Hanna report to Special Agent Lara Macy (Louise Lombard), the OSP team leader responsible for directing the operations and making life-or-death decisions. Assisting the team is Special Agent Kensi Lo (Daniela Ruah), the exceptionally bright daughter of a slain Marine who lives for the adrenalin rush that comes with undercover work, and Operational Psychologist Nate Getz (Peter Cambor), adept at getting into anybody's head, profiling the target and monitoring agents' states of mind before, during and after missions. ",
+      "watchers":1,
+      "url":"http://trakt.tv/show/ncis-los-angeles",
+      "poster":"http://localhost:9292/api/uploads/95441/poster-95441.jpg",
+      "imdb_id":"tt1378167",
+      "year":"2009",
+      "tvdb_id":"95441"
+   },
+   {
+      "title":"Cougar Town",
+      "overview":"Cougar Town follows the life of recent divorc\u00e9e Jules Cobb (Courteney Cox). Jules runs a successful business, has the best friends, and a great son. But when it comes to relationships, she has a lot to learn. However, the more Jules puts herself back out there, the more she discovers that the only way to find yourself, is to let yourself go. After all, you only get one chance to experience your 20s. Even if it\u2019s when you\u2019re 40 something.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/cougar-town",
+      "poster":"http://localhost:9292/api/uploads/94991/poster-94991.jpg",
+      "imdb_id":"tt1441109",
+      "year":"2009",
+      "tvdb_id":"94991"
+   },
+   {
+      "title":"Modern Family",
+      "overview":"This mockumentary explores the many different types of a modern family through the stories of a gay couple, comprised of Mitchell and Cameron, and their daughter Lily, a straight couple, comprised of Phil and Claire, and their three kids, Haley, Alex, and Luke, and a multi-ethnic couple, which is comprised of Jay and Gloria, and their son Manny.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/modern-family",
+      "poster":"http://localhost:9292/api/uploads/95011/poster-95011.jpg",
+      "imdb_id":"tt1442437",
+      "year":"2009",
+      "tvdb_id":"95011"
+   },
+   {
+      "title":"Dirty Jobs",
+      "overview":"DIRTY JOBS profiles the unsung American laborers who make their living in the most unthinkable \u2014 yet vital \u2014 ways. Our brave host and apprentice Mike Rowe will introduce you to a hardworking group of men and women who overcome fear, danger and sometimes stench and overall ickiness to accomplish their daily tasks.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/dirty-jobs",
+      "poster":"http://localhost:9292/api/uploads/78904/poster-78904.jpg",
+      "imdb_id":"tt0458259",
+      "year":"2003",
+      "tvdb_id":"78904"
+   },
+   {
+      "title":"Hogan's Heroes",
+      "overview":"The exploits of five World War II prisoners in a German POW camp, 'Stalag 13' who, while \"under the cover\" of being typical prisoners of war, are really secretly doing their utmost to sabotage the German war effort through whatever means necessary. Col. Klink is very proud that no prisoner has ever escaped under his watch, not that they would want to. Suave, cool and smart, Col. Hogan takes advantage of Col. Klink and Sgt. Schultz's bravado and general cluelessness to carry out his missions.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/hogans-heroes",
+      "poster":"http://localhost:9292/api/uploads/71635/poster-71635.jpg",
+      "imdb_id":"tt0058812",
+      "year":"1965",
+      "tvdb_id":"71635"
+   },
+   {
+      "title":"Early Edition",
+      "overview":"Gary Hobson was a regular Chicago stockbroker. One day his wife dumped him and he was forced to move into a hotel room. The next morning, at 6:30 am, a mysterious yellow cat showed up at his front door with tomorrow's edition of the Chicago Sun-Times. From that day on his life was never the same. At first skeptical, Gary started to try saving people's lives and stop disasters from happening. With the help of his friends Chuck and Marissa, Gary became a man with a mission, even though he doesn't know why or how the paper gets to him every morning.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/early-edition",
+      "poster":"http://localhost:9292/api/uploads/74295/poster-74295.jpg",
+      "imdb_id":"tt0115163",
+      "year":"1996",
+      "tvdb_id":"74295"
+   },
+   {
+      "title":"American Idol",
+      "overview":"This hit FOX musical reality series follows four judges, Simon Cowell, Randy Jackson, Kara DioGuardi and Ellen DeGeneres, along with host Ryan Seacrest around the United States in search of the next American Idol, a pop star that truly shines above all the rest. With help from the viewers, they will decide from thousands of participants who will walk away with a record deal and the fame and fortune that is sure to come along with it. ",
+      "watchers":1,
+      "url":"http://trakt.tv/show/american-idol",
+      "poster":"http://localhost:9292/api/uploads/70814/poster-70814.jpg",
+      "imdb_id":"tt0319931",
+      "year":"2002",
+      "tvdb_id":"70814"
+   },
+   {
+      "title":"Terriers",
+      "overview":"Terriers is a comedic drama that centers on \u201cHank Dolworth\u201d an ex-cop, who partners with his best friend \u201cBritt Pollack\u201d in an unlicensed private investigation business.  This comedic, edgy, original, show is about high stakes in the face of low expectations, exploring what it\u2019s like in today's America to be \"too small to fail.\"",
+      "watchers":1,
+      "url":"http://trakt.tv/show/terriers",
+      "poster":"http://localhost:9292/api/uploads/180791/poster-180791.jpg",
+      "imdb_id":"tt1493239",
+      "year":"2010",
+      "tvdb_id":"180791"
+   },
+   {
+      "title":"Fringe",
+      "overview":"Fringe follows FBI Agent Olivia Dunham, Consultant Peter Bishop and science explorer extraordinaire Doctor Walter Bishop as they search for clues to the series of bizarre and horrific crimes inflicted on the world. The world that we  know. ",
+      "watchers":1,
+      "url":"http://trakt.tv/show/fringe",
+      "poster":"http://localhost:9292/api/uploads/82066/poster-82066.jpg",
+      "imdb_id":"tt1119644",
+      "year":"2008",
+      "tvdb_id":"82066"
+   },
+   {
+      "title":"Stargate SG-1",
+      "overview":"This sequel to the 1994 movie Stargate chronicles the further adventures of SGC (Stargate Command). It turned out that the Goa'uld Ra was only one of many alien System Lords who used the Stargates to conquer much of the universe. When Earth uncovers a working cartouche to decipher the coding system of their own Stargate, they find they can now travel anywhere. Earth's military sends out SG teams to explore new planets, find technology, and oppose the Goa'uld. Jack O'Neill and Daniel Jackson from the original movie are part of SG-1. They are joined by Sam Carter, a scientist, and Teal'c, a Jaffa who is convinced the Goa'uld are not gods.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/stargate-sg1",
+      "poster":"http://localhost:9292/api/uploads/72449/poster-72449.jpg",
+      "imdb_id":"tt0118480",
+      "year":"1997",
+      "tvdb_id":"72449"
+   },
+   {
+      "title":"Spartacus: Blood and Sand",
+      "overview":"Watch the story of history's greatest gladiator unfold with graphic violence and explicit sex. This is Spartacus.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/spartacus-blood-and-sand",
+      "poster":"http://localhost:9292/api/uploads/129261/poster-129261.jpg",
+      "imdb_id":"tt1442449",
+      "year":"2010",
+      "tvdb_id":"129261"
+   },
+   {
+      "title":"Family Guy",
+      "overview":"Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/family-guy",
+      "poster":"http://localhost:9292/api/uploads/75978/poster-75978.jpg",
+      "imdb_id":"tt0182576",
+      "year":"1999",
+      "tvdb_id":"75978"
+   },
+   {
+      "title":"The X-Files",
+      "overview":"This long running FOX drama lasted nine seasons and focused on the exploits of FBI Agents Fox Mulder, Dana Scully, John Doggett and Monica Reyes and their investigations into the paranormal. From genetic mutants and killer insects to a global conspiracy concerning the colonization of Earth by an alien species, this mind-boggling, humorous and occasionally frightening series created by Chris Carter has been one of the world's most popular sci-fi/drama shows since its humble beginnings in 1993.  So, sit back and enjoy the fascinating world of The X-Files.",
+      "watchers":1,
+      "url":"http://trakt.tv/show/the-xfiles",
+      "poster":"http://localhost:9292/api/uploads/77398/poster-77398.jpg",
+      "imdb_id":"tt0106179",
+      "year":"1993",
+      "tvdb_id":"77398"
+   }
+]
+

@@ -28,6 +28,10 @@ mappings = lambda do
     serve_json_fixture('user-show-library')
   end
 
+  map('/api/shows/trending.json') do
+    serve_json_fixture('trending')
+  end
+
   map('/api/shows/82066.json') do
     serve_json_fixture('show')
   end

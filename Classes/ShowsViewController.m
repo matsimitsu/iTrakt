@@ -19,15 +19,8 @@
   [super viewDidLoad];
 
   self.tableView.rowHeight = ROW_HEIGHT;
-
   // TODO replace this with the actual username
   [Trakt sharedInstance].apiUser = @"matsimitsu";
-
-  // TODO this probably has to move to viewDidAppear so that it gets run whenever this view is shown, not just the first time!
-  [[Trakt sharedInstance] library:^(NSArray *_shows) {
-    self.shows = _shows;
-    [self.tableView reloadData];
-  }];
 }
 
 

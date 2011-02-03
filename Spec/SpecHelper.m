@@ -74,6 +74,11 @@ static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
   }];
 }
 
+- (void)trendingWithNuBlock:(id)nuBlock {
+  [self trending:^(NSArray *shows) {
+    callNuBlockWithArguments(nuBlock, [NSArray arrayWithObject:shows]);
+  }];
+}
 - (void)showPosterForURL:(NSURL *)posterURL nuBlock:(id)nuBlock {
   [self showPosterForURL:posterURL block:^(UIImage *poster, BOOL cached) {
     callNuBlockWithArguments(nuBlock, [NSArray arrayWithObjects:poster, [NSNumber numberWithBool:cached], nil]);

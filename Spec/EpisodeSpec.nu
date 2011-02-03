@@ -20,10 +20,14 @@
     (~ (@episode overview) should match:/^When the Fringe Team visits Massive Dynamic/)
   ))
 
+  (it "returns the time in the right locale" (do ()
+    (~ (@episode localizedAirTime) should match:/^3:00 PM/)
+  ))
+
   (it "returns where and when it will air" (do ()
     (~ (@episode network) should be:"FOX")
-    (~ (@episode airtime) should be:"9:00 PM")
-    (~ (@episode airTimeAndChannel) should be:"9:00 PM on FOX")
+    (~ (@episode airtime) should be:"09:00:00")
+    (~ (@episode airTimeAndChannel) should match:/^3:00 PM on FOX/)
   ))
 
   (it "returns season and episode number info" (do ()

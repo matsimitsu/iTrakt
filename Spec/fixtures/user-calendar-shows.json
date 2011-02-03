@@ -17,7 +17,7 @@
             "poster": "http://localhost:9292/api/uploads/82066/poster-82066.jpg",
             "network": "FOX",
             "imdb_id": "tt1119644",
-            "air_time": "9:00 PM",
+            "air_time": "09:00:00",
             "tvdb_id": "82066"
         },
         "watched": false

@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
+#import "ShowsViewController.h"
 
-
-@interface TrendingViewController : UITableViewController {
+@interface TrendingViewController : ShowsViewController {
 
 }
 

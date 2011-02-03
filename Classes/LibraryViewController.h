@@ -1,9 +1,7 @@
 #import <UIKit/UIKit.h>
+#import "ShowsViewController.h"
 
-@interface LibraryViewController : UITableViewController {
-  NSArray *shows;
+@interface LibraryViewController : ShowsViewController {
 }
-
-@property (nonatomic, retain) NSArray *shows;
 
 @end

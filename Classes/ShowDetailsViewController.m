@@ -1,71 +1,96 @@
-#import "LibraryViewController.h"
-#import "ShowTableViewCell.h"
+//
+//  ShowDetailsViewController.m
+//  iTrakt
+//
+//  Created by Robert Beekman on 03-02-11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
 #import "ShowDetailsViewController.h"
 
-#import "Trakt.h"
-#import "Show.h"
 
-#define ROW_HEIGHT 66.0
+@implementation ShowDetailsViewController
 
-@implementation LibraryViewController
+@synthesize show;
 
-@synthesize shows;
+- (id)initWithShow:(Show *)theShow {
+  if (self = [super initWithNibName:@"ShowDetailsViewController" bundle:nil]) {
+    self.show = theShow;
+    self.navigationItem.title = show.title;
+  }
+  return self;
+}
 
 #pragma mark -
 #pragma mark View lifecycle
 
 
+/*
 - (void)viewDidLoad {
-  [super viewDidLoad];
+    [super viewDidLoad];
 
-  self.navigationItem.title = @"Library";
-  self.tableView.rowHeight = ROW_HEIGHT;
-
-  // TODO replace this with the actual username
-  [Trakt sharedInstance].apiUser = @"matsimitsu";
-
-  // TODO this probably has to move to viewDidAppear so that it gets run whenever this view is shown, not just the first time!
-  [[Trakt sharedInstance] library:^(NSArray *_shows) {
-    self.shows = _shows;
-    [self.tableView reloadData];
-  }];
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+*/
+
+/*
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+*/
+/*
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+*/
+/*
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+*/
+/*
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+}
+*/
+/*
+// Override to allow orientations other than the default portrait orientation.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // Return YES for supported orientations.
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+*/
 
 
 #pragma mark -
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 1;
+    // Return the number of sections.
+    return 1;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [self.shows count];
+    // Return the number of rows in the section.
+    return 1;
 }
 
 
+// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  static NSString *CellIdentifier = @"Cell";
 
-  ShowTableViewCell *cell = (ShowTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  if (cell == nil) {
-    cell = [[[ShowTableViewCell alloc] initWithReuseIdentifier:CellIdentifier] autorelease];
-  }
+    static NSString *CellIdentifier = @"Cell";
 
-  Show *show = [self.shows objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
 
-  [show ensurePosterIsLoaded:^{
-    // this callback is only run if the image has to be downloaded first
-    //NSLog(@"Show poster was downloaded for cell at: %@", indexPath);
-    ShowTableViewCell *cellToReload = (ShowTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-    cellToReload.show = show;
-    [cellToReload setNeedsLayout];
-  }];
+    // Configure the cell...
 
-  cell.show = show;
-
-  return cell;
+    return cell;
 }
 
 
@@ -121,11 +146,6 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     */
-    Show *show = [self.shows objectAtIndex:indexPath.row];
-
-    ShowDetailsViewController *controller = [[ShowDetailsViewController alloc] initWithShow:show];
-    [self.navigationController pushViewController:controller animated:YES];
-    [controller release];
 }
 
 

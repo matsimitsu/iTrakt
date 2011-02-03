@@ -80,6 +80,8 @@
 		510C6EE012F8AB8B000500A1 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6EDE12F8A83D000500A1 /* Show.m */; };
 		510C6EE212F8ABA7000500A1 /* ShowSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6EE112F8ABA7000500A1 /* ShowSpec.nu */; };
 		510C6F3212F8B0E9000500A1 /* ShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6F3112F8B0E9000500A1 /* ShowTableViewCell.m */; };
+		510C6FBE12FB5B2C000500A1 /* TrendingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6FBC12FB5B2C000500A1 /* TrendingViewController.m */; };
+		510C6FBF12FB5B2C000500A1 /* TrendingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510C6FBD12FB5B2C000500A1 /* TrendingViewController.xib */; };
 		5134008612EF4D72007ED54E /* EpisodeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */; };
 		5134008712EF4D72007ED54E /* EpisodeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */; };
 		513400A712EF5299007ED54E /* episode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 513400A612EF5299007ED54E /* episode.jpg */; };
@@ -177,6 +179,9 @@
 		510C6EE112F8ABA7000500A1 /* ShowSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ShowSpec.nu; path = Spec/ShowSpec.nu; sourceTree = "<group>"; };
 		510C6F3012F8B0E9000500A1 /* ShowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowTableViewCell.h; sourceTree = "<group>"; };
 		510C6F3112F8B0E9000500A1 /* ShowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowTableViewCell.m; sourceTree = "<group>"; };
+		510C6FBB12FB5B2C000500A1 /* TrendingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendingViewController.h; sourceTree = "<group>"; };
+		510C6FBC12FB5B2C000500A1 /* TrendingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendingViewController.m; sourceTree = "<group>"; };
+		510C6FBD12FB5B2C000500A1 /* TrendingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TrendingViewController.xib; path = Views/TrendingViewController.xib; sourceTree = "<group>"; };
 		5134008312EF4D72007ED54E /* EpisodeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodeDetailsViewController.h; sourceTree = "<group>"; };
 		5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodeDetailsViewController.m; sourceTree = "<group>"; };
 		5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EpisodeDetailsViewController.xib; path = Views/EpisodeDetailsViewController.xib; sourceTree = "<group>"; };
@@ -249,6 +254,8 @@
 				510C6F3112F8B0E9000500A1 /* ShowTableViewCell.m */,
 				240D0FA512FB5964002349B5 /* ShowDetailsViewController.h */,
 				240D0FA612FB5964002349B5 /* ShowDetailsViewController.m */,
+				510C6FBB12FB5B2C000500A1 /* TrendingViewController.h */,
+				510C6FBC12FB5B2C000500A1 /* TrendingViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -377,6 +384,7 @@
 		510C6EB412F8A1EE000500A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				510C6FBD12FB5B2C000500A1 /* TrendingViewController.xib */,
 				5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */,
 				28F335F01007B36200424DE2 /* CalendarViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
@@ -398,7 +406,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* iTrakt */ = {
+		1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iTrakt" */;
 			buildPhases = (
@@ -459,7 +467,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* iTrakt */,
+				1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */,
 				513401B712F36248007ED54E /* Specs */,
 			);
 		};
@@ -507,6 +515,7 @@
 				510C6D0712F5EA8A000500A1 /* poster-thumbnail.jpg in Resources */,
 				510C6EC812F8A2EC000500A1 /* LibraryViewController.xib in Resources */,
 				240D0FA912FB5964002349B5 /* ShowDetailsViewController.xib in Resources */,
+				510C6FBF12FB5B2C000500A1 /* TrendingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +565,7 @@
 				510C6EDF12F8A83D000500A1 /* Show.m in Sources */,
 				510C6F3212F8B0E9000500A1 /* ShowTableViewCell.m in Sources */,
 				240D0FA812FB5964002349B5 /* ShowDetailsViewController.m in Sources */,
+				510C6FBE12FB5B2C000500A1 /* TrendingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

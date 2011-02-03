@@ -12,7 +12,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2402540C12F5F07B00F651D8 /* thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2402540A12F5F05800F651D8 /* thumb.jpg */; };
 		240D0FA812FB5964002349B5 /* ShowDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 240D0FA612FB5964002349B5 /* ShowDetailsViewController.m */; };
-		240D0FA912FB5964002349B5 /* ShowDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 240D0FA712FB5964002349B5 /* ShowDetailsViewController.xib */; };
+		240D101D12FB627E002349B5 /* ShowDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 240D101C12FB627E002349B5 /* ShowDetailsViewController.xib */; };
 		2441C23712F457CC00329D69 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23112F457CC00329D69 /* UIImage+Resize.m */; };
 		2441C23812F457CC00329D69 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23212F457CC00329D69 /* UIImage+Alpha.m */; };
 		2441C23912F457CC00329D69 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23312F457CC00329D69 /* UIImage+RoundedCorner.m */; };
@@ -129,7 +129,7 @@
 		2402540A12F5F05800F651D8 /* thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = thumb.jpg; path = Spec/fixtures/thumb.jpg; sourceTree = "<group>"; };
 		240D0FA512FB5964002349B5 /* ShowDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailsViewController.h; sourceTree = "<group>"; };
 		240D0FA612FB5964002349B5 /* ShowDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowDetailsViewController.m; sourceTree = "<group>"; };
-		240D0FA712FB5964002349B5 /* ShowDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ShowDetailsViewController.xib; path = Classes/ShowDetailsViewController.xib; sourceTree = "<group>"; };
+		240D101C12FB627E002349B5 /* ShowDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ShowDetailsViewController.xib; path = Views/ShowDetailsViewController.xib; sourceTree = "<group>"; };
 		2441C23112F457CC00329D69 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Resize.m"; path = "vendor/UIImage/UIImage+Resize.m"; sourceTree = "<group>"; };
 		2441C23212F457CC00329D69 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Alpha.m"; path = "vendor/UIImage/UIImage+Alpha.m"; sourceTree = "<group>"; };
 		2441C23312F457CC00329D69 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RoundedCorner.m"; path = "vendor/UIImage/UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
@@ -394,7 +394,7 @@
 				28F335F01007B36200424DE2 /* CalendarViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				510C6EC612F8A2EC000500A1 /* LibraryViewController.xib */,
-				240D0FA712FB5964002349B5 /* ShowDetailsViewController.xib */,
+				240D101C12FB627E002349B5 /* ShowDetailsViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -411,7 +411,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */ = {
+		1D6058900D05DD3D006BFB54 /* iTrakt */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iTrakt" */;
 			buildPhases = (
@@ -472,7 +472,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */,
+				1D6058900D05DD3D006BFB54 /* iTrakt */,
 				513401B712F36248007ED54E /* Specs */,
 			);
 		};
@@ -519,8 +519,8 @@
 				510C6BC612F5C875000500A1 /* user-calendar-shows.json in Resources */,
 				510C6D0712F5EA8A000500A1 /* poster-thumbnail.jpg in Resources */,
 				510C6EC812F8A2EC000500A1 /* LibraryViewController.xib in Resources */,
-				240D0FA912FB5964002349B5 /* ShowDetailsViewController.xib in Resources */,
 				510C6FBF12FB5B2C000500A1 /* TrendingViewController.xib in Resources */,
+				240D101D12FB627E002349B5 /* ShowDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

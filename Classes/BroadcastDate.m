@@ -18,7 +18,15 @@
         [objectifiedEpisodes addObject:[[Episode alloc] initWithDictionary:episode]];
       }
 
-      self.episodes = objectifiedEpisodes;
+      NSSortDescriptor *airtimeDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"airtime"
+                                                                         ascending:YES
+                                                                          selector:@selector(compare:)] autorelease];
+      NSSortDescriptor *showTitleDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"showTitle"
+                                                                           ascending:YES
+                                                                            selector:@selector(localizedCaseInsensitiveCompare:)] autorelease];
+ 
+      NSArray *descriptors = [NSArray arrayWithObjects:airtimeDescriptor, showTitleDescriptor, nil];
+      self.episodes = [objectifiedEpisodes sortedArrayUsingDescriptors:descriptors];
     }
 
     return self;

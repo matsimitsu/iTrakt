@@ -9,7 +9,7 @@
 
   (it "returns the show's and episode's title" (do ()
     (~ (@episode showTitle) should be:"Fringe")
-    (~ (@episode title) should be:"Reciprocity")
+    (~ (@episode title) should be:"Concentrate and Ask Again")
   ))
 
   (it "returns the TVDB ID" (do ()
@@ -17,17 +17,16 @@
   ))
 
   (it "returns the description" (do ()
-    (~ (@episode overview) should match:/^When the Fringe Team visits Massive Dynamic/)
+    (~ (@episode overview) should match:/^When a scientist falls dead after ingesting a lethal cloud of blue powder/)
   ))
 
   (it "returns the time in the right locale" (do ()
-    (~ (@episode localizedAirTime) should match:/^3:00 PM/)
+    (~ (@episode localizedAirTime) should be:"3:00 AM")
   ))
 
   (it "returns where and when it will air" (do ()
     (~ (@episode network) should be:"FOX")
-    (~ (@episode airtime) should be:"09:00:00")
-    (~ (@episode airTimeAndChannel) should match:/^3:00 PM on FOX/)
+    (~ (@episode airTimeAndChannel) should be:"3:00 AM on FOX")
   ))
 
   (it "returns season and episode number info" (do ()

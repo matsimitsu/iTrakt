@@ -1,27 +1,683 @@
-[{
-    "episodes": [{
-        "rating": false,
-        "episode": {
-            "number": 1,
-            "title": "Reciprocity",
-            "overview": "When the Fringe Team visits Massive Dynamic\u2019s assembly of the doomsday device, Walter becomes greatly concerned for Peter\u2019s well-being, so he turns to Nina for added brain power to understand the relationship between Peter and the superweapon. Meanwhile, the discovery of a dead body triggers an intense investigation.",
-            "url": "http://trakt.tv/show/fringe/season/3/episode/11",
-            "first_aired": 1296201600,
-            "thumb": "http://localhost:9292/api/uploads/82066/thumb-82066-3-12.jpg",
-            "season": 3
-        },
-        "show": {
-            "title": "Fringe",
-            "overview": "Fringe follows FBI Agent Olivia Dunham, Consultant Peter Bishop and science explorer extraordinaire Doctor Walter Bishop as they search for clues to the series of bizarre and horrific crimes inflicted on the world. The world that we  know. ",
-            "url": "http://trakt.tv/show/fringe",
-            "poster": "http://localhost:9292/api/uploads/82066/poster-82066.jpg",
-            "network": "FOX",
-            "imdb_id": "tt1119644",
-            "air_time": "09:00:00",
-            "tvdb_id": "82066"
-        },
-        "watched": false
-    }],
-    "date": "2011-01-28"
-}]
+[
+   {
+      "episodes":[
+         {
+            "rating":false,
+            "episode":{
+               "number":1,
+               "title":"Concentrate and Ask Again",
+               "overview":"When a scientist falls dead after ingesting a lethal cloud of blue powder and his bones disintegrate in his body, the CDC suspects a biological attack. As the Fringe Team investigates further, a subject from Walter\u2019s past with ties to Olivia reluctantly agrees to assist with the intense case.",
+               "url":"http://trakt.tv/show/fringe/season/3/episode/12",
+               "first_aired":1296806400,
+               "thumb":"http://localhost:9292/api/uploads/82066/thumb-82066-3-12.jpg",
+               "season":3
+            },
+            "show":{
+               "title":"Fringe",
+               "overview":"Fringe follows FBI Agent Olivia Dunham, Consultant Peter Bishop and science explorer extraordinaire Doctor Walter Bishop as they search for clues to the series of bizarre and horrific crimes inflicted on the world. The world that we  know. ",
+               "url":"http://trakt.tv/show/fringe",
+               "poster":"http://localhost:9292/api/uploads/82066/poster-82066.jpg",
+               "network":"FOX",
+               "imdb_id":"tt1119644",
+               "air_time":"21:00:00",
+               "tvdb_id":"82066"
+            },
+            "watched":false
+         }
+      ],
+      "date_epoch":"1296777600",
+      "date":"2011-02-04"
+   },
+   {
+      "episodes":[
+         {
+            "rating":false,
+            "episode":{
+               "number":3,
+               "title":"Series 16, Episode 3",
+               "overview":"Jeremy Clarkson, Richard Hammond and James May head to Albania to test the super luxurious Rolls-Royce Ghost, Bentley Mulsanne and Mercedes S65 AMG. Back on home soil, Jeremy is out on the track in a trio of high-powered hatchbacks, the Ford Focus RS500, the Prodrive Impreza CS400 and the one-off Volvo C30 PPC, whilst Jonathan Ross is the star in the reasonably priced car.",
+               "url":"http://trakt.tv/show/top-gear/season/16/episode/3",
+               "first_aired":1296979200,
+               "thumb":"http://localhost:9292/api/uploads/74608/default_thumb-74608.jpg",
+               "season":16
+            },
+            "show":{
+               "title":"Top Gear",
+               "overview":"Top Gear is a BAFTA and Emmy award winning British television series about motor vehicles, primarily cars. It began in 1977 as a conventional motoring magazine show. Over time, and especially since a relaunch in 2002, it has developed a quirky, humorous style. The show is currently presented by Jeremy Clarkson, Richard Hammond and James May, and has featured three different test drivers known as The Stig (the first dressed in a black racing outfit, and the second and third dressed in a white one).",
+               "url":"http://trakt.tv/show/top-gear",
+               "poster":"http://localhost:9292/api/uploads/74608/poster-74608.jpg",
+               "network":"BBC Two",
+               "imdb_id":"tt1628033",
+               "air_time":"22:00:00",
+               "tvdb_id":"74608"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":5,
+               "title":"Episode Five",
+               "overview":"Sean's infatuation with the lovely \"Pucks!\" actress Morning Randolph is given an opportunity to blossom when Matt invites the two of them to a charity benefit. Sean realizes that his attraction to her may be, in fact, mutual. Meanwhile, Beverly and Carol share a joint and commiserate about the men in their lives. At the end of the night, Sean has a difficult choice to make, and Beverly learns that she has more to worry about in regard to her husband and the actress than even she realized.\n",
+               "url":"http://trakt.tv/show/episodes/season/1/episode/5",
+               "first_aired":1296979200,
+               "thumb":"http://localhost:9292/api/uploads/123581/default_thumb-123581.jpg",
+               "season":1
+            },
+            "show":{
+               "title":"Episodes",
+               "overview":"\"Episodes\" centers on a U.K. show by a British couple that is turned into an Americanized sitcom.",
+               "url":"http://trakt.tv/show/episodes",
+               "poster":"http://localhost:9292/api/uploads/123581/poster-123581.jpg",
+               "network":"Showtime",
+               "imdb_id":"tt1582350",
+               "air_time":"21:30:00",
+               "tvdb_id":"123581"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":13,
+               "title":"Fault Lines",
+               "overview":"A yearly re-qualification becomes a fight for survival.",
+               "url":"http://trakt.tv/show/flashpoint/season/3/episode/13",
+               "first_aired":1296979200,
+               "thumb":"http://localhost:9292/api/uploads/82438/default_thumb-82438.jpg",
+               "season":3
+            },
+            "show":{
+               "title":"Flashpoint",
+               "overview":"Flashpoint is an emotional journey following the lives of members of the Strategic Response Unit as they solve hostage situations, bust gangs, and defuse bombs. They work by utilizing their training to get inside the heads of these people in order to make them reach their breaking point (aka their flashpoint).",
+               "url":"http://trakt.tv/show/flashpoint",
+               "poster":"http://localhost:9292/api/uploads/82438/poster-82438.jpg",
+               "network":"CTV",
+               "imdb_id":"tt1059475",
+               "air_time":"22:00:00",
+               "tvdb_id":"82438"
+            },
+            "watched":false
+         }
+      ],
+      "date_epoch":"1296950400",
+      "date":"2011-02-06"
+   },
+   {
+      "episodes":[
+         {
+            "rating":false,
+            "episode":{
+               "number":14,
+               "title":"Lucky Stiff",
+               "overview":"The brutal murder of a lottery winner has Castle and Beckett up to their eyeballs in suspects, envious and angered by the victim's sudden move from the poorhouse to the penthouse. As the precinct buzzes with fantasies of what our cops would do if they won the lottery, Martha struggles with the reality of such a decision when she suddenly inherits money she feels she doesn't deserve.",
+               "url":"http://trakt.tv/show/castle-2009/season/3/episode/14",
+               "first_aired":1297065600,
+               "thumb":"http://localhost:9292/api/uploads/83462/thumb-83462-3-14.jpg",
+               "season":3
+            },
+            "show":{
+               "title":"Castle (2009)",
+               "overview":"Writer Richard Castle couldn't write a better character himself - he's Mick Jagger meets James Bond, and has the fame and fans to match. However, Richard has grown weary of it all, leading him to kill off the legendary character who has been the basis of the millions of books he has sold. When a copycat murderer begins to kill people in manners and scenes straight out of his novels, NYPD Detective Kate Beckett goes to Richard for help. But their personalities don't mesh - Richard's fly-by-the-seat-of-his-pants detective style greatly clashes with Beckett's more conservative and methodical approach to the crimes, but the new life that Richard Castle has begun couldn't have been scripted better himself.",
+               "url":"http://trakt.tv/show/castle-2009",
+               "poster":"http://localhost:9292/api/uploads/83462/poster-83462.jpg",
+               "network":"ABC",
+               "imdb_id":"tt1219024",
+               "air_time":"22:00:00",
+               "tvdb_id":"83462"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":14,
+               "title":"Chuck Versus the Seduction Impossible",
+               "overview":"Casey, Chuck and Sarah are sent to Morocco to rescue Roan Montgomery. Morgan plans to meet Alex's mother and Mary spends some time with her family.",
+               "url":"http://trakt.tv/show/chuck/season/4/episode/14",
+               "first_aired":1297065600,
+               "thumb":"http://localhost:9292/api/uploads/80348/thumb-80348-4-14.jpg",
+               "season":4
+            },
+            "show":{
+               "title":"Chuck",
+               "overview":"Meet Chuck Bartowski. He's your run of the mill computer whiz working for Buy-More with his equally nerdy friends all while longing for the woman of his dreams. But Chuck's average life is suddenly turned upside down when an old friend, who happens to work for the CIA, sends Chuck a mysterious e-mail and the world's closely-kept spy secrets are embedded in Chuck's brain. Now Chuck has unwittingly become the government's most powerful weapon and the fate of both the country and the world now lie in his hands. A Buy More day job and saving the world are all in a day's work for Chuck.\nChuck is put under the protection of two rival intelligence operatives, Sarah Walker and Colonel John Casey. They're forced to work together and keep Chuck alive while taking him on assignments where his unique knowledge can prove useful on missions. Sarah has to stay close to Chuck by pretending to be his girlfriend. Meanwhile, Chuck has to keep his secrets from best friend and co-worker Morgan Grimes, and his concerned sister Ellie Bartowski.",
+               "url":"http://trakt.tv/show/chuck",
+               "poster":"http://localhost:9292/api/uploads/80348/poster-80348.jpg",
+               "network":"NBC",
+               "imdb_id":"tt0934814",
+               "air_time":"20:00:00",
+               "tvdb_id":"80348"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":16,
+               "title":"E Malama (To Protect)",
+               "overview":null,
+               "url":"http://trakt.tv/show/hawaii-five0-2010/season/1/episode/16",
+               "first_aired":1297065600,
+               "thumb":"http://localhost:9292/api/uploads/164541/default_thumb-164541.jpg",
+               "season":1
+            },
+            "show":{
+               "title":"Hawaii Five-0 (2010)",
+               "overview":"Detective Steve McGarrett, a decorated Naval officer turned cop, returns to Oahu to investigate his father's murder and stays after Hawaii's governor persuades him to head up the new team: his rules, her backing, no red tape and full blanket immunity to hunt down the biggest \"game\" in town. Joining McGarrett is Detective Danny \"Danno\" Williams, a newly relocated ex-New Jersey cop who prefers skyscrapers to the coastline but is committed to keeping the Islands safe for his 8-year-old daughter; and Chin Ho Kelly, an ex-Honolulu Police Detective wrongly accused of corruption and relegated to a federal security patrol, who is also a former prot\u00e9g\u00e9 of McGarrett's father. Chin's cousin, Kono, is a beautiful and fearless native, fresh out of the academy and eager to establish herself among the department's elite. McGarrett vows to bring closure to his father's case while the state's brash new FIVE-0 unit, who may spar and jest among themselves, is determined to eliminate the seedy elements from the 50th state.",
+               "url":"http://trakt.tv/show/hawaii-five0-2010",
+               "poster":"http://localhost:9292/api/uploads/164541/poster-164541.jpg",
+               "network":"CBS",
+               "imdb_id":"tt1600194",
+               "air_time":"22:00:00",
+               "tvdb_id":"164541"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":11,
+               "title":"Family Practice",
+               "overview":"Cuddy\u2019s mother, Arlene, is admitted to Princeton Plansboro after complaining about unusual symptoms, but stubborn Arlene insists that House be removed from the case, forcing House to come up with non-conventional \u2013 and illegal \u2013 means to treat his patient. House instructs his team to follow his lead, and they discover details in Arlene\u2019s personal life that she kept secret from Cuddy and her sister Lucinda. Meanwhile, Taub\u2019s ex-wife, Rachel, puts him in contact with her brother who hires Taub to work a job on the side in exchange for much-needed income, which winds up taking a physical and emotional toll on him. Later, Cuddy places her trust in House to ensure that her mother receives the proper medical treatment, leading \u201cby the book\u201d medical student Masters to reevaluate her responsibility to practice within a code of ethics and to follow her boss\u2019 orders.\n",
+               "url":"http://trakt.tv/show/house/season/7/episode/11",
+               "first_aired":1297065600,
+               "thumb":"http://localhost:9292/api/uploads/73255/default_thumb-73255.jpg",
+               "season":7
+            },
+            "show":{
+               "title":"House",
+               "overview":"Dr. Gregory House (Hugh Laurie) is devoid of bedside manner and wouldn't even talk to his patients if he could get away with it. Dealing with his own constant physical pain, he uses a cane that seems to punctuate his acerbic, brutally honest demeanour. While his behaviour can border on antisocial, House is a maverick physician whose unconventional thinking and flawless instincts have afforded him a great deal of respect. An infectious disease specialist, he's a brilliant diagnostician who loves the challenges of the medical puzzles he must solve in order to save lives.",
+               "url":"http://trakt.tv/show/house",
+               "poster":"http://localhost:9292/api/uploads/73255/poster-73255.jpg",
+               "network":"FOX",
+               "imdb_id":"tt0412142",
+               "air_time":"20:00:00",
+               "tvdb_id":"73255"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":15,
+               "title":"Oh Honey",
+               "overview":"Barney gets emotional when he opens up to Honey about his life.",
+               "url":"http://trakt.tv/show/how-i-met-your-mother/season/6/episode/15",
+               "first_aired":1297065600,
+               "thumb":"http://localhost:9292/api/uploads/75760/thumb-75760-6-15.jpg",
+               "season":6
+            },
+            "show":{
+               "title":"How I Met Your Mother",
+               "overview":"How I Met Your Mother is a comedy about Ted and how he fell in love. It all started when Ted's best friend, Marshall, dropped the bombshell that he was going to propose to his longtime girlfriend, Lily, a kindergarten teacher. At that moment, Ted realized that he had better get a move on if he, too, hopes to find true love. Helping him in his quest is his friend Barney, a confirmed bachelor with endless, sometimes outrageous opinions, a penchant for suits and a foolproof way to meet women. When Ted meets Robin, he's sure it's love at first sight, but destiny has something else in store.",
+               "url":"http://trakt.tv/show/how-i-met-your-mother",
+               "poster":"http://localhost:9292/api/uploads/75760/poster-75760.jpg",
+               "network":"CBS",
+               "imdb_id":"tt0460649",
+               "air_time":"20:00:00",
+               "tvdb_id":"75760"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":15,
+               "title":"Singing and Dancing",
+               "overview":"Timmy wants to join a sinning group but may have a hard time keeping the secret from Russell. Jeff and Audrey have a new rude neighbor.",
+               "url":"http://trakt.tv/show/rules-of-engagement/season/5/episode/15",
+               "first_aired":1297065600,
+               "thumb":"http://localhost:9292/api/uploads/79842/default_thumb-79842.jpg",
+               "season":5
+            },
+            "show":{
+               "title":"Rules of Engagement",
+               "overview":"This new comedy follows the unique friendship between a married couple, a pair of newly engaged lovebirds, and a contented bachelor as they navigate the jungles of dating.",
+               "url":"http://trakt.tv/show/rules-of-engagement",
+               "poster":"http://localhost:9292/api/uploads/79842/poster-79842.jpg",
+               "network":"CBS",
+               "imdb_id":"tt0790772",
+               "air_time":"20:30:00",
+               "tvdb_id":"79842"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":6,
+               "title":"Goggles and Hicks",
+               "overview":"Badly bruised and exhausted, The Cape heeds advice from Max to take some time off to recover. Determined to finally kill The Cape, Peter Fleming hires a tech-savvy team, including Goggles and Hicks, to track and destroy The Cape. Meanwhile, Orwell faces digital challenges against the teams\u2019 strong expertise and Dana becomes more involved in uncovering the truth about Vince\u2019s case.\n",
+               "url":"http://trakt.tv/show/the-cape-2011/season/1/episode/6",
+               "first_aired":1297065600,
+               "thumb":"http://localhost:9292/api/uploads/160671/default_thumb-160671.jpg",
+               "season":1
+            },
+            "show":{
+               "title":"The Cape (2011)",
+               "overview":"Set in the fictional metropolis of Palm City, The Cape follows an innocent cop who has been framed for a crime he did not commit and then left for dead after he is caught. He is eventually saved by a circus ringleader who prepares him with special abilities to defend himself against his foes. Separated from his wife and son, he tries to clear his name while protecting them from being killed if he was ever reported alive. He takes the law into his own hands by taking the guise of his son's favorite comic book hero, The Cape, after he is given a special suit that has unique capabilities. Vowing to get rid of the corruption that has taken over both the city and the police force, he goes after the person responsible for setting him up and causing his \"demise.\"",
+               "url":"http://trakt.tv/show/the-cape-2011",
+               "poster":"http://localhost:9292/api/uploads/160671/poster-160671.jpg",
+               "network":"NBC",
+               "imdb_id":"tt1593823",
+               "air_time":"21:00:00",
+               "tvdb_id":"160671"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":15,
+               "title":"Three Hookers and a Philly Cheesesteak",
+               "overview":null,
+               "url":"http://trakt.tv/show/two-and-a-half-men/season/8/episode/15",
+               "first_aired":1297065600,
+               "thumb":"http://localhost:9292/api/uploads/72227/default_thumb-72227.jpg",
+               "season":8
+            },
+            "show":{
+               "title":"Two and a Half Men",
+               "overview":"Charlie is a well-to-do bachelor with a house at the beach, a Jaguar in the front, and an easy way with women. His casual Malibu lifestyle is interrupted when his tightly wound brother Alan, who's facing a divorce, and his son Jake, come to live with him. Together, these two and a half men confront the challenges of growing up; finally. Complicating matters are the brothers' self-obsessed, controlling mother, Evelyn, Alan's estranged wife, Judith and Charlie's crazy neighbor Rose, who wants to be a part of his life and is willing to do anything to be around.",
+               "url":"http://trakt.tv/show/two-and-a-half-men",
+               "poster":"http://localhost:9292/api/uploads/72227/poster-72227.jpg",
+               "network":"CBS",
+               "imdb_id":"tt0369179",
+               "air_time":"21:00:00",
+               "tvdb_id":"72227"
+            },
+            "watched":false
+         }
+      ],
+      "date_epoch":"1297036800",
+      "date":"2011-02-07"
+   },
+   {
+      "episodes":[
+         {
+            "rating":false,
+            "episode":{
+               "number":14,
+               "title":"Beaten/Cover Letter",
+               "overview":"Fitch, Washington, Stone and Sanchez delve into the boxing world to investigate a woman's death. Her fianc\u00e9 is preparing for a match against her ex-boyfriend and she was hiding a secret that could have thrown the fight. Longford and Mahajan are forced to face some tough ethical issues if they are to bring a resolution to the cold case they are re-examining. It seems that the victim led two lives, one with his wife and daughter and one with his married lover.",
+               "url":"http://trakt.tv/show/detroit-187/season/1/episode/14",
+               "first_aired":1297152000,
+               "thumb":"http://localhost:9292/api/uploads/164221/default_thumb-164221.jpg",
+               "season":1
+            },
+            "show":{
+               "title":"Detroit 1-8-7",
+               "overview":"What does it take to be a detective on America's most dangerous streets? Get ready to be part of the action when a documentary crew rolls with some of Detroit's finest, offering an insider's glimpse behind the curtain of a Homicide Unit. The cameras unearth the crisis and revelation, heartbreak and heroism of these inner city cops\u2014moments of raw exposure when they address us directly, as well as private moments when they forget they're being filmed.\n\nThere's the damaged but driven Detective Louis Fitch, a wily homicide vet who is the most respected\u2014and most misunderstood\u2014man in the division; Detective Damon Washington, Fitch's new partner, who finds the first day on the job is a trial by fire, complicated by the imminent birth of his first child; Detective Ariana Sanchez, sexy, edgy and beautiful, who has emerged from a rough background to become a rising star in the department; Narcotics undercover cop John Stone, a streetwise smooth talker, clever and quick with a smile made for the movies, who is teamed with Sanchez\u2014a combustible pairing rife with conflict and sexual tension; Sergeant Jesse Longford, a 30-year veteran struggling with his impending retirement from the force and the city he loves, who, together with his partner, Detective Aman Mahajan\u2014a fully Americanized son of Indian immigrants\u2014form an amusing mismatch of experience and enthusiasm, intellect and instinct, old school and new world, but whose combined skills have never encountered a case that couldn't be cleared; and all are headed by Lieutenant Maureen Mason, a strong-willed single mom struggling to balance home and work.\n\nThe men and women of Detroit Homicide are as smart and tough as they come. They have to be, working the neighborhoods of the once and future Motor City, a rebounding bastion of middle America still saddled with the highest murder rate in the country.\n\nDetroit 1-8-7 stars Michael Imperioli (The Sopranos) as Detective Louis Fitch, Jon Michael Hill as Detective Damon Washington, James McDaniel (NYPD Blue) as Sergeant Jesse Longford, Aisha Hinds (True Blood) as Lieutenant Maureen Mason, Natalie Martinez as Detective Ariana Sanchez, D.J. Cotrona as Detective John Stone and Shaun Majumder as Detective Aman Mahajan.",
+               "url":"http://trakt.tv/show/detroit-187",
+               "poster":"http://localhost:9292/api/uploads/164221/poster-164221.jpg",
+               "network":"ABC",
+               "imdb_id":"tt1578258",
+               "air_time":"22:00:00",
+               "tvdb_id":"164221"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":6,
+               "title":"Cop or Not",
+               "overview":"While working a celebrity murder, Lydia discovers the pros and cons of being in the spotlight. Sammy leaves the confines of the office to go out on patrol. John and Ben chafe with frustration over a tedious security detail.",
+               "url":"http://trakt.tv/show/southland/season/3/episode/6",
+               "first_aired":1297152000,
+               "thumb":"http://localhost:9292/api/uploads/84645/default_thumb-84645.jpg",
+               "season":3
+            },
+            "show":{
+               "title":"Southland",
+               "overview":"From Emmy Award winners John Wells, Ann Biderman and Chris Chulack comes a raw and authentic look at a police unit in Los Angeles. From the beaches of Malibu to the streets of East Los Angeles, \"Southland\" is a fast-moving drama that will take viewers inside the lives of cops, criminals, victims and their families.\n\n",
+               "url":"http://trakt.tv/show/southland",
+               "poster":"http://localhost:9292/api/uploads/84645/poster-84645.jpg",
+               "network":"TNT",
+               "imdb_id":"tt1299368",
+               "air_time":"22:00:00",
+               "tvdb_id":"84645"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":13,
+               "title":"Countermeasures",
+               "overview":"Neal is suspicious when an old friend (Billy Dee Williams) of June's husband is released from jail and shows up for a visit.",
+               "url":"http://trakt.tv/show/white-collar/season/2/episode/13",
+               "first_aired":1297152000,
+               "thumb":"http://localhost:9292/api/uploads/108611/default_thumb-108611.jpg",
+               "season":2
+            },
+            "show":{
+               "title":"White Collar",
+               "overview":"White Collar is about the unlikely partnership of a con artist and an FBI agent who have been playing cat and mouse for years.\nNeal Caffrey, a charming criminal mastermind, is finally caught by his nemesis, FBI Agent Peter Burke. When Neal escapes from a maximum-security prison to find his lost love, Peter nabs him once again. Rather than returning to jail, Neal suggests an alternative plan: He'll provide his criminal expertise to assist the Feds in catching other elusive criminals. Initially wary, Peter quickly finds that Neal provides insight and intuition that can't be found on the right side of the law.",
+               "url":"http://trakt.tv/show/white-collar",
+               "poster":"http://localhost:9292/api/uploads/108611/poster-108611.jpg",
+               "network":"USA Network",
+               "imdb_id":"tt1358522",
+               "air_time":"21:00:00",
+               "tvdb_id":"108611"
+            },
+            "watched":false
+         }
+      ],
+      "date_epoch":"1297123200",
+      "date":"2011-02-08"
+   },
+   {
+      "episodes":[
+         {
+            "rating":false,
+            "episode":{
+               "number":13,
+               "title":"Better With Valentine's Day",
+               "overview":null,
+               "url":"http://trakt.tv/show/better-with-you/season/1/episode/13",
+               "first_aired":1297238400,
+               "thumb":"http://localhost:9292/api/uploads/166361/default_thumb-166361.jpg",
+               "season":1
+            },
+            "show":{
+               "title":"Better With You",
+               "overview":"The series revolves around three different relationships that are tightly intertwined in one family, as it follows a couple, Maddie and Ben, who had been dating for nine years and are happy just living together despite not taking the next step, marriage.",
+               "url":"http://trakt.tv/show/better-with-you",
+               "poster":"http://localhost:9292/api/uploads/166361/poster-166361.jpg",
+               "network":"ABC",
+               "imdb_id":"tt1598876",
+               "air_time":"20:30:00",
+               "tvdb_id":"166361"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":14,
+               "title":"Father Figure",
+               "overview":null,
+               "url":"http://trakt.tv/show/chase-2010/season/1/episode/14",
+               "first_aired":1297238400,
+               "thumb":"http://localhost:9292/api/uploads/163541/default_thumb-163541.jpg",
+               "season":1
+            },
+            "show":{
+               "title":"Chase (2010)",
+               "overview":"\"Chase\" is a fast-paced drama from Emmy Award-winning executive producer Jerry Bruckheimer (\"CSI\" franchise, \"The Amazing Race,\" \"Pirates of the Caribbean\" films) and executive producer Jennifer Johnson (\"Cold Case\") that drops viewers smack into the middle of a game of cat-and-mouse as a team of U.S. marshals hunts down America's most dangerous fugitives. Kelli Giddish (\"Past Life\") stars as U.S. Marshal Annie Frost, a cowboy boot-wearing deputy whose sharp mind and unique Texas upbringing help her track down the violent criminals on the run. Cole Hauser (\"K-Ville\"), Amaury Nolasco (\"Prison Break\"), Rose Rollins (\"The L Word\") and Jesse Metcalfe (\"Desperate Housewives\") also star as members of Frost\u2019s elite team.",
+               "url":"http://trakt.tv/show/chase-2010",
+               "poster":"http://localhost:9292/api/uploads/163541/poster-163541.jpg",
+               "network":"NBC",
+               "imdb_id":"tt1582458",
+               "air_time":"21:00:00",
+               "tvdb_id":"163541"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":13,
+               "title":"Marshall Pucci",
+               "overview":"Chance\u2019s investigation into Ilsa\u2019s late husband\u2019s past uncovers a web of deception and lies that may tear the team part forever.\n",
+               "url":"http://trakt.tv/show/human-target-2010/season/2/episode/13",
+               "first_aired":1297238400,
+               "thumb":"http://localhost:9292/api/uploads/94801/default_thumb-94801.jpg",
+               "season":2
+            },
+            "show":{
+               "title":"Human Target (2010)",
+               "overview":"It takes a brave, selfless man to make himself a \"human target\" in order to save the lives of those in danger. Christopher Chance is a unique private security guard hired to protect. Call him what you like, because for Chance, it's about one thing only: saving his clients' lives. He puts himself directly in the line of fire as he races against time to save his client, while unraveling the truth behind the mission. With every new danger, Chance's dark history will also unravel. Does anyone know who Christopher Chance really is, or what secrets lay buried in his past? What would make a man willingly become a human target?",
+               "url":"http://trakt.tv/show/human-target-2010",
+               "poster":"http://localhost:9292/api/uploads/94801/poster-94801.jpg",
+               "network":"FOX",
+               "imdb_id":"tt1439741",
+               "air_time":"20:00:00",
+               "tvdb_id":"94801"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":14,
+               "title":"Bixby's Back",
+               "overview":"Claire and Phil decide to reprise their role-playing adventure from last year's Valentine's Day. Meanwhile, Jay's surprise plans for Gloria keeps getting interrupted, and a secret admirer comes between Cameron and Mitchell. ",
+               "url":"http://trakt.tv/show/modern-family/season/2/episode/14",
+               "first_aired":1297238400,
+               "thumb":"http://localhost:9292/api/uploads/95011/default_thumb-95011.jpg",
+               "season":2
+            },
+            "show":{
+               "title":"Modern Family",
+               "overview":"This mockumentary explores the many different types of a modern family through the stories of a gay couple, comprised of Mitchell and Cameron, and their daughter Lily, a straight couple, comprised of Phil and Claire, and their three kids, Haley, Alex, and Luke, and a multi-ethnic couple, which is comprised of Jay and Gloria, and their son Manny.",
+               "url":"http://trakt.tv/show/modern-family",
+               "poster":"http://localhost:9292/api/uploads/95011/poster-95011.jpg",
+               "network":"ABC",
+               "imdb_id":"tt1442437",
+               "air_time":"21:00:00",
+               "tvdb_id":"95011"
+            },
+            "watched":false
+         }
+      ],
+      "date_epoch":"1297209600",
+      "date":"2011-02-09"
+   },
+   {
+      "episodes":[
+         {
+            "rating":false,
+            "episode":{
+               "number":14,
+               "title":"Double-Edged Sword",
+               "overview":"Avery's going into labor during a getaway with Jack leaves them in peril of their child being Canadian. Meanwhile, Liz's trip with Carol can't get off the airport tarmac. Tracy realizes achieving EGOT status comes with a lot of responsibility.",
+               "url":"http://trakt.tv/show/30-rock/season/5/episode/14",
+               "first_aired":1297324800,
+               "thumb":"http://localhost:9292/api/uploads/79488/default_thumb-79488.jpg",
+               "season":5
+            },
+            "show":{
+               "title":"30 Rock",
+               "overview":"Liz Lemon, played by Saturday Night Live's Tina Fey, is the head writer of the fictional TV show, 'The Girlie Show.' When her old boss dies and a new boss comes in, Liz must try to run a successful TV show without losing her mind.",
+               "url":"http://trakt.tv/show/30-rock",
+               "poster":"http://localhost:9292/api/uploads/79488/poster-79488.jpg",
+               "network":"NBC",
+               "imdb_id":"tt0496424",
+               "air_time":"20:30:00",
+               "tvdb_id":"79488"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":13,
+               "title":"The Daredevil in the Mold",
+               "overview":"A BMX rider\u2019s remains are discovered on the roof of a warehouse after a failed bike stunt. While Booth and Brennan interrogate the victim\u2019s fellow riders, Hodgins and newly mellowed \u201csquint\u201d Fisher identify the numerous fractures in the victim\u2019s skeletal structure, and Angela recreates the series of events that led to the fatal accident. Meanwhile, Sweets turns to Booth for advice about his relationship with Daisy, and Booth makes a decision about his relationship with Hannah.",
+               "url":"http://trakt.tv/show/bones/season/6/episode/13",
+               "first_aired":1297324800,
+               "thumb":"http://localhost:9292/api/uploads/75682/default_thumb-75682.jpg",
+               "season":6
+            },
+            "show":{
+               "title":"Bones",
+               "overview":"Dr. Temperance Brennan is a forensic anthropologist at the Jeffersonian Institute in Washington, DC. When the standard methods of identifying a body are useless - when the remains are so badly decomposed, burned or destroyed that CSI gives up - law enforcement calls in Brennan for her uncanny ability to read clues left behind in the victim's bones.\n\nSpecial agent Seeley Booth of the FBI's Homicide Investigations Unit is the exception. A former Army sniper, Booth mistrusts science and scientists \u2013 the \"squints,\" as he calls them \u2013 who pore over the physical evidence of a crime. ",
+               "url":"http://trakt.tv/show/bones",
+               "poster":"http://localhost:9292/api/uploads/75682/poster-75682.jpg",
+               "network":"FOX",
+               "imdb_id":"tt0460627",
+               "air_time":"20:00:00",
+               "tvdb_id":"75682"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":15,
+               "title":"Early 21st Century Romanticism",
+               "overview":"Troy and Abed compete for the attentions of the college librarian, while Britta strives to be progressive and befriends a fellow female student whom she believes is gay. Meanwhile, Jeff finds himself reluctantly hosting an impromptu party at his apartment when Professor Duncan invites himself over to watch a soccer match.",
+               "url":"http://trakt.tv/show/community/season/2/episode/15",
+               "first_aired":1297324800,
+               "thumb":"http://localhost:9292/api/uploads/94571/thumb-94571-2-15.jpg",
+               "season":2
+            },
+            "show":{
+               "title":"Community",
+               "overview":"From Emmy Award-winning directors Joe and Anthony Russo (Arrested Development) comes Community, a smart comedy series about higher education -- and lower expectations. The student body at Greendale Community College is made up of high-school losers, newly divorced housewives, and old people who want to keep their minds active. Within these not-so-hallowed halls, Community focuses on a band of misfits, at the center of which is a fast-talkin' lawyer whose degree has been revoked (Joel McHale), who form a study group and end up learning a lot more about themselves than they do about their course work.",
+               "url":"http://trakt.tv/show/community",
+               "poster":"http://localhost:9292/api/uploads/94571/poster-94571.jpg",
+               "network":"NBC",
+               "imdb_id":"tt1439629",
+               "air_time":"20:00:00",
+               "tvdb_id":"94571"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":14,
+               "title":"The Next Seduction",
+               "overview":null,
+               "url":"http://trakt.tv/show/nikita/season/1/episode/14",
+               "first_aired":1297324800,
+               "thumb":"http://localhost:9292/api/uploads/164301/default_thumb-164301.jpg",
+               "season":1
+            },
+            "show":{
+               "title":"Nikita",
+               "overview":"When she was a deeply troubled teenager, Nikita was rescued from death row by a secret U.S. agency known only as Division, who faked her execution and told her she was being given a second chance to start a new life and serve her country. What they didn't tell her was that she was being trained as a spy and assassin. Ultimately, Nikita was betrayed and her dreams shattered by the only people she thought she could trust. Now, after three years in hiding, Nikita is seeking retribution and making it clear to her former bosses that she will stop at nothing to expose and destroy their covert operation. For the time being, however, Division continues to recruit and train other young people and turning them into cold and efficient killers. One of these new recruits, Alex, is just beginning to understand what lies ahead for her and why the legendary Nikita made the desperate decision to run.",
+               "url":"http://trakt.tv/show/nikita",
+               "poster":"http://localhost:9292/api/uploads/164301/poster-164301.jpg",
+               "network":"The CW",
+               "imdb_id":"tt1592154",
+               "air_time":"21:00:00",
+               "tvdb_id":"164301"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":14,
+               "title":"The Todd Couple",
+               "overview":null,
+               "url":"http://trakt.tv/show/outsourced/season/1/episode/14",
+               "first_aired":1297324800,
+               "thumb":"http://localhost:9292/api/uploads/163561/thumb-163561-1-14.jpg",
+               "season":1
+            },
+            "show":{
+               "title":"Outsourced",
+               "overview":"From writer Robert Borden (The Drew Carey Show) and director Ken Kwapis (The Office) comes a comedy where cultural differences are a novelty.\nMid America Novelties sells products like whoopee cushions, foam fingers, and wallets made of bacon. Yes, this is the stuff upon which the American way of life is built, but try explaining that to someone who lives on the other side of the world.\nWell, that's exactly what Todd Dempsy must do when he's sent to run the company's call center in India. Talk about culture shock, and not just for Todd's employees. While Todd has to teach them how to make the up-sell to the Deluxe Twin Beer Helmet, he's going to have to adapt as well. Like in a country where cows are sacred, perhaps you don't order a double cheeseburger.\nWish him luck. Or as they say in India, Saubhagya.",
+               "url":"http://trakt.tv/show/outsourced",
+               "poster":"http://localhost:9292/api/uploads/163561/poster-163561.jpg",
+               "network":"NBC",
+               "imdb_id":"tt1593756",
+               "air_time":"21:30:00",
+               "tvdb_id":"163561"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":4,
+               "title":"Ron and Tammy II",
+               "overview":null,
+               "url":"http://trakt.tv/show/parks-and-recreation/season/3/episode/4",
+               "first_aired":1297324800,
+               "thumb":"http://localhost:9292/api/uploads/84912/thumb-84912-3-4.jpg",
+               "season":3
+            },
+            "show":{
+               "title":"Parks and Recreation",
+               "overview":"The series follows Leslie Knope, the deputy head of the Parks and Recreation department in the fictional town of Pawnee, Indiana. Knope takes on a project with a nurse named Ann to turn a construction pit into a park, while trying to mentor a bored college-aged intern. However, Leslie must fight through the bureaucrats, problem neighbors, and developers in order to make her dream a reality, all while with a camera crew recording her every gaff and mishap.",
+               "url":"http://trakt.tv/show/parks-and-recreation",
+               "poster":"http://localhost:9292/api/uploads/84912/poster-84912.jpg",
+               "network":"NBC",
+               "imdb_id":"tt1266020",
+               "air_time":"21:30:00",
+               "tvdb_id":"84912"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":5,
+               "title":"Perfect Jealousy",
+               "overview":null,
+               "url":"http://trakt.tv/show/perfect-couples/season/1/episode/5",
+               "first_aired":1297324800,
+               "thumb":"http://localhost:9292/api/uploads/171251/default_thumb-171251.jpg",
+               "season":1
+            },
+            "show":{
+               "title":"Perfect Couples",
+               "overview":"This romantic comedy follows the exploits of three different types of couples. Dave and Julia are the relatable couple, Vance and Amy are a high-passion, high-drama couple and Rex and Leigh consider themselves to be relationship experts and the ``perfect couple.''",
+               "url":"http://trakt.tv/show/perfect-couples",
+               "poster":"http://localhost:9292/api/uploads/171251/poster-171251.jpg",
+               "network":"NBC",
+               "imdb_id":"tt1595856",
+               "air_time":"20:30:00",
+               "tvdb_id":"171251"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":15,
+               "title":"The Benefactor Factor",
+               "overview":"A wealthy donor to the university makes Leonard consider how far he's willing to go for the sake of science.",
+               "url":"http://trakt.tv/show/the-big-bang-theory/season/4/episode/15",
+               "first_aired":1297324800,
+               "thumb":"http://localhost:9292/api/uploads/80379/default_thumb-80379.jpg",
+               "season":4
+            },
+            "show":{
+               "title":"The Big Bang Theory",
+               "overview":"Leonard Hofstadter and Sheldon Cooper are brilliant physicists, the kind of \"beautiful minds\" that understand how the universe works. But none of that genius helps them interact with people, especially women. All this begins to change when a free-spirited beauty named Penny moves in next door. Sheldon, Leonard's roommate, is quite content spending his nights playing Klingon Boggle with their socially dysfunctional friends, fellow CalTech scientists Howard Wolowitz and Raj Koothrappali. However, Leonard sees in Penny a whole new universe of possibilities... including love.",
+               "url":"http://trakt.tv/show/the-big-bang-theory",
+               "poster":"http://localhost:9292/api/uploads/80379/poster-80379.jpg",
+               "network":"CBS",
+               "imdb_id":"tt0898266",
+               "air_time":"20:00:00",
+               "tvdb_id":"80379"
+            },
+            "watched":false
+         },
+         {
+            "rating":false,
+            "episode":{
+               "number":14,
+               "title":"Blood For Blood",
+               "overview":null,
+               "url":"http://trakt.tv/show/the-mentalist/season/3/episode/14",
+               "first_aired":1297324800,
+               "thumb":"http://localhost:9292/api/uploads/82459/default_thumb-82459.jpg",
+               "season":3
+            },
+            "show":{
+               "title":"The Mentalist",
+               "overview":"The Mentalist tells the tale of Patrick Jane, who is employed as an independent consultant working with the California Bureau of Investigation (CBI). He had been making a living as a psychic, and he would assist the police on cases -- until his life changed when he lost the two most important people in his life to one of those serial killers he was helping track. He now uses his refined observation skills to help the CBI solve cases. He works with Senior Agent Teresa Lisbon, Agents Kimball Cho and Wayne Rigsby and the rookie Grace Van Pelt.",
+               "url":"http://trakt.tv/show/the-mentalist",
+               "poster":"http://localhost:9292/api/uploads/82459/poster-82459.jpg",
+               "network":"CBS",
+               "imdb_id":"tt1196946",
+               "air_time":"22:00:00",
+               "tvdb_id":"82459"
+            },
+            "watched":false
+         }
+      ],
+      "date_epoch":"1297296000",
+      "date":"2011-02-10"
+   }
+]
 

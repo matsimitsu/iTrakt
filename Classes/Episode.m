@@ -26,9 +26,14 @@
     self.showTitle    = [[episodeInfo valueForKeyPath:@"show.title"] copy];
     self.title        = [[episodeInfo valueForKeyPath:@"episode.title"] copy];
     self.network      = [[episodeInfo valueForKeyPath:@"show.network"] copy];
-    self.airtime      = [[episodeInfo valueForKeyPath:@"show.air_time"] copy];
     self.season       = [[episodeInfo valueForKeyPath:@"episode.season"] integerValue];
     self.number       = [[episodeInfo valueForKeyPath:@"episode.number"] integerValue];
+
+    NSDateFormatter *dateReader = [[NSDateFormatter alloc] init];
+    [dateReader setDateFormat:@"HH:mm:ss"];
+    [dateReader setTimeZone:[NSTimeZone timeZoneWithAbbreviation: @"EST"]];
+    self.airtime = [dateReader dateFromString:[episodeInfo valueForKeyPath:@"show.air_time"]];
+    [dateReader release];
 
     id o = [episodeInfo valueForKeyPath:@"episode.overview"];
     if ([NSNull null] != o) {
@@ -61,21 +66,12 @@
 }
 
 - (NSString *)localizedAirTime {
-  NSDateFormatter *dateReader = [[NSDateFormatter alloc] init];
-  [dateReader setDateFormat:@"HH:mm:ss"];
-  [dateReader setTimeZone:[NSTimeZone timeZoneWithAbbreviation: @"EST"]];
-
-  NSDate *date = [dateReader dateFromString:self.airtime];
-
   NSDateFormatter *dateWriter = [[NSDateFormatter alloc] init];
   //[dateWriter setDateFormat:@"hh:mma"];
   [dateWriter setTimeStyle:NSDateFormatterShortStyle];
   [dateWriter setDateStyle:NSDateFormatterNoStyle];
   [dateWriter setTimeZone:[NSTimeZone systemTimeZone]];
-
-  NSString *dateString = [dateWriter stringFromDate:date];
-
-  [dateReader release];
+  NSString *dateString = [dateWriter stringFromDate:self.airtime];
   [dateWriter release];
   return dateString;
 }

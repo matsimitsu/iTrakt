@@ -4,15 +4,16 @@
 
 @interface Trakt : NSObject {
   NSString *baseURL;
-
-  NSString *apiKey;
   NSString *apiUser;
+  NSString *apiPasswordHash;
 }
 
 @property (nonatomic, retain) NSString *baseURL;
 
-@property (nonatomic, retain) NSString *apiKey;
 @property (nonatomic, retain) NSString *apiUser;
+@property (nonatomic, readonly) NSString *apiPasswordHash;
+
+- (void)setApiPassword:(NSString *)password;
 
 + (Trakt *)sharedInstance;
 

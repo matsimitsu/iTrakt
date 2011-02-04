@@ -73,12 +73,12 @@
       (~ (@trakt baseURL) should be:"http://localhost:9292/api")
     ))
 
-    ;(it "takes a remote API key" (do ()
-      ;(~ (@trakt apiKey) should be:"secret")
-    ;))
-
     (it "returns the user's name" (do ()
       (~ (@trakt apiUser) should be:"bob")
+    ))
+
+    (it "assigns the password as a SHA1 version of the password" (do ()
+      (~ (@trakt apiPasswordHash) should be:"e5e9fa1ba31ecd1ae84f75caaa474f3a663f05f4")
     ))
 
     (describe "concerning the user's calendar" `(

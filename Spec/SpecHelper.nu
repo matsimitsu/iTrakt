@@ -4,6 +4,7 @@
 (set trakt (Trakt sharedInstance))
 (trakt setBaseURL:"http://localhost:9292/api")
 (trakt setApiUser:"bob")
+(trakt setApiPassword:"secret")
 
 ; returns a block that's used by BaconShould to compare image data.
 (function equalToImage (expectedImage)

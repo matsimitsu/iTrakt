@@ -1,6 +1,7 @@
 #import <YAJL/YAJL.h>
 #import "EGOCache.h"
 #import "UIImage+Resize.h"
+#import <CommonCrypto/CommonDigest.h>
 
 #import "Trakt.h"
 #import "BroadcastDate.h"
@@ -22,8 +23,22 @@ static Trakt *sharedTrakt = nil;
 
 @synthesize baseURL;
 
-@synthesize apiKey;
 @synthesize apiUser;
+@synthesize apiPasswordHash;
+
+- (void)setApiPassword:(NSString *)password {
+  const char *cstr = [password cStringUsingEncoding:NSUTF8StringEncoding];
+  NSData *data = [NSData dataWithBytes:cstr length:[password length]];
+
+  uint8_t digest[CC_SHA1_DIGEST_LENGTH];
+  CC_SHA1([data bytes], [data length], digest);
+
+  NSMutableString* result = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+  for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
+    [result appendFormat:@"%02x", digest[i]];
+  }
+  apiPasswordHash = [[result copy] retain];
+}
 
 - (NSURL *)calendarURL {
   return [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/calendar.json?name=%@", self.baseURL, self.apiUser, nil]];

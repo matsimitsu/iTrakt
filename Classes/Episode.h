@@ -11,7 +11,7 @@
   NSString *title;
   NSString *overview;
   NSString *network;
-  NSString *airtime;
+  NSDate *airtime;
   NSUInteger season;
   NSUInteger number;
 }
@@ -25,7 +25,7 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *overview;
 @property (nonatomic, retain) NSString *network;
-@property (nonatomic, retain) NSString *airtime;
+@property (nonatomic, retain) NSDate *airtime;
 @property (nonatomic, assign) NSUInteger season;
 @property (nonatomic, assign) NSUInteger number;
 

@@ -81,20 +81,45 @@
       (~ (@trakt apiUser) should be:"bob")
     ))
 
-    (it "returns the user's calendar URL" (do ()
-      (~ ((@trakt calendarURL) absoluteString) should be:"http://localhost:9292/api/users/calendar.json?name=bob")
-    ))
-
-    (it "yields the user's calendar as an array of BroadcastDate instances" (do ()
-      (@trakt calendarWithNuBlock:(do (calendar)
-        ;(puts calendar)
-        (set date (calendar objectAtIndex:0))
-        (~ date should be kindOfClass:BroadcastDate)
-        (set episode ((date episodes) objectAtIndex:0))
-        (~ (episode title) should be:"Reciprocity")
+    (describe "concerning the user's calendar" `(
+      (it "returns the user's calendar URL" (do ()
+        (~ ((@trakt calendarURL) absoluteString) should be:"http://localhost:9292/api/users/calendar.json?name=bob")
       ))
-      (wait 0.1 (do ()
-        ; Nothing... We just wait with further spec execution until the ImageDownload is (probably) finished.
+
+      (it "yields the calendar as an array of BroadcastDate instances" (do ()
+        (@trakt calendarWithNuBlock:(do (calendar)
+          ;(puts calendar)
+          (set date (calendar objectAtIndex:0))
+          (~ date should be kindOfClass:BroadcastDate)
+          (set episode ((date episodes) objectAtIndex:0))
+          (~ (episode title) should be:"Concentrate and Ask Again")
+        ))
+        (wait 0.1 (do ()
+          ; Nothing... We just wait with further spec execution until the ImageDownload is (probably) finished.
+        ))
+      ))
+
+      (it "sorts the episodes on airtime and then by show name" (do ()
+        (@trakt calendarWithNuBlock:(do (calendar)
+          ;(puts calendar)
+          (set date (calendar objectAtIndex:1))
+          (~ date should be kindOfClass:BroadcastDate)
+
+          (set episode ((date episodes) objectAtIndex:0))
+          (~ (episode showTitle) should be:"Episodes")
+          (~ (episode localizedAirTime) should be:"3:30 AM")
+
+          (set episode ((date episodes) objectAtIndex:1))
+          (~ (episode showTitle) should be:"Flashpoint")
+          (~ (episode localizedAirTime) should be:"4:00 AM")
+
+          (set episode ((date episodes) objectAtIndex:2))
+          (~ (episode showTitle) should be:"Top Gear")
+          (~ (episode localizedAirTime) should be:"4:00 AM")
+        ))
+        (wait 0.1 (do ()
+          ; Nothing... We just wait with further spec execution until the ImageDownload is (probably) finished.
+        ))
       ))
     ))
 

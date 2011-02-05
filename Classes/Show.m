@@ -5,15 +5,20 @@
 
 @synthesize tvdbID;
 @synthesize title;
+@synthesize overview;
 @synthesize posterURL;
+@synthesize thumbURL;
 @synthesize poster;
+@synthesize thumb;
 @synthesize year;
 
 - (id)initWithDictionary:(NSDictionary *)showDict {
   if (self = [super init]) {
     self.tvdbID    = [[showDict valueForKey:@"tvdb_id"] copy];
     self.title     = [[showDict valueForKey:@"title"] copy];
+    self.overview  = [[showDict valueForKey:@"overview"] copy];
     self.posterURL = [NSURL URLWithString:[showDict valueForKey:@"poster"]];
+    self.thumbURL  = [NSURL URLWithString:[showDict valueForKey:@"thumb"]];
     self.year      = [[showDict valueForKey:@"year"] integerValue];
   }
   return self;
@@ -34,5 +39,22 @@
     }];
   }
 }
+
+- (void)ensureThumbIsLoaded:(void (^)())downloadedBlock {
+  // important to first check if we already have the thumb loaded for performance!
+  if (self.thumb == nil) {
+    [[Trakt sharedInstance] showThumbForURL:self.thumbURL block:^(UIImage *theThumb, BOOL cached) {
+      self.thumb = theThumb;
+      if (!cached) {
+        //NSLog(@"Downloaded show thumb with tvdb ID: %@", tvdbID);
+        downloadedBlock();
+      }
+      //else {
+        //NSLog(@"Loaded show thumb from cache with tvdb ID: %@", tvdbID);
+      //}
+    }];
+  }
+}
+
 
 @end

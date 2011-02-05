@@ -7,7 +7,9 @@
 //
 
 #import "ShowDetailsViewController.h"
+#import "ImageCell.h"
 
+#define SHOW_IMAGE_ASPECT_RATIO 1.78
 
 @implementation ShowDetailsViewController
 
@@ -68,29 +70,82 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 1;
+    if (section == 0) {
+      return 1;
+    } else {
+      return 2;
+    }
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.section == 0) {
+    // Calculate height for image cell
+    // TODO: duplication of code in ImageCell
+    CGFloat indentationWidth = 10.0;
+    CGFloat width = self.tableView.bounds.size.width - (2 * indentationWidth);
+    return floor(width / SHOW_IMAGE_ASPECT_RATIO);
+  } else {
+    if (indexPath.row == 0) {
+      // Calculate height for episode overview
+      if (show.overview) {
+        CGSize size = [show.overview sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]
+                                        constrainedToSize:CGSizeMake(300.0, 20000.0)
+                                            lineBreakMode:UILineBreakModeWordWrap];
+        return size.height + 48.0;
+      }
+    }
+    // Other text cells have the default height
+    return self.tableView.rowHeight;
+  }
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    static NSString *CellIdentifier = @"Cell";
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  if (indexPath.section == 0) {
+    static NSString *cellIdentifier = @"showImageCell";
+    ImageCell *cell = (ImageCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+      cell = [[[ImageCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
     }
 
-    // Configure the cell...
+    [show ensureThumbIsLoaded:^{
+      // this callback is only run if the image has to be downloaded first
+      //NSLog(@"Episode thumb was downloaded for cell");
+      ImageCell *cellToReload = (ImageCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+      cellToReload.image = show.thumb;
+      [cellToReload setNeedsLayout];
+    }];
 
+    cell.image = show.thumb;
     return cell;
+  } else {
+    static NSString *cellIdentifier = @"textCell";
+    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+      cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+      cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+      cell.textLabel.numberOfLines = 0;
+      cell.textLabel.minimumFontSize = [UIFont systemFontSize];
+      cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+    UILabel *label = cell.textLabel;
+    switch (show.overview == nil ? (indexPath.row + 1) : indexPath.row) {
+      case 0:
+        label.text = show.overview;
+        break;
+    }
+    return cell;
+  }
 }
 
 
@@ -167,6 +222,7 @@
 
 - (void)dealloc {
     [super dealloc];
+    [show release];
 }
 
 

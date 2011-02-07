@@ -14,12 +14,19 @@
 @implementation ShowDetailsViewController
 
 @synthesize show;
+@synthesize seasons;
 
 - (id)initWithShow:(Show *)theShow {
   if (self = [super initWithNibName:@"ShowDetailsViewController" bundle:nil]) {
     self.show = theShow;
     self.navigationItem.title = show.title;
   }
+  [show ensureSeasonsAreLoaded:^{
+    // this callback is only run if the image has to be downloaded first
+    //NSLog(@"Episode thumb was downloaded for cell");
+    self.seasons = show.seasons;
+    [self.tableView reloadData];
+  }];
   return self;
 }
 
@@ -34,7 +41,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-*/
+
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -70,7 +77,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 2;
+    if (seasons == nil) {
+      return 2;
+    } else {
+      return [self.seasons count] + 2;
+    }
 }
 
 
@@ -78,8 +89,11 @@
     // Return the number of rows in the section.
     if (section == 0) {
       return 1;
-    } else {
+    } else if (section == 1) {
       return 2;
+    } else {
+      NSDictionary *seasonDict = [seasons objectAtIndex:section - 2];
+      return [[seasonDict valueForKey:@"episode_count"] integerValue];
     }
 }
 
@@ -91,7 +105,7 @@
     CGFloat indentationWidth = 10.0;
     CGFloat width = self.tableView.bounds.size.width - (2 * indentationWidth);
     return floor(width / SHOW_IMAGE_ASPECT_RATIO);
-  } else {
+  } else if (indexPath.section == 1) {
     if (indexPath.row == 0) {
       // Calculate height for episode overview
       if (show.overview) {
@@ -102,8 +116,9 @@
       }
     }
     // Other text cells have the default height
-    return self.tableView.rowHeight;
   }
+  return self.tableView.rowHeight;
+
 }
 
 
@@ -126,7 +141,7 @@
 
     cell.image = show.thumb;
     return cell;
-  } else {
+  } else if (indexPath.section == 1) {
     static NSString *cellIdentifier = @"textCell";
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
@@ -144,6 +159,25 @@
         label.text = show.overview;
         break;
     }
+    return cell;
+  } else {
+    static NSString *cellIdentifier = @"textCell";
+    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+
+    if (cell == nil) {
+      cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+      cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+      cell.textLabel.numberOfLines = 0;
+      cell.textLabel.minimumFontSize = [UIFont systemFontSize];
+      cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    }
+
+    UILabel *label = cell.textLabel;
+    NSDictionary *seasonDict = [seasons objectAtIndex:indexPath.section - 2];
+    NSArray *episodesArray = [seasonDict valueForKey:@"episodes"];
+    NSDictionary *episodeDict = [episodesArray objectAtIndex:indexPath.row];
+    label.text = [[episodeDict valueForKey:@"name"] copy];
     return cell;
   }
 }

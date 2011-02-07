@@ -89,6 +89,24 @@ static Trakt *sharedTrakt = nil;
 }
 
 
+- (NSURL *)seasonsURL:(NSString *)tvdb_id {
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/shows/%@/seasons_with_episodes", self.baseURL, tvdb_id, nil]];
+}
+
+- (void)seasons:(NSString *)tvdb_id block:(void (^)(NSArray *seasons))block {
+  NSLog(@"[!] Start download of season data from: %@", tvdb_id);
+  [JSONDownload downloadFromURL:[self seasonsURL:tvdb_id] block:^(id response) {
+    NSLog(@"[!] Finished download of season data");
+    NSMutableArray *seasons = [NSMutableArray array];
+    for(NSDictionary *seasonDict in (NSArray *)response) {
+      NSLog([response description]);
+      [seasons addObject:seasonDict];
+    }
+    block([seasons copy]);
+  }];
+}
+
+
 - (void)showPosterForURL:(NSURL *)posterURL block:(void (^)(UIImage *poster, BOOL cached))block {
   [self loadImageFromURL:posterURL scaledTo:CGSizeMake(44.0, 66.0) block:block];
 }

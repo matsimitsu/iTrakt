@@ -9,6 +9,7 @@
 @synthesize posterURL;
 @synthesize thumbURL;
 @synthesize poster;
+@synthesize seasons;
 @synthesize thumb;
 @synthesize year;
 
@@ -22,6 +23,16 @@
     self.year      = [[showDict valueForKey:@"year"] integerValue];
   }
   return self;
+}
+
+- (void)ensureSeasonsAreLoaded:(void (^)())downloadedBlock {
+  // important to first check if we already have the poster loaded for performance!
+  if (self.seasons == nil) {
+    [[Trakt sharedInstance] seasons:self.tvdbID block:^(NSArray *theSeasons) {
+      self.seasons = theSeasons;
+      downloadedBlock();
+    }];
+  }
 }
 
 - (void)ensurePosterIsLoaded:(void (^)())downloadedBlock {

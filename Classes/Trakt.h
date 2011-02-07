@@ -26,6 +26,9 @@
 - (NSURL *)trendingURL;
 - (void)trending:(void (^)(NSArray *shows))block;
 
+- (NSURL *)seasonsURL:(NSString *)tvdb_id;
+- (void)seasons:(NSString *)tvdb_id block:(void (^)(NSArray *seasons))block;
+
 - (void)showPosterForURL:(NSURL *)posterURL block:(void (^)(UIImage *poster, BOOL cached))block;
 
 - (void)showThumbForURL:(NSURL *)thumbURL block:(void (^)(UIImage *thumb, BOOL cached))block;

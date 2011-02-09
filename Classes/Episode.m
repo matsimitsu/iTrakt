@@ -56,14 +56,15 @@
     self.title        = [[episodeInfo valueForKeyPath:@"title"] copy];
    // self.network      = show.network;
     self.season       = [[episodeInfo valueForKeyPath:@"season"] integerValue];
-    self.number       = [[episodeInfo valueForKeyPath:@"number"] integerValue];
+    self.number       = [[episodeInfo valueForKeyPath:@"episode"] integerValue];
 
+  /*
     NSDateFormatter *dateReader = [[NSDateFormatter alloc] init];
     [dateReader setDateFormat:@"HH:mm:ss"];
     [dateReader setTimeZone:[NSTimeZone timeZoneWithAbbreviation: @"EST"]];
-  //  self.airtime = [dateReader dateFromString:[episodeInfo valueForKeyPath:@"show.air_time"]];
+    self.airtime = [dateReader dateFromString:[episodeInfo valueForKeyPath:@"show.air_time"]];
     [dateReader release];
-
+  */
     id o = [episodeInfo valueForKeyPath:@"overview"];
     if ([NSNull null] != o) {
       self.overview = [o copy];

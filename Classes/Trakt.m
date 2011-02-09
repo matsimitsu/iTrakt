@@ -99,7 +99,7 @@ static Trakt *sharedTrakt = nil;
     NSLog(@"[!] Finished download of season data");
     NSMutableArray *seasons = [NSMutableArray array];
     for(NSDictionary *seasonDict in (NSArray *)response) {
-      // NSLog([response description]);
+      NSLog([response description]);
       [seasons addObject:seasonDict];
     }
     block([seasons copy]);

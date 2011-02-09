@@ -8,6 +8,8 @@
 
 #import "ShowDetailsViewController.h"
 #import "ImageCell.h"
+#import "Episode.h"
+#import "EpisodeDetailsViewController.h"
 
 #define SHOW_IMAGE_ASPECT_RATIO 1.78
 
@@ -120,7 +122,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
   if (section >= 2) {
     NSDictionary *seasonDict = [seasons objectAtIndex:section - 2];
-    NSInteger *seasonNumber = [[seasonDict valueForKey:@"season"] integerValue];
+    NSInteger seasonNumber = [[seasonDict valueForKey:@"season"] integerValue];
     if (seasonNumber == 0) {
       return @"Specials";
     } else {
@@ -237,15 +239,20 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-    // ...
-    // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-    */
+  if (indexPath.section >= 2) {
+    NSDictionary *seasonDict = [seasons objectAtIndex:indexPath.section - 2];
+    NSArray *episodesArray = [seasonDict valueForKey:@"episodes"];
+    NSDictionary *episodeDict = [episodesArray objectAtIndex:indexPath.row];
+
+    Episode *episode = [[Episode alloc] initWithDictionary:episodeDict show:show];
+
+    EpisodeDetailsViewController *controller = [[EpisodeDetailsViewController alloc] initWithEpisode:episode];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
+  }
 }
+
+
 
 
 #pragma mark -

@@ -1,5 +1,6 @@
 #import "Episode.h"
 #import "Trakt.h"
+#import "Show.h"
 
 @implementation Episode
 
@@ -42,6 +43,35 @@
   }
   return self;
 }
+
+
+- (id)initWithDictionary:(NSDictionary *)episodeInfo show:(Show *)show {
+  if (self = [super init]) {
+    // TODO Running the specs without making copies here crashes.
+    // Need to check if that's something to do with NuBacon or an actual bug we haven't seen yet.
+    self.posterURL    = show.posterURL;
+    self.thumbURL     = [NSURL URLWithString:[episodeInfo valueForKeyPath:@"thumb"]];
+    self.tvdbID       = show.tvdbID;
+    self.showTitle    = show.title;
+    self.title        = [[episodeInfo valueForKeyPath:@"title"] copy];
+   // self.network      = show.network;
+    self.season       = [[episodeInfo valueForKeyPath:@"season"] integerValue];
+    self.number       = [[episodeInfo valueForKeyPath:@"number"] integerValue];
+
+    NSDateFormatter *dateReader = [[NSDateFormatter alloc] init];
+    [dateReader setDateFormat:@"HH:mm:ss"];
+    [dateReader setTimeZone:[NSTimeZone timeZoneWithAbbreviation: @"EST"]];
+  //  self.airtime = [dateReader dateFromString:[episodeInfo valueForKeyPath:@"show.air_time"]];
+    [dateReader release];
+
+    id o = [episodeInfo valueForKeyPath:@"overview"];
+    if ([NSNull null] != o) {
+      self.overview = [o copy];
+    }
+  }
+  return self;
+}
+
 
 - (void)dealloc {
   [super dealloc];

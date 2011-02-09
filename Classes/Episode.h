@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "BroadcastDate.h"
+#import "Show.h"
 
 @interface Episode : NSObject {
   UIImage *poster;
@@ -30,6 +31,7 @@
 @property (nonatomic, assign) NSUInteger number;
 
 - (id)initWithDictionary:(NSDictionary *)episodeInfo;
+- (id)initWithDictionary:(NSDictionary *)episodeInfo show:(Show *)show;
 
 - (NSString *)episodeNumber;
 - (NSString *)serieTitleAndEpisodeNumber;

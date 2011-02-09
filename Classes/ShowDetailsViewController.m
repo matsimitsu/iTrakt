@@ -120,7 +120,12 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
   if (section >= 2) {
     NSDictionary *seasonDict = [seasons objectAtIndex:section - 2];
-    return [NSString stringWithFormat:@"season %@", [[seasonDict valueForKey:@"season"] copy], nil];
+    NSInteger *seasonNumber = [[seasonDict valueForKey:@"season"] integerValue];
+    if (seasonNumber == 0) {
+      return @"Specials";
+    } else {
+      return [NSString stringWithFormat:@"Season %d", seasonNumber, nil];
+    }
    } else {
      return nil;
   }

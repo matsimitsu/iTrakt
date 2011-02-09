@@ -22,8 +22,6 @@
     self.navigationItem.title = show.title;
   }
   [show ensureSeasonsAreLoaded:^{
-    // this callback is only run if the image has to be downloaded first
-    //NSLog(@"Episode thumb was downloaded for cell");
     self.seasons = show.seasons;
     [self.tableView reloadData];
   }];
@@ -90,7 +88,7 @@
     if (section == 0) {
       return 1;
     } else if (section == 1) {
-      return 2;
+      return 1;
     } else {
       NSDictionary *seasonDict = [seasons objectAtIndex:section - 2];
       return [[seasonDict valueForKey:@"episode_count"] integerValue];
@@ -100,8 +98,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.section == 0) {
-    // Calculate height for image cell
-    // TODO: duplication of code in ImageCell
     CGFloat indentationWidth = 10.0;
     CGFloat width = self.tableView.bounds.size.width - (2 * indentationWidth);
     return floor(width / SHOW_IMAGE_ASPECT_RATIO);
@@ -119,6 +115,15 @@
   }
   return self.tableView.rowHeight;
 
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  if (section >= 2) {
+    NSDictionary *seasonDict = [seasons objectAtIndex:section - 2];
+    return [NSString stringWithFormat:@"season %@", [[seasonDict valueForKey:@"season"] copy], nil];
+   } else {
+     return nil;
+  }
 }
 
 
@@ -161,9 +166,8 @@
     }
     return cell;
   } else {
-    static NSString *cellIdentifier = @"textCell";
+    static NSString *cellIdentifier = @"episodeCell";
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
 
     if (cell == nil) {
       cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
@@ -171,6 +175,7 @@
       cell.textLabel.numberOfLines = 0;
       cell.textLabel.minimumFontSize = [UIFont systemFontSize];
       cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
     UILabel *label = cell.textLabel;

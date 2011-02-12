@@ -71,6 +71,7 @@
 
 - (void)dealloc {
   [super dealloc];
+  [show release];
   [imageView release];
   [titleLabel release];
 }

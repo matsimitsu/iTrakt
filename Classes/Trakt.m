@@ -269,7 +269,7 @@ static dispatch_queue_t imageQueue = NULL;
     //NSLog(@"NOT RESIZING!");
     block(result);
   } else {
-    NSLog(@"Dispatch image resizing!");
+    // NSLog(@"Dispatch image resizing!");
     dispatch_async(imageQueue, ^{
       // TODO get rid of the normalizing!
       UIImage *resized = [[result normalize] resizedImage:self.resizeTo interpolationQuality:kCGInterpolationHigh];

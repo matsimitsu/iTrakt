@@ -40,12 +40,13 @@
   if (self.poster == nil) {
     [[Trakt sharedInstance] showPosterForURL:self.posterURL block:^(UIImage *thePoster, BOOL cached) {
       self.poster = thePoster;
-      if (!cached) {
-        //NSLog(@"Downloaded show poster with tvdb ID: %@", tvdbID);
-        downloadedBlock();
-      }
+      downloadedBlock();
+      //if (!cached) {
+        //NSLog(@"Downloaded show poster for: %@", self.title);
+        //downloadedBlock();
+      //}
       //else {
-        //NSLog(@"Loaded show poster from cache with tvdb ID: %@", tvdbID);
+        //NSLog(@"Loaded show poster from cache for: %@", self.title);
       //}
     }];
   }

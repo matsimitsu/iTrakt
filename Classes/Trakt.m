@@ -197,6 +197,7 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+  NSLog(@"Connection received response %d", [response statusCode]);
   downloadData = [[NSMutableData data] retain];
 }
 

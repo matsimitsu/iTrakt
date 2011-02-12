@@ -6,7 +6,27 @@
 ;
 ; Should resume the halted spec execution.
 
+(class HTTPDownloadDelegateMock is NSObject
+  (ivar (id)methodCalls)
+
+  (- (id)init is
+    (if (super init)
+      (set @methodCalls (NSMutableDictionary dictionary))
+      self
+    )
+  )
+
+  (- (id)downloadFailed:(id)download is
+    (@methodCalls setValue:download forKey:"downloadFailed:")
+  )
+)
+
 (describe "HTTPDownload" `(
+  (before (do ()
+    (set @delegate (HTTPDownloadDelegateMock new))
+    ;(HTTPDownload setGlobalDelegate:@delegate)
+  ))
+
   (it "yields the downloaded data" (do ()
     (HTTPDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/hello") nuBlock:(do (response)
       (set string (Helper stringFromUTF8Data:response))
@@ -14,7 +34,19 @@
       (~ string should equal:"Hello world!")
     ))
     (wait 0.1 (do ()
-      ; Nothing... We just wait with further spec execution until the HTTPDownload is (probably) finished.
+      ;(~ ((@delegate methodCalls) valueForKey:"downloadFailed:") should be:nil)
+    ))
+  ))
+
+  (it "calls the global connection delegate when a connection fails" (do ()
+    (set @called nil)
+    (HTTPDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/status-code?code=500") nuBlock:(do (response)
+      (set @called t)
+    ))
+    (wait 0.1 (do ()
+      (puts @called)
+      (~ @called should be:nil)
+      ;(~ ((@delegate methodCalls) valueForKey:"downloadFailed:") should be kindOfClass:HTTPDownload)
     ))
   ))
 ))

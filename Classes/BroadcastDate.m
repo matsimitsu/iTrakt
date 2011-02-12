@@ -12,10 +12,12 @@
       int epoch_seconds = [[dict valueForKeyPath:@"date_epoch"] intValue];
       self.date = [NSDate dateWithTimeIntervalSince1970:epoch_seconds];
 
-      NSMutableArray *objectifiedEpisodes = [[[NSMutableArray alloc] init] autorelease];
+      NSMutableArray *objectifiedEpisodes = [[NSMutableArray alloc] init];
 
       for(id episode in [dict valueForKeyPath:@"episodes"]) {
-        [objectifiedEpisodes addObject:[[Episode alloc] initWithDictionary:episode]];
+        Episode *e = [[Episode alloc] initWithDictionary:episode];
+        [objectifiedEpisodes addObject:e];
+        [e release];
       }
 
       NSSortDescriptor *airtimeDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"airtime"
@@ -27,6 +29,7 @@
  
       NSArray *descriptors = [NSArray arrayWithObjects:airtimeDescriptor, showTitleDescriptor, nil];
       self.episodes = [objectifiedEpisodes sortedArrayUsingDescriptors:descriptors];
+      [objectifiedEpisodes release];
     }
 
     return self;

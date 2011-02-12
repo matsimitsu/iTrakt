@@ -22,11 +22,11 @@
   if (self = [super initWithNibName:@"ShowDetailsViewController" bundle:nil]) {
     self.show = theShow;
     self.navigationItem.title = show.title;
+    [show ensureSeasonsAreLoaded:^{
+      self.seasons = show.seasons;
+      [self.tableView reloadData];
+    }];
   }
-  [show ensureSeasonsAreLoaded:^{
-    self.seasons = show.seasons;
-    [self.tableView reloadData];
-  }];
   return self;
 }
 
@@ -245,8 +245,9 @@
     NSDictionary *episodeDict = [episodesArray objectAtIndex:indexPath.row];
 
     Episode *episode = [[Episode alloc] initWithDictionary:episodeDict show:show];
-
     EpisodeDetailsViewController *controller = [[EpisodeDetailsViewController alloc] initWithEpisode:episode];
+    [episode release];
+
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
   }

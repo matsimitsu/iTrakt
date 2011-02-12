@@ -54,7 +54,9 @@
   [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
   [dateFormatter setDateFormat:@"EEEE MMMM d"];
 
-  return [dateFormatter stringFromDate:broadcastDate.date];
+  NSString *result = [dateFormatter stringFromDate:broadcastDate.date];
+  [dateFormatter release];
+  return result;
 }
 
 

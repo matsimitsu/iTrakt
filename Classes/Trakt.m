@@ -50,9 +50,11 @@ static Trakt *sharedTrakt = nil;
     //NSLog(@"[!] Finished download of calendar data");
     NSMutableArray *dates = [NSMutableArray array];
     for(NSDictionary *episodeDict in (NSArray *)response) {
-      [dates addObject:[[[BroadcastDate alloc] initWithDictionary:episodeDict] autorelease]];
+      BroadcastDate *d = [[BroadcastDate alloc] initWithDictionary:episodeDict];
+      [dates addObject:d];
+      [d release];
     }
-    block([dates copy]);
+    block([[dates copy] autorelease]);
   }];
 }
 
@@ -66,9 +68,11 @@ static Trakt *sharedTrakt = nil;
     //NSLog(@"[!] Finished download of calendar data");
     NSMutableArray *shows = [NSMutableArray array];
     for(NSDictionary *showDict in (NSArray *)response) {
-      [shows addObject:[[[Show alloc] initWithDictionary:showDict] autorelease]];
+      Show *s = [[Show alloc] initWithDictionary:showDict];
+      [shows addObject:s];
+      [s release];
     }
-    block([shows copy]);
+    block([[shows copy] autorelease]);
   }];
 }
 
@@ -82,9 +86,11 @@ static Trakt *sharedTrakt = nil;
     //NSLog(@"[!] Finished download of calendar data");
     NSMutableArray *shows = [NSMutableArray array];
     for(NSDictionary *showDict in (NSArray *)response) {
-      [shows addObject:[[[Show alloc] initWithDictionary:showDict] autorelease]];
+      Show *s = [[Show alloc] initWithDictionary:showDict];
+      [shows addObject:s];
+      [s release];
     }
-    block([shows copy]);
+    block([[shows copy] autorelease]);
   }];
 }
 
@@ -102,7 +108,7 @@ static Trakt *sharedTrakt = nil;
       // NSLog([response description]);
       [seasons addObject:seasonDict];
     }
-    block([seasons copy]);
+    block([[seasons copy] autorelease]);
   }];
 }
 
@@ -215,7 +221,7 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)yieldDownloadedData {
-  block([downloadData copy]);
+  block([[downloadData copy] autorelease]);
 }
 
 @end

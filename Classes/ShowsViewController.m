@@ -24,12 +24,6 @@
 }
 
 
-- (void)reloadTableViewData {
-  [self.tableView reloadData];
-  [self loadImagesForVisibleCells];
-}
-
-
 - (void)loadImageForCell:(UITableViewCell *)cell {
   ShowTableViewCell *showCell = (ShowTableViewCell *)cell;
   [showCell.show ensurePosterIsLoaded:^{
@@ -73,30 +67,6 @@
   ShowDetailsViewController *controller = [[ShowDetailsViewController alloc] initWithShow:show];
   [self.navigationController pushViewController:controller animated:YES];
   [controller release];
-}
-
-
-#pragma mark -
-#pragma mark UIScrollViewDelegate methods
-
-
-- (void)loadImagesForVisibleCells {
-  NSArray *cells = [self.tableView visibleCells];
-  for (int i = 0; i < [cells count]; i++) {
-    [self loadImageForCell:[cells objectAtIndex:i]];
-  }
-}
-
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-  [self loadImagesForVisibleCells];
-}
-
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-  if (!decelerate) {
-    [self loadImagesForVisibleCells];
-  }
 }
 
 

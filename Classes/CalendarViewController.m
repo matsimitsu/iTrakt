@@ -27,7 +27,16 @@
   // TODO this probably has to move to viewDidAppear so that it gets run whenever this view is shown, not just the first time!
   [[Trakt sharedInstance] calendar:^(NSArray *dates) {
     self.broadcastDates = dates;
-    [self.tableView reloadData];
+    [self reloadTableViewData];
+  }];
+}
+
+
+- (void)loadImageForCell:(UITableViewCell *)cell {
+  EpisodeTableViewCell *episodeCell = (EpisodeTableViewCell *)cell;
+  [episodeCell.episode ensureShowPosterIsLoaded:^{
+    // this callback is only run if the image has to be downloaded first
+    [episodeCell setNeedsLayout];
   }];
 }
 
@@ -70,17 +79,7 @@
   }
 
   BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
-  Episode *episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
-
-  [episode ensureShowPosterIsLoaded:^{
-    // this callback is only run if the image has to be downloaded first
-    //NSLog(@"Show poster was downloaded for cell at: %@", indexPath);
-    EpisodeTableViewCell *cellToReload = (EpisodeTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-    cellToReload.episode = episode;
-    [cellToReload setNeedsLayout];
-  }];
-
-  cell.episode = episode;
+  cell.episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
 
   return cell;
 }
@@ -98,21 +97,6 @@
   [controller release];
 }
 
-
-// TODO this is where we should deliver our own section headers
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-  //return 50.0;
-//}
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-  //UIToolbar *bar = [UIToolbar new];
-  //bar.barStyle = UIBarStyleBlack;
-  //UIBarButtonItem *label = [UIBarButtonItem new];
-  //label.style = UIBarButtonItemStylePlain;
-  //label.enabled = NO;
-  //label.title = @"FOO";
-  //bar.items = [NSArray arrayWithObject:label];
-  //return bar;
-//}
 
 #pragma mark -
 #pragma mark Memory management

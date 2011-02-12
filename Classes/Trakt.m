@@ -163,14 +163,9 @@ static Trakt *sharedTrakt = nil;
     block(cachedImage, YES);
   } else {
     // download from the actual URL, not the scaled down identifier
-    [ImageDownload downloadFromURL:URL block:^(id image) {
-      //NSLog(@"Image download finished, but not calling block to see if it speeds up!");
-      UIImage *result = (UIImage *)image;
-      if (!CGSizeEqualToSize(scaledTo, CGSizeZero)) {
-        result = [[result normalize] resizedImage:scaledTo interpolationQuality:kCGInterpolationHigh];
-      }
-      [[EGOCache currentCache] setImage:result forKey:[_URL lastPathComponent]];
-      block(result, NO);
+    [ImageDownload downloadFromURL:URL resizeTo:scaledTo block:^(id image) {
+      [[EGOCache currentCache] setImage:image forKey:[_URL lastPathComponent]];
+      block(image, NO);
     }];
   }
 }
@@ -233,10 +228,51 @@ static Trakt *sharedTrakt = nil;
 
 @end
 
+#import <dispatch/dispatch.h>
+
 @implementation ImageDownload
 
+static dispatch_queue_t imageQueue = NULL;
+
+@synthesize resizeTo;
+
++ (id)downloadFromURL:(NSURL *)theURL resizeTo:(CGSize)resizeToSize block:(void (^)(id response))theBlock {
+  return [[[self alloc] initWithURL:theURL resizeTo:resizeToSize block:theBlock] autorelease];
+}
+
+- (id)init {
+  if (self = [super init]) {
+    self.resizeTo = CGSizeZero;
+  }
+  return self;
+}
+
+- (id)initWithURL:(NSURL *)theURL resizeTo:(CGSize)resizeToSize block:(void (^)(id response))theBlock {
+  if (self = [super initWithURL:theURL block:theBlock]) {
+    if (imageQueue == NULL) {
+      imageQueue = dispatch_queue_create("com.matsimitsu.iTrakt.imageQueue", NULL);
+    }
+    self.resizeTo = resizeToSize;
+  }
+  return self;
+}
+
 - (void)yieldDownloadedData {
-  block([UIImage imageWithData:downloadData]);
+  UIImage *result = [UIImage imageWithData:downloadData];
+  if (CGSizeEqualToSize(self.resizeTo, CGSizeZero)) {
+    //NSLog(@"NOT RESIZING!");
+    block(result);
+  } else {
+    NSLog(@"Dispatch image resizing!");
+    dispatch_async(imageQueue, ^{
+      // TODO get rid of the normalizing!
+      UIImage *resized = [[result normalize] resizedImage:self.resizeTo interpolationQuality:kCGInterpolationHigh];
+      dispatch_async(dispatch_get_main_queue(), ^{
+        //NSLog(@"Done resizing, dispatching to main thread!");
+        block(resized);
+      });
+    });
+  }
 }
 
 @end

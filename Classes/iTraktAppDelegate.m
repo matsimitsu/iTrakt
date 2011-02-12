@@ -1,6 +1,9 @@
 #import "iTraktAppDelegate.h"
 #import "CalendarViewController.h"
 
+// ONLY FOR DEBUGGING PURPOSES!
+#import "EGOCache.h"
+
 @implementation iTraktAppDelegate
 
 @synthesize window;
@@ -9,15 +12,15 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
-    // Override point for customization after application launch.
-    
-    // Add the navigation controller's view to the window and display.
-    [self.window addSubview:tabBarController.view];
-    [self.window makeKeyAndVisible];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  // ONLY FOR DEBUGGING PURPOSES!
+  NSLog(@"[!] Clearing cache");
+  [[EGOCache currentCache] clearCache];
 
-    return YES;
+  [self.window addSubview:tabBarController.view];
+  [self.window makeKeyAndVisible];
+
+  return YES;
 }
 
 

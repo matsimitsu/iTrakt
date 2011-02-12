@@ -62,5 +62,11 @@
 @interface JSONDownload : HTTPDownload
 @end
 
-@interface ImageDownload : HTTPDownload
+@interface ImageDownload : HTTPDownload {
+  CGSize resizeTo;
+}
+
+@property (nonatomic, assign) CGSize resizeTo;
++ (id)downloadFromURL:(NSURL *)theURL resizeTo:(CGSize)resizeToSize block:(void (^)(id response))theBlock;
+- (id)initWithURL:(NSURL *)theURL resizeTo:(CGSize)resizeTo block:(void (^)(id response))theBlock;
 @end

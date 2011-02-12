@@ -94,9 +94,9 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)seasons:(NSString *)tvdb_id block:(void (^)(NSArray *seasons))block {
-  NSLog(@"[!] Start download of season data from: %@", tvdb_id);
+  // NSLog(@"[!] Start download of season data from: %@", tvdb_id);
   [JSONDownload downloadFromURL:[self seasonsURL:tvdb_id] block:^(id response) {
-    NSLog(@"[!] Finished download of season data");
+    // NSLog(@"[!] Finished download of season data");
     NSMutableArray *seasons = [NSMutableArray array];
     for(NSDictionary *seasonDict in (NSArray *)response) {
       // NSLog([response description]);
@@ -158,11 +158,13 @@ static Trakt *sharedTrakt = nil;
   NSURL *_URL = [self URLForImageURL:URL scaledTo:scaledTo];
 
   UIImage *cachedImage = [self cachedImageForURL:_URL];
+  //UIImage *cachedImage = nil; // Force download for debugging purposes.
   if (cachedImage) {
     block(cachedImage, YES);
   } else {
     // download from the actual URL, not the scaled down identifier
     [ImageDownload downloadFromURL:URL block:^(id image) {
+      //NSLog(@"Image download finished, but not calling block to see if it speeds up!");
       UIImage *result = (UIImage *)image;
       if (!CGSizeEqualToSize(scaledTo, CGSizeZero)) {
         result = [[result normalize] resizedImage:scaledTo interpolationQuality:kCGInterpolationHigh];
@@ -197,7 +199,7 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-  NSLog(@"Connection received response %d", [response statusCode]);
+  // NSLog(@"Connection received response %d", [response statusCode]);
   downloadData = [[NSMutableData data] retain];
 }
 

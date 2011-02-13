@@ -23,6 +23,20 @@
   (- (id)downloadFailed:(id)download is
     (@methodCalls setValue:download forKey:"downloadFailed:")
   )
+
+  (- (id)downloadsAreInProgress is
+    (set count (@methodCalls valueForKey:"downloadsAreInProgress"))
+    (unless count (set count 0))
+    (set count (+ count 1))
+    (@methodCalls setValue:count forKey:"downloadsAreInProgress")
+  )
+
+  (- (id)downloadsAreFinished is
+    (set count (@methodCalls valueForKey:"downloadsAreFinished"))
+    (unless count (set count 0))
+    (set count (+ count 1))
+    (@methodCalls setValue:count forKey:"downloadsAreFinished")
+  )
 )
 
 (describe "HTTPDownload" `(
@@ -60,6 +74,19 @@
     (~ (HTTPDownload inProgress) should equal:(NSSet setWithObject:download))
     (wait 0.1 (do ()
       (~ (HTTPDownload inProgress) should equal:(NSSet set))
+    ))
+  ))
+
+  (it "notifies the global delegate that download(s) are in progress or stopped, but only once" (do ()
+    (HTTPDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/hello") nuBlock:(do (response)
+      ; nothing
+    ))
+    (HTTPDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/hello") nuBlock:(do (response)
+      ; nothing
+    ))
+    (wait 0.1 (do ()
+      (~ ((@delegate methodCalls) valueForKey:"downloadsAreInProgress") should be:1)
+      (~ ((@delegate methodCalls) valueForKey:"downloadsAreFinished") should be:1)
     ))
   ))
 ))

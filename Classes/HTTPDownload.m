@@ -27,11 +27,17 @@ static NSMutableSet *inProgress = nil;
 }
 
 + (void)downloadInProgress:(HTTPDownload *)download {
+  if ([inProgress count] == 0 && [globalDelegate respondsToSelector:@selector(downloadsAreInProgress)]) {
+    [globalDelegate performSelector:@selector(downloadsAreInProgress)];
+  }
   [[HTTPDownload inProgress] addObject:download];
 }
 
 + (void)downloadFinished:(HTTPDownload *)download {
   [[HTTPDownload inProgress] removeObject:download];
+  if ([inProgress count] == 0 && [globalDelegate respondsToSelector:@selector(downloadsAreFinished)]) {
+    [globalDelegate performSelector:@selector(downloadsAreFinished)];
+  }
 }
 
 

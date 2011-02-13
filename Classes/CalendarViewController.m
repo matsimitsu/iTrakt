@@ -23,12 +23,17 @@
 
   // TODO replace this with the actual username
   [Trakt sharedInstance].apiUser = @"matsimitsu";
+}
 
-  // TODO this probably has to move to viewDidAppear so that it gets run whenever this view is shown, not just the first time!
-  [[Trakt sharedInstance] calendar:^(NSArray *dates) {
-    self.broadcastDates = dates;
-    [self reloadTableViewData];
-  }];
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  // TODO recache everyday!
+  if (self.broadcastDates == nil) {
+    [[Trakt sharedInstance] calendar:^(NSArray *dates) {
+      self.broadcastDates = dates;
+      [self reloadTableViewData];
+    }];
+  }
 }
 
 

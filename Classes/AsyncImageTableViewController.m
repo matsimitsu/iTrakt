@@ -1,7 +1,19 @@
 #import "AsyncImageTableViewController.h"
-
+#import "HTTPDownload.h"
 
 @implementation AsyncImageTableViewController
+
+
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  [self loadImagesForVisibleCells];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
+  [HTTPDownload cancelDownloadsInProgress];
+}
+
 
 - (void)reloadTableViewData {
   [self.tableView reloadData];

@@ -10,6 +10,7 @@
 #import "ImageCell.h"
 #import "Episode.h"
 #import "EpisodeDetailsViewController.h"
+#import "HTTPDownload.h"
 
 #define SHOW_IMAGE_ASPECT_RATIO 1.78
 
@@ -22,10 +23,6 @@
   if (self = [super initWithNibName:@"ShowDetailsViewController" bundle:nil]) {
     self.show = theShow;
     self.navigationItem.title = show.title;
-    [show ensureSeasonsAreLoaded:^{
-      self.seasons = show.seasons;
-      [self.tableView reloadData];
-    }];
   }
   return self;
 }
@@ -41,23 +38,31 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
 */
+
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [show ensureSeasonsAreLoaded:^{
+    self.seasons = show.seasons;
+    [self.tableView reloadData];
+  }];
+}
+
+
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
 */
-/*
+
+
 - (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
+  [super viewWillDisappear:animated];
+  [HTTPDownload cancelDownloadsInProgress];
 }
-*/
+
+
 /*
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];

@@ -30,8 +30,7 @@
     self.network      = [[episodeInfo valueForKeyPath:@"show.network"] copy];
     self.season       = [[episodeInfo valueForKeyPath:@"episode.season"] integerValue];
     self.number       = [[episodeInfo valueForKeyPath:@"episode.number"] integerValue];
-    self.seen         = [episodeInfo valueForKey:@"watched"];
-    NSLog(@"")
+    self.seen         = [[episodeInfo valueForKey:@"watched"] boolValue];
 
     NSDateFormatter *dateReader = [[NSDateFormatter alloc] init];
     [dateReader setDateFormat:@"HH:mm:ss"];

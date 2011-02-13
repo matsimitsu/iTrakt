@@ -37,7 +37,7 @@
   ))
 
   (it "returns whether or not the user has seen it" (do ()
-    (~ (@episode seen) should be:false)
+    (~ (@episode seen) should be:true)
   ))
 
   (it "returns the poster url" (do ()

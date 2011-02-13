@@ -113,6 +113,7 @@ static NSMutableSet *inProgress = nil;
 
 // TODO this needs handling too!
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+  
   NSLog(@"Data download failed: %@", [error localizedDescription]);
   if (downloadData) {
     [downloadData release];

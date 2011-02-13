@@ -13,4 +13,8 @@
     (@delegate downloadsAreFinished)
     (~ (@app isNetworkActivityIndicatorVisible) should be:false)
   ))
+
+  ;(it "shows an alert when a download fails" (do ()
+    ;(@delegate downloadFailed:)
+  ;))
 ))

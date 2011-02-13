@@ -90,6 +90,18 @@ static NSMutableSet *inProgress = nil;
   return self.error == nil ? NO : YES;
 }
 
+- (NSString *)errorMessage {
+  if (self.error) {
+    return [error localizedDescription];
+  } else if (self.response) {
+    return [NSString stringWithFormat:@"Response %d, %@.",
+                                      [response statusCode],
+                                      [NSHTTPURLResponse localizedStringForStatusCode:[response statusCode]],
+                                      nil];
+  }
+  return nil;
+}
+
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)theResponse {
   self.response = theResponse;

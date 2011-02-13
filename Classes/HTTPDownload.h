@@ -26,6 +26,7 @@
 - (void)cancel;
 
 - (BOOL)errorOcurred;
+- (NSString *)errorMessage;
 
 - (void)yieldDownloadedData;
 

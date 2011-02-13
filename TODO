@@ -1,6 +1,7 @@
 * Research which OSS license the app should have and that we adhere to the licenses of APIs.
   TVDB: http://forums.thetvdb.com/viewtopic.php?f=8&t=2507
 
+* The API should return whether or not the user has seen the episode in the show json.
 * Add a 'Show' entry to an episode's details view, but only if it's loaded from the calendar.
 * Add a Show property to a Episode, which holds the show related data that we now store on the episode itself
 * Resize the show posters on the API side to increase download speeds

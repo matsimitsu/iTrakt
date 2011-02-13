@@ -136,7 +136,9 @@
         label.text = [NSString stringWithFormat:@"Episode %@", [episode episodeNumber], nil];
         break;
       case 2:
-        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        if (episode.seen) {
+          cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        }
         label.text = @"Seen";
         break;
     }

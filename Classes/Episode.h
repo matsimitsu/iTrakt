@@ -15,6 +15,7 @@
   NSDate *airtime;
   NSUInteger season;
   NSUInteger number;
+  BOOL seen;
 }
 
 @property (nonatomic, retain) UIImage *poster;
@@ -29,6 +30,7 @@
 @property (nonatomic, retain) NSDate *airtime;
 @property (nonatomic, assign) NSUInteger season;
 @property (nonatomic, assign) NSUInteger number;
+@property (nonatomic, assign) BOOL seen;
 
 - (id)initWithDictionary:(NSDictionary *)episodeInfo;
 - (id)initWithDictionary:(NSDictionary *)episodeInfo show:(Show *)show;

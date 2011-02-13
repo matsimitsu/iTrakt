@@ -36,6 +36,10 @@
     (~ (@episode serieTitleAndEpisodeNumber) should be:"Fringe 3x01")
   ))
 
+  (it "returns whether or not the user has seen it" (do ()
+    (~ (@episode seen) should be:false)
+  ))
+
   (it "returns the poster url" (do ()
     (~ (@episode posterURL) should be:(NSURL URLWithString:"http://localhost:9292/api/uploads/82066/poster-82066.jpg"))
   ))

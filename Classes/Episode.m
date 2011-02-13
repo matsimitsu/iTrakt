@@ -16,6 +16,7 @@
 @synthesize airtime;
 @synthesize season;
 @synthesize number;
+@synthesize seen;
 
 - (id)initWithDictionary:(NSDictionary *)episodeInfo {
   if (self = [super init]) {
@@ -29,6 +30,8 @@
     self.network      = [[episodeInfo valueForKeyPath:@"show.network"] copy];
     self.season       = [[episodeInfo valueForKeyPath:@"episode.season"] integerValue];
     self.number       = [[episodeInfo valueForKeyPath:@"episode.number"] integerValue];
+    self.seen         = [episodeInfo valueForKey:@"watched"];
+    NSLog(@"")
 
     NSDateFormatter *dateReader = [[NSDateFormatter alloc] init];
     [dateReader setDateFormat:@"HH:mm:ss"];

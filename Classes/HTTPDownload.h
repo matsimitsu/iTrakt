@@ -2,11 +2,13 @@
 
 
 @interface HTTPDownload : NSObject {
+  NSURLConnection *connection;
   NSHTTPURLResponse *response;
   NSMutableData *downloadData;
   void (^block)(id response);
 }
 
+@property (nonatomic, retain) NSURLConnection *connection;
 @property (nonatomic, retain) NSHTTPURLResponse *response;
 
 + (id)globalDelegate;
@@ -14,7 +16,11 @@
 
 + (id)downloadFromURL:(NSURL *)theURL block:(void (^)(id response))theBlock;
 
++ (void)cancelDownloadsInProgress;
+
 - (id)initWithURL:(NSURL *)theURL block:(void (^)(id response))theBlock;
+
+- (void)cancel;
 
 - (void)yieldDownloadedData;
 

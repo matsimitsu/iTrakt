@@ -27,7 +27,7 @@ static NSMutableSet *inProgress = nil;
 }
 
 + (void)downloadInProgress:(HTTPDownload *)download {
-  if ([inProgress count] == 0 && [globalDelegate respondsToSelector:@selector(downloadsAreInProgress)]) {
+  if ([[HTTPDownload inProgress] count] == 0 && [globalDelegate respondsToSelector:@selector(downloadsAreInProgress)]) {
     [globalDelegate performSelector:@selector(downloadsAreInProgress)];
   }
   [[HTTPDownload inProgress] addObject:download];
@@ -35,7 +35,7 @@ static NSMutableSet *inProgress = nil;
 
 + (void)downloadFinished:(HTTPDownload *)download {
   [[HTTPDownload inProgress] removeObject:download];
-  if ([inProgress count] == 0 && [globalDelegate respondsToSelector:@selector(downloadsAreFinished)]) {
+  if ([[HTTPDownload inProgress] count] == 0 && [globalDelegate respondsToSelector:@selector(downloadsAreFinished)]) {
     [globalDelegate performSelector:@selector(downloadsAreFinished)];
   }
 }
@@ -45,13 +45,22 @@ static NSMutableSet *inProgress = nil;
   return [[[self alloc] initWithURL:theURL block:theBlock] autorelease];
 }
 
+
++ (void)cancelDownloadsInProgress {
+  NSSet *inProgress = [[HTTPDownload inProgress] copy];
+  [inProgress makeObjectsPerformSelector:@selector(cancel)];
+  [inProgress release];
+}
+
+
+@synthesize connection;
 @synthesize response;
 
 - (id)initWithURL:(NSURL *)theURL block:(void (^)(id response))theBlock {
   if (self = [super init]) {
     downloadData = nil;
     block = Block_copy(theBlock);
-    [NSURLConnection connectionWithRequest:[NSURLRequest requestWithURL:theURL] delegate:self];
+    self.connection = [NSURLConnection connectionWithRequest:[NSURLRequest requestWithURL:theURL] delegate:self];
     [HTTPDownload downloadInProgress:self];
   }
   return self;
@@ -61,6 +70,13 @@ static NSMutableSet *inProgress = nil;
 - (void)dealloc {
   [super dealloc];
   Block_release(block);
+}
+
+
+- (void)cancel {
+  [self.connection cancel];
+  [HTTPDownload downloadFinished:self];
+  [connection release];
 }
 
 
@@ -75,7 +91,7 @@ static NSMutableSet *inProgress = nil;
 }
 
 // The only status codes a HTTP server should responde with are >= 200 and < 600.
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+- (void)connectionDidFinishLoading:(NSURLConnection *)theConnection {
   [HTTPDownload downloadFinished:self];
 
   NSInteger status = [self.response statusCode];
@@ -90,6 +106,7 @@ static NSMutableSet *inProgress = nil;
     }
   }
   [downloadData release];
+  [connection release];
   [response release];
 }
 
@@ -100,6 +117,9 @@ static NSMutableSet *inProgress = nil;
   if (downloadData) {
     [downloadData release];
   }
+  // TODO this too?
+  // [connection release];
+  // [response release];
 }
 
 

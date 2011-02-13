@@ -89,6 +89,21 @@
       (~ ((@delegate methodCalls) valueForKey:"downloadsAreFinished") should be:1)
     ))
   ))
+
+  (it "cancels any downloads in progress" (do ()
+    (set @called nil)
+    (HTTPDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/hello") nuBlock:(do (response)
+      (set @called t)
+    ))
+    (HTTPDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/hello") nuBlock:(do (response)
+      (set @called t)
+    ))
+    (HTTPDownload cancelDownloadsInProgress)
+    (wait 0.1 (do ()
+      (~ @called should be:nil)
+      (~ (HTTPDownload inProgress) should equal:(NSSet set))
+    ))
+  ))
 ))
 
 (describe "JSONDownload" `(

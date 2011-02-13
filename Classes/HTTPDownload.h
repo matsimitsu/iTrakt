@@ -9,6 +9,9 @@
 
 @property (nonatomic, retain) NSHTTPURLResponse *response;
 
++ (id)globalDelegate;
++ (void)setGlobalDelegate:(id)delegate;
+
 + (id)downloadFromURL:(NSURL *)theURL block:(void (^)(id response))theBlock;
 
 - (id)initWithURL:(NSURL *)theURL block:(void (^)(id response))theBlock;

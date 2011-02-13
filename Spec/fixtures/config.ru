@@ -12,6 +12,11 @@ mappings = lambda do
     send_status(code)
   end
 
+  map(%r{/sleep\?sec=(\d+)}) do |seconds|
+    sleep seconds.to_i
+    send_status 200
+  end
+
   map('/json/simple-array') do
     serve_json_fixture('simple-array')
   end

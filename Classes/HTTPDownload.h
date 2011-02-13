@@ -6,10 +6,12 @@
   NSHTTPURLResponse *response;
   NSMutableData *downloadData;
   void (^block)(id response);
+  NSError *error;
 }
 
 @property (nonatomic, retain) NSURLConnection *connection;
 @property (nonatomic, retain) NSHTTPURLResponse *response;
+@property (nonatomic, retain) NSError *error;
 
 + (id)globalDelegate;
 + (void)setGlobalDelegate:(id)delegate;
@@ -21,6 +23,8 @@
 - (id)initWithURL:(NSURL *)theURL block:(void (^)(id response))theBlock;
 
 - (void)cancel;
+
+- (BOOL)errorOcurred;
 
 - (void)yieldDownloadedData;
 

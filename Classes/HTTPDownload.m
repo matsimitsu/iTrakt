@@ -55,6 +55,7 @@ static NSMutableSet *inProgress = nil;
 
 @synthesize connection;
 @synthesize response;
+@synthesize error;
 
 - (id)initWithURL:(NSURL *)theURL block:(void (^)(id response))theBlock {
   if (self = [super init]) {
@@ -68,6 +69,10 @@ static NSMutableSet *inProgress = nil;
 
 
 - (void)dealloc {
+  self.connection = nil;
+  self.response = nil;
+  self.error = nil;
+
   [super dealloc];
   Block_release(block);
 }
@@ -76,7 +81,11 @@ static NSMutableSet *inProgress = nil;
 - (void)cancel {
   [self.connection cancel];
   [HTTPDownload downloadFinished:self];
-  [connection release];
+}
+
+
+- (BOOL)errorOcurred {
+  return self.error == nil ? NO : YES;
 }
 
 
@@ -106,21 +115,19 @@ static NSMutableSet *inProgress = nil;
     }
   }
   [downloadData release];
-  [connection release];
-  [response release];
 }
 
 
-// TODO this needs handling too!
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-  
-  NSLog(@"Data download failed: %@", [error localizedDescription]);
+- (void)connection:(NSURLConnection *)theConnection didFailWithError:(NSError *)theError {
+  [HTTPDownload downloadFinished:self];
+
+  self.error = theError;
+  if ([globalDelegate respondsToSelector:@selector(downloadFailed:)]) {
+    [globalDelegate performSelector:@selector(downloadFailed:) withObject:self];
+  }
   if (downloadData) {
     [downloadData release];
   }
-  // TODO this too?
-  // [connection release];
-  // [response release];
 }
 
 

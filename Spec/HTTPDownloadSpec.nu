@@ -78,6 +78,27 @@
     ))
   ))
 
+  (it "calls the global connection delegate when an error occurs" (do ()
+    (set url (NSURL URLWithString:"http://localhost:9292/sleep?sec=1"))
+
+    (set @called nil)
+    (set download (HTTPDownload downloadFromURL:url nuBlock:(do (response)
+      (set @called t)
+    )))
+
+    ((download connection) cancel)
+    (set request (NSURLRequest requestWithURL:url cachePolicy:0 timeoutInterval:0.5))
+    (download setConnection:(NSURLConnection connectionWithRequest:request delegate:download))
+
+    (wait 1.1 (do ()
+      (~ @called should be:nil)
+      (~ (download errorOcurred) should be:true)
+      (~ ((download error) localizedDescription) should be:"The request timed out.")
+      (~ ((@delegate methodCalls) valueForKey:"downloadFailed:") should be:download)
+      (~ (HTTPDownload inProgress) should equal:(NSSet set))
+    ))
+  ))
+
   (it "adds itself to the global list of 'in progress' downloads and removes it when done" (do ()
     (set download (HTTPDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/hello") nuBlock:(do (response)
       ; nothing

@@ -11,6 +11,7 @@
 
 @property (nonatomic, retain) NSURLConnection *connection;
 @property (nonatomic, retain) NSHTTPURLResponse *response;
+@property (nonatomic, retain) NSMutableData *downloadData;
 @property (nonatomic, retain) NSError *error;
 
 + (id)globalDelegate;

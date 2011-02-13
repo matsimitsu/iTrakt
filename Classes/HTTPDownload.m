@@ -53,6 +53,7 @@ static NSMutableSet *inProgress = nil;
 }
 
 
+@synthesize downloadData;
 @synthesize connection;
 @synthesize response;
 @synthesize error;
@@ -69,6 +70,7 @@ static NSMutableSet *inProgress = nil;
 
 
 - (void)dealloc {
+  self.downloadData = nil;
   self.connection = nil;
   self.response = nil;
   self.error = nil;
@@ -91,7 +93,7 @@ static NSMutableSet *inProgress = nil;
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)theResponse {
   self.response = theResponse;
-  downloadData = [[NSMutableData data] retain];
+  self.downloadData = [NSMutableData data];
 }
 
 
@@ -114,7 +116,6 @@ static NSMutableSet *inProgress = nil;
       [globalDelegate performSelector:@selector(downloadFailed:) withObject:self];
     }
   }
-  [downloadData release];
 }
 
 
@@ -124,9 +125,6 @@ static NSMutableSet *inProgress = nil;
   self.error = theError;
   if ([globalDelegate respondsToSelector:@selector(downloadFailed:)]) {
     [globalDelegate performSelector:@selector(downloadFailed:) withObject:self];
-  }
-  if (downloadData) {
-    [downloadData release];
   }
 }
 

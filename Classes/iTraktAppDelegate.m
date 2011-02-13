@@ -35,6 +35,16 @@
   [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
+- (void)downloadFailed:(HTTPDownload *)download {
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection failure"
+                                          message:[download errorMessage]
+                                         delegate:nil
+                                cancelButtonTitle:@"OK"
+                                otherButtonTitles:nil];
+  [alert show];
+  [alert release];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*

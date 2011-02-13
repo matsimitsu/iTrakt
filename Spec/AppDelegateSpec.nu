@@ -1,5 +1,11 @@
 (load "SpecHelper")
 
+(class HTTPDownloadMock is HTTPDownload
+  (- (id)errorMessage is
+    "Ohnoes!"
+  )
+)
+
 (describe "AppDelegate" `(
   (before (do ()
     (set @app (UIApplication sharedApplication))
@@ -14,7 +20,12 @@
     (~ (@app isNetworkActivityIndicatorVisible) should be:false)
   ))
 
-  ;(it "shows an alert when a download fails" (do ()
-    ;(@delegate downloadFailed:)
-  ;))
+  (it "shows an alert when a download fails" (do ()
+    (@delegate downloadFailed:((HTTPDownloadMock new)))
+    (wait 0.1 (do ()
+      (set window ((UIApplication sharedApplication) keyWindow))
+      (set alert ((window subviews) objectAtIndex:0))
+      (~ (alert message) should be:"Ohnoes!")
+    ))
+  ))
 ))

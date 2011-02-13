@@ -1,9 +1,6 @@
 * Research which OSS license the app should have and that we adhere to the licenses of APIs.
   TVDB: http://forums.thetvdb.com/viewtopic.php?f=8&t=2507
 
-* Fix that for some rows the images don't show up after loading them, we might just need to reload the whole row istead of re-layouting.
-* Remove 'normalize' calls when resizing images.
-
 * Add a Show property to a Episode, which holds the show related data that we now store on the episode itself
 * Resize the show posters on the API side to increase download speeds
 * Create show poster thumbnails once and cache it (on the Episode for now)

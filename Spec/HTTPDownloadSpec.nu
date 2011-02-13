@@ -52,6 +52,16 @@
       (~ ((@delegate methodCalls) valueForKey:"downloadFailed:") should be kindOfClass:HTTPDownload)
     ))
   ))
+
+  (it "adds itself to the global list of 'in progress' downloads and removes it when done" (do ()
+    (set download (HTTPDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/hello") nuBlock:(do (response)
+      ; nothing
+    )))
+    (~ (HTTPDownload inProgress) should equal:(NSSet setWithObject:download))
+    (wait 0.1 (do ()
+      (~ (HTTPDownload inProgress) should equal:(NSSet set))
+    ))
+  ))
 ))
 
 (describe "JSONDownload" `(

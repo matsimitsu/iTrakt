@@ -16,6 +16,25 @@ static id globalDelegate = nil;
   globalDelegate = delegate;
 }
 
+
+static NSMutableSet *inProgress = nil;
+
++ (NSMutableSet *)inProgress {
+  if (inProgress == nil) {
+    inProgress = [[NSMutableSet set] retain];
+  }
+  return inProgress;
+}
+
++ (void)downloadInProgress:(HTTPDownload *)download {
+  [[HTTPDownload inProgress] addObject:download];
+}
+
++ (void)downloadFinished:(HTTPDownload *)download {
+  [[HTTPDownload inProgress] removeObject:download];
+}
+
+
 + (id)downloadFromURL:(NSURL *)theURL block:(void (^)(id response))theBlock {
   return [[[self alloc] initWithURL:theURL block:theBlock] autorelease];
 }
@@ -27,6 +46,7 @@ static id globalDelegate = nil;
     downloadData = nil;
     block = Block_copy(theBlock);
     [NSURLConnection connectionWithRequest:[NSURLRequest requestWithURL:theURL] delegate:self];
+    [HTTPDownload downloadInProgress:self];
   }
   return self;
 }
@@ -50,6 +70,8 @@ static id globalDelegate = nil;
 
 // The only status codes a HTTP server should responde with are >= 200 and < 600.
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+  [HTTPDownload downloadFinished:self];
+
   NSInteger status = [self.response statusCode];
   //NSLog(@"Connection received status %d", status);
   if (status >= 200 && status < 300) {
@@ -66,6 +88,7 @@ static id globalDelegate = nil;
 }
 
 
+// TODO this needs handling too!
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
   NSLog(@"Data download failed: %@", [error localizedDescription]);
   if (downloadData) {

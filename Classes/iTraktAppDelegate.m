@@ -1,4 +1,5 @@
 #import "iTraktAppDelegate.h"
+#import "HTTPDownload.h"
 #import "CalendarViewController.h"
 
 // ONLY FOR DEBUGGING PURPOSES!
@@ -17,10 +18,21 @@
   //NSLog(@"[!] Clearing cache");
   //[[EGOCache currentCache] clearCache];
 
+  [HTTPDownload setGlobalDelegate:self];
+
   [self.window addSubview:tabBarController.view];
   [self.window makeKeyAndVisible];
 
   return YES;
+}
+
+
+- (void)downloadsAreInProgress {
+  [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
+- (void)downloadsAreFinished {
+  [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 

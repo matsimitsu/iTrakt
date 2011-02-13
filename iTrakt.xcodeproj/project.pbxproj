@@ -81,6 +81,9 @@
 		513BE2EE1307FF280076F8F9 /* HTTPDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 513BE2ED1307FF280076F8F9 /* HTTPDownload.m */; };
 		513BE2EF1307FF280076F8F9 /* HTTPDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 513BE2ED1307FF280076F8F9 /* HTTPDownload.m */; };
 		513BE439130804040076F8F9 /* HTTPDownloadSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 513BE438130804040076F8F9 /* HTTPDownloadSpec.nu */; };
+		513BE4EB130817190076F8F9 /* iTraktAppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623240D0F684500981E51 /* iTraktAppDelegate.h */; };
+		513BE4EC130817190076F8F9 /* iTraktAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iTraktAppDelegate.m */; };
+		513BE4F6130817D70076F8F9 /* AppDelegateSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 513BE4F5130817D70076F8F9 /* AppDelegateSpec.nu */; };
 		516CE8D612F42D53003450CF /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 516CE8D512F42D53003450CF /* SpecHelper.m */; };
 		516CE94C12F44DE5003450CF /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2479A22B12EC83DB00E2AD4E /* YAJL.framework */; };
 		516CE9B812F4565A003450CF /* poster.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 516CE9B712F4565A003450CF /* poster.jpg */; };
@@ -193,6 +196,7 @@
 		513BE2EC1307FF280076F8F9 /* HTTPDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDownload.h; sourceTree = "<group>"; };
 		513BE2ED1307FF280076F8F9 /* HTTPDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDownload.m; sourceTree = "<group>"; };
 		513BE438130804040076F8F9 /* HTTPDownloadSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HTTPDownloadSpec.nu; path = Spec/HTTPDownloadSpec.nu; sourceTree = "<group>"; };
+		513BE4F5130817D70076F8F9 /* AppDelegateSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AppDelegateSpec.nu; path = Spec/AppDelegateSpec.nu; sourceTree = "<group>"; };
 		516CE8D512F42D53003450CF /* SpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecHelper.m; path = Spec/SpecHelper.m; sourceTree = "<group>"; };
 		516CE9B712F4565A003450CF /* poster.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = poster.jpg; path = Spec/fixtures/poster.jpg; sourceTree = "<group>"; };
 		5181A1C11306EB4800B3761A /* AsyncImageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageTableViewController.h; sourceTree = "<group>"; };
@@ -368,6 +372,7 @@
 		510C6AED12F3682C000500A1 /* Spec */ = {
 			isa = PBXGroup;
 			children = (
+				513BE4F5130817D70076F8F9 /* AppDelegateSpec.nu */,
 				513BE438130804040076F8F9 /* HTTPDownloadSpec.nu */,
 				510C6EE112F8ABA7000500A1 /* ShowSpec.nu */,
 				510C6BC412F5C867000500A1 /* Fixtures */,
@@ -548,6 +553,7 @@
 				516CE9B812F4565A003450CF /* poster.jpg in Resources */,
 				2402540C12F5F07B00F651D8 /* thumb.jpg in Resources */,
 				513BE439130804040076F8F9 /* HTTPDownloadSpec.nu in Resources */,
+				513BE4F6130817D70076F8F9 /* AppDelegateSpec.nu in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +592,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				513BE4EB130817190076F8F9 /* iTraktAppDelegate.h in Sources */,
+				513BE4EC130817190076F8F9 /* iTraktAppDelegate.m in Sources */,
 				510C6EE012F8AB8B000500A1 /* Show.m in Sources */,
 				510C6CDB12F5E78A000500A1 /* UIImage+Resize.m in Sources */,
 				510C6CDC12F5E78A000500A1 /* UIImage+Alpha.m in Sources */,

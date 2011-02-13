@@ -1,3 +1,4 @@
+#import "HTTPDownload.h"
 #import "Trakt.h"
 #import "Show.h"
 #import "Episode.h"

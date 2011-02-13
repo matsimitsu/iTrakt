@@ -78,6 +78,9 @@
 		513400A712EF5299007ED54E /* episode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 513400A612EF5299007ED54E /* episode.jpg */; };
 		513400C612EF71A4007ED54E /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 513400C512EF71A4007ED54E /* ImageCell.m */; };
 		5134FEBD12EBBF39007ED54E /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134FEBC12EBBF39007ED54E /* EGOCache.m */; };
+		513BE2EE1307FF280076F8F9 /* HTTPDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 513BE2ED1307FF280076F8F9 /* HTTPDownload.m */; };
+		513BE2EF1307FF280076F8F9 /* HTTPDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 513BE2ED1307FF280076F8F9 /* HTTPDownload.m */; };
+		513BE439130804040076F8F9 /* HTTPDownloadSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 513BE438130804040076F8F9 /* HTTPDownloadSpec.nu */; };
 		516CE8D612F42D53003450CF /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 516CE8D512F42D53003450CF /* SpecHelper.m */; };
 		516CE94C12F44DE5003450CF /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2479A22B12EC83DB00E2AD4E /* YAJL.framework */; };
 		516CE9B812F4565A003450CF /* poster.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 516CE9B712F4565A003450CF /* poster.jpg */; };
@@ -187,6 +190,9 @@
 		513401BA12F36248007ED54E /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		5134FEBB12EBBF39007ED54E /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGOCache.h; path = vendor/EGOCache/EGOCache.h; sourceTree = "<group>"; };
 		5134FEBC12EBBF39007ED54E /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EGOCache.m; path = vendor/EGOCache/EGOCache.m; sourceTree = "<group>"; };
+		513BE2EC1307FF280076F8F9 /* HTTPDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDownload.h; sourceTree = "<group>"; };
+		513BE2ED1307FF280076F8F9 /* HTTPDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDownload.m; sourceTree = "<group>"; };
+		513BE438130804040076F8F9 /* HTTPDownloadSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HTTPDownloadSpec.nu; path = Spec/HTTPDownloadSpec.nu; sourceTree = "<group>"; };
 		516CE8D512F42D53003450CF /* SpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecHelper.m; path = Spec/SpecHelper.m; sourceTree = "<group>"; };
 		516CE9B712F4565A003450CF /* poster.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = poster.jpg; path = Spec/fixtures/poster.jpg; sourceTree = "<group>"; };
 		5181A1C11306EB4800B3761A /* AsyncImageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageTableViewController.h; sourceTree = "<group>"; };
@@ -256,6 +262,8 @@
 				510C6FCC12FB5D7D000500A1 /* ShowsViewController.m */,
 				5181A1C11306EB4800B3761A /* AsyncImageTableViewController.h */,
 				5181A1C21306EB4800B3761A /* AsyncImageTableViewController.m */,
+				513BE2EC1307FF280076F8F9 /* HTTPDownload.h */,
+				513BE2ED1307FF280076F8F9 /* HTTPDownload.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -360,6 +368,7 @@
 		510C6AED12F3682C000500A1 /* Spec */ = {
 			isa = PBXGroup;
 			children = (
+				513BE438130804040076F8F9 /* HTTPDownloadSpec.nu */,
 				510C6EE112F8ABA7000500A1 /* ShowSpec.nu */,
 				510C6BC412F5C867000500A1 /* Fixtures */,
 				510C6AEE12F368A2000500A1 /* TraktSpec.nu */,
@@ -538,6 +547,7 @@
 				510C6AC212F3644B000500A1 /* bacon.nu in Resources */,
 				516CE9B812F4565A003450CF /* poster.jpg in Resources */,
 				2402540C12F5F07B00F651D8 /* thumb.jpg in Resources */,
+				513BE439130804040076F8F9 /* HTTPDownloadSpec.nu in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +578,7 @@
 				510C6FBE12FB5B2C000500A1 /* TrendingViewController.m in Sources */,
 				510C6FCD12FB5D7D000500A1 /* ShowsViewController.m in Sources */,
 				5181A1C31306EB4800B3761A /* AsyncImageTableViewController.m in Sources */,
+				513BE2EE1307FF280076F8F9 /* HTTPDownload.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +601,7 @@
 				510C6ADC12F36516000500A1 /* Episode.m in Sources */,
 				510C6AFA12F369C2000500A1 /* Trakt.m in Sources */,
 				516CE8D612F42D53003450CF /* SpecHelper.m in Sources */,
+				513BE2EF1307FF280076F8F9 /* HTTPDownload.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

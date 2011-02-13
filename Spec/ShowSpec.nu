@@ -33,9 +33,11 @@
   ;))
 
   (describe "concerning its poster" `(
-    (it "retrieves the poster image" (do ()
+    (it "downloads the poster image if it's not loaded from the cache" (do ()
       (set trakt (Trakt sharedInstance))
       (trakt removeCachedImageForURL:(@show posterURL) scaledTo:`(44 66))
+
+      (~ (@show poster) should be:nil)
 
       (set @called nil)
       (@show ensurePosterIsLoadedWithNuBlock:(do ()
@@ -45,6 +47,11 @@
       (wait 0.3 (do ()
         (~ @called should be:t)
       ))
+    ))
+
+    (it "loads the poster image from the cache when requested and available" (do ()
+      ; it was downloaded in the previous spec. Yes I know, dependencies... sigh
+      (~ (@show poster) should be:(equalToImage (UIImage imageNamed:"poster-thumbnail.jpg")))
     ))
   ))
 

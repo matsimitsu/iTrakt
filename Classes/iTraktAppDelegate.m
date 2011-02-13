@@ -14,8 +14,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // ONLY FOR DEBUGGING PURPOSES!
-  NSLog(@"[!] Clearing cache");
-  [[EGOCache currentCache] clearCache];
+  //NSLog(@"[!] Clearing cache");
+  //[[EGOCache currentCache] clearCache];
 
   [self.window addSubview:tabBarController.view];
   [self.window makeKeyAndVisible];

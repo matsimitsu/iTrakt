@@ -42,20 +42,10 @@
 		510C6AC012F3644B000500A1 /* bacon_specification.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6ABA12F3644B000500A1 /* bacon_specification.nu */; };
 		510C6AC112F3644B000500A1 /* bacon_summary.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6ABB12F3644B000500A1 /* bacon_summary.nu */; };
 		510C6AC212F3644B000500A1 /* bacon.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6ABC12F3644B000500A1 /* bacon.nu */; };
-		510C6AD312F36516000500A1 /* CalendarViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 28C286DF0D94DF7D0034E888 /* CalendarViewController.h */; };
-		510C6AD412F36516000500A1 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* CalendarViewController.m */; };
-		510C6AD512F36516000500A1 /* iTraktAppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623240D0F684500981E51 /* iTraktAppDelegate.h */; };
-		510C6AD612F36516000500A1 /* iTraktAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iTraktAppDelegate.m */; };
 		510C6AD712F36516000500A1 /* BroadcastDate.h in Sources */ = {isa = PBXBuildFile; fileRef = 2484C6AC12E9F568000D3871 /* BroadcastDate.h */; };
 		510C6AD812F36516000500A1 /* BroadcastDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2484C6AD12E9F568000D3871 /* BroadcastDate.m */; };
-		510C6AD912F36516000500A1 /* EpisodeTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9512EA375500073C68 /* EpisodeTableViewCell.h */; };
-		510C6ADA12F36516000500A1 /* EpisodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */; };
 		510C6ADB12F36516000500A1 /* Episode.h in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9812EA391B00073C68 /* Episode.h */; };
 		510C6ADC12F36516000500A1 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9912EA391B00073C68 /* Episode.m */; };
-		510C6ADD12F36516000500A1 /* EpisodeDetailsViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 5134008312EF4D72007ED54E /* EpisodeDetailsViewController.h */; };
-		510C6ADE12F36516000500A1 /* EpisodeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */; };
-		510C6ADF12F36516000500A1 /* ImageCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 513400C412EF71A4007ED54E /* ImageCell.h */; };
-		510C6AE012F36516000500A1 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 513400C512EF71A4007ED54E /* ImageCell.m */; };
 		510C6AE412F36538000500A1 /* EGOCache.h in Sources */ = {isa = PBXBuildFile; fileRef = 5134FEBB12EBBF39007ED54E /* EGOCache.h */; };
 		510C6AE512F36538000500A1 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134FEBC12EBBF39007ED54E /* EGOCache.m */; };
 		510C6AF212F36993000500A1 /* TraktSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6AEE12F368A2000500A1 /* TraktSpec.nu */; };
@@ -416,7 +406,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */ = {
+		1D6058900D05DD3D006BFB54 /* iTrakt */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iTrakt" */;
 			buildPhases = (
@@ -477,7 +467,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */,
+				1D6058900D05DD3D006BFB54 /* iTrakt */,
 				513401B712F36248007ED54E /* Specs */,
 			);
 		};
@@ -594,20 +584,10 @@
 				510C6CE012F5E78A000500A1 /* UIImage+Alpha.h in Sources */,
 				510C6AE412F36538000500A1 /* EGOCache.h in Sources */,
 				510C6AE512F36538000500A1 /* EGOCache.m in Sources */,
-				510C6AD312F36516000500A1 /* CalendarViewController.h in Sources */,
-				510C6AD412F36516000500A1 /* CalendarViewController.m in Sources */,
-				510C6AD512F36516000500A1 /* iTraktAppDelegate.h in Sources */,
-				510C6AD612F36516000500A1 /* iTraktAppDelegate.m in Sources */,
 				510C6AD712F36516000500A1 /* BroadcastDate.h in Sources */,
 				510C6AD812F36516000500A1 /* BroadcastDate.m in Sources */,
-				510C6AD912F36516000500A1 /* EpisodeTableViewCell.h in Sources */,
-				510C6ADA12F36516000500A1 /* EpisodeTableViewCell.m in Sources */,
 				510C6ADB12F36516000500A1 /* Episode.h in Sources */,
 				510C6ADC12F36516000500A1 /* Episode.m in Sources */,
-				510C6ADD12F36516000500A1 /* EpisodeDetailsViewController.h in Sources */,
-				510C6ADE12F36516000500A1 /* EpisodeDetailsViewController.m in Sources */,
-				510C6ADF12F36516000500A1 /* ImageCell.h in Sources */,
-				510C6AE012F36516000500A1 /* ImageCell.m in Sources */,
 				510C6AFA12F369C2000500A1 /* Trakt.m in Sources */,
 				516CE8D612F42D53003450CF /* SpecHelper.m in Sources */,
 			);

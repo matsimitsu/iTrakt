@@ -127,18 +127,19 @@
   }
 }
 
+- (UIImage *)poster {
+  if (poster == nil) {
+    poster = [[[Trakt sharedInstance] cachedShowPosterForURL:self.posterURL] retain];
+  }
+  return poster;
+}
+
 - (void)ensureShowPosterIsLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the poster loaded for performance!
   if (self.poster == nil) {
     [[Trakt sharedInstance] showPosterForURL:self.posterURL block:^(UIImage *thePoster, BOOL cached) {
       self.poster = thePoster;
-      if (!cached) {
-        //NSLog(@"Downloaded show poster with tvdb ID: %@", tvdbID);
-        downloadedBlock();
-      }
-      //else {
-        //NSLog(@"Loaded show poster from cache with tvdb ID: %@", tvdbID);
-      //}
+      downloadedBlock();
     }];
   }
 }

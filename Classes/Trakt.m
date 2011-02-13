@@ -113,6 +113,10 @@ static Trakt *sharedTrakt = nil;
 }
 
 
+- (UIImage *)cachedShowPosterForURL:(NSURL *)posterURL {
+  return [self cachedImageForURL:posterURL scaledTo:CGSizeMake(44.0, 66.0)];
+}
+
 - (void)showPosterForURL:(NSURL *)posterURL block:(void (^)(UIImage *poster, BOOL cached))block {
   [self loadImageFromURL:posterURL scaledTo:CGSizeMake(44.0, 66.0) block:block];
 }

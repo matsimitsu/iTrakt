@@ -2,9 +2,12 @@
 
 
 @interface HTTPDownload : NSObject {
+  NSHTTPURLResponse *response;
   NSMutableData *downloadData;
   void (^block)(id response);
 }
+
+@property (nonatomic, retain) NSHTTPURLResponse *response;
 
 + (id)downloadFromURL:(NSURL *)theURL block:(void (^)(id response))theBlock;
 

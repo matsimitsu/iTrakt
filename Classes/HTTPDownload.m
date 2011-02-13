@@ -6,11 +6,21 @@
 
 @implementation HTTPDownload
 
+static id globalDelegate = nil;
+
++ (id)globalDelegate {
+  return globalDelegate;
+}
+
++ (void)setGlobalDelegate:(id)delegate {
+  globalDelegate = delegate;
+}
 
 + (id)downloadFromURL:(NSURL *)theURL block:(void (^)(id response))theBlock {
   return [[[self alloc] initWithURL:theURL block:theBlock] autorelease];
 }
 
+@synthesize response;
 
 - (id)initWithURL:(NSURL *)theURL block:(void (^)(id response))theBlock {
   if (self = [super init]) {
@@ -28,8 +38,8 @@
 }
 
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-  // NSLog(@"Connection received response %d", [response statusCode]);
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)theResponse {
+  self.response = theResponse;
   downloadData = [[NSMutableData data] retain];
 }
 
@@ -38,10 +48,21 @@
   [downloadData appendData:data];
 }
 
-
+// The only status codes a HTTP server should responde with are >= 200 and < 600.
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-  [self yieldDownloadedData];
+  NSInteger status = [self.response statusCode];
+  //NSLog(@"Connection received status %d", status);
+  if (status >= 200 && status < 300) {
+    [self yieldDownloadedData];
+  } else if (status >= 300 && status < 400) {
+    NSLog(@"[!] Redirect response, which we don't (atm have to) handle. Where did it come from?");
+  } else {
+    if ([globalDelegate respondsToSelector:@selector(downloadFailed:)]) {
+      [globalDelegate performSelector:@selector(downloadFailed:) withObject:self];
+    }
+  }
   [downloadData release];
+  [response release];
 }
 
 

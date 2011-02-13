@@ -16,6 +16,10 @@
     )
   )
 
+  (- (id) methodCalls is
+    @methodCalls
+  )
+
   (- (id)downloadFailed:(id)download is
     (@methodCalls setValue:download forKey:"downloadFailed:")
   )
@@ -24,7 +28,7 @@
 (describe "HTTPDownload" `(
   (before (do ()
     (set @delegate (HTTPDownloadDelegateMock new))
-    ;(HTTPDownload setGlobalDelegate:@delegate)
+    (HTTPDownload setGlobalDelegate:@delegate)
   ))
 
   (it "yields the downloaded data" (do ()
@@ -34,21 +38,20 @@
       (~ string should equal:"Hello world!")
     ))
     (wait 0.1 (do ()
-      ;(~ ((@delegate methodCalls) valueForKey:"downloadFailed:") should be:nil)
+      (~ ((@delegate methodCalls) valueForKey:"downloadFailed:") should be:nil)
     ))
   ))
 
-  ;(it "calls the global connection delegate when a connection fails" (do ()
-    ;(set @called nil)
-    ;(HTTPDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/status-code?code=500") nuBlock:(do (response)
-      ;(set @called t)
-    ;))
-    ;(wait 0.1 (do ()
-      ;(puts @called)
-      ;(~ @called should be:nil)
-      ;;(~ ((@delegate methodCalls) valueForKey:"downloadFailed:") should be kindOfClass:HTTPDownload)
-    ;))
-  ;))
+  (it "calls the global connection delegate when a connection fails" (do ()
+    (set @called nil)
+    (HTTPDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/status-code?code=500") nuBlock:(do (response)
+      (set @called t)
+    ))
+    (wait 0.1 (do ()
+      (~ @called should be:nil)
+      (~ ((@delegate methodCalls) valueForKey:"downloadFailed:") should be kindOfClass:HTTPDownload)
+    ))
+  ))
 ))
 
 (describe "JSONDownload" `(

@@ -7,6 +7,7 @@ Transformed fields:
 * date_epoch
 
 Added fields:
+
 * show.poster
 * show.overview
 * show.air_time
@@ -18,6 +19,7 @@ Library
 Default fields:
 
 Added fields:
+
 * poster
 * thumb
 * overview
@@ -28,6 +30,7 @@ Watched
 ----
 
 Added fields:
+
 * show.poster
 * show.overview
 * episode.overview
@@ -36,6 +39,7 @@ Show
 ----
 
 Added fields:
+
 * top_episodes.overview
 * top_episodes.thumb
 * poster
@@ -46,6 +50,7 @@ SeasonWithEpisodes
 ----
 
 Added fields:
+
 * episode_count
 * episodes (the entire array is added afterwards)
 
@@ -53,6 +58,7 @@ Season
 ----
 
 Added fields:
+
 * overview
 * name
 * thumb
@@ -61,7 +67,9 @@ Trending
 ----
 
 Added fields:
+
 * poster
 * thumb
 * network
 * air_time
+

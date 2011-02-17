@@ -1,6 +1,6 @@
 #import "LibraryViewController.h"
 #import "Trakt.h"
-
+#import "Show.h"
 @implementation LibraryViewController
 
 - (void)viewDidLoad {
@@ -14,5 +14,20 @@
   }];
 }
 
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  static NSString *CellIdentifier = @"Cell";
+  UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+  if (cell == nil) {
+    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+  }
+
+  Show *show = [self.shows objectAtIndex:indexPath.row];
+  UILabel *label = cell.textLabel;
+  label.text = show.title;
+  return cell;
+}
 
 @end

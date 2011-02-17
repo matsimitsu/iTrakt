@@ -24,8 +24,8 @@ Caching
 API
 ---
 
-* The API should return whether or not the user has seen the episode in the show json
-* A calendar feed for users that aren't signed in or aren't registered trakt.tv users
+* The API should return whether or not the user has seen the episode in the show json - Requested
+* A calendar feed for users that aren't signed in or aren't registered trakt.tv users - Requested
 * Search through all shows
 
 Design discussion

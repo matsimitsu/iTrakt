@@ -37,12 +37,14 @@ Design discussion
 * First launch: load calendar, then visible row images + library & trending feeds
 * Not first launch, i.e. the app was inactive, or the user hits the 'reload' button: reload _all_ feeds, but load the current visible one first.
 
+---- Pending by Robert ----
 * Calendar text:
   <pre><code>
     7x22: Show title
     Episode title
     9 PM on ABC
   </code></pre>
+---- / Pending by Robert ----
 
 * Use default trakt image for when images aren't loaded yet (pass default image to Thijs for editing)
 

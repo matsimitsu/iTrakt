@@ -38,27 +38,32 @@ Design discussion
 * Not first launch, i.e. the app was inactive, or the user hits the 'reload' button: reload _all_ feeds, but load the current visible one first.
 
 * Calendar text:
+  <pre><code>
     7x22: Show title
     Episode title
     9 PM on ABC
+  </code></pre>
 
 * Use default trakt image for when images aren't loaded yet (pass default image to Thijs for editing)
 
 * Shows that the user has in her library should *not* show up in 'trending'
 
 * The trending view should have images *and* have the following text, where the first part is an excerpt of the description like Mail does for emails:
+  <pre><code>
     How I Met Your Mother is a comedy about Ted and how he fell…
     Genre Comedy
     <3 96%
+  </code></pre>
 
 * The library view should not have images. This is the user's library, so she'll recognize shows by name. This also makes it easy to differentiate between library/trending.
 
-* The show details view should have a disclosure entry top go to the seasons/episodes list view and says how many episodes there are in total: Episodes (23) >
+* The show details view should have a disclosure entry top go to the seasons/episodes list view and says how many episodes there are in total: `Episodes (23) >`
   Let's leave the episode count be for now, not sure if that's really useful.
-* The seasons/episodes table view should have season groups like the calendar view, with episode entries like: [√] Episode title >
+* The seasons/episodes table view should have season groups like the calendar view, with episode entries like: `[√] Episode title >`
   The checkbox should be like the one in Things.
 
 * The eipsode details view should have a disclosure entry to the show's episodes list
 * The 'seen' entry in the episode details view should have the same checkbox as in the episodes list. (The one from Things)
 
 * Shows and show episodes list views should show a quick alphabetic navigation thingie when it makes sense. See the HIG.
+

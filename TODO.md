@@ -14,7 +14,7 @@ Authentication
 * Settings screen to enter username
 * Way to check if username exists
 * Add user credentials as basic-auth headers to _all_ requests to itrakt.matsimitsu.com.
-  Ideally to trakt.tv as well, but this has to be discussed with them first, so for now wait with calls like 'seen' POSTs.
+  Ideally to trakt.tv as well, but this has to be discussed with them first, so for now wait with calls like 'seen' POSTs. - Requested
 
 Caching
 -------

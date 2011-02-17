@@ -1,0 +1,345 @@
+/* Links */
+
+a
+{
+  color: #00c;
+  text-decoration: none;
+}
+a:hover,
+a:active
+{
+  text-decoration: underline;
+}
+a:visited
+{
+  color: #009;
+}
+
+/* Typography and margins */
+
+body,
+table
+{
+  font: 14px/18px palatino, georgia, serif;
+}
+h1,
+h2 
+{
+  margin: 12px 0 6px 0;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -.5px;
+  font-weight: normal;
+  color: #222;
+}
+h3
+{
+  font-size: 14px;
+}
+p,
+ul,
+ol
+{
+  margin: 12px 0;
+}
+p.date,
+p.author
+{
+  clear: both;
+  margin: 6px 0;
+}
+p.number,
+#doc p.date
+{
+  margin: 6px 0 24px 0;
+}
+p.author,
+#doc p.date
+{
+  font-style: italic;
+}
+table,
+dl
+{
+  margin: 21px 0 24px 0;
+}
+p.greeting
+{
+  margin: 24px 0;
+}
+p.signature,
+p.attachments
+{
+  margin: 72px 0 24px 0;
+}
+
+/* Page structure */
+
+html,
+body
+{
+  margin: 0;
+  padding: 0;
+}
+body
+{
+  padding: 0 10%;
+  background: #fff url(http://resources.fngtps.com/2006/grad.gif) top right repeat-x;
+}
+body.requirements
+{
+  padding: 0 2em;
+}
+#logo
+{
+  float: right;
+  width: 200px;
+  height: 108px;
+  margin: 0 0 0 12px;
+  padding: 0;
+
+}
+#logo_beheer
+{
+  margin: 48px 0 24px 0;
+  padding: 0 0 6px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 24px;
+  text-align: right;
+  color: #777
+}
+h1
+{
+  margin: 0 0 24px 0;
+  padding-top: 73px;
+}
+#logo_beheer+h1
+{
+  padding: 0;
+}
+.vcard 
+{
+  margin: 12px 0;
+  padding: 5px 0 0 0;
+  border-top: 1px solid #ccc;
+  font-size: 12px;
+  text-align: right;
+  color: #777
+}
+
+/* Invoice table */
+
+table
+{
+  border-collapse: collapse;
+  empty-cells: show;
+}
+table.invoice th,
+table.invoice td
+{
+  padding: 0 18px 0 0;
+  vertical-align: top;
+  text-align: left;
+  line-height: 24px;
+}
+table.invoice .amount
+{
+  text-align: right;
+  white-space: nowrap;
+}
+table.invoice .note
+{
+  padding: 0;
+}
+table.invoice tbody,
+table.invoice tr.total
+{
+  border-top: 1px solid #ccc;
+}
+table.invoice tbody.total th
+{
+  text-align: right;
+  font-weight: normal;
+}
+table.invoice tr.total th,
+table.invoice tr.total td
+{
+  font-weight: bold;
+}
+
+/* Data table */
+
+table.data 
+{
+  font-size: 12px;
+}
+table.data th,
+table.data td
+{
+  padding: 2px 6px;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid #ccc;
+}
+table.data th
+{
+  background-color: #eee;
+}
+table.data .separator
+{ 
+  border-top: 2px solid #000;
+}
+body.requirements table.data .dropped
+{
+  color: #999; 
+  background-color: #f6f6f8; 
+  text-decoration: line-through;
+}
+body.requirements table.data .done
+{
+  background-color: #f0f8ff;
+}
+
+/* Plain lists */
+
+ul,
+ol
+{
+  padding: 0;
+}
+ul
+{
+  list-style-type: square;
+}
+li
+{
+  margin: 0;
+  padding: 0;
+}
+.separated li
+{
+  margin: .5em 0;
+}
+li li
+{
+  margin-left: 2em;
+}
+
+/* Definition list */
+
+dl
+{
+  border-bottom: 1px solid #ccc;
+}
+dt,
+dd
+{
+  margin: 0;
+}
+dt
+{
+  padding: 6px 1em 0 0;
+  display: block;
+  float: left;
+  clear: both;
+  font-weight: bold;
+}
+dd
+{
+  padding: 6px 0;
+  border-top: 1px solid #ccc;
+  padding-left: 25%;
+  display: block;
+}
+
+/* Additional elements */
+
+hr
+{
+  margin: 2em 0;
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+}
+div.note
+{
+  margin: 2em 0;
+  padding: 1px 18px;
+  border: 1px solid #ccc;
+  background-color: #f6f6f8;
+}
+
+/* Printing */
+
+@media print
+{
+  .noprint
+  {
+    display: none;
+  }
+  body,
+  table
+  {
+    font: 12px/15px palatino, georgia, serif;
+  }
+  table.invoice th,
+  table.invoice td
+  {
+    line-height: 20px;
+  }
+  table.data,
+  .vcard 
+  {
+    font-size: 10px;
+  }
+  a,
+  a:visited,
+  h1,
+  h2,
+  .vcard
+  {
+    color: #000;
+  }
+  h1
+  {
+    padding-top: 0;
+  }
+  body
+  {
+    padding: 1em 3em;
+  }
+  body,
+  #logo 
+  {
+    background: none;
+  }
+  #logo
+  {
+    width: auto;
+    height: auto;
+  }
+  #logo img
+  {
+    padding: 0 0 0 0;
+    display: block;
+    height: 42px;
+  }
+}
+
+/* Development */
+
+/*
+body
+{
+  background: url(dev-grid.png);
+}
+p,
+h1,
+h2,
+a,
+.vcard div,
+td
+{
+  background: url(dev-overlay.png);
+}
+*/

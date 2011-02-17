@@ -7,24 +7,25 @@ USER STORIES
 
 iTrakt
 
-As a user I want to see an overview of the tv series I watch so I won't miss upcoming episodes. - #1 i1
-As a user I want to see details of an episode so I know what the episode is about - #2 i1
-As a user I want to mark an episode as seen so my trakt.tv history is updated - #3 i1
-As a user I want to see my library so I can mark episodes as seen. - #4 i1
-As a user I want to see overviews of trending, most watched, highest rated shows so I can discover shows. - #13 i1
-As a user I want to receive push notifications about tv series I follow and are about to be aired so I can view it as soon as possible - #5 i2
-As a user I want to indicate whether or not I liked an episode so others will see an average rating indication - #6 i3
-As a user I want to see average ratings for an episode so I know if I should watch it - #7 i3
-As a user I want to see what my friend are watching so I can watch it as well - #11 i4
+As a user I would like to  see an overview of the tv series I watch so that I won't miss upcoming episodes. - #1 i1
+As a user I would like to  see details of an episode so that I know what the episode is about - #2 i1
+As a user I would like to  mark an episode as seen so my trakt.tv history is updated - #3 i1
+As a user I would like to  see my library so that I can mark episodes as seen. - #4 i1
+As a user I would like to  see overviews of trending, most watched, highest rated shows so that I can discover shows. - #13 i1
+As a user I would like to  receive push notifications about tv series I follow and are about to be aired so that I can view it as soon as possible - #5 i2
+As a user I would like to  indicate whether or not I liked an episode so that others will see an average rating indication - #6 i3
+As a user I would like to  see average ratings for an episode so that I know if I should watch it - #7 i3
+As a user I would like to  see what my friend are watching so that I can watch it as well - #11 i4
 
 Trakt API
 
-As a developer I want to retrieve episode stats so I can inform the user about the episode - #8 i3
-As a developer I want to post episode stats so the user can voice her opinion about the episode - #9 i3
-As a developer I want to retrieve friends and their shows so the user can see what his friends are watching - #12 i3
+As a developer I would like to  retrieve episode stats so that I can inform the user about the episode - #8 i3
+As a developer I would like to  post episode stats so that the user can voice her opinion about the episode - #9 i3
+As a developer I would like to  retrieve friends and their shows so that the user can see what his friends are watching - #12 i3
+
 Intermediate API
 
-As a developer I want to send push notifications to the Apple notification server so a user is informed about the broadcast of a tv serie she watches - #10 i2
+As a developer I would like to  send push notifications to the Apple notification server so that a user is informed about the broadcast of a tv serie she watches - #10 i2
 
 ROLES
 

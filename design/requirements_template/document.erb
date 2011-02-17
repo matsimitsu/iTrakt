@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Requirements <%= title %> &middot; Fingertips</title>
+<link rel="stylesheet" type="text/css" media="all" href="requirements_template/doc.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+  td.id { text-align: right !important; }
+  td.id a { color: #000; }
+  table.review { border-bottom: 1px solid #ccc; margin-top: -1em;}
+  table.review td { padding: .25em 0; vertical-align: top; text-align: left; min-width: 1em; }
+  table.review th { padding: .25em 0; vertical-align: top; text-align: right; }
+  table.review td.story { width: 100%; border-top: 1px solid #ccc; }
+  table.review td.meta { padding-left: 1em; border-top: 1px solid #ccc; text-align: right !important; white-space: nowrap; }
+  table.review td.notes { color: #666; padding: 0 0 .25em 0; font-style: italic; }
+  table.review .dropped { color: #666; text-decoration: line-through; }
+  table.review .done { color: #666; background-color: #f0f8ff; }
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+</head>
+<body id="doc" class="requirements">
+
+<p id="logo"><img src="requirements_template/trakt-logo.png" alt="trakt.tv" /></p>
+
+<h1>Requirements <br /><%= title %></h1>
+
+<% authors.each do |author| %>
+<p class="author"><%= format_author(author) %></p>
+<% end %>
+
+<% introduction.each do |paragraph| %>
+<p><%= paragraph %></p>
+<% end %>
+
+<% unless stories.empty? %>
+<h2>User stories</h2>
+<% stories.each do |header, stories| %>
+<% unless header.strip == '' %>
+<h3><%= header %></h3>
+<% end %>
+<table class="review">
+<tr>
+  <th></th>
+  <th title="id">#</th>
+  <th title="Estimate">e</th>
+  <th title="Iteration">i</th>
+  <th title="Status">s</th>
+</tr>
+<% stories.each do |story| %>
+<tr class="<%= story[:status] %>" id="story<%= story[:id] %>">
+  <td class="story"><%= story[:description] %></td>
+  <td class="meta id"><%= story[:id] %></td>
+  <td class="meta estimate"><%= format_estimate(*story[:estimate]) if story[:estimate] %></td>
+  <td class="meta iteration"><%= story[:iteration] %></td>
+  <td class="meta status"><%= story[:status] %></td>
+</tr>
+<% if story[:notes] %>
+<tr class="<%= story[:status] %>">
+  <td class="notes" colspan="5"><%= story[:notes] %></td>
+</tr>
+<% end %>
+<% end %>
+</table>
+<% end %>
+<% end %>
+
+<% definitions.each do |header, definitions| %>
+<% unless header.strip == '' %>
+<h2><%= format_header(header) %></h2>
+<% end %>
+<dl>
+<% definitions.each do |definition| %>
+<dt><%= definition[:title] %></dt>
+<dd><%= definition[:definition] %></dd>
+<% end %>
+</dl>
+<% end %>
+</body>
+</html>

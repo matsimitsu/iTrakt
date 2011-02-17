@@ -1,6 +1,6 @@
 desc "Convert requirements to HTML"
 task :requirements do
-  sh "saga convert design/requirements.txt > design/requirements.html"
+  sh "saga convert --template design/requirements_template design/requirements.txt > design/requirements.html"
 end
 
 desc "Start the fixture server needed for the specs"

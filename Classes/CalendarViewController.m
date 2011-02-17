@@ -10,6 +10,8 @@
 @implementation CalendarViewController
 
 @synthesize broadcastDates;
+@synthesize searchBar;
+@synthesize searchController;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -23,6 +25,11 @@
 
   // TODO replace this with the actual username
   [Trakt sharedInstance].apiUser = @"matsimitsu";
+
+  self.searchController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
+  self.searchController.delegate = self;
+  self.searchController.searchResultsDataSource = self;
+  self.searchController.searchResultsDelegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -104,6 +111,29 @@
 
 
 #pragma mark -
+#pragma mark UISearchDisplayController Delegate Methods
+ 
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchText {
+  NSLog(@"Search for: %@", searchText);
+
+  NSMutableArray *filteredListContent = [NSMutableArray array];
+
+  for (BroadcastDate *broadcastDate in self.broadcastDates) {
+    for (Episode *episode in broadcastDate.episodes) {
+      NSRange range = [episode.showTitle rangeOfString:searchText
+                                               options:NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch | NSWidthInsensitiveSearch];
+      if (range.location != NSNotFound) {
+        NSLog(@"Episode: %@", episode.showTitle);
+        [filteredListContent addObject:episode];
+      }
+    }
+  }
+
+  return YES;
+}
+
+
+#pragma mark -
 #pragma mark Memory management
 
 - (void)didReceiveMemoryWarning {
@@ -120,7 +150,9 @@
 
 
 - (void)dealloc {
-    [super dealloc];
+  [super dealloc];
+  self.broadcastDates = nil;
+  self.searchController = nil;
 }
 
 

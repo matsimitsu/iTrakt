@@ -55,7 +55,7 @@ Design discussion
     <3 96%
   </code></pre>
 
-* The library view should not have images. This is the user's library, so she'll recognize shows by name. This also makes it easy to differentiate between library/trending.
+* The library view should not have images. This is the user's library, so she'll recognize shows by name. This also makes it easy to differentiate between library/trending. - PENDING
 
 * The show details view should have a disclosure entry top go to the seasons/episodes list view and says how many episodes there are in total: `Episodes (23) >`
   Let's leave the episode count be for now, not sure if that's really useful.

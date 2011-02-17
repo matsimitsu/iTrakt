@@ -58,10 +58,12 @@ Design discussion
   </code></pre>
 
 
-* The show details view should have a disclosure entry top go to the seasons/episodes list view and says how many episodes there are in total: `Episodes (23) >`
+* The show details view should have a disclosure entry top go to the seasons/episodes list view and says how many episodes there are in total: `Episodes (23) >` - Robert
   Let's leave the episode count be for now, not sure if that's really useful.
-* The seasons/episodes table view should have season groups like the calendar view, with episode entries like: `[√] Episode title >`
-  The checkbox should be like the one in Things.
+* The seasons/episodes table view
+**  should have season groups like the calendar view, - Robert
+**  with episode entries like: `[√] Episode title >`
+**  The checkbox should be like the one in Things.
 
 * The eipsode details view should have a disclosure entry to the show's episodes list
 * The 'seen' entry in the episode details view should have the same checkbox as in the episodes list. (The one from Things)

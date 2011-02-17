@@ -28,15 +28,15 @@
     self.imageView.opaque = YES;
     [self.contentView addSubview:self.imageView];
 
-    self.titleLabel = [UILabel new];
-    self.titleLabel.opaque = YES;
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
-    [self.contentView addSubview:titleLabel];
-
     self.serieTitleAndEpisodeNumberLabel = [UILabel new];
     self.serieTitleAndEpisodeNumberLabel.opaque = YES;
-    self.serieTitleAndEpisodeNumberLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
+    self.serieTitleAndEpisodeNumberLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
     [self.contentView addSubview:serieTitleAndEpisodeNumberLabel];
+
+    self.titleLabel = [UILabel new];
+    self.titleLabel.opaque = YES;
+    self.titleLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
+    [self.contentView addSubview:titleLabel];
 
     self.airTimeAndChannelLabel = [UILabel new];
     self.airTimeAndChannelLabel.opaque = YES;
@@ -63,9 +63,9 @@
     self.airTimeAndChannelLabel.textColor = [UIColor whiteColor];
     self.serieTitleAndEpisodeNumberLabel.textColor = [UIColor whiteColor];
   } else {
-    self.titleLabel.textColor = [UIColor blackColor];
+    self.serieTitleAndEpisodeNumberLabel.textColor = [UIColor blackColor];
+    self.titleLabel.textColor = [UIColor grayColor];
     self.airTimeAndChannelLabel.textColor = [UIColor grayColor];
-    self.serieTitleAndEpisodeNumberLabel.textColor = [UIColor grayColor];
   }
 
   CGSize size = self.bounds.size;
@@ -84,13 +84,14 @@
   y += MARGIN;
   labelWidth = size.width - x;
   labelHeight = [UIFont systemFontSize] + MARGIN_UNDERNEATH_LABEL;
-  self.titleLabel.text = self.episode.title;
-  self.titleLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
+  self.serieTitleAndEpisodeNumberLabel.text = [self.episode serieTitleAndEpisodeNumber];
+  self.serieTitleAndEpisodeNumberLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
+
 
   y += labelHeight + MARGIN_UNDERNEATH_LABEL;
   labelHeight = [UIFont smallSystemFontSize] + MARGIN_UNDERNEATH_LABEL;
-  self.serieTitleAndEpisodeNumberLabel.text = [self.episode serieTitleAndEpisodeNumber];
-  self.serieTitleAndEpisodeNumberLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
+  self.titleLabel.text = self.episode.title;
+  self.titleLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
 
   y += labelHeight + MARGIN_UNDERNEATH_LABEL;
   self.airTimeAndChannelLabel.text = [self.episode airTimeAndChannel];

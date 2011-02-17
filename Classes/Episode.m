@@ -95,7 +95,7 @@
 }
 
 - (NSString *)serieTitleAndEpisodeNumber {
-  return [NSString stringWithFormat:@"%@ %@", self.showTitle, [self episodeNumber], nil];
+  return [NSString stringWithFormat:@"%@ %@", [self episodeNumber], self.showTitle, nil];
 }
 
 - (NSString *)localizedAirTime {

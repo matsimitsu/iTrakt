@@ -1,17 +1,32 @@
+General
+-------
+
 * Research which OSS license the app should have and that we adhere to the licenses of APIs.
   TVDB: http://forums.thetvdb.com/viewtopic.php?f=8&t=2507
-
-* The API should return whether or not the user has seen the episode in the show json.
-* Add a 'Show' entry to an episode's details view, but only if it's loaded from the calendar.
-* Add a Show property to a Episode, which holds the show related data that we now store on the episode itself
-* Resize the show posters on the API side to increase download speeds
-* Set the preferred show poster thumb size from the calendar controller
-* URL encode the username in the API url?
-* We need a calendar feed for not registered/signed-in users like the site has.
+* Add a Show property to a Episode, which holds the show related data that we now store on the episode itself.
+* Resize the show posters on the API side to increase download speeds, when we know exactly which sizes we need.
+* Set the preferred show poster thumb size from the calendar controller.
 * Handle connection errors in some way which is needed to provide a good UX. I.e. should we retry, take a failure block, etc.
+
+Authentication
+--------------
+
 * Settings screen to enter username
 * Way to check if username exists
-* Add load screen
+* Add user credentials as basic-auth headers to _all_ requests to itrakt.matsimitsu.com.
+  Ideally to trakt.tv as well, but this has to be discussed with them first, so for now wait with calls like 'seen' POSTs.
+
+Caching
+-------
+
+* Cache show posters and thumbs indefinitely.
+
+API
+---
+
+* The API should return whether or not the user has seen the episode in the show json
+* A calendar feed for users that aren't signed in or aren't registered trakt.tv users
+* Search through all shows
 
 Design discussion
 -----------------
@@ -38,7 +53,8 @@ Design discussion
 
 * The library view should not have images. This is the user's library, so she'll recognize shows by name. This also makes it easy to differentiate between library/trending.
 
-* The show details view should have a disclosure entry that says how many episodes there are in total: Episodes (23) >
+* The show details view should have a disclosure entry top go to the seasons/episodes list view and says how many episodes there are in total: Episodes (23) >
+  Let's leave the episode count be for now, not sure if that's really useful.
 * The seasons/episodes table view should have season groups like the calendar view, with episode entries like: [√] Episode title >
   The checkbox should be like the one in Things.
 
@@ -46,19 +62,3 @@ Design discussion
 * The 'seen' entry in the episode details view should have the same checkbox as in the episodes list. (The one from Things)
 
 * Shows and show episodes list views should show a quick alphabetic navigation thingie when it makes sense. See the HIG.
-
-Caching
--------
-
-* Cache calendar feed until end of current day. This might only mean that series that have just been added might not show up in the feed until tomorrow. Does trakt.tv even update the calendar feed that fast, though?
-* Do posters for shows ever change? Or should we just cache them 'indefinitely'?
-* Do Show thumbs ever change? Or should we just cache them 'indefinitely'?
-* Caching Episode thumbs too long is probably useless, as one probably isn't going to look at the same episode details too often.
-
-API extensions needed
----------------------
-
-* A calendar feed for users that aren't signed in or aren't registered trakt.tv users
-* The show-summary feed should include all seasons/episodes
-* Show feeds for ‘trending’, ‘highest rated’, and ‘most watched’. PS what does ‘trending’ mean?
-* Show search

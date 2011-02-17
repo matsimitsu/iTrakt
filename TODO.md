@@ -31,7 +31,7 @@ API
 Design discussion
 -----------------
 
-* All lists should be searchable (filter)
+* The Library list should be searchable. Does it make sense for the trending list? Maybe not, as you're browsing for new shows.
 * All top-level views should have a reload button
 
 * First launch: load calendar, then visible row images + library & trending feeds

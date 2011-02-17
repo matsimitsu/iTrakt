@@ -11,6 +11,7 @@
 
 @synthesize broadcastDates;
 @synthesize searchBar;
+@synthesize filteredListContent;
 @synthesize searchController;
 
 #pragma mark -
@@ -26,10 +27,12 @@
   // TODO replace this with the actual username
   [Trakt sharedInstance].apiUser = @"matsimitsu";
 
+  self.filteredListContent = [[NSMutableArray alloc] init];
   self.searchController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
   self.searchController.delegate = self;
   self.searchController.searchResultsDataSource = self;
   self.searchController.searchResultsDelegate = self;
+  self.searchController.searchResultsTableView.rowHeight = ROW_HEIGHT;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -58,19 +61,36 @@
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return [broadcastDates count];
+  if (tableView == self.searchController.searchResultsTableView) {
+    //NSLog(@"Sections in filtered set: %d", [filteredListContent count]);
+    return [filteredListContent count];
+  } else {
+    return [broadcastDates count];
+  }
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:section];
-  return [broadcastDate.episodes count];
+  if (tableView == self.searchController.searchResultsTableView) {
+    NSMutableArray *dateWithEpisodes = [filteredListContent objectAtIndex:section];
+    //NSLog(@"%d episodes on date: %@", [dateWithEpisodes count] - 1, ((BroadcastDate *)[dateWithEpisodes objectAtIndex:0]).date);
+    return [dateWithEpisodes count] - 1;
+  } else {
+    BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:section];
+    return [broadcastDate.episodes count];
+  }
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-  BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:section];
+  BroadcastDate *broadcastDate;
+  if (tableView == self.searchController.searchResultsTableView) {
+    broadcastDate = [(NSMutableArray *)[filteredListContent objectAtIndex:section] objectAtIndex:0];
+    //NSLog(@"Section for %@", broadcastDate.date);
+  } else {
+    broadcastDate = [broadcastDates objectAtIndex:section];
+  }
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
   [dateFormatter setDateFormat:@"EEEE MMMM d"];
@@ -90,8 +110,14 @@
     cell.frame = CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, self.tableView.rowHeight);
   }
 
-  BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
-  cell.episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
+  if (tableView == self.searchController.searchResultsTableView) {
+    NSArray *section = [filteredListContent objectAtIndex:indexPath.section];
+    //NSLog(@"Episode show: %@", ((Episode *)[section objectAtIndex:(indexPath.row + 1)]).showTitle);
+    cell.episode = [section objectAtIndex:(indexPath.row + 1)];
+  } else {
+    BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
+    cell.episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
+  }
 
   return cell;
 }
@@ -101,8 +127,14 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
-  Episode *episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
+  Episode *episode;
+  if (tableView == self.searchController.searchResultsTableView) {
+    NSArray *section = [filteredListContent objectAtIndex:indexPath.section];
+    episode = [section objectAtIndex:(indexPath.row + 1)];
+  } else {
+    BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
+    episode = [broadcastDate.episodes objectAtIndex:indexPath.row];
+  }
 
   EpisodeDetailsViewController *controller = [[EpisodeDetailsViewController alloc] initWithEpisode:episode];
   [self.navigationController pushViewController:controller animated:YES];
@@ -114,18 +146,26 @@
 #pragma mark UISearchDisplayController Delegate Methods
  
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchText {
-  NSLog(@"Search for: %@", searchText);
+  //NSLog(@"Search for: %@", searchText);
+  [self.filteredListContent removeAllObjects];
 
-  NSMutableArray *filteredListContent = [NSMutableArray array];
+  NSMutableArray *dateWithEpisodes = nil;
 
   for (BroadcastDate *broadcastDate in self.broadcastDates) {
     for (Episode *episode in broadcastDate.episodes) {
       NSRange range = [episode.showTitle rangeOfString:searchText
                                                options:NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch | NSWidthInsensitiveSearch];
       if (range.location != NSNotFound) {
-        NSLog(@"Episode: %@", episode.showTitle);
-        [filteredListContent addObject:episode];
+        //NSLog(@"Episode: %@", episode.showTitle);
+        if (dateWithEpisodes == nil) {
+          dateWithEpisodes = [NSMutableArray arrayWithObject:broadcastDate];
+        }
+        [dateWithEpisodes addObject:episode];
       }
+    }
+    if (dateWithEpisodes) {
+      [self.filteredListContent addObject:dateWithEpisodes];
+      dateWithEpisodes = nil;
     }
   }
 

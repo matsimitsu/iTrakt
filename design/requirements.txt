@@ -5,27 +5,43 @@ Requirements iTrakt
 
 USER STORIES
 
-iTrakt
+Overviews
 
-As a user I would like to  see an overview of the tv series I watch so that I won't miss upcoming episodes. - #1 i1
-As a user I would like to  see details of an episode so that I know what the episode is about - #2 i1
-As a user I would like to  mark an episode as seen so my trakt.tv history is updated - #3 i1
-As a user I would like to  see my library so that I can mark episodes as seen. - #4 i1
-As a user I would like to  see overviews of trending, most watched, highest rated shows so that I can discover shows. - #13 i1
-As a user I would like to  receive push notifications about tv series I follow and are about to be aired so that I can view it as soon as possible - #5 i2
-As a user I would like to  indicate whether or not I liked an episode so that others will see an average rating indication - #6 i3
-As a user I would like to  see average ratings for an episode so that I know if I should watch it - #7 i3
-As a user I would like to  see what my friend are watching so that I can watch it as well - #11 i4
+As a user I would like to see an overview of the tv series I watch and are being aired this week so that I won't miss upcoming episodes. - #1 i1 done
+As a user I would like to see my library so that I can mark episodes as seen. - #4 i1 done
+As a user I would like to see trending shows so that I can discover shows I haven’t seen yet. - #13 i1 partial
+  Still need to fix the row layout.
+As a user I would like to be able to filter long lists of shows so that can easily drill down to the one I’m looking for. - #14 i1 todo
+As a user I would like to be able to navigate through long lists with a sidebar index thingie so that I can find what I'm looking for as quick as possible. - #15 i1 todo
+As a user I would like to see my calendar as soon as possible on first launch so that I can start using the app quickly. - #16 i1 todo
+  Load the calendar feed first, then the content for the other views and images.
+As a user I would like to see fresh content for the view I was looking at before moving the app to inactive state so that I can quickly go on from where I left off. - #17 i1 todo
+  The content for the view the user is currently looking at should be loaded first, then the content for all other views and images.
+As a user I would like to be able to reload the app's content myself so that I know I’m looking at up-to-date information. - #18 i1 todo
+  The content for the view the user is currently looking at should be loaded first, then the content for all other views and images.
+
+Episode
+
+As a user I would like to see details of an episode so that I know what the episode is about - #2 i1 done
+As a user I would like to mark an episode as seen so my trakt.tv history is updated - #3 i1 todo
+As a user I would like to see average ratings for an episode so that I know if I should watch it - #7 i3 todo
+As a user I would like to indicate whether or not I liked an episode so that others will see an average rating indication - #6 i3 todo
+As a user I would like to be able to quickly go to the show's complete seasons & episodes overview so that I can quickly see if I have missed episodes. - #19 i1 todo
+
+Misc
+
+As a user I would like to see what my friend are watching so that I can watch it as well - #11 i4 todo
+As a user I would like to receive push notifications about tv series I follow and are about to be aired so that I can view it as soon as possible - #5 i2 todo
 
 Trakt API
 
-As a developer I would like to  retrieve episode stats so that I can inform the user about the episode - #8 i3
-As a developer I would like to  post episode stats so that the user can voice her opinion about the episode - #9 i3
-As a developer I would like to  retrieve friends and their shows so that the user can see what his friends are watching - #12 i3
+As a developer I would like to retrieve episode stats so that I can inform the user about the episode - #8 i3 todo
+As a developer I would like to post episode stats so that the user can voice her opinion about the episode - #9 i3 todo
+As a developer I would like to retrieve friends and their shows so that the user can see what his friends are watching - #12 i3 todo
 
 Intermediate API
 
-As a developer I would like to  send push notifications to the Apple notification server so that a user is informed about the broadcast of a tv serie she watches - #10 i2
+As a developer I would like to send push notifications to the Apple notification server so that a user is informed about the broadcast of a tv serie she watches - #10 i2 todo
 
 ROLES
 

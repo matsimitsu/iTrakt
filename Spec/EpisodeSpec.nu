@@ -33,7 +33,7 @@
     (~ (@episode season) should be:3)
     (~ (@episode number) should be:1)
     (~ (@episode episodeNumber) should be:"3x01")
-    (~ (@episode serieTitleAndEpisodeNumber) should be:"Fringe 3x01")
+    (~ (@episode serieTitleAndEpisodeNumber) should be:"3x01 Fringe")
   ))
 
   (it "returns whether or not the user has seen it" (do ()

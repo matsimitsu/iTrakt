@@ -43,8 +43,6 @@ Design discussion
 
 * Use ‘today’ and ‘tomorrow’ in the calendar view? That might make the index weird, tho.
 
-* Use default trakt image for when images aren't loaded yet (pass default image to Thijs for editing)
-
 * Shows that the user has in her library should *not* show up in 'trending'
 
 * The trending view should have images *and* have the following text, where the first part is an excerpt of the description like Mail does for emails:

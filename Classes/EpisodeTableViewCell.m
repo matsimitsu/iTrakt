@@ -22,8 +22,6 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
   if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
     self.imageView = [UIImageView new];
     self.imageView.opaque = YES;
     [self.contentView addSubview:self.imageView];

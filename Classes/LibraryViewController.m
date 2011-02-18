@@ -71,7 +71,7 @@
     [tableView scrollRectToVisible:self.searchDisplayController.searchBar.frame animated:NO];
     return -1;
   } else {
-    return [self.indexTitles indexOfObject:title] - 1;
+    return index - 1;
   }
 }
 

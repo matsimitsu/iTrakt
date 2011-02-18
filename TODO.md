@@ -4,6 +4,7 @@ General
 * Research which OSS license the app should have and that we adhere to the licenses of APIs.
   TVDB: http://forums.thetvdb.com/viewtopic.php?f=8&t=2507
 
+* Should we, or should we *not* display a index on the calendar view. Actually the docs say that it shouldn't be used for grouped lists and I can see that it gets ugly when the index title overlaps a section header. Disabled for now.
 * Add Calendar class which returns episodes grouped by broadcast date.
 * The Calendar class should take a show title filter string which makes the Calendar return only those dates and episodes that match.
 * Add a Show property to a Episode, which holds the show related data that we now store on the episode itself.

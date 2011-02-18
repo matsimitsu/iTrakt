@@ -59,6 +59,25 @@
 #pragma mark -
 #pragma mark Table view data source
 
+
+// TODO should we or should we not display the index?
+//- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+  //if (tableView == self.tableView) {
+    //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //[dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+    //[dateFormatter setDateFormat:@"E"];
+    //NSMutableArray *titles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
+    //for (BroadcastDate *broadcastDate in self.broadcastDates) {
+      //[titles addObject:[dateFormatter stringFromDate:broadcastDate.date]];
+    //}
+    //[dateFormatter release];
+    //return titles;
+  //} else {
+    //return nil;
+  //}
+//}
+
+
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
   if (tableView == self.searchController.searchResultsTableView) {

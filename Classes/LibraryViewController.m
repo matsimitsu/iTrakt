@@ -4,7 +4,8 @@
 
 @implementation LibraryViewController
 
-@synthesize shows, filteredShows;
+
+@synthesize shows, filteredShows, indexTitles;
 @synthesize searchBar, searchController;
 
 
@@ -22,11 +23,30 @@
   self.searchController.searchResultsDelegate = self;
 }
 
+
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   if (self.shows == nil) {
-    [[Trakt sharedInstance] library:^(NSArray *_shows) {
-      self.shows = _shows;
+    [[Trakt sharedInstance] library:^(NSArray *loadedShows) {
+      self.shows = [NSMutableArray new];
+      self.indexTitles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
+
+      NSRange skipPrefixRange = NSMakeRange(4, 1);
+      for (Show *show in loadedShows) {
+        NSString *letter;
+        if ([show.title hasPrefix:@"The "]) {
+          letter = [show.title substringWithRange:skipPrefixRange];
+        } else {
+          letter = [show.title substringToIndex:1];
+        }
+        if (![letter isEqualToString:[indexTitles lastObject]]) {
+          [indexTitles addObject:letter];
+          [shows addObject:[NSMutableArray arrayWithObject:show]];
+        } else {
+          [[shows lastObject] addObject:show];
+        }
+      }
+
       [self.tableView reloadData];
     }];
   }
@@ -36,14 +56,38 @@
 #pragma mark -
 #pragma mark Table view data source
 
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+  if (tableView == self.tableView) {
+    return self.indexTitles;
+  } else {
+    return nil;
+  }
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+  if (title == UITableViewIndexSearch) {
+    [tableView scrollRectToVisible:self.searchDisplayController.searchBar.frame animated:NO];
+    return -1;
+  } else {
+    return [self.indexTitles indexOfObject:title] - 1;
+  }
+}
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 1;
+  if (tableView == self.tableView) {
+    return [self.shows count];
+  } else {
+    return 1;
+  }
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   if (tableView == self.tableView) {
-    return [self.shows count];
+    return [[self.shows objectAtIndex:section] count];
   } else {
     return [self.filteredShows count];
   }
@@ -56,12 +100,11 @@
 
   if (cell == nil) {
     cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   }
 
   Show *show;
   if (tableView == self.tableView) {
-    show = [self.shows objectAtIndex:indexPath.row];
+    show = [[self.shows objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
   } else {
     show = [self.filteredShows objectAtIndex:indexPath.row];
   }
@@ -79,7 +122,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   Show *show;
   if (tableView == self.tableView) {
-    show = [self.shows objectAtIndex:indexPath.row];
+    show = [[self.shows objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
   } else {
     show = [self.filteredShows objectAtIndex:indexPath.row];
   }
@@ -95,17 +138,15 @@
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchText {
   [filteredShows removeAllObjects];
-
-  for (Show *show in self.shows) {
-    NSRange range = [show.title rangeOfString:searchText
-                                      options:NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch | NSWidthInsensitiveSearch];
-    if (range.location != NSNotFound) {
-      [filteredShows addObject:show];
+  for (NSArray *section in self.shows) {
+    for (Show *show in section) {
+      NSRange range = [show.title rangeOfString:searchText
+                                        options:NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch | NSWidthInsensitiveSearch];
+      if (range.location != NSNotFound) {
+        [filteredShows addObject:show];
+      }
     }
   }
-
-  NSLog(@"Shows: %@", filteredShows);
-
   return YES;
 }
 

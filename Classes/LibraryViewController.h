@@ -6,14 +6,16 @@
 #import "Show.h"
 
 @interface LibraryViewController : UITableViewController <UISearchDisplayDelegate> {
-  NSArray *shows;
+  NSMutableArray *shows;
   NSMutableArray *filteredShows;
+  NSMutableArray *indexTitles;
   UISearchBar *searchBar;
   UISearchDisplayController *searchController;
 }
 
-@property (nonatomic, retain) NSArray *shows;
-@property (nonatomic, retain) NSArray *filteredShows;
+@property (nonatomic, retain) NSMutableArray *shows;
+@property (nonatomic, retain) NSMutableArray *filteredShows;
+@property (nonatomic, retain) NSMutableArray *indexTitles;
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, retain) UISearchDisplayController *searchController;
 

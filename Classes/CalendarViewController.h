@@ -2,7 +2,7 @@
 #import "AsyncImageTableViewController.h"
 #import "Episode.h"
 
-@interface CalendarViewController : AsyncImageTableViewController {
+@interface CalendarViewController : AsyncImageTableViewController <UISearchDisplayDelegate> {
   NSArray *broadcastDates;
   NSMutableArray *filteredListContent;
   UISearchBar *searchBar;

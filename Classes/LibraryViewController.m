@@ -3,22 +3,27 @@
 #import "Show.h"
 
 @implementation LibraryViewController
-@synthesize shows;
+
+@synthesize shows, filteredShows;
+@synthesize searchBar, searchController;
 
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
-  self.navigationItem.title = @"Calendar";
- // self.tableView.rowHeight = ROW_HEIGHT;
+  self.navigationItem.title = @"Library";
 
   // TODO replace this with the actual username
   [Trakt sharedInstance].apiUser = @"matsimitsu";
+
+  self.filteredShows = [NSMutableArray new];
+  self.searchController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
+  self.searchController.delegate = self;
+  self.searchController.searchResultsDataSource = self;
+  self.searchController.searchResultsDelegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  // TODO recache everyday!
   if (self.shows == nil) {
     [[Trakt sharedInstance] library:^(NSArray *_shows) {
       self.shows = _shows;
@@ -37,7 +42,11 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [self.shows count];
+  if (tableView == self.tableView) {
+    return [self.shows count];
+  } else {
+    return [self.filteredShows count];
+  }
 }
 
 
@@ -50,20 +59,54 @@
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   }
 
-  Show *show = [self.shows objectAtIndex:indexPath.row];
+  Show *show;
+  if (tableView == self.tableView) {
+    show = [self.shows objectAtIndex:indexPath.row];
+  } else {
+    show = [self.filteredShows objectAtIndex:indexPath.row];
+  }
+
   UILabel *label = cell.textLabel;
   label.text = show.title;
   return cell;
 }
 
+
 #pragma mark -
 #pragma mark Table view delegate
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  Show *show = [self.shows objectAtIndex:indexPath.row];
+  Show *show;
+  if (tableView == self.tableView) {
+    show = [self.shows objectAtIndex:indexPath.row];
+  } else {
+    show = [self.filteredShows objectAtIndex:indexPath.row];
+  }
   ShowDetailsViewController *controller = [[ShowDetailsViewController alloc] initWithShow:show];
   [self.navigationController pushViewController:controller animated:YES];
   [controller release];
+}
+
+
+#pragma mark -
+#pragma mark UISearchDisplayController Delegate Methods
+
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchText {
+  [filteredShows removeAllObjects];
+
+  for (Show *show in self.shows) {
+    NSRange range = [show.title rangeOfString:searchText
+                                      options:NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch | NSWidthInsensitiveSearch];
+    if (range.location != NSNotFound) {
+      [filteredShows addObject:show];
+    }
+  }
+
+  NSLog(@"Shows: %@", filteredShows);
+
+  return YES;
 }
 
 
@@ -84,7 +127,9 @@
 
 
 - (void)dealloc {
-    [super dealloc];
+  self.shows = nil;
+  self.filteredShows = nil;
+  [super dealloc];
 }
 
 @end

@@ -163,7 +163,8 @@
 
 #pragma mark -
 #pragma mark UISearchDisplayController Delegate Methods
- 
+
+
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchText {
   //NSLog(@"Search for: %@", searchText);
   [self.filteredListContent removeAllObjects];

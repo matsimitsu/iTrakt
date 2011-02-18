@@ -65,12 +65,13 @@
   ))
 
   (describe "concerning its show poster" `(
-    (it "downloads the poster image if it's not loaded from the cache" (do ()
+    (it "returns the default poster if the poster hasn't been downloaded and isn't available in the cache" (do ()
       (set trakt (Trakt sharedInstance))
       (trakt removeCachedImageForURL:(@episode posterURL) scaledTo:`(44 66))
+      (~ (@episode poster) should be:(equalToImage (UIImage imageNamed:"default-poster.png")))
+    ))
 
-      (~ (@episode poster) should be:nil)
-
+    (it "downloads the poster image if it's not loaded from the cache" (do ()
       (set @called nil)
       (@episode ensureShowPosterIsLoadedWithNuBlock:(do ()
         (set @called t)

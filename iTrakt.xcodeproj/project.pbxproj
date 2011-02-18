@@ -84,6 +84,8 @@
 		513BE4EB130817190076F8F9 /* iTraktAppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623240D0F684500981E51 /* iTraktAppDelegate.h */; };
 		513BE4EC130817190076F8F9 /* iTraktAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iTraktAppDelegate.m */; };
 		513BE4F6130817D70076F8F9 /* AppDelegateSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 513BE4F5130817D70076F8F9 /* AppDelegateSpec.nu */; };
+		513BE707130F18430076F8F9 /* default-poster.png in Resources */ = {isa = PBXBuildFile; fileRef = 513BE706130F18430076F8F9 /* default-poster.png */; };
+		513BE708130F18430076F8F9 /* default-poster.png in Resources */ = {isa = PBXBuildFile; fileRef = 513BE706130F18430076F8F9 /* default-poster.png */; };
 		516CE8D612F42D53003450CF /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 516CE8D512F42D53003450CF /* SpecHelper.m */; };
 		516CE94C12F44DE5003450CF /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2479A22B12EC83DB00E2AD4E /* YAJL.framework */; };
 		516CE9B812F4565A003450CF /* poster.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 516CE9B712F4565A003450CF /* poster.jpg */; };
@@ -197,6 +199,7 @@
 		513BE2ED1307FF280076F8F9 /* HTTPDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDownload.m; sourceTree = "<group>"; };
 		513BE438130804040076F8F9 /* HTTPDownloadSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HTTPDownloadSpec.nu; path = Spec/HTTPDownloadSpec.nu; sourceTree = "<group>"; };
 		513BE4F5130817D70076F8F9 /* AppDelegateSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AppDelegateSpec.nu; path = Spec/AppDelegateSpec.nu; sourceTree = "<group>"; };
+		513BE706130F18430076F8F9 /* default-poster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default-poster.png"; path = "design/default-poster.png"; sourceTree = "<group>"; };
 		516CE8D512F42D53003450CF /* SpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecHelper.m; path = Spec/SpecHelper.m; sourceTree = "<group>"; };
 		516CE9B712F4565A003450CF /* poster.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = poster.jpg; path = Spec/fixtures/poster.jpg; sourceTree = "<group>"; };
 		5181A1C11306EB4800B3761A /* AsyncImageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageTableViewController.h; sourceTree = "<group>"; };
@@ -336,6 +339,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				513BE706130F18430076F8F9 /* default-poster.png */,
 				513400A612EF5299007ED54E /* episode.jpg */,
 				2458FBDB12EB69D9001B7590 /* Images */,
 				2448DCED12E9EDD600AC422E /* banner.jpg */,
@@ -530,6 +534,7 @@
 				510C6EC812F8A2EC000500A1 /* LibraryViewController.xib in Resources */,
 				510C6FBF12FB5B2C000500A1 /* TrendingViewController.xib in Resources */,
 				240D101D12FB627E002349B5 /* ShowDetailsViewController.xib in Resources */,
+				513BE708130F18430076F8F9 /* default-poster.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +559,7 @@
 				2402540C12F5F07B00F651D8 /* thumb.jpg in Resources */,
 				513BE439130804040076F8F9 /* HTTPDownloadSpec.nu in Resources */,
 				513BE4F6130817D70076F8F9 /* AppDelegateSpec.nu in Resources */,
+				513BE707130F18430076F8F9 /* default-poster.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

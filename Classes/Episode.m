@@ -132,13 +132,16 @@
 - (UIImage *)poster {
   if (poster == nil) {
     poster = [[[Trakt sharedInstance] cachedShowPosterForURL:self.posterURL] retain];
+    if (poster == nil) {
+      return [UIImage imageNamed:@"default-poster.png"];
+    }
   }
   return poster;
 }
 
 - (void)ensureShowPosterIsLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the poster loaded for performance!
-  if (self.poster == nil) {
+  if (poster == nil) {
     [[Trakt sharedInstance] showPosterForURL:self.posterURL block:^(UIImage *thePoster, BOOL cached) {
       self.poster = thePoster;
       downloadedBlock();

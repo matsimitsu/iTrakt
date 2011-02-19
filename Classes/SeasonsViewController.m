@@ -127,7 +127,7 @@
   NSArray *episodesArray = [seasonDict valueForKey:@"episodes"];
   NSDictionary *episodeDict = [episodesArray objectAtIndex:indexPath.row];
   if ([[episodeDict valueForKey:@"watched"] boolValue] == true) {
-    label.text = [NSString stringWithFormat:@"[Watched] %@", [[episodeDict valueForKey:@"name"] copy], nil];
+    label.text = [NSString stringWithFormat:@"✔ %@", [[episodeDict valueForKey:@"name"] copy], nil];
   } else {
     label.text = [[episodeDict valueForKey:@"name"] copy];
   }

@@ -23,7 +23,7 @@
     self.year      = [[showDict valueForKey:@"year"] integerValue];
     self.watchers  = [[showDict valueForKey:@"watchers"] integerValue];
 
-    if(![[showDict objectForKey:@"watchers"] isKindOfClass:[NSString class]] ){
+    if([[showDict objectForKey:@"poster"] isKindOfClass:[NSString class]] ){
       self.posterURL = [NSURL URLWithString:[showDict valueForKey:@"poster"]];
     }
 
@@ -56,7 +56,7 @@
 
 - (void)ensurePosterIsLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the poster loaded for performance!
-  if (poster == nil) {
+  if (poster == nil && self.posterURL != nil) {
     [[Trakt sharedInstance] showPosterForURL:self.posterURL block:^(UIImage *thePoster, BOOL cached) {
       self.poster = thePoster;
       downloadedBlock();

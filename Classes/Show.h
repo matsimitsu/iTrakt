@@ -5,6 +5,7 @@
   NSString *title;
   NSString *overview;
   NSUInteger year;
+  NSUInteger watchers;
   NSURL *posterURL;
   NSURL *thumbURL;
   NSArray *seasons;
@@ -21,6 +22,7 @@
 @property (nonatomic, retain) UIImage *poster;
 @property (nonatomic, retain) UIImage *thumb;
 @property (assign) NSUInteger year;
+@property (assign) NSUInteger watchers;
 
 - (id)initWithDictionary:(NSDictionary *)showDict;
 

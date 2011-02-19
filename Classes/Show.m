@@ -12,6 +12,7 @@
 @synthesize seasons;
 @synthesize thumb;
 @synthesize year;
+@synthesize watchers;
 
 - (id)initWithDictionary:(NSDictionary *)showDict {
   if (self = [super init]) {
@@ -21,6 +22,8 @@
     self.posterURL = [NSURL URLWithString:[showDict valueForKey:@"poster"]];
     self.thumbURL  = [NSURL URLWithString:[showDict valueForKey:@"thumb"]];
     self.year      = [[showDict valueForKey:@"year"] integerValue];
+    self.watchers  = [[showDict valueForKey:@"watchers"] integerValue];
+
   }
   return self;
 }

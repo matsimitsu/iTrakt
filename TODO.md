@@ -44,14 +44,6 @@ Design discussion
 
 * Shows that the user has in her library should *not* show up in 'trending'
 
-* The trending view should have images *and* have the following text, where the first part is an excerpt of the description like Mail does for emails:
-  <pre><code>
-    How I Met Your Mother is a comedy about Ted and how he fell…
-    Genre Comedy
-    <3 96%
-  </code></pre>
-
-
 * The show details view should have a disclosure entry top go to the seasons/episodes list view and says how many episodes there are in total: `Episodes (23) >` - Robert
   Let's leave the episode count be for now, not sure if that's really useful.
 * The seasons/episodes table view

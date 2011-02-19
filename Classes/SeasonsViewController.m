@@ -126,7 +126,11 @@
   NSDictionary *seasonDict = [seasons objectAtIndex:indexPath.section];
   NSArray *episodesArray = [seasonDict valueForKey:@"episodes"];
   NSDictionary *episodeDict = [episodesArray objectAtIndex:indexPath.row];
-  label.text = [[episodeDict valueForKey:@"name"] copy];
+  if ([[episodeDict valueForKey:@"watched"] boolValue] == true) {
+    label.text = [NSString stringWithFormat:@"[Watched] %@", [[episodeDict valueForKey:@"name"] copy], nil];
+  } else {
+    label.text = [[episodeDict valueForKey:@"name"] copy];
+  }
   return cell;
 }
 

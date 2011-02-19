@@ -95,7 +95,7 @@ static Trakt *sharedTrakt = nil;
 
 
 - (NSURL *)seasonsURL:(NSString *)tvdb_id {
-  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/shows/%@/seasons_with_episodes", self.baseURL, tvdb_id, nil]];
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/shows/%@/seasons_with_episodes?name=%@", self.baseURL, tvdb_id, self.apiUser, nil]];
 }
 
 - (void)seasons:(NSString *)tvdb_id block:(void (^)(NSArray *seasons))block {

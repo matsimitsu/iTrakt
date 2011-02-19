@@ -19,10 +19,13 @@
     self.tvdbID    = [[showDict valueForKey:@"tvdb_id"] copy];
     self.title     = [[showDict valueForKey:@"title"] copy];
     self.overview  = [[showDict valueForKey:@"overview"] copy];
-    self.posterURL = [NSURL URLWithString:[showDict valueForKey:@"poster"]];
     self.thumbURL  = [NSURL URLWithString:[showDict valueForKey:@"thumb"]];
     self.year      = [[showDict valueForKey:@"year"] integerValue];
     self.watchers  = [[showDict valueForKey:@"watchers"] integerValue];
+
+    if(![[showDict objectForKey:@"watchers"] isKindOfClass:[NSString class]] ){
+      self.posterURL = [NSURL URLWithString:[showDict valueForKey:@"poster"]];
+    }
 
   }
   return self;
@@ -39,6 +42,9 @@
 }
 
 - (UIImage *)poster {
+  if (self.posterURL == nil) {
+    return [UIImage imageNamed:@"default-poster.png"];
+  }
   if (poster == nil) {
     poster = [[[Trakt sharedInstance] cachedShowPosterForURL:self.posterURL] retain];
     if (poster == nil) {

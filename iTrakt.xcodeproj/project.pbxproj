@@ -28,6 +28,8 @@
 		2458FBC612EB6978001B7590 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2458FBBB12EB6978001B7590 /* Default.png */; };
 		2458FBC712EB6978001B7590 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 2458FBBC12EB6978001B7590 /* Default-Portrait.png */; };
 		2458FBC812EB6978001B7590 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 2458FBBD12EB6978001B7590 /* Default-Landscape.png */; };
+		246834971310225300E177A2 /* SeasonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246834951310225300E177A2 /* SeasonsViewController.m */; };
+		2468349A1310228D00E177A2 /* SeasonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246834991310228D00E177A2 /* SeasonsViewController.xib */; };
 		2479A22C12EC83DB00E2AD4E /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2479A22B12EC83DB00E2AD4E /* YAJL.framework */; };
 		2484C6AE12E9F568000D3871 /* BroadcastDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2484C6AD12E9F568000D3871 /* BroadcastDate.m */; };
 		24EF210712EA3A2A00B54F6F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -147,6 +149,9 @@
 		2458FBBB12EB6978001B7590 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Images/Default.png; sourceTree = "<group>"; };
 		2458FBBC12EB6978001B7590 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait.png"; path = "Images/Default-Portrait.png"; sourceTree = "<group>"; };
 		2458FBBD12EB6978001B7590 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "Images/Default-Landscape.png"; sourceTree = "<group>"; };
+		246834951310225300E177A2 /* SeasonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeasonsViewController.m; sourceTree = "<group>"; };
+		246834961310225300E177A2 /* SeasonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeasonsViewController.h; sourceTree = "<group>"; };
+		246834991310228D00E177A2 /* SeasonsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SeasonsViewController.xib; path = Views/SeasonsViewController.xib; sourceTree = "<group>"; };
 		2479A22B12EC83DB00E2AD4E /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJL.framework; path = vendor/YAJL.framework; sourceTree = "<group>"; };
 		2484C6AC12E9F568000D3871 /* BroadcastDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroadcastDate.h; sourceTree = "<group>"; };
 		2484C6AD12E9F568000D3871 /* BroadcastDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BroadcastDate.m; sourceTree = "<group>"; };
@@ -240,6 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				28C286DF0D94DF7D0034E888 /* CalendarViewController.h */,
+				246834951310225300E177A2 /* SeasonsViewController.m */,
+				246834961310225300E177A2 /* SeasonsViewController.h */,
 				28C286E00D94DF7D0034E888 /* CalendarViewController.m */,
 				1D3623240D0F684500981E51 /* iTraktAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iTraktAppDelegate.m */,
@@ -402,6 +409,7 @@
 		510C6EB412F8A1EE000500A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				246834991310228D00E177A2 /* SeasonsViewController.xib */,
 				510C6FBD12FB5B2C000500A1 /* TrendingViewController.xib */,
 				5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */,
 				28F335F01007B36200424DE2 /* CalendarViewController.xib */,
@@ -535,6 +543,7 @@
 				510C6FBF12FB5B2C000500A1 /* TrendingViewController.xib in Resources */,
 				240D101D12FB627E002349B5 /* ShowDetailsViewController.xib in Resources */,
 				513BE708130F18430076F8F9 /* default-poster.png in Resources */,
+				2468349A1310228D00E177A2 /* SeasonsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +600,7 @@
 				510C6FCD12FB5D7D000500A1 /* ShowsViewController.m in Sources */,
 				5181A1C31306EB4800B3761A /* AsyncImageTableViewController.m in Sources */,
 				513BE2EE1307FF280076F8F9 /* HTTPDownload.m in Sources */,
+				246834971310225300E177A2 /* SeasonsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

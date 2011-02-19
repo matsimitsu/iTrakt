@@ -8,8 +8,8 @@
 
 #import "ShowDetailsViewController.h"
 #import "ImageCell.h"
-#import "Episode.h"
-#import "EpisodeDetailsViewController.h"
+#import "SeasonsViewController.h"
+
 #import "HTTPDownload.h"
 
 #define SHOW_IMAGE_ASPECT_RATIO 1.78
@@ -17,7 +17,6 @@
 @implementation ShowDetailsViewController
 
 @synthesize show;
-@synthesize seasons;
 
 - (id)initWithShow:(Show *)theShow {
   if (self = [super initWithNibName:@"ShowDetailsViewController" bundle:nil]) {
@@ -43,10 +42,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  [show ensureSeasonsAreLoaded:^{
-    self.seasons = show.seasons;
-    [self.tableView reloadData];
-  }];
 }
 
 
@@ -81,12 +76,7 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    if (seasons == nil) {
-      return 2;
-    } else {
-      return [self.seasons count] + 2;
-    }
+    return 2;
 }
 
 
@@ -94,11 +84,8 @@
     // Return the number of rows in the section.
     if (section == 0) {
       return 1;
-    } else if (section == 1) {
-      return 1;
     } else {
-      NSDictionary *seasonDict = [seasons objectAtIndex:section - 2];
-      return [[seasonDict valueForKey:@"episode_count"] integerValue];
+      return 2;
     }
 }
 
@@ -125,17 +112,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-  if (section >= 2) {
-    NSDictionary *seasonDict = [seasons objectAtIndex:section - 2];
-    NSInteger seasonNumber = [[seasonDict valueForKey:@"season"] integerValue];
-    if (seasonNumber == 0) {
-      return @"Specials";
-    } else {
-      return [NSString stringWithFormat:@"Season %d", seasonNumber, nil];
-    }
-   } else {
-     return nil;
-  }
+    return nil;
 }
 
 
@@ -158,7 +135,7 @@
 
     cell.image = show.thumb;
     return cell;
-  } else if (indexPath.section == 1) {
+  } else if (indexPath.section == 1 && indexPath.row == 0) {
     static NSString *cellIdentifier = @"textCell";
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
@@ -171,11 +148,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     UILabel *label = cell.textLabel;
-    switch (show.overview == nil ? (indexPath.row + 1) : indexPath.row) {
-      case 0:
-        label.text = show.overview;
-        break;
-    }
+    label.text = show.overview;
     return cell;
   } else {
     static NSString *cellIdentifier = @"episodeCell";
@@ -191,10 +164,7 @@
     }
 
     UILabel *label = cell.textLabel;
-    NSDictionary *seasonDict = [seasons objectAtIndex:indexPath.section - 2];
-    NSArray *episodesArray = [seasonDict valueForKey:@"episodes"];
-    NSDictionary *episodeDict = [episodesArray objectAtIndex:indexPath.row];
-    label.text = [[episodeDict valueForKey:@"name"] copy];
+    label.text = @"View seasons and episodes";
     return cell;
   }
 }
@@ -244,21 +214,10 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (indexPath.section >= 2) {
-    NSDictionary *seasonDict = [seasons objectAtIndex:indexPath.section - 2];
-    NSArray *episodesArray = [seasonDict valueForKey:@"episodes"];
-    NSDictionary *episodeDict = [episodesArray objectAtIndex:indexPath.row];
-
-    Episode *episode = [[Episode alloc] initWithDictionary:episodeDict show:show];
-    EpisodeDetailsViewController *controller = [[EpisodeDetailsViewController alloc] initWithEpisode:episode];
-    [episode release];
-
-    [self.navigationController pushViewController:controller animated:YES];
-    [controller release];
-  }
+  SeasonsViewController *controller = [[SeasonsViewController alloc] initWithShow:self.show];
+  [self.navigationController pushViewController:controller animated:YES];
+  [controller release];
 }
-
-
 
 
 #pragma mark -

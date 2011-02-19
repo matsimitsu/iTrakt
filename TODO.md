@@ -8,7 +8,6 @@ General
 * Add Calendar class which returns episodes grouped by broadcast date.
 * The Calendar class should take a show title filter string which makes the Calendar return only those dates and episodes that match.
 * Add a Show property to a Episode, which holds the show related data that we now store on the episode itself.
-* Resize the show posters on the API side to increase download speeds, when we know exactly which sizes we need.
 * Set the preferred show poster thumb size from the calendar controller.
 * Handle connection errors in some way which is needed to provide a good UX. I.e. should we retry, take a failure block, etc.
 

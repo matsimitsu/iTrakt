@@ -44,10 +44,7 @@ Design discussion
 
 * Shows that the user has in her library should *not* show up in 'trending'
 
-* The show details view should have a disclosure entry top go to the seasons/episodes list view and says how many episodes there are in total: `Episodes (23) >` - Robert
-  Let's leave the episode count be for now, not sure if that's really useful.
 * The seasons/episodes table view
-**  should have season groups like the calendar view, - Robert
 **  with episode entries like: `[√] Episode title >`
 **  The checkbox should be like the one in Things.
 

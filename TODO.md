@@ -17,7 +17,7 @@ Authentication
 * Settings screen to enter username
 * Way to check if username exists
 * Add user credentials as basic-auth headers to _all_ requests to itrakt.matsimitsu.com.
-  Ideally to trakt.tv as well, but this has to be discussed with them first, so for now wait with calls like 'seen' POSTs. - Requested
+  Ideally to trakt.tv as well, but this has to be discussed with them first, so for now wait with calls like 'seen' POSTs. - Requested - Implemented
 
 Caching
 -------
@@ -27,8 +27,8 @@ Caching
 API
 ---
 
-* The API should return whether or not the user has seen the episode in the show json - Requested
-* A calendar feed for users that aren't signed in or aren't registered trakt.tv users - Requested
+* The API should return whether or not the user has seen the episode in the show json - Requested - Implemented
+* A calendar feed for users that aren't signed in or aren't registered trakt.tv users - Requested - Implemented
 * Search through all shows
 
 Design discussion

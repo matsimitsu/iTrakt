@@ -26,9 +26,6 @@ Caching
 
 API
 ---
-
-* The API should return whether or not the user has seen the episode in the show json - Requested - Implemented
-* A calendar feed for users that aren't signed in or aren't registered trakt.tv users - Requested - Implemented
 * Search through all shows
 
 Design discussion
@@ -40,9 +37,9 @@ Design discussion
 * First launch: load calendar, then visible row images + library & trending feeds
 * Not first launch, i.e. the app was inactive, or the user hits the 'reload' button: reload _all_ feeds, but load the current visible one first.
 
-* Use ‘today’ and ‘tomorrow’ in the calendar view? That might make the index weird, tho.
+* Use ‘today’ and ‘tomorrow’ in the calendar view? That might make the index weird, tho, plus due to timezone difference it may not always be correct.
 
-* Shows that the user has in her library should *not* show up in 'trending'
+* Shows that the user has in her library should *not* show up in 'trending' (Are we sure about this?)
 
 * The seasons/episodes table view
 **  with episode entries like: `[√] Episode title >`

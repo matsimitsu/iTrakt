@@ -13,9 +13,6 @@
   [super viewDidLoad];
   self.navigationItem.title = @"Library";
 
-  // TODO replace this with the actual username
-  [Trakt sharedInstance].apiUser = @"matsimitsu";
-
   self.filteredShows = [NSMutableArray new];
   self.searchController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
   self.searchController.delegate = self;
@@ -26,30 +23,44 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  if (self.shows == nil) {
-    [[Trakt sharedInstance] library:^(NSArray *loadedShows) {
-      self.shows = [NSMutableArray new];
-      self.indexTitles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
-
-      NSRange skipPrefixRange = NSMakeRange(4, 1);
-      for (Show *show in loadedShows) {
-        NSString *letter;
-        if ([show.title hasPrefix:@"The "]) {
-          letter = [show.title substringWithRange:skipPrefixRange];
-        } else {
-          letter = [show.title substringToIndex:1];
-        }
-        if (![letter isEqualToString:[indexTitles lastObject]]) {
-          [indexTitles addObject:letter];
-          [shows addObject:[NSMutableArray arrayWithObject:show]];
-        } else {
-          [[shows lastObject] addObject:show];
-        }
-      }
-
-      [self.tableView reloadData];
-    }];
+  if (self.shows == nil && [Trakt sharedInstance].library != nil) {
+    NSLog(@"Loading library data from Trakt instance which has already loaded it");
+    [self loadData:[Trakt sharedInstance].library];
   }
+}
+
+
+- (void)refreshData {
+  NSLog(@"Refresh library data!");
+  [[Trakt sharedInstance] retrieveTopLevelControllerdataStartingWith:@"library:" block:^(NSArray *loadedShows) {
+    [self loadData:loadedShows];
+  }];
+}
+
+
+- (void)loadData:(NSArray *)loadedShows {
+  NSMutableArray *groupedShows = [NSMutableArray new];
+  NSMutableArray *titles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
+
+  NSRange skipPrefixRange = NSMakeRange(4, 1);
+  for (Show *show in loadedShows) {
+    NSString *letter;
+    if ([show.title hasPrefix:@"The "]) {
+      letter = [show.title substringWithRange:skipPrefixRange];
+    } else {
+      letter = [show.title substringToIndex:1];
+    }
+    if (![letter isEqualToString:[titles lastObject]]) {
+      [titles addObject:letter];
+      [groupedShows addObject:[NSMutableArray arrayWithObject:show]];
+    } else {
+      [[groupedShows lastObject] addObject:show];
+    }
+  }
+
+  self.shows = groupedShows;
+  self.indexTitles = titles;
+  [self.tableView reloadData];
 }
 
 

@@ -6,6 +6,9 @@
   NSString *baseURL;
   NSString *apiUser;
   NSString *apiPasswordHash;
+  NSArray *broadcastDates;
+  NSArray *library;
+  NSArray *trending;
 }
 
 @property (nonatomic, retain) NSString *baseURL;
@@ -13,9 +16,15 @@
 @property (nonatomic, retain) NSString *apiUser;
 @property (nonatomic, readonly) NSString *apiPasswordHash;
 
-- (void)setApiPassword:(NSString *)password;
+@property (nonatomic, retain) NSArray *broadcastDates;
+@property (nonatomic, retain) NSArray *library;
+@property (nonatomic, retain) NSArray *trending;
 
 + (Trakt *)sharedInstance;
+
+- (void)setApiPassword:(NSString *)password;
+
+- (void)retrieveTopLevelControllerdataStartingWith:(NSString *)dataDownloadSelector block:(void (^)(NSArray *data))block;
 
 - (NSURL *)calendarURL;
 - (void)calendar:(void (^)(NSArray *broadcastDates))block;

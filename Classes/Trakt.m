@@ -25,6 +25,8 @@ static Trakt *sharedTrakt = nil;
 @synthesize apiUser;
 @synthesize apiPasswordHash;
 
+@synthesize broadcastDates, library, trending;
+
 - (void)setApiPassword:(NSString *)password {
   const char *cstr = [password cStringUsingEncoding:NSUTF8StringEncoding];
   NSData *data = [NSData dataWithBytes:cstr length:[password length]];
@@ -39,21 +41,35 @@ static Trakt *sharedTrakt = nil;
   apiPasswordHash = [[result copy] retain];
 }
 
+- (void)retrieveTopLevelControllerdataStartingWith:(NSString *)dataDownloadSelector block:(void (^)(NSArray *data))block {
+  NSMutableArray *selectors = [NSMutableArray arrayWithObjects:@"calendar:", @"library:", @"trending:", nil];
+  [selectors removeObject:dataDownloadSelector];
+  NSLog(@"Call %@", dataDownloadSelector);
+  [self performSelector:NSSelectorFromString(dataDownloadSelector) withObject:block];
+  for (NSString *selector in selectors) {
+    NSLog(@"Call %@", selector);
+    [self performSelector:NSSelectorFromString(selector) withObject:nil];
+  }
+}
+
 - (NSURL *)calendarURL {
   return [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/calendar.json?name=%@", self.baseURL, self.apiUser, nil]];
 }
 
 - (void)calendar:(void (^)(NSArray *broadcastDates))block {
-  //NSLog(@"[!] Start download of calendar data");
+  NSLog(@"[!] Start download of calendar data");
   [JSONDownload downloadFromURL:[self calendarURL] block:^(id response) {
-    //NSLog(@"[!] Finished download of calendar data");
+    NSLog(@"[!] Finished download of calendar data");
     NSMutableArray *dates = [NSMutableArray array];
     for(NSDictionary *episodeDict in (NSArray *)response) {
       BroadcastDate *d = [[BroadcastDate alloc] initWithDictionary:episodeDict];
       [dates addObject:d];
       [d release];
     }
-    block([[dates copy] autorelease]);
+    self.broadcastDates = [[dates copy] autorelease];
+    if (block) {
+      block(broadcastDates);
+    }
   }];
 }
 
@@ -62,16 +78,19 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)library:(void (^)(NSArray *shows))block {
-  //NSLog(@"[!] Start download of calendar data from: %@", [self libraryURL]);
+  NSLog(@"[!] Start download of library data from: %@", [self libraryURL]);
   [JSONDownload downloadFromURL:[self libraryURL] block:^(id response) {
-    //NSLog(@"[!] Finished download of calendar data");
+    NSLog(@"[!] Finished download of library data");
     NSMutableArray *shows = [NSMutableArray array];
     for(NSDictionary *showDict in (NSArray *)response) {
       Show *s = [[Show alloc] initWithDictionary:showDict];
       [shows addObject:s];
       [s release];
     }
-    block([[shows copy] autorelease]);
+    self.library = [[shows copy] autorelease];
+    if (block) {
+      block(library);
+    }
   }];
 }
 
@@ -80,16 +99,19 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)trending:(void (^)(NSArray *shows))block {
-  //NSLog(@"[!] Start download of calendar data from: %@", [self libraryURL]);
+  NSLog(@"[!] Start download of trending data from: %@", [self libraryURL]);
   [JSONDownload downloadFromURL:[self trendingURL] block:^(id response) {
-    //NSLog(@"[!] Finished download of calendar data");
+    NSLog(@"[!] Finished download of trending data");
     NSMutableArray *shows = [NSMutableArray array];
     for(NSDictionary *showDict in (NSArray *)response) {
       Show *s = [[Show alloc] initWithDictionary:showDict];
       [shows addObject:s];
       [s release];
     }
-    block([[shows copy] autorelease]);
+    self.trending = [[shows copy] autorelease];
+    if (block) {
+      block(trending);
+    }
   }];
 }
 

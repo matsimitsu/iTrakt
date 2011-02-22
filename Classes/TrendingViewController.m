@@ -6,10 +6,23 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.navigationItem.title = @"Trending";
+}
 
-  // TODO this probably has to move to viewDidAppear so that it gets run whenever this view is shown, not just the first time!
-  [[Trakt sharedInstance] trending:^(NSArray *_shows) {
-    self.shows = _shows;
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  if (self.shows == nil && [Trakt sharedInstance].trending != nil) {
+    NSLog(@"Loading trending data from Trakt instance which has already loaded it");
+    self.shows = [Trakt sharedInstance].trending;
+    [self reloadTableViewData];
+  }
+}
+
+
+- (void)refreshData {
+  NSLog(@"Refresh trending data!");
+  [[Trakt sharedInstance] retrieveTopLevelControllerdataStartingWith:@"trending:" block:^(NSArray *loadedShows) {
+    self.shows = loadedShows;
     [self reloadTableViewData];
   }];
 }

@@ -19,4 +19,6 @@
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, retain) UISearchDisplayController *searchController;
 
+- (void)loadData:(NSArray *)loadedShows;
+
 @end

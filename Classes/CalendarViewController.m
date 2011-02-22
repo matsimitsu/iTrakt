@@ -24,9 +24,6 @@
   self.navigationItem.title = @"Calendar";
   self.tableView.rowHeight = ROW_HEIGHT;
 
-  // TODO replace this with the actual username
-  [Trakt sharedInstance].apiUser = @"matsimitsu";
-
   self.filteredListContent = [[NSMutableArray alloc] init];
   self.searchController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
   self.searchController.delegate = self;
@@ -35,15 +32,23 @@
   self.searchController.searchResultsTableView.rowHeight = ROW_HEIGHT;
 }
 
+
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  // TODO recache everyday!
-  if (self.broadcastDates == nil) {
-    [[Trakt sharedInstance] calendar:^(NSArray *dates) {
-      self.broadcastDates = dates;
-      [self reloadTableViewData];
-    }];
+  if (self.broadcastDates == nil && [Trakt sharedInstance].broadcastDates != nil) {
+    NSLog(@"Loading calendar data from Trakt instance which has already loaded it");
+    self.broadcastDates = [Trakt sharedInstance].broadcastDates;
+    [self reloadTableViewData];
   }
+}
+
+
+- (void)refreshData {
+  NSLog(@"Refresh calendar data!");
+  [[Trakt sharedInstance] retrieveTopLevelControllerdataStartingWith:@"calendar:" block:^(NSArray *dates) {
+    self.broadcastDates = dates;
+    [self reloadTableViewData];
+  }];
 }
 
 

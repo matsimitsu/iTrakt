@@ -1,8 +1,9 @@
 #import <UIKit/UIKit.h>
+#import "HTTPDownload.h"
 
 @interface iTraktAppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
-    IBOutlet UITabBarController* tabBarController;
+  UIWindow *window;
+  IBOutlet UITabBarController* tabBarController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -10,6 +11,9 @@
 
 - (void)downloadsAreInProgress;
 - (void)downloadsAreFinished;
+- (void)downloadFailed:(HTTPDownload *)download;
+
+- (void)refreshDataStartingAtCurrentSelectedTopLevelController;
 
 @end
 

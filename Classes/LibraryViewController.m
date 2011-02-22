@@ -1,5 +1,6 @@
 #import "LibraryViewController.h"
 #import "Trakt.h"
+#import "HTTPDownload.h"
 #import "Show.h"
 
 @implementation LibraryViewController
@@ -11,6 +12,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+
+  [self showRefreshDataButton];
   self.navigationItem.title = @"Library";
 
   self.filteredShows = [NSMutableArray new];
@@ -32,9 +35,34 @@
 
 - (void)refreshData {
   NSLog(@"Refresh library data!");
+  [self showStopRefreshDataButton];
   [[Trakt sharedInstance] retrieveTopLevelControllerdataStartingWith:@"library:" block:^(NSArray *loadedShows) {
+    [self showRefreshDataButton];
     [self loadData:loadedShows];
   }];
+}
+
+
+- (void)showRefreshDataButton {
+  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                 target:self
+                                                                                 action:@selector(refreshData)];
+  self.navigationItem.leftBarButtonItem = refreshButton;
+  [refreshButton release];
+}
+
+- (void)showStopRefreshDataButton {
+  UIBarButtonItem *stopButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
+                                                                              target:self
+                                                                              action:@selector(cancelRefreshData)];
+  self.navigationItem.leftBarButtonItem = stopButton;
+  [stopButton release];
+}
+
+
+- (void)cancelRefreshData {
+  [self showRefreshDataButton];
+  [HTTPDownload cancelDownloadsInProgress];
 }
 
 

@@ -14,4 +14,8 @@
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, retain) UISearchDisplayController *searchController;
 
+- (void)showRefreshDataButton;
+- (void)showStopRefreshDataButton;
+- (void)cancelRefreshData;
+
 @end

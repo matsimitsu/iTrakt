@@ -21,4 +21,8 @@
 
 - (void)loadData:(NSArray *)loadedShows;
 
+- (void)showRefreshDataButton;
+- (void)showStopRefreshDataButton;
+- (void)cancelRefreshData;
+
 @end

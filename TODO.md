@@ -4,6 +4,7 @@ General
 * Research which OSS license the app should have and that we adhere to the licenses of APIs.
   TVDB: http://forums.thetvdb.com/viewtopic.php?f=8&t=2507
 
+* Refactor top-level controllers again to cleanup the code related to refreshing data as well.
 * Load images for rows visible after using the index to quickly navigate to a section.
 * Add Calendar class which returns episodes grouped by broadcast date.
 * The Calendar class should take a show title filter string which makes the Calendar return only those dates and episodes that match.
@@ -36,6 +37,7 @@ Design discussion
 
 * First launch: load calendar, then visible row images + library & trending feeds
 * Not first launch, i.e. the app was inactive, or the user hits the 'reload' button: reload _all_ feeds, but load the current visible one first.
+* Make HTTPDownload post start/stop notifications so that the refresh/stop buttons in the top-level controllers can show them accurately.
 
 * Use ‘today’ and ‘tomorrow’ in the calendar view? That might make the index weird, tho, plus due to timezone difference it may not always be correct.
 

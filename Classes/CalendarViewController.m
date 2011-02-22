@@ -3,6 +3,7 @@
 #import "EpisodeDetailsViewController.h"
 
 #import "Trakt.h"
+#import "HTTPDownload.h"
 #import "BroadcastDate.h"
 
 #define ROW_HEIGHT 66.0
@@ -21,6 +22,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+  [self showRefreshDataButton];
   self.navigationItem.title = @"Calendar";
   self.tableView.rowHeight = ROW_HEIGHT;
 
@@ -45,10 +47,35 @@
 
 - (void)refreshData {
   NSLog(@"Refresh calendar data!");
+  [self showStopRefreshDataButton];
   [[Trakt sharedInstance] retrieveTopLevelControllerdataStartingWith:@"calendar:" block:^(NSArray *dates) {
+    [self showRefreshDataButton];
     self.broadcastDates = dates;
     [self reloadTableViewData];
   }];
+}
+
+
+- (void)showRefreshDataButton {
+  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                 target:self
+                                                                                 action:@selector(refreshData)];
+  self.navigationItem.leftBarButtonItem = refreshButton;
+  [refreshButton release];
+}
+
+- (void)showStopRefreshDataButton {
+  UIBarButtonItem *stopButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
+                                                                              target:self
+                                                                              action:@selector(cancelRefreshData)];
+  self.navigationItem.leftBarButtonItem = stopButton;
+  [stopButton release];
+}
+
+
+- (void)cancelRefreshData {
+  [self showRefreshDataButton];
+  [HTTPDownload cancelDownloadsInProgress];
 }
 
 

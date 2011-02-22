@@ -5,4 +5,8 @@
 
 }
 
+- (void)showRefreshDataButton;
+- (void)showStopRefreshDataButton;
+- (void)cancelRefreshData;
+
 @end

@@ -6,6 +6,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
+  dragging = NO;
   [self loadImagesForVisibleCells];
 }
 
@@ -34,13 +35,24 @@
 }
 
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+  dragging = YES;
+}
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+  dragging = NO;
   [self loadImagesForVisibleCells];
 }
 
-
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
   if (!decelerate) {
+    dragging = NO;
+    [self loadImagesForVisibleCells];
+  }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  if (!dragging) {
     [self loadImagesForVisibleCells];
   }
 }

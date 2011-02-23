@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AsyncImageTableViewController : UITableViewController {
-
+  BOOL dragging;
 }
 
 - (void)reloadTableViewData;

@@ -27,6 +27,7 @@ Caching
 API
 ---
 * Search through all shows
+* Get ids of all updated shows/episodes
 
 Design discussion
 -----------------

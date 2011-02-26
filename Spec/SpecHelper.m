@@ -64,14 +64,20 @@ static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
   }];
 }
 
+- (void)toggleSeenWithNuBlock:(id)nuBlock {
+  [self toggleSeen:^{
+    callNuBlockWithArguments(nuBlock, [NSArray array]);
+  }];
+}
+
 @end
 
 
 @implementation Trakt (SpecHelper)
 
 - (void)calendarWithNuBlock:(id)nuBlock {
-  [self calendar:^(NSArray *broadcastDates) {
-    callNuBlockWithArguments(nuBlock, [NSArray arrayWithObject:broadcastDates]);
+  [self calendar:^(NSArray *dates) {
+    callNuBlockWithArguments(nuBlock, [NSArray arrayWithObject:dates]);
   }];
 }
 

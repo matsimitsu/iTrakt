@@ -1,9 +1,12 @@
 #import <Foundation/Foundation.h>
+#import "Episode.h"
 
 #define BASE_URL @"http://itrakt.matsimitsu.com"
 
 @interface Trakt : NSObject {
   NSString *baseURL;
+  NSString *traktBaseURL;
+  NSString *apiKey;
   NSString *apiUser;
   NSString *apiPasswordHash;
   NSArray *broadcastDates;
@@ -12,8 +15,10 @@
 }
 
 @property (nonatomic, retain) NSString *baseURL;
+@property (nonatomic, retain) NSString *traktBaseURL;
 
 @property (nonatomic, retain) NSString *apiUser;
+@property (nonatomic, retain) NSString *apiKey;
 @property (nonatomic, readonly) NSString *apiPasswordHash;
 
 @property (nonatomic, retain) NSArray *broadcastDates;
@@ -37,6 +42,10 @@
 
 - (NSURL *)seasonsURL:(NSString *)tvdb_id;
 - (void)seasons:(NSString *)tvdb_id block:(void (^)(NSArray *seasons))block;
+
+- (NSURL *)episodeSeenURL;
+- (NSURL *)episodeNotSeenURL;
+- (void)toggleSeenForEpisode:(Episode *)episode block:(void (^)())block;
 
 - (UIImage *)cachedShowPosterForURL:(NSURL *)posterURL;
 - (void)showPosterForURL:(NSURL *)posterURL block:(void (^)(UIImage *poster, BOOL cached))block;

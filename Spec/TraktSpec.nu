@@ -96,6 +96,14 @@
       ))
     ))
 
+    (it "returns the URL that's used to mark an episode as seen" (do ()
+      (~ ((@trakt episodeSeenURL) absoluteString) should be:"http://localhost:9292/trakt/show/episode/seen/apikey")
+    ))
+
+    (it "returns the URL that's used to mark an episode as not seen" (do ()
+      (~ ((@trakt episodeNotSeenURL) absoluteString) should be:"http://localhost:9292/trakt/show/episode/unseen/apikey")
+    ))
+
     (describe "concerning images" `(
       ; TODO possinly also check with the fixtures server whether or not a request was actually made. I.e. keep a request counter.
       (describe "and downloading/caching thereof" `(

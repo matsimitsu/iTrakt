@@ -43,11 +43,15 @@ static NSMutableSet *inProgress = nil;
 
 
 + (id)downloadFromURL:(NSURL *)theURL block:(void (^)(id response))theBlock {
-  return [[[self alloc] initWithURL:theURL username:nil password:nil block:theBlock] autorelease];
+  return [[[self alloc] initWithURL:theURL postBody:nil username:nil password:nil block:theBlock] autorelease];
 }
 
 + (id)downloadFromURL:(NSURL *)theURL username:(NSString *)username password:(NSString *)password block:(void (^)(id response))theBlock {
-  return [[[self alloc] initWithURL:theURL username:username password:password block:theBlock] autorelease];
+  return [[[self alloc] initWithURL:theURL postBody:nil username:username password:password block:theBlock] autorelease];
+}
+
++ (id)postToURL:(NSURL *)theURL body:(NSString *)body username:(NSString *)username password:(NSString *)password block:(void (^)(id response))theBlock {
+  return [[[self alloc] initWithURL:theURL postBody:body username:username password:password block:theBlock] autorelease];
 }
 
 
@@ -63,11 +67,17 @@ static NSMutableSet *inProgress = nil;
 @synthesize response;
 @synthesize error;
 
-- (id)initWithURL:(NSURL *)theURL username:(NSString *)username password:(NSString *)password block:(void (^)(id response))theBlock {
+- (id)initWithURL:(NSURL *)theURL postBody:(NSString *)body username:(NSString *)username password:(NSString *)password block:(void (^)(id response))theBlock {
   if (self = [super init]) {
     downloadData = nil;
     block = Block_copy(theBlock);
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:theURL];
+
+    if (body) {
+      NSLog(@"POST Connection!");
+      [request setHTTPMethod:@"POST"];
+      [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+    }
 
     if (username && password) {
       NSData *data = [[NSString stringWithFormat:@"%@:%@", username, password] dataUsingEncoding:NSUTF8StringEncoding];
@@ -190,7 +200,7 @@ static dispatch_queue_t imageQueue = NULL;
 
 
 - (id)initWithURL:(NSURL *)theURL resizeTo:(CGSize)resizeToSize block:(void (^)(id response))theBlock {
-  if (self = [super initWithURL:theURL username:nil password:nil block:theBlock]) {
+  if (self = [super initWithURL:theURL postBody:nil username:nil password:nil block:theBlock]) {
     if (imageQueue == NULL) {
       imageQueue = dispatch_queue_create("com.matsimitsu.iTrakt.imageQueue", NULL);
     }

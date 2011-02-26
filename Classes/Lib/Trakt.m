@@ -22,8 +22,10 @@ static Trakt *sharedTrakt = nil;
 }
 
 @synthesize baseURL;
+@synthesize traktBaseURL;
 
 @synthesize apiUser;
+@synthesize apiKey;
 @synthesize apiPasswordHash;
 
 @synthesize broadcastDates, library, trending;
@@ -119,7 +121,7 @@ static Trakt *sharedTrakt = nil;
 
 
 - (NSURL *)seasonsURL:(NSString *)tvdb_id {
-  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/shows/%@/seasons_with_episodes", self.baseURL, tvdb_id, nil]];
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/shows/%@/seasons_with_episodes", self.baseURL, tvdb_id]];
 }
 
 - (void)seasons:(NSString *)tvdb_id block:(void (^)(NSArray *seasons))block {
@@ -134,6 +136,27 @@ static Trakt *sharedTrakt = nil;
       [s release];
     }
     block([[seasons copy] autorelease]);
+  }];
+}
+
+- (NSURL *)episodeSeenURL {
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/show/episode/seen/%@", self.traktBaseURL, self.apiKey]];
+}
+
+- (NSURL *)episodeNotSeenURL {
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/show/episode/unseen/%@", self.traktBaseURL, self.apiKey]];
+}
+
+- (void)toggleSeenForEpisode:(Episode *)episode block:(void (^)())block {
+  NSURL *url = episode.seen ? [self episodeNotSeenURL] : [self episodeSeenURL];
+  NSString *json = [NSString stringWithFormat:@"{ \"tvdb_id\":%@, \"episodes\":[{ \"season\":%d, \"episode\":%d }] }",
+                                              episode.tvdbID, episode.season, episode.number];
+  NSLog(@"JSON: %@", json);
+  [HTTPDownload postToURL:url body:json username:self.apiUser password:self.apiPasswordHash block:^(id response) {
+    NSLog(@"Seen: %d", (int)episode.seen);
+    episode.seen = !episode.seen;
+    NSLog(@"Seen: %d", (int)episode.seen);
+    block();
   }];
 }
 

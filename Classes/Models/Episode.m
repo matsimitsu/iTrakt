@@ -84,6 +84,13 @@
   return [NSString stringWithFormat:@"%@ on %@", [self localizedAirTime], self.network, nil];
 }
 
+
+- (void)toggleSeen:(void (^)())requestCompletedBlock {
+  NSLog(@"Toggle seen!");
+  [[Trakt sharedInstance] toggleSeenForEpisode:self block:requestCompletedBlock];
+}
+
+
 - (void)ensureThumbIsLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the thumb loaded for performance!
   if (self.thumb == nil) {

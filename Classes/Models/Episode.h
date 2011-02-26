@@ -39,6 +39,8 @@
 
 - (NSString *)airTimeAndChannel;
 
+- (void)toggleSeen:(void (^)())requestCompletedBlock;
+
 - (void)ensureShowPosterIsLoaded:(void (^)())downloadedBlock;
 - (void)ensureThumbIsLoaded:(void (^)())downloadedBlock;
 

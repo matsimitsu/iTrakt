@@ -3,6 +3,8 @@
 
 (set trakt (Trakt sharedInstance))
 (trakt setBaseURL:"http://localhost:9292/api")
+(trakt setTraktBaseURL:"http://localhost:9292/trakt")
+(trakt setApiKey:"apikey")
 (trakt setApiUser:"bob")
 (trakt setApiPassword:"secret")
 

@@ -4,6 +4,7 @@ General
 * Research which OSS license the app should have and that we adhere to the licenses of APIs.
   TVDB: http://forums.thetvdb.com/viewtopic.php?f=8&t=2507
 
+* Trakt.tv is quite slow with returning the updated 'seen' value for an episode in the calendar feed. Or is that the proxy?
 * How do we deal with the Trakt API key?
 * Toggling the seen state of an episode currently only works for those in the calendar, because the show seasons_with_episodes feed does not contain the show's tvdb ID like the calendar feed does. Would be nice if that could be added to the proxy for now, but it should eventually all be moved to the Show associated with the Episode.
 * The download code that is already tested elsewhere, eg ensureThumbIsLoaded, don't need to be tested in the Trakt specs.

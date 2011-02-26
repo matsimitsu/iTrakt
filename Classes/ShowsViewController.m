@@ -17,10 +17,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
   self.tableView.rowHeight = ROW_HEIGHT;
-  // TODO replace this with the actual username
-  [Trakt sharedInstance].apiUser = @"matsimitsu";
 }
 
 

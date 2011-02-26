@@ -18,8 +18,7 @@ mappings = lambda do
   end
 
   map('/basic-auth') do
-    data = $env['HTTP_AUTHORIZATION'].match(/^Basic (.+)/)[1]
-    send_text(Base64.decode64(data))
+    send_text(basic_auth_data)
   end
 
   map('/json/simple-array') do
@@ -35,11 +34,15 @@ mappings = lambda do
   end
 
   map('/api/users/calendar.json?name=bob') do
-    serve_json_fixture('user-calendar-shows')
+    with_proper_auth do
+      serve_json_fixture('user-calendar-shows')
+    end
   end
 
   map('/api/users/library.json?name=bob') do
-    serve_json_fixture('user-show-library')
+    with_proper_auth do
+      serve_json_fixture('user-show-library')
+    end
   end
 
   map('/api/shows/trending.json') do
@@ -68,10 +71,13 @@ end
 
 require "base64"
 
-FIXTURES = File.dirname(__FILE__)
 
 module FixtureServe
   HOST = 'http://localhost:9292'
+  FIXTURES = File.dirname(__FILE__)
+
+  # password is a SHA1 hash of `secret'
+  BASIC_AUTH = 'bob:e5e9fa1ba31ecd1ae84f75caaa474f3a663f05f4'
 
   extend self
 
@@ -88,6 +94,21 @@ module FixtureServe
   end
 
   private
+
+  def basic_auth_data
+    if auth_header = $env['HTTP_AUTHORIZATION']
+      data = auth_header.match(/^Basic (.+)/)[1]
+      Base64.decode64(data)
+    end
+  end
+
+  def with_proper_auth
+    if basic_auth_data == BASIC_AUTH
+      yield
+    else
+      [401, { 'Content-Type' => 'text/plain' }, ['401 Unauthorized']]
+    end
+  end
 
   def fixture(name)
     File.join(FIXTURES, name)

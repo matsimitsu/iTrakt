@@ -58,7 +58,7 @@ static Trakt *sharedTrakt = nil;
 
 - (void)calendar:(void (^)(NSArray *broadcastDates))block {
   NSLog(@"[!] Start download of calendar data");
-  [JSONDownload downloadFromURL:[self calendarURL] block:^(id response) {
+  [JSONDownload downloadFromURL:[self calendarURL] username:self.apiUser password:self.apiPasswordHash block:^(id response) {
     NSLog(@"[!] Finished download of calendar data");
     NSMutableArray *dates = [NSMutableArray array];
     for(NSDictionary *episodeDict in (NSArray *)response) {
@@ -79,7 +79,7 @@ static Trakt *sharedTrakt = nil;
 
 - (void)library:(void (^)(NSArray *shows))block {
   NSLog(@"[!] Start download of library data from: %@", [self libraryURL]);
-  [JSONDownload downloadFromURL:[self libraryURL] block:^(id response) {
+  [JSONDownload downloadFromURL:[self libraryURL] username:self.apiUser password:self.apiPasswordHash block:^(id response) {
     NSLog(@"[!] Finished download of library data");
     NSMutableArray *shows = [NSMutableArray array];
     for(NSDictionary *showDict in (NSArray *)response) {

@@ -53,6 +53,10 @@ mappings = lambda do
     serve_json_fixture('show')
   end
 
+  map('/api/shows/82066/seasons_with_episodes') do
+    serve_json_fixture('show-seasons-and-episodes')
+  end
+
   map('/api/uploads/82066/poster-82066.jpg') do
     serve_jpeg_fixture('poster')
   end

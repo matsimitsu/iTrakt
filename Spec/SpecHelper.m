@@ -41,6 +41,12 @@ static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
   }];
 }
 
+- (void)ensureSeasonsAreLoadedWithNuBlock:(id)nuBlock {
+  [self ensureSeasonsAreLoaded:^{
+    callNuBlockWithArguments(nuBlock, [NSArray array]);
+  }];
+}
+
 @end
 
 

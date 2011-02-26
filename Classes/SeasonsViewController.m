@@ -1,4 +1,5 @@
 #import "SeasonsViewController.h"
+#import "Season.h"
 #import "Episode.h"
 #import "EpisodeDetailsViewController.h"
 #import "HTTPDownload.h"
@@ -75,18 +76,16 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    return (seasons == nil) ? 1 : [self.seasons count];
+  return (seasons == nil) ? 0 : [seasons count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    if (seasons == nil) {
-      return 1;
-    } else {
-      NSDictionary *seasonDict = [seasons objectAtIndex:section];
-      return [[seasonDict valueForKey:@"episode_count"] integerValue];
-    }
+  if (seasons == nil) {
+    return 0;
+  } else {
+    Season *season = [seasons objectAtIndex:section];
+    return [season.episodes count];
+  }
 }
 
 
@@ -94,13 +93,8 @@
   if (seasons == nil) {
     return nil;
   } else {
-    NSDictionary *seasonDict = [seasons objectAtIndex:section];
-    NSInteger seasonNumber = [[seasonDict valueForKey:@"season"] integerValue];
-    if (seasonNumber == 0) {
-      return @"Specials";
-    } else {
-      return [NSString stringWithFormat:@"Season %d", seasonNumber, nil];
-    }
+    Season *season = [seasons objectAtIndex:section];
+    return [season label];
   }
 }
 
@@ -119,17 +113,12 @@
     cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
   }
 
-  if (seasons != nil) {
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-  }
-  UILabel *label = cell.textLabel;
-  NSDictionary *seasonDict = [seasons objectAtIndex:indexPath.section];
-  NSArray *episodesArray = [seasonDict valueForKey:@"episodes"];
-  NSDictionary *episodeDict = [episodesArray objectAtIndex:indexPath.row];
-  if ([[episodeDict valueForKey:@"watched"] boolValue] == true) {
-    label.text = [NSString stringWithFormat:@"✔ %@", [[episodeDict valueForKey:@"name"] copy], nil];
+  Season *season = [seasons objectAtIndex:indexPath.section];
+  Episode *episode = [season.episodes objectAtIndex:indexPath.row];
+  if (episode.seen) {
+    cell.textLabel.text = [NSString stringWithFormat:@"✔ %@", episode.title];
   } else {
-    label.text = [[episodeDict valueForKey:@"name"] copy];
+    cell.textLabel.text = episode.title;
   }
   return cell;
 }
@@ -179,14 +168,9 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  NSDictionary *seasonDict = [seasons objectAtIndex:indexPath.section];
-  NSArray *episodesArray = [seasonDict valueForKey:@"episodes"];
-  NSDictionary *episodeDict = [episodesArray objectAtIndex:indexPath.row];
-
-  Episode *episode = [[Episode alloc] initWithDictionary:episodeDict show:show];
+  Season *season = [seasons objectAtIndex:indexPath.section];
+  Episode *episode = [season.episodes objectAtIndex:indexPath.row];
   EpisodeDetailsViewController *controller = [[EpisodeDetailsViewController alloc] initWithEpisode:episode];
-  [episode release];
-
   [self.navigationController pushViewController:controller animated:YES];
   [controller release];
 }
@@ -196,21 +180,22 @@
 #pragma mark Memory management
 
 - (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+  // Releases the view if it doesn't have a superview.
+  [super didReceiveMemoryWarning];
 
-    // Relinquish ownership any cached data, images, etc. that aren't in use.
+  // Relinquish ownership any cached data, images, etc. that aren't in use.
 }
 
 - (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
+  // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
+  // For example: self.myOutlet = nil;
 }
 
 
 - (void)dealloc {
-    [super dealloc];
-    [show release];
+  [super dealloc];
+  [show release];
+  [seasons release];
 }
 
 

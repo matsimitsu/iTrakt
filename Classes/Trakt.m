@@ -5,6 +5,7 @@
 #import "Trakt.h"
 #import "BroadcastDate.h"
 
+#import "Season.h"
 #import "Show.h"
 #import "Episode.h"
 
@@ -39,6 +40,7 @@ static Trakt *sharedTrakt = nil;
     [result appendFormat:@"%02x", digest[i]];
   }
   apiPasswordHash = [[result copy] retain];
+  //NSLog(@"Password hash: %@", apiPasswordHash);
 }
 
 - (void)retrieveTopLevelControllerdataStartingWith:(NSString *)dataDownloadSelector block:(void (^)(NSArray *data))block {
@@ -127,7 +129,9 @@ static Trakt *sharedTrakt = nil;
     NSMutableArray *seasons = [NSMutableArray array];
     for(NSDictionary *seasonDict in (NSArray *)response) {
       // NSLog([response description]);
-      [seasons addObject:seasonDict];
+      Season *s = [[Season alloc] initWithDictionary:seasonDict];
+      [seasons addObject:s];
+      [s release];
     }
     block([[seasons copy] autorelease]);
   }];

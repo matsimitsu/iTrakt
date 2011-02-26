@@ -35,6 +35,7 @@
   // important to first check if we already have the poster loaded for performance!
   if (self.seasons == nil) {
     [[Trakt sharedInstance] seasons:self.tvdbID block:^(NSArray *theSeasons) {
+      NSLog(@"GOT SEASON DATA!");
       self.seasons = theSeasons;
       downloadedBlock();
     }];

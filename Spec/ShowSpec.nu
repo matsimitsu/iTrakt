@@ -26,11 +26,34 @@
     (~ (@show posterURL) should be:(NSURL URLWithString:"http://localhost:9292/api/uploads/82066/poster-82066.jpg"))
   ))
 
-  ;(describe "concerning episode data" `(
-    ;(it "retrieves the list of episodes" (do ()
-      
-    ;))
-  ;))
+  (describe "concerning episode data" `(
+    (it "retrieves the seasons and episodes" (do ()
+      (set @called nil)
+      (@show ensureSeasonsAreLoadedWithNuBlock:(do ()
+        (set @called t)
+        (set seasons (@show seasons))
+
+        (set season (seasons objectAtIndex:0))
+        (~ (season label) should be:"Season 3")
+        (~ (((season episodes) objectAtIndex:0) title) should be:"Olivia")
+
+        (set season (seasons objectAtIndex:1))
+        (~ (season label) should be:"Season 2")
+        (~ (((season episodes) objectAtIndex:0) title) should be:"A New Day in the Old Town")
+
+        (set season (seasons objectAtIndex:2))
+        (~ (season label) should be:"Season 1")
+        (~ (((season episodes) objectAtIndex:0) title) should be:"Pilot")
+
+        (set season (seasons objectAtIndex:3))
+        (~ (season label) should be:"Specials")
+        (~ (((season episodes) objectAtIndex:0) title) should be:"Unaired Pilot")
+      ))
+      (wait 0.3 (do ()
+        (~ @called should be:t)
+      ))
+    ))
+  ))
 
   (describe "concerning its poster" `(
     (it "returns the default poster if the poster hasn't been downloaded and isn't available in the cache" (do ()

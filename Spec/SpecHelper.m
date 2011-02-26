@@ -105,7 +105,17 @@ static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
 
 + (id)downloadFromURL:(NSURL *)theURL nuBlock:(id)nuBlock {
   return [self downloadFromURL:theURL block:^(id response) {
-    callNuBlockWithArguments(nuBlock, [NSArray arrayWithObject:response]);
+    id args = [[NSArray arrayWithObject:response] performSelector:@selector(list)];
+    id context = [nuBlock performSelector:@selector(context)];
+    [nuBlock performSelector:@selector(evalWithArguments:context:) withObject:args withObject:context];
+  }];
+}
+
++ (id)downloadFromURL:(NSURL *)theURL username:(NSString *)username password:(NSString *)password nuBlock:(id)nuBlock {
+  return [self downloadFromURL:theURL username:username password:password block:^(id response) {
+    id args = [[NSArray arrayWithObject:response] performSelector:@selector(list)];
+    id context = [nuBlock performSelector:@selector(context)];
+    [nuBlock performSelector:@selector(evalWithArguments:context:) withObject:args withObject:context];
   }];
 }
 

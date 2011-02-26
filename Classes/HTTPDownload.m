@@ -1,5 +1,6 @@
 #import "HTTPDownload.h"
 
+#import "Base64.h"
 #import <YAJL/YAJL.h>
 #import <dispatch/dispatch.h>
 #import "UIImage+Resize.h"
@@ -42,7 +43,11 @@ static NSMutableSet *inProgress = nil;
 
 
 + (id)downloadFromURL:(NSURL *)theURL block:(void (^)(id response))theBlock {
-  return [[[self alloc] initWithURL:theURL block:theBlock] autorelease];
+  return [[[self alloc] initWithURL:theURL username:nil password:nil block:theBlock] autorelease];
+}
+
++ (id)downloadFromURL:(NSURL *)theURL username:(NSString *)username password:(NSString *)password block:(void (^)(id response))theBlock {
+  return [[[self alloc] initWithURL:theURL username:username password:password block:theBlock] autorelease];
 }
 
 
@@ -58,11 +63,18 @@ static NSMutableSet *inProgress = nil;
 @synthesize response;
 @synthesize error;
 
-- (id)initWithURL:(NSURL *)theURL block:(void (^)(id response))theBlock {
+- (id)initWithURL:(NSURL *)theURL username:(NSString *)username password:(NSString *)password block:(void (^)(id response))theBlock {
   if (self = [super init]) {
     downloadData = nil;
     block = Block_copy(theBlock);
-    self.connection = [NSURLConnection connectionWithRequest:[NSURLRequest requestWithURL:theURL] delegate:self];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:theURL];
+
+    if (username && password) {
+      NSData *data = [[NSString stringWithFormat:@"%@:%@", username, password] dataUsingEncoding:NSUTF8StringEncoding];
+      [request setValue:[NSString stringWithFormat:@"Basic %@", [Base64 encode:data]] forHTTPHeaderField:@"Authorization"];
+    }
+
+    self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
     [HTTPDownload downloadInProgress:self];
   }
   return self;
@@ -177,7 +189,7 @@ static dispatch_queue_t imageQueue = NULL;
 
 
 - (id)initWithURL:(NSURL *)theURL resizeTo:(CGSize)resizeToSize block:(void (^)(id response))theBlock {
-  if (self = [super initWithURL:theURL block:theBlock]) {
+  if (self = [super initWithURL:theURL username:nil password:nil block:theBlock]) {
     if (imageQueue == NULL) {
       imageQueue = dispatch_queue_create("com.matsimitsu.iTrakt.imageQueue", NULL);
     }

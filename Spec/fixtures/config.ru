@@ -17,6 +17,11 @@ mappings = lambda do
     send_status 200
   end
 
+  map('/basic-auth') do
+    data = $env['HTTP_AUTHORIZATION'].match(/^Basic (.+)/)[1]
+    send_text(Base64.decode64(data))
+  end
+
   map('/json/simple-array') do
     serve_json_fixture('simple-array')
   end
@@ -61,6 +66,8 @@ end
 # The implementation, boring...
 #
 
+require "base64"
+
 FIXTURES = File.dirname(__FILE__)
 
 module FixtureServe
@@ -74,6 +81,7 @@ module FixtureServe
   end
 
   def call(env)
+    $env = env
     request_path = env['REQUEST_URI'][HOST.length..-1]
     _, block = @mappings.find { |path, _| path === request_path }
     block ? block.call($1) : ohnoes_404!
@@ -94,8 +102,12 @@ module FixtureServe
     [code, { 'Content-Type' => 'text/plain' }, "Explicitely send status code: #{code}"]
   end
 
+  def send_text(text)
+    [200, { 'Content-Type' => 'text/plain' }, text]
+  end
+
   def serve_text_fixture(name)
-    [200, { 'Content-Type' => 'text/plain' }, fixture_io("#{name}.txt")]
+    send_text(fixture_io("#{name}.txt"))
   end
 
   def serve_json_fixture(name)

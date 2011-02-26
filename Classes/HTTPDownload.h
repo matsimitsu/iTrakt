@@ -18,10 +18,11 @@
 + (void)setGlobalDelegate:(id)delegate;
 
 + (id)downloadFromURL:(NSURL *)theURL block:(void (^)(id response))theBlock;
++ (id)downloadFromURL:(NSURL *)theURL username:(NSString *)username password:(NSString *)password block:(void (^)(id response))theBlock;
 
 + (void)cancelDownloadsInProgress;
 
-- (id)initWithURL:(NSURL *)theURL block:(void (^)(id response))theBlock;
+- (id)initWithURL:(NSURL *)theURL username:(NSString *)username password:(NSString *)password block:(void (^)(id response))theBlock;
 
 - (void)cancel;
 

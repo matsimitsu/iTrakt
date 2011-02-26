@@ -56,6 +56,17 @@
     ))
   ))
 
+  (it "sends a basic-auth header if credentials are given" (do ()
+    (HTTPDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/basic-auth") username:"Bob" password:"secret" nuBlock:(do (response)
+      (set string (Helper stringFromUTF8Data:response))
+      (puts string)
+      (~ string should equal:"Bob:secret")
+    ))
+    (wait 0.1 (do ()
+      (~ ((@delegate methodCalls) valueForKey:"downloadFailed:") should be:nil)
+    ))
+  ))
+
   (it "calls the global connection delegate when a server side failure occurred" (do ()
     (set @called nil)
     (HTTPDownload downloadFromURL:(NSURL URLWithString:"http://localhost:9292/status-code?code=500") nuBlock:(do (response)

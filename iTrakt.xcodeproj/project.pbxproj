@@ -76,6 +76,8 @@
 		510C6FBF12FB5B2C000500A1 /* TrendingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510C6FBD12FB5B2C000500A1 /* TrendingViewController.xib */; };
 		510C6FCD12FB5D7D000500A1 /* ShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6FCC12FB5D7D000500A1 /* ShowsViewController.m */; };
 		511EE73A13192A6B0000B12D /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 511EE73913192A6B0000B12D /* Base64.m */; };
+		511EE773131931870000B12D /* Base64.h in Sources */ = {isa = PBXBuildFile; fileRef = 511EE73813192A6B0000B12D /* Base64.h */; };
+		511EE774131931870000B12D /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 511EE73913192A6B0000B12D /* Base64.m */; };
 		5134008612EF4D72007ED54E /* EpisodeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */; };
 		5134008712EF4D72007ED54E /* EpisodeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */; };
 		513400A712EF5299007ED54E /* episode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 513400A612EF5299007ED54E /* episode.jpg */; };
@@ -614,6 +616,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				511EE773131931870000B12D /* Base64.h in Sources */,
+				511EE774131931870000B12D /* Base64.m in Sources */,
 				513BE4EB130817190076F8F9 /* iTraktAppDelegate.h in Sources */,
 				513BE4EC130817190076F8F9 /* iTraktAppDelegate.m in Sources */,
 				510C6EE012F8AB8B000500A1 /* Show.m in Sources */,

@@ -75,6 +75,7 @@
 		510C6FBE12FB5B2C000500A1 /* TrendingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6FBC12FB5B2C000500A1 /* TrendingViewController.m */; };
 		510C6FBF12FB5B2C000500A1 /* TrendingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510C6FBD12FB5B2C000500A1 /* TrendingViewController.xib */; };
 		510C6FCD12FB5D7D000500A1 /* ShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6FCC12FB5D7D000500A1 /* ShowsViewController.m */; };
+		511EE73A13192A6B0000B12D /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 511EE73913192A6B0000B12D /* Base64.m */; };
 		5134008612EF4D72007ED54E /* EpisodeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */; };
 		5134008712EF4D72007ED54E /* EpisodeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */; };
 		513400A712EF5299007ED54E /* episode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 513400A612EF5299007ED54E /* episode.jpg */; };
@@ -189,6 +190,8 @@
 		510C6FBD12FB5B2C000500A1 /* TrendingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TrendingViewController.xib; path = Views/TrendingViewController.xib; sourceTree = "<group>"; };
 		510C6FCB12FB5D7D000500A1 /* ShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowsViewController.h; sourceTree = "<group>"; };
 		510C6FCC12FB5D7D000500A1 /* ShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowsViewController.m; sourceTree = "<group>"; };
+		511EE73813192A6B0000B12D /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		511EE73913192A6B0000B12D /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		5134008312EF4D72007ED54E /* EpisodeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodeDetailsViewController.h; sourceTree = "<group>"; };
 		5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodeDetailsViewController.m; sourceTree = "<group>"; };
 		5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EpisodeDetailsViewController.xib; path = Views/EpisodeDetailsViewController.xib; sourceTree = "<group>"; };
@@ -278,6 +281,8 @@
 				5181A1C21306EB4800B3761A /* AsyncImageTableViewController.m */,
 				513BE2EC1307FF280076F8F9 /* HTTPDownload.h */,
 				513BE2ED1307FF280076F8F9 /* HTTPDownload.m */,
+				511EE73813192A6B0000B12D /* Base64.h */,
+				511EE73913192A6B0000B12D /* Base64.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -601,6 +606,7 @@
 				5181A1C31306EB4800B3761A /* AsyncImageTableViewController.m in Sources */,
 				513BE2EE1307FF280076F8F9 /* HTTPDownload.m in Sources */,
 				246834971310225300E177A2 /* SeasonsViewController.m in Sources */,
+				511EE73A13192A6B0000B12D /* Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

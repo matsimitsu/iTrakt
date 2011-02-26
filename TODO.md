@@ -4,6 +4,7 @@ General
 * Research which OSS license the app should have and that we adhere to the licenses of APIs.
   TVDB: http://forums.thetvdb.com/viewtopic.php?f=8&t=2507
 
+* We need specs for retrieving seasons/episodes!
 * Refactor top-level controllers again to cleanup the code related to refreshing data as well.
 * Add Calendar class which returns episodes grouped by broadcast date.
 * The Calendar class should take a show title filter string which makes the Calendar return only those dates and episodes that match.

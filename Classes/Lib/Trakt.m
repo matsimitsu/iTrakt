@@ -17,6 +17,7 @@ static Trakt *sharedTrakt = nil;
   if (sharedTrakt == nil) {
     sharedTrakt = [[Trakt alloc] init];
     sharedTrakt.baseURL = BASE_URL;
+    sharedTrakt.traktBaseURL = TRAKT_BASE_URL;
   }
   return sharedTrakt;
 }
@@ -149,13 +150,12 @@ static Trakt *sharedTrakt = nil;
 
 - (void)toggleSeenForEpisode:(Episode *)episode block:(void (^)())block {
   NSURL *url = episode.seen ? [self episodeNotSeenURL] : [self episodeSeenURL];
-  NSString *json = [NSString stringWithFormat:@"{ \"tvdb_id\":%@, \"episodes\":[{ \"season\":%d, \"episode\":%d }] }",
+  // Using YAJL for this really seems like overdoing it
+  NSString *json = [NSString stringWithFormat:@"{ \"tvdb_id\":\"%@\", \"episodes\":[{ \"season\":%d, \"episode\":%d }] }",
                                               episode.tvdbID, episode.season, episode.number];
-  NSLog(@"JSON: %@", json);
+  //NSLog(@"JSON: %@", json);
   [HTTPDownload postToURL:url body:json username:self.apiUser password:self.apiPasswordHash block:^(id response) {
-    NSLog(@"Seen: %d", (int)episode.seen);
     episode.seen = !episode.seen;
-    NSLog(@"Seen: %d", (int)episode.seen);
     block();
   }];
 }

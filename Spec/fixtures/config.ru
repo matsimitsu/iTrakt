@@ -68,7 +68,7 @@ mappings = lambda do
   %w{ seen unseen }.each do |action|
     map("/trakt/show/episode/#{action}/apikey") do
       with_proper_auth do
-        if $env['REQUEST_METHOD'] == 'POST' && $env['rack.input'].read == "{ \"tvdb_id\":82066, \"episodes\":[{ \"season\":3, \"episode\":1 }] }"
+        if $env['REQUEST_METHOD'] == 'POST' && $env['rack.input'].read == "{ \"tvdb_id\":\"82066\", \"episodes\":[{ \"season\":3, \"episode\":1 }] }"
           send_status 200
         else
           ohnoes_404!

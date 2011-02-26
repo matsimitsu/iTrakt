@@ -74,7 +74,6 @@ static NSMutableSet *inProgress = nil;
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:theURL];
 
     if (body) {
-      NSLog(@"POST Connection!");
       [request setHTTPMethod:@"POST"];
       [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
     }

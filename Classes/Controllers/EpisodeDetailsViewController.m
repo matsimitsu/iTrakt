@@ -136,6 +136,7 @@
         label.text = [NSString stringWithFormat:@"Episode %@", [episode episodeNumber], nil];
         break;
       case 2:
+        cell.accessoryType = episode.seen ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
         if (episode.seen) {
           cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         }
@@ -153,9 +154,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   // this is the 'seen' row, the other section only has one row (the image)
   if (indexPath.row == 2) {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = cell.accessoryType == UITableViewCellAccessoryNone ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-    [cell setSelected:NO animated:YES];
+    [episode toggleSeen:^{
+      UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+      cell.accessoryType = episode.seen ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+      [cell setSelected:NO animated:YES];
+    }];
   }
 }
 

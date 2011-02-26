@@ -22,6 +22,7 @@
   // TODO replace this with actual credentials
   [[Trakt sharedInstance] setApiUser:API_USER];
   [[Trakt sharedInstance] setApiPassword:API_PASS];
+  [[Trakt sharedInstance] setApiKey:API_KEY];
 
   [HTTPDownload setGlobalDelegate:self];
 

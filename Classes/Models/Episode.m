@@ -86,7 +86,6 @@
 
 
 - (void)toggleSeen:(void (^)())requestCompletedBlock {
-  NSLog(@"Toggle seen!");
   [[Trakt sharedInstance] toggleSeenForEpisode:self block:requestCompletedBlock];
 }
 

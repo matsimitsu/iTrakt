@@ -33,13 +33,13 @@ mappings = lambda do
     serve_jpeg_fixture('poster')
   end
 
-  map('/api/users/calendar.json?name=bob') do
+  map('/api/users/calendar.json') do
     with_proper_auth do
       serve_json_fixture('user-calendar-shows')
     end
   end
 
-  map('/api/users/library.json?name=bob') do
+  map('/api/users/library.json') do
     with_proper_auth do
       serve_json_fixture('user-show-library')
     end

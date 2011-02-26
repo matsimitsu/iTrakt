@@ -4,7 +4,6 @@ General
 * Research which OSS license the app should have and that we adhere to the licenses of APIs.
   TVDB: http://forums.thetvdb.com/viewtopic.php?f=8&t=2507
 
-* Remove username from URLs as GET param, now that we send the proper auth data.
 * We need specs for retrieving seasons/episodes!
 * Refactor top-level controllers again to cleanup the code related to refreshing data as well.
 * Add Calendar class which returns episodes grouped by broadcast date.

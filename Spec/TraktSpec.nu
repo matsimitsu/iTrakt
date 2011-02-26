@@ -24,7 +24,7 @@
 
     (describe "concerning the user's calendar" `(
       (it "returns the user's calendar URL" (do ()
-        (~ ((@trakt calendarURL) absoluteString) should be:"http://localhost:9292/api/users/calendar.json?name=bob")
+        (~ ((@trakt calendarURL) absoluteString) should be:"http://localhost:9292/api/users/calendar.json")
       ))
 
       (it "yields the calendar as an array of BroadcastDate instances" (do ()
@@ -65,7 +65,7 @@
     ))
 
     (it "returns the user's library URL" (do ()
-      (~ ((@trakt libraryURL) absoluteString) should be:"http://localhost:9292/api/users/library.json?name=bob")
+      (~ ((@trakt libraryURL) absoluteString) should be:"http://localhost:9292/api/users/library.json")
     ))
 
     (it "yields the user's library as an array of Show instances" (do ()

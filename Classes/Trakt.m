@@ -53,7 +53,7 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (NSURL *)calendarURL {
-  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/calendar.json?name=%@", self.baseURL, self.apiUser, nil]];
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/calendar.json", self.baseURL, nil]];
 }
 
 - (void)calendar:(void (^)(NSArray *broadcastDates))block {
@@ -74,7 +74,7 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (NSURL *)libraryURL {
-  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/library.json?name=%@", self.baseURL, self.apiUser, nil]];
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/library.json", self.baseURL, nil]];
 }
 
 - (void)library:(void (^)(NSArray *shows))block {

@@ -72,6 +72,7 @@ static NSMutableSet *inProgress = nil;
     if (username && password) {
       NSData *data = [[NSString stringWithFormat:@"%@:%@", username, password] dataUsingEncoding:NSUTF8StringEncoding];
       [request setValue:[NSString stringWithFormat:@"Basic %@", [Base64 encode:data]] forHTTPHeaderField:@"Authorization"];
+      //NSLog(@"Sending basic-auth data: %@", [NSString stringWithFormat:@"Basic %@", [Base64 encode:data]]);
     }
 
     self.connection = [NSURLConnection connectionWithRequest:request delegate:self];

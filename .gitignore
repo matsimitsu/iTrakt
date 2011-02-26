@@ -2,5 +2,6 @@
 *.swo
 .DS_Store
 build
+Authentication.h
 iTrakt.xcodeproj/*.mode1v3
 iTrakt.xcodeproj/*.pbxuser

@@ -3,6 +3,7 @@
 #import "CalendarViewController.h"
 
 // ONLY FOR DEBUGGING PURPOSES!
+#import "Authentication.h"
 #import "EGOCache.h"
 
 @implementation iTraktAppDelegate
@@ -18,8 +19,9 @@
   //NSLog(@"[!] Clearing cache");
   //[[EGOCache currentCache] clearCache];
 
-  // TODO replace this with the actual username
-  [Trakt sharedInstance].apiUser = @"matsimitsu";
+  // TODO replace this with actual credentials
+  [[Trakt sharedInstance] setApiUser:API_USER];
+  [[Trakt sharedInstance] setApiPassword:API_PASS];
 
   [HTTPDownload setGlobalDelegate:self];
 

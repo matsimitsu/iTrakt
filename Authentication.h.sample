@@ -1,0 +1,2 @@
+#define API_USER @"bob"
+#define API_PASS @"secret"

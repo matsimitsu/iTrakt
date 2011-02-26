@@ -18,6 +18,13 @@
   return self;
 }
 
+
+- (void)dealloc {
+  [super dealloc];
+  [episodes release];
+}
+
+
 - (NSString *)label {
   if (number == 0) {
     return @"Specials";

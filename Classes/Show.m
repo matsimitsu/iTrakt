@@ -31,11 +31,23 @@
   return self;
 }
 
+- (void)dealloc {
+  [tvdbID release];
+  [title release];
+  [overview release];
+  [thumbURL release];
+  [thumb release];
+  [posterURL release];
+  [poster release];
+  [seasons release];
+  [super dealloc];
+}
+
+
 - (void)ensureSeasonsAreLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the poster loaded for performance!
   if (self.seasons == nil) {
     [[Trakt sharedInstance] seasons:self.tvdbID block:^(NSArray *theSeasons) {
-      NSLog(@"GOT SEASON DATA!");
       self.seasons = theSeasons;
       downloadedBlock();
     }];

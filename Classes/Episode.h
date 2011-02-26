@@ -33,7 +33,6 @@
 @property (nonatomic, assign) BOOL seen;
 
 - (id)initWithDictionary:(NSDictionary *)episodeInfo;
-- (id)initWithDictionary:(NSDictionary *)episodeInfo show:(Show *)show;
 
 - (NSString *)episodeNumber;
 - (NSString *)serieTitleAndEpisodeNumber;

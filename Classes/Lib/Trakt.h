@@ -42,7 +42,7 @@
 - (void)trending:(void (^)(NSArray *shows))block;
 
 - (NSURL *)seasonsURL:(NSString *)tvdb_id;
-- (void)seasons:(NSString *)tvdb_id block:(void (^)(NSArray *seasons))block;
+- (void)seasons:(Show *)show block:(void (^)(NSArray *seasons))block;
 
 - (NSURL *)episodeSeenURL;
 - (NSURL *)episodeNotSeenURL;

@@ -87,7 +87,7 @@
 - (void)ensureSeasonsAreLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the poster loaded for performance!
   if (self.seasons == nil) {
-    [[Trakt sharedInstance] seasons:self.tvdbID block:^(NSArray *theSeasons) {
+    [[Trakt sharedInstance] seasons:self block:^(NSArray *theSeasons) {
       self.seasons = theSeasons;
       downloadedBlock();
     }];

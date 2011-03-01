@@ -5,12 +5,12 @@
 
 @synthesize episodes;
 
-- (id)initWithDictionary:(NSDictionary *)dict {
+- (id)initWithShow:(Show *)show seasonInfo:(NSDictionary *)dict {
   if (self = [super init]) {
     number = [[dict valueForKey:@"season"] integerValue];
     self.episodes = [NSMutableArray array];
     for (NSDictionary *episodeDict in [dict valueForKey:@"episodes"]) {
-      Episode *e = [[Episode alloc] initWithDictionary:episodeDict];
+      Episode *e = [[Episode alloc] initWithShow:show episodeInfo:episodeDict];
       [episodes addObject:e];
       [e release];
     }

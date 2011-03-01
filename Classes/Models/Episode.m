@@ -9,14 +9,20 @@
 @synthesize seen;
 
 - (id)initWithDictionary:(NSDictionary *)episodeInfo {
+  return [self initWithShow:[[Show alloc] initWithDictionary:[episodeInfo valueForKey:@"show"]]
+                episodeInfo:episodeInfo];
+}
+
+- (id)initWithShow:(Show *)theShow episodeInfo:(NSDictionary *)episodeInfo {
   if (self = [super init]) {
     // TODO why is the watched field not inside the episode hash in the calendar feed?
     seen = [[episodeInfo valueForKey:@"watched"] boolValue];
     dictionary = [[episodeInfo valueForKey:@"episode"] retain];
-    self.show = [[Show alloc] initWithDictionary:[episodeInfo valueForKey:@"show"]];
+    self.show = theShow;
   }
   return self;
 }
+
 
 - (void)dealloc {
   [dictionary release];

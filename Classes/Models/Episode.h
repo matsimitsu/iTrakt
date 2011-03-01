@@ -14,6 +14,7 @@
 @property (nonatomic, assign) BOOL seen;
 
 - (id)initWithDictionary:(NSDictionary *)episodeInfo;
+- (id)initWithShow:(Show *)theShow episodeInfo:(NSDictionary *)episodeInfo;
 
 - (NSString *)title;
 - (NSURL *)thumbURL;

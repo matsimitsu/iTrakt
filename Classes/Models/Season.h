@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "Show.h"
 
 @interface Season : NSObject {
   NSInteger number;
@@ -7,7 +8,7 @@
 
 @property (nonatomic, retain) NSMutableArray *episodes;
 
-- (id)initWithDictionary:(NSDictionary *)dict;
+- (id)initWithShow:(Show *)show seasonInfo:(NSDictionary *)dict;
 
 - (NSString *)label;
 

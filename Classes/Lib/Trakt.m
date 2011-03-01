@@ -125,14 +125,14 @@ static Trakt *sharedTrakt = nil;
   return [NSURL URLWithString:[NSString stringWithFormat:@"%@/shows/%@/seasons_with_episodes", self.baseURL, tvdb_id]];
 }
 
-- (void)seasons:(NSString *)tvdb_id block:(void (^)(NSArray *seasons))block {
+- (void)seasons:(Show *)show block:(void (^)(NSArray *seasons))block {
   // NSLog(@"[!] Start download of season data from: %@", tvdb_id);
-  [JSONDownload downloadFromURL:[self seasonsURL:tvdb_id] username:self.apiUser password:self.apiPasswordHash block:^(id response) {
+  [JSONDownload downloadFromURL:[self seasonsURL:show.tvdbID] username:self.apiUser password:self.apiPasswordHash block:^(id response) {
     // NSLog(@"[!] Finished download of season data");
     NSMutableArray *seasons = [NSMutableArray array];
     for(NSDictionary *seasonDict in (NSArray *)response) {
       // NSLog([response description]);
-      Season *s = [[Season alloc] initWithDictionary:seasonDict];
+      Season *s = [[Season alloc] initWithShow:show seasonInfo:seasonDict];
       [seasons addObject:s];
       [s release];
     }

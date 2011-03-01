@@ -13,7 +13,7 @@
 @synthesize imageView;
 
 @synthesize titleLabel;
-@synthesize airTimeAndChannelLabel;
+@synthesize airtimeAndChannelLabel;
 @synthesize serieTitleAndEpisodeNumberLabel;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
@@ -36,10 +36,10 @@
     self.titleLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
     [self.contentView addSubview:titleLabel];
 
-    self.airTimeAndChannelLabel = [UILabel new];
-    self.airTimeAndChannelLabel.opaque = YES;
-    self.airTimeAndChannelLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
-    [self.contentView addSubview:airTimeAndChannelLabel];
+    self.airtimeAndChannelLabel = [UILabel new];
+    self.airtimeAndChannelLabel.opaque = YES;
+    self.airtimeAndChannelLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
+    [self.contentView addSubview:airtimeAndChannelLabel];
   }
   return self;
 }
@@ -58,12 +58,12 @@
 
   if (self.selected) {
     self.titleLabel.textColor = [UIColor whiteColor];
-    self.airTimeAndChannelLabel.textColor = [UIColor whiteColor];
+    self.airtimeAndChannelLabel.textColor = [UIColor whiteColor];
     self.serieTitleAndEpisodeNumberLabel.textColor = [UIColor whiteColor];
   } else {
     self.serieTitleAndEpisodeNumberLabel.textColor = [UIColor blackColor];
     self.titleLabel.textColor = [UIColor grayColor];
-    self.airTimeAndChannelLabel.textColor = [UIColor grayColor];
+    self.airtimeAndChannelLabel.textColor = [UIColor grayColor];
   }
 
   CGSize size = self.bounds.size;
@@ -92,15 +92,15 @@
   self.titleLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
 
   y += labelHeight + MARGIN_UNDERNEATH_LABEL;
-  self.airTimeAndChannelLabel.text = [self.episode airTimeAndChannel];
-  self.airTimeAndChannelLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
+  self.airtimeAndChannelLabel.text = [self.episode airtimeAndChannel];
+  self.airtimeAndChannelLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
 }
 
 - (void)dealloc {
   [super dealloc];
   [imageView release];
   [titleLabel release];
-  [airTimeAndChannelLabel release];
+  [airtimeAndChannelLabel release];
   [serieTitleAndEpisodeNumberLabel release];
 }
 

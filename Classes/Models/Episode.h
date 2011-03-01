@@ -3,41 +3,36 @@
 #import "Show.h"
 
 @interface Episode : NSObject {
+  NSDictionary *dictionary;
+  Show *show;
   UIImage *poster;
   UIImage *thumb;
-  NSURL *posterURL;
-  NSURL *thumbURL;
-  NSString *showTitle;
-  NSString *tvdbID;
-  NSString *title;
-  NSString *overview;
-  NSString *network;
-  NSDate *airtime;
-  NSUInteger season;
-  NSUInteger number;
   BOOL seen;
 }
 
+@property (nonatomic, retain) Show *show;
 @property (nonatomic, retain) UIImage *poster;
 @property (nonatomic, retain) UIImage *thumb;
-@property (nonatomic, retain) NSURL *posterURL;
-@property (nonatomic, retain) NSURL *thumbURL;
-@property (nonatomic, retain) NSString *tvdbID;
-@property (nonatomic, retain) NSString *showTitle;
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *overview;
-@property (nonatomic, retain) NSString *network;
-@property (nonatomic, retain) NSDate *airtime;
-@property (nonatomic, assign) NSUInteger season;
-@property (nonatomic, assign) NSUInteger number;
 @property (nonatomic, assign) BOOL seen;
 
 - (id)initWithDictionary:(NSDictionary *)episodeInfo;
 
+- (NSURL *)posterURL;
+- (NSString *)tvdbID;
+- (NSString *)showTitle;
+- (NSString *)network;
+- (NSDate *)airtime;
+- (NSString *)localizedAirtime;
+- (NSString *)airtimeAndChannel;
+
+- (NSString *)title;
+- (NSURL *)thumbURL;
+- (NSInteger)season;
+- (NSInteger)number;
+- (NSString *)overview;
+
 - (NSString *)episodeNumber;
 - (NSString *)serieTitleAndEpisodeNumber;
-
-- (NSString *)airTimeAndChannel;
 
 - (void)toggleSeen:(void (^)())requestCompletedBlock;
 

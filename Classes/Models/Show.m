@@ -3,25 +3,22 @@
 
 @implementation Show
 
-@synthesize dictionary;
-
-@synthesize poster;
 @synthesize seasons;
+@synthesize poster;
 @synthesize thumb;
 
-- (id)initWithDictionary:(NSDictionary *)showDict {
+- (id)initWithDictionary:(NSDictionary *)showInfo {
   if (self = [super init]) {
-    self.dictionary = showDict;
+    dictionary = [showInfo retain];
   }
   return self;
 }
 
 - (void)dealloc {
   [dictionary release];
-
+  [seasons release];
   [thumb release];
   [poster release];
-  [seasons release];
   [super dealloc];
 }
 
@@ -38,12 +35,16 @@
   return [dictionary valueForKey:@"overview"];
 }
 
+- (NSString *)network {
+  return [dictionary valueForKey:@"network"];
+}
+
 - (NSURL *)thumbURL {
   return [NSURL URLWithString:[dictionary valueForKey:@"thumb"]];
 }
 
 - (NSURL *)posterURL {
-  if ([NSNull null] != [dictionary objectForKey:@"poster"]){
+  if ([NSNull null] != [dictionary objectForKey:@"poster"]) {
     return [NSURL URLWithString:[dictionary valueForKey:@"poster"]];
   }
   return nil;
@@ -55,6 +56,31 @@
 
 - (NSInteger)watchers {
   return [[dictionary valueForKey:@"watchers"] integerValue];
+}
+
+// TODO should we cache this?
+- (NSDate *)airtime {
+  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+  [formatter setDateFormat:@"HH:mm:ss"];
+  [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation: @"EST"]];
+  NSDate *airtime = [formatter dateFromString:[dictionary valueForKey:@"air_time"]];
+  [formatter release];
+  return airtime;
+}
+
+- (NSString *)localizedAirtime {
+  NSDateFormatter *dateWriter = [[NSDateFormatter alloc] init];
+  //[dateWriter setDateFormat:@"hh:mma"];
+  [dateWriter setTimeStyle:NSDateFormatterShortStyle];
+  [dateWriter setDateStyle:NSDateFormatterNoStyle];
+  [dateWriter setTimeZone:[NSTimeZone systemTimeZone]];
+  NSString *dateString = [dateWriter stringFromDate:[self airtime]];
+  [dateWriter release];
+  return dateString;
+}
+
+- (NSString *)airtimeAndChannel {
+  return [NSString stringWithFormat:@"%@ on %@", [self localizedAirtime], [self network], nil];
 }
 
 

@@ -21,12 +21,12 @@
   ))
 
   (it "returns the time in the right locale" (do ()
-    (~ (@episode localizedAirTime) should be:"3:00 AM")
+    (~ (@episode localizedAirtime) should be:"3:00 AM")
   ))
 
   (it "returns where and when it will air" (do ()
     (~ (@episode network) should be:"FOX")
-    (~ (@episode airTimeAndChannel) should be:"3:00 AM on FOX")
+    (~ (@episode airtimeAndChannel) should be:"3:00 AM on FOX")
   ))
 
   (it "returns season and episode number info" (do ()
@@ -38,6 +38,8 @@
 
   (it "returns whether or not the user has seen it" (do ()
     (~ (@episode seen) should be:true)
+    (@episode setSeen:false)
+    (~ (@episode seen) should be:false)
   ))
 
   (it "toggles the `seen' state" (do ()

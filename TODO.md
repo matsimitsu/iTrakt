@@ -8,12 +8,10 @@ General
 * Episode watched field in the calendar feed is outside of the episode hash.
 * Trakt.tv is quite slow with returning the updated 'seen' value for an episode in the calendar feed. Or is that the proxy?
 * How do we deal with the Trakt API key?
-* Toggling the seen state of an episode currently only works for those in the calendar, because the show seasons_with_episodes feed does not contain the show's tvdb ID like the calendar feed does. Would be nice if that could be added to the proxy for now, but it should eventually all be moved to the Show associated with the Episode.
 * The download code that is already tested elsewhere, eg ensureThumbIsLoaded, don't need to be tested in the Trakt specs.
 * Refactor top-level controllers again to cleanup the code related to refreshing data as well.
 * Add Calendar class which returns episodes grouped by broadcast date.
 * The Calendar class should take a show title filter string which makes the Calendar return only those dates and episodes that match.
-* Add a Show property to a Episode, which holds the show related data that we now store on the episode itself.
 * Set the preferred show poster thumb size from the calendar controller.
 * Handle connection errors in some way which is needed to provide a good UX. I.e. should we retry, take a failure block, etc.
 

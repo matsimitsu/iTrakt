@@ -20,10 +20,10 @@
         [e release];
       }
 
-      NSSortDescriptor *airtimeDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"airtime"
+      NSSortDescriptor *airtimeDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"show.airtime"
                                                                          ascending:YES
                                                                           selector:@selector(compare:)] autorelease];
-      NSSortDescriptor *showTitleDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"showTitle"
+      NSSortDescriptor *showTitleDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"show.title"
                                                                            ascending:YES
                                                                             selector:@selector(localizedCaseInsensitiveCompare:)] autorelease];
  

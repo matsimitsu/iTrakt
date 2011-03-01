@@ -75,7 +75,7 @@
   imageWidth = floor(size.height * POSTER_ASPECT_RATIO);
   CGSize imageSize = CGSizeMake(imageWidth, size.height);
 
-  self.imageView.image = self.episode.poster;
+  self.imageView.image = self.episode.show.poster;
   self.imageView.frame = CGRectMake(x, y, imageSize.width, imageSize.height);
 
   x += imageWidth + MARGIN;
@@ -92,7 +92,7 @@
   self.titleLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
 
   y += labelHeight + MARGIN_UNDERNEATH_LABEL;
-  self.airtimeAndChannelLabel.text = [self.episode airtimeAndChannel];
+  self.airtimeAndChannelLabel.text = [self.episode.show airtimeAndChannel];
   self.airtimeAndChannelLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
 }
 

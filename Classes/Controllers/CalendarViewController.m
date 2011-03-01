@@ -81,7 +81,7 @@
 
 - (void)loadImageForCell:(UITableViewCell *)cell {
   EpisodeTableViewCell *episodeCell = (EpisodeTableViewCell *)cell;
-  [episodeCell.episode ensureShowPosterIsLoaded:^{
+  [episodeCell.episode.show ensurePosterIsLoaded:^{
     // this callback is only run if the image has to be downloaded first
     [episodeCell setNeedsLayout];
   }];
@@ -214,8 +214,8 @@
 
   for (BroadcastDate *broadcastDate in self.broadcastDates) {
     for (Episode *episode in broadcastDate.episodes) {
-      NSRange range = [episode.showTitle rangeOfString:searchText
-                                               options:NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch | NSWidthInsensitiveSearch];
+      NSRange range = [episode.show.title rangeOfString:searchText
+                                                options:NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch | NSWidthInsensitiveSearch];
       if (range.location != NSNotFound) {
         //NSLog(@"Episode: %@", episode.showTitle);
         if (dateWithEpisodes == nil) {

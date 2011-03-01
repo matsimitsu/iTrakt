@@ -52,12 +52,6 @@ static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
 
 @implementation Episode (SpecHelper)
 
-- (void)ensureShowPosterIsLoadedWithNuBlock:(id)nuBlock {
-  [self ensureShowPosterIsLoaded:^{
-    callNuBlockWithArguments(nuBlock, [NSArray array]);
-  }];
-}
-
 - (void)ensureThumbIsLoadedWithNuBlock:(id)nuBlock {
   [self ensureThumbIsLoaded:^{
     callNuBlockWithArguments(nuBlock, [NSArray array]);

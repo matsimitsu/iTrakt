@@ -152,7 +152,7 @@ static Trakt *sharedTrakt = nil;
   NSURL *url = episode.seen ? [self episodeNotSeenURL] : [self episodeSeenURL];
   // Using YAJL for this really seems like overdoing it
   NSString *json = [NSString stringWithFormat:@"{ \"tvdb_id\":\"%@\", \"episodes\":[{ \"season\":%d, \"episode\":%d }] }",
-                                              episode.tvdbID, episode.season, episode.number];
+                                              [episode.show tvdbID], episode.season, episode.number];
   //NSLog(@"JSON: %@", json);
   [HTTPDownload postToURL:url body:json username:self.apiUser password:self.apiPasswordHash block:^(id response) {
     episode.seen = !episode.seen;

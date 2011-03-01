@@ -47,16 +47,16 @@
           (~ date should be kindOfClass:BroadcastDate)
 
           (set episode ((date episodes) objectAtIndex:0))
-          (~ (episode showTitle) should be:"Episodes")
-          (~ (episode localizedAirtime) should be:"3:30 AM")
+          (~ ((episode show) title) should be:"Episodes")
+          (~ (episode title) should be:"Episode Five")
 
           (set episode ((date episodes) objectAtIndex:1))
-          (~ (episode showTitle) should be:"Flashpoint")
-          (~ (episode localizedAirtime) should be:"4:00 AM")
+          (~ ((episode show) title) should be:"Flashpoint")
+          (~ (episode title) should be:"Fault Lines")
 
           (set episode ((date episodes) objectAtIndex:2))
-          (~ (episode showTitle) should be:"Top Gear")
-          (~ (episode localizedAirtime) should be:"4:00 AM")
+          (~ ((episode show) title) should be:"Top Gear")
+          (~ (episode title) should be:"Series 16, Episode 3")
         ))
         (wait 0.1 (do ()
           ; Nothing... We just wait with further spec execution until the ImageDownload is (probably) finished.

@@ -5,7 +5,6 @@
 @implementation Episode
 
 @synthesize show;
-@synthesize poster;
 @synthesize thumb;
 @synthesize seen;
 
@@ -22,32 +21,8 @@
 - (void)dealloc {
   [dictionary release];
   [show release];
-  [poster release];
   [thumb release];
   [super dealloc];
-}
-
-// TODO move these Show methods out and fix the code that uses it
-- (NSURL *)posterURL {
-  return [show posterURL];
-}
-- (NSString *)tvdbID {
-  return [show tvdbID];
-}
-- (NSString *)showTitle {
-  return [show title];
-}
-- (NSString *)network {
-  return [show network];
-}
-- (NSDate *)airtime {
-  return [show airtime];
-}
-- (NSString *)localizedAirtime {
-  return [show localizedAirtime];
-}
-- (NSString *)airtimeAndChannel {
-  return [show airtimeAndChannel];
 }
 
 
@@ -79,14 +54,13 @@
 }
 
 - (NSString *)serieTitleAndEpisodeNumber {
-  return [NSString stringWithFormat:@"%@ %@", [self episodeNumber], self.showTitle, nil];
+  return [NSString stringWithFormat:@"%@ %@", [self episodeNumber], [show title], nil];
 }
 
 
 - (void)toggleSeen:(void (^)())requestCompletedBlock {
   [[Trakt sharedInstance] toggleSeenForEpisode:self block:requestCompletedBlock];
 }
-
 
 - (void)ensureThumbIsLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the thumb loaded for performance!
@@ -100,26 +74,6 @@
       //else {
         //NSLog(@"Loaded show episode thumb cache with tvdb ID: %@", tvdbID);
       //}
-    }];
-  }
-}
-
-- (UIImage *)poster {
-  if (poster == nil) {
-    poster = [[[Trakt sharedInstance] cachedShowPosterForURL:self.posterURL] retain];
-    if (poster == nil) {
-      return [UIImage imageNamed:@"default-poster.png"];
-    }
-  }
-  return poster;
-}
-
-- (void)ensureShowPosterIsLoaded:(void (^)())downloadedBlock {
-  // important to first check if we already have the poster loaded for performance!
-  if (poster == nil) {
-    [[Trakt sharedInstance] showPosterForURL:self.posterURL block:^(UIImage *thePoster, BOOL cached) {
-      self.poster = thePoster;
-      downloadedBlock();
     }];
   }
 }

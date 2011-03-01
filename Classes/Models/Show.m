@@ -3,44 +3,58 @@
 
 @implementation Show
 
-@synthesize tvdbID;
-@synthesize title;
-@synthesize overview;
-@synthesize posterURL;
-@synthesize thumbURL;
+@synthesize dictionary;
+
 @synthesize poster;
 @synthesize seasons;
 @synthesize thumb;
-@synthesize year;
-@synthesize watchers;
 
 - (id)initWithDictionary:(NSDictionary *)showDict {
   if (self = [super init]) {
-    self.tvdbID    = [[showDict valueForKey:@"tvdb_id"] copy];
-    self.title     = [[showDict valueForKey:@"title"] copy];
-    self.overview  = [[showDict valueForKey:@"overview"] copy];
-    self.thumbURL  = [NSURL URLWithString:[showDict valueForKey:@"thumb"]];
-    self.year      = [[showDict valueForKey:@"year"] integerValue];
-    self.watchers  = [[showDict valueForKey:@"watchers"] integerValue];
-
-    if([[showDict objectForKey:@"poster"] isKindOfClass:[NSString class]] ){
-      self.posterURL = [NSURL URLWithString:[showDict valueForKey:@"poster"]];
-    }
-
+    self.dictionary = showDict;
   }
   return self;
 }
 
 - (void)dealloc {
-  [tvdbID release];
-  [title release];
-  [overview release];
-  [thumbURL release];
+  [dictionary release];
+
   [thumb release];
-  [posterURL release];
   [poster release];
   [seasons release];
   [super dealloc];
+}
+
+
+- (NSString *)tvdbID {
+  return [dictionary valueForKey:@"tvdb_id"];
+}
+
+- (NSString *)title {
+  return [dictionary valueForKey:@"title"];
+}
+
+- (NSString *)overview {
+  return [dictionary valueForKey:@"overview"];
+}
+
+- (NSURL *)thumbURL {
+  return [NSURL URLWithString:[dictionary valueForKey:@"thumb"]];
+}
+
+- (NSURL *)posterURL {
+  if ([NSNull null] != [dictionary objectForKey:@"poster"]){
+    return [NSURL URLWithString:[dictionary valueForKey:@"poster"]];
+  }
+  return nil;
+}
+
+- (NSInteger)year {
+  return [[dictionary valueForKey:@"year"] integerValue];
+}
+
+- (NSInteger)watchers {
+  return [[dictionary valueForKey:@"watchers"] integerValue];
 }
 
 

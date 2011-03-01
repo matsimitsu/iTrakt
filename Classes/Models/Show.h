@@ -1,30 +1,28 @@
 #import <Foundation/Foundation.h>
 
 @interface Show : NSObject {
-  NSString *tvdbID;
-  NSString *title;
-  NSString *overview;
-  NSUInteger year;
-  NSUInteger watchers;
-  NSURL *posterURL;
-  NSURL *thumbURL;
+  NSDictionary *dictionary;
+
   NSArray *seasons;
   UIImage *poster;
   UIImage *thumb;
 }
 
-@property (nonatomic, retain) NSString *tvdbID;
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *overview;
-@property (nonatomic, retain) NSURL *posterURL;
-@property (nonatomic, retain) NSURL *thumbURL;
+@property (nonatomic, retain) NSDictionary *dictionary;
+
 @property (nonatomic, retain) NSArray *seasons;
 @property (nonatomic, retain) UIImage *poster;
 @property (nonatomic, retain) UIImage *thumb;
-@property (assign) NSUInteger year;
-@property (assign) NSUInteger watchers;
 
 - (id)initWithDictionary:(NSDictionary *)showDict;
+
+- (NSString *)tvdbID;
+- (NSString *)title;
+- (NSString *)overview;
+- (NSURL *)thumbURL;
+- (NSURL *)posterURL;
+- (NSInteger)year;
+- (NSInteger)watchers;
 
 - (void)ensurePosterIsLoaded:(void (^)())downloadedBlock;
 - (void)ensureThumbIsLoaded:(void (^)())downloadedBlock;

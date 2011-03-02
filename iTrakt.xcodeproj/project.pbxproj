@@ -136,6 +136,7 @@
 		240D0FA512FB5964002349B5 /* ShowDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowDetailsViewController.h; path = Controllers/ShowDetailsViewController.h; sourceTree = "<group>"; };
 		240D0FA612FB5964002349B5 /* ShowDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowDetailsViewController.m; path = Controllers/ShowDetailsViewController.m; sourceTree = "<group>"; };
 		240D101C12FB627E002349B5 /* ShowDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ShowDetailsViewController.xib; path = Views/ShowDetailsViewController.xib; sourceTree = "<group>"; };
+		24229071131E4B4200F1C3B3 /* Authentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Authentication.h; sourceTree = "<group>"; };
 		2441C23112F457CC00329D69 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Resize.m"; path = "vendor/UIImage/UIImage+Resize.m"; sourceTree = "<group>"; };
 		2441C23212F457CC00329D69 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Alpha.m"; path = "vendor/UIImage/UIImage+Alpha.m"; sourceTree = "<group>"; };
 		2441C23312F457CC00329D69 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RoundedCorner.m"; path = "vendor/UIImage/UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
@@ -302,6 +303,7 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				2479A22B12EC83DB00E2AD4E /* YAJL.framework */,
+				24229071131E4B4200F1C3B3 /* Authentication.h */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";

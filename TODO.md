@@ -30,8 +30,18 @@ Caching
 
 API
 ---
+
 * Search through all shows
 * Get ids of all updated shows/episodes
+
+
+Proxy
+-----
+
+* Port to rack / sinatra
+* See if we can receive the json in chunks, enrich them and immediately send them out again
+* Write specs!
+
 
 Design discussion
 -----------------

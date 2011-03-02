@@ -4,13 +4,18 @@
 
 @implementation Episode
 
-@synthesize show;
 @synthesize thumb;
 @synthesize seen;
 
 - (id)initWithDictionary:(NSDictionary *)episodeInfo {
-  return [self initWithShow:[[Show alloc] initWithDictionary:[episodeInfo valueForKey:@"show"]]
-                episodeInfo:episodeInfo];
+  // Keep a strong reference to the show, as it is a 'child' association
+  Show *s = [[Show alloc] initWithDictionary:[episodeInfo valueForKey:@"show"]];
+  if ([self initWithShow:s episodeInfo:episodeInfo]) {
+    ownsShow = YES;
+  } else {
+    [s release];
+  }
+  return self;
 }
 
 - (id)initWithShow:(Show *)theShow episodeInfo:(NSDictionary *)episodeInfo {
@@ -18,7 +23,9 @@
     // TODO why is the watched field not inside the episode hash in the calendar feed?
     seen = [[episodeInfo valueForKey:@"watched"] boolValue];
     dictionary = [[episodeInfo valueForKey:@"episode"] retain];
-    self.show = theShow;
+    // Keep a weak reference to the show, as it is as 'parent' association.
+    ownsShow = NO;
+    show = theShow;
   }
   return self;
 }
@@ -26,11 +33,18 @@
 
 - (void)dealloc {
   [dictionary release];
-  [show release];
+  if (ownsShow) {
+    [show release];
+  }
   [thumb release];
   [super dealloc];
 }
 
+
+// Depending on how the Episode was initialized, this might be a weak reference.
+- (Show *)show {
+  return show;
+}
 
 - (NSString *)title {
   return [dictionary valueForKey:@"title"];

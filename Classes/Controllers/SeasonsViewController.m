@@ -3,6 +3,7 @@
 #import "Episode.h"
 #import "EpisodeDetailsViewController.h"
 #import "HTTPDownload.h"
+#import "ToggleWatchedControl.h"
 
 @implementation SeasonsViewController
 
@@ -113,13 +114,30 @@
     cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
   }
 
-  Season *season = [seasons objectAtIndex:indexPath.section];
-  Episode *episode = [season.episodes objectAtIndex:indexPath.row];
-  if (episode.seen) {
-    cell.textLabel.text = [NSString stringWithFormat:@"✔ %@", episode.title];
-  } else {
-    cell.textLabel.text = episode.title;
+  CGRect CheckBoxFrame = CGRectMake(5,10,20,20);
+
+  ToggleWatchedControl *toggleControl = [[ToggleWatchedControl alloc] initWithFrame: CheckBoxFrame];
+  toggleControl.tag = indexPath.row;  // for reference in notifications.
+  [cell.contentView addSubview: toggleControl];
+
+  if (seasons != nil) {
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   }
+
+  CGSize size = cell.bounds.size;
+  CGFloat labelWidth;
+  labelWidth = size.width - 30;
+
+  UILabel *label = cell.textLabel;
+  label.frame = CGRectMake(0, 35, labelWidth, 30);
+
+  NSDictionary *seasonDict = [seasons objectAtIndex:indexPath.section];
+  NSArray *episodesArray = [seasonDict valueForKey:@"episodes"];
+  NSDictionary *episodeDict = [episodesArray objectAtIndex:indexPath.row];
+  toggleControl.isOn = [[episodeDict valueForKey:@"watched"] boolValue];
+
+  label.text = [NSString stringWithFormat:@"%02d - %@", [[episodeDict valueForKey:@"episode"] integerValue], [episodeDict valueForKey:@"name"], nil];
+
   return cell;
 }
 

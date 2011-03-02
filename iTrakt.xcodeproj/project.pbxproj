@@ -28,6 +28,8 @@
 		2458FBC612EB6978001B7590 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2458FBBB12EB6978001B7590 /* Default.png */; };
 		2458FBC712EB6978001B7590 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 2458FBBC12EB6978001B7590 /* Default-Portrait.png */; };
 		2458FBC812EB6978001B7590 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 2458FBBD12EB6978001B7590 /* Default-Landscape.png */; };
+		245BC87B13194E890000BA77 /* ToggleWatchedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BC87A13194E890000BA77 /* ToggleWatchedControl.m */; };
+		245BC8C21319565E0000BA77 /* toggleImageNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 245BC8C11319565E0000BA77 /* toggleImageNormal.png */; };
 		246834971310225300E177A2 /* SeasonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246834951310225300E177A2 /* SeasonsViewController.m */; };
 		2468349A1310228D00E177A2 /* SeasonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246834991310228D00E177A2 /* SeasonsViewController.xib */; };
 		2479A22C12EC83DB00E2AD4E /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2479A22B12EC83DB00E2AD4E /* YAJL.framework */; };
@@ -155,8 +157,11 @@
 		2458FBBB12EB6978001B7590 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Images/Default.png; sourceTree = "<group>"; };
 		2458FBBC12EB6978001B7590 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait.png"; path = "Images/Default-Portrait.png"; sourceTree = "<group>"; };
 		2458FBBD12EB6978001B7590 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "Images/Default-Landscape.png"; sourceTree = "<group>"; };
-		246834951310225300E177A2 /* SeasonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeasonsViewController.m; path = Controllers/SeasonsViewController.m; sourceTree = "<group>"; };
-		246834961310225300E177A2 /* SeasonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeasonsViewController.h; path = Controllers/SeasonsViewController.h; sourceTree = "<group>"; };
+		245BC87913194E890000BA77 /* ToggleWatchedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleWatchedControl.h; sourceTree = "<group>"; };
+		245BC87A13194E890000BA77 /* ToggleWatchedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleWatchedControl.m; sourceTree = "<group>"; };
+		245BC8C11319565E0000BA77 /* toggleImageNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toggleImageNormal.png; path = Images/toggleImageNormal.png; sourceTree = "<group>"; };
+		246834951310225300E177A2 /* SeasonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeasonsViewController.m; sourceTree = "<group>"; };
+		246834961310225300E177A2 /* SeasonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeasonsViewController.h; sourceTree = "<group>"; };
 		246834991310228D00E177A2 /* SeasonsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SeasonsViewController.xib; path = Views/SeasonsViewController.xib; sourceTree = "<group>"; };
 		2479A22B12EC83DB00E2AD4E /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJL.framework; path = vendor/YAJL.framework; sourceTree = "<group>"; };
 		2484C6AC12E9F568000D3871 /* BroadcastDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BroadcastDate.h; path = Models/BroadcastDate.h; sourceTree = "<group>"; };
@@ -259,6 +264,44 @@
 				513BE8C4131996310076F8F9 /* Views */,
 				513BE8C3131996260076F8F9 /* Models */,
 				513BE8C2131996170076F8F9 /* Controllers */,
+				245BC87913194E890000BA77 /* ToggleWatchedControl.h */,
+				245BC87A13194E890000BA77 /* ToggleWatchedControl.m */,
+				28C286DF0D94DF7D0034E888 /* CalendarViewController.h */,
+				246834951310225300E177A2 /* SeasonsViewController.m */,
+				246834961310225300E177A2 /* SeasonsViewController.h */,
+				28C286E00D94DF7D0034E888 /* CalendarViewController.m */,
+				1D3623240D0F684500981E51 /* iTraktAppDelegate.h */,
+				1D3623250D0F684500981E51 /* iTraktAppDelegate.m */,
+				2484C6AC12E9F568000D3871 /* BroadcastDate.h */,
+				2484C6AD12E9F568000D3871 /* BroadcastDate.m */,
+				51FBCC9512EA375500073C68 /* EpisodeTableViewCell.h */,
+				51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */,
+				51FBCC9812EA391B00073C68 /* Episode.h */,
+				51FBCC9912EA391B00073C68 /* Episode.m */,
+				5134008312EF4D72007ED54E /* EpisodeDetailsViewController.h */,
+				5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */,
+				513400C412EF71A4007ED54E /* ImageCell.h */,
+				513400C512EF71A4007ED54E /* ImageCell.m */,
+				510C6AF812F369C2000500A1 /* Trakt.h */,
+				510C6AF912F369C2000500A1 /* Trakt.m */,
+				510C6EC412F8A2EC000500A1 /* LibraryViewController.h */,
+				510C6EC512F8A2EC000500A1 /* LibraryViewController.m */,
+				510C6EDD12F8A83D000500A1 /* Show.h */,
+				510C6EDE12F8A83D000500A1 /* Show.m */,
+				510C6F3012F8B0E9000500A1 /* ShowTableViewCell.h */,
+				510C6F3112F8B0E9000500A1 /* ShowTableViewCell.m */,
+				240D0FA512FB5964002349B5 /* ShowDetailsViewController.h */,
+				240D0FA612FB5964002349B5 /* ShowDetailsViewController.m */,
+				510C6FBB12FB5B2C000500A1 /* TrendingViewController.h */,
+				510C6FBC12FB5B2C000500A1 /* TrendingViewController.m */,
+				510C6FCB12FB5D7D000500A1 /* ShowsViewController.h */,
+				510C6FCC12FB5D7D000500A1 /* ShowsViewController.m */,
+				5181A1C11306EB4800B3761A /* AsyncImageTableViewController.h */,
+				5181A1C21306EB4800B3761A /* AsyncImageTableViewController.m */,
+				513BE2EC1307FF280076F8F9 /* HTTPDownload.h */,
+				513BE2ED1307FF280076F8F9 /* HTTPDownload.m */,
+				511EE73813192A6B0000B12D /* Base64.h */,
+				511EE73913192A6B0000B12D /* Base64.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -331,6 +374,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				245BC8C11319565E0000BA77 /* toggleImageNormal.png */,
 				513BE706130F18430076F8F9 /* default-poster.png */,
 				513400A612EF5299007ED54E /* episode.jpg */,
 				2458FBDB12EB69D9001B7590 /* Images */,
@@ -481,7 +525,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* iTrakt */ = {
+		1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iTrakt" */;
 			buildPhases = (
@@ -542,7 +586,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* iTrakt */,
+				1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */,
 				513401B712F36248007ED54E /* Specs */,
 			);
 		};
@@ -593,6 +637,7 @@
 				240D101D12FB627E002349B5 /* ShowDetailsViewController.xib in Resources */,
 				513BE708130F18430076F8F9 /* default-poster.png in Resources */,
 				2468349A1310228D00E177A2 /* SeasonsViewController.xib in Resources */,
+				245BC8C21319565E0000BA77 /* toggleImageNormal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +697,7 @@
 				246834971310225300E177A2 /* SeasonsViewController.m in Sources */,
 				511EE73A13192A6B0000B12D /* Base64.m in Sources */,
 				511EE7C6131969F00000B12D /* Season.m in Sources */,
+				245BC87B13194E890000BA77 /* ToggleWatchedControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

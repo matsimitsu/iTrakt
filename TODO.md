@@ -6,8 +6,6 @@ General
 
 * Rename -[Episode initWithDictionary:] to initWithEpisodeInfo and same for -[Show initWithDictionary:].
 * Episode watched field in the calendar feed is outside of the episode hash.
-* Trakt.tv is quite slow with returning the updated 'seen' value for an episode in the calendar feed. Or is that the proxy?
-* How do we deal with the Trakt API key?
 * The download code that is already tested elsewhere, eg ensureThumbIsLoaded, don't need to be tested in the Trakt specs.
 * Refactor top-level controllers again to cleanup the code related to refreshing data as well.
 * Add Calendar class which returns episodes grouped by broadcast date.

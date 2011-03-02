@@ -67,7 +67,7 @@
 
 
 - (void)loadData:(NSArray *)loadedShows {
-  NSMutableArray *groupedShows = [NSMutableArray new];
+  NSMutableArray *groupedShows = [NSMutableArray array];
   NSMutableArray *titles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
 
   NSRange skipPrefixRange = NSMakeRange(4, 1);

@@ -36,10 +36,12 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
   //CGContextSetRGBStrokeColor(context, 0.53, 0.53, 0.53, 1);
   CGContextSetRGBStrokeColor(context, 0.25, 0.25, 0.25, 1);
 
+  // Draw border
   CGContextSetLineWidth(context, 1.5);
   addRoundedRect(context, CGRectInset(self.bounds, 2, 2), 3);
   CGContextStrokePath(context);
 
+  // Clear border where the checkmark crosses it
   CGContextSaveGState(context);
   CGContextSetBlendMode(context, kCGBlendModeClear);
   CGContextMoveToPoint(   context, 16, 2);
@@ -49,18 +51,20 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
   CGContextAddLineToPoint(context, 16, 2);
   CGContextFillPath(context);
 
+  // Draw checkmark
   CGContextRestoreGState(context);
   CGContextSetRGBFillColor(context, 0.25, 0.25, 0.25, 1);
   CGContextSetLineWidth(context, 1);
-  CGContextMoveToPoint(context, 7, 8);
-  CGContextAddLineToPoint(context, 10, 11);
-  CGContextAddLineToPoint(context, 19, 1);
-  CGContextAddLineToPoint(context, 20, 2);
-  CGContextAddLineToPoint(context, 10, 16);
-  //CGContextAddLineToPoint(context, 10, 14);
-  CGContextAddLineToPoint(context, 5.5, 9.5);
-  CGContextAddLineToPoint(context, 7, 8);
-
+  CGContextMoveToPoint(   context,  7,    8);   // top of left part
+  CGContextAddLineToPoint(context, 10,   11);   // top of middle part
+  CGContextAddLineToPoint(context, 19,    1);   // top of right part
+  CGContextAddLineToPoint(context, 20,    2);   // bottom of right part
+  //CGContextAddArcToPoint(context, 16, 6, 10.5, 16, 2); // arc from mid right part to bottom of middle part?
+  //CGContextAddArcToPoint(context, 10.5, 10, 10.5, 16, 2); // arc from mid right part to bottom of middle part?
+  CGContextAddLineToPoint(context, 16,    6);   // steeper path from mid right part to bottom of middle part
+  CGContextAddLineToPoint(context, 10.5, 16);   // bottom of middle part
+  CGContextAddLineToPoint(context,  5.5,  9.5); // bottom of left part
+  CGContextAddLineToPoint(context,  7,    8);   // close path
   CGContextFillPath(context);
 }
 

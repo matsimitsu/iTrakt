@@ -1,9 +1,4 @@
 #import "Checkbox.h"
-#import <QuartzCore/QuartzCore.h>
-
-@interface CheckboxDrawing : CALayer
-
-@end
 
 static void
 addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
@@ -32,7 +27,16 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
 
 @implementation CheckboxDrawing
 
+@synthesize selected;
+
+- (void)setSelected:(BOOL)flag {
+  selected = flag;
+  [self setNeedsDisplay];
+}
+
 - (void)drawInContext:(CGContextRef)context {
+  NSLog(@"DRAW!");
+
   //CGContextSetRGBStrokeColor(context, 0.53, 0.53, 0.53, 1);
   CGContextSetRGBStrokeColor(context, 0.25, 0.25, 0.25, 1);
 
@@ -41,31 +45,33 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
   addRoundedRect(context, CGRectInset(self.bounds, 2, 2), 3);
   CGContextStrokePath(context);
 
-  // Clear border where the checkmark crosses it
-  CGContextSaveGState(context);
-  CGContextSetBlendMode(context, kCGBlendModeClear);
-  CGContextMoveToPoint(   context, 16, 2);
-  CGContextAddLineToPoint(context, 20, 1);
-  CGContextAddLineToPoint(context, 20, 4);
-  CGContextAddLineToPoint(context, 17, 7);
-  CGContextAddLineToPoint(context, 16, 2);
-  CGContextFillPath(context);
+  if (selected) {
+    // Clear border where the checkmark crosses it
+    CGContextSaveGState(context);
+    CGContextSetBlendMode(context, kCGBlendModeClear);
+    CGContextMoveToPoint(   context, 16, 2);
+    CGContextAddLineToPoint(context, 20, 1);
+    CGContextAddLineToPoint(context, 20, 4);
+    CGContextAddLineToPoint(context, 17, 7);
+    CGContextAddLineToPoint(context, 16, 2);
+    CGContextFillPath(context);
 
-  // Draw checkmark
-  CGContextRestoreGState(context);
-  CGContextSetRGBFillColor(context, 0.25, 0.25, 0.25, 1);
-  CGContextSetLineWidth(context, 1);
-  CGContextMoveToPoint(   context,  7,    8);   // top of left part
-  CGContextAddLineToPoint(context, 10,   11);   // top of middle part
-  CGContextAddLineToPoint(context, 19,    1);   // top of right part
-  CGContextAddLineToPoint(context, 20,    2);   // bottom of right part
-  //CGContextAddArcToPoint(context, 16, 6, 10.5, 16, 2); // arc from mid right part to bottom of middle part?
-  //CGContextAddArcToPoint(context, 10.5, 10, 10.5, 16, 2); // arc from mid right part to bottom of middle part?
-  CGContextAddLineToPoint(context, 16,    6);   // steeper path from mid right part to bottom of middle part
-  CGContextAddLineToPoint(context, 10.5, 16);   // bottom of middle part
-  CGContextAddLineToPoint(context,  5.5,  9.5); // bottom of left part
-  CGContextAddLineToPoint(context,  7,    8);   // close path
-  CGContextFillPath(context);
+    // Draw checkmark
+    CGContextRestoreGState(context);
+    CGContextSetRGBFillColor(context, 0.25, 0.25, 0.25, 1);
+    CGContextSetLineWidth(context, 1);
+    CGContextMoveToPoint(   context,  7,    8);   // top of left part
+    CGContextAddLineToPoint(context, 10,   11);   // top of middle part
+    CGContextAddLineToPoint(context, 19,    1);   // top of right part
+    CGContextAddLineToPoint(context, 20,    2);   // bottom of right part
+    //CGContextAddArcToPoint(context, 16, 6, 10.5, 16, 2); // arc from mid right part to bottom of middle part?
+    //CGContextAddArcToPoint(context, 10.5, 10, 10.5, 16, 2); // arc from mid right part to bottom of middle part?
+    CGContextAddLineToPoint(context, 16,    6);   // steeper path from mid right part to bottom of middle part
+    CGContextAddLineToPoint(context, 10.5, 16);   // bottom of middle part
+    CGContextAddLineToPoint(context,  5.5,  9.5); // bottom of left part
+    CGContextAddLineToPoint(context,  7,    8);   // close path
+    CGContextFillPath(context);
+  }
 }
 
 @end
@@ -74,8 +80,7 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
 
 - (id)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
-    NSLog(@"Complete frame %@", NSStringFromCGRect(frame));
-    
+    //NSLog(@"Complete frame %@", NSStringFromCGRect(frame));
     CALayer *layer = self.layer;
     
     CAGradientLayer *boxBackground = [CAGradientLayer layer];
@@ -84,33 +89,35 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
     boxBackground.colors = [NSArray arrayWithObjects:(id)startColor.CGColor, (id)endColor.CGColor, nil];
     //boxBackground.locations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.0], [NSNumber numberWithFloat:1.0], nil];
     boxBackground.cornerRadius = 3.0;
-    //boxBackground.frame = CGRectMake(2, 2, frame.size.width - 2, frame.size.height - 2);
     boxBackground.frame = CGRectMake(2, 2, 17, 17);
-    boxBackground.edgeAntialiasingMask = 0;
-    NSLog(@"BG edge antialias: %d BG frame: %@", boxBackground.edgeAntialiasingMask, NSStringFromCGRect(boxBackground.frame));
     [layer addSublayer:boxBackground];
 
-    CALayer *drawing = [CheckboxDrawing layer];
-    //drawing.frame = CGRectMake(2, 2, frame.size.width - 2, frame.size.height - 2);
-    //drawing.frame = CGRectMake(2, 2, 26, 26);
+    drawing = [CheckboxDrawing new];
     drawing.frame = CGRectMake(0, 0, 21, 21);
     [layer addSublayer:drawing];
-    [drawing setNeedsDisplay];
+
+    self.selected = NO;
+
+    [self addTarget:self action:@selector(checkboxClicked:) forControlEvents:UIControlEventTouchUpInside];
   }
   return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code.
+- (void)setSelected:(BOOL)flag {
+  NSLog(@"Set selection: %d", (int)flag);
+  [super setSelected:flag];
+  drawing.selected = flag;
 }
-*/
 
-//- (void)dealloc {
-  //[super dealloc];
-//}
+- (void)checkboxClicked:(id)sender {
+  NSLog(@"CLICKED!");
+  self.selected = !self.selected;
+}
+
+- (void)dealloc {
+  [drawing release];
+  [super dealloc];
+}
 
 
 @end

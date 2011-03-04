@@ -98,6 +98,8 @@
 		516CE9B812F4565A003450CF /* poster.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 516CE9B712F4565A003450CF /* poster.jpg */; };
 		516CE9BB12F4574C003450CF /* banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2448DCED12E9EDD600AC422E /* banner.jpg */; };
 		5181A1C31306EB4800B3761A /* AsyncImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5181A1C21306EB4800B3761A /* AsyncImageTableViewController.m */; };
+		518D6768131EF7260086143B /* Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 518D6767131EF7260086143B /* Checkbox.m */; };
+		518D6799131F030D0086143B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518D6798131F030D0086143B /* QuartzCore.framework */; };
 		51FBCC9712EA375500073C68 /* EpisodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */; };
 		51FBCC9A12EA391B00073C68 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9912EA391B00073C68 /* Episode.m */; };
 /* End PBXBuildFile section */
@@ -220,6 +222,9 @@
 		516CE9B712F4565A003450CF /* poster.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = poster.jpg; path = Spec/fixtures/poster.jpg; sourceTree = "<group>"; };
 		5181A1C11306EB4800B3761A /* AsyncImageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncImageTableViewController.h; path = Controllers/AsyncImageTableViewController.h; sourceTree = "<group>"; };
 		5181A1C21306EB4800B3761A /* AsyncImageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncImageTableViewController.m; path = Controllers/AsyncImageTableViewController.m; sourceTree = "<group>"; };
+		518D6766131EF7260086143B /* Checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Checkbox.h; path = Views/Checkbox.h; sourceTree = "<group>"; };
+		518D6767131EF7260086143B /* Checkbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Checkbox.m; path = Views/Checkbox.m; sourceTree = "<group>"; };
+		518D6798131F030D0086143B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		51FBCC9512EA375500073C68 /* EpisodeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EpisodeTableViewCell.h; path = Views/EpisodeTableViewCell.h; sourceTree = "<group>"; };
 		51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EpisodeTableViewCell.m; path = Views/EpisodeTableViewCell.m; sourceTree = "<group>"; };
 		51FBCC9812EA391B00073C68 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Episode.h; path = Models/Episode.h; sourceTree = "<group>"; };
@@ -236,6 +241,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				2479A22C12EC83DB00E2AD4E /* YAJL.framework in Frameworks */,
+				518D6799131F030D0086143B /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +352,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+				518D6798131F030D0086143B /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -463,6 +470,8 @@
 				513400C512EF71A4007ED54E /* ImageCell.m */,
 				51FBCC9512EA375500073C68 /* EpisodeTableViewCell.h */,
 				51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */,
+				518D6766131EF7260086143B /* Checkbox.h */,
+				518D6767131EF7260086143B /* Checkbox.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -481,7 +490,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */ = {
+		1D6058900D05DD3D006BFB54 /* iTrakt */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iTrakt" */;
 			buildPhases = (
@@ -542,7 +551,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* NuBacon-iOSRunner */,
+				1D6058900D05DD3D006BFB54 /* iTrakt */,
 				513401B712F36248007ED54E /* Specs */,
 			);
 		};
@@ -652,6 +661,7 @@
 				246834971310225300E177A2 /* SeasonsViewController.m in Sources */,
 				511EE73A13192A6B0000B12D /* Base64.m in Sources */,
 				511EE7C6131969F00000B12D /* Season.m in Sources */,
+				518D6768131EF7260086143B /* Checkbox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

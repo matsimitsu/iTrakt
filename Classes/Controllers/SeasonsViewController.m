@@ -2,6 +2,7 @@
 #import "Season.h"
 #import "Episode.h"
 #import "EpisodeDetailsViewController.h"
+#import "Checkbox.h"
 #import "HTTPDownload.h"
 
 @implementation SeasonsViewController
@@ -111,6 +112,10 @@
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.minimumFontSize = [UIFont systemFontSize];
     cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+
+    Checkbox *cb = [[Checkbox alloc] initWithFrame:CGRectMake(7, 7, 28, 28)];
+    [cell addSubview:cb];
+    [cb release];
   }
 
   Season *season = [seasons objectAtIndex:indexPath.section];

@@ -1,7 +1,6 @@
 #import "EpisodeDetailsViewController.h"
 #import "ImageCell.h"
-#import "SeasonsEpisodeCell.h"
-#import "Checkbox.h"
+#import "CheckboxCell.h"
 
 #define EPISODE_IMAGE_ASPECT_RATIO 1.78
 
@@ -123,9 +122,9 @@
       static NSString *checkboxCellIdentifier = @"checkboxCell";
       cell = [tableView dequeueReusableCellWithIdentifier:checkboxCellIdentifier];
       if (cell == nil) {
-        cell = [[[SeasonsEpisodeCell alloc] initWithReuseIdentifier:checkboxCellIdentifier delegate:self disclosureAccessory:NO] autorelease];
+        cell = [[[CheckboxCell alloc] initWithReuseIdentifier:checkboxCellIdentifier delegate:self disclosureAccessory:NO] autorelease];
       }
-      [(SeasonsEpisodeCell *)cell setSelected:episode.seen text:@"Seen"];
+      [(CheckboxCell *)cell setSelected:episode.seen text:@"Seen"];
 
     } else {
       static NSString *textCellIdentifier = @"textCell";

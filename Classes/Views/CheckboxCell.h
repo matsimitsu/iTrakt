@@ -1,8 +1,7 @@
 #import <UIKit/UIKit.h>
+#import "Checkbox.h"
 
-@class Checkbox;
-
-@interface SeasonsEpisodeCell : UITableViewCell {
+@interface CheckboxCell : UITableViewCell {
   Checkbox *checkbox;
   UILabel *titleLabel;
 }

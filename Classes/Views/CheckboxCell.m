@@ -1,7 +1,6 @@
-#import "SeasonsEpisodeCell.h"
-#import "Checkbox.h"
+#import "CheckboxCell.h"
 
-@implementation SeasonsEpisodeCell
+@implementation CheckboxCell
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier delegate:(id)delegate disclosureAccessory:(BOOL)flag {
   if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {

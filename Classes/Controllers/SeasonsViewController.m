@@ -2,9 +2,8 @@
 #import "Season.h"
 #import "Episode.h"
 #import "EpisodeDetailsViewController.h"
-#import "Checkbox.h"
 #import "HTTPDownload.h"
-#import "SeasonsEpisodeCell.h"
+#import "CheckboxCell.h"
 
 @implementation SeasonsViewController
 
@@ -102,11 +101,11 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  static NSString *cellIdentifier = @"seasonsEpisodeCell";
-  SeasonsEpisodeCell *cell = (SeasonsEpisodeCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+  static NSString *cellIdentifier = @"checkboxCell";
+  CheckboxCell *cell = (CheckboxCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 
   if (cell == nil) {
-    cell = [[[SeasonsEpisodeCell alloc] initWithReuseIdentifier:cellIdentifier delegate:self disclosureAccessory:YES] autorelease];
+    cell = [[[CheckboxCell alloc] initWithReuseIdentifier:cellIdentifier delegate:self disclosureAccessory:YES] autorelease];
   }
 
   Season *season = [seasons objectAtIndex:indexPath.section];
@@ -117,7 +116,7 @@
 
 
 - (void)checkboxClicked:(Checkbox *)checkbox {
-  SeasonsEpisodeCell *cell = (SeasonsEpisodeCell *)checkbox.superview.superview;
+  CheckboxCell *cell = (CheckboxCell *)checkbox.superview.superview;
   NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
   Season *season = [seasons objectAtIndex:indexPath.section];
   Episode *episode = [season.episodes objectAtIndex:indexPath.row];

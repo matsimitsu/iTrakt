@@ -100,7 +100,7 @@
 		5181A1C31306EB4800B3761A /* AsyncImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5181A1C21306EB4800B3761A /* AsyncImageTableViewController.m */; };
 		518D6768131EF7260086143B /* Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 518D6767131EF7260086143B /* Checkbox.m */; };
 		518D6799131F030D0086143B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518D6798131F030D0086143B /* QuartzCore.framework */; };
-		51BFFAEB13350CF1006EBF54 /* SeasonsEpisodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAEA13350CF1006EBF54 /* SeasonsEpisodeCell.m */; };
+		51BFFAEB13350CF1006EBF54 /* CheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAEA13350CF1006EBF54 /* CheckboxCell.m */; };
 		51FBCC9712EA375500073C68 /* EpisodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */; };
 		51FBCC9A12EA391B00073C68 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9912EA391B00073C68 /* Episode.m */; };
 /* End PBXBuildFile section */
@@ -226,8 +226,8 @@
 		518D6766131EF7260086143B /* Checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Checkbox.h; path = Views/Checkbox.h; sourceTree = "<group>"; };
 		518D6767131EF7260086143B /* Checkbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Checkbox.m; path = Views/Checkbox.m; sourceTree = "<group>"; };
 		518D6798131F030D0086143B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		51BFFAE913350CF1006EBF54 /* SeasonsEpisodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeasonsEpisodeCell.h; path = Views/SeasonsEpisodeCell.h; sourceTree = "<group>"; };
-		51BFFAEA13350CF1006EBF54 /* SeasonsEpisodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeasonsEpisodeCell.m; path = Views/SeasonsEpisodeCell.m; sourceTree = "<group>"; };
+		51BFFAE913350CF1006EBF54 /* CheckboxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckboxCell.h; path = Views/CheckboxCell.h; sourceTree = "<group>"; };
+		51BFFAEA13350CF1006EBF54 /* CheckboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckboxCell.m; path = Views/CheckboxCell.m; sourceTree = "<group>"; };
 		51FBCC9512EA375500073C68 /* EpisodeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EpisodeTableViewCell.h; path = Views/EpisodeTableViewCell.h; sourceTree = "<group>"; };
 		51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EpisodeTableViewCell.m; path = Views/EpisodeTableViewCell.m; sourceTree = "<group>"; };
 		51FBCC9812EA391B00073C68 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Episode.h; path = Models/Episode.h; sourceTree = "<group>"; };
@@ -475,8 +475,8 @@
 				51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */,
 				518D6766131EF7260086143B /* Checkbox.h */,
 				518D6767131EF7260086143B /* Checkbox.m */,
-				51BFFAE913350CF1006EBF54 /* SeasonsEpisodeCell.h */,
-				51BFFAEA13350CF1006EBF54 /* SeasonsEpisodeCell.m */,
+				51BFFAE913350CF1006EBF54 /* CheckboxCell.h */,
+				51BFFAEA13350CF1006EBF54 /* CheckboxCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -667,7 +667,7 @@
 				511EE73A13192A6B0000B12D /* Base64.m in Sources */,
 				511EE7C6131969F00000B12D /* Season.m in Sources */,
 				518D6768131EF7260086143B /* Checkbox.m in Sources */,
-				51BFFAEB13350CF1006EBF54 /* SeasonsEpisodeCell.m in Sources */,
+				51BFFAEB13350CF1006EBF54 /* CheckboxCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -57,12 +57,5 @@ Design discussion
 
 * Shows that the user has in her library should *not* show up in 'trending' (Are we sure about this?)
 
-* The seasons/episodes table view
-**  with episode entries like: `[√] Episode title >`
-**  The checkbox should be like the one in Things.
-
-* The eipsode details view should have a disclosure entry to the show's episodes list
-* The 'seen' entry in the episode details view should have the same checkbox as in the episodes list. (The one from Things)
-
 * Shows and show episodes list views should show a quick alphabetic navigation thingie when it makes sense. See the HIG.
 

@@ -6,13 +6,17 @@
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier delegate:(id)delegate {
   if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
-    checkbox = [[Checkbox alloc] initWithFrame:CGRectMake(7, 7, 28, 28)];
+    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+    CGFloat x = 8;
+    CGFloat width = 28;
+    checkbox = [[Checkbox alloc] initWithFrame:CGRectMake(x, 11, width, width)];
     [checkbox addTarget:delegate action:@selector(checkboxClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:checkbox];
 
-    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(42, 7, self.bounds.size.width - 42, 28)];
-    titleLabel.lineBreakMode = UILineBreakModeWordWrap;
-    titleLabel.numberOfLines = 0;
+    x += width;
+    CGFloat accessoryViewWidth = 20;
+    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(x, 8, self.bounds.size.width - x - accessoryViewWidth, width)];
     titleLabel.minimumFontSize = [UIFont systemFontSize];
     titleLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     [self.contentView addSubview:titleLabel];

@@ -156,15 +156,13 @@
 
     if (cell == nil) {
       cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
-      cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-      cell.textLabel.numberOfLines = 0;
       cell.textLabel.minimumFontSize = [UIFont systemFontSize];
       cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
       cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
     UILabel *label = cell.textLabel;
-    label.text = @"View seasons and episodes";
+    label.text = @"Episodes";
     return cell;
   }
 }

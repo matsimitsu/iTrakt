@@ -4,6 +4,7 @@ General
 * Research which OSS license the app should have and that we adhere to the licenses of APIs.
   TVDB: http://forums.thetvdb.com/viewtopic.php?f=8&t=2507
 
+* Add -[NSArray objectAtIndexPath:] and refactor controllers.
 * Probably not really necessary to do things like: [[shows copy] autorelease] in Trakt.m
 * Rename -[Episode initWithDictionary:] to initWithEpisodeInfo and same for -[Show initWithDictionary:].
 * Episode watched field in the calendar feed is outside of the episode hash.

@@ -107,7 +107,6 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
 
 - (id)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
-    //NSLog(@"Complete frame %@", NSStringFromCGRect(frame));
     CALayer *layer = self.layer;
 
     drawing = [CheckboxDrawing new];
@@ -115,8 +114,6 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
     [layer addSublayer:drawing];
 
     self.selected = NO;
-
-    [self addTarget:self action:@selector(checkboxClicked:) forControlEvents:UIControlEventTouchUpInside];
   }
   return self;
 }
@@ -124,10 +121,6 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
 - (void)setSelected:(BOOL)flag {
   [super setSelected:flag];
   drawing.selected = flag;
-}
-
-- (void)checkboxClicked:(id)sender {
-  self.selected = !self.selected;
 }
 
 - (void)dealloc {

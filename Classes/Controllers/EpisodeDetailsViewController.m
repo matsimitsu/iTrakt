@@ -1,5 +1,6 @@
 #import "EpisodeDetailsViewController.h"
 #import "ImageCell.h"
+#import "SeasonsEpisodeCell.h"
 
 #define EPISODE_IMAGE_ASPECT_RATIO 1.78
 
@@ -98,13 +99,13 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  UITableViewCell *cell = nil;
   if (indexPath.section == 0) {
-    static NSString *cellIdentifier = @"episodeImageCell";
-    ImageCell *cell = (ImageCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    static NSString *imageCellIdentifier = @"episodeImageCell";
+    cell = [tableView dequeueReusableCellWithIdentifier:imageCellIdentifier];
     if (cell == nil) {
-      cell = [[[ImageCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+      cell = [[[ImageCell alloc] initWithReuseIdentifier:imageCellIdentifier] autorelease];
     }
-
     [episode ensureThumbIsLoaded:^{
       // this callback is only run if the image has to be downloaded first
       //NSLog(@"Episode thumb was downloaded for cell");
@@ -112,54 +113,41 @@
       cellToReload.image = episode.thumb;
       [cellToReload setNeedsLayout];
     }];
+    ((ImageCell *)cell).image = episode.thumb;
 
-    cell.image = episode.thumb;
-    return cell;
   } else {
-    static NSString *cellIdentifier = @"textCell";
-    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-      cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
-      cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-      cell.textLabel.numberOfLines = 0;
-      cell.textLabel.minimumFontSize = [UIFont systemFontSize];
-      cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-    }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    NSUInteger row = episode.overview == nil ? (indexPath.row + 1) : indexPath.row;
 
-    UILabel *label = cell.textLabel;
-    switch (episode.overview == nil ? (indexPath.row + 1) : indexPath.row) {
-      case 0:
-        label.text = episode.overview;
-        break;
-      case 1:
-        label.text = [NSString stringWithFormat:@"Episode %@", [episode episodeNumber], nil];
-        break;
-      case 2:
-        cell.accessoryType = episode.seen ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-        if (episode.seen) {
-          cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-        }
-        label.text = @"Seen";
-        break;
+    if (row == 2) {
+      static NSString *checkboxCellIdentifier = @"checkboxCell";
+      cell = [tableView dequeueReusableCellWithIdentifier:checkboxCellIdentifier];
+      if (cell == nil) {
+        cell = [[[SeasonsEpisodeCell alloc] initWithReuseIdentifier:checkboxCellIdentifier delegate:self disclosureAccessory:NO] autorelease];
+      }
+      [(SeasonsEpisodeCell *)cell setSelected:episode.seen text:@"Seen"];
+
+    } else {
+      static NSString *textCellIdentifier = @"textCell";
+      cell = [tableView dequeueReusableCellWithIdentifier:textCellIdentifier];
+      if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:textCellIdentifier] autorelease];
+        cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+        cell.textLabel.numberOfLines = 0;
+        cell.textLabel.minimumFontSize = [UIFont systemFontSize];
+        cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+      }
+
+      if (row == 0) {
+        cell.textLabel.text = episode.overview;
+      } else {
+        // row 1
+        cell.textLabel.text = [NSString stringWithFormat:@"Episode %@", [episode episodeNumber], nil];
+      }
     }
-    return cell;
   }
+  cell.selectionStyle = UITableViewCellSelectionStyleNone;
+  return cell;
 }
 
-
-#pragma mark Table view delegate
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  // this is the 'seen' row, the other section only has one row (the image)
-  if (indexPath.row == 2) {
-    [episode toggleSeen:^{
-      UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-      cell.accessoryType = episode.seen ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-      [cell setSelected:NO animated:YES];
-    }];
-  }
-}
 
 @end

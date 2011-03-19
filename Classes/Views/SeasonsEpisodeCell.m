@@ -1,12 +1,13 @@
 #import "SeasonsEpisodeCell.h"
 #import "Checkbox.h"
-#import "Episode.h"
 
 @implementation SeasonsEpisodeCell
 
-- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier delegate:(id)delegate {
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier delegate:(id)delegate disclosureAccessory:(BOOL)flag {
   if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
-    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if (flag) {
+      self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
 
     CGFloat x = 8;
     CGFloat width = 28;
@@ -15,8 +16,7 @@
     [self.contentView addSubview:checkbox];
 
     x += width;
-    CGFloat accessoryViewWidth = 20;
-    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(x, 8, self.bounds.size.width - x - accessoryViewWidth, width)];
+    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(x, 8, self.bounds.size.width - x - (2 * self.indentationWidth), width)];
     titleLabel.minimumFontSize = [UIFont systemFontSize];
     titleLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     [self.contentView addSubview:titleLabel];
@@ -25,18 +25,10 @@
 }
 
 
-- (void)updateCellWithEpisode:(Episode *)episode {
-  [checkbox setSelected:episode.seen withAnimation:NO];
-  titleLabel.text = episode.title;
+- (void)setSelected:(BOOL)selected text:(NSString *)text {
+  [checkbox setSelected:selected withAnimation:NO];
+  titleLabel.text = text;
 }
-
-
-//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    
-    //[super setSelected:selected animated:animated];
-    
-    //// Configure the view for the selected state.
-//}
 
 
 - (void)dealloc {

@@ -106,12 +106,12 @@
   SeasonsEpisodeCell *cell = (SeasonsEpisodeCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 
   if (cell == nil) {
-    cell = [[[SeasonsEpisodeCell alloc] initWithReuseIdentifier:cellIdentifier delegate:self] autorelease];
+    cell = [[[SeasonsEpisodeCell alloc] initWithReuseIdentifier:cellIdentifier delegate:self disclosureAccessory:YES] autorelease];
   }
 
   Season *season = [seasons objectAtIndex:indexPath.section];
   Episode *episode = [season.episodes objectAtIndex:indexPath.row];
-  [cell updateCellWithEpisode:episode];
+  [cell setSelected:episode.seen text:episode.title];
   return cell;
 }
 

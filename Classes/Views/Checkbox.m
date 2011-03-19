@@ -32,11 +32,17 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
 - (void)setSelected:(BOOL)flag {
   selected = flag;
   [self setNeedsDisplay];
+  if (flag) {
+    CABasicAnimation *scale = [CABasicAnimation animationWithKeyPath:@"transform"];
+    scale.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(2, 2, 1)];
+    scale.toValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    scale.duration = 0.27;
+    scale.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    [self addAnimation:scale forKey:@"selected"];
+  }
 }
 
 - (void)drawInContext:(CGContextRef)context {
-  NSLog(@"DRAW!");
-
   CGGradientRef myGradient;
   CGColorSpaceRef myColorspace;
   size_t num_locations = 2;
@@ -116,13 +122,11 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
 }
 
 - (void)setSelected:(BOOL)flag {
-  NSLog(@"Set selection: %d", (int)flag);
   [super setSelected:flag];
   drawing.selected = flag;
 }
 
 - (void)checkboxClicked:(id)sender {
-  NSLog(@"CLICKED!");
   self.selected = !self.selected;
 }
 

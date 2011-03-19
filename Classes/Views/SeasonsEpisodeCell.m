@@ -22,7 +22,7 @@
 
 
 - (void)updateCellWithEpisode:(Episode *)episode {
-  checkbox.selected = episode.seen;
+  [checkbox setSelected:episode.seen withAnimation:NO];
   titleLabel.text = episode.title;
 }
 

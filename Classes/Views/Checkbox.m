@@ -25,14 +25,20 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
   CGContextClosePath(ctx);
 }
 
+@interface CheckboxDrawing : CALayer {
+  BOOL selected;
+}
+
+- (void)setSelected:(BOOL)flag withAnimation:(BOOL)animate;
+
+@end
+
 @implementation CheckboxDrawing
 
-@synthesize selected;
-
-- (void)setSelected:(BOOL)flag {
+- (void)setSelected:(BOOL)flag withAnimation:(BOOL)animate {
   selected = flag;
   [self setNeedsDisplay];
-  if (flag) {
+  if (flag && animate) {
     CABasicAnimation *scale = [CABasicAnimation animationWithKeyPath:@"transform"];
     scale.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(2, 2, 1)];
     scale.toValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
@@ -107,11 +113,9 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
 
 - (id)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
-    CALayer *layer = self.layer;
-
     drawing = [CheckboxDrawing new];
     drawing.frame = CGRectMake(0, 0, 21, 21);
-    [layer addSublayer:drawing];
+    [self.layer addSublayer:drawing];
 
     self.selected = NO;
   }
@@ -119,8 +123,12 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
 }
 
 - (void)setSelected:(BOOL)flag {
+  [self setSelected:flag withAnimation:YES];
+}
+
+- (void)setSelected:(BOOL)flag withAnimation:(BOOL)animate {
   [super setSelected:flag];
-  drawing.selected = flag;
+  [drawing setSelected:flag withAnimation:animate];
 }
 
 - (void)dealloc {

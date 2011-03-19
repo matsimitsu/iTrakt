@@ -1,17 +1,12 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface CheckboxDrawing : CALayer {
-  BOOL selected;
-}
-
-@property (nonatomic, assign) BOOL selected;
-
-@end
-
+@class CheckboxDrawing;
 
 @interface Checkbox : UIControl {
   CheckboxDrawing *drawing;
 }
+
+- (void)setSelected:(BOOL)flag withAnimation:(BOOL)animate;
 
 @end

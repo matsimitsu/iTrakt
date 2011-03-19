@@ -37,10 +37,31 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
 - (void)drawInContext:(CGContextRef)context {
   NSLog(@"DRAW!");
 
+  CGGradientRef myGradient;
+  CGColorSpaceRef myColorspace;
+  size_t num_locations = 2;
+  CGFloat locations[2] = { 0.0, 1.0 };
+  CGFloat components[8] = { 0.89, 0.89, 0.89, 1.0,  // Start color
+                            0.83, 0.83, 0.83, 1.0 }; // End color
+   
+  myColorspace = CGColorSpaceCreateDeviceRGB();
+  myGradient = CGGradientCreateWithColorComponents(myColorspace, components,
+                            locations, num_locations);
+
+  CGPoint myStartPoint, myEndPoint;
+  myStartPoint.x = 0.0;
+  myStartPoint.y = 0.0;
+  myEndPoint.x = 0.0;
+  myEndPoint.y = self.bounds.size.height;
+
+  addRoundedRect(context, CGRectInset(self.bounds, 2, 2), 3);
+  CGContextClip(context);
+  CGContextDrawLinearGradient(context, myGradient, myStartPoint, myEndPoint, 0);
+  
   //CGContextSetRGBStrokeColor(context, 0.53, 0.53, 0.53, 1);
   CGContextSetRGBStrokeColor(context, 0.25, 0.25, 0.25, 1);
 
-  // Draw border
+  //// Draw border
   CGContextSetLineWidth(context, 1.5);
   addRoundedRect(context, CGRectInset(self.bounds, 2, 2), 3);
   CGContextStrokePath(context);
@@ -82,15 +103,6 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
   if (self = [super initWithFrame:frame]) {
     //NSLog(@"Complete frame %@", NSStringFromCGRect(frame));
     CALayer *layer = self.layer;
-    
-    CAGradientLayer *boxBackground = [CAGradientLayer layer];
-    UIColor *startColor  = [UIColor colorWithWhite:0.89 alpha:1.0];
-    UIColor *endColor    = [UIColor colorWithWhite:0.83 alpha:1.0];
-    boxBackground.colors = [NSArray arrayWithObjects:(id)startColor.CGColor, (id)endColor.CGColor, nil];
-    //boxBackground.locations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.0], [NSNumber numberWithFloat:1.0], nil];
-    boxBackground.cornerRadius = 3.0;
-    boxBackground.frame = CGRectMake(2, 2, 17, 17);
-    [layer addSublayer:boxBackground];
 
     drawing = [CheckboxDrawing new];
     drawing.frame = CGRectMake(0, 0, 21, 21);

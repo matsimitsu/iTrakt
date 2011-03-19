@@ -1,6 +1,7 @@
 #import "EpisodeDetailsViewController.h"
 #import "ImageCell.h"
 #import "SeasonsEpisodeCell.h"
+#import "Checkbox.h"
 
 #define EPISODE_IMAGE_ASPECT_RATIO 1.78
 
@@ -147,6 +148,13 @@
   }
   cell.selectionStyle = UITableViewCellSelectionStyleNone;
   return cell;
+}
+
+
+- (void)checkboxClicked:(Checkbox *)checkbox {
+  [episode toggleSeen:^{
+    checkbox.selected = episode.seen;
+  }];
 }
 
 

@@ -42,9 +42,17 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
     CABasicAnimation *scale = [CABasicAnimation animationWithKeyPath:@"transform"];
     scale.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(2, 2, 1)];
     scale.toValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
-    scale.duration = 0.27;
-    scale.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-    [self addAnimation:scale forKey:@"selected"];
+
+    CABasicAnimation *opacity = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    opacity.fromValue = [NSNumber numberWithFloat:0.4];
+    opacity.toValue = [NSNumber numberWithFloat:1.0];
+
+    CAAnimationGroup *group = [CAAnimationGroup animation];
+    group.duration = 0.27;
+    group.animations = [NSArray arrayWithObjects:scale, opacity, nil];
+    group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+
+    [self addAnimation:group forKey:@"selected"];
   }
 }
 

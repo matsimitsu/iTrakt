@@ -174,6 +174,7 @@ static NSMutableSet *inProgress = nil;
 @implementation JSONDownload
 
 - (void)yieldDownloadedData {
+  NSLog(@"JSON: %@", [[NSString alloc] initWithData:downloadData encoding:NSUTF8StringEncoding]);
   block([downloadData yajl_JSON]);
 }
 

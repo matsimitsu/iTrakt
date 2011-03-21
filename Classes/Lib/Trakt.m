@@ -51,10 +51,10 @@ static Trakt *sharedTrakt = nil;
   [selectors removeObject:dataDownloadSelector];
   NSLog(@"Call %@", dataDownloadSelector);
   [self performSelector:NSSelectorFromString(dataDownloadSelector) withObject:block];
-  for (NSString *selector in selectors) {
-    NSLog(@"Call %@", selector);
-    [self performSelector:NSSelectorFromString(selector) withObject:nil];
-  }
+  //for (NSString *selector in selectors) {
+    //NSLog(@"Call %@", selector);
+    //[self performSelector:NSSelectorFromString(selector) withObject:nil];
+  //}
 }
 
 - (NSURL *)calendarURL {

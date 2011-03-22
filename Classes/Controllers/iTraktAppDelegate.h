@@ -15,5 +15,7 @@
 
 - (void)refreshDataStartingAtCurrentSelectedTopLevelController;
 
+- (IBAction)presentAuthenticationDialog:(id)sender;
+
 @end
 

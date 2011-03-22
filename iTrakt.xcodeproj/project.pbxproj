@@ -101,6 +101,8 @@
 		518D6768131EF7260086143B /* Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 518D6767131EF7260086143B /* Checkbox.m */; };
 		518D6799131F030D0086143B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518D6798131F030D0086143B /* QuartzCore.framework */; };
 		51BFFAEB13350CF1006EBF54 /* CheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAEA13350CF1006EBF54 /* CheckboxCell.m */; };
+		51BFFE3C13392E1D006EBF54 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFE3A13392E1D006EBF54 /* AuthenticationViewController.m */; };
+		51BFFE3D13392E1D006EBF54 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51BFFE3B13392E1D006EBF54 /* AuthenticationViewController.xib */; };
 		51FBCC9712EA375500073C68 /* EpisodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */; };
 		51FBCC9A12EA391B00073C68 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9912EA391B00073C68 /* Episode.m */; };
 /* End PBXBuildFile section */
@@ -228,6 +230,9 @@
 		518D6798131F030D0086143B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		51BFFAE913350CF1006EBF54 /* CheckboxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckboxCell.h; path = Views/CheckboxCell.h; sourceTree = "<group>"; };
 		51BFFAEA13350CF1006EBF54 /* CheckboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckboxCell.m; path = Views/CheckboxCell.m; sourceTree = "<group>"; };
+		51BFFE3913392E1D006EBF54 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthenticationViewController.h; path = Controllers/AuthenticationViewController.h; sourceTree = "<group>"; };
+		51BFFE3A13392E1D006EBF54 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthenticationViewController.m; path = Controllers/AuthenticationViewController.m; sourceTree = "<group>"; };
+		51BFFE3B13392E1D006EBF54 /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AuthenticationViewController.xib; path = Views/AuthenticationViewController.xib; sourceTree = "<group>"; };
 		51FBCC9512EA375500073C68 /* EpisodeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EpisodeTableViewCell.h; path = Views/EpisodeTableViewCell.h; sourceTree = "<group>"; };
 		51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EpisodeTableViewCell.m; path = Views/EpisodeTableViewCell.m; sourceTree = "<group>"; };
 		51FBCC9812EA391B00073C68 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Episode.h; path = Models/Episode.h; sourceTree = "<group>"; };
@@ -404,6 +409,7 @@
 		510C6EB412F8A1EE000500A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				51BFFE3B13392E1D006EBF54 /* AuthenticationViewController.xib */,
 				246834991310228D00E177A2 /* SeasonsViewController.xib */,
 				510C6FBD12FB5B2C000500A1 /* TrendingViewController.xib */,
 				5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */,
@@ -445,6 +451,8 @@
 				246834961310225300E177A2 /* SeasonsViewController.h */,
 				1D3623240D0F684500981E51 /* iTraktAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iTraktAppDelegate.m */,
+				51BFFE3913392E1D006EBF54 /* AuthenticationViewController.h */,
+				51BFFE3A13392E1D006EBF54 /* AuthenticationViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -607,6 +615,7 @@
 				240D101D12FB627E002349B5 /* ShowDetailsViewController.xib in Resources */,
 				513BE708130F18430076F8F9 /* default-poster.png in Resources */,
 				2468349A1310228D00E177A2 /* SeasonsViewController.xib in Resources */,
+				51BFFE3D13392E1D006EBF54 /* AuthenticationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +677,7 @@
 				511EE7C6131969F00000B12D /* Season.m in Sources */,
 				518D6768131EF7260086143B /* Checkbox.m in Sources */,
 				51BFFAEB13350CF1006EBF54 /* CheckboxCell.m in Sources */,
+				51BFFE3C13392E1D006EBF54 /* AuthenticationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

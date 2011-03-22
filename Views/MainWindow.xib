@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="59"/>
+			<integer value="17"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -93,6 +93,12 @@
 							<object class="IBUINavigationItem" key="IBUINavigationItem" id="494342882">
 								<reference key="IBUINavigationBar"/>
 								<string key="IBUITitle">Root View Controller</string>
+								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="18110761">
+									<string key="IBUITitle">Sign in</string>
+									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+									<int key="IBUIStyle">1</int>
+									<reference key="IBUINavigationItem" ref="494342882"/>
+								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 							<reference key="IBUIParentViewController" ref="293488427"/>
@@ -135,6 +141,12 @@
 							<object class="IBUIViewController" id="239478536">
 								<object class="IBUINavigationItem" key="IBUINavigationItem" id="873656001">
 									<string key="IBUITitle">Root View Controller</string>
+									<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="331555317">
+										<string key="IBUITitle">Sign in</string>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<int key="IBUIStyle">1</int>
+										<reference key="IBUINavigationItem" ref="873656001"/>
+									</object>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<reference key="IBUIParentViewController" ref="432833298"/>
@@ -170,12 +182,18 @@
 							<bool key="IBUIMultipleTouchEnabled">YES</bool>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
-						<object class="NSArray" key="IBUIViewControllers">
+						<object class="NSMutableArray" key="IBUIViewControllers">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUIViewController" id="847059996">
 								<string key="IBUITitle">Library</string>
 								<object class="IBUINavigationItem" key="IBUINavigationItem" id="99302249">
 									<string key="IBUITitle">Root View Controller</string>
+									<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="234698289">
+										<string key="IBUITitle">Sign in</string>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<int key="IBUIStyle">1</int>
+										<reference key="IBUINavigationItem" ref="99302249"/>
+									</object>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<reference key="IBUIParentViewController" ref="1002578325"/>
@@ -228,6 +246,38 @@
 						<reference key="destination" ref="446399045"/>
 					</object>
 					<int key="connectionID">23</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">presentAuthenticationDialog:</string>
+						<reference key="source" ref="331555317"/>
+						<reference key="destination" ref="664661524"/>
+					</object>
+					<int key="connectionID">67</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">presentAuthenticationDialog:</string>
+						<reference key="source" ref="234698289"/>
+						<reference key="destination" ref="664661524"/>
+					</object>
+					<int key="connectionID">68</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">presentAuthenticationDialog:</string>
+						<reference key="source" ref="18110761"/>
+						<reference key="destination" ref="664661524"/>
+					</object>
+					<int key="connectionID">69</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">rootViewController</string>
+						<reference key="source" ref="380026005"/>
+						<reference key="destination" ref="446399045"/>
+					</object>
+					<int key="connectionID">70</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -310,6 +360,7 @@
 						<reference key="object" ref="873656001"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="331555317"/>
 						</object>
 						<reference key="parent" ref="239478536"/>
 					</object>
@@ -369,6 +420,7 @@
 						<reference key="object" ref="494342882"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="18110761"/>
 						</object>
 						<reference key="parent" ref="598962747"/>
 					</object>
@@ -391,8 +443,24 @@
 						<reference key="object" ref="99302249"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="234698289"/>
 						</object>
 						<reference key="parent" ref="847059996"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">64</int>
+						<reference key="object" ref="18110761"/>
+						<reference key="parent" ref="494342882"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">65</int>
+						<reference key="object" ref="331555317"/>
+						<reference key="parent" ref="873656001"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">66</int>
+						<reference key="object" ref="234698289"/>
+						<reference key="parent" ref="99302249"/>
 					</object>
 				</object>
 			</object>
@@ -425,12 +493,15 @@
 					<string>57.IBPluginDependency</string>
 					<string>58.IBPluginDependency</string>
 					<string>59.IBPluginDependency</string>
+					<string>64.IBPluginDependency</string>
+					<string>65.IBPluginDependency</string>
+					<string>66.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>UIApplication</string>
 					<string>UIResponder</string>
-					<string>{{55, 269}, {320, 480}}</string>
+					<string>{{67, 276}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSMutableDictionary">
@@ -459,6 +530,9 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -477,7 +551,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">63</int>
+			<int key="maxID">70</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -487,7 +561,7 @@
 					<string key="superclassName">UITableViewController</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/AsyncImageTableViewController.h</string>
+						<string key="minorKey">Classes/Controllers/AsyncImageTableViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -506,7 +580,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/CalendarViewController.h</string>
+						<string key="minorKey">Classes/Controllers/CalendarViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -525,7 +599,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/LibraryViewController.h</string>
+						<string key="minorKey">Classes/Controllers/LibraryViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -533,7 +607,7 @@
 					<string key="superclassName">AsyncImageTableViewController</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/ShowsViewController.h</string>
+						<string key="minorKey">Classes/Controllers/ShowsViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -541,7 +615,7 @@
 					<string key="superclassName">ShowsViewController</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/TrendingViewController.h</string>
+						<string key="minorKey">Classes/Controllers/TrendingViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -555,6 +629,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">iTraktAppDelegate</string>
 					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">presentAuthenticationDialog:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">presentAuthenticationDialog:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">presentAuthenticationDialog:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
@@ -589,7 +674,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/iTraktAppDelegate.h</string>
+						<string key="minorKey">Classes/Controllers/iTraktAppDelegate.h</string>
 					</object>
 				</object>
 			</object>
@@ -663,6 +748,20 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">Foundation.framework/Headers/NSURLConnection.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">QuartzCore.framework/Headers/CAAnimation.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">QuartzCore.framework/Headers/CALayer.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

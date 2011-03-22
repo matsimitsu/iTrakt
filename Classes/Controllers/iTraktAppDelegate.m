@@ -1,6 +1,7 @@
 #import "iTraktAppDelegate.h"
 #import "Trakt.h"
 #import "CalendarViewController.h"
+#import "AuthenticationViewController.h"
 
 // ONLY FOR DEBUGGING PURPOSES!
 #import "Authentication.h"
@@ -26,7 +27,6 @@
 
   [HTTPDownload setGlobalDelegate:self];
 
-  [self.window addSubview:self.tabBarController.view];
   [self.window makeKeyAndVisible];
 
   // Give the controller a chance to initialize
@@ -68,6 +68,14 @@
     // TODO we should not use performSelector for this, but have all top-level controllers inherit from one class which implements the method!
     [controller performSelector:@selector(refreshData)];
   }
+}
+
+
+- (IBAction)presentAuthenticationDialog:(id)sender {
+  AuthenticationViewController *controller = [[AuthenticationViewController alloc] initWithNibName:@"AuthenticationViewController" bundle:nil];
+  NSLog(@"root: %@ Present: %@", self.window.rootViewController, controller);
+  [self.window.rootViewController presentModalViewController:controller animated:YES];
+  [controller release];
 }
 
 

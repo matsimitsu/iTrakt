@@ -1,10 +1,20 @@
 #import "AuthenticationViewController.h"
+#import "Trakt.h"
+//#import "SSKeychain.h"
 
 @implementation AuthenticationViewController
 
 @synthesize usernameField, passwordField;
 @synthesize usernameCell, passwordCell;
 @synthesize doneButton;
+
+
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  NSLog(@"Hier!");
+  self.usernameField.text = [[Trakt sharedInstance] apiUser];
+}
+
 
 - (void)dealloc {
   self.usernameField = nil;
@@ -48,6 +58,14 @@
 
 - (IBAction)saveCredentials:(id)sender {
   NSLog(@"Save!");
+  [[Trakt sharedInstance] setApiUser:self.usernameField.text];
+  [[Trakt sharedInstance] setApiPassword:self.passwordField.text];
+
+  // TODO check if the credentials are correct somehow!
+  // Where do we store the account? prefs??
+  //[SSKeychain setPassword:self.passwordField.text forService:@"iTrakt" account:self.usernameField.text];
+
+  [self dismissDialog:sender];
 }
 
 

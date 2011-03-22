@@ -21,6 +21,7 @@
   //[[EGOCache currentCache] clearCache];
 
   // TODO replace this with actual credentials
+  //[SSKeychain passwordForService:@"iTrakt" account:@""]; TODO hmm, account?
   [[Trakt sharedInstance] setApiUser:API_USER];
   [[Trakt sharedInstance] setApiPassword:API_PASS];
   [[Trakt sharedInstance] setApiKey:API_KEY];

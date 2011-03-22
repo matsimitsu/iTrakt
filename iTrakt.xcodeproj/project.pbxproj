@@ -103,6 +103,8 @@
 		51BFFAEB13350CF1006EBF54 /* CheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAEA13350CF1006EBF54 /* CheckboxCell.m */; };
 		51BFFE3C13392E1D006EBF54 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFE3A13392E1D006EBF54 /* AuthenticationViewController.m */; };
 		51BFFE3D13392E1D006EBF54 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51BFFE3B13392E1D006EBF54 /* AuthenticationViewController.xib */; };
+		51BFFEA313395159006EBF54 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFEA213395159006EBF54 /* SSKeychain.m */; };
+		51BFFEAD1339516C006EBF54 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BFFEAC1339516C006EBF54 /* Security.framework */; };
 		51FBCC9712EA375500073C68 /* EpisodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */; };
 		51FBCC9A12EA391B00073C68 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9912EA391B00073C68 /* Episode.m */; };
 /* End PBXBuildFile section */
@@ -233,6 +235,9 @@
 		51BFFE3913392E1D006EBF54 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthenticationViewController.h; path = Controllers/AuthenticationViewController.h; sourceTree = "<group>"; };
 		51BFFE3A13392E1D006EBF54 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthenticationViewController.m; path = Controllers/AuthenticationViewController.m; sourceTree = "<group>"; };
 		51BFFE3B13392E1D006EBF54 /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AuthenticationViewController.xib; path = Views/AuthenticationViewController.xib; sourceTree = "<group>"; };
+		51BFFEA113395159006EBF54 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSKeychain.h; path = vendor/sskeychain/SSKeychain.h; sourceTree = "<group>"; };
+		51BFFEA213395159006EBF54 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSKeychain.m; path = vendor/sskeychain/SSKeychain.m; sourceTree = "<group>"; };
+		51BFFEAC1339516C006EBF54 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		51FBCC9512EA375500073C68 /* EpisodeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EpisodeTableViewCell.h; path = Views/EpisodeTableViewCell.h; sourceTree = "<group>"; };
 		51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EpisodeTableViewCell.m; path = Views/EpisodeTableViewCell.m; sourceTree = "<group>"; };
 		51FBCC9812EA391B00073C68 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Episode.h; path = Models/Episode.h; sourceTree = "<group>"; };
@@ -250,6 +255,7 @@
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				2479A22C12EC83DB00E2AD4E /* YAJL.framework in Frameworks */,
 				518D6799131F030D0086143B /* QuartzCore.framework in Frameworks */,
+				51BFFEAD1339516C006EBF54 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +331,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				51BFFEA113395159006EBF54 /* SSKeychain.h */,
+				51BFFEA213395159006EBF54 /* SSKeychain.m */,
 				511EE73813192A6B0000B12D /* Base64.h */,
 				511EE73913192A6B0000B12D /* Base64.m */,
 				511EE79B1319378A0000B12D /* Authentication.h */,
@@ -361,6 +369,7 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
 				518D6798131F030D0086143B /* QuartzCore.framework */,
+				51BFFEAC1339516C006EBF54 /* Security.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -678,6 +687,7 @@
 				518D6768131EF7260086143B /* Checkbox.m in Sources */,
 				51BFFAEB13350CF1006EBF54 /* CheckboxCell.m in Sources */,
 				51BFFE3C13392E1D006EBF54 /* AuthenticationViewController.m in Sources */,
+				51BFFEA313395159006EBF54 /* SSKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,7 @@
 #import "AuthenticationViewController.h"
 #import "Trakt.h"
 #import "SSKeychain.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation AuthenticationViewController
 
@@ -32,7 +33,7 @@
 
 @synthesize usernameField, passwordField;
 @synthesize usernameCell, passwordCell;
-@synthesize doneButton;
+@synthesize doneButton, helpBannerButton;
 
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,6 +43,12 @@
   [AuthenticationViewController retrieveUsername:&username password:&password];
   self.usernameField.text = username;
   self.passwordField.text = password;
+
+  if (username && password) {
+    self.helpBannerButton.hidden = YES;
+  }
+
+  [self textDidChange:nil];
 }
 
 
@@ -51,6 +58,7 @@
   self.usernameCell = nil;
   self.passwordCell = nil;
   self.doneButton = nil;
+  self.helpBannerButton = nil;
   [super dealloc];
 }
 
@@ -75,18 +83,12 @@
 }
 
 
-- (IBAction)textDidChange:(id)sender {
-  self.doneButton.enabled = self.usernameField.text.length > 0 && self.passwordField.text.length > 0;
-}
-
-
 - (IBAction)dismissDialog:(id)sender {
   [self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
 
 - (IBAction)saveCredentials:(id)sender {
-  NSLog(@"Save!");
   NSString *username = self.usernameField.text;
   NSString *password = self.passwordField.text;
 
@@ -98,6 +100,26 @@
   [SSKeychain setPassword:password forService:@"iTrakt" account:username];
 
   [self dismissDialog:sender];
+}
+
+
+- (IBAction)textDidChange:(id)sender {
+  self.doneButton.enabled = self.usernameField.text.length > 0 && self.passwordField.text.length > 0;
+  if (self.passwordField.text.length == 0) {
+    self.helpBannerButton.hidden = NO;
+  }
+  if (self.usernameField.text.length > 0 || self.passwordField.text.length > 0) {
+    // TODO Ideally this would have a transition animation
+    [self.helpBannerButton setTitle:@"Forgot your password?" forState:UIControlStateNormal];
+  } else {
+    [self.helpBannerButton setTitle:@"Don’t have an account yet?" forState:UIControlStateNormal];
+  }
+}
+
+
+// TODO open forgot password URL
+- (IBAction)openTraktSite:(id)sender {
+  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://trakt.tv/join"]];
 }
 
 

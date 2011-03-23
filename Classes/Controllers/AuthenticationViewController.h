@@ -15,6 +15,10 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell *passwordCell;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
 
++ (BOOL)signIn;
++ (void)retrieveUsername:(NSString **)username password:(NSString **)password;
++ (void)authenticate:(NSString *)username password:(NSString *)password;
+
 - (IBAction)dismissDialog:(id)sender;
 - (IBAction)saveCredentials:(id)sender;
 - (IBAction)textDidChange:(id)sender;

@@ -1,18 +1,47 @@
 #import "AuthenticationViewController.h"
 #import "Trakt.h"
-//#import "SSKeychain.h"
+#import "SSKeychain.h"
 
 @implementation AuthenticationViewController
+
+
++ (BOOL)signIn {
+  NSString *username, *password;
+  [self retrieveUsername:&username password:&password];
+  if (username && password) {
+    NSLog(@"User: %@ Password: %@", username, password);
+    [self authenticate:username password:password];
+    return YES;
+  }
+  return NO;
+}
+
++ (void)retrieveUsername:(NSString **)username password:(NSString **)password {
+  *password = nil;
+  *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"Username"];
+  if (*username) {
+    *password = [SSKeychain passwordForService:@"iTrakt" account:*username];
+  }
+}
+
++ (void)authenticate:(NSString *)username password:(NSString *)password {
+  [[Trakt sharedInstance] setApiUser:username];
+  [[Trakt sharedInstance] setApiPassword:password];
+}
+
 
 @synthesize usernameField, passwordField;
 @synthesize usernameCell, passwordCell;
 @synthesize doneButton;
 
 
-- (void)viewDidAppear:(BOOL)animated {
-  [super viewDidAppear:animated];
-  NSLog(@"Hier!");
-  self.usernameField.text = [[Trakt sharedInstance] apiUser];
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+
+  NSString *username, *password;
+  [AuthenticationViewController retrieveUsername:&username password:&password];
+  self.usernameField.text = username;
+  self.passwordField.text = password;
 }
 
 
@@ -58,12 +87,15 @@
 
 - (IBAction)saveCredentials:(id)sender {
   NSLog(@"Save!");
-  [[Trakt sharedInstance] setApiUser:self.usernameField.text];
-  [[Trakt sharedInstance] setApiPassword:self.passwordField.text];
+  NSString *username = self.usernameField.text;
+  NSString *password = self.passwordField.text;
 
-  // TODO check if the credentials are correct somehow!
-  // Where do we store the account? prefs??
-  //[SSKeychain setPassword:self.passwordField.text forService:@"iTrakt" account:self.usernameField.text];
+  [AuthenticationViewController authenticate:username password:password];
+
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setValue:username forKey:@"Username"]; // TODO move to constant
+  [defaults synchronize];
+  [SSKeychain setPassword:password forService:@"iTrakt" account:username];
 
   [self dismissDialog:sender];
 }

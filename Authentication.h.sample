@@ -1,3 +1,1 @@
-#define API_USER @"bob"
-#define API_PASS @"secret"
 #define API_KEY @"secret"

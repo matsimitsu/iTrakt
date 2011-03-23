@@ -20,10 +20,12 @@
   //NSLog(@"[!] Clearing cache");
   //[[EGOCache currentCache] clearCache];
 
-  // TODO replace this with actual credentials
-  //[SSKeychain passwordForService:@"iTrakt" account:@""]; TODO hmm, account?
-  [[Trakt sharedInstance] setApiUser:API_USER];
-  [[Trakt sharedInstance] setApiPassword:API_PASS];
+  if ([AuthenticationViewController signIn]) {
+    NSLog(@"Signed in.");
+  } else {
+    NSLog(@"Not signed in.");
+  }
+
   [[Trakt sharedInstance] setApiKey:API_KEY];
 
   [HTTPDownload setGlobalDelegate:self];

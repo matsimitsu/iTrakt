@@ -21,7 +21,6 @@ General
 Authentication
 --------------
 
-* Settings screen to enter username
 * Way to check if username exists
 
 Caching
@@ -39,7 +38,6 @@ API
 Proxy
 -----
 
-* Port to rack / sinatra
 * See if we can receive the json in chunks, enrich them and immediately send them out again
 * Write specs!
 
@@ -47,16 +45,14 @@ Proxy
 Design discussion
 -----------------
 
-* The Library list should be searchable. Does it make sense for the trending list? Maybe not, as you're browsing for new shows.
+* The Library list should be searchable. Does it make sense for the recommendations list? Maybe not, as you're browsing for new shows.
 * All top-level views should have a reload button
 
-* First launch: load calendar, then visible row images + library & trending feeds
+* First launch: load calendar, then visible row images + library & recommendations feeds
 * Not first launch, i.e. the app was inactive, or the user hits the 'reload' button: reload _all_ feeds, but load the current visible one first.
 * Make HTTPDownload post start/stop notifications so that the refresh/stop buttons in the top-level controllers can show them accurately.
 
 * Use ‘today’ and ‘tomorrow’ in the calendar view? That might make the index weird, tho, plus due to timezone difference it may not always be correct.
-
-* Shows that the user has in her library should *not* show up in 'trending' (Are we sure about this?)
 
 * Shows and show episodes list views should show a quick alphabetic navigation thingie when it makes sense. See the HIG.
 

@@ -53,7 +53,7 @@ mappings = lambda do
     serve_json_fixture('show')
   end
 
-  map('/api/shows/82066/seasons_with_episodes') do
+  map('/api/shows/82066/seasons_with_episodes.json') do
     serve_json_fixture('show-seasons-and-episodes')
   end
 

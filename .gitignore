@@ -1,5 +1,6 @@
 *.swp
 *.swo
+*.swn
 .DS_Store
 build
 Authentication.h

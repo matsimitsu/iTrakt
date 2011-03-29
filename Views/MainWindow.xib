@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="17"/>
+			<integer value="56"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -66,7 +66,7 @@
 				<object class="IBUINavigationController" key="IBUISelectedViewController" id="293488427">
 					<string key="IBUITitle">Trending</string>
 					<object class="IBUITabBarItem" key="IBUITabBarItem" id="163677930">
-						<string key="IBUITitle">Trending</string>
+						<string key="IBUITitle">Recommendations</string>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<reference key="IBUITabBar"/>
 					</object>
@@ -89,7 +89,7 @@
 					<object class="NSMutableArray" key="IBUIViewControllers">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="IBUIViewController" id="598962747">
-							<string key="IBUITitle">Trending</string>
+							<string key="IBUITitle">Recommendations</string>
 							<object class="IBUINavigationItem" key="IBUINavigationItem" id="494342882">
 								<reference key="IBUINavigationBar"/>
 								<string key="IBUITitle">Root View Controller</string>
@@ -102,7 +102,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 							<reference key="IBUIParentViewController" ref="293488427"/>
-							<string key="IBUINibName">TrendingViewController</string>
+							<string key="IBUINibName">RecommendationsViewController</string>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="interfaceOrientation">1</int>
 							</object>
@@ -526,7 +526,7 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>TrendingViewController</string>
+					<string>RecommendationsViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -603,19 +603,19 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
+					<string key="className">RecommendationsViewController</string>
+					<string key="superclassName">ShowsViewController</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">Classes/Controllers/RecommendationsViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">ShowsViewController</string>
 					<string key="superclassName">AsyncImageTableViewController</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Classes/Controllers/ShowsViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">TrendingViewController</string>
-					<string key="superclassName">ShowsViewController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/Controllers/TrendingViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

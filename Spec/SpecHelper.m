@@ -81,8 +81,8 @@ static void callNuBlockWithArguments(id nuBlock, NSArray *arguments) {
   }];
 }
 
-- (void)trendingWithNuBlock:(id)nuBlock {
-  [self trending:^(NSArray *shows) {
+- (void)recommendationsWithNuBlock:(id)nuBlock {
+  [self recommendations:^(NSArray *shows) {
     callNuBlockWithArguments(nuBlock, [NSArray arrayWithObject:shows]);
   }];
 }

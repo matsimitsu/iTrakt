@@ -72,8 +72,8 @@
 		510C6EE012F8AB8B000500A1 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6EDE12F8A83D000500A1 /* Show.m */; };
 		510C6EE212F8ABA7000500A1 /* ShowSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6EE112F8ABA7000500A1 /* ShowSpec.nu */; };
 		510C6F3212F8B0E9000500A1 /* ShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6F3112F8B0E9000500A1 /* ShowTableViewCell.m */; };
-		510C6FBE12FB5B2C000500A1 /* TrendingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6FBC12FB5B2C000500A1 /* TrendingViewController.m */; };
-		510C6FBF12FB5B2C000500A1 /* TrendingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510C6FBD12FB5B2C000500A1 /* TrendingViewController.xib */; };
+		510C6FBE12FB5B2C000500A1 /* RecommendationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6FBC12FB5B2C000500A1 /* RecommendationsViewController.m */; };
+		510C6FBF12FB5B2C000500A1 /* RecommendationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510C6FBD12FB5B2C000500A1 /* RecommendationsViewController.xib */; };
 		510C6FCD12FB5D7D000500A1 /* ShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6FCC12FB5D7D000500A1 /* ShowsViewController.m */; };
 		511EE73A13192A6B0000B12D /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 511EE73913192A6B0000B12D /* Base64.m */; };
 		511EE773131931870000B12D /* Base64.h in Sources */ = {isa = PBXBuildFile; fileRef = 511EE73813192A6B0000B12D /* Base64.h */; };
@@ -100,6 +100,9 @@
 		5181A1C31306EB4800B3761A /* AsyncImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5181A1C21306EB4800B3761A /* AsyncImageTableViewController.m */; };
 		518D6768131EF7260086143B /* Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 518D6767131EF7260086143B /* Checkbox.m */; };
 		518D6799131F030D0086143B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518D6798131F030D0086143B /* QuartzCore.framework */; };
+		51BF024D13426A72006EBF54 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFE3A13392E1D006EBF54 /* AuthenticationViewController.m */; };
+		51BF025013426A80006EBF54 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFEA213395159006EBF54 /* SSKeychain.m */; };
+		51BF025313426A98006EBF54 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BFFEAC1339516C006EBF54 /* Security.framework */; };
 		51BFFAEB13350CF1006EBF54 /* CheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAEA13350CF1006EBF54 /* CheckboxCell.m */; };
 		51BFFE3C13392E1D006EBF54 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFE3A13392E1D006EBF54 /* AuthenticationViewController.m */; };
 		51BFFE3D13392E1D006EBF54 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51BFFE3B13392E1D006EBF54 /* AuthenticationViewController.xib */; };
@@ -197,9 +200,9 @@
 		510C6EE112F8ABA7000500A1 /* ShowSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ShowSpec.nu; path = Spec/ShowSpec.nu; sourceTree = "<group>"; };
 		510C6F3012F8B0E9000500A1 /* ShowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowTableViewCell.h; path = Views/ShowTableViewCell.h; sourceTree = "<group>"; };
 		510C6F3112F8B0E9000500A1 /* ShowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowTableViewCell.m; path = Views/ShowTableViewCell.m; sourceTree = "<group>"; };
-		510C6FBB12FB5B2C000500A1 /* TrendingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrendingViewController.h; path = Controllers/TrendingViewController.h; sourceTree = "<group>"; };
-		510C6FBC12FB5B2C000500A1 /* TrendingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrendingViewController.m; path = Controllers/TrendingViewController.m; sourceTree = "<group>"; };
-		510C6FBD12FB5B2C000500A1 /* TrendingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TrendingViewController.xib; path = Views/TrendingViewController.xib; sourceTree = "<group>"; };
+		510C6FBB12FB5B2C000500A1 /* RecommendationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommendationsViewController.h; path = Controllers/RecommendationsViewController.h; sourceTree = "<group>"; };
+		510C6FBC12FB5B2C000500A1 /* RecommendationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommendationsViewController.m; path = Controllers/RecommendationsViewController.m; sourceTree = "<group>"; };
+		510C6FBD12FB5B2C000500A1 /* RecommendationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecommendationsViewController.xib; path = Views/RecommendationsViewController.xib; sourceTree = "<group>"; };
 		510C6FCB12FB5D7D000500A1 /* ShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowsViewController.h; path = Controllers/ShowsViewController.h; sourceTree = "<group>"; };
 		510C6FCC12FB5D7D000500A1 /* ShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowsViewController.m; path = Controllers/ShowsViewController.m; sourceTree = "<group>"; };
 		511EE73813192A6B0000B12D /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64.h; path = vendor/Base64/Base64.h; sourceTree = "<group>"; };
@@ -263,6 +266,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51BF025313426A98006EBF54 /* Security.framework in Frameworks */,
 				510C6C9B12F5E4C7000500A1 /* CoreGraphics.framework in Frameworks */,
 				516CE94C12F44DE5003450CF /* YAJL.framework in Frameworks */,
 				510C6AB212F363EB000500A1 /* libNuBaconLib.a in Frameworks */,
@@ -420,7 +424,7 @@
 			children = (
 				51BFFE3B13392E1D006EBF54 /* AuthenticationViewController.xib */,
 				246834991310228D00E177A2 /* SeasonsViewController.xib */,
-				510C6FBD12FB5B2C000500A1 /* TrendingViewController.xib */,
+				510C6FBD12FB5B2C000500A1 /* RecommendationsViewController.xib */,
 				5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */,
 				28F335F01007B36200424DE2 /* CalendarViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
@@ -446,8 +450,8 @@
 				5181A1C21306EB4800B3761A /* AsyncImageTableViewController.m */,
 				510C6FCB12FB5D7D000500A1 /* ShowsViewController.h */,
 				510C6FCC12FB5D7D000500A1 /* ShowsViewController.m */,
-				510C6FBB12FB5B2C000500A1 /* TrendingViewController.h */,
-				510C6FBC12FB5B2C000500A1 /* TrendingViewController.m */,
+				510C6FBB12FB5B2C000500A1 /* RecommendationsViewController.h */,
+				510C6FBC12FB5B2C000500A1 /* RecommendationsViewController.m */,
 				240D0FA512FB5964002349B5 /* ShowDetailsViewController.h */,
 				240D0FA612FB5964002349B5 /* ShowDetailsViewController.m */,
 				510C6EC412F8A2EC000500A1 /* LibraryViewController.h */,
@@ -620,7 +624,7 @@
 				510C6BC612F5C875000500A1 /* user-calendar-shows.json in Resources */,
 				510C6D0712F5EA8A000500A1 /* poster-thumbnail.jpg in Resources */,
 				510C6EC812F8A2EC000500A1 /* LibraryViewController.xib in Resources */,
-				510C6FBF12FB5B2C000500A1 /* TrendingViewController.xib in Resources */,
+				510C6FBF12FB5B2C000500A1 /* RecommendationsViewController.xib in Resources */,
 				240D101D12FB627E002349B5 /* ShowDetailsViewController.xib in Resources */,
 				513BE708130F18430076F8F9 /* default-poster.png in Resources */,
 				2468349A1310228D00E177A2 /* SeasonsViewController.xib in Resources */,
@@ -677,7 +681,7 @@
 				510C6EDF12F8A83D000500A1 /* Show.m in Sources */,
 				510C6F3212F8B0E9000500A1 /* ShowTableViewCell.m in Sources */,
 				240D0FA812FB5964002349B5 /* ShowDetailsViewController.m in Sources */,
-				510C6FBE12FB5B2C000500A1 /* TrendingViewController.m in Sources */,
+				510C6FBE12FB5B2C000500A1 /* RecommendationsViewController.m in Sources */,
 				510C6FCD12FB5D7D000500A1 /* ShowsViewController.m in Sources */,
 				5181A1C31306EB4800B3761A /* AsyncImageTableViewController.m in Sources */,
 				513BE2EE1307FF280076F8F9 /* HTTPDownload.m in Sources */,
@@ -695,6 +699,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51BF025013426A80006EBF54 /* SSKeychain.m in Sources */,
+				51BF024D13426A72006EBF54 /* AuthenticationViewController.m in Sources */,
 				511EE773131931870000B12D /* Base64.h in Sources */,
 				511EE774131931870000B12D /* Base64.m in Sources */,
 				513BE4EB130817190076F8F9 /* iTraktAppDelegate.h in Sources */,

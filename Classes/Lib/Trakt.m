@@ -29,7 +29,7 @@ static Trakt *sharedTrakt = nil;
 @synthesize apiKey;
 @synthesize apiPasswordHash;
 
-@synthesize broadcastDates, library, trending;
+@synthesize broadcastDates, library, recommendations;
 
 - (void)setApiPassword:(NSString *)password {
   const char *cstr = [password cStringUsingEncoding:NSUTF8StringEncoding];
@@ -47,7 +47,7 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)retrieveTopLevelControllerdataStartingWith:(NSString *)dataDownloadSelector block:(void (^)(NSArray *data))block {
-  NSMutableArray *selectors = [NSMutableArray arrayWithObjects:@"calendar:", @"library:", @"trending:", nil];
+  NSMutableArray *selectors = [NSMutableArray arrayWithObjects:@"calendar:", @"library:", @"recommendations:", nil];
   [selectors removeObject:dataDownloadSelector];
   NSLog(@"Call %@", dataDownloadSelector);
   [self performSelector:NSSelectorFromString(dataDownloadSelector) withObject:block];
@@ -99,23 +99,23 @@ static Trakt *sharedTrakt = nil;
   }];
 }
 
-- (NSURL *)trendingURL {
-  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/shows/trending.json", self.baseURL, nil]];
+- (NSURL *)recommendationsURL {
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/shows/recommendations.json", self.baseURL, nil]];
 }
 
-- (void)trending:(void (^)(NSArray *shows))block {
-  NSLog(@"[!] Start download of trending data from: %@", [self libraryURL]);
-  [JSONDownload downloadFromURL:[self trendingURL] block:^(id response) {
-    NSLog(@"[!] Finished download of trending data");
+- (void)recommendations:(void (^)(NSArray *shows))block {
+  NSLog(@"[!] Start download of recommendation data from: %@", [self recommendationsURL]);
+  [JSONDownload downloadFromURL:[self recommendationsURL] username:self.apiUser password:self.apiPasswordHash block:^(id response) {
+    NSLog(@"[!] Finished download of recommendations data");
     NSMutableArray *shows = [NSMutableArray array];
     for(NSDictionary *showDict in (NSArray *)response) {
       Show *s = [[Show alloc] initWithDictionary:showDict];
       [shows addObject:s];
       [s release];
     }
-    self.trending = [[shows copy] autorelease];
+    self.recommendations = [[shows copy] autorelease];
     if (block) {
-      block(trending);
+      block(recommendations);
     }
   }];
 }

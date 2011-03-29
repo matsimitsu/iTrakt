@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "Episode.h"
 
-#define BASE_URL @"http://itrakt.matsimitsu.com"
+#define BASE_URL @"http://dev.itrakt.matsimitsu.com"
 #define TRAKT_BASE_URL @"http://api.trakt.tv"
 
 @interface Trakt : NSObject {
@@ -12,7 +12,7 @@
   NSString *apiPasswordHash;
   NSArray *broadcastDates;
   NSArray *library;
-  NSArray *trending;
+  NSArray *recommendations;
 }
 
 @property (nonatomic, retain) NSString *baseURL;
@@ -24,7 +24,7 @@
 
 @property (nonatomic, retain) NSArray *broadcastDates;
 @property (nonatomic, retain) NSArray *library;
-@property (nonatomic, retain) NSArray *trending;
+@property (nonatomic, retain) NSArray *recommendations;
 
 + (Trakt *)sharedInstance;
 
@@ -38,8 +38,8 @@
 - (NSURL *)libraryURL;
 - (void)library:(void (^)(NSArray *shows))block;
 
-- (NSURL *)trendingURL;
-- (void)trending:(void (^)(NSArray *shows))block;
+- (NSURL *)recommendationsURL;
+- (void)recommendations:(void (^)(NSArray *shows))block;
 
 - (NSURL *)seasonsURL:(NSString *)tvdb_id;
 - (void)seasons:(Show *)show block:(void (^)(NSArray *seasons))block;

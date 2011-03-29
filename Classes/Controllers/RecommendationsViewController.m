@@ -1,31 +1,31 @@
-#import "TrendingViewController.h"
+#import "RecommendationsViewController.h"
 #import "Trakt.h"
 #import "HTTPDownload.h"
 
-@implementation TrendingViewController
+@implementation RecommendationsViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
 
   [self showRefreshDataButton];
-  self.navigationItem.title = @"Trending";
+  self.navigationItem.title = @"Recommendations";
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  if (self.shows == nil && [Trakt sharedInstance].trending != nil) {
-    NSLog(@"Loading trending data from Trakt instance which has already loaded it");
-    self.shows = [Trakt sharedInstance].trending;
+  if (self.shows == nil && [Trakt sharedInstance].recommendations != nil) {
+    NSLog(@"Loading recommendations data from Trakt instance which has already loaded it");
+    self.shows = [Trakt sharedInstance].recommendations;
     [self reloadTableViewData];
   }
 }
 
 
 - (void)refreshData {
-  NSLog(@"Refresh trending data!");
+  NSLog(@"Refresh recommendations data!");
   [self showStopRefreshDataButton];
-  [[Trakt sharedInstance] retrieveTopLevelControllerdataStartingWith:@"trending:" block:^(NSArray *loadedShows) {
+  [[Trakt sharedInstance] retrieveTopLevelControllerdataStartingWith:@"recommendations:" block:^(NSArray *loadedShows) {
     [self showRefreshDataButton];
     self.shows = loadedShows;
     [self reloadTableViewData];

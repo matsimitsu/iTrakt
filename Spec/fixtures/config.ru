@@ -45,8 +45,8 @@ mappings = lambda do
     end
   end
 
-  map('/api/shows/trending.json') do
-    serve_json_fixture('trending')
+  map('/api/shows/recommendations.json') do
+    serve_json_fixture('recommendations')
   end
 
   map('/api/shows/82066.json') do

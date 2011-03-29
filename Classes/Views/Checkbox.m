@@ -131,7 +131,9 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
 }
 
 - (void)setSelected:(BOOL)flag {
-  [self setSelected:flag withAnimation:YES];
+  if (flag != self.selected) {
+    [self setSelected:flag withAnimation:YES];
+  }
 }
 
 - (void)setSelected:(BOOL)flag withAnimation:(BOOL)animate {

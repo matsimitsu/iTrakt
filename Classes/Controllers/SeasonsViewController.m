@@ -92,6 +92,7 @@
   NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
   Season *season = [seasons objectAtIndex:indexPath.section];
   Episode *episode = [season.episodes objectAtIndex:indexPath.row];
+  checkbox.selected = !episode.seen;
   [episode toggleSeen:^{
     checkbox.selected = episode.seen;
   }];

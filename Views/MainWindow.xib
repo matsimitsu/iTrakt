@@ -66,7 +66,7 @@
 				<object class="IBUINavigationController" key="IBUISelectedViewController" id="293488427">
 					<string key="IBUITitle">Trending</string>
 					<object class="IBUITabBarItem" key="IBUITabBarItem" id="163677930">
-						<string key="IBUITitle">Recommendations</string>
+						<string key="IBUITitle">Recommended</string>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<reference key="IBUITabBar"/>
 					</object>

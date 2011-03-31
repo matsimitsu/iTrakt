@@ -8,7 +8,7 @@
   [super viewDidLoad];
 
   [self showRefreshDataButton];
-  self.navigationItem.title = @"Recommendations";
+  self.navigationItem.title = @"Recommended";
 }
 
 

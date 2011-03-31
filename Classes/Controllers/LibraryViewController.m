@@ -27,7 +27,7 @@
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
 
-  // TODO This should be done in one place, the tab bar controller
+  // TODO This should be done in one place (superclass)
   NSString *username = [Trakt sharedInstance].apiUser;
   self.navigationItem.rightBarButtonItem.title = username == nil ? @"Sign in" : username;
 

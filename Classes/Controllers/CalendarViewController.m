@@ -37,6 +37,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+
+  // TODO This should be done in one place, the tab bar controller
+  NSString *username = [Trakt sharedInstance].apiUser;
+  self.navigationItem.rightBarButtonItem.title = username == nil ? @"Sign in" : username;
+
   if (self.broadcastDates == nil && [Trakt sharedInstance].broadcastDates != nil) {
     NSLog(@"Loading calendar data from Trakt instance which has already loaded it");
     self.broadcastDates = [Trakt sharedInstance].broadcastDates;

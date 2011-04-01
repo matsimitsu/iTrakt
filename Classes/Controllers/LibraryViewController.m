@@ -82,11 +82,23 @@
     } else {
       letter = [show.title substringToIndex:1];
     }
-    if (![letter isEqualToString:[titles lastObject]]) {
-      [titles addObject:letter];
-      [groupedShows addObject:[NSMutableArray arrayWithObject:show]];
+    letter = [letter uppercaseString];
+
+    if ([letter UTF8String][0] < 65) {
+      // it's a number, which are at the start of the feed, so assume the array is at the beginning or should be
+      NSMutableArray *group = [groupedShows lastObject];
+      if (group == nil) {
+        group = [NSMutableArray array];
+        [groupedShows addObject:group];
+      }
+      [group addObject:show];
     } else {
-      [[groupedShows lastObject] addObject:show];
+      if (![letter isEqualToString:[titles lastObject]]) {
+        [titles addObject:letter];
+        [groupedShows addObject:[NSMutableArray arrayWithObject:show]];
+      } else {
+        [[groupedShows lastObject] addObject:show];
+      }
     }
   }
 
@@ -124,15 +136,14 @@
     char selected = [title UTF8String][0];
     NSInteger i = [self.indexTitles count] - 1;
     for (; i >= 0; i--) {
-      NSString *t = [self.indexTitles objectAtIndex:i];
-      char character = [t UTF8String][0];
+      char character = [(NSString *)[self.indexTitles objectAtIndex:i] UTF8String][0];
       // don't further descrease `i' if `character' is a letter and is equal to
       // the selected letter or higher than the available letter in indexTitles
-      if (character > 64 && selected >= character) {
+      if (character >= 65 && selected >= character) {
         break;
       }
     }
-    return i;
+    return i+1; // offset by one because of the '123' section title
   }
 }
 

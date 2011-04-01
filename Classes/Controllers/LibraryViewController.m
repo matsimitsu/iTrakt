@@ -47,7 +47,7 @@
   }];
 }
 
-
+// TODO This should be done in one place (superclass)
 - (void)showRefreshDataButton {
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                                  target:self
@@ -55,7 +55,6 @@
   self.navigationItem.leftBarButtonItem = refreshButton;
   [refreshButton release];
 }
-
 - (void)showStopRefreshDataButton {
   UIBarButtonItem *stopButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
                                                                               target:self
@@ -73,7 +72,7 @@
 
 - (void)loadData:(NSArray *)loadedShows {
   NSMutableArray *groupedShows = [NSMutableArray array];
-  NSMutableArray *titles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
+  NSMutableArray *titles = [NSMutableArray array];
 
   NSRange skipPrefixRange = NSMakeRange(4, 1);
   for (Show *show in loadedShows) {
@@ -103,7 +102,12 @@
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
   if (tableView == self.tableView) {
-    return self.indexTitles;
+    NSMutableArray *titles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
+    char i;
+    for (i = 'A'; i <= 'Z'; i++) {
+      [titles addObject:[NSString stringWithFormat:@"%c", i]];
+    }
+    return titles;
   } else {
     return nil;
   }
@@ -115,7 +119,18 @@
     [tableView scrollRectToVisible:self.searchDisplayController.searchBar.frame animated:NO];
     return -1;
   } else {
-    return index - 1;
+    char selected = [title UTF8String][0];
+    NSInteger i = 0;
+    for (NSString *t in self.indexTitles) {
+      char character = [t UTF8String][0];
+      // don't further increase `i' if `character' is a letter and is equal to
+      // the selected letter or the next available letter in indexTitles
+      if (character > 64 && character >= selected) {
+        break;
+      }
+      i++;
+    }
+    return i;
   }
 }
 

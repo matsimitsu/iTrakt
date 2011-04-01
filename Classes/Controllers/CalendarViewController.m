@@ -60,7 +60,7 @@
   }];
 }
 
-
+// TODO This should be done in one place (superclass)
 - (void)showRefreshDataButton {
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                                  target:self
@@ -68,7 +68,6 @@
   self.navigationItem.leftBarButtonItem = refreshButton;
   [refreshButton release];
 }
-
 - (void)showStopRefreshDataButton {
   UIBarButtonItem *stopButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
                                                                               target:self
@@ -95,33 +94,6 @@
 
 #pragma mark -
 #pragma mark Table view data source
-
-
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-  if (tableView == self.tableView) {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
-    [dateFormatter setDateFormat:@"E"];
-    NSMutableArray *titles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
-    for (BroadcastDate *broadcastDate in self.broadcastDates) {
-      [titles addObject:[dateFormatter stringFromDate:broadcastDate.date]];
-    }
-    [dateFormatter release];
-    return titles;
-  } else {
-    return nil;
-  }
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
-  if (title == UITableViewIndexSearch) {
-    [tableView scrollRectToVisible:self.searchDisplayController.searchBar.frame animated:NO];
-    return -1;
-  } else {
-    return index - 1;
-  }
-}
 
 
 // Customize the number of sections in the table view.

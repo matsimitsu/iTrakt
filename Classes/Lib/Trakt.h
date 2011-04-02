@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "Episode.h"
 
-#define BASE_URL @"http://dev.itrakt.matsimitsu.com"
+#define BASE_URL @"http://itrakt.matsimitsu.com"
 #define TRAKT_BASE_URL @"http://api.trakt.tv"
 
 @interface Trakt : NSObject {

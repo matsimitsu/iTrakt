@@ -26,6 +26,9 @@
       (set window ((UIApplication sharedApplication) keyWindow))
       (set alert ((window subviews) objectAtIndex:0))
       (~ (alert message) should be:"Ohnoes!")
+
+      (alert dismissWithClickedButtonIndex:0 animated:nil)
+      (wait 1 (do ()))
     ))
   ))
 ))

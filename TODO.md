@@ -77,16 +77,9 @@ Auth
 * Auth button when not signed in: ‘Sign in’
 * Auth button when signed in: ‘alloy’
 
-* No placeholder texts in the username/password fields.
-
-* keyboard ‘done’ buttons:
-	* username: Next
-	* password: Go
-
 Auth window when not signed in:
 ===============================
 
-* Done => Sign in
 * Text:
 	Could not sign in (if failed)
 

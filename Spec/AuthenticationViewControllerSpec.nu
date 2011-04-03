@@ -11,11 +11,12 @@
   (describe "when not authenticated" `(
     (before (do ()
       (set @controller ((AuthenticationViewController alloc) initWithNibName:"AuthenticationViewController" bundle:nil))
-      ($window setRootViewController:@controller)
+      ;(window setRootViewController:@controller)
+      ((UIBacon sharedWindow) setRootViewController:@controller)
     ))
 
     (after (do ()
-      ($window setRootViewController:nil)
+      ((UIBacon sharedWindow) setRootViewController:nil)
     ))
 
     (it "has a `Sign in' button which is disabled when the username/password fields are empty" (do ()

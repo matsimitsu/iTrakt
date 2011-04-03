@@ -105,6 +105,7 @@
 		51D91AF4134886710061B8AA /* bacon.nu in Resources */ = {isa = PBXBuildFile; fileRef = 51D91AF3134886710061B8AA /* bacon.nu */; };
 		51D91AF6134887D30061B8AA /* AuthenticationViewControllerSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 51D91AF5134887D30061B8AA /* AuthenticationViewControllerSpec.nu */; };
 		51D91AF7134889EE0061B8AA /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51BFFE3B13392E1D006EBF54 /* AuthenticationViewController.xib */; };
+		51D91B191348F7120061B8AA /* UIKit.bridgesupport in Resources */ = {isa = PBXBuildFile; fileRef = 51D91B181348F7120061B8AA /* UIKit.bridgesupport */; };
 		51FBCC9712EA375500073C68 /* EpisodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */; };
 		51FBCC9A12EA391B00073C68 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9912EA391B00073C68 /* Episode.m */; };
 /* End PBXBuildFile section */
@@ -217,6 +218,7 @@
 		51D91AF1134886380061B8AA /* libNuBaconLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNuBaconLib.a; path = "vendor/ObjectiveBacon/LanguageBindings/Nu/iOSRunner/build/Debug-iphonesimulator/libNuBaconLib.a"; sourceTree = "<group>"; };
 		51D91AF3134886710061B8AA /* bacon.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bacon.nu; path = vendor/ObjectiveBacon/LanguageBindings/Nu/iOSRunner/../lib/bacon.nu; sourceTree = "<group>"; };
 		51D91AF5134887D30061B8AA /* AuthenticationViewControllerSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AuthenticationViewControllerSpec.nu; path = Spec/AuthenticationViewControllerSpec.nu; sourceTree = "<group>"; };
+		51D91B181348F7120061B8AA /* UIKit.bridgesupport */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = UIKit.bridgesupport; path = vendor/ObjectiveBacon/bridgesupport/iOS/UIKit.bridgesupport; sourceTree = "<group>"; };
 		51FBCC9512EA375500073C68 /* EpisodeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EpisodeTableViewCell.h; path = Views/EpisodeTableViewCell.h; sourceTree = "<group>"; };
 		51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EpisodeTableViewCell.m; path = Views/EpisodeTableViewCell.m; sourceTree = "<group>"; };
 		51FBCC9812EA391B00073C68 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Episode.h; path = Models/Episode.h; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				51D91B181348F7120061B8AA /* UIKit.bridgesupport */,
 				51D91AF3134886710061B8AA /* bacon.nu */,
 				51D91AF1134886380061B8AA /* libNuBaconLib.a */,
 				510C6EB412F8A1EE000500A1 /* Views */,
@@ -582,6 +585,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D91B191348F7120061B8AA /* UIKit.bridgesupport in Resources */,
 				51D91AF4134886710061B8AA /* bacon.nu in Resources */,
 				510C6EE212F8ABA7000500A1 /* ShowSpec.nu in Resources */,
 				51D91AF7134889EE0061B8AA /* AuthenticationViewController.xib in Resources */,

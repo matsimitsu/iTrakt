@@ -137,6 +137,7 @@
 
 
 - (void)checkboxClicked:(Checkbox *)checkbox {
+  checkbox.selected = !episode.seen;
   [episode toggleSeen:^{
     checkbox.selected = episode.seen;
   }];

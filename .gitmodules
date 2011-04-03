@@ -1,3 +1,6 @@
 [submodule "vendor/sskeychain"]
 	path = vendor/sskeychain
 	url = https://github.com/samsoffes/sskeychain.git
+[submodule "vendor/ObjectiveBacon"]
+	path = vendor/ObjectiveBacon
+	url = git@github.com:alloy/ObjectiveBacon.git

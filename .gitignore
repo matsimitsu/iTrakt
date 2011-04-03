@@ -6,3 +6,5 @@ build
 Authentication.h
 iTrakt.xcodeproj/*.mode1v3
 iTrakt.xcodeproj/*.pbxuser
+iTrakt.xcodeproj/project.xcworkspace/xcuserdata
+iTrakt.xcodeproj/xcuserdata

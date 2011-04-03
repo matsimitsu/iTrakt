@@ -37,13 +37,6 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* CalendarViewController.m */; };
 		28F335F11007B36200424DE2 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* CalendarViewController.xib */; };
-		510C6AB212F363EB000500A1 /* libNuBaconLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 510C6AB112F363EB000500A1 /* libNuBaconLib.a */; };
-		510C6ABD12F3644B000500A1 /* bacon_context.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6AB712F3644B000500A1 /* bacon_context.nu */; };
-		510C6ABE12F3644B000500A1 /* bacon_macros.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6AB812F3644B000500A1 /* bacon_macros.nu */; };
-		510C6ABF12F3644B000500A1 /* bacon_should.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6AB912F3644B000500A1 /* bacon_should.nu */; };
-		510C6AC012F3644B000500A1 /* bacon_specification.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6ABA12F3644B000500A1 /* bacon_specification.nu */; };
-		510C6AC112F3644B000500A1 /* bacon_summary.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6ABB12F3644B000500A1 /* bacon_summary.nu */; };
-		510C6AC212F3644B000500A1 /* bacon.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6ABC12F3644B000500A1 /* bacon.nu */; };
 		510C6AD712F36516000500A1 /* BroadcastDate.h in Sources */ = {isa = PBXBuildFile; fileRef = 2484C6AC12E9F568000D3871 /* BroadcastDate.h */; };
 		510C6AD812F36516000500A1 /* BroadcastDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2484C6AD12E9F568000D3871 /* BroadcastDate.m */; };
 		510C6ADB12F36516000500A1 /* Episode.h in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9812EA391B00073C68 /* Episode.h */; };
@@ -108,33 +101,11 @@
 		51BFFE3D13392E1D006EBF54 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51BFFE3B13392E1D006EBF54 /* AuthenticationViewController.xib */; };
 		51BFFEA313395159006EBF54 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFEA213395159006EBF54 /* SSKeychain.m */; };
 		51BFFEAD1339516C006EBF54 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BFFEAC1339516C006EBF54 /* Security.framework */; };
+		51D91AF2134886380061B8AA /* libNuBaconLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D91AF1134886380061B8AA /* libNuBaconLib.a */; };
+		51D91AF4134886710061B8AA /* bacon.nu in Resources */ = {isa = PBXBuildFile; fileRef = 51D91AF3134886710061B8AA /* bacon.nu */; };
 		51FBCC9712EA375500073C68 /* EpisodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */; };
 		51FBCC9A12EA391B00073C68 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9912EA391B00073C68 /* Episode.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		513401B012F36217007ED54E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 513401A712F36217007ED54E /* NuBacon-iOSRunner.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
-			remoteInfo = "NuBacon-iOSRunner";
-		};
-		513401B212F36217007ED54E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 513401A712F36217007ED54E /* NuBacon-iOSRunner.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 51ED140B12AE416B003E9DC2;
-			remoteInfo = NuBaconLib;
-		};
-		513401BE12F36264007ED54E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 513401A712F36217007ED54E /* NuBacon-iOSRunner.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 51ED140A12AE416B003E9DC2;
-			remoteInfo = NuBaconLib;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -216,7 +187,7 @@
 		513400A612EF5299007ED54E /* episode.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = episode.jpg; path = design/episode.jpg; sourceTree = "<group>"; };
 		513400C412EF71A4007ED54E /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageCell.h; path = Views/ImageCell.h; sourceTree = "<group>"; };
 		513400C512EF71A4007ED54E /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageCell.m; path = Views/ImageCell.m; sourceTree = "<group>"; };
-		513401A712F36217007ED54E /* NuBacon-iOSRunner.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "NuBacon-iOSRunner.xcodeproj"; path = "vendor/NuBacon/iOSRunner/NuBacon-iOSRunner.xcodeproj"; sourceTree = "<group>"; };
+		513401A712F36217007ED54E /* NuBacon-iOSRunner.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "NuBacon-iOSRunner.xcodeproj"; path = "vendor/ObjectiveBacon/LanguageBindings/Nu/iOSRunner/NuBacon-iOSRunner.xcodeproj"; sourceTree = "<group>"; };
 		513401B812F36248007ED54E /* Specs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Specs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		513401BA12F36248007ED54E /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		5134FEBB12EBBF39007ED54E /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGOCache.h; path = vendor/EGOCache/EGOCache.h; sourceTree = "<group>"; };
@@ -241,6 +212,8 @@
 		51BFFEA113395159006EBF54 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSKeychain.h; path = vendor/sskeychain/SSKeychain.h; sourceTree = "<group>"; };
 		51BFFEA213395159006EBF54 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSKeychain.m; path = vendor/sskeychain/SSKeychain.m; sourceTree = "<group>"; };
 		51BFFEAC1339516C006EBF54 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		51D91AF1134886380061B8AA /* libNuBaconLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNuBaconLib.a; path = "vendor/ObjectiveBacon/LanguageBindings/Nu/iOSRunner/build/Debug-iphonesimulator/libNuBaconLib.a"; sourceTree = "<group>"; };
+		51D91AF3134886710061B8AA /* bacon.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bacon.nu; path = vendor/ObjectiveBacon/LanguageBindings/Nu/iOSRunner/../lib/bacon.nu; sourceTree = "<group>"; };
 		51FBCC9512EA375500073C68 /* EpisodeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EpisodeTableViewCell.h; path = Views/EpisodeTableViewCell.h; sourceTree = "<group>"; };
 		51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EpisodeTableViewCell.m; path = Views/EpisodeTableViewCell.m; sourceTree = "<group>"; };
 		51FBCC9812EA391B00073C68 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Episode.h; path = Models/Episode.h; sourceTree = "<group>"; };
@@ -266,10 +239,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D91AF2134886380061B8AA /* libNuBaconLib.a in Frameworks */,
 				51BF025313426A98006EBF54 /* Security.framework in Frameworks */,
 				510C6C9B12F5E4C7000500A1 /* CoreGraphics.framework in Frameworks */,
 				516CE94C12F44DE5003450CF /* YAJL.framework in Frameworks */,
-				510C6AB212F363EB000500A1 /* libNuBaconLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +290,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				51D91AF3134886710061B8AA /* bacon.nu */,
+				51D91AF1134886380061B8AA /* libNuBaconLib.a */,
 				510C6EB412F8A1EE000500A1 /* Views */,
 				510C6AED12F3682C000500A1 /* Spec */,
 				510C6AAF12F363D9000500A1 /* SpecRunner */,
@@ -434,15 +409,6 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		513401A812F36217007ED54E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				513401B112F36217007ED54E /* NuBacon-iOSRunner.app */,
-				513401B312F36217007ED54E /* libNuBaconLib.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		513BE8C2131996170076F8F9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,7 +510,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				513401BF12F36264007ED54E /* PBXTargetDependency */,
 			);
 			name = Specs;
 			productName = Specs;
@@ -569,12 +534,6 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 513401A812F36217007ED54E /* Products */;
-					ProjectRef = 513401A712F36217007ED54E /* NuBacon-iOSRunner.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* iTrakt */,
@@ -582,23 +541,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		513401B112F36217007ED54E /* NuBacon-iOSRunner.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "NuBacon-iOSRunner.app";
-			remoteRef = 513401B012F36217007ED54E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		513401B312F36217007ED54E /* libNuBaconLib.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libNuBaconLib.a;
-			remoteRef = 513401B212F36217007ED54E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -636,6 +578,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D91AF4134886710061B8AA /* bacon.nu in Resources */,
 				510C6EE212F8ABA7000500A1 /* ShowSpec.nu in Resources */,
 				510C6D0812F5EAAE000500A1 /* poster-thumbnail.jpg in Resources */,
 				510C6C5B12F5DB62000500A1 /* SpecHelper.nu in Resources */,
@@ -643,12 +586,6 @@
 				510C6BA212F5C58F000500A1 /* EpisodeSpec.nu in Resources */,
 				516CE9BB12F4574C003450CF /* banner.jpg in Resources */,
 				510C6AF212F36993000500A1 /* TraktSpec.nu in Resources */,
-				510C6ABD12F3644B000500A1 /* bacon_context.nu in Resources */,
-				510C6ABE12F3644B000500A1 /* bacon_macros.nu in Resources */,
-				510C6ABF12F3644B000500A1 /* bacon_should.nu in Resources */,
-				510C6AC012F3644B000500A1 /* bacon_specification.nu in Resources */,
-				510C6AC112F3644B000500A1 /* bacon_summary.nu in Resources */,
-				510C6AC212F3644B000500A1 /* bacon.nu in Resources */,
 				516CE9B812F4565A003450CF /* poster.jpg in Resources */,
 				2402540C12F5F07B00F651D8 /* thumb.jpg in Resources */,
 				513BE439130804040076F8F9 /* HTTPDownloadSpec.nu in Resources */,
@@ -727,14 +664,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		513401BF12F36264007ED54E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NuBaconLib;
-			targetProxy = 513401BE12F36264007ED54E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -790,6 +719,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/vendor/NuBacon/iOSRunner/build/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/vendor/ObjectiveBacon/LanguageBindings/Nu/iOSRunner/build/Debug-iphonesimulator\"",
 				);
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -824,6 +755,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/vendor/NuBacon/iOSRunner/build/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/vendor/ObjectiveBacon/LanguageBindings/Nu/iOSRunner/build/Debug-iphonesimulator\"",
 				);
 				OTHER_LDFLAGS = (
 					"-framework",

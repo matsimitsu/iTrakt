@@ -110,10 +110,10 @@
 								<float key="IBUIMinimumFontSize">17</float>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 									<int key="IBUIAutocorrectionType">1</int>
-									<int key="IBUIReturnKeyType">4</int>
 									<bool key="IBUIEnablesReturnKeyAutomatically">YES</bool>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
+								<int key="IBUIClearButtonMode">1</int>
 							</object>
 						</object>
 						<string key="NSFrameSize">{320, 44}</string>
@@ -197,9 +197,11 @@
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 									<int key="IBUIAutocorrectionType">1</int>
 									<int key="IBUIReturnKeyType">1</int>
+									<bool key="IBUIEnablesReturnKeyAutomatically">YES</bool>
 									<bool key="IBUISecureTextEntry">YES</bool>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
+								<int key="IBUIClearButtonMode">1</int>
 							</object>
 						</object>
 						<string key="NSFrameSize">{320, 44}</string>
@@ -476,6 +478,15 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					</object>
 					<int key="connectionID">63</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">selectPasswordField:</string>
+						<reference key="source" ref="1030481400"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">20</int>
+					</object>
+					<int key="connectionID">64</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -688,7 +699,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">63</int>
+			<int key="maxID">64</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

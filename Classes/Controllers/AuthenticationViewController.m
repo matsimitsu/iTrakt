@@ -89,6 +89,9 @@
 
 
 - (IBAction)saveCredentials:(id)sender {
+  [self.usernameField resignFirstResponder];
+  [self.passwordField resignFirstResponder];
+
   NSString *username = self.usernameField.text;
   NSString *password = self.passwordField.text;
 
@@ -114,6 +117,10 @@
   } else {
     [self.helpBannerButton setTitle:@"Don’t have an account yet?" forState:UIControlStateNormal];
   }
+}
+
+- (IBAction)selectPasswordField:(id)sender {
+  [self.passwordField becomeFirstResponder];
 }
 
 

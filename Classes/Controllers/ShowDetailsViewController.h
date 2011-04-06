@@ -6,7 +6,6 @@
 
   UITableViewCell *bannerCell;
   UIImageView *bannerView;
-  BOOL bannerLoaded;
 
   UITableViewCell *titleAndSeasonsAndEpisodesCell;
   UILabel *titleLabel;

@@ -72,7 +72,7 @@
         CGSize size = [show.overview sizeWithFont:self.overviewLabel.font
                                 constrainedToSize:CGSizeMake(self.overviewLabel.bounds.size.width, 20000.0)
                                     lineBreakMode:UILineBreakModeWordWrap];
-        return size.height + 48.0;
+        return size.height + 12.0;
       }
   }
   return 0;
@@ -103,9 +103,11 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  SeasonsViewController *controller = [[SeasonsViewController alloc] initWithShow:self.show];
-  [self.navigationController pushViewController:controller animated:YES];
-  [controller release];
+  if (indexPath.row == 1) {
+    SeasonsViewController *controller = [[SeasonsViewController alloc] initWithShow:self.show];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
+  }
 }
 
 

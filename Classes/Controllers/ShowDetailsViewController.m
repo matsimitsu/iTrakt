@@ -30,6 +30,24 @@
   return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  NSLog(@"HIER!");
+  if (show.thumb == nil) {
+    bannerLoaded = NO;
+    [show ensureThumbIsLoaded:^{
+      bannerLoaded = YES;
+      // this callback is only run if the image has to be downloaded first
+      self.bannerView.image = show.thumb;
+      NSIndexPath *bannerIndex = [NSIndexPath indexPathForRow:0 inSection:0];
+      NSLog(@"Index: %@", bannerIndex);
+      [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:bannerIndex]
+                            withRowAnimation:UITableViewRowAnimationTop];
+    }];
+  } else {
+    bannerLoaded = YES;
+  }
+}
 
 - (void)viewWillDisappear:(BOOL)animated {
   [super viewWillDisappear:animated];
@@ -43,16 +61,19 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 3;
+  return bannerLoaded ? 3 : 2;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  switch (indexPath.row) {
+  NSUInteger row = bannerLoaded ? indexPath.row : indexPath.row + 1;
+  switch (row) {
     case 0:
       return self.bannerCell.bounds.size.height;
+
     case 1:
       return self.titleAndSeasonsAndEpisodesCell.bounds.size.height;
+
     case 2:
       // Calculate height for episode overview
       if (show.overview) {
@@ -72,12 +93,9 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  switch (indexPath.row) {
+  NSUInteger row = bannerLoaded ? indexPath.row : indexPath.row + 1;
+  switch (row) {
     case 0:
-      [show ensureThumbIsLoaded:^{
-        // this callback is only run if the image has to be downloaded first
-        self.bannerView.image = show.thumb;
-      }];
       self.bannerView.image = show.thumb;
       return self.bannerCell;
 

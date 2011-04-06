@@ -297,8 +297,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				2479A22B12EC83DB00E2AD4E /* YAJL.framework */,
-				24229071131E4B4200F1C3B3 /* Authentication.h */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -306,6 +304,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				24229071131E4B4200F1C3B3 /* Authentication.h */,
 				51BFFEA113395159006EBF54 /* SSKeychain.h */,
 				51BFFEA213395159006EBF54 /* SSKeychain.m */,
 				511EE73813192A6B0000B12D /* Base64.h */,
@@ -340,6 +339,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2479A22B12EC83DB00E2AD4E /* YAJL.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,

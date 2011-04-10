@@ -103,3 +103,8 @@ Library
 
 * Index should always show the full alphabet with digits at the end (#) as in the ipod artists list.
 
+
+Later
+-----
+
+* Use streaming parsing for json so large shows like COPS show stuff asap.

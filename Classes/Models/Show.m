@@ -83,6 +83,16 @@
   return [NSString stringWithFormat:@"%@ on %@", [self localizedAirtime], [self network], nil];
 }
 
+- (NSString *)seasonsAndEpisodes {
+  NSNumber *seasonCount = [dictionary objectForKey:@"season_count"];
+  NSNumber *episodeCount = [dictionary objectForKey:@"episode_count"];
+  if (seasonCount != [NSNull null] && [seasonCount intValue] > 0 &&
+      episodeCount != [NSNull null] && [episodeCount intValue] > 0) {
+    return [NSString stringWithFormat:@"%d Seasons, %d Episodes", [seasonCount intValue], [episodeCount intValue]];
+  }
+  return @"Episodes";
+}
+
 
 - (void)ensureSeasonsAreLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the poster loaded for performance!

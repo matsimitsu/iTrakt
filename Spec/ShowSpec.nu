@@ -2,12 +2,12 @@
 
 (describe "Show" `(
   (before (do ()
-    (set showDict (NSMutableDictionary dictionary))
-    (showDict setValue:"Fringe" forKey:"title")
-    (showDict setValue:2008      forKey:"year")
-    (showDict setValue:"82066"   forKey:"tvdb_id")
-    (showDict setValue:"http://localhost:9292/api/uploads/82066/poster-82066.jpg", forKey:"poster")
-    (set @show ((Show alloc) initWithDictionary:showDict))
+    (set @showDict (NSMutableDictionary dictionary))
+    (@showDict setValue:"Fringe" forKey:"title")
+    (@showDict setValue:2008      forKey:"year")
+    (@showDict setValue:"82066"   forKey:"tvdb_id")
+    (@showDict setValue:"http://localhost:9292/api/uploads/82066/poster-82066.jpg", forKey:"poster")
+    (set @show ((Show alloc) initWithDictionary:@showDict))
   ))
 
   (it "returns the show's title" (do ()
@@ -24,6 +24,19 @@
 
   (it "returns the poster URL" (do ()
     (~ (@show posterURL) should be:(NSURL URLWithString:"http://localhost:9292/api/uploads/82066/poster-82066.jpg"))
+  ))
+
+  (it "returns a formatted season and episode count label" (do ()
+    (~ (@show seasonsAndEpisodes) should be:"Episodes")
+    (@showDict setValue:0 forKey:"season_count")
+    (@showDict setValue:0 forKey:"episode_count")
+    (~ (@show seasonsAndEpisodes) should be:"Episodes")
+    (@showDict setValue:3 forKey:"season_count")
+    (@showDict setValue:0 forKey:"episode_count")
+    (~ (@show seasonsAndEpisodes) should be:"Episodes")
+    (@showDict setValue:3 forKey:"season_count")
+    (@showDict setValue:60 forKey:"episode_count")
+    (~ (@show seasonsAndEpisodes) should be:"3 Seasons, 60 Episodes")
   ))
 
   (describe "concerning episode data" `(

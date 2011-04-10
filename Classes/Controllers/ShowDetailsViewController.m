@@ -92,6 +92,7 @@
 
     case 1:
       self.titleLabel.text = show.title;
+      self.seasonsAndEpisodesLabel.text = [show seasonsAndEpisodes];
       return self.titleAndSeasonsAndEpisodesCell;
 
     case 2:

@@ -35,6 +35,14 @@ addRoundedRect(CGContextRef ctx, CGRect rect, float cornerRadius) {
 
 @implementation CheckboxDrawing
 
+- (id)init {
+  if ((self = [super init])) {
+    // TODO add guard if we want iOS < 4 support
+    self.contentsScale = [[UIScreen mainScreen] scale];
+  }
+  return self;
+}
+
 - (void)setSelected:(BOOL)flag withAnimation:(BOOL)animate {
   selected = flag;
   [self setNeedsDisplay];

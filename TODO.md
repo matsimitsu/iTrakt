@@ -4,6 +4,7 @@ General
 * Research which OSS license the app should have and that we adhere to the licenses of APIs.
   TVDB: http://forums.thetvdb.com/viewtopic.php?f=8&t=2507
 
+* When an episode title is TBD, disable the checkbox or remove it.
 * Do the digits really have to be at the end of the index in the library view? The data already comes sorted, but has the digits first...
 * Move some code from application delegate to a root view controllers superclass.
 * Add -[NSArray objectAtIndexPath:] and refactor controllers.

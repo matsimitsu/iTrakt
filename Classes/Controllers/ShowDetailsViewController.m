@@ -100,6 +100,11 @@
   return nil;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.row == 2) {
+    cell.backgroundColor = [UIColor colorWithWhite:0.96 alpha:1.0];
+  }
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.row == 1) {

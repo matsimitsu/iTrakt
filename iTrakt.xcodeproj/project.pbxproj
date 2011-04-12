@@ -111,6 +111,10 @@
 		51D1D9651354C3F000323896 /* placeholder-landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9611354C3F000323896 /* placeholder-landscape@2x.png */; };
 		51D1D9661354C3F000323896 /* placeholder-portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9621354C3F000323896 /* placeholder-portrait.png */; };
 		51D1D9671354C3F000323896 /* placeholder-portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9631354C3F000323896 /* placeholder-portrait@2x.png */; };
+		51D1D96C1354E60100323896 /* checkbox-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9681354E60100323896 /* checkbox-checked.png */; };
+		51D1D96D1354E60100323896 /* checkbox-checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9691354E60100323896 /* checkbox-checked@2x.png */; };
+		51D1D96E1354E60100323896 /* checkbox-unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D96A1354E60100323896 /* checkbox-unchecked.png */; };
+		51D1D96F1354E60100323896 /* checkbox-unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D96B1354E60100323896 /* checkbox-unchecked@2x.png */; };
 		51D91AF2134886380061B8AA /* libNuBaconLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D91AF1134886380061B8AA /* libNuBaconLib.a */; };
 		51D91AF4134886710061B8AA /* bacon.nu in Resources */ = {isa = PBXBuildFile; fileRef = 51D91AF3134886710061B8AA /* bacon.nu */; };
 		51D91AF6134887D30061B8AA /* AuthenticationViewControllerSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 51D91AF5134887D30061B8AA /* AuthenticationViewControllerSpec.nu */; };
@@ -228,6 +232,10 @@
 		51D1D9611354C3F000323896 /* placeholder-landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder-landscape@2x.png"; path = "design/icons/placeholder-landscape@2x.png"; sourceTree = "<group>"; };
 		51D1D9621354C3F000323896 /* placeholder-portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder-portrait.png"; path = "design/icons/placeholder-portrait.png"; sourceTree = "<group>"; };
 		51D1D9631354C3F000323896 /* placeholder-portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder-portrait@2x.png"; path = "design/icons/placeholder-portrait@2x.png"; sourceTree = "<group>"; };
+		51D1D9681354E60100323896 /* checkbox-checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkbox-checked.png"; path = "design/icons/checkbox-checked.png"; sourceTree = "<group>"; };
+		51D1D9691354E60100323896 /* checkbox-checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkbox-checked@2x.png"; path = "design/icons/checkbox-checked@2x.png"; sourceTree = "<group>"; };
+		51D1D96A1354E60100323896 /* checkbox-unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkbox-unchecked.png"; path = "design/icons/checkbox-unchecked.png"; sourceTree = "<group>"; };
+		51D1D96B1354E60100323896 /* checkbox-unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkbox-unchecked@2x.png"; path = "design/icons/checkbox-unchecked@2x.png"; sourceTree = "<group>"; };
 		51D91AF1134886380061B8AA /* libNuBaconLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNuBaconLib.a; path = "vendor/ObjectiveBacon/LanguageBindings/Nu/iOSRunner/build/Debug-iphonesimulator/libNuBaconLib.a"; sourceTree = "<group>"; };
 		51D91AF3134886710061B8AA /* bacon.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bacon.nu; path = vendor/ObjectiveBacon/LanguageBindings/Nu/lib/bacon.nu; sourceTree = "<group>"; };
 		51D91AF5134887D30061B8AA /* AuthenticationViewControllerSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AuthenticationViewControllerSpec.nu; path = Spec/AuthenticationViewControllerSpec.nu; sourceTree = "<group>"; };
@@ -496,6 +504,10 @@
 		51D1D9531354BF7000323896 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				51D1D9681354E60100323896 /* checkbox-checked.png */,
+				51D1D9691354E60100323896 /* checkbox-checked@2x.png */,
+				51D1D96A1354E60100323896 /* checkbox-unchecked.png */,
+				51D1D96B1354E60100323896 /* checkbox-unchecked@2x.png */,
 				51D1D9601354C3F000323896 /* placeholder-landscape.png */,
 				51D1D9611354C3F000323896 /* placeholder-landscape@2x.png */,
 				51D1D9621354C3F000323896 /* placeholder-portrait.png */,
@@ -612,6 +624,10 @@
 				51D1D9651354C3F000323896 /* placeholder-landscape@2x.png in Resources */,
 				51D1D9661354C3F000323896 /* placeholder-portrait.png in Resources */,
 				51D1D9671354C3F000323896 /* placeholder-portrait@2x.png in Resources */,
+				51D1D96C1354E60100323896 /* checkbox-checked.png in Resources */,
+				51D1D96D1354E60100323896 /* checkbox-checked@2x.png in Resources */,
+				51D1D96E1354E60100323896 /* checkbox-unchecked.png in Resources */,
+				51D1D96F1354E60100323896 /* checkbox-unchecked@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

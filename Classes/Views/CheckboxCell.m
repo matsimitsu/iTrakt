@@ -10,7 +10,7 @@
 
     CGFloat x = 8;
     CGFloat width = 28;
-    checkbox = [[Checkbox alloc] initWithFrame:CGRectMake(x, 11, width, width)];
+    checkbox = [[Checkbox alloc] initWithFrame:CGRectMake(x, 0, width, self.bounds.size.height)];
     [checkbox addTarget:delegate action:@selector(checkboxClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:checkbox];
 

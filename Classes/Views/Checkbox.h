@@ -1,11 +1,6 @@
 #import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>
 
-@class CheckboxDrawing;
-
-@interface Checkbox : UIControl {
-  CheckboxDrawing *drawing;
-}
+@interface Checkbox : UIControl
 
 - (void)setSelected:(BOOL)flag withAnimation:(BOOL)animate;
 

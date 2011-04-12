@@ -24,6 +24,7 @@
 - (NSDate *)airtime;
 - (NSString *)localizedAirtime;
 - (NSString *)airtimeAndChannel;
+- (NSString *)seasonsAndEpisodes;
 
 - (void)ensurePosterIsLoaded:(void (^)())downloadedBlock;
 - (void)ensureThumbIsLoaded:(void (^)())downloadedBlock;

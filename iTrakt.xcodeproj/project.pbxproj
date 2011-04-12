@@ -107,6 +107,10 @@
 		51D1D95D1354BFA700323896 /* library@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9571354BFA700323896 /* library@2x.png */; };
 		51D1D95E1354BFA700323896 /* recommended.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9581354BFA700323896 /* recommended.png */; };
 		51D1D95F1354BFA700323896 /* recommended@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9591354BFA700323896 /* recommended@2x.png */; };
+		51D1D9641354C3F000323896 /* placeholder-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9601354C3F000323896 /* placeholder-landscape.png */; };
+		51D1D9651354C3F000323896 /* placeholder-landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9611354C3F000323896 /* placeholder-landscape@2x.png */; };
+		51D1D9661354C3F000323896 /* placeholder-portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9621354C3F000323896 /* placeholder-portrait.png */; };
+		51D1D9671354C3F000323896 /* placeholder-portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9631354C3F000323896 /* placeholder-portrait@2x.png */; };
 		51D91AF2134886380061B8AA /* libNuBaconLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D91AF1134886380061B8AA /* libNuBaconLib.a */; };
 		51D91AF4134886710061B8AA /* bacon.nu in Resources */ = {isa = PBXBuildFile; fileRef = 51D91AF3134886710061B8AA /* bacon.nu */; };
 		51D91AF6134887D30061B8AA /* AuthenticationViewControllerSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 51D91AF5134887D30061B8AA /* AuthenticationViewControllerSpec.nu */; };
@@ -220,6 +224,10 @@
 		51D1D9571354BFA700323896 /* library@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "library@2x.png"; path = "design/icons/library@2x.png"; sourceTree = "<group>"; };
 		51D1D9581354BFA700323896 /* recommended.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recommended.png; path = design/icons/recommended.png; sourceTree = "<group>"; };
 		51D1D9591354BFA700323896 /* recommended@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "recommended@2x.png"; path = "design/icons/recommended@2x.png"; sourceTree = "<group>"; };
+		51D1D9601354C3F000323896 /* placeholder-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder-landscape.png"; path = "design/icons/placeholder-landscape.png"; sourceTree = "<group>"; };
+		51D1D9611354C3F000323896 /* placeholder-landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder-landscape@2x.png"; path = "design/icons/placeholder-landscape@2x.png"; sourceTree = "<group>"; };
+		51D1D9621354C3F000323896 /* placeholder-portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder-portrait.png"; path = "design/icons/placeholder-portrait.png"; sourceTree = "<group>"; };
+		51D1D9631354C3F000323896 /* placeholder-portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder-portrait@2x.png"; path = "design/icons/placeholder-portrait@2x.png"; sourceTree = "<group>"; };
 		51D91AF1134886380061B8AA /* libNuBaconLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNuBaconLib.a; path = "vendor/ObjectiveBacon/LanguageBindings/Nu/iOSRunner/build/Debug-iphonesimulator/libNuBaconLib.a"; sourceTree = "<group>"; };
 		51D91AF3134886710061B8AA /* bacon.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bacon.nu; path = vendor/ObjectiveBacon/LanguageBindings/Nu/lib/bacon.nu; sourceTree = "<group>"; };
 		51D91AF5134887D30061B8AA /* AuthenticationViewControllerSpec.nu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AuthenticationViewControllerSpec.nu; path = Spec/AuthenticationViewControllerSpec.nu; sourceTree = "<group>"; };
@@ -488,6 +496,10 @@
 		51D1D9531354BF7000323896 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				51D1D9601354C3F000323896 /* placeholder-landscape.png */,
+				51D1D9611354C3F000323896 /* placeholder-landscape@2x.png */,
+				51D1D9621354C3F000323896 /* placeholder-portrait.png */,
+				51D1D9631354C3F000323896 /* placeholder-portrait@2x.png */,
 				51D1D9541354BFA700323896 /* calendar.png */,
 				51D1D9551354BFA700323896 /* calendar@2x.png */,
 				51D1D9561354BFA700323896 /* library.png */,
@@ -596,6 +608,10 @@
 				51D1D95D1354BFA700323896 /* library@2x.png in Resources */,
 				51D1D95E1354BFA700323896 /* recommended.png in Resources */,
 				51D1D95F1354BFA700323896 /* recommended@2x.png in Resources */,
+				51D1D9641354C3F000323896 /* placeholder-landscape.png in Resources */,
+				51D1D9651354C3F000323896 /* placeholder-landscape@2x.png in Resources */,
+				51D1D9661354C3F000323896 /* placeholder-portrait.png in Resources */,
+				51D1D9671354C3F000323896 /* placeholder-portrait@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

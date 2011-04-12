@@ -8,7 +8,7 @@
 @synthesize thumb;
 
 - (id)initWithDictionary:(NSDictionary *)showInfo {
-  if (self = [super init]) {
+  if ((self = [super init])) {
     dictionary = [showInfo retain];
   }
   return self;
@@ -106,15 +106,19 @@
 
 - (UIImage *)poster {
   if (self.posterURL == nil) {
-    return [UIImage imageNamed:@"default-poster.png"];
+    return [UIImage imageNamed:@"placeholder-portrait"];
   }
   if (poster == nil) {
     poster = [[[Trakt sharedInstance] cachedShowPosterForURL:self.posterURL] retain];
     if (poster == nil) {
-      return [UIImage imageNamed:@"default-poster.png"];
+      return [UIImage imageNamed:@"placeholder-portrait"];
     }
   }
   return poster;
+}
+
+- (UIImage *)thumb {
+  return thumb == nil ? [UIImage imageNamed:@"placeholder-landscape"] : thumb;
 }
 
 - (void)ensurePosterIsLoaded:(void (^)())downloadedBlock {
@@ -129,7 +133,7 @@
 
 - (void)ensureThumbIsLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the thumb loaded for performance!
-  if (self.thumb == nil) {
+  if (thumb == nil) {
     [[Trakt sharedInstance] showThumbForURL:self.thumbURL block:^(UIImage *theThumb, BOOL cached) {
       self.thumb = theThumb;
       if (!cached) {

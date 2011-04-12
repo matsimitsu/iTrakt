@@ -1,16 +1,10 @@
-//
-//  ShowDetailsViewController.m
-//  iTrakt
-//
-//  Created by Robert Beekman on 03-02-11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
 #import "ShowDetailsViewController.h"
 #import "ImageCell.h"
 #import "SeasonsViewController.h"
 
 #import "HTTPDownload.h"
+
+#import <QuartzCore/QuartzCore.h>
 
 #define SHOW_IMAGE_ASPECT_RATIO 1.78
 
@@ -34,12 +28,16 @@
   [super viewWillAppear:animated];
   [show ensureThumbIsLoaded:^{
     // this callback is only run if the image has to be downloaded first
-    self.bannerView.alpha = 0.0;
-    [UIView animateWithDuration:0.5 animations:^{
-      self.bannerView.image = show.thumb;
-      self.bannerView.alpha = 1.0;
-    }];
+    CABasicAnimation *xfade = [CABasicAnimation animationWithKeyPath:@"contents"];
+    xfade.delegate = self;
+    xfade.duration = 0.8;
+    xfade.toValue = (id)show.thumb.CGImage;
+    [self.bannerView.layer addAnimation:xfade forKey:nil];
   }];
+}
+
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
+  self.bannerView.image = show.thumb;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

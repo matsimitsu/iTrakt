@@ -8,14 +8,14 @@
       self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
-    CGFloat x = 8;
-    CGFloat width = 28;
-    checkbox = [[Checkbox alloc] initWithFrame:CGRectMake(x, 0, width, self.bounds.size.height)];
+    CGFloat x = 0;
+    CGFloat width = 43; // the row is 43 pixels high, set from IB
+    checkbox = [[Checkbox alloc] initWithFrame:CGRectMake(x, 0, width, width)];
     [checkbox addTarget:delegate action:@selector(checkboxClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:checkbox];
 
     x += width;
-    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(x, 8, self.bounds.size.width - x - (2 * self.indentationWidth), width)];
+    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(x, 8, self.bounds.size.width - x - (2 * self.indentationWidth), 28)];
     titleLabel.minimumFontSize = [UIFont systemFontSize];
     titleLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     [self.contentView addSubview:titleLabel];

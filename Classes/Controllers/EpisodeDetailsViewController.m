@@ -1,6 +1,9 @@
 #import "EpisodeDetailsViewController.h"
 #import "ImageCell.h"
+#import "Checkbox.h"
 #import "CheckboxCell.h"
+
+#import <QuartzCore/QuartzCore.h>
 
 #define EPISODE_IMAGE_ASPECT_RATIO 1.78
 
@@ -8,12 +11,37 @@
 
 @synthesize episode;
 
+@synthesize bannerCell, bannerView;
+@synthesize titleAndEpisodeAndSeasonCell, seenCheckbox, titleLabel, episodeAndSeasonLabel;
+@synthesize overviewCell, overviewLabel;
+@synthesize showDetailsCell, showTitleLabel;
+
 - (id)initWithEpisode:(Episode *)theEpisode {
   if (self = [super initWithNibName:@"EpisodeDetailsViewController" bundle:nil]) {
     self.episode = theEpisode;
     self.navigationItem.title = episode.show.title;
   }
   return self;
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [self.seenCheckbox addTarget:self action:@selector(checkboxClicked:) forControlEvents:UIControlEventTouchUpInside];
+  [episode ensureThumbIsLoaded:^{
+    // this callback is only run if the image has to be downloaded first
+    //NSLog(@"Episode thumb was downloaded for cell");
+    CABasicAnimation *xfade = [CABasicAnimation animationWithKeyPath:@"contents"];
+    xfade.delegate = self;
+    xfade.duration = 0.8;
+    xfade.toValue = (id)episode.thumb.CGImage;
+    [self.bannerView.layer addAnimation:xfade forKey:nil];
+  }];
+}
+
+
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
+  self.bannerView.image = episode.thumb;
 }
 
 
@@ -39,100 +67,69 @@
 
 #pragma mark Table view data source
 
-// Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 2;
+  return 1;
 }
 
 
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  if (section == 0) {
-    return 1;
-  } else {
-    return episode.overview == nil ? 2 : 3;
-  }
-}
-
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-  return section == 0 ? self.episode.title : nil;
+  return episode.overview == nil ? 3 : 4;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (indexPath.section == 0) {
-    // Calculate height for image cell
-    // TODO: duplication of code in ImageCell
-    CGFloat indentationWidth = 10.0;
-    CGFloat width = self.tableView.bounds.size.width - (2 * indentationWidth);
-    return floor(width / EPISODE_IMAGE_ASPECT_RATIO);
-  } else {
-    if (indexPath.row == 0) {
+  switch (indexPath.row) {
+    case 0:
+      return self.bannerCell.bounds.size.height;
+
+    case 1:
+      return self.titleAndEpisodeAndSeasonCell.bounds.size.height;
+
+    case 2:
       // Calculate height for episode overview
       if (episode.overview) {
-        CGSize size = [episode.overview sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]
-                                        constrainedToSize:CGSizeMake(300.0, 20000.0)
-                                            lineBreakMode:UILineBreakModeWordWrap];
-        return size.height + 48.0;
+        CGSize size = [episode.overview sizeWithFont:self.overviewLabel.font
+                                   constrainedToSize:CGSizeMake(self.overviewLabel.bounds.size.width, 20000.0)
+                                       lineBreakMode:UILineBreakModeWordWrap];
+        return size.height + 12.0;
       }
-    }
-    // Other text cells have the default height
-    return self.tableView.rowHeight;
+      break;
+
+    case 3:
+      return self.showDetailsCell.bounds.size.height;
   }
+  return 0;
 }
 
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  UITableViewCell *cell = nil;
-  if (indexPath.section == 0) {
-    static NSString *imageCellIdentifier = @"episodeImageCell";
-    cell = [tableView dequeueReusableCellWithIdentifier:imageCellIdentifier];
-    if (cell == nil) {
-      cell = [[[ImageCell alloc] initWithReuseIdentifier:imageCellIdentifier] autorelease];
-    }
-    [episode ensureThumbIsLoaded:^{
-      // this callback is only run if the image has to be downloaded first
-      //NSLog(@"Episode thumb was downloaded for cell");
-      ImageCell *cellToReload = (ImageCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-      cellToReload.image = episode.thumb;
-      [cellToReload setNeedsLayout];
-    }];
-    ((ImageCell *)cell).image = episode.thumb;
+  switch (indexPath.row) {
+    case 0:
+      self.bannerView.image = episode.thumb;
+      return self.bannerCell;
 
-  } else {
-    NSUInteger row = episode.overview == nil ? (indexPath.row + 1) : indexPath.row;
+    case 1:
+      [self.seenCheckbox setSelected:episode.seen withAnimation:NO];
+      self.titleLabel.text = episode.title;
+      self.episodeAndSeasonLabel.text = @"Episode 1, Season 5"; // TODO
+      return self.titleAndEpisodeAndSeasonCell;
 
-    if (row == 2) {
-      static NSString *checkboxCellIdentifier = @"checkboxCell";
-      cell = [tableView dequeueReusableCellWithIdentifier:checkboxCellIdentifier];
-      if (cell == nil) {
-        cell = [[[CheckboxCell alloc] initWithReuseIdentifier:checkboxCellIdentifier delegate:self disclosureAccessory:NO] autorelease];
-      }
-      [(CheckboxCell *)cell setSelected:episode.seen text:@"Seen"];
+    case 2:
+      self.overviewLabel.text = episode.overview;
+      return self.overviewCell;
 
-    } else {
-      static NSString *textCellIdentifier = @"textCell";
-      cell = [tableView dequeueReusableCellWithIdentifier:textCellIdentifier];
-      if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:textCellIdentifier] autorelease];
-        cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-        cell.textLabel.numberOfLines = 0;
-        cell.textLabel.minimumFontSize = [UIFont systemFontSize];
-        cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-      }
-
-      if (row == 0) {
-        cell.textLabel.text = episode.overview;
-      } else {
-        // row 1
-        cell.textLabel.text = [NSString stringWithFormat:@"Episode %@", [episode episodeNumber], nil];
-      }
-    }
+    case 3:
+      self.showTitleLabel.text = episode.show.title;
+      return self.showDetailsCell;
   }
-  cell.selectionStyle = UITableViewCellSelectionStyleNone;
-  return cell;
+  return nil;
+}
+
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.row == 2 && episode.overview != nil) {
+    cell.backgroundColor = [UIColor colorWithWhite:0.96 alpha:1.0];
+  }
 }
 
 

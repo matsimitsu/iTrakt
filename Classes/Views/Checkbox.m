@@ -5,8 +5,19 @@
 
 @implementation Checkbox
 
+// TODO make one init method!
+
 - (id)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
+    self.layer.contentsScale = [UIScreen mainScreen].scale;
+    self.layer.contentsGravity = kCAGravityCenter;
+    [self setSelected:NO withAnimation:NO];
+  }
+  return self;
+}
+
+- (id)initWithCoder:(NSCoder *)coder {
+  if (self = [super initWithCoder:coder]) {
     self.layer.contentsScale = [UIScreen mainScreen].scale;
     self.layer.contentsGravity = kCAGravityCenter;
     [self setSelected:NO withAnimation:NO];

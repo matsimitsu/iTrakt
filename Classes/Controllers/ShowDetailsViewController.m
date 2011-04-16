@@ -65,20 +65,21 @@
       return self.titleAndSeasonsAndEpisodesCell.bounds.size.height;
 
     case 2:
-      // Calculate height for episode overview
+      // Calculate height for show overview
       if (show.overview) {
         CGSize size = [show.overview sizeWithFont:self.overviewLabel.font
                                 constrainedToSize:CGSizeMake(self.overviewLabel.bounds.size.width, 20000.0)
                                     lineBreakMode:UILineBreakModeWordWrap];
         return size.height + 12.0;
       }
+      break;
   }
   return 0;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-  return nil;
-}
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  //return nil;
+//}
 
 
 // Customize the appearance of table view cells.

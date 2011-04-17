@@ -24,7 +24,6 @@
   return self;
 }
 
-
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   [self.seenCheckbox addTarget:self action:@selector(checkboxClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -39,11 +38,9 @@
   }];
 }
 
-
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
   self.bannerView.image = episode.thumb;
 }
-
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -58,7 +55,6 @@
     // e.g. self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
   [super dealloc];
   [episode release];
@@ -71,11 +67,9 @@
   return 1;
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return episode.overview == nil ? 3 : 4;
 }
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   switch (indexPath.row) {
@@ -101,7 +95,6 @@
   return 0;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   switch (indexPath.row) {
     case 0:
@@ -125,13 +118,11 @@
   return nil;
 }
 
-
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.row == 2 && episode.overview != nil) {
     cell.backgroundColor = [UIColor colorWithWhite:0.96 alpha:1.0];
   }
 }
-
 
 - (void)checkboxClicked:(Checkbox *)checkbox {
   checkbox.selected = !episode.seen;

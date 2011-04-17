@@ -105,7 +105,7 @@
     case 1:
       [self.seenCheckbox setSelected:episode.seen withAnimation:NO];
       self.titleLabel.text = episode.title;
-      self.episodeAndSeasonLabel.text = @"Episode 1, Season 5"; // TODO
+      self.episodeAndSeasonLabel.text = [episode episodeAndSeason];
       return self.titleAndEpisodeAndSeasonCell;
 
     case 2:

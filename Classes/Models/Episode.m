@@ -69,12 +69,17 @@
   return nil;
 }
 
+- (NSString *)episodeAndSeason {
+  return [NSString stringWithFormat:@"Episode %d, Season %d", self.number, self.season];
+}
+
+// TODO is this still being used?
 - (NSString *)episodeNumber {
-  return [NSString stringWithFormat:@"%dx%02d", self.season, self.number, nil];
+  return [NSString stringWithFormat:@"%dx%02d", self.season, self.number];
 }
 
 - (NSString *)serieTitleAndEpisodeNumber {
-  return [NSString stringWithFormat:@"%@ %@", [self episodeNumber], [show title], nil];
+  return [NSString stringWithFormat:@"%@ %@", [self episodeNumber], [show title]];
 }
 
 

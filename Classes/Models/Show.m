@@ -10,7 +10,6 @@
 - (id)initWithDictionary:(NSDictionary *)showInfo {
   if ((self = [super init])) {
     dictionary = [showInfo retain];
-    NSLog(@"Poster url: %@", [self posterURL]);
   }
   return self;
 }
@@ -135,6 +134,7 @@
 - (void)ensureThumbIsLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the thumb loaded for performance!
   if (thumb == nil) {
+    NSLog(@"Show thumb URL: %@", self.thumbURL);
     [[Trakt sharedInstance] showThumbForURL:self.thumbURL block:^(UIImage *theThumb, BOOL cached) {
       self.thumb = theThumb;
       if (!cached) {

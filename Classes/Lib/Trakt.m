@@ -170,6 +170,7 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)showThumbForURL:(NSURL *)thumbURL block:(void (^)(UIImage *thumb, BOOL cached))block {
+  NSLog(@"Download thumb: %@", thumbURL);
   [self loadImageFromURL:thumbURL block:block];
 }
 

@@ -2,6 +2,7 @@
 #import "ImageCell.h"
 #import "Checkbox.h"
 #import "CheckboxCell.h"
+#import "ShowDetailsViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -121,6 +122,14 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.row == 2 && episode.overview != nil) {
     cell.backgroundColor = [UIColor colorWithWhite:0.96 alpha:1.0];
+  }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.row == 3) {
+    ShowDetailsViewController *controller = [[ShowDetailsViewController alloc] initWithShow:episode.show];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
   }
 }
 

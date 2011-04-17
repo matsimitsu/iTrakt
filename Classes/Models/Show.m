@@ -10,6 +10,7 @@
 - (id)initWithDictionary:(NSDictionary *)showInfo {
   if ((self = [super init])) {
     dictionary = [showInfo retain];
+    NSLog(@"Poster url: %@", [self posterURL]);
   }
   return self;
 }

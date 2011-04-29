@@ -65,11 +65,9 @@ Design discussion V2
 --------------------
 
 * Echofon style network failure notification
-* Recommendations => Recommended
-* No index on calendar and only in library when over 50 shows
+* Only show an index in library when over 50 shows. However, the iPod app does show the index, even with 22 albums.
 * On all view ontrollers that show a search field, scroll the tableview a bit down so the serarch field isn’t visible by default.
 * Library tab when not signed in should give a description of what one could do there when one has a Trakt account. (show one of these handrwitten text with arrow to the sign in button)
-* The description of show/episode should be helvetica, bit smaller.
 * Episodes should be sorted most-recent-on-top
 * Description text in recommended list shoudl span two rows by removing the ‘x watchers’ row.
 

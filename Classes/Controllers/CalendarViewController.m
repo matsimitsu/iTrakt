@@ -1,4 +1,6 @@
 #import "CalendarViewController.h"
+
+#import "Episode.h"
 #import "EpisodeTableViewCell.h"
 #import "EpisodeDetailsViewController.h"
 
@@ -22,7 +24,9 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  [self showRefreshDataButton];
+  self.feedSelector = @"calendar:";
+  self.cachedFeedProperty = @"broadcastDates";
+
   self.navigationItem.title = @"Calendar";
   self.tableView.rowHeight = ROW_HEIGHT;
 
@@ -34,54 +38,10 @@
   self.searchController.searchResultsTableView.rowHeight = ROW_HEIGHT;
 }
 
-
-- (void)viewWillAppear:(BOOL)animated {
-  [super viewWillAppear:animated];
-
-  // TODO This should be done in one place (superclass)
-  NSString *username = [Trakt sharedInstance].apiUser;
-  self.navigationItem.rightBarButtonItem.title = username == nil ? @"Sign in" : username;
-
-  if (self.broadcastDates == nil && [Trakt sharedInstance].broadcastDates != nil) {
-    NSLog(@"Loading calendar data from Trakt instance which has already loaded it");
-    self.broadcastDates = [Trakt sharedInstance].broadcastDates;
-    [self reloadTableViewData];
-  }
+- (void)reloadTableViewData:(NSArray *)data {
+  self.broadcastDates = data;
+  [super reloadTableViewData:data];
 }
-
-
-- (void)refreshData {
-  NSLog(@"Refresh calendar data!");
-  [self showStopRefreshDataButton];
-  [[Trakt sharedInstance] retrieveTopLevelControllerdataStartingWith:@"calendar:" block:^(NSArray *dates) {
-    [self showRefreshDataButton];
-    self.broadcastDates = dates;
-    [self reloadTableViewData];
-  }];
-}
-
-// TODO This should be done in one place (superclass)
-- (void)showRefreshDataButton {
-  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                 target:self
-                                                                                 action:@selector(refreshData)];
-  self.navigationItem.leftBarButtonItem = refreshButton;
-  [refreshButton release];
-}
-- (void)showStopRefreshDataButton {
-  UIBarButtonItem *stopButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
-                                                                              target:self
-                                                                              action:@selector(cancelRefreshData)];
-  self.navigationItem.leftBarButtonItem = stopButton;
-  [stopButton release];
-}
-
-
-- (void)cancelRefreshData {
-  [self showRefreshDataButton];
-  [HTTPDownload cancelDownloadsInProgress];
-}
-
 
 - (void)loadImageForCell:(UITableViewCell *)cell {
   EpisodeTableViewCell *episodeCell = (EpisodeTableViewCell *)cell;
@@ -213,19 +173,6 @@
 
 #pragma mark -
 #pragma mark Memory management
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-
-    // Relinquish ownership any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
-}
-
 
 - (void)dealloc {
   [super dealloc];

@@ -1,5 +1,7 @@
 #import "iTraktAppDelegate.h"
 #import "Trakt.h"
+
+#import "RootViewController.h"
 #import "CalendarViewController.h"
 #import "AuthenticationViewController.h"
 
@@ -41,10 +43,18 @@
 
 - (void)downloadsAreInProgress {
   [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+  for (UINavigationController *navigationController in self.tabBarController.viewControllers) {
+    RootViewController *vc = [navigationController.viewControllers objectAtIndex:0];
+    [vc showStopRefreshDataButton];
+  }
 }
 
 - (void)downloadsAreFinished {
   [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+  for (UINavigationController *navigationController in self.tabBarController.viewControllers) {
+    RootViewController *vc = [navigationController.viewControllers objectAtIndex:0];
+    [vc showRefreshDataButton];
+  }
 }
 
 - (void)downloadFailed:(HTTPDownload *)download {

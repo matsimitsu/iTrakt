@@ -24,6 +24,7 @@
 - (NSInteger)number;
 - (NSString *)overview;
 
+- (NSString *)episodeAndSeason;
 - (NSString *)episodeNumber;
 - (NSString *)serieTitleAndEpisodeNumber;
 

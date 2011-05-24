@@ -30,7 +30,7 @@
 
 - (void)setApiPassword:(NSString *)password;
 
-- (void)retrieveTopLevelControllerdataStartingWith:(NSString *)dataDownloadSelector block:(void (^)(NSArray *data))block;
+- (void)retrieveRootControllerDataStartingWith:(NSString *)dataDownloadSelector block:(void (^)(NSArray *data))block;
 
 - (NSURL *)calendarURL;
 - (void)calendar:(void (^)(NSArray *broadcastDates))block;

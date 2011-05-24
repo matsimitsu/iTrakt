@@ -1,64 +1,77 @@
 #import "RecommendationsViewController.h"
+
+#import "Show.h"
+#import "ShowTableViewCell.h"
+#import "ShowDetailsViewController.h"
+
 #import "Trakt.h"
 #import "HTTPDownload.h"
 
 @implementation RecommendationsViewController
 
+@synthesize recommendations;
+
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  [self showRefreshDataButton];
+  self.feedSelector = @"recommendations:";
+  self.cachedFeedProperty = @"recommendations";
+
   self.navigationItem.title = @"Recommended";
 }
 
-
-- (void)viewWillAppear:(BOOL)animated {
-  [super viewWillAppear:animated];
-
-  // TODO This should be done in one place (superclass)
-  NSString *username = [Trakt sharedInstance].apiUser;
-  self.navigationItem.rightBarButtonItem.title = username == nil ? @"Sign in" : username;
-
-  if (self.shows == nil && [Trakt sharedInstance].recommendations != nil) {
-    NSLog(@"Loading recommendations data from Trakt instance which has already loaded it");
-    self.shows = [Trakt sharedInstance].recommendations;
-    [self reloadTableViewData];
-  }
+- (void)reloadTableViewData:(NSArray *)data {
+  self.recommendations = data;
+  [super reloadTableViewData:data];
 }
 
-
-- (void)refreshData {
-  NSLog(@"Refresh recommendations data!");
-  [self showStopRefreshDataButton];
-  [[Trakt sharedInstance] retrieveTopLevelControllerdataStartingWith:@"recommendations:" block:^(NSArray *loadedShows) {
-    [self showRefreshDataButton];
-    self.shows = loadedShows;
-    [self reloadTableViewData];
+- (void)loadImageForCell:(UITableViewCell *)cell {
+  ShowTableViewCell *showCell = (ShowTableViewCell *)cell;
+  //NSLog(@"Loading poster for: %@", showCell.show.title);
+  [showCell.show ensurePosterIsLoaded:^{
+    // this callback is only run if the image has to be downloaded first
+    //NSLog(@"Loaded poster for: %@", showCell.show.title);
+    [showCell setNeedsLayout];
   }];
 }
 
+#pragma mark -
+#pragma mark Table view data source/delegate
 
-// TODO This should be done in one place (superclass)
-- (void)showRefreshDataButton {
-  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                 target:self
-                                                                                 action:@selector(refreshData)];
-  self.navigationItem.leftBarButtonItem = refreshButton;
-  [refreshButton release];
-}
-- (void)showStopRefreshDataButton {
-  UIBarButtonItem *stopButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
-                                                                              target:self
-                                                                              action:@selector(cancelRefreshData)];
-  self.navigationItem.leftBarButtonItem = stopButton;
-  [stopButton release];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return 1;
 }
 
-
-- (void)cancelRefreshData {
-  [self showRefreshDataButton];
-  [HTTPDownload cancelDownloadsInProgress];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return [self.recommendations count];
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  static NSString *CellIdentifier = @"Cell";
+
+  ShowTableViewCell *cell = (ShowTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  if (cell == nil) {
+    cell = [[[ShowTableViewCell alloc] initWithReuseIdentifier:CellIdentifier] autorelease];
+  }
+
+  cell.show = [self.recommendations objectAtIndex:indexPath.row];
+
+  return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  Show *show = [self.recommendations objectAtIndex:indexPath.row];
+  ShowDetailsViewController *controller = [[ShowDetailsViewController alloc] initWithShow:show];
+  [self.navigationController pushViewController:controller animated:YES];
+  [controller release];
+}
+
+#pragma mark -
+#pragma mark Memory management
+
+- (void)dealloc {
+  [super dealloc];
+  self.recommendations = nil;
+}
 
 @end

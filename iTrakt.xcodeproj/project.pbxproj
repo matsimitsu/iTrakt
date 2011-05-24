@@ -67,12 +67,12 @@
 		510C6F3212F8B0E9000500A1 /* ShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6F3112F8B0E9000500A1 /* ShowTableViewCell.m */; };
 		510C6FBE12FB5B2C000500A1 /* RecommendationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6FBC12FB5B2C000500A1 /* RecommendationsViewController.m */; };
 		510C6FBF12FB5B2C000500A1 /* RecommendationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510C6FBD12FB5B2C000500A1 /* RecommendationsViewController.xib */; };
-		510C6FCD12FB5D7D000500A1 /* ShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6FCC12FB5D7D000500A1 /* ShowsViewController.m */; };
 		511EE73A13192A6B0000B12D /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 511EE73913192A6B0000B12D /* Base64.m */; };
 		511EE773131931870000B12D /* Base64.h in Sources */ = {isa = PBXBuildFile; fileRef = 511EE73813192A6B0000B12D /* Base64.h */; };
 		511EE774131931870000B12D /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 511EE73913192A6B0000B12D /* Base64.m */; };
 		511EE7C6131969F00000B12D /* Season.m in Sources */ = {isa = PBXBuildFile; fileRef = 511EE7C5131969F00000B12D /* Season.m */; };
 		511EE7C7131969F00000B12D /* Season.m in Sources */ = {isa = PBXBuildFile; fileRef = 511EE7C5131969F00000B12D /* Season.m */; };
+		511EE95A138BB91B00AE4808 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 511EE959138BB91B00AE4808 /* RootViewController.m */; };
 		5134008612EF4D72007ED54E /* EpisodeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */; };
 		5134008712EF4D72007ED54E /* EpisodeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */; };
 		513400A712EF5299007ED54E /* episode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 513400A612EF5299007ED54E /* episode.jpg */; };
@@ -90,7 +90,7 @@
 		516CE94C12F44DE5003450CF /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2479A22B12EC83DB00E2AD4E /* YAJL.framework */; };
 		516CE9B812F4565A003450CF /* poster.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 516CE9B712F4565A003450CF /* poster.jpg */; };
 		516CE9BB12F4574C003450CF /* banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2448DCED12E9EDD600AC422E /* banner.jpg */; };
-		5181A1C31306EB4800B3761A /* AsyncImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5181A1C21306EB4800B3761A /* AsyncImageTableViewController.m */; };
+		5181A1C31306EB4800B3761A /* ImageRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5181A1C21306EB4800B3761A /* ImageRootController.m */; };
 		518D6768131EF7260086143B /* Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 518D6767131EF7260086143B /* Checkbox.m */; };
 		518D6799131F030D0086143B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518D6798131F030D0086143B /* QuartzCore.framework */; };
 		51BF024D13426A72006EBF54 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFE3A13392E1D006EBF54 /* AuthenticationViewController.m */; };
@@ -184,13 +184,13 @@
 		510C6FBB12FB5B2C000500A1 /* RecommendationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommendationsViewController.h; path = Controllers/RecommendationsViewController.h; sourceTree = "<group>"; };
 		510C6FBC12FB5B2C000500A1 /* RecommendationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommendationsViewController.m; path = Controllers/RecommendationsViewController.m; sourceTree = "<group>"; };
 		510C6FBD12FB5B2C000500A1 /* RecommendationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecommendationsViewController.xib; path = Views/RecommendationsViewController.xib; sourceTree = "<group>"; };
-		510C6FCB12FB5D7D000500A1 /* ShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowsViewController.h; path = Controllers/ShowsViewController.h; sourceTree = "<group>"; };
-		510C6FCC12FB5D7D000500A1 /* ShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowsViewController.m; path = Controllers/ShowsViewController.m; sourceTree = "<group>"; };
 		511EE73813192A6B0000B12D /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64.h; path = vendor/Base64/Base64.h; sourceTree = "<group>"; };
 		511EE73913192A6B0000B12D /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Base64.m; path = vendor/Base64/Base64.m; sourceTree = "<group>"; };
 		511EE79B1319378A0000B12D /* Authentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Authentication.h; sourceTree = "<group>"; };
 		511EE7C4131969F00000B12D /* Season.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Season.h; path = Models/Season.h; sourceTree = "<group>"; };
 		511EE7C5131969F00000B12D /* Season.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Season.m; path = Models/Season.m; sourceTree = "<group>"; };
+		511EE958138BB91B00AE4808 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = Controllers/RootViewController.h; sourceTree = "<group>"; };
+		511EE959138BB91B00AE4808 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = Controllers/RootViewController.m; sourceTree = "<group>"; };
 		5134008312EF4D72007ED54E /* EpisodeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EpisodeDetailsViewController.h; path = Controllers/EpisodeDetailsViewController.h; sourceTree = "<group>"; };
 		5134008412EF4D72007ED54E /* EpisodeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EpisodeDetailsViewController.m; path = Controllers/EpisodeDetailsViewController.m; sourceTree = "<group>"; };
 		5134008512EF4D72007ED54E /* EpisodeDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EpisodeDetailsViewController.xib; path = Views/EpisodeDetailsViewController.xib; sourceTree = "<group>"; };
@@ -209,8 +209,8 @@
 		513BE706130F18430076F8F9 /* default-poster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default-poster.png"; path = "design/default-poster.png"; sourceTree = "<group>"; };
 		516CE8D512F42D53003450CF /* SpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecHelper.m; path = Spec/SpecHelper.m; sourceTree = "<group>"; };
 		516CE9B712F4565A003450CF /* poster.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = poster.jpg; path = Spec/fixtures/poster.jpg; sourceTree = "<group>"; };
-		5181A1C11306EB4800B3761A /* AsyncImageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncImageTableViewController.h; path = Controllers/AsyncImageTableViewController.h; sourceTree = "<group>"; };
-		5181A1C21306EB4800B3761A /* AsyncImageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncImageTableViewController.m; path = Controllers/AsyncImageTableViewController.m; sourceTree = "<group>"; };
+		5181A1C11306EB4800B3761A /* ImageRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageRootController.h; path = Controllers/ImageRootController.h; sourceTree = "<group>"; };
+		5181A1C21306EB4800B3761A /* ImageRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageRootController.m; path = Controllers/ImageRootController.m; sourceTree = "<group>"; };
 		518D6766131EF7260086143B /* Checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Checkbox.h; path = Views/Checkbox.h; sourceTree = "<group>"; };
 		518D6767131EF7260086143B /* Checkbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Checkbox.m; path = Views/Checkbox.m; sourceTree = "<group>"; };
 		518D6798131F030D0086143B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -434,10 +434,8 @@
 		513BE8C2131996170076F8F9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5181A1C11306EB4800B3761A /* AsyncImageTableViewController.h */,
-				5181A1C21306EB4800B3761A /* AsyncImageTableViewController.m */,
-				510C6FCB12FB5D7D000500A1 /* ShowsViewController.h */,
-				510C6FCC12FB5D7D000500A1 /* ShowsViewController.m */,
+				5181A1C11306EB4800B3761A /* ImageRootController.h */,
+				5181A1C21306EB4800B3761A /* ImageRootController.m */,
 				510C6FBB12FB5B2C000500A1 /* RecommendationsViewController.h */,
 				510C6FBC12FB5B2C000500A1 /* RecommendationsViewController.m */,
 				240D0FA512FB5964002349B5 /* ShowDetailsViewController.h */,
@@ -454,6 +452,8 @@
 				1D3623250D0F684500981E51 /* iTraktAppDelegate.m */,
 				51BFFE3913392E1D006EBF54 /* AuthenticationViewController.h */,
 				51BFFE3A13392E1D006EBF54 /* AuthenticationViewController.m */,
+				511EE958138BB91B00AE4808 /* RootViewController.h */,
+				511EE959138BB91B00AE4808 /* RootViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -679,8 +679,7 @@
 				510C6F3212F8B0E9000500A1 /* ShowTableViewCell.m in Sources */,
 				240D0FA812FB5964002349B5 /* ShowDetailsViewController.m in Sources */,
 				510C6FBE12FB5B2C000500A1 /* RecommendationsViewController.m in Sources */,
-				510C6FCD12FB5D7D000500A1 /* ShowsViewController.m in Sources */,
-				5181A1C31306EB4800B3761A /* AsyncImageTableViewController.m in Sources */,
+				5181A1C31306EB4800B3761A /* ImageRootController.m in Sources */,
 				513BE2EE1307FF280076F8F9 /* HTTPDownload.m in Sources */,
 				246834971310225300E177A2 /* SeasonsViewController.m in Sources */,
 				511EE73A13192A6B0000B12D /* Base64.m in Sources */,
@@ -689,6 +688,7 @@
 				51BFFAEB13350CF1006EBF54 /* CheckboxCell.m in Sources */,
 				51BFFE3C13392E1D006EBF54 /* AuthenticationViewController.m in Sources */,
 				51BFFEA313395159006EBF54 /* SSKeychain.m in Sources */,
+				511EE95A138BB91B00AE4808 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

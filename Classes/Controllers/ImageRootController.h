@@ -1,10 +1,10 @@
 #import <UIKit/UIKit.h>
+#import "RootViewController.h"
 
-@interface AsyncImageTableViewController : UITableViewController {
+@interface ImageRootController : RootViewController {
   BOOL dragging;
 }
 
-- (void)reloadTableViewData;
 - (void)loadImagesForVisibleCells;
 - (void)loadImageForCell:(UITableViewCell *)cell;
 

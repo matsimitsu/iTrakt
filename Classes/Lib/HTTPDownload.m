@@ -43,15 +43,23 @@ static NSMutableSet *inProgress = nil;
 
 
 + (id)downloadFromURL:(NSURL *)theURL block:(void (^)(id response))theBlock {
-  return [[[self alloc] initWithURL:theURL postBody:nil username:nil password:nil block:theBlock] autorelease];
+  return [self downloadFromURL:theURL username:nil password:nil block:theBlock];
 }
 
 + (id)downloadFromURL:(NSURL *)theURL username:(NSString *)username password:(NSString *)password block:(void (^)(id response))theBlock {
-  return [[[self alloc] initWithURL:theURL postBody:nil username:username password:password block:theBlock] autorelease];
+  HTTPDownload *instance = [[self alloc] initWithURL:theURL postBody:nil username:username password:password block:theBlock];
+  [instance start];
+  return [instance autorelease];
+}
+
++ (id)postToURL:(NSURL *)theURL body:(NSString *)body block:(void (^)(id response))theBlock {
+  return [self postToURL:theURL body:body username:nil password:nil block:theBlock];
 }
 
 + (id)postToURL:(NSURL *)theURL body:(NSString *)body username:(NSString *)username password:(NSString *)password block:(void (^)(id response))theBlock {
-  return [[[self alloc] initWithURL:theURL postBody:body username:username password:password block:theBlock] autorelease];
+  HTTPDownload *instance = [[self alloc] initWithURL:theURL postBody:body username:username password:password block:theBlock];
+  [instance start];
+  return [instance autorelease];
 }
 
 
@@ -64,14 +72,16 @@ static NSMutableSet *inProgress = nil;
 
 @synthesize downloadData;
 @synthesize connection;
-@synthesize response;
+@synthesize request, response;
 @synthesize error;
+@synthesize reportConnectionStatus;
 
 - (id)initWithURL:(NSURL *)theURL postBody:(NSString *)body username:(NSString *)username password:(NSString *)password block:(void (^)(id response))theBlock {
   if (self = [super init]) {
+    reportConnectionStatus = YES;
     downloadData = nil;
     block = Block_copy(theBlock);
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:theURL];
+    self.request = [NSMutableURLRequest requestWithURL:theURL];
 
     if (body) {
       [request setHTTPMethod:@"POST"];
@@ -83,9 +93,6 @@ static NSMutableSet *inProgress = nil;
       [request setValue:[NSString stringWithFormat:@"Basic %@", [Base64 encode:data]] forHTTPHeaderField:@"Authorization"];
       //NSLog(@"Sending basic-auth data: %@", [NSString stringWithFormat:@"Basic %@", [Base64 encode:data]]);
     }
-
-    self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
-    [HTTPDownload downloadInProgress:self];
   }
   return self;
 }
@@ -102,9 +109,19 @@ static NSMutableSet *inProgress = nil;
 }
 
 
+- (void)start {
+  self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
+  if (reportConnectionStatus) {
+    [HTTPDownload downloadInProgress:self];
+  }
+}
+
+
 - (void)cancel {
   [self.connection cancel];
-  [HTTPDownload downloadFinished:self];
+  if (reportConnectionStatus) {
+    [HTTPDownload downloadFinished:self];
+  }
 }
 
 
@@ -137,11 +154,13 @@ static NSMutableSet *inProgress = nil;
 
 // The only status codes a HTTP server should responde with are >= 200 and < 600.
 - (void)connectionDidFinishLoading:(NSURLConnection *)theConnection {
-  [HTTPDownload downloadFinished:self];
+  if (reportConnectionStatus) {
+    [HTTPDownload downloadFinished:self];
+  }
 
   NSInteger status = [self.response statusCode];
   //NSLog(@"Connection received status %d", status);
-  if (status >= 200 && status < 300) {
+  if (!reportConnectionStatus || (status >= 200 && status < 300)) {
     [self yieldDownloadedData];
   } else if (status >= 300 && status < 400) {
     NSLog(@"[!] Redirect response, which we don't (atm have to) handle. Where did it come from?");
@@ -154,11 +173,12 @@ static NSMutableSet *inProgress = nil;
 
 
 - (void)connection:(NSURLConnection *)theConnection didFailWithError:(NSError *)theError {
-  [HTTPDownload downloadFinished:self];
-
   self.error = theError;
-  if ([globalDelegate respondsToSelector:@selector(downloadFailed:)]) {
-    [globalDelegate performSelector:@selector(downloadFailed:) withObject:self];
+  if (reportConnectionStatus) {
+    [HTTPDownload downloadFinished:self];
+    if ([globalDelegate respondsToSelector:@selector(downloadFailed:)]) {
+      [globalDelegate performSelector:@selector(downloadFailed:) withObject:self];
+    }
   }
 }
 

@@ -57,8 +57,23 @@ static Trakt *sharedTrakt = nil;
   }
 }
 
+- (NSURL *)verifyCredentialsURL {
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/account/test/%@", self.traktBaseURL, self.apiKey]];
+}
+
+- (void)verifyCredentials:(void (^)(BOOL valid))block {
+  NSString *json = [NSString stringWithFormat:@"{ \"username\": \"%@\", \"password\": \"%@\" }", self.apiUser, self.apiPasswordHash];
+  NSLog(@"request body: %@", json);
+  JSONDownload *dl = [[JSONDownload alloc] initWithURL:[self verifyCredentialsURL] postBody:json username:nil password:nil block:^(id response) {
+    NSLog(@"Repsonse: %@", response);
+  }];
+  dl.reportConnectionStatus = NO;
+  [dl start];
+  [dl autorelease];
+}
+
 - (NSURL *)calendarURL {
-  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/calendar.json", self.baseURL, nil]];
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/calendar.json", self.baseURL]];
 }
 
 - (void)calendar:(void (^)(NSArray *broadcastDates))block {
@@ -79,7 +94,7 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (NSURL *)libraryURL {
-  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/library.json", self.baseURL, nil]];
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/library.json", self.baseURL]];
 }
 
 - (void)library:(void (^)(NSArray *shows))block {
@@ -100,7 +115,7 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (NSURL *)recommendationsURL {
-  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/shows/recommendations.json", self.baseURL, nil]];
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@/shows/recommendations.json", self.baseURL]];
 }
 
 - (void)recommendations:(void (^)(NSArray *shows))block {

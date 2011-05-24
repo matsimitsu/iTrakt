@@ -32,6 +32,9 @@
 
 - (void)retrieveRootControllerDataStartingWith:(NSString *)dataDownloadSelector block:(void (^)(NSArray *data))block;
 
+- (NSURL *)verifyCredentialsURL;
+- (void)verifyCredentials:(void (^)(BOOL valid))block;
+
 - (NSURL *)calendarURL;
 - (void)calendar:(void (^)(NSArray *broadcastDates))block;
 

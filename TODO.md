@@ -12,7 +12,6 @@ iOS app
 * When an episode title is TBD, disable the checkbox or remove it.
 * Use `#` for numeric values in the index in library
 * Echofon style network failure notification
-* On all view controllers that show a search field, scroll the tableview a bit down so the search field isn’t visible by default.
 * First launch: load calendar, then visible row images + library & recommendations feeds
 * Not first launch, i.e. the app was inactive, or the user hits the ‘reload’ button: reload _all_ feeds, but load the current visible one first.
 * Make HTTPDownload post start/stop notifications so that the refresh/stop buttons in the top-level controllers can show them accurately.

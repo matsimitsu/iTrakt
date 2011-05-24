@@ -13,7 +13,6 @@ iOS app
 * Use `#` for numeric values in the index in library
 * Echofon style network failure notification
 * On all view controllers that show a search field, scroll the tableview a bit down so the search field isn’t visible by default.
-* Description text in recommended list should span two rows by removing the ‘x watchers’ row.
 * First launch: load calendar, then visible row images + library & recommendations feeds
 * Not first launch, i.e. the app was inactive, or the user hits the ‘reload’ button: reload _all_ feeds, but load the current visible one first.
 * Make HTTPDownload post start/stop notifications so that the refresh/stop buttons in the top-level controllers can show them accurately.
@@ -73,5 +72,4 @@ Proxy
 -----
 
 * See if we can receive the json in chunks, enrich them and immediately send them out again
-* Use streaming parsing for json so large shows like COPS show stuff asap.
 * Write specs!

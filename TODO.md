@@ -6,7 +6,7 @@ General
 
 
 iOS app
-* Move some code from application delegate to a root view controllers superclass. Refactor top-level controllers again to cleanup the code related to refreshing data as well.
+* Unify the feedSelector and cachedFeedProperty methods used in the root controllers
 * Handle connection errors in some way which is needed to provide a good UX. I.e. should we retry, take a failure block, etc.
 * Rename 'thumb' to 'banner' in Show and Episode.
 * When an episode title is TBD, disable the checkbox or remove it.

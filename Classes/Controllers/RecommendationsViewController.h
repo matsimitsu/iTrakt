@@ -1,12 +1,10 @@
 #import <UIKit/UIKit.h>
-#import "ShowsViewController.h"
+#import "ImageRootController.h"
 
-@interface RecommendationsViewController : ShowsViewController {
-
+@interface RecommendationsViewController : ImageRootController {
+  NSArray *recommendations;
 }
 
-- (void)showRefreshDataButton;
-- (void)showStopRefreshDataButton;
-- (void)cancelRefreshData;
+@property (nonatomic, retain) NSArray *recommendations;
 
 @end

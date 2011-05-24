@@ -1,8 +1,14 @@
-#import "AsyncImageTableViewController.h"
+#import "ImageRootController.h"
 #import "HTTPDownload.h"
 
-@implementation AsyncImageTableViewController
+#define ROW_HEIGHT 66.0
 
+@implementation ImageRootController
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  self.tableView.rowHeight = ROW_HEIGHT;
+}
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
@@ -10,22 +16,15 @@
   [self loadImagesForVisibleCells];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-  [super viewWillDisappear:animated];
-  [HTTPDownload cancelDownloadsInProgress];
-}
-
-
-- (void)reloadTableViewData {
-  [self.tableView reloadData];
+// The subclass should override this to actually set the data before calling super.
+- (void)reloadTableViewData:(NSArray *)data {
+  [super reloadTableViewData:data]; // first reload!
   [self loadImagesForVisibleCells];
 }
-
 
 - (void)loadImageForCell:(UITableViewCell *)cell {
   NSLog(@"[!] The [AsyncImageTableViewController loadImageForCell:] method should be overriden by the subclass!");
 }
-
 
 - (void)loadImagesForVisibleCells {
   NSArray *cells = [self.tableView visibleCells];
@@ -33,7 +32,6 @@
     [self loadImageForCell:[cells objectAtIndex:i]];
   }
 }
-
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
   dragging = YES;
@@ -56,6 +54,5 @@
     [self loadImagesForVisibleCells];
   }
 }
-
 
 @end

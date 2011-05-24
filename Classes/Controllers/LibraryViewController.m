@@ -1,19 +1,22 @@
 #import "LibraryViewController.h"
+
+#import "Show.h"
+#import "ShowDetailsViewController.h"
+
 #import "Trakt.h"
 #import "HTTPDownload.h"
-#import "Show.h"
 
 @implementation LibraryViewController
 
-
-@synthesize shows, filteredShows, indexTitles;
+@synthesize library, filteredShows, indexTitles;
 @synthesize searchBar, searchController;
-
 
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  [self showRefreshDataButton];
+  self.feedSelector = @"library:";
+  self.cachedFeedProperty = @"library";
+
   self.navigationItem.title = @"Library";
 
   self.filteredShows = [NSMutableArray new];
@@ -23,59 +26,12 @@
   self.searchController.searchResultsDelegate = self;
 }
 
-
-- (void)viewWillAppear:(BOOL)animated {
-  [super viewWillAppear:animated];
-
-  // TODO This should be done in one place (superclass)
-  NSString *username = [Trakt sharedInstance].apiUser;
-  self.navigationItem.rightBarButtonItem.title = username == nil ? @"Sign in" : username;
-
-  if (self.shows == nil && [Trakt sharedInstance].library != nil) {
-    NSLog(@"Loading library data from Trakt instance which has already loaded it");
-    [self loadData:[Trakt sharedInstance].library];
-  }
-}
-
-
-- (void)refreshData {
-  NSLog(@"Refresh library data!");
-  [self showStopRefreshDataButton];
-  [[Trakt sharedInstance] retrieveTopLevelControllerdataStartingWith:@"library:" block:^(NSArray *loadedShows) {
-    [self showRefreshDataButton];
-    [self loadData:loadedShows];
-  }];
-}
-
-// TODO This should be done in one place (superclass)
-- (void)showRefreshDataButton {
-  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                 target:self
-                                                                                 action:@selector(refreshData)];
-  self.navigationItem.leftBarButtonItem = refreshButton;
-  [refreshButton release];
-}
-- (void)showStopRefreshDataButton {
-  UIBarButtonItem *stopButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
-                                                                              target:self
-                                                                              action:@selector(cancelRefreshData)];
-  self.navigationItem.leftBarButtonItem = stopButton;
-  [stopButton release];
-}
-
-
-- (void)cancelRefreshData {
-  [self showRefreshDataButton];
-  [HTTPDownload cancelDownloadsInProgress];
-}
-
-
-- (void)loadData:(NSArray *)loadedShows {
+- (void)reloadTableViewData:(NSArray *)data {
   NSMutableArray *groupedShows = [NSMutableArray array];
   NSMutableArray *titles = [NSMutableArray array];
 
   NSRange skipPrefixRange = NSMakeRange(4, 1);
-  for (Show *show in loadedShows) {
+  for (Show *show in data) {
     NSString *letter;
     if ([show.title hasPrefix:@"The "]) {
       letter = [show.title substringWithRange:skipPrefixRange];
@@ -102,11 +58,11 @@
     }
   }
 
-  self.shows = groupedShows;
+  self.library = groupedShows;
   self.indexTitles = titles;
-  [self.tableView reloadData];
-}
 
+  [super reloadTableViewData:data];
+}
 
 #pragma mark -
 #pragma mark Table view data source
@@ -150,7 +106,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
   if (tableView == self.tableView) {
-    return [self.shows count];
+    return [self.library count];
   } else {
     return 1;
   }
@@ -159,7 +115,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   if (tableView == self.tableView) {
-    return [[self.shows objectAtIndex:section] count];
+    return [[self.library objectAtIndex:section] count];
   } else {
     return [self.filteredShows count];
   }
@@ -176,7 +132,7 @@
 
   Show *show;
   if (tableView == self.tableView) {
-    show = [[self.shows objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    show = [[self.library objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
   } else {
     show = [self.filteredShows objectAtIndex:indexPath.row];
   }
@@ -194,7 +150,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   Show *show;
   if (tableView == self.tableView) {
-    show = [[self.shows objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    show = [[self.library objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
   } else {
     show = [self.filteredShows objectAtIndex:indexPath.row];
   }
@@ -210,7 +166,7 @@
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchText {
   [filteredShows removeAllObjects];
-  for (NSArray *section in self.shows) {
+  for (NSArray *section in self.library) {
     for (Show *show in section) {
       NSRange range = [show.title rangeOfString:searchText
                                         options:NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch | NSWidthInsensitiveSearch];
@@ -226,21 +182,9 @@
 #pragma mark -
 #pragma mark Memory management
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-
-    // Relinquish ownership any cached data, images, etc. that aren't in use.
-}
-
-- (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
-}
-
 
 - (void)dealloc {
-  self.shows = nil;
+  self.library = nil;
   self.filteredShows = nil;
   [super dealloc];
 }

@@ -46,7 +46,7 @@ static Trakt *sharedTrakt = nil;
   //NSLog(@"Password hash: %@", apiPasswordHash);
 }
 
-- (void)retrieveTopLevelControllerdataStartingWith:(NSString *)dataDownloadSelector block:(void (^)(NSArray *data))block {
+- (void)retrieveRootControllerDataStartingWith:(NSString *)dataDownloadSelector block:(void (^)(NSArray *data))block {
   NSMutableArray *selectors = [NSMutableArray arrayWithObjects:@"calendar:", @"library:", @"recommendations:", nil];
   [selectors removeObject:dataDownloadSelector];
   NSLog(@"Call %@", dataDownloadSelector);

@@ -6,7 +6,7 @@ General
 
 
 iOS app
-* Move some code from application delegate to a root view controllers superclass. Refactor top-level controllers again to cleanup the code related to refreshing data as well. 
+* Move some code from application delegate to a root view controllers superclass. Refactor top-level controllers again to cleanup the code related to refreshing data as well.
 * Handle connection errors in some way which is needed to provide a good UX. I.e. should we retry, take a failure block, etc.
 * Rename 'thumb' to 'banner' in Show and Episode.
 * When an episode title is TBD, disable the checkbox or remove it.
@@ -34,7 +34,6 @@ webapp
 * The calendar feed does not contain the show thumb url.
 * Episode watched field in the calendar feed is outside of the episode hash.
 * Trakt.tv is quite slow with returning the updated ‘seen’ value for an episode in the calendar feed. Or is that the proxy?
-* Episodes should be sorted most-recent-on-top
 * Do the digits really have to be at the end of the index in the library view? The data already comes sorted, but has the digits first...
 
 Auth
@@ -49,21 +48,21 @@ Auth window when not signed in:
 ===============================
 
 * Text:
-	Could not sign in (if failed)
+  Could not sign in (if failed)
 
-	Forgot your password? (underlined!)
+  Forgot your password? (underlined!)
 
-	Trakt is a website... etc
-	Don’t have an account yet? (underlined!)
+  Trakt is a website... etc
+  Don’t have an account yet? (underlined!)
 
 Auth window when signed in:
 ===============================
 
 * Done button: none
 * Text:
-	You are signed in as alloy.
+  You are signed in as alloy.
 
-	BIG RED ‘SIGN OUT’ BUTTON
+  BIG RED ‘SIGN OUT’ BUTTON
 
 API
 ---

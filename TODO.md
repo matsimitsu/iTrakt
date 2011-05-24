@@ -31,8 +31,6 @@ iOS app
 
 
 webapp
-* The calendar feed does not contain the show thumb url.
-* Episode watched field in the calendar feed is outside of the episode hash.
 * Trakt.tv is quite slow with returning the updated ‘seen’ value for an episode in the calendar feed. Or is that the proxy?
 * Do the digits really have to be at the end of the index in the library view? The data already comes sorted, but has the digits first...
 

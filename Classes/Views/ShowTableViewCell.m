@@ -13,7 +13,6 @@
 @synthesize imageView;
 @synthesize titleLabel;
 @synthesize excerptLabel;
-@synthesize watchersLabel;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
   return [self initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
@@ -34,13 +33,9 @@
 
     self.excerptLabel = [UILabel new];
     self.excerptLabel.opaque = YES;
+    self.excerptLabel.numberOfLines = 2;
     self.excerptLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
     [self.contentView addSubview:excerptLabel];
-
-    self.watchersLabel = [UILabel new];
-    self.watchersLabel.opaque = YES;
-    self.watchersLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
-    [self.contentView addSubview:watchersLabel];
 
   }
   return self;
@@ -61,11 +56,9 @@
   if (self.selected) {
     self.titleLabel.textColor = [UIColor whiteColor];
     self.excerptLabel.textColor = [UIColor whiteColor];
-    self.watchersLabel.textColor = [UIColor whiteColor];
   } else {
     self.titleLabel.textColor = [UIColor blackColor];
     self.excerptLabel.textColor = [UIColor grayColor];
-    self.watchersLabel.textColor = [UIColor grayColor];
   }
 
   CGSize size = self.bounds.size;
@@ -91,11 +84,8 @@
   y += labelHeight + MARGIN_UNDERNEATH_LABEL;
   labelHeight = [UIFont smallSystemFontSize] + MARGIN_UNDERNEATH_LABEL;
   self.excerptLabel.text = self.show.overview;
-  self.excerptLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
+  self.excerptLabel.frame = CGRectMake(x, y, labelWidth, (labelHeight * 2));
 
-  y += labelHeight + MARGIN_UNDERNEATH_LABEL;
-  self.watchersLabel.text = [NSString stringWithFormat:(self.show.watchers == 1) ? @"%d Watcher" : @"%d Watchers", self.show.watchers, nil];
-  self.watchersLabel.frame = CGRectMake(x, y, labelWidth, labelHeight);
 
 }
 
@@ -105,7 +95,6 @@
   [imageView release];
   [titleLabel release];
   [excerptLabel release];
-  [watchersLabel release];
 }
 
 

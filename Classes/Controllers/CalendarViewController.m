@@ -41,6 +41,7 @@
 - (void)reloadTableViewData:(NSArray *)data {
   self.broadcastDates = data;
   [super reloadTableViewData:data];
+  [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 - (void)loadImageForCell:(UITableViewCell *)cell {

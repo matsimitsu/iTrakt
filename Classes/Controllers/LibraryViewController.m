@@ -71,7 +71,7 @@
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
   if (tableView == self.tableView) {
-    NSMutableArray *titles = [NSMutableArray arrayWithObjects:UITableViewIndexSearch, @"123", nil];
+    NSMutableArray *titles = [NSMutableArray arrayWithObjects:UITableViewIndexSearch, @"#", nil];
     char i;
     for (i = 'A'; i <= 'Z'; i++) {
       [titles addObject:[NSString stringWithFormat:@"%c", i]];
@@ -87,7 +87,7 @@
   if (title == UITableViewIndexSearch) {
     [tableView scrollRectToVisible:self.searchDisplayController.searchBar.frame animated:NO];
     return -1;
-  } else if ([title isEqualToString:@"123"]) {
+  } else if ([title isEqualToString:@"#"]) {
     return 0;
   } else {
     char selected = [title UTF8String][0];

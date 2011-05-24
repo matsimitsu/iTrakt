@@ -102,7 +102,14 @@
   [defaults synchronize];
   [SSKeychain setPassword:password forService:@"iTrakt" account:username];
 
-  [self dismissDialog:sender];
+  [[Trakt sharedInstance] verifyCredentials:^(BOOL valid) {
+    if (valid) {
+      NSLog(@"VALID!");
+      [self dismissDialog:self];
+    } else {
+      NSLog(@"NOT VALID!");
+    }
+  }];
 }
 
 

@@ -65,7 +65,12 @@ static Trakt *sharedTrakt = nil;
   NSString *json = [NSString stringWithFormat:@"{ \"username\": \"%@\", \"password\": \"%@\" }", self.apiUser, self.apiPasswordHash];
   NSLog(@"request body: %@", json);
   JSONDownload *dl = [[JSONDownload alloc] initWithURL:[self verifyCredentialsURL] postBody:json username:nil password:nil block:^(id response) {
-    NSLog(@"Repsonse: %@", response);
+    NSString *status = (NSString *)[(NSDictionary *)response objectForKey:@"status"];
+    if (status && [status isEqualToString:@"success"]) {
+      block(YES);
+    } else {
+      block(NO);
+    }
   }];
   dl.reportConnectionStatus = NO;
   [dl start];

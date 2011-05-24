@@ -31,13 +31,16 @@
 }
 
 
+@synthesize tableView;
 @synthesize usernameField, passwordField;
-@synthesize usernameCell, passwordCell;
+@synthesize usernameCell, passwordCell, statusCell;
 @synthesize doneButton, helpBannerButton;
 
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+
+  signingIn = NO;
 
   NSString *username, *password;
   [AuthenticationViewController retrieveUsername:&username password:&password];
@@ -53,10 +56,12 @@
 
 
 - (void)dealloc {
+  self.tableView = nil;
   self.usernameField = nil;
   self.passwordField = nil;
   self.usernameCell = nil;
   self.passwordCell = nil;
+  self.statusCell = nil;
   self.doneButton = nil;
   self.helpBannerButton = nil;
   [super dealloc];
@@ -69,17 +74,25 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 2;
+  return signingIn ? 3 : 2;
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (indexPath.row == 0) {
-    return self.usernameCell;
-  } else {
-    return self.passwordCell;
+  NSInteger row = indexPath.row;
+  if (!signingIn) {
+    row++;
   }
+  switch(row) {
+    case 0:
+      return self.statusCell;
+    case 1:
+      return self.usernameCell;
+    case 2:
+      return self.passwordCell;
+  }
+  return nil; // never reached!
 }
 
 
@@ -92,6 +105,10 @@
   [self.usernameField resignFirstResponder];
   [self.passwordField resignFirstResponder];
 
+  self.doneButton.enabled = NO;
+  self.usernameField.enabled = NO;
+  self.passwordField.enabled = NO;
+
   NSString *username = self.usernameField.text;
   NSString *password = self.passwordField.text;
 
@@ -102,12 +119,17 @@
   [defaults synchronize];
   [SSKeychain setPassword:password forService:@"iTrakt" account:username];
 
+  signingIn = YES;
+  [self.tableView reloadData];
   [[Trakt sharedInstance] verifyCredentials:^(BOOL valid) {
     if (valid) {
       NSLog(@"VALID!");
       [self dismissDialog:self];
     } else {
       NSLog(@"NOT VALID!");
+      self.doneButton.enabled = YES;
+      self.usernameField.enabled = YES;
+      self.passwordField.enabled = YES;
     }
   }];
 }

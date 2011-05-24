@@ -32,6 +32,8 @@ iOS app
 
 webapp
 * Trakt.tv is quite slow with returning the updated ‘seen’ value for an episode in the calendar feed. Or is that the proxy?
+  - Bug in Trakt api, created ticket
+
 * Do the digits really have to be at the end of the index in the library view? The data already comes sorted, but has the digits first...
 
 Auth

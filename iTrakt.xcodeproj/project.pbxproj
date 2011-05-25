@@ -86,6 +86,7 @@
 		513BE4F6130817D70076F8F9 /* AppDelegateSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 513BE4F5130817D70076F8F9 /* AppDelegateSpec.nu */; };
 		513BE707130F18430076F8F9 /* default-poster.png in Resources */ = {isa = PBXBuildFile; fileRef = 513BE706130F18430076F8F9 /* default-poster.png */; };
 		513BE708130F18430076F8F9 /* default-poster.png in Resources */ = {isa = PBXBuildFile; fileRef = 513BE706130F18430076F8F9 /* default-poster.png */; };
+		514F04C7138D30FE00820683 /* libNuBaconLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 514F04A7138D30C600820683 /* libNuBaconLib.a */; };
 		516CE8D612F42D53003450CF /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 516CE8D512F42D53003450CF /* SpecHelper.m */; };
 		516CE94C12F44DE5003450CF /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2479A22B12EC83DB00E2AD4E /* YAJL.framework */; };
 		516CE9B812F4565A003450CF /* poster.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 516CE9B712F4565A003450CF /* poster.jpg */; };
@@ -115,7 +116,6 @@
 		51D1D96D1354E60100323896 /* checkbox-checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9691354E60100323896 /* checkbox-checked@2x.png */; };
 		51D1D96E1354E60100323896 /* checkbox-unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D96A1354E60100323896 /* checkbox-unchecked.png */; };
 		51D1D96F1354E60100323896 /* checkbox-unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D96B1354E60100323896 /* checkbox-unchecked@2x.png */; };
-		51D91AF2134886380061B8AA /* libNuBaconLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D91AF1134886380061B8AA /* libNuBaconLib.a */; };
 		51D91AF4134886710061B8AA /* bacon.nu in Resources */ = {isa = PBXBuildFile; fileRef = 51D91AF3134886710061B8AA /* bacon.nu */; };
 		51D91AF6134887D30061B8AA /* AuthenticationViewControllerSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 51D91AF5134887D30061B8AA /* AuthenticationViewControllerSpec.nu */; };
 		51D91AF7134889EE0061B8AA /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51BFFE3B13392E1D006EBF54 /* AuthenticationViewController.xib */; };
@@ -123,6 +123,30 @@
 		51FBCC9712EA375500073C68 /* EpisodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9612EA375500073C68 /* EpisodeTableViewCell.m */; };
 		51FBCC9A12EA391B00073C68 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9912EA391B00073C68 /* Episode.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		514F04A6138D30C600820683 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 513401A712F36217007ED54E /* NuBacon-iOSRunner.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51ED140B12AE416B003E9DC2;
+			remoteInfo = NuBaconLib;
+		};
+		514F04A8138D30C600820683 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 513401A712F36217007ED54E /* NuBacon-iOSRunner.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 515C4192133256B9004545DA;
+			remoteInfo = NuBaconSpecs;
+		};
+		514F04C5138D30E800820683 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 513401A712F36217007ED54E /* NuBacon-iOSRunner.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 51ED140A12AE416B003E9DC2;
+			remoteInfo = NuBaconLib;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -265,7 +289,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51D91AF2134886380061B8AA /* libNuBaconLib.a in Frameworks */,
+				514F04C7138D30FE00820683 /* libNuBaconLib.a in Frameworks */,
 				51BF025313426A98006EBF54 /* Security.framework in Frameworks */,
 				510C6C9B12F5E4C7000500A1 /* CoreGraphics.framework in Frameworks */,
 				516CE94C12F44DE5003450CF /* YAJL.framework in Frameworks */,
@@ -501,6 +525,15 @@
 			name = Lib;
 			sourceTree = "<group>";
 		};
+		514F04A2138D30C600820683 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				514F04A7138D30C600820683 /* libNuBaconLib.a */,
+				514F04A9138D30C600820683 /* NuBaconSpecs.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		51D1D9531354BF7000323896 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,6 +586,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				514F04C6138D30E800820683 /* PBXTargetDependency */,
 			);
 			name = Specs;
 			productName = Specs;
@@ -577,6 +611,12 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 514F04A2138D30C600820683 /* Products */;
+					ProjectRef = 513401A712F36217007ED54E /* NuBacon-iOSRunner.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* iTrakt */,
@@ -584,6 +624,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		514F04A7138D30C600820683 /* libNuBaconLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libNuBaconLib.a;
+			remoteRef = 514F04A6138D30C600820683 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		514F04A9138D30C600820683 /* NuBaconSpecs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = NuBaconSpecs.app;
+			remoteRef = 514F04A8138D30C600820683 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -724,6 +781,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		514F04C6138D30E800820683 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NuBaconLib;
+			targetProxy = 514F04C5138D30E800820683 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -776,6 +841,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "Specs-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/vendor/NuBacon/iOSRunner/build/Debug-iphonesimulator\"",
@@ -812,6 +878,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "Specs-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/vendor/NuBacon/iOSRunner/build/Debug-iphonesimulator\"",

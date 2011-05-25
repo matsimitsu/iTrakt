@@ -13,6 +13,11 @@ Install
 Fetch the source and its dependencies:
 
     $ git clone --recursive git://github.com/matsimitsu/iTrakt.git
+    $ cd iTrakt
+
+Or if you still forgot to use the `--recursive` flag:
+
+    $ git submodule update --init
 
 Tell the app what your API key is by copying the sample and upating it with
 your [key][key]:
@@ -22,6 +27,10 @@ your [key][key]:
 
 Run specs
 ---------
+
+_First make sure you've followed the steps described in `Install`. You do not,
+however, have to have an actual API key to run the specs, just copy the sample
+file and you'll be fine._
 
 Enable the `Accessibility Inspector` in the `iOS simulator` Settings app:
 

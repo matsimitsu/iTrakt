@@ -37,11 +37,8 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* CalendarViewController.m */; };
 		28F335F11007B36200424DE2 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* CalendarViewController.xib */; };
-		510C6AD712F36516000500A1 /* BroadcastDate.h in Sources */ = {isa = PBXBuildFile; fileRef = 2484C6AC12E9F568000D3871 /* BroadcastDate.h */; };
 		510C6AD812F36516000500A1 /* BroadcastDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2484C6AD12E9F568000D3871 /* BroadcastDate.m */; };
-		510C6ADB12F36516000500A1 /* Episode.h in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9812EA391B00073C68 /* Episode.h */; };
 		510C6ADC12F36516000500A1 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FBCC9912EA391B00073C68 /* Episode.m */; };
-		510C6AE412F36538000500A1 /* EGOCache.h in Sources */ = {isa = PBXBuildFile; fileRef = 5134FEBB12EBBF39007ED54E /* EGOCache.h */; };
 		510C6AE512F36538000500A1 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5134FEBC12EBBF39007ED54E /* EGOCache.m */; };
 		510C6AF212F36993000500A1 /* TraktSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 510C6AEE12F368A2000500A1 /* TraktSpec.nu */; };
 		510C6AFA12F369C2000500A1 /* Trakt.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6AF912F369C2000500A1 /* Trakt.m */; };
@@ -54,9 +51,6 @@
 		510C6CDB12F5E78A000500A1 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23112F457CC00329D69 /* UIImage+Resize.m */; };
 		510C6CDC12F5E78A000500A1 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23212F457CC00329D69 /* UIImage+Alpha.m */; };
 		510C6CDD12F5E78A000500A1 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23312F457CC00329D69 /* UIImage+RoundedCorner.m */; };
-		510C6CDE12F5E78A000500A1 /* UIImage+RoundedCorner.h in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23412F457CC00329D69 /* UIImage+RoundedCorner.h */; };
-		510C6CDF12F5E78A000500A1 /* UIImage+Resize.h in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23512F457CC00329D69 /* UIImage+Resize.h */; };
-		510C6CE012F5E78A000500A1 /* UIImage+Alpha.h in Sources */ = {isa = PBXBuildFile; fileRef = 2441C23612F457CC00329D69 /* UIImage+Alpha.h */; };
 		510C6D0712F5EA8A000500A1 /* poster-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 510C6D0612F5EA8A000500A1 /* poster-thumbnail.jpg */; };
 		510C6D0812F5EAAE000500A1 /* poster-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 510C6D0612F5EA8A000500A1 /* poster-thumbnail.jpg */; };
 		510C6EC712F8A2EC000500A1 /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6EC512F8A2EC000500A1 /* LibraryViewController.m */; };
@@ -68,7 +62,6 @@
 		510C6FBE12FB5B2C000500A1 /* RecommendationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6FBC12FB5B2C000500A1 /* RecommendationsViewController.m */; };
 		510C6FBF12FB5B2C000500A1 /* RecommendationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510C6FBD12FB5B2C000500A1 /* RecommendationsViewController.xib */; };
 		511EE73A13192A6B0000B12D /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 511EE73913192A6B0000B12D /* Base64.m */; };
-		511EE773131931870000B12D /* Base64.h in Sources */ = {isa = PBXBuildFile; fileRef = 511EE73813192A6B0000B12D /* Base64.h */; };
 		511EE774131931870000B12D /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 511EE73913192A6B0000B12D /* Base64.m */; };
 		511EE7C6131969F00000B12D /* Season.m in Sources */ = {isa = PBXBuildFile; fileRef = 511EE7C5131969F00000B12D /* Season.m */; };
 		511EE7C7131969F00000B12D /* Season.m in Sources */ = {isa = PBXBuildFile; fileRef = 511EE7C5131969F00000B12D /* Season.m */; };
@@ -81,7 +74,6 @@
 		513BE2EE1307FF280076F8F9 /* HTTPDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 513BE2ED1307FF280076F8F9 /* HTTPDownload.m */; };
 		513BE2EF1307FF280076F8F9 /* HTTPDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 513BE2ED1307FF280076F8F9 /* HTTPDownload.m */; };
 		513BE439130804040076F8F9 /* HTTPDownloadSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 513BE438130804040076F8F9 /* HTTPDownloadSpec.nu */; };
-		513BE4EB130817190076F8F9 /* iTraktAppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623240D0F684500981E51 /* iTraktAppDelegate.h */; };
 		513BE4EC130817190076F8F9 /* iTraktAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iTraktAppDelegate.m */; };
 		513BE4F6130817D70076F8F9 /* AppDelegateSpec.nu in Resources */ = {isa = PBXBuildFile; fileRef = 513BE4F5130817D70076F8F9 /* AppDelegateSpec.nu */; };
 		513BE707130F18430076F8F9 /* default-poster.png in Resources */ = {isa = PBXBuildFile; fileRef = 513BE706130F18430076F8F9 /* default-poster.png */; };
@@ -759,22 +751,14 @@
 			files = (
 				51BF025013426A80006EBF54 /* SSKeychain.m in Sources */,
 				51BF024D13426A72006EBF54 /* AuthenticationViewController.m in Sources */,
-				511EE773131931870000B12D /* Base64.h in Sources */,
 				511EE774131931870000B12D /* Base64.m in Sources */,
-				513BE4EB130817190076F8F9 /* iTraktAppDelegate.h in Sources */,
 				513BE4EC130817190076F8F9 /* iTraktAppDelegate.m in Sources */,
 				510C6EE012F8AB8B000500A1 /* Show.m in Sources */,
 				510C6CDB12F5E78A000500A1 /* UIImage+Resize.m in Sources */,
 				510C6CDC12F5E78A000500A1 /* UIImage+Alpha.m in Sources */,
 				510C6CDD12F5E78A000500A1 /* UIImage+RoundedCorner.m in Sources */,
-				510C6CDE12F5E78A000500A1 /* UIImage+RoundedCorner.h in Sources */,
-				510C6CDF12F5E78A000500A1 /* UIImage+Resize.h in Sources */,
-				510C6CE012F5E78A000500A1 /* UIImage+Alpha.h in Sources */,
-				510C6AE412F36538000500A1 /* EGOCache.h in Sources */,
 				510C6AE512F36538000500A1 /* EGOCache.m in Sources */,
-				510C6AD712F36516000500A1 /* BroadcastDate.h in Sources */,
 				510C6AD812F36516000500A1 /* BroadcastDate.m in Sources */,
-				510C6ADB12F36516000500A1 /* Episode.h in Sources */,
 				510C6ADC12F36516000500A1 /* Episode.m in Sources */,
 				510C6AFA12F369C2000500A1 /* Trakt.m in Sources */,
 				516CE8D612F42D53003450CF /* SpecHelper.m in Sources */,

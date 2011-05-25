@@ -59,7 +59,7 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)verifyCredentials:(void (^)(BOOL valid))block {
-  NSString *json = [NSString stringWithFormat:@"{ \"username\": \"%@\", \"password\": \"%@\" }", self.apiUser, self.apiPasswordHash];
+  NSString *json = [NSString stringWithFormat:@"{ \"username\":\"%@\", \"password\":\"%@\" }", self.apiUser, self.apiPasswordHash];
   JSONDownload *dl = [[JSONDownload alloc] initWithURL:[self verifyCredentialsURL] postBody:json username:nil password:nil block:^(id response) {
     NSString *status = (NSString *)[(NSDictionary *)response objectForKey:@"status"];
     if (status && [status isEqualToString:@"success"]) {

@@ -24,6 +24,7 @@
 
 + (BOOL)signIn;
 + (void)retrieveUsername:(NSString **)username password:(NSString **)password;
++ (void)saveAndAuthenticate:(NSString *)username password:(NSString *)password;
 + (void)authenticate:(NSString *)username password:(NSString *)password;
 
 - (IBAction)dismissDialog:(id)sender;

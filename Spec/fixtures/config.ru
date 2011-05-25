@@ -77,6 +77,14 @@ mappings = lambda do
     end
   end
 
+  map('/trakt/account/test/apikey') do
+    if $env['REQUEST_METHOD'] == 'POST' && $env['rack.input'].read == "{ \"username\":\"bob\", \"password\":\"e5e9fa1ba31ecd1ae84f75caaa474f3a663f05f4\" }"
+      send_json "{ \"status\":\"success\" }"
+    else
+      send_json "{ \"status\":\"failure\" }", 401
+    end
+  end
+
 end
 
 
@@ -147,8 +155,12 @@ module FixtureServe
     send_text(fixture_io("#{name}.txt"))
   end
 
+  def send_json(json, status = 200)
+    [status, { 'Content-Type' => 'application/json' }, json]
+  end
+
   def serve_json_fixture(name)
-    [200, { 'Content-Type' => 'application/json' }, fixture_io("#{name}.json")]
+    send_json(fixture_io("#{name}.json"))
   end
 
   def serve_jpeg_fixture(name)

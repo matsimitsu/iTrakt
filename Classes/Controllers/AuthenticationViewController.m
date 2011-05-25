@@ -24,6 +24,14 @@
   }
 }
 
++ (void)saveAndAuthenticate:(NSString *)username password:(NSString *)password {
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setValue:username forKey:@"Username"]; // TODO move to constant
+  [defaults synchronize];
+  [SSKeychain setPassword:password forService:@"iTrakt" account:username];
+  [self authenticate:username password:password];
+}
+
 + (void)authenticate:(NSString *)username password:(NSString *)password {
   [[Trakt sharedInstance] setApiUser:username];
   [[Trakt sharedInstance] setApiPassword:password];
@@ -111,21 +119,14 @@
   NSString *username = self.usernameField.text;
   NSString *password = self.passwordField.text;
 
-  [AuthenticationViewController authenticate:username password:password];
-
-  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  [defaults setValue:username forKey:@"Username"]; // TODO move to constant
-  [defaults synchronize];
-  [SSKeychain setPassword:password forService:@"iTrakt" account:username];
+  [AuthenticationViewController saveAndAuthenticate:username password:password];
 
   signingIn = YES;
   [self.tableView reloadData];
   [[Trakt sharedInstance] verifyCredentials:^(BOOL valid) {
     if (valid) {
-      NSLog(@"VALID!");
       [self dismissDialog:self];
     } else {
-      NSLog(@"NOT VALID!");
       self.doneButton.enabled = YES;
       self.usernameField.enabled = YES;
       self.passwordField.enabled = YES;

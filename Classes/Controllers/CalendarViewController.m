@@ -60,7 +60,6 @@
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
   if (tableView == self.searchController.searchResultsTableView) {
-    //NSLog(@"Sections in filtered set: %d", [filteredListContent count]);
     return [filteredListContent count];
   } else {
     return [broadcastDates count];
@@ -72,7 +71,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   if (tableView == self.searchController.searchResultsTableView) {
     NSMutableArray *dateWithEpisodes = [filteredListContent objectAtIndex:section];
-    //NSLog(@"%d episodes on date: %@", [dateWithEpisodes count] - 1, ((BroadcastDate *)[dateWithEpisodes objectAtIndex:0]).date);
     return [dateWithEpisodes count] - 1;
   } else {
     BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:section];
@@ -85,7 +83,6 @@
   BroadcastDate *broadcastDate;
   if (tableView == self.searchController.searchResultsTableView) {
     broadcastDate = [(NSMutableArray *)[filteredListContent objectAtIndex:section] objectAtIndex:0];
-    //NSLog(@"Section for %@", broadcastDate.date);
   } else {
     broadcastDate = [broadcastDates objectAtIndex:section];
   }
@@ -110,7 +107,6 @@
 
   if (tableView == self.searchController.searchResultsTableView) {
     NSArray *section = [filteredListContent objectAtIndex:indexPath.section];
-    //NSLog(@"Episode show: %@", ((Episode *)[section objectAtIndex:(indexPath.row + 1)]).showTitle);
     cell.episode = [section objectAtIndex:(indexPath.row + 1)];
   } else {
     BroadcastDate *broadcastDate = [broadcastDates objectAtIndex:indexPath.section];
@@ -145,7 +141,6 @@
 
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchText {
-  //NSLog(@"Search for: %@", searchText);
   [self.filteredListContent removeAllObjects];
 
   NSMutableArray *dateWithEpisodes = nil;
@@ -155,7 +150,6 @@
       NSRange range = [episode.show.title rangeOfString:searchText
                                                 options:NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch | NSWidthInsensitiveSearch];
       if (range.location != NSNotFound) {
-        //NSLog(@"Episode: %@", episode.showTitle);
         if (dateWithEpisodes == nil) {
           dateWithEpisodes = [NSMutableArray arrayWithObject:broadcastDate];
         }

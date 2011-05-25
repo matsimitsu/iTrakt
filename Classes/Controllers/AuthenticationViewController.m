@@ -10,7 +10,6 @@
   NSString *username, *password;
   [self retrieveUsername:&username password:&password];
   if (username && password) {
-    NSLog(@"User: %@ Password: %@", username, password);
     [self authenticate:username password:password];
     return YES;
   }

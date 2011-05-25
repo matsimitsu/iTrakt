@@ -43,16 +43,13 @@ static Trakt *sharedTrakt = nil;
     [result appendFormat:@"%02x", digest[i]];
   }
   apiPasswordHash = [[result copy] retain];
-  //NSLog(@"Password hash: %@", apiPasswordHash);
 }
 
 - (void)retrieveRootControllerDataStartingWith:(NSString *)dataDownloadSelector block:(void (^)(NSArray *data))block {
   NSMutableArray *selectors = [NSMutableArray arrayWithObjects:@"calendar:", @"library:", @"recommendations:", nil];
   [selectors removeObject:dataDownloadSelector];
-  NSLog(@"Call %@", dataDownloadSelector);
   [self performSelector:NSSelectorFromString(dataDownloadSelector) withObject:block];
   for (NSString *selector in selectors) {
-    NSLog(@"Call %@", selector);
     [self performSelector:NSSelectorFromString(selector) withObject:nil];
   }
 }
@@ -63,7 +60,6 @@ static Trakt *sharedTrakt = nil;
 
 - (void)verifyCredentials:(void (^)(BOOL valid))block {
   NSString *json = [NSString stringWithFormat:@"{ \"username\": \"%@\", \"password\": \"%@\" }", self.apiUser, self.apiPasswordHash];
-  NSLog(@"request body: %@", json);
   JSONDownload *dl = [[JSONDownload alloc] initWithURL:[self verifyCredentialsURL] postBody:json username:nil password:nil block:^(id response) {
     NSString *status = (NSString *)[(NSDictionary *)response objectForKey:@"status"];
     if (status && [status isEqualToString:@"success"]) {
@@ -82,9 +78,7 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)calendar:(void (^)(NSArray *broadcastDates))block {
-  NSLog(@"[!] Start download of calendar data");
   [JSONDownload downloadFromURL:[self calendarURL] username:self.apiUser password:self.apiPasswordHash block:^(id response) {
-    NSLog(@"[!] Finished download of calendar data");
     NSMutableArray *dates = [NSMutableArray array];
     for(NSDictionary *episodeDict in (NSArray *)response) {
       BroadcastDate *d = [[BroadcastDate alloc] initWithDictionary:episodeDict];
@@ -103,9 +97,7 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)library:(void (^)(NSArray *shows))block {
-  NSLog(@"[!] Start download of library data from: %@", [self libraryURL]);
   [JSONDownload downloadFromURL:[self libraryURL] username:self.apiUser password:self.apiPasswordHash block:^(id response) {
-    NSLog(@"[!] Finished download of library data");
     NSMutableArray *shows = [NSMutableArray array];
     for(NSDictionary *showDict in (NSArray *)response) {
       Show *s = [[Show alloc] initWithDictionary:showDict];
@@ -124,9 +116,7 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)recommendations:(void (^)(NSArray *shows))block {
-  NSLog(@"[!] Start download of recommendation data from: %@", [self recommendationsURL]);
   [JSONDownload downloadFromURL:[self recommendationsURL] username:self.apiUser password:self.apiPasswordHash block:^(id response) {
-    NSLog(@"[!] Finished download of recommendations data");
     NSMutableArray *shows = [NSMutableArray array];
     for(NSDictionary *showDict in (NSArray *)response) {
       Show *s = [[Show alloc] initWithDictionary:showDict];
@@ -146,12 +136,9 @@ static Trakt *sharedTrakt = nil;
 }
 
 - (void)seasons:(Show *)show block:(void (^)(NSArray *seasons))block {
-  NSLog(@"[!] Start download of season data from: %@", [self seasonsURL:show.tvdbID]);
   [JSONDownload downloadFromURL:[self seasonsURL:show.tvdbID] username:self.apiUser password:self.apiPasswordHash block:^(id response) {
-    // NSLog(@"[!] Finished download of season data");
     NSMutableArray *seasons = [NSMutableArray array];
     for(NSDictionary *seasonDict in (NSArray *)response) {
-      // NSLog([response description]);
       Season *s = [[Season alloc] initWithShow:show seasonInfo:seasonDict];
       [seasons addObject:s];
       [s release];
@@ -173,7 +160,6 @@ static Trakt *sharedTrakt = nil;
   // Using YAJL for this really seems like overdoing it
   NSString *json = [NSString stringWithFormat:@"{ \"username\":\"%@\", \"password\":\"%@\", \"tvdb_id\":\"%@\", \"episodes\":[{ \"season\":%d, \"episode\":%d }] }",
                                               self.apiUser, self.apiPasswordHash, [episode.show tvdbID], episode.season, episode.number];
-  //NSLog(@"JSON: %@", json);
   [HTTPDownload postToURL:url body:json username:self.apiUser password:self.apiPasswordHash block:^(id response) {
     episode.seen = !episode.seen;
     block();
@@ -212,7 +198,6 @@ static Trakt *sharedTrakt = nil;
 - (UIImage *)cachedImageForURL:(NSURL *)URL scaledTo:(CGSize)scaledTo {
   NSURL *_URL = [self URLForImageURL:URL scaledTo:scaledTo];
   NSString *filename = [_URL lastPathComponent];
-  //NSLog(@"Cache key: %@", filename);
   if ([[EGOCache currentCache] hasCacheForKey:filename]) {
      return [UIImage imageWithData:[[EGOCache currentCache] dataForKey:filename]];
   } else {
@@ -236,7 +221,6 @@ static Trakt *sharedTrakt = nil;
   NSURL *_URL = [self URLForImageURL:URL scaledTo:scaledTo];
 
   UIImage *cachedImage = [self cachedImageForURL:_URL];
-  NSLog(@"Cached image: %@", cachedImage);
   //UIImage *cachedImage = nil; // Force download for debugging purposes.
   if (cachedImage) {
     block(cachedImage, YES);

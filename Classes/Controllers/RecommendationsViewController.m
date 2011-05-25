@@ -27,10 +27,8 @@
 
 - (void)loadImageForCell:(UITableViewCell *)cell {
   ShowTableViewCell *showCell = (ShowTableViewCell *)cell;
-  //NSLog(@"Loading poster for: %@", showCell.show.title);
   [showCell.show ensurePosterIsLoaded:^{
     // this callback is only run if the image has to be downloaded first
-    //NSLog(@"Loaded poster for: %@", showCell.show.title);
     [showCell setNeedsLayout];
   }];
 }

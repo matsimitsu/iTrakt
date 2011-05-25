@@ -30,7 +30,6 @@
   [self.seenCheckbox addTarget:self action:@selector(checkboxClicked:) forControlEvents:UIControlEventTouchUpInside];
   [episode ensureThumbIsLoaded:^{
     // this callback is only run if the image has to be downloaded first
-    //NSLog(@"Episode thumb was downloaded for cell");
     CABasicAnimation *xfade = [CABasicAnimation animationWithKeyPath:@"contents"];
     xfade.delegate = self;
     xfade.duration = 0.8;

@@ -23,9 +23,9 @@
   //[[EGOCache currentCache] clearCache];
 
   if ([AuthenticationViewController signIn]) {
-    NSLog(@"Signed in.");
+    NSLog(@"[!] Signed in.");
   } else {
-    NSLog(@"Not signed in.");
+    NSLog(@"[!] Not signed in.");
   }
 
   [[Trakt sharedInstance] setApiKey:API_KEY];
@@ -69,15 +69,12 @@
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-  NSLog(@"App became active!");
   [self refreshDataStartingAtCurrentSelectedTopLevelController];
 }
 
 - (void)refreshDataStartingAtCurrentSelectedTopLevelController {
-  NSLog(@"Refresh data!");
   UIViewController *controller = ((UINavigationController *)self.tabBarController.selectedViewController).topViewController;
   if (controller) {
-    NSLog(@"Selected controller: %@", controller);
     // TODO we should not use performSelector for this, but have all top-level controllers inherit from one class which implements the method!
     [controller performSelector:@selector(refreshData)];
   }
@@ -86,7 +83,6 @@
 
 - (IBAction)presentAuthenticationDialog:(id)sender {
   AuthenticationViewController *controller = [[AuthenticationViewController alloc] initWithNibName:@"AuthenticationViewController" bundle:nil];
-  NSLog(@"root: %@ Present: %@", self.window.rootViewController, controller);
   [self.window.rootViewController presentModalViewController:controller animated:YES];
   [controller release];
 }

@@ -91,7 +91,6 @@ static NSMutableSet *inProgress = nil;
     if (username && password) {
       NSData *data = [[NSString stringWithFormat:@"%@:%@", username, password] dataUsingEncoding:NSUTF8StringEncoding];
       [request setValue:[NSString stringWithFormat:@"Basic %@", [Base64 encode:data]] forHTTPHeaderField:@"Authorization"];
-      //NSLog(@"Sending basic-auth data: %@", [NSString stringWithFormat:@"Basic %@", [Base64 encode:data]]);
     }
   }
   return self;
@@ -159,7 +158,6 @@ static NSMutableSet *inProgress = nil;
   }
 
   NSInteger status = [self.response statusCode];
-  //NSLog(@"Connection received status %d", status);
   if (!reportConnectionStatus || (status >= 200 && status < 300)) {
     [self yieldDownloadedData];
   } else if (status >= 300 && status < 400) {
@@ -194,7 +192,6 @@ static NSMutableSet *inProgress = nil;
 @implementation JSONDownload
 
 - (void)yieldDownloadedData {
-  // NSLog([[[NSString alloc] initWithData:downloadData encoding:NSUTF8StringEncoding] autorelease]);
   block([downloadData yajl_JSON]);
 }
 
@@ -235,15 +232,11 @@ static dispatch_queue_t imageQueue = NULL;
 - (void)yieldDownloadedData {
   UIImage *result = [UIImage imageWithData:downloadData];
   if (CGSizeEqualToSize(self.resizeTo, CGSizeZero)) {
-    //NSLog(@"NOT RESIZING!");
     block(result);
   } else {
-    // NSLog(@"Dispatch image resizing!");
     dispatch_async(imageQueue, ^{
-      // TODO get rid of the normalizing!
       UIImage *resized = [result resizedImage:self.resizeTo interpolationQuality:kCGInterpolationHigh];
       dispatch_async(dispatch_get_main_queue(), ^{
-        //NSLog(@"Done resizing, dispatching to main thread!");
         block(resized);
       });
     });

@@ -19,23 +19,14 @@
   if ([self valueForKey:cachedFeedProperty] == nil) {
     id data = [[Trakt sharedInstance] valueForKey:cachedFeedProperty];
     if (data) {
-      NSLog(@"Loading `%@' data from Trakt instance which has already loaded it", cachedFeedProperty);
       [self reloadTableViewData:data];
     }
   }
-
-  // Every time a controller is shown make sure the button has the right state
-  //if ([[Trakt sharedInstance] isRetrievingRootControllerData]) {
-    //[self showStopRefreshDataButton];
-  //} else {
-    //[self showRefreshDataButton];
-  //}
 
   [super viewWillAppear:animated];
 }
 
 - (void)refreshData {
-  NSLog(@"Refresh feed: %@", feedSelector);
   [self showStopRefreshDataButton];
   [[Trakt sharedInstance] retrieveRootControllerDataStartingWith:feedSelector block:^(NSArray *data) {
     [self showRefreshDataButton];

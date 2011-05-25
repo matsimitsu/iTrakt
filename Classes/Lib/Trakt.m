@@ -171,9 +171,9 @@ static Trakt *sharedTrakt = nil;
 - (void)toggleSeenForEpisode:(Episode *)episode block:(void (^)())block {
   NSURL *url = episode.seen ? [self episodeNotSeenURL] : [self episodeSeenURL];
   // Using YAJL for this really seems like overdoing it
-    NSString *json = [NSString stringWithFormat:@"{ \"username\":\"%@\", \"password\":\"%@\", \"tvdb_id\":\"%@\", \"episodes\":[{ \"season\":%d, \"episode\":%d }] }",
+  NSString *json = [NSString stringWithFormat:@"{ \"username\":\"%@\", \"password\":\"%@\", \"tvdb_id\":\"%@\", \"episodes\":[{ \"season\":%d, \"episode\":%d }] }",
                                               self.apiUser, self.apiPasswordHash, [episode.show tvdbID], episode.season, episode.number];
-  NSLog(@"JSON: %@", json);
+  //NSLog(@"JSON: %@", json);
   [HTTPDownload postToURL:url body:json username:self.apiUser password:self.apiPasswordHash block:^(id response) {
     episode.seen = !episode.seen;
     block();
@@ -236,6 +236,7 @@ static Trakt *sharedTrakt = nil;
   NSURL *_URL = [self URLForImageURL:URL scaledTo:scaledTo];
 
   UIImage *cachedImage = [self cachedImageForURL:_URL];
+  NSLog(@"Cached image: %@", cachedImage);
   //UIImage *cachedImage = nil; // Force download for debugging purposes.
   if (cachedImage) {
     block(cachedImage, YES);

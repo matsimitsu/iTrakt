@@ -72,7 +72,7 @@
     (it "returns the default poster if the poster hasn't been downloaded and isn't available in the cache" (do ()
       (set trakt (Trakt sharedInstance))
       (trakt removeCachedImageForURL:(@show posterURL) scaledTo:`(44 66))
-      (~ (@show poster) should be:(equalToImage (UIImage imageNamed:"default-poster.png")))
+      (~ (@show poster) should be:(equalToImage (UIImage imageNamed:"placeholder-portrait.png")))
     ))
 
     (it "downloads the poster image if it's not loaded from the cache" (do ()

@@ -208,7 +208,9 @@ static dispatch_queue_t imageQueue = NULL;
 @synthesize resizeTo;
 
 + (id)downloadFromURL:(NSURL *)theURL resizeTo:(CGSize)resizeToSize block:(void (^)(id response))theBlock {
-  return [[[self alloc] initWithURL:theURL resizeTo:resizeToSize block:theBlock] autorelease];
+  ImageDownload *instance = [[self alloc] initWithURL:theURL resizeTo:resizeToSize block:theBlock];
+  [instance start];
+  return [instance autorelease];
 }
 
 - (id)init {

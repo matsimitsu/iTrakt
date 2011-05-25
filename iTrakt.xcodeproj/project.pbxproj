@@ -94,6 +94,8 @@
 		5181A1C31306EB4800B3761A /* ImageRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5181A1C21306EB4800B3761A /* ImageRootController.m */; };
 		518D6768131EF7260086143B /* Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 518D6767131EF7260086143B /* Checkbox.m */; };
 		518D6799131F030D0086143B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518D6798131F030D0086143B /* QuartzCore.framework */; };
+		51959DC9138D38C6002BE1E8 /* placeholder-portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9621354C3F000323896 /* placeholder-portrait.png */; };
+		51959DCA138D38C6002BE1E8 /* placeholder-portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D1D9631354C3F000323896 /* placeholder-portrait@2x.png */; };
 		51BF024D13426A72006EBF54 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFE3A13392E1D006EBF54 /* AuthenticationViewController.m */; };
 		51BF025013426A80006EBF54 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFEA213395159006EBF54 /* SSKeychain.m */; };
 		51BF025313426A98006EBF54 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BFFEAC1339516C006EBF54 /* Security.framework */; };
@@ -692,6 +694,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51959DC9138D38C6002BE1E8 /* placeholder-portrait.png in Resources */,
+				51959DCA138D38C6002BE1E8 /* placeholder-portrait@2x.png in Resources */,
 				51D91B191348F7120061B8AA /* UIKit.bridgesupport in Resources */,
 				51D91AF4134886710061B8AA /* bacon.nu in Resources */,
 				510C6EE212F8ABA7000500A1 /* ShowSpec.nu in Resources */,

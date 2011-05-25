@@ -90,15 +90,16 @@
 - (void)ensureThumbIsLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the thumb loaded for performance!
   if (self.thumb == nil) {
+    NSLog(@"THUMB URL: %@", self.thumbURL);
     [[Trakt sharedInstance] showThumbForURL:self.thumbURL block:^(UIImage *theThumb, BOOL cached) {
       self.thumb = theThumb;
       if (!cached) {
         //NSLog(@"Downloaded episode thumb with tvdb ID: %@", tvdbID);
         downloadedBlock();
       }
-      //else {
-        //NSLog(@"Loaded show episode thumb cache with tvdb ID: %@", tvdbID);
-      //}
+      else {
+        NSLog(@"Loaded show episode thumb from cache!");
+      }
     }];
   }
 }

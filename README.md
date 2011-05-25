@@ -1,5 +1,5 @@
 iTrakt, an iPhone client for trakt.tv
--------------------------------------
+=====================================
 
 The app shows you your [tv-show calendar][cal], allows you to browse your
 [tv-show library][lib], and [recommendations][rec] based on your library.
@@ -8,7 +8,7 @@ It allows you to keep your library up-to-date by marking episodes as 'seen'.
 
 
 Install
-=======
+-------
 
 Fetch the source and its dependencies:
 
@@ -21,7 +21,7 @@ your [key][key]:
 
 
 Run specs
-=========
+---------
 
 Enable the `Accessibility Inspector` in the `iOS simulator` Settings app:
 

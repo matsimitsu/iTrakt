@@ -227,21 +227,21 @@
 				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="188036084"/>
 			</object>
-			<object class="IBUITableViewCell" id="20485490">
+			<object class="IBUITableViewCell" id="771926981">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUIView" id="210609629">
-						<reference key="NSNextResponder" ref="20485490"/>
+					<object class="IBUIView" id="885152235">
+						<reference key="NSNextResponder" ref="771926981"/>
 						<int key="NSvFlags">256</int>
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUILabel" id="78595245">
-								<reference key="NSNextResponder" ref="210609629"/>
+							<object class="IBUILabel" id="1021287702">
+								<reference key="NSNextResponder" ref="885152235"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{20, 11}, {214, 21}}</string>
-								<reference key="NSSuperview" ref="210609629"/>
+								<reference key="NSSuperview" ref="885152235"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
 								<reference key="IBUIBackgroundColor" ref="1040650889"/>
@@ -260,9 +260,9 @@
 							</object>
 						</object>
 						<string key="NSFrameSize">{320, 44}</string>
-						<reference key="NSSuperview" ref="20485490"/>
+						<reference key="NSSuperview" ref="771926981"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="78595245"/>
+						<reference key="NSNextKeyView" ref="1021287702"/>
 						<reference key="IBUIBackgroundColor" ref="1040650889"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -274,13 +274,13 @@
 				<string key="NSFrameSize">{320, 44}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="210609629"/>
+				<reference key="NSNextKeyView" ref="885152235"/>
 				<reference key="IBUIBackgroundColor" ref="1040650889"/>
 				<bool key="IBUIOpaque">NO</bool>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISelectionStyle">0</int>
-				<reference key="IBUIContentView" ref="210609629"/>
+				<reference key="IBUIContentView" ref="885152235"/>
 			</object>
 			<object class="IBUITableViewCell" id="669081549">
 				<reference key="NSNextResponder"/>
@@ -632,9 +632,17 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">signedInCell</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="20485490"/>
+						<reference key="destination" ref="771926981"/>
 					</object>
 					<int key="connectionID">78</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">signedInAsLabel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1021287702"/>
+					</object>
+					<int key="connectionID">79</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -772,18 +780,18 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">75</int>
-						<reference key="object" ref="20485490"/>
+						<reference key="object" ref="771926981"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="78595245"/>
+							<reference ref="1021287702"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Signed In Cell</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">77</int>
-						<reference key="object" ref="78595245"/>
-						<reference key="parent" ref="20485490"/>
+						<reference key="object" ref="1021287702"/>
+						<reference key="parent" ref="771926981"/>
 					</object>
 				</object>
 			</object>
@@ -914,7 +922,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">78</int>
+			<int key="maxID">79</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -976,6 +984,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<string>helpBannerButton</string>
 							<string>passwordCell</string>
 							<string>passwordField</string>
+							<string>signedInAsLabel</string>
 							<string>signedInCell</string>
 							<string>signingInCell</string>
 							<string>tableView</string>
@@ -988,6 +997,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<string>UIButton</string>
 							<string>UITableViewCell</string>
 							<string>UITextField</string>
+							<string>UILabel</string>
 							<string>UITableViewCell</string>
 							<string>UITableViewCell</string>
 							<string>UITableView</string>
@@ -1003,6 +1013,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<string>helpBannerButton</string>
 							<string>passwordCell</string>
 							<string>passwordField</string>
+							<string>signedInAsLabel</string>
 							<string>signedInCell</string>
 							<string>signingInCell</string>
 							<string>tableView</string>
@@ -1026,6 +1037,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<object class="IBToOneOutletInfo">
 								<string key="name">passwordField</string>
 								<string key="candidateClassName">UITextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">signedInAsLabel</string>
+								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">signedInCell</string>

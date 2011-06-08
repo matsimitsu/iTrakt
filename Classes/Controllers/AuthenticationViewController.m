@@ -16,9 +16,13 @@
   return NO;
 }
 
++ (NSString *)signedInAs {
+  return [[NSUserDefaults standardUserDefaults] objectForKey:@"Username"];
+}
+
 + (void)retrieveUsername:(NSString **)username password:(NSString **)password {
   *password = nil;
-  *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"Username"];
+  *username = [self signedInAs];
   if (*username) {
     *password = [SSKeychain passwordForService:@"iTrakt" account:*username];
   }
@@ -41,7 +45,7 @@
 @synthesize tableView;
 @synthesize usernameField, passwordField;
 @synthesize usernameCell, passwordCell;
-@synthesize signingInCell, signedInCell;
+@synthesize signingInCell, signedInCell, signedInAsLabel;
 @synthesize doneButton, helpBannerButton;
 
 
@@ -78,6 +82,7 @@
   self.passwordCell = nil;
   self.signingInCell = nil;
   self.signedInCell = nil;
+  self.signedInAsLabel = nil;
   self.doneButton = nil;
   self.helpBannerButton = nil;
   [super dealloc];
@@ -98,11 +103,11 @@
 }
 
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   if (signingIn && indexPath.section == 0) {
     return self.signingInCell;
   } else if (signedIn && indexPath.section == 0) {
+    self.signedInAsLabel.text = [NSString stringWithFormat:@"Signed in as ‘%@’", [[self class] signedInAs]];
     return self.signedInCell;
   } else {
     if (indexPath.row == 0) {

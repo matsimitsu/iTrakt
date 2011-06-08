@@ -40,7 +40,8 @@
 
 @synthesize tableView;
 @synthesize usernameField, passwordField;
-@synthesize usernameCell, passwordCell, statusCell;
+@synthesize usernameCell, passwordCell;
+@synthesize signingInCell, signedInCell;
 @synthesize doneButton, helpBannerButton;
 
 
@@ -48,6 +49,7 @@
   [super viewWillAppear:animated];
 
   signingIn = NO;
+  signedIn = NO;
 
   NSString *username, *password;
   [AuthenticationViewController retrieveUsername:&username password:&password];
@@ -58,9 +60,11 @@
     self.helpBannerButton.hidden = YES;
   }
 
-  UIView *backView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+  UIView *backView = [[UIView alloc] initWithFrame:CGRectZero];
   backView.backgroundColor = [UIColor clearColor];
-  self.statusCell.backgroundView = backView;
+  self.signingInCell.backgroundView = backView;
+  self.signedInCell.backgroundView = backView;
+  [backView release];
 
   [self textDidChange:nil];
 }
@@ -72,7 +76,8 @@
   self.passwordField = nil;
   self.usernameCell = nil;
   self.passwordCell = nil;
-  self.statusCell = nil;
+  self.signingInCell = nil;
+  self.signedInCell = nil;
   self.doneButton = nil;
   self.helpBannerButton = nil;
   [super dealloc];
@@ -80,12 +85,12 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return signingIn ? 2 : 1;
+  return signingIn || signedIn ? 2 : 1;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  if (signingIn && section == 0) {
+  if ((signingIn || signedIn) && section == 0) {
     return 1;
   } else {
     return 2;
@@ -96,7 +101,9 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   if (signingIn && indexPath.section == 0) {
-    return self.statusCell;
+    return self.signingInCell;
+  } else if (signedIn && indexPath.section == 0) {
+    return self.signedInCell;
   } else {
     if (indexPath.row == 0) {
       return self.usernameCell;
@@ -131,7 +138,11 @@
 
   [[Trakt sharedInstance] verifyCredentials:^(BOOL valid) {
     if (valid) {
-      [self dismissDialog:self];
+      signingIn = NO;
+      signedIn = YES;
+      [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                    withRowAnimation:UITableViewRowAnimationRight];
+      //[self dismissDialog:self];
     } else {
       self.doneButton.enabled = YES;
       self.usernameField.enabled = YES;

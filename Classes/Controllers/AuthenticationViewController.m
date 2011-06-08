@@ -58,6 +58,10 @@
     self.helpBannerButton.hidden = YES;
   }
 
+  UIView *backView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+  backView.backgroundColor = [UIColor clearColor];
+  self.statusCell.backgroundView = backView;
+
   [self textDidChange:nil];
 }
 
@@ -76,30 +80,30 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 1;
+  return signingIn ? 2 : 1;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return signingIn ? 3 : 2;
+  if (signingIn && section == 0) {
+    return 1;
+  } else {
+    return 2;
+  }
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  NSInteger row = indexPath.row;
-  if (!signingIn) {
-    row++;
-  }
-  switch(row) {
-    case 0:
-      return self.statusCell;
-    case 1:
+  if (signingIn && indexPath.section == 0) {
+    return self.statusCell;
+  } else {
+    if (indexPath.row == 0) {
       return self.usernameCell;
-    case 2:
+    } else {
       return self.passwordCell;
+    }
   }
-  return nil; // never reached!
 }
 
 
@@ -122,7 +126,9 @@
   [AuthenticationViewController saveAndAuthenticate:username password:password];
 
   signingIn = YES;
-  [self.tableView reloadData];
+  [self.tableView insertSections:[NSIndexSet indexSetWithIndex:0]
+                withRowAnimation:UITableViewRowAnimationTop];
+
   [[Trakt sharedInstance] verifyCredentials:^(BOOL valid) {
     if (valid) {
       [self dismissDialog:self];

@@ -244,6 +244,7 @@
 								<reference key="NSSuperview" ref="871514914"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
+								<reference key="IBUIBackgroundColor" ref="1040650889"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -264,6 +265,7 @@
 								<reference key="NSSuperview" ref="871514914"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="269281335"/>
+								<reference key="IBUIBackgroundColor" ref="1040650889"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<bool key="IBUIHidesWhenStopped">NO</bool>
@@ -287,7 +289,8 @@
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="871514914"/>
-				<reference key="IBUIBackgroundColor" ref="867537922"/>
+				<reference key="IBUIBackgroundColor" ref="1040650889"/>
+				<bool key="IBUIOpaque">NO</bool>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISelectionStyle">0</int>

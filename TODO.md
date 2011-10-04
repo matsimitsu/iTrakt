@@ -6,18 +6,20 @@ General
 
 
 iOS app
-* Unify the feedSelector and cachedFeedProperty methods used in the root controllers
+
 * Handle connection errors in some way which is needed to provide a good UX. I.e. should we retry, take a failure block, etc.
+* Echofon style network failure notification
+* Make HTTPDownload post start/stop notifications so that the refresh/stop buttons in the top-level controllers can show them accurately.
+* Library tab when not signed in should give a description of what one could do there when one has a Trakt account. (show one of these handrwitten text with arrow to the sign in button)
+* Finally fix the incorrect highlighting of rows in calendar and recommended lists
+
+* Unify the feedSelector and cachedFeedProperty methods used in the root controllers
 * Rename 'thumb' to 'banner' in Show and Episode.
 * When an episode title is TBD, disable the checkbox or remove it.
 * Use `#` for numeric values in the index in library
-* Echofon style network failure notification
 * First launch: load calendar, then visible row images + library & recommendations feeds
 * Not first launch, i.e. the app was inactive, or the user hits the ‘reload’ button: reload _all_ feeds, but load the current visible one first.
-* Make HTTPDownload post start/stop notifications so that the refresh/stop buttons in the top-level controllers can show them accurately.
 * Cache show posters and thumbs indefinitely.
-* Library tab when not signed in should give a description of what one could do there when one has a Trakt account. (show one of these handrwitten text with arrow to the sign in button)
-* Finally fix the incorrect highlighting of rows in calendar and recommended lists
 
 * Only show an index in library when over 50 shows. However, the iPod app does show the index, even with 22 albums.
 * The download code that is already tested elsewhere, eg ensureThumbIsLoaded, don’t need to be tested in the Trakt specs.

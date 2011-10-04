@@ -51,7 +51,14 @@
 }
 
 - (NSURL *)thumbURL {
-  return [NSURL URLWithString:[dictionary valueForKey:@"thumb"]];
+  if ([NSNull null] != [dictionary objectForKey:@"thumb"]) {
+    return [dictionary valueForKey:@"thumb"];
+  }
+  return nil;
+}
+
+- (UIImage *)thumb {
+  return thumb == nil ? [UIImage imageNamed:@"placeholder-landscape"] : thumb;
 }
 
 - (NSInteger)season {
@@ -89,7 +96,7 @@
 
 - (void)ensureThumbIsLoaded:(void (^)())downloadedBlock {
   // important to first check if we already have the thumb loaded for performance!
-  if (self.thumb == nil) {
+  if (self.thumb == nil && self.thumbURL != nil) {
     [[Trakt sharedInstance] showThumbForURL:self.thumbURL block:^(UIImage *theThumb, BOOL cached) {
       self.thumb = theThumb;
       if (!cached) {

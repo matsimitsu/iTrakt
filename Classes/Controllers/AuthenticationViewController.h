@@ -1,16 +1,12 @@
 #import <UIKit/UIKit.h>
 
+@class AuthenticationViewController;
+
+@protocol AuthenticationViewControllerDelegate
+- (void)authenticationViewWillDismiss:(AuthenticationViewController *)controller;
+@end
 
 @interface AuthenticationViewController : UIViewController {
-  IBOutlet UITableView *tableView;
-  IBOutlet UITextField *usernameField;
-  IBOutlet UITextField *passwordField;
-  IBOutlet UILabel *signedInAsLabel;
-  IBOutlet UITableViewCell *usernameCell;
-  IBOutlet UITableViewCell *passwordCell;
-  IBOutlet UITableViewCell *signingInCell, *signedInCell;
-  IBOutlet UIBarButtonItem *doneButton;
-  IBOutlet UIButton *helpBannerButton;
   BOOL signingIn, signedIn;
 }
 
@@ -23,6 +19,8 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell *signingInCell, *signedInCell;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
 @property (nonatomic, retain) IBOutlet UIButton *helpBannerButton;
+
+@property (nonatomic, assign) id <AuthenticationViewControllerDelegate> delegate;
 
 + (BOOL)signIn;
 + (NSString *)signedInAs;

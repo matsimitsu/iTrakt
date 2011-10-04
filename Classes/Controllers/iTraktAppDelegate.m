@@ -3,7 +3,6 @@
 
 #import "RootViewController.h"
 #import "CalendarViewController.h"
-#import "AuthenticationViewController.h"
 
 // ONLY FOR DEBUGGING PURPOSES!
 #import "Authentication.h"
@@ -22,20 +21,31 @@
   //NSLog(@"[!] Clearing cache");
   //[[EGOCache currentCache] clearCache];
 
-  if ([AuthenticationViewController signIn]) {
-    NSLog(@"[!] Signed in.");
-  } else {
-    NSLog(@"[!] Not signed in.");
-  }
+  refreshDataWhenAuthViewDismisses = NO;
 
   [[Trakt sharedInstance] setApiKey:API_KEY];
+
+  if ([AuthenticationViewController signIn]) {
+    NSLog(@"[!] Signed in.");
+    [[Trakt sharedInstance] verifyCredentials:^(BOOL valid) {
+      if (valid) {
+        NSLog(@"Credentials are valid");
+        // Give the controller a chance to initialize
+        [self performSelector:@selector(refreshDataStartingAtCurrentSelectedTopLevelController) withObject:nil afterDelay:0];
+      } else {
+        NSLog(@"Credentials are invalid");
+        refreshDataWhenAuthViewDismisses = YES;
+        [self presentAuthenticationDialog:nil];
+      }
+    }];
+  } else {
+    NSLog(@"[!] Not signed in.");
+    [self presentAuthenticationDialog:nil];
+  }
 
   [HTTPDownload setGlobalDelegate:self];
 
   [self.window makeKeyAndVisible];
-
-  // Give the controller a chance to initialize
-  [self performSelector:@selector(refreshDataStartingAtCurrentSelectedTopLevelController) withObject:nil afterDelay:0];
 
   return YES;
 }
@@ -82,9 +92,17 @@
 
 
 - (IBAction)presentAuthenticationDialog:(id)sender {
-  AuthenticationViewController *controller = [[AuthenticationViewController alloc] initWithNibName:@"AuthenticationViewController" bundle:nil];
+  AuthenticationViewController *controller;
+  controller = [[AuthenticationViewController alloc] initWithNibName:@"AuthenticationViewController"
+                                                              bundle:nil];
+  controller.delegate = self;
   [self.window.rootViewController presentModalViewController:controller animated:YES];
   [controller release];
+}
+
+- (void)authenticationViewWillDismiss:(AuthenticationViewController *)controller {
+  refreshDataWhenAuthViewDismisses = NO;
+  [self refreshDataStartingAtCurrentSelectedTopLevelController];
 }
 
 

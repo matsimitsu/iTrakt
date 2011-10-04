@@ -7,6 +7,8 @@ General
 
 iOS app
 
+* Use CocoaPods for the dependencies.
+* Possibly switch to AFNetworking to replace the http request and json/image code.
 * Handle connection errors in some way which is needed to provide a good UX. I.e. should we retry, take a failure block, etc.
 * Echofon style network failure notification
 * Make HTTPDownload post start/stop notifications so that the refresh/stop buttons in the top-level controllers can show them accurately.

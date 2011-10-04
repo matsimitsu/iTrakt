@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1056</int>
-		<string key="IBDocument.SystemVersion">10J567</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1306</string>
-		<string key="IBDocument.AppKitVersion">1038.35</string>
-		<string key="IBDocument.HIToolboxVersion">462.00</string>
+		<string key="IBDocument.SystemVersion">11A511</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1617</string>
+		<string key="IBDocument.AppKitVersion">1138</string>
+		<string key="IBDocument.HIToolboxVersion">566.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">301</string>
+			<string key="NS.object.0">534</string>
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -74,13 +74,13 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationController" key="IBUISelectedViewController" id="293488427">
-					<string key="IBUITitle">Trending</string>
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="163677930">
-						<string key="IBUITitle">Recommended</string>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="1002578325">
+					<string key="IBUITitle">Library</string>
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="453873882">
+						<string key="IBUITitle">Library</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">recommended.png</string>
+							<string key="NSResourceName">library.png</string>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
@@ -92,7 +92,7 @@
 					</object>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="662164014">
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="658286434">
 						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{0, 0}</string>
@@ -103,20 +103,20 @@
 					</object>
 					<object class="NSMutableArray" key="IBUIViewControllers">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="IBUIViewController" id="598962747">
-							<string key="IBUITitle">Recommendations</string>
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="494342882">
+						<object class="IBUIViewController" id="847059996">
+							<string key="IBUITitle">Library</string>
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="99302249">
 								<string key="IBUITitle">Root View Controller</string>
-								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="18110761">
+								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="234698289">
 									<string key="IBUITitle">Sign in</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 									<int key="IBUIStyle">1</int>
-									<reference key="IBUINavigationItem" ref="494342882"/>
+									<reference key="IBUINavigationItem" ref="99302249"/>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<reference key="IBUIParentViewController" ref="293488427"/>
-							<string key="IBUINibName">RecommendationsViewController</string>
+							<reference key="IBUIParentViewController" ref="1002578325"/>
+							<string key="IBUINibName">LibraryViewController</string>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="IBUIInterfaceOrientation">1</int>
 								<int key="interfaceOrientation">1</int>
@@ -179,13 +179,14 @@
 							</object>
 						</object>
 					</object>
-					<object class="IBUINavigationController" id="1002578325">
-						<string key="IBUITitle">Library</string>
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="453873882">
-							<string key="IBUITitle">Library</string>
+					<reference ref="1002578325"/>
+					<object class="IBUINavigationController" id="293488427">
+						<string key="IBUITitle">Trending</string>
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="163677930">
+							<string key="IBUITitle">Recommended</string>
 							<object class="NSCustomResource" key="IBUIImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">library.png</string>
+								<string key="NSResourceName">recommended.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
@@ -197,7 +198,7 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="658286434">
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="662164014">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{0, 0}</string>
@@ -208,20 +209,20 @@
 						</object>
 						<object class="NSMutableArray" key="IBUIViewControllers">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIViewController" id="847059996">
-								<string key="IBUITitle">Library</string>
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="99302249">
+							<object class="IBUIViewController" id="598962747">
+								<string key="IBUITitle">Recommendations</string>
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="494342882">
 									<string key="IBUITitle">Root View Controller</string>
-									<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="234698289">
+									<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="18110761">
 										<string key="IBUITitle">Sign in</string>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<int key="IBUIStyle">1</int>
-										<reference key="IBUINavigationItem" ref="99302249"/>
+										<reference key="IBUINavigationItem" ref="494342882"/>
 									</object>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIParentViewController" ref="1002578325"/>
-								<string key="IBUINibName">LibraryViewController</string>
+								<reference key="IBUIParentViewController" ref="293488427"/>
+								<string key="IBUINibName">RecommendationsViewController</string>
 								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 									<int key="IBUIInterfaceOrientation">1</int>
 									<int key="interfaceOrientation">1</int>
@@ -231,7 +232,6 @@
 							</object>
 						</object>
 					</object>
-					<reference ref="293488427"/>
 				</object>
 				<object class="IBUITabBar" key="IBUITabBar" id="572033500">
 					<reference key="NSNextResponder"/>
@@ -496,12 +496,12 @@
 				<object class="NSArray" key="dict.sortedKeys">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>-1.CustomClassName</string>
+					<string>-1.IBPluginDependency</string>
 					<string>-2.CustomClassName</string>
-					<string>17.IBEditorWindowLastContentRect</string>
+					<string>-2.IBPluginDependency</string>
 					<string>17.IBPluginDependency</string>
 					<string>18.IBPluginDependency</string>
 					<string>2.IBAttributePlaceholdersKey</string>
-					<string>2.IBEditorWindowLastContentRect</string>
 					<string>2.IBPluginDependency</string>
 					<string>3.CustomClassName</string>
 					<string>3.IBPluginDependency</string>
@@ -510,16 +510,19 @@
 					<string>47.IBPluginDependency</string>
 					<string>48.IBPluginDependency</string>
 					<string>49.IBPluginDependency</string>
+					<string>50.IBPluginDependency</string>
 					<string>51.IBPluginDependency</string>
 					<string>52.CustomClassName</string>
 					<string>52.IBPluginDependency</string>
 					<string>53.IBPluginDependency</string>
 					<string>54.IBPluginDependency</string>
+					<string>55.IBPluginDependency</string>
 					<string>56.IBPluginDependency</string>
 					<string>57.CustomClassName</string>
 					<string>57.IBPluginDependency</string>
 					<string>58.IBPluginDependency</string>
 					<string>59.IBPluginDependency</string>
+					<string>60.IBPluginDependency</string>
 					<string>64.IBPluginDependency</string>
 					<string>65.IBPluginDependency</string>
 					<string>66.IBPluginDependency</string>
@@ -527,8 +530,9 @@
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>UIApplication</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>UIResponder</string>
-					<string>{{67, 276}, {320, 480}}</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSMutableDictionary">
@@ -536,7 +540,6 @@
 						<reference key="dict.sortedKeys" ref="0"/>
 						<reference key="dict.values" ref="0"/>
 					</object>
-					<string>{{138, 276}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>iTraktAppDelegate</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -546,12 +549,15 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>LibraryViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>RecommendationsViewController</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -602,6 +608,6 @@
 				<string>{30, 30}</string>
 			</object>
 		</object>
-		<string key="IBCocoaTouchPluginVersion">301</string>
+		<string key="IBCocoaTouchPluginVersion">534</string>
 	</data>
 </archive>

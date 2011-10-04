@@ -42,6 +42,7 @@
 }
 
 
+@synthesize delegate;
 @synthesize tableView;
 @synthesize usernameField, passwordField;
 @synthesize usernameCell, passwordCell;
@@ -120,6 +121,7 @@
 
 
 - (IBAction)dismissDialog:(id)sender {
+  [self.delegate authenticationViewWillDismiss:self];
   [self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
@@ -144,11 +146,9 @@
   [[Trakt sharedInstance] verifyCredentials:^(BOOL valid) {
     if (valid) {
       signingIn = NO;
-      signedIn = YES;
-      [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-                    withRowAnimation:UITableViewRowAnimationRight];
-      //[self dismissDialog:self];
+      [self dismissDialog:self];
     } else {
+      NSLog(@"FAIL!");
       self.doneButton.enabled = YES;
       self.usernameField.enabled = YES;
       self.passwordField.enabled = YES;

@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
 #import "HTTPDownload.h"
+#import "AuthenticationViewController.h"
 
-@interface iTraktAppDelegate : NSObject <UIApplicationDelegate> {
-  UIWindow *window;
-  IBOutlet UITabBarController* tabBarController;
+@interface iTraktAppDelegate : NSObject <UIApplicationDelegate, AuthenticationViewControllerDelegate> {
+  BOOL refreshDataWhenAuthViewDismisses;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

@@ -1,7 +1,7 @@
 #import "RootViewController.h"
 #import "Trakt.h"
 #import "HTTPDownload.h"
-
+#import "AuthenticationViewController.h"
 @implementation RootViewController
 
 @synthesize feedSelector, cachedFeedProperty;
@@ -24,6 +24,17 @@
   }
 
   [super viewWillAppear:animated];
+}
+
+- (void)checkAuth {
+  NSString *username = [Trakt sharedInstance].apiUser;
+  if([username length] == 0){
+    AuthenticationViewController *controller = [AuthenticationViewController alloc];
+
+    [self presentModalViewController:controller animated:YES];
+
+    [controller release];
+  }
 }
 
 - (void)refreshData {

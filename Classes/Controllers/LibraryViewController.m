@@ -2,7 +2,7 @@
 
 #import "Show.h"
 #import "ShowDetailsViewController.h"
-
+#import "AuthenticationViewController.h"
 #import "Trakt.h"
 #import "HTTPDownload.h"
 
@@ -13,6 +13,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  [self checkAuth];
 
   self.feedSelector = @"library:";
   self.cachedFeedProperty = @"library";
@@ -27,6 +28,7 @@
 }
 
 - (void)reloadTableViewData:(NSArray *)data {
+
   NSMutableArray *groupedShows = [NSMutableArray array];
   NSMutableArray *titles = [NSMutableArray array];
 
